@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp2.2</TargetFramework>
+		<UserSecretsId>aspnet-ScientificReport-F6AB99E8-FA1A-4234-AFAE-683EBC75F8F1</UserSecretsId>
+		<AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+		<None Update="app.db" CopyToOutputDirectory="PreserveNewest" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.App" />
+		<PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.2.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="..\.gitignore">
+	    <Link>.gitignore</Link>
+	  </Content>
+	  <Content Include="..\LICENSE">
+	    <Link>LICENSE</Link>
+	  </Content>
+	  <Content Include="..\README.md">
+	    <Link>README.md</Link>
+	  </Content>
+	</ItemGroup>
+
+</Project>
