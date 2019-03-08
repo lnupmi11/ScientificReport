@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>10</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1620</x>
-      <y>340</y>
-      <w>310</w>
-      <h>130</h>
+      <x>924</x>
+      <y>63</y>
+      <w>217</w>
+      <h>175</h>
     </coordinates>
     <panel_attributes>&lt;&lt;TeacherReport&gt;&gt;
 Package::DataAccess.Entities
 --
-_+Report: Report_
-
-TODO: add more fields if required</panel_attributes>
+_+DateCreated: Nullable&lt;System.DateTime&gt;_
+_+DateEdited: Nullable&lt;System.DateTime&gt;_
+_+Publication: Nullable&lt;Publication&gt;_
+_+User: User_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>590</y>
-      <w>300</w>
-      <h>420</h>
+      <x>14</x>
+      <y>287</y>
+      <w>210</w>
+      <h>294</h>
     </coordinates>
     <panel_attributes>&lt;&lt;User&gt;&gt;
 Package::DataAccess.Entities
@@ -44,129 +45,65 @@ _+РікЗахистуНауковогоСтупеня: int_
 _+AcademicStatus: string_
 
 TODO translate:
-_+TODO tr: РікПрисвоєння: int_
+_+РікПрисвоєння: int_
 
 _+Department: Department_
 _+Position: string_
-_+IsApproved: bool_
-
-TODO: add more fields if required</panel_attributes>
+_+IsApproved: bool_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>120</x>
-      <y>20</y>
-      <w>1180</w>
-      <h>590</h>
+      <x>98</x>
+      <y>63</y>
+      <w>840</w>
+      <h>238</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;570.0;10.0;10.0;1150.0;10.0;1160.0;500.0</additional_attributes>
+    <additional_attributes>10.0;320.0;10.0;10.0;1180.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1140</x>
-      <y>520</y>
-      <w>310</w>
-      <h>190</h>
+      <x>924</x>
+      <y>308</y>
+      <w>217</w>
+      <h>105</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;Report&gt;&gt;
+    <panel_attributes>&lt;&lt;DepartmentReport&gt;&gt;
 Package::DataAccess.Entities
 --
 _+DateCreated: Nullable&lt;System.DateTime&gt;_
 _+DateEdited: Nullable&lt;System.DateTime&gt;_
 _+Publication: Nullable&lt;Publication&gt;_
-_+User: User_
-
-TODO: add more fields if required</panel_attributes>
+_+User: User_</panel_attributes>
     <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1410</x>
-      <y>400</y>
-      <w>230</w>
-      <h>140</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;120.0;10.0;10.0;210.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1620</x>
-      <y>530</y>
-      <w>310</w>
-      <h>150</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;DepartmentReport&gt;&gt;
-Package::DataAccess.Entities
---
-_+Report: Report_
-
-TODO: add more fields if required</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1440</x>
-      <y>610</y>
-      <w>200</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;180.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1620</x>
-      <y>730</y>
-      <w>350</w>
-      <h>140</h>
+      <x>910</x>
+      <y>448</y>
+      <w>245</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>&lt;&lt;FacultyReport&gt;&gt;
 Package::DataAccess.Entities
 --
-_+Report: Report_
-_+DepartmentReports: ICollection&lt;DepartmentReport&gt;_
-
-TODO: add more fields if required</panel_attributes>
+_+DateCreated: Nullable&lt;System.DateTime&gt;_
+_+DateEdited: Nullable&lt;System.DateTime&gt;_
+_+Publication: Nullable&lt;Publication&gt;_
+_+User: User_</panel_attributes>
     <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1760</x>
-      <y>670</y>
-      <w>30</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1410</x>
-      <y>700</y>
-      <w>230</w>
-      <h>130</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0;210.0;110.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>610</x>
-      <y>1030</y>
-      <w>310</w>
-      <h>190</h>
+      <x>441</x>
+      <y>567</y>
+      <w>217</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Publication&gt;&gt;
 Package::DataAccess.Entities
@@ -177,67 +114,41 @@ _+City: string_
 _+Year (Date?): DateTime/int_
 _+Volume: int_
 _+Type: string_
-_+Recommended: boolean_
-
-TODO: add more fields if required</panel_attributes>
+_+Recommended: boolean_</panel_attributes>
     <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>910</x>
-      <y>620</y>
-      <w>250</w>
-      <h>510</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;490.0;120.0;490.0;120.0;10.0;230.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>10</x>
-      <y>1110</y>
-      <w>310</w>
-      <h>190</h>
+      <x>21</x>
+      <y>630</y>
+      <w>217</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Department&gt;&gt;
 Package::DataAccess.Entities
 --
-_+Title: string_
-
-TODO: add more fields if required</panel_attributes>
+_+Title: string_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>130</x>
-      <y>1000</y>
-      <w>30</w>
-      <h>130</h>
+      <x>231</x>
+      <y>112</y>
+      <w>224</w>
+      <h>560</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>310</x>
-      <y>280</y>
-      <w>300</w>
-      <h>940</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>280.0;10.0;60.0;10.0;60.0;920.0;10.0;920.0</additional_attributes>
+    <additional_attributes>10.0;780.0;60.0;780.0;60.0;10.0;300.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>590</x>
-      <y>210</y>
-      <w>310</w>
-      <h>150</h>
+      <x>441</x>
+      <y>84</y>
+      <w>217</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>&lt;&lt;ScientificWork&gt;&gt;
 Package::DataAccess.Entities
@@ -253,90 +164,51 @@ TODO: add more fields if required</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>2470</x>
-      <y>0</y>
-      <w>290</w>
-      <h>200</h>
-    </coordinates>
-    <panel_attributes>add classes for subpoints of report
-i.e.
-1 Участь у науково-дослідній тематиці 
-підрозділу − шифр теми, категорія (держ
-бюджетна, госпдоговірна, в межах робочо
-го часу), назва, стисло зміст виконаної ро-
-боти (до семи рядків).
-2 Участь у виконанні індивідуальних або 
-колективних ґрантів (окрім ґрантів на поїзд
-ки) − згідно з додатком 3.
-3 Наукові стажування.
-etc.
-bg=magenta</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>290</x>
-      <y>920</y>
-      <w>340</w>
-      <h>230</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;230.0;10.0;230.0;210.0;320.0;210.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>610</x>
-      <y>370</y>
-      <w>310</w>
-      <h>130</h>
+      <x>441</x>
+      <y>196</y>
+      <w>217</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Grants&gt;&gt;
 Package::DataAccess.Entities
 --
-_+Authors: ICollection&lt;User&gt;_
-
-TODO: add more fields if required</panel_attributes>
+_+Authors: ICollection&lt;User&gt;_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>890</x>
-      <y>260</y>
-      <w>270</w>
-      <h>290</h>
+      <x>651</x>
+      <y>77</y>
+      <w>287</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;180.0;10.0;180.0;270.0;250.0;270.0</additional_attributes>
+    <additional_attributes>390.0;10.0;120.0;10.0;120.0;90.0;10.0;90.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>610</x>
-      <y>890</y>
-      <w>310</w>
-      <h>130</h>
+      <x>441</x>
+      <y>497</y>
+      <w>217</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>&lt;&lt;StudentGuidance&gt;&gt;
 Package::DataAccess.Entities
 --
-_+Authors: ICollection&lt;User&gt;_
-
-
-TODO: add more fields if required</panel_attributes>
+_+Authors: ICollection&lt;User&gt;_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>590</x>
-      <y>650</y>
-      <w>360</w>
-      <h>230</h>
+      <x>427</x>
+      <y>343</y>
+      <w>252</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>&lt;&lt;ScientificGuidance&gt;&gt;
 Package::DataAccess.Entities
@@ -348,53 +220,44 @@ _+Specialty: string_
 
 TODO: translate
 _+дата захистy : DateTime_
-_+рік закінчення аспірантури, докторантурu: DateTime_
-
-
-TODO: add more fields if required</panel_attributes>
+_+рік закінчення аспірантури, докторантурu: DateTime_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>610</x>
-      <y>510</y>
-      <w>310</w>
-      <h>130</h>
+      <x>441</x>
+      <y>266</y>
+      <w>217</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>&lt;&lt;ScientificInternship&gt;&gt;
 Package::DataAccess.Entities
 --
-_+Authors: ICollection&lt;User&gt;_
-
-
-TODO: add more fields if required</panel_attributes>
+_+Authors: ICollection&lt;User&gt;_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>610</x>
-      <y>1420</y>
-      <w>310</w>
-      <h>130</h>
+      <x>441</x>
+      <y>805</y>
+      <w>217</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Papers&gt;&gt;
 Package::DataAccess.Entities
 --
-_+Authors: ICollection&lt;User&gt;_
-
-
-TODO: add more fields if required</panel_attributes>
+_+Authors: ICollection&lt;User&gt;_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>610</x>
-      <y>1230</y>
-      <w>310</w>
-      <h>130</h>
+      <x>441</x>
+      <y>700</y>
+      <w>217</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>&lt;&lt;ReportThesis&gt;&gt;
 Package::DataAccess.Entities
@@ -411,10 +274,10 @@ TODO: add more fields if required</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>610</x>
-      <y>1570</y>
-      <w>310</w>
-      <h>190</h>
+      <x>441</x>
+      <y>875</y>
+      <w>217</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Patent&gt;&gt;
 Package::DataAccess.Entities
@@ -424,253 +287,277 @@ _+Name: string_
 _+Number: int/string    (?)_
 _+Date: DateTime_
 _+Applicant: ICollection&lt;User&gt;_
-_+Type: string_
-
-
-TODO: add more fields if required</panel_attributes>
+_+Type: string_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>610</x>
-      <y>1770</y>
-      <w>310</w>
-      <h>130</h>
+      <x>441</x>
+      <y>994</y>
+      <w>217</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Review&gt;&gt;
 Package::DataAccess.Entities
 --
-_+Authors: ICollection&lt;User&gt;_
-
-
-TODO: add more fields if required</panel_attributes>
+_+Authors: ICollection&lt;User&gt;_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>610</x>
-      <y>1920</y>
-      <w>310</w>
-      <h>180</h>
+      <x>441</x>
+      <y>1064</y>
+      <w>217</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>&lt;&lt;(9) ParticipationInScientificSittings&gt;&gt;
 Package::DataAccess.Entities
 --
-_+Authors: ICollection&lt;User&gt;_
-
-
-TODO: add more fields if required</panel_attributes>
+_+Authors: ICollection&lt;User&gt;_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>290</x>
-      <y>960</y>
-      <w>340</w>
-      <h>550</h>
+      <x>217</x>
+      <y>133</y>
+      <w>238</w>
+      <h>224</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;190.0;10.0;190.0;530.0;320.0;530.0</additional_attributes>
+    <additional_attributes>320.0;10.0;180.0;10.0;180.0;300.0;10.0;300.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>290</x>
-      <y>980</y>
-      <w>340</w>
-      <h>680</h>
+      <x>651</x>
+      <y>217</y>
+      <w>287</w>
+      <h>896</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;170.0;10.0;170.0;660.0;320.0;660.0</additional_attributes>
+    <additional_attributes>390.0;10.0;320.0;10.0;320.0;1260.0;10.0;1260.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>290</x>
-      <y>1000</y>
-      <w>340</w>
-      <h>860</h>
+      <x>98</x>
+      <y>574</y>
+      <w>21</w>
+      <h>70</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;150.0;10.0;150.0;840.0;320.0;840.0</additional_attributes>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>280</x>
-      <y>1000</y>
-      <w>350</w>
-      <h>1040</h>
+      <x>651</x>
+      <y>91</y>
+      <w>287</w>
+      <h>154</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;40.0;140.0;40.0;140.0;1020.0;330.0;1020.0</additional_attributes>
+    <additional_attributes>390.0;10.0;140.0;10.0;140.0;200.0;10.0;200.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>290</x>
-      <y>890</y>
-      <w>340</w>
-      <h>80</h>
+      <x>651</x>
+      <y>105</y>
+      <w>287</w>
+      <h>210</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;280.0;10.0;280.0;60.0;320.0;60.0</additional_attributes>
+    <additional_attributes>390.0;10.0;160.0;10.0;160.0;280.0;10.0;280.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>290</x>
-      <y>430</y>
-      <w>340</w>
-      <h>350</h>
+      <x>672</x>
+      <y>119</y>
+      <w>266</w>
+      <h>280</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;330.0;210.0;330.0;210.0;10.0;320.0;10.0</additional_attributes>
+    <additional_attributes>360.0;10.0;150.0;10.0;150.0;380.0;10.0;380.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>290</x>
-      <y>940</y>
-      <w>340</w>
-      <h>370</h>
+      <x>651</x>
+      <y>133</y>
+      <w>287</w>
+      <h>413</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;210.0;10.0;210.0;350.0;320.0;350.0</additional_attributes>
+    <additional_attributes>390.0;10.0;200.0;10.0;200.0;570.0;10.0;570.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>290</x>
-      <y>570</y>
-      <w>340</w>
-      <h>250</h>
+      <x>651</x>
+      <y>147</y>
+      <w>287</w>
+      <h>504</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;230.0;230.0;230.0;230.0;10.0;320.0;10.0</additional_attributes>
+    <additional_attributes>390.0;10.0;220.0;10.0;220.0;700.0;10.0;700.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>290</x>
-      <y>300</y>
-      <w>320</w>
-      <h>450</h>
+      <x>651</x>
+      <y>161</y>
+      <w>287</w>
+      <h>602</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;430.0;190.0;430.0;190.0;10.0;300.0;10.0</additional_attributes>
+    <additional_attributes>390.0;10.0;240.0;10.0;240.0;840.0;10.0;840.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>290</x>
-      <y>770</y>
-      <w>320</w>
-      <h>130</h>
+      <x>651</x>
+      <y>175</y>
+      <w>287</w>
+      <h>686</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;110.0;250.0;110.0;250.0;10.0;300.0;10.0</additional_attributes>
+    <additional_attributes>390.0;10.0;260.0;10.0;260.0;960.0;10.0;960.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>910</x>
-      <y>410</y>
-      <w>250</w>
-      <h>160</h>
+      <x>651</x>
+      <y>189</y>
+      <w>287</w>
+      <h>756</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;80.0;10.0;80.0;140.0;230.0;140.0</additional_attributes>
+    <additional_attributes>390.0;10.0;280.0;10.0;280.0;1060.0;10.0;1060.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>910</x>
-      <y>560</y>
-      <w>250</w>
-      <h>30</h>
+      <x>651</x>
+      <y>203</y>
+      <w>287</w>
+      <h>840</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;230.0;10.0</additional_attributes>
+    <additional_attributes>390.0;10.0;300.0;10.0;300.0;1180.0;10.0;1180.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>940</x>
-      <y>580</y>
-      <w>220</w>
-      <h>200</h>
+      <x>217</x>
+      <y>224</y>
+      <w>238</w>
+      <h>147</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;180.0;50.0;180.0;50.0;10.0;200.0;10.0</additional_attributes>
+    <additional_attributes>320.0;10.0;200.0;10.0;200.0;190.0;10.0;190.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>910</x>
-      <y>640</y>
-      <w>250</w>
-      <h>690</h>
+      <x>217</x>
+      <y>301</y>
+      <w>238</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;670.0;140.0;670.0;140.0;10.0;230.0;10.0</additional_attributes>
+    <additional_attributes>320.0;10.0;220.0;10.0;220.0;100.0;10.0;100.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>910</x>
-      <y>600</y>
-      <w>250</w>
-      <h>370</h>
+      <x>217</x>
+      <y>378</y>
+      <w>224</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;350.0;100.0;350.0;100.0;10.0;230.0;10.0</additional_attributes>
+    <additional_attributes>300.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>910</x>
-      <y>650</y>
-      <w>250</w>
-      <h>860</h>
+      <x>217</x>
+      <y>392</y>
+      <w>238</w>
+      <h>161</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;840.0;150.0;840.0;150.0;10.0;230.0;10.0</additional_attributes>
+    <additional_attributes>320.0;210.0;220.0;210.0;220.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>910</x>
-      <y>660</y>
-      <w>250</w>
-      <h>1020</h>
+      <x>217</x>
+      <y>406</y>
+      <w>238</w>
+      <h>245</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;1000.0;160.0;1000.0;160.0;10.0;230.0;10.0</additional_attributes>
+    <additional_attributes>320.0;330.0;200.0;330.0;200.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>910</x>
-      <y>670</y>
-      <w>250</w>
-      <h>1190</h>
+      <x>217</x>
+      <y>420</y>
+      <w>238</w>
+      <h>343</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;1170.0;170.0;1170.0;170.0;10.0;230.0;10.0</additional_attributes>
+    <additional_attributes>320.0;470.0;180.0;470.0;180.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>910</x>
-      <y>680</y>
-      <w>250</w>
-      <h>1360</h>
+      <x>217</x>
+      <y>434</y>
+      <w>231</w>
+      <h>420</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;1340.0;180.0;1340.0;180.0;10.0;230.0;10.0</additional_attributes>
+    <additional_attributes>310.0;580.0;160.0;580.0;160.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>217</x>
+      <y>448</y>
+      <w>238</w>
+      <h>490</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>320.0;680.0;140.0;680.0;140.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>217</x>
+      <y>462</y>
+      <w>238</w>
+      <h>581</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>320.0;810.0;120.0;810.0;120.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>217</x>
+      <y>476</y>
+      <w>238</w>
+      <h>637</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>320.0;890.0;100.0;890.0;100.0;10.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
