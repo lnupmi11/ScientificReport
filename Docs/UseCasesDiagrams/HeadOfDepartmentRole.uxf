@@ -244,18 +244,6 @@ work theme</panel_attributes>
     <additional_attributes>340.0;122.0;10.0;10.0</additional_attributes>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>920</x>
-      <y>160</y>
-      <w>110</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>lt=.&gt;
-&lt;&lt;include&gt;&gt;</panel_attributes>
-    <additional_attributes>50.0;60.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLUseCase</id>
     <coordinates>
       <x>270</x>
@@ -336,5 +324,16 @@ report</panel_attributes>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>260.0;45.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>150</y>
+      <w>260</w>
+      <h>480</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>240.0;10.0;10.0;460.0</additional_attributes>
   </element>
 </diagram>
