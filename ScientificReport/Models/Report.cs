@@ -12,14 +12,4 @@ namespace ScientificReport.Models
 		[DataType(DataType.Date)]
 		public DateTime Created { get; set; }
 	}
-
-	public class MvcReportContext : DbContext
-	{
-		public MvcReportContext(DbContextOptions options)
-			: base(options)
-		{
-		}
-
-		public DbSet<Report> Reports { get; set; }
-	}
 }

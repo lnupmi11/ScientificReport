@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using ScientificReport.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ScientificReport.Models;
 
 namespace ScientificReport
 {
@@ -33,6 +34,7 @@ namespace ScientificReport
 			services.AddDbContext<ApplicationDbContext>(options =>
 				options.UseSqlite(
 					Configuration.GetConnectionString("DefaultConnection")));
+						
 			services.AddDefaultIdentity<IdentityUser>()
 				.AddDefaultUI(UIFramework.Bootstrap4)
 				.AddEntityFrameworkStores<ApplicationDbContext>();
