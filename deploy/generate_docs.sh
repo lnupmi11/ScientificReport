@@ -71,7 +71,7 @@ git checkout -- _config.yml || true
 echo 'Generating Doxygen code documentation...'
 cat "$DOXYFILE" | sed -e '/INPUT /s/ = .*/ = ..\/..\/'"${GH_REPO_NAME}"'/' > Doxyfile
 # Redirect both stderr and stdout to the log file AND the console.
-doxygen 2>&1 | tee doxygen.log
+doxygen 2>&1 > doxygen.log
 
 echo 'Moving manual docs to github pages'
 cp -v "$TRAVIS_BUILD_DIR/"*.md ./ || true
