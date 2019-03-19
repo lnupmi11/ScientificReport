@@ -15,12 +15,11 @@ addons:
     packages:
       - doxygen
       - graphviz
+cache:
+  directories:
+    - $HOME/.nuget/packages
 install:
 - dotnet restore
-#script:
-#- dotnet build
-#- dotnet test ${GH_REPO_NAME}.Test
-#- ./deploy/generate_docs.sh
 jobs:
   include:
     - stage: build
