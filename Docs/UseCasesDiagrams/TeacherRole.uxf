@@ -4,8 +4,8 @@
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>1140</x>
-      <y>460</y>
+      <x>500</x>
+      <y>340</y>
       <w>80</w>
       <h>110</h>
     </coordinates>
@@ -15,8 +15,8 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>660</x>
-      <y>440</y>
+      <x>770</x>
+      <y>630</y>
       <w>150</w>
       <h>50</h>
     </coordinates>
@@ -26,43 +26,30 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>850</x>
-      <y>180</y>
+      <x>530</x>
+      <y>630</y>
       <w>150</w>
       <h>50</h>
     </coordinates>
-    <panel_attributes>Input 
-personal data</panel_attributes>
+    <panel_attributes>Register</panel_attributes>
     <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>990</x>
-      <y>200</y>
-      <w>180</w>
-      <h>310</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>160.0;290.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>620</x>
-      <y>280</y>
+      <x>1000</x>
+      <y>380</y>
       <w>140</w>
       <h>50</h>
     </coordinates>
-    <panel_attributes>Generate
-teacher report</panel_attributes>
+    <panel_attributes>Fill report fields</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>790</x>
-      <y>630</y>
+      <x>980</x>
+      <y>660</y>
       <w>190</w>
       <h>60</h>
     </coordinates>
@@ -73,64 +60,65 @@ he participated in</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>570</x>
-      <y>170</y>
+      <x>980</x>
+      <y>300</y>
       <w>190</w>
       <h>60</h>
     </coordinates>
-    <panel_attributes>Fill report fields</panel_attributes>
+    <panel_attributes>Generate
+teacher report</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>800</x>
-      <y>480</y>
-      <w>370</w>
-      <h>100</h>
+      <x>560</x>
+      <y>360</y>
+      <w>490</w>
+      <h>250</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>350.0;10.0;10.0;80.0</additional_attributes>
+    <additional_attributes>10.0;10.0;470.0;230.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>750</x>
-      <y>290</y>
-      <w>420</w>
-      <h>220</h>
+      <x>560</x>
+      <y>360</y>
+      <w>460</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>400.0;200.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;440.0;40.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>970</x>
-      <y>480</y>
-      <w>200</w>
-      <h>200</h>
+      <x>560</x>
+      <y>360</y>
+      <w>530</w>
+      <h>320</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>180.0;10.0;10.0;180.0</additional_attributes>
+    <additional_attributes>10.0;10.0;510.0;300.0</additional_attributes>
   </element>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>530</x>
-      <y>120</y>
-      <w>500</w>
-      <h>730</h>
+      <x>430</x>
+      <y>600</y>
+      <w>290</w>
+      <h>110</h>
     </coordinates>
-    <panel_attributes>Report System
+    <panel_attributes>User Management
 halign=left</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>680</x>
-      <y>520</y>
+      <x>1020</x>
+      <y>580</y>
       <w>150</w>
       <h>50</h>
     </coordinates>
@@ -138,45 +126,21 @@ halign=left</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLUseCase</id>
-    <coordinates>
-      <x>590</x>
-      <y>740</y>
-      <w>180</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>Edit scientific
-work theme</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
-      <x>700</x>
-      <y>680</y>
-      <w>170</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>lt=.&gt;
-&lt;&lt;include&gt;&gt;</panel_attributes>
-    <additional_attributes>10.0;60.0;150.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>780</x>
-      <y>460</y>
-      <w>390</w>
-      <h>50</h>
+      <x>560</x>
+      <y>360</y>
+      <w>240</w>
+      <h>300</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>370.0;30.0;10.0;20.0</additional_attributes>
+    <additional_attributes>10.0;10.0;220.0;280.0</additional_attributes>
   </element>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>670</x>
-      <y>360</y>
+      <x>1000</x>
+      <y>450</y>
       <w>140</w>
       <h>50</h>
     </coordinates>
@@ -187,23 +151,58 @@ teacher report</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>800</x>
-      <y>380</y>
-      <w>370</w>
+      <x>560</x>
+      <y>360</y>
+      <w>460</w>
       <h>130</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>350.0;110.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;440.0;110.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>720</x>
-      <y>210</y>
-      <w>450</w>
+      <x>560</x>
+      <y>320</y>
+      <w>440</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;50.0;420.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>960</x>
+      <y>240</y>
+      <w>220</w>
+      <h>290</h>
+    </coordinates>
+    <panel_attributes>Report Management
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>360</y>
+      <w>130</w>
       <h>300</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>430.0;280.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;110.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>760</x>
+      <y>570</y>
+      <w>420</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>Publication Management
+halign=left</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
