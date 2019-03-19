@@ -90,7 +90,7 @@ if [ -d "docs/html" ] && [ -f "docs/html/index.html" ]; then
     # stayed the same and will only update the changed files.
 		git add --all
 
-		if ! git diff --exit-code --cached; then
+		if ! git diff --exit-code --cached 2>&1 1>/dev/null; then
 			# Commit the added files with a title and description containing the Travis CI
 			# build number and the GitHub commit reference that issued this build.
 			git commit -m "Deploy code docs to GitHub Pages Travis build: ${TRAVIS_BUILD_NUMBER}" -m "Commit: ${TRAVIS_COMMIT}"
