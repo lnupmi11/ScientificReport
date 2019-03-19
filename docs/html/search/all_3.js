@@ -1,11 +1,5 @@
 var searchData=
 [
-  ['addreportbase',['AddReportBase',['../a00001.html',1,'ScientificReport::Data::Migrations']]],
-  ['applicationdbcontext',['ApplicationDbContext',['../a00002.html',1,'ScientificReport::Data']]],
-  ['applicationdbcontext',['ApplicationDbContext',['../a00002.html#a1b69a7ca399e4965e30d4094625239b0',1,'ScientificReport::Data::ApplicationDbContext']]],
-  ['applicationdbcontext_2ecs',['ApplicationDbContext.cs',['../a00028.html',1,'']]],
-  ['applicationdbcontextmodelsnapshot',['ApplicationDbContextModelSnapshot',['../a00003.html',1,'ScientificReport::Data::Migrations']]],
-  ['applicationdbcontextmodelsnapshot_2ecs',['ApplicationDbContextModelSnapshot.cs',['../a00033.html',1,'']]],
-  ['areas_5fidentity_5fpages_5f_5fviewstart',['Areas_Identity_Pages__ViewStart',['../a00004.html',1,'AspNetCore']]],
-  ['aspnetcore',['AspNetCore',['../a00057.html',1,'']]]
+  ['buildmodel',['BuildModel',['../a00003.html#a481f3f82e3b404de4053ccb3323d18a3',1,'ScientificReport::Data::Migrations::ApplicationDbContextModelSnapshot']]],
+  ['buildtargetmodel',['BuildTargetModel',['../a00004.html#aa6d9a7cf504d219280d58656eba4dde9',1,'ScientificReport.Data.Migrations.CreateIdentitySchema.BuildTargetModel()'],['../a00001.html#ac42f1a4b67012174ac0b6a44c021429a',1,'ScientificReport.Data.Migrations.AddReportBase.BuildTargetModel()']]]
 ];
