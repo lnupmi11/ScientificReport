@@ -58,7 +58,7 @@ git config user.email "travis@travis-ci.org"
 rm -rf *
 
 # restore back Jekyll config
-git checkout -- _config.yml
+git checkout -- _config.yml || true
 
 # Need to create a .nojekyll file to allow filenames starting with an underscore
 # to be seen on the gh-pages site. Therefore creating an empty .nojekyll file.
