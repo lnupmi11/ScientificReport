@@ -1,6 +1,7 @@
 language: csharp
 mono: none
-dotnet: 2.1.4
+dotnet: 2.2
+dist: xenial
 branches:
   except:
     - gh-pages
@@ -19,7 +20,6 @@ install:
 script:
 - dotnet build
 - dotnet test ${GH_REPO_NAME}.Test
-- cd $TRAVIS_BUILD_DIR
 - ./deploy/generate_docs.sh
 #  jobs:
 #    include:
