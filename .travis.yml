@@ -1,0 +1,35 @@
+language: csharp
+mono: none
+dotnet: 2.2
+dist: xenial
+branches:
+  except:
+    - gh-pages
+env:
+  global:
+    - GH_REPO_NAME: ScientificReport
+    - DOXYFILE: $TRAVIS_BUILD_DIR/Doxyfile
+    - GH_REPO_REF: github.com/lnupmi11/${GH_REPO_NAME}.git
+addons:
+  apt:
+    packages:
+      - doxygen
+      - graphviz
+cache:
+  directories:
+    - $HOME/.nuget/packages
+install:
+- dotnet restore
+jobs:
+  include:
+    - stage: build
+      script: 
+        - dotnet build
+    - stage: test
+      script:
+      - dotnet test ${GH_REPO_NAME}.Test
+    - stage: docs
+      if: branch IN (master)
+      script:
+      - cd $TRAVIS_BUILD_DIR
+      - ./deploy/generate_docs.sh
