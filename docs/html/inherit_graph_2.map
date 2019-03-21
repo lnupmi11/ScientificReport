@@ -1,5 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$a00001.html" title="ScientificReport.Data.Migrations.\lAddReportBase" alt="" coords="135,5,364,47"/>
-<area shape="rect" id="node3" href="$a00002.html" title="ScientificReport.Data.Migrations.\lAddUserProfileBase" alt="" coords="135,71,364,112"/>
-<area shape="rect" id="node4" href="$a00005.html" title="ScientificReport.Data.Migrations.\lCreateIdentitySchema" alt="" coords="135,136,364,177"/>
+<area shape="rect" id="node2" href="$a00001.html" title="ScientificReport.Data.Migrations.\lAddedDepartment" alt="" coords="135,5,364,47"/>
+<area shape="rect" id="node3" href="$a00002.html" title="ScientificReport.Data.Migrations.\lAddReportBase" alt="" coords="135,71,364,112"/>
+<area shape="rect" id="node4" href="$a00003.html" title="ScientificReport.Data.Migrations.\lAddScientificWork" alt="" coords="135,136,364,177"/>
+<area shape="rect" id="node5" href="$a00004.html" title="ScientificReport.Data.Migrations.\lAddUserProfileBase" alt="" coords="135,201,364,243"/>
+<area shape="rect" id="node6" href="$a00007.html" title="ScientificReport.Data.Migrations.\lCreateIdentitySchema" alt="" coords="135,267,364,308"/>
 </map>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['program',['Program',['../a00008.html',1,'ScientificReport']]]
+  ['homecontroller',['HomeController',['../a00011.html',1,'ScientificReport::Controllers']]]
 ];

@@ -1,13 +1,19 @@
 var searchData=
 [
-  ['controllers',['Controllers',['../a00049.html',1,'ScientificReport']]],
-  ['data',['Data',['../a00050.html',1,'ScientificReport']]],
-  ['migrations',['Migrations',['../a00051.html',1,'ScientificReport::Data']]],
-  ['models',['Models',['../a00052.html',1,'ScientificReport']]],
-  ['scientificreport',['ScientificReport',['../a00048.html',1,'']]],
-  ['seeddata_2ecs',['SeedData.cs',['../a00027.html',1,'']]],
-  ['showrequestid',['ShowRequestId',['../a00006.html#aa3808ca7668c408fc1fd0e396d0405fa',1,'ScientificReport::Models::ErrorViewModel']]],
-  ['startup',['Startup',['../a00011.html',1,'ScientificReport']]],
-  ['startup',['Startup',['../a00011.html#a63d2f00d6a6c75ca48d391012d8ae7e0',1,'ScientificReport::Startup']]],
-  ['startup_2ecs',['Startup.cs',['../a00030.html',1,'']]]
+  ['controllers',['Controllers',['../a00063.html',1,'ScientificReport']]],
+  ['data',['Data',['../a00064.html',1,'ScientificReport']]],
+  ['migrations',['Migrations',['../a00065.html',1,'ScientificReport::Data']]],
+  ['models',['Models',['../a00066.html',1,'ScientificReport']]],
+  ['scientificreport',['ScientificReport',['../a00062.html',1,'']]],
+  ['scientificwork',['ScientificWork',['../a00015.html',1,'ScientificReport::Models']]],
+  ['scientificwork',['ScientificWork',['../a00005.html#a134cebfd0bc22399c6492478a0191b1f',1,'ScientificReport::Data::ApplicationDbContext']]],
+  ['scientificwork_2ecs',['ScientificWork.cs',['../a00040.html',1,'']]],
+  ['scientificworkcontroller',['ScientificWorkController',['../a00016.html',1,'ScientificReport::Controllers']]],
+  ['scientificworkcontroller',['ScientificWorkController',['../a00016.html#a89f1b625b5e643812bc200f39606288b',1,'ScientificReport::Controllers::ScientificWorkController']]],
+  ['scientificworkcontroller_2ecs',['ScientificWorkController.cs',['../a00023.html',1,'']]],
+  ['seeddata_2ecs',['SeedData.cs',['../a00041.html',1,'']]],
+  ['showrequestid',['ShowRequestId',['../a00010.html#aa3808ca7668c408fc1fd0e396d0405fa',1,'ScientificReport::Models::ErrorViewModel']]],
+  ['startup',['Startup',['../a00017.html',1,'ScientificReport']]],
+  ['startup',['Startup',['../a00017.html#a63d2f00d6a6c75ca48d391012d8ae7e0',1,'ScientificReport::Startup']]],
+  ['startup_2ecs',['Startup.cs',['../a00044.html',1,'']]]
 ];

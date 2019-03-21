@@ -1,6 +1,8 @@
 var a00005 =
 [
-    [ "BuildTargetModel", "a00005.html#aa6d9a7cf504d219280d58656eba4dde9", null ],
-    [ "Down", "a00005.html#a2c655f780004a6a9d7fd200cc12c097c", null ],
-    [ "Up", "a00005.html#af94a77a8c10fbb1aea1e45c572715454", null ]
+    [ "ApplicationDbContext", "a00005.html#a1b69a7ca399e4965e30d4094625239b0", null ],
+    [ "Departments", "a00005.html#a7cb90a24eb22b3f0b6eaa48fb4cd8092", null ],
+    [ "Reports", "a00005.html#a8eea9d4a6c84185e4921662dd5ccabbf", null ],
+    [ "ScientificWork", "a00005.html#a134cebfd0bc22399c6492478a0191b1f", null ],
+    [ "UserProfile", "a00005.html#a59c986b9340625d7507c9ad960c24d5d", null ]
 ];

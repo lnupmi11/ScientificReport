@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['homecontroller',['HomeController',['../a00007.html',1,'ScientificReport::Controllers']]]
+  ['errorviewmodel',['ErrorViewModel',['../a00010.html',1,'ScientificReport::Models']]]
 ];
