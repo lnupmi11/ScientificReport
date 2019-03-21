@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['title',['Title',['../a00008.html#a5835ebecc6aa719c2982cbea87bd9ea7',1,'ScientificReport::Models::Report']]]
+  ['lastname',['LastName',['../a00012.html#a561398a4e016c781e3a3998a2d48d86e',1,'ScientificReport::Models::UserProfile']]]
 ];
