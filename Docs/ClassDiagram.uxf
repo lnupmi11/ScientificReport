@@ -1,35 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>7</zoom_level>
+  <zoom_level>6</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>924</x>
-      <y>63</y>
-      <w>217</w>
-      <h>175</h>
+      <x>1110</x>
+      <y>36</y>
+      <w>294</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>&lt;&lt;TeacherReport&gt;&gt;
-Package::DataAccess.Entities
 --
-_+DateCreated: Nullable&lt;System.DateTime&gt;_
-_+DateEdited: Nullable&lt;System.DateTime&gt;_
-_+Publication: Nullable&lt;Publication&gt;_
-_+User: User_</panel_attributes>
+_+DateCreated: DateTime_
+_+DateEdited: DateTime_
+_+Publications: ICollection&lt;Publication&gt;_
+_+Teacher: User_
+_+ScientificWorks: ICollection&lt;ScientificWork&gt;_
+_+Grants: ICollection&lt;Grant&gt;_
+_+ScientificInterships: ICollection&lt;ScientificIntership&gt;_
+_+ScientificGuidances: ICollection&lt;ScientificGuidance&gt;_
+_+StudentGuidance: ICollection&lt;StudentGuidance&gt;_
+_+ReportThesis: ICollection&lt;ReportThesis&gt;_
+_+Papers: ICollection&lt;Paper&gt;_
+_+Patents: ICollection&lt;Patent&gt;_
+_+Reviews: ICollection&lt;Review&gt;_
+_+ParticipationInScientificSittings: ICollection&lt;ParticipationInScientificSittings&gt;_
+_+Other: ICollection&lt;string&gt;_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>14</x>
-      <y>287</y>
-      <w>210</w>
-      <h>294</h>
+      <x>336</x>
+      <y>252</y>
+      <w>180</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>&lt;&lt;User&gt;&gt;
-Package::DataAccess.Entities
 --
-_+Id: int_
 _+Type: int_
 _+FirstName: string_
 _+MiddleName: string_
@@ -38,15 +46,9 @@ _+Email: string_
 _+BirthYear: int_
 _+GraduationYear: int_
 _+ScientificDegree: string_
-
-TODO translate:
-_+РікЗахистуНауковогоСтупеня: int_
-
+_+YearDegreeGained: int_
 _+AcademicStatus: string_
-
-TODO translate:
-_+РікПрисвоєння: int_
-
+_+YearDegreeAssigned: int_
 _+Department: Department_
 _+Position: string_
 _+IsApproved: bool_</panel_attributes>
@@ -55,78 +57,43 @@ _+IsApproved: bool_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>98</x>
-      <y>63</y>
-      <w>840</w>
-      <h>238</h>
+      <x>408</x>
+      <y>42</y>
+      <w>714</w>
+      <h>222</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;320.0;10.0;10.0;1180.0;10.0</additional_attributes>
+    <additional_attributes>10.0;350.0;10.0;10.0;1170.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>924</x>
-      <y>308</y>
-      <w>217</w>
-      <h>105</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;DepartmentReport&gt;&gt;
-Package::DataAccess.Entities
---
-_+DateCreated: Nullable&lt;System.DateTime&gt;_
-_+DateEdited: Nullable&lt;System.DateTime&gt;_
-_+Publication: Nullable&lt;Publication&gt;_
-_+User: User_</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>910</x>
-      <y>448</y>
-      <w>245</w>
-      <h>98</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;FacultyReport&gt;&gt;
-Package::DataAccess.Entities
---
-_+DateCreated: Nullable&lt;System.DateTime&gt;_
-_+DateEdited: Nullable&lt;System.DateTime&gt;_
-_+Publication: Nullable&lt;Publication&gt;_
-_+User: User_</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>441</x>
-      <y>567</y>
-      <w>217</w>
-      <h>119</h>
+      <x>702</x>
+      <y>474</y>
+      <w>186</w>
+      <h>102</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Publication&gt;&gt;
-Package::DataAccess.Entities
 --
 _+Title: string_
 _+Authors: ICollection&lt;User&gt;_
 _+City: string_
-_+Year (Date?): DateTime/int_
+_+Year: int_
 _+Volume: int_
 _+Type: string_
-_+Recommended: boolean_</panel_attributes>
+_+IsFinishedToPrint: boolean_
+_+IsRecommendedToPrint: boolean_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>21</x>
-      <y>630</y>
-      <w>217</w>
-      <h>63</h>
+      <x>342</x>
+      <y>528</y>
+      <w>186</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Department&gt;&gt;
-Package::DataAccess.Entities
 --
 _+Title: string_</panel_attributes>
     <additional_attributes/>
@@ -134,10 +101,10 @@ _+Title: string_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>231</x>
-      <y>112</y>
-      <w>224</w>
-      <h>560</h>
+      <x>522</x>
+      <y>84</y>
+      <w>192</w>
+      <h>480</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;780.0;60.0;780.0;60.0;10.0;300.0;10.0</additional_attributes>
@@ -145,34 +112,30 @@ _+Title: string_</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>441</x>
-      <y>84</y>
-      <w>217</w>
-      <h>105</h>
+      <x>702</x>
+      <y>60</y>
+      <w>186</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>&lt;&lt;ScientificWork&gt;&gt;
-Package::DataAccess.Entities
 --
 _+Cypher: string_
 _+Category: string_
 _+Theme: string_
 _+Content: string_
 _+Department: Department_
-_+Participators: ICollection&lt;User&gt;_
-
-TODO: add more fields if required</panel_attributes>
+_+Participators: ICollection&lt;User&gt;_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>441</x>
-      <y>196</y>
-      <w>217</w>
-      <h>56</h>
+      <x>702</x>
+      <y>156</y>
+      <w>186</w>
+      <h>48</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;Grants&gt;&gt;
-Package::DataAccess.Entities
+    <panel_attributes>&lt;&lt;Grant&gt;&gt;
 --
 _+Authors: ICollection&lt;User&gt;_</panel_attributes>
     <additional_attributes/>
@@ -180,24 +143,23 @@ _+Authors: ICollection&lt;User&gt;_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>651</x>
-      <y>77</y>
-      <w>287</w>
-      <h>77</h>
+      <x>882</x>
+      <y>54</y>
+      <w>240</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>390.0;10.0;120.0;10.0;120.0;90.0;10.0;90.0</additional_attributes>
+    <additional_attributes>380.0;10.0;120.0;10.0;120.0;90.0;10.0;90.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>441</x>
-      <y>497</y>
-      <w>217</w>
-      <h>56</h>
+      <x>702</x>
+      <y>414</y>
+      <w>186</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>&lt;&lt;StudentGuidance&gt;&gt;
-Package::DataAccess.Entities
 --
 _+Authors: ICollection&lt;User&gt;_</panel_attributes>
     <additional_attributes/>
@@ -205,34 +167,30 @@ _+Authors: ICollection&lt;User&gt;_</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>427</x>
-      <y>343</y>
-      <w>252</w>
-      <h>133</h>
+      <x>690</x>
+      <y>282</y>
+      <w>216</w>
+      <h>114</h>
     </coordinates>
     <panel_attributes>&lt;&lt;ScientificGuidance&gt;&gt;
-Package::DataAccess.Entities
 --
-_+GuideName: User_
+_+Guide: User_
 _+PostgraduateName: string_
 _+Dissertation: string_
 _+Specialty: string_
-
-TODO: translate
-_+дата захистy : DateTime_
-_+рік закінчення аспірантури, докторантурu: DateTime_</panel_attributes>
+_+DateDegreeGained: Date_
+_+GraduationYear: int_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>441</x>
-      <y>266</y>
-      <w>217</w>
-      <h>56</h>
+      <x>702</x>
+      <y>216</y>
+      <w>186</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>&lt;&lt;ScientificInternship&gt;&gt;
-Package::DataAccess.Entities
 --
 _+Authors: ICollection&lt;User&gt;_</panel_attributes>
     <additional_attributes/>
@@ -240,13 +198,12 @@ _+Authors: ICollection&lt;User&gt;_</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>441</x>
-      <y>805</y>
-      <w>217</w>
-      <h>56</h>
+      <x>702</x>
+      <y>678</y>
+      <w>186</w>
+      <h>48</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;Papers&gt;&gt;
-Package::DataAccess.Entities
+    <panel_attributes>&lt;&lt;Paper&gt;&gt;
 --
 _+Authors: ICollection&lt;User&gt;_</panel_attributes>
     <additional_attributes/>
@@ -254,77 +211,74 @@ _+Authors: ICollection&lt;User&gt;_</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>441</x>
-      <y>700</y>
-      <w>217</w>
-      <h>91</h>
+      <x>702</x>
+      <y>588</y>
+      <w>186</w>
+      <h>78</h>
     </coordinates>
     <panel_attributes>&lt;&lt;ReportThesis&gt;&gt;
-Package::DataAccess.Entities
 --
 _+Authors: ICollection&lt;User&gt;_
 _+Thesis: string_
-_+ConferenceName: string_
-_+ConferenceDate: DateTime_
-
-
-TODO: add more fields if required</panel_attributes>
+_+Conference: Conference_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>441</x>
-      <y>875</y>
-      <w>217</w>
-      <h>105</h>
+      <x>702</x>
+      <y>738</y>
+      <w>186</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Patent&gt;&gt;
-Package::DataAccess.Entities
 --
 _+Authors: ICollection&lt;User&gt;_
 _+Name: string_
-_+Number: int/string    (?)_
+_+Number: int_
 _+Date: DateTime_
-_+Applicant: ICollection&lt;User&gt;_
+_+Applicants: ICollection&lt;User&gt;_
 _+Type: string_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>441</x>
-      <y>994</y>
-      <w>217</w>
-      <h>56</h>
+      <x>702</x>
+      <y>840</y>
+      <w>186</w>
+      <h>78</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Review&gt;&gt;
-Package::DataAccess.Entities
 --
-_+Authors: ICollection&lt;User&gt;_</panel_attributes>
+_+WorkType: string_
+_+WorkTitle: string_
+_+WorkAuthors: ICollection&lt;User&gt;_
+_+DateWorkPublished: int_
+_+Reviewers: ICollection&lt;User&gt;_
+_+DateOfReview: int_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>441</x>
-      <y>1064</y>
-      <w>217</w>
-      <h>56</h>
+      <x>702</x>
+      <y>930</y>
+      <w>186</w>
+      <h>48</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;(9) ParticipationInScientificSittings&gt;&gt;
-Package::DataAccess.Entities
+    <panel_attributes>&lt;&lt;ParticipationInScientificSittings&gt;&gt;
 --
-_+Authors: ICollection&lt;User&gt;_</panel_attributes>
+_+Participators: ICollection&lt;User&gt;_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>217</x>
-      <y>133</y>
-      <w>238</w>
-      <h>224</h>
+      <x>510</x>
+      <y>102</y>
+      <w>204</w>
+      <h>192</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>320.0;10.0;180.0;10.0;180.0;300.0;10.0;300.0</additional_attributes>
@@ -332,131 +286,131 @@ _+Authors: ICollection&lt;User&gt;_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>651</x>
-      <y>217</y>
-      <w>287</w>
-      <h>896</h>
+      <x>882</x>
+      <y>174</y>
+      <w>240</w>
+      <h>798</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>390.0;10.0;320.0;10.0;320.0;1260.0;10.0;1260.0</additional_attributes>
+    <additional_attributes>380.0;10.0;320.0;10.0;320.0;1310.0;10.0;1310.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>98</x>
-      <y>574</y>
-      <w>21</w>
-      <h>70</h>
+      <x>408</x>
+      <y>414</y>
+      <w>18</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;190.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>651</x>
-      <y>91</y>
-      <w>287</w>
-      <h>154</h>
+      <x>882</x>
+      <y>66</y>
+      <w>240</w>
+      <h>132</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>390.0;10.0;140.0;10.0;140.0;200.0;10.0;200.0</additional_attributes>
+    <additional_attributes>380.0;10.0;140.0;10.0;140.0;200.0;10.0;200.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>651</x>
-      <y>105</y>
-      <w>287</w>
-      <h>210</h>
+      <x>882</x>
+      <y>78</y>
+      <w>240</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>390.0;10.0;160.0;10.0;160.0;280.0;10.0;280.0</additional_attributes>
+    <additional_attributes>380.0;10.0;160.0;10.0;160.0;280.0;10.0;280.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>672</x>
-      <y>119</y>
-      <w>266</w>
-      <h>280</h>
+      <x>900</x>
+      <y>90</y>
+      <w>222</w>
+      <h>240</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>360.0;10.0;150.0;10.0;150.0;380.0;10.0;380.0</additional_attributes>
+    <additional_attributes>350.0;10.0;150.0;10.0;150.0;380.0;10.0;380.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>651</x>
-      <y>133</y>
-      <w>287</w>
-      <h>413</h>
+      <x>882</x>
+      <y>102</y>
+      <w>240</w>
+      <h>354</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>390.0;10.0;200.0;10.0;200.0;570.0;10.0;570.0</additional_attributes>
+    <additional_attributes>380.0;10.0;200.0;10.0;200.0;570.0;10.0;570.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>651</x>
-      <y>147</y>
-      <w>287</w>
-      <h>504</h>
+      <x>882</x>
+      <y>114</y>
+      <w>240</w>
+      <h>432</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>390.0;10.0;220.0;10.0;220.0;700.0;10.0;700.0</additional_attributes>
+    <additional_attributes>380.0;10.0;220.0;10.0;220.0;700.0;10.0;700.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>651</x>
-      <y>161</y>
-      <w>287</w>
-      <h>602</h>
+      <x>882</x>
+      <y>126</y>
+      <w>240</w>
+      <h>516</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>390.0;10.0;240.0;10.0;240.0;840.0;10.0;840.0</additional_attributes>
+    <additional_attributes>380.0;10.0;240.0;10.0;240.0;840.0;10.0;840.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>651</x>
-      <y>175</y>
-      <w>287</w>
-      <h>686</h>
+      <x>882</x>
+      <y>138</y>
+      <w>240</w>
+      <h>588</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>390.0;10.0;260.0;10.0;260.0;960.0;10.0;960.0</additional_attributes>
+    <additional_attributes>380.0;10.0;260.0;10.0;260.0;960.0;10.0;960.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>651</x>
-      <y>189</y>
-      <w>287</w>
-      <h>756</h>
+      <x>882</x>
+      <y>150</y>
+      <w>240</w>
+      <h>648</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>390.0;10.0;280.0;10.0;280.0;1060.0;10.0;1060.0</additional_attributes>
+    <additional_attributes>380.0;10.0;280.0;10.0;280.0;1060.0;10.0;1060.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>651</x>
-      <y>203</y>
-      <w>287</w>
-      <h>840</h>
+      <x>882</x>
+      <y>162</y>
+      <w>240</w>
+      <h>720</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>390.0;10.0;300.0;10.0;300.0;1180.0;10.0;1180.0</additional_attributes>
+    <additional_attributes>380.0;10.0;300.0;10.0;300.0;1180.0;10.0;1180.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>217</x>
-      <y>224</y>
-      <w>238</w>
-      <h>147</h>
+      <x>510</x>
+      <y>180</y>
+      <w>204</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>320.0;10.0;200.0;10.0;200.0;190.0;10.0;190.0</additional_attributes>
@@ -464,10 +418,10 @@ _+Authors: ICollection&lt;User&gt;_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>217</x>
-      <y>301</y>
-      <w>238</w>
-      <h>84</h>
+      <x>510</x>
+      <y>246</y>
+      <w>204</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>320.0;10.0;220.0;10.0;220.0;100.0;10.0;100.0</additional_attributes>
@@ -475,10 +429,10 @@ _+Authors: ICollection&lt;User&gt;_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>217</x>
-      <y>378</y>
-      <w>224</w>
-      <h>21</h>
+      <x>510</x>
+      <y>312</y>
+      <w>192</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>300.0;10.0;10.0;10.0</additional_attributes>
@@ -486,10 +440,10 @@ _+Authors: ICollection&lt;User&gt;_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>217</x>
-      <y>392</y>
-      <w>238</w>
-      <h>161</h>
+      <x>510</x>
+      <y>324</y>
+      <w>204</w>
+      <h>138</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>320.0;210.0;220.0;210.0;220.0;10.0;10.0;10.0</additional_attributes>
@@ -497,10 +451,10 @@ _+Authors: ICollection&lt;User&gt;_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>217</x>
-      <y>406</y>
-      <w>238</w>
-      <h>245</h>
+      <x>510</x>
+      <y>336</y>
+      <w>204</w>
+      <h>210</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>320.0;330.0;200.0;330.0;200.0;10.0;10.0;10.0</additional_attributes>
@@ -508,10 +462,10 @@ _+Authors: ICollection&lt;User&gt;_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>217</x>
-      <y>420</y>
-      <w>238</w>
-      <h>343</h>
+      <x>510</x>
+      <y>348</y>
+      <w>204</w>
+      <h>294</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>320.0;470.0;180.0;470.0;180.0;10.0;10.0;10.0</additional_attributes>
@@ -519,21 +473,21 @@ _+Authors: ICollection&lt;User&gt;_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>217</x>
-      <y>434</y>
-      <w>231</w>
-      <h>420</h>
+      <x>510</x>
+      <y>360</y>
+      <w>204</w>
+      <h>360</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>310.0;580.0;160.0;580.0;160.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>320.0;580.0;160.0;580.0;160.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>217</x>
-      <y>448</y>
-      <w>238</w>
-      <h>490</h>
+      <x>510</x>
+      <y>372</y>
+      <w>204</w>
+      <h>420</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>320.0;680.0;140.0;680.0;140.0;10.0;10.0;10.0</additional_attributes>
@@ -541,10 +495,10 @@ _+Authors: ICollection&lt;User&gt;_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>217</x>
-      <y>462</y>
-      <w>238</w>
-      <h>581</h>
+      <x>510</x>
+      <y>384</y>
+      <w>204</w>
+      <h>498</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>320.0;810.0;120.0;810.0;120.0;10.0;10.0;10.0</additional_attributes>
@@ -552,12 +506,103 @@ _+Authors: ICollection&lt;User&gt;_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>217</x>
-      <y>476</y>
-      <w>238</w>
-      <h>637</h>
+      <x>510</x>
+      <y>396</y>
+      <w>204</w>
+      <h>576</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>320.0;890.0;100.0;890.0;100.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>320.0;940.0;100.0;940.0;100.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1164</x>
+      <y>252</y>
+      <w>186</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;DepartmentReport&gt;&gt;
+--
+_+DateCreated: DateTime_
+_+DateEdited: DateTime_
+_+HeadOfDepartment: User_
+_+TeacherReports: ICollection&lt;TeacherReports&gt;_
+_+Conferences: ICollection&lt;Conference&gt;_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1248</x>
+      <y>198</y>
+      <w>18</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1350</x>
+      <y>396</y>
+      <w>186</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;FacultyReport&gt;&gt;
+--
+_+DateCreated: DateTime_
+_+DateEdited: DateTime_
+_+Administrator: User_
+_+DepartmentReports: ICollection&lt;DepartmentReports&gt;_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1344</x>
+      <y>276</y>
+      <w>108</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>160.0;200.0;160.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1128</x>
+      <y>624</y>
+      <w>186</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Conference&gt;&gt;
+--
+_+Topic: string_
+_+Date: Date_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>882</x>
+      <y>648</y>
+      <w>258</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>410.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1248</x>
+      <y>318</y>
+      <w>18</w>
+      <h>318</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;510.0</additional_attributes>
   </element>
 </diagram>

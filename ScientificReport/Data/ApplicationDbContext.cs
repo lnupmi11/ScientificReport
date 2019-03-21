@@ -14,5 +14,6 @@ namespace ScientificReport.Data
     public DbSet<Report> Reports { get; set; }
     public DbSet<Department> Departments { get; set; }
     public DbSet<ScientificWork> ScientificWork { get; set; }
+    public DbSet<UserProfile> UserProfile { get; set; }
   }
 }
