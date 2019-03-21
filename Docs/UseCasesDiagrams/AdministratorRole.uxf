@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>12</zoom_level>
+  <zoom_level>10</zoom_level>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>780</x>
-      <y>528</y>
-      <w>72</w>
-      <h>132</h>
+      <x>790</x>
+      <y>630</y>
+      <w>100</w>
+      <h>110</h>
     </coordinates>
-    <panel_attributes>Dean</panel_attributes>
+    <panel_attributes>Administrator</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>456</x>
-      <y>312</y>
-      <w>144</w>
-      <h>84</h>
+      <x>540</x>
+      <y>320</y>
+      <w>120</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>Approve
 registration</panel_attributes>
@@ -27,10 +27,10 @@ registration</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>948</x>
-      <y>492</y>
-      <w>168</w>
-      <h>84</h>
+      <x>920</x>
+      <y>420</y>
+      <w>140</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>Generate
 faculty
@@ -40,21 +40,21 @@ report</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>840</x>
-      <y>516</y>
-      <w>132</w>
-      <h>84</h>
+      <x>830</x>
+      <y>440</y>
+      <w>110</w>
+      <h>200</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>90.0;10.0;10.0;50.0</additional_attributes>
+    <additional_attributes>90.0;10.0;10.0;180.0</additional_attributes>
   </element>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>552</x>
-      <y>468</y>
-      <w>144</w>
-      <h>48</h>
+      <x>620</x>
+      <y>450</y>
+      <w>120</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Edit user</panel_attributes>
     <additional_attributes/>
@@ -62,10 +62,10 @@ report</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>516</x>
-      <y>384</y>
-      <w>120</w>
-      <h>108</h>
+      <x>590</x>
+      <y>380</y>
+      <w>100</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 &lt;&lt;include&gt;&gt;</panel_attributes>
@@ -74,34 +74,22 @@ report</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>384</x>
-      <y>240</y>
-      <w>348</w>
-      <h>480</h>
+      <x>480</x>
+      <y>280</y>
+      <w>290</w>
+      <h>360</h>
     </coordinates>
-    <panel_attributes>User System
-halign=left</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLGeneric</id>
-    <coordinates>
-      <x>912</x>
-      <y>420</y>
-      <w>252</w>
-      <h>336</h>
-    </coordinates>
-    <panel_attributes>Report System
+    <panel_attributes>User Management
 halign=left</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>444</x>
-      <y>600</y>
-      <w>132</w>
-      <h>72</h>
+      <x>530</x>
+      <y>560</y>
+      <w>110</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>Set user
 role</panel_attributes>
@@ -110,10 +98,10 @@ role</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>492</x>
-      <y>504</y>
-      <w>132</w>
-      <h>120</h>
+      <x>570</x>
+      <y>480</y>
+      <w>110</w>
+      <h>100</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 &lt;&lt;include&gt;&gt;</panel_attributes>
@@ -122,21 +110,21 @@ role</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>636</x>
-      <y>504</y>
-      <w>168</w>
-      <h>84</h>
+      <x>690</x>
+      <y>480</y>
+      <w>170</w>
+      <h>160</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>120.0;50.0;10.0;10.0</additional_attributes>
+    <additional_attributes>150.0;140.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>948</x>
-      <y>624</y>
-      <w>168</w>
-      <h>84</h>
+      <x>920</x>
+      <y>500</y>
+      <w>140</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>Edit
 faculty report</panel_attributes>
@@ -145,12 +133,24 @@ faculty report</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>840</x>
-      <y>564</y>
-      <w>132</w>
+      <x>830</x>
+      <y>520</y>
+      <w>110</w>
       <h>120</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>90.0;80.0;10.0;10.0</additional_attributes>
+    <additional_attributes>90.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>880</x>
+      <y>370</y>
+      <w>220</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>Report Management
+halign=left</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
