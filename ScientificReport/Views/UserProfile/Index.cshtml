@@ -24,6 +24,30 @@
             <th>
                 @Html.DisplayNameFor(model => model.LastName)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BirthYear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GraduationYear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ScientificDegree)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YearDegreeGained)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AcademicStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YearDegreeAssigned)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Position)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsApproved)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -42,6 +66,30 @@
             <td>
                 @Html.DisplayFor(modelItem => item.LastName)
             </td>
+            <th>
+                @Html.DisplayFor(modelItem => item.BirthYear)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.GraduationYear)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.ScientificDegree)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.YearDegreeGained)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.AcademicStatus)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.YearDegreeAssigned)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.Position)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.IsApproved)
+            </th>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |

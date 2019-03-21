@@ -36,9 +36,10 @@ namespace ScientificReport
 					Configuration.GetConnectionString("DefaultConnection")));
 						
 			services
-				.AddDefaultIdentity<IdentityUser>()
+				.AddIdentity<UserProfile, IdentityRole<int>>()
 				.AddDefaultUI(UIFramework.Bootstrap4)
-				.AddEntityFrameworkStores<ApplicationDbContext>();
+				.AddEntityFrameworkStores<ApplicationDbContext>()
+				.AddDefaultTokenProviders();
 
 			services
 				.AddMvc()
