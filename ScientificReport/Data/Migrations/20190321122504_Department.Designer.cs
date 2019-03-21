@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ScientificReport.Data;
 
 namespace ScientificReport.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190321122504_Department")]
+    partial class AddedDepartment
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -205,28 +207,6 @@ namespace ScientificReport.Data.Migrations
                     b.ToTable("Reports");
                 });
 
-            modelBuilder.Entity("ScientificReport.Models.ScientificWork", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Category");
-
-                    b.Property<string>("Content");
-
-                    b.Property<string>("Cypher");
-
-                    b.Property<int?>("DepartmentId");
-
-                    b.Property<string>("Theme");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("DepartmentId");
-
-                    b.ToTable("ScientificWork");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole")
@@ -270,13 +250,6 @@ namespace ScientificReport.Data.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("ScientificReport.Models.ScientificWork", b =>
-                {
-                    b.HasOne("ScientificReport.Models.Department", "Department")
-                        .WithMany()
-                        .HasForeignKey("DepartmentId");
                 });
 #pragma warning restore 612, 618
         }
