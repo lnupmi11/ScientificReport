@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['lastname',['LastName',['../a00012.html#a561398a4e016c781e3a3998a2d48d86e',1,'ScientificReport::Models::UserProfile']]]
+  ['privacy',['Privacy',['../a00006.html#a246ab018cd8984cabbfaa3982b8a6a52',1,'ScientificReport::Controllers::HomeController']]],
+  ['program',['Program',['../a00007.html',1,'ScientificReport']]],
+  ['program_2ecs',['Program.cs',['../a00021.html',1,'']]]
 ];

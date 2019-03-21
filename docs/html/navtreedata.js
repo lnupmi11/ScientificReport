@@ -2,11 +2,7 @@ var NAVTREE =
 [
   [ "ScientificReport", "index.html", [
     [ "Packages", null, [
-      [ "Packages", "namespaces.html", "namespaces" ],
-      [ "Package Functions", "namespacemembers.html", [
-        [ "All", "namespacemembers.html", null ],
-        [ "Enumerations", "namespacemembers_enum.html", null ]
-      ] ]
+      [ "Packages", "namespaces.html", "namespaces" ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
