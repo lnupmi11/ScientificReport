@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['department',['Department',['../a00008.html',1,'ScientificReport::Models']]],
-  ['departmentcontroller',['DepartmentController',['../a00009.html',1,'ScientificReport::Controllers']]]
+  ['errorviewmodel',['ErrorViewModel',['../a00006.html',1,'ScientificReport::Models']]]
 ];

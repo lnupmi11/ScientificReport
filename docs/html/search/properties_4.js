@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lastname',['LastName',['../a00018.html#a561398a4e016c781e3a3998a2d48d86e',1,'ScientificReport::Models::UserProfile']]]
+  ['graduationyear',['GraduationYear',['../a00012.html#a5c0912b289b237a236b20d02c54e4899',1,'ScientificReport::Models::UserProfile']]]
 ];

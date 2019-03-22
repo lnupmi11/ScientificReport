@@ -1,19 +1,10 @@
 var searchData=
 [
-  ['controllers',['Controllers',['../a00063.html',1,'ScientificReport']]],
-  ['data',['Data',['../a00064.html',1,'ScientificReport']]],
-  ['migrations',['Migrations',['../a00065.html',1,'ScientificReport::Data']]],
-  ['models',['Models',['../a00066.html',1,'ScientificReport']]],
-  ['scientificreport',['ScientificReport',['../a00062.html',1,'']]],
-  ['scientificwork',['ScientificWork',['../a00015.html',1,'ScientificReport::Models']]],
-  ['scientificwork',['ScientificWork',['../a00005.html#a134cebfd0bc22399c6492478a0191b1f',1,'ScientificReport::Data::ApplicationDbContext']]],
-  ['scientificwork_2ecs',['ScientificWork.cs',['../a00040.html',1,'']]],
-  ['scientificworkcontroller',['ScientificWorkController',['../a00016.html',1,'ScientificReport::Controllers']]],
-  ['scientificworkcontroller',['ScientificWorkController',['../a00016.html#a89f1b625b5e643812bc200f39606288b',1,'ScientificReport::Controllers::ScientificWorkController']]],
-  ['scientificworkcontroller_2ecs',['ScientificWorkController.cs',['../a00023.html',1,'']]],
-  ['seeddata_2ecs',['SeedData.cs',['../a00041.html',1,'']]],
-  ['showrequestid',['ShowRequestId',['../a00010.html#aa3808ca7668c408fc1fd0e396d0405fa',1,'ScientificReport::Models::ErrorViewModel']]],
-  ['startup',['Startup',['../a00017.html',1,'ScientificReport']]],
-  ['startup',['Startup',['../a00017.html#a63d2f00d6a6c75ca48d391012d8ae7e0',1,'ScientificReport::Startup']]],
-  ['startup_2ecs',['Startup.cs',['../a00044.html',1,'']]]
+  ['report',['Report',['../a00009.html',1,'ScientificReport::Models']]],
+  ['report_2ecs',['Report.cs',['../a00026.html',1,'']]],
+  ['reportcontroller',['ReportController',['../a00010.html',1,'ScientificReport::Controllers']]],
+  ['reportcontroller',['ReportController',['../a00010.html#a579dd196e05745494abe21034094cc39',1,'ScientificReport::Controllers::ReportController']]],
+  ['reportcontroller_2ecs',['ReportController.cs',['../a00015.html',1,'']]],
+  ['reports',['Reports',['../a00003.html#a8eea9d4a6c84185e4921662dd5ccabbf',1,'ScientificReport::Data::ApplicationDbContext']]],
+  ['requestid',['RequestId',['../a00006.html#ab396a92df6f9f53546fd1d19338fa91f',1,'ScientificReport::Models::ErrorViewModel']]]
 ];

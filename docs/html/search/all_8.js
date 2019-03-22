@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['homecontroller',['HomeController',['../a00011.html',1,'ScientificReport::Controllers']]],
-  ['homecontroller_2ecs',['HomeController.cs',['../a00021.html',1,'']]]
+  ['graduationyear',['GraduationYear',['../a00012.html#a5c0912b289b237a236b20d02c54e4899',1,'ScientificReport::Models::UserProfile']]]
 ];

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['reports',['Reports',['../a00005.html#a8eea9d4a6c84185e4921662dd5ccabbf',1,'ScientificReport::Data::ApplicationDbContext']]],
-  ['requestid',['RequestId',['../a00010.html#ab396a92df6f9f53546fd1d19338fa91f',1,'ScientificReport::Models::ErrorViewModel']]]
+  ['lastname',['LastName',['../a00012.html#a561398a4e016c781e3a3998a2d48d86e',1,'ScientificReport::Models::UserProfile']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['scientificwork',['ScientificWork',['../a00005.html#a134cebfd0bc22399c6492478a0191b1f',1,'ScientificReport::Data::ApplicationDbContext']]]
+  ['middlename',['MiddleName',['../a00012.html#a01275ca3db09b45eb6d15059d6ebfc14',1,'ScientificReport::Models::UserProfile']]]
 ];

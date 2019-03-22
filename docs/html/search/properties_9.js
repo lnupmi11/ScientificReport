@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['user',['User',['../a00018.html#af54617d9b0ffa656cba2743cb9671b33',1,'ScientificReport::Models::UserProfile']]],
-  ['userprofile',['UserProfile',['../a00005.html#a59c986b9340625d7507c9ad960c24d5d',1,'ScientificReport::Data::ApplicationDbContext']]]
+  ['reports',['Reports',['../a00003.html#a8eea9d4a6c84185e4921662dd5ccabbf',1,'ScientificReport::Data::ApplicationDbContext']]],
+  ['requestid',['RequestId',['../a00006.html#ab396a92df6f9f53546fd1d19338fa91f',1,'ScientificReport::Models::ErrorViewModel']]]
 ];
