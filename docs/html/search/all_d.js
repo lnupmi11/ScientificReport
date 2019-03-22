@@ -1,7 +1,13 @@
 var searchData=
 [
-  ['position',['Position',['../a00012.html#a9c5dfa1612cf7d79ee599a7906d4038c',1,'ScientificReport::Models::UserProfile']]],
-  ['privacy',['Privacy',['../a00007.html#a246ab018cd8984cabbfaa3982b8a6a52',1,'ScientificReport::Controllers::HomeController']]],
-  ['program',['Program',['../a00008.html',1,'ScientificReport']]],
-  ['program_2ecs',['Program.cs',['../a00029.html',1,'']]]
+  ['register',['Register',['../a00012.html#a6c8b98005ac1254746e00f0066ed462a',1,'ScientificReport.Controllers.UserProfileController.Register()'],['../a00012.html#a81dea7bbcc1fd61c4b0bd09ba613e329',1,'ScientificReport.Controllers.UserProfileController.Register(RegisterModel model)']]],
+  ['registermodel',['RegisterModel',['../a00007.html',1,'ScientificReport::Models']]],
+  ['registermodel_2ecs',['RegisterModel.cs',['../a00021.html',1,'']]],
+  ['report',['Report',['../a00008.html',1,'ScientificReport::Models']]],
+  ['report_2ecs',['Report.cs',['../a00022.html',1,'']]],
+  ['reportcontroller',['ReportController',['../a00009.html#a579dd196e05745494abe21034094cc39',1,'ScientificReport::Controllers::ReportController']]],
+  ['reportcontroller',['ReportController',['../a00009.html',1,'ScientificReport::Controllers']]],
+  ['reportcontroller_2ecs',['ReportController.cs',['../a00014.html',1,'']]],
+  ['reports',['Reports',['../a00001.html#a8eea9d4a6c84185e4921662dd5ccabbf',1,'ScientificReport::Data::ApplicationDbContext']]],
+  ['requestid',['RequestId',['../a00003.html#ab396a92df6f9f53546fd1d19338fa91f',1,'ScientificReport::Models::ErrorViewModel']]]
 ];

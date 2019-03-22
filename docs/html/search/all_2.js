@@ -1,12 +1,6 @@
 var searchData=
 [
-  ['academicstatus',['AcademicStatus',['../a00012.html#a5109b9253c14c04fd9c6142ac734349a',1,'ScientificReport::Models::UserProfile']]],
-  ['addreportbase',['AddReportBase',['../a00001.html',1,'ScientificReport::Data::Migrations']]],
-  ['adduserprofilebase',['AddUserProfileBase',['../a00002.html',1,'ScientificReport::Data::Migrations']]],
-  ['admin',['Admin',['../a00052.html#a06419df9f7c914c33029a035848ca80eae3afed0047b08059d0fada10f400c1e5',1,'ScientificReport::Models']]],
-  ['applicationdbcontext',['ApplicationDbContext',['../a00003.html',1,'ScientificReport::Data']]],
-  ['applicationdbcontext',['ApplicationDbContext',['../a00003.html#a1b69a7ca399e4965e30d4094625239b0',1,'ScientificReport::Data::ApplicationDbContext']]],
-  ['applicationdbcontext_2ecs',['ApplicationDbContext.cs',['../a00017.html',1,'']]],
-  ['applicationdbcontextmodelsnapshot',['ApplicationDbContextModelSnapshot',['../a00004.html',1,'ScientificReport::Data::Migrations']]],
-  ['applicationdbcontextmodelsnapshot_2ecs',['ApplicationDbContextModelSnapshot.cs',['../a00024.html',1,'']]]
+  ['birthyear',['BirthYear',['../a00007.html#affb280bbbec833194af5c3dbe3f53369',1,'ScientificReport.Models.RegisterModel.BirthYear()'],['../a00011.html#a32f391c9314ff4873207fa954aedc8af',1,'ScientificReport.Models.UserProfile.BirthYear()']]],
+  ['buildmodel',['BuildModel',['../a00002.html#a0c88a1b5c85feab7b761a8aea16c6b71',1,'ScientificReport::Migrations::ApplicationDbContextModelSnapshot']]],
+  ['buildtargetmodel',['BuildTargetModel',['../a00005.html#adc14ff969d84df70027fecefa2cad0bf',1,'ScientificReport::Migrations::Initial']]]
 ];

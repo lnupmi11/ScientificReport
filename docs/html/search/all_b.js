@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['lastname',['LastName',['../a00012.html#a561398a4e016c781e3a3998a2d48d86e',1,'ScientificReport::Models::UserProfile']]]
+  ['main',['Main',['../a00006.html#ae42d2d35dbaa644476282c09ddaf277a',1,'ScientificReport::Program']]],
+  ['middlename',['MiddleName',['../a00007.html#a1bbb87608918efeb11fad12cf7cc6303',1,'ScientificReport.Models.RegisterModel.MiddleName()'],['../a00011.html#a01275ca3db09b45eb6d15059d6ebfc14',1,'ScientificReport.Models.UserProfile.MiddleName()']]]
 ];

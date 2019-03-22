@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['title',['Title',['../a00009.html#a5835ebecc6aa719c2982cbea87bd9ea7',1,'ScientificReport::Models::Report']]],
-  ['type',['Type',['../a00012.html#aa8d1e9dcf60c1788f0e8954dfd8f9d6d',1,'ScientificReport::Models::UserProfile']]]
+  ['scientificdegree',['ScientificDegree',['../a00007.html#a5bf9b14100286730b55132ab1083adb3',1,'ScientificReport.Models.RegisterModel.ScientificDegree()'],['../a00011.html#ae9919063f8f7fbfcf97afd8327a86850',1,'ScientificReport.Models.UserProfile.ScientificDegree()']]]
 ];

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['reports',['Reports',['../a00003.html#a8eea9d4a6c84185e4921662dd5ccabbf',1,'ScientificReport::Data::ApplicationDbContext']]],
-  ['requestid',['RequestId',['../a00006.html#ab396a92df6f9f53546fd1d19338fa91f',1,'ScientificReport::Models::ErrorViewModel']]]
+  ['password',['Password',['../a00007.html#a179e44f39648c7821066a6da7c8cf668',1,'ScientificReport::Models::RegisterModel']]],
+  ['phonenumber',['PhoneNumber',['../a00007.html#a9bf3bf609b19c12a548efbfa62680e2c',1,'ScientificReport::Models::RegisterModel']]],
+  ['position',['Position',['../a00011.html#a9c5dfa1612cf7d79ee599a7906d4038c',1,'ScientificReport::Models::UserProfile']]]
 ];

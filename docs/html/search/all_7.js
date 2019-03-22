@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['firstname',['FirstName',['../a00012.html#a9ec5a59f07cc8e559bbd619f0c4a5420',1,'ScientificReport::Models::UserProfile']]]
+  ['graduationyear',['GraduationYear',['../a00007.html#a2378580d7965c24480649b21571e734d',1,'ScientificReport.Models.RegisterModel.GraduationYear()'],['../a00011.html#a5c0912b289b237a236b20d02c54e4899',1,'ScientificReport.Models.UserProfile.GraduationYear()']]]
 ];

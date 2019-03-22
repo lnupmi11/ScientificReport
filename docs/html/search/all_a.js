@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['id',['Id',['../a00009.html#a09513cd177a16374a759acd0fa6bcdfc',1,'ScientificReport::Models::Report']]],
-  ['index',['Index',['../a00007.html#acc629acfd1137f0a258c5f691a71a3ce',1,'ScientificReport.Controllers.HomeController.Index()'],['../a00010.html#a6ce9ca7c69f1ac617314b1ac42319ac3',1,'ScientificReport.Controllers.ReportController.Index()'],['../a00013.html#ab07d992d9c3c1b42fa333c240aaca2f9',1,'ScientificReport.Controllers.UserProfileController.Index()']]],
-  ['isapproved',['IsApproved',['../a00012.html#a90e81770fba56db74433caf7d613b451',1,'ScientificReport::Models::UserProfile']]]
+  ['lastname',['LastName',['../a00007.html#a0cf3c5608add96c595b96d13f68b01e0',1,'ScientificReport.Models.RegisterModel.LastName()'],['../a00011.html#a561398a4e016c781e3a3998a2d48d86e',1,'ScientificReport.Models.UserProfile.LastName()']]]
 ];

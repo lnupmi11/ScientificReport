@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['configure',['Configure',['../a00011.html#a9e1ea3dabfbbd0cb2c71e0a6bbf79721',1,'ScientificReport::Startup']]],
-  ['configureservices',['ConfigureServices',['../a00011.html#a3d34187919055e4358e3352a2ac94b19',1,'ScientificReport::Startup']]],
-  ['create',['Create',['../a00010.html#a8557d329eb78a613f2cf856ca4eab287',1,'ScientificReport.Controllers.ReportController.Create()'],['../a00010.html#ac201faccbd6e43cf919730816a6a13ee',1,'ScientificReport.Controllers.ReportController.Create([Bind(&quot;Id,Title,Created&quot;)] Report report)'],['../a00013.html#ad8c096a20119d184ba74329ef6b3df48',1,'ScientificReport.Controllers.UserProfileController.Create()'],['../a00013.html#aa55c2074d99ac985fea3f40095f5dc9e',1,'ScientificReport.Controllers.UserProfileController.Create([Bind(&quot;Id,Type,FirstName,MiddleName,LastName&quot;)] UserProfile userProfile)']]],
-  ['created',['Created',['../a00009.html#a6e122ca6b93b71cfd27165ceaa60edac',1,'ScientificReport::Models::Report']]],
-  ['createidentityschema',['CreateIdentitySchema',['../a00005.html',1,'ScientificReport::Data::Migrations']]]
+  ['delete',['Delete',['../a00009.html#a2f7651c091088809bcbadaffdc2e91ce',1,'ScientificReport.Controllers.ReportController.Delete()'],['../a00012.html#a3726f19b49d14886215234397efe992e',1,'ScientificReport.Controllers.UserProfileController.Delete()']]],
+  ['deleteconfirmed',['DeleteConfirmed',['../a00009.html#a4f43433438db5dc8b7e11ccb5af600f1',1,'ScientificReport::Controllers::ReportController']]],
+  ['details',['Details',['../a00009.html#ad8c4719360b6505d71c0f07c8146733b',1,'ScientificReport.Controllers.ReportController.Details()'],['../a00012.html#ae98ce4e26824cf2cb606de069e943979',1,'ScientificReport.Controllers.UserProfileController.Details()']]],
+  ['down',['Down',['../a00005.html#a9efac288095703eaa26c79a32f1cdab4',1,'ScientificReport::Migrations::Initial']]]
 ];

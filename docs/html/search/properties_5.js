@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['id',['Id',['../a00009.html#a09513cd177a16374a759acd0fa6bcdfc',1,'ScientificReport::Models::Report']]],
-  ['isapproved',['IsApproved',['../a00012.html#a90e81770fba56db74433caf7d613b451',1,'ScientificReport::Models::UserProfile']]]
+  ['graduationyear',['GraduationYear',['../a00007.html#a2378580d7965c24480649b21571e734d',1,'ScientificReport.Models.RegisterModel.GraduationYear()'],['../a00011.html#a5c0912b289b237a236b20d02c54e4899',1,'ScientificReport.Models.UserProfile.GraduationYear()']]]
 ];

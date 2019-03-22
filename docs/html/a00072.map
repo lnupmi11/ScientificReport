@@ -1,2 +1,2 @@
-<map id="ScientificReport.Controllers.UserProfileController" name="ScientificReport.Controllers.UserProfileController">
+<map id="ScientificReport.Data.ApplicationDbContext" name="ScientificReport.Data.ApplicationDbContext">
 </map>
