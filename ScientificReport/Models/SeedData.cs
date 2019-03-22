@@ -31,6 +31,7 @@ namespace ScientificReport.Models
 
 		private static void SeedUserProfile(ApplicationDbContext context)
 		{
+			/*
 			if (context.UserProfile.Any()) return;
 
 			context.UserProfile.AddRange(
@@ -49,6 +50,7 @@ namespace ScientificReport.Models
 					Type = UserType.Admin,
 				}
 			);
+			*/
 		}
 	}
 }

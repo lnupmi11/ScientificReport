@@ -2,78 +2,67 @@
 
 @{
 	ViewData["Title"] = "Edit";
+	Layout = "_Layout";
 }
 
-<h1>Edit</h1>
-
-<h4>UserProfile</h4>
-<hr />
-<div class="row">
-	<div class="col-md-4">
-		<form asp-action="Edit">
-			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
-			<input type="hidden" asp-for="Id" />
-			<div class="form-group">
-				<label asp-for="Type" class="control-label"></label>
-				<select asp-for="Type" class="form-control"></select>
-				<span asp-validation-for="Type" class="text-danger"></span>
-			</div>
-			<div class="form-group">
-				<label asp-for="FirstName" class="control-label"></label>
-				<input asp-for="FirstName" class="form-control" />
-				<span asp-validation-for="FirstName" class="text-danger"></span>
-			</div>
-			<div class="form-group">
-				<label asp-for="MiddleName" class="control-label"></label>
-				<input asp-for="MiddleName" class="form-control" />
-				<span asp-validation-for="MiddleName" class="text-danger"></span>
-			</div>
-			<div class="form-group">
-				<label asp-for="LastName" class="control-label"></label>
-				<input asp-for="LastName" class="form-control" />
-				<span asp-validation-for="LastName" class="text-danger"></span>
-			</div>
-			<div class="form-group">
-				<label asp-for="GraduationYear" class="control-label"></label>
-				<input asp-for="GraduationYear" class="form-control" />
-				<span asp-validation-for="GraduationYear" class="text-danger"></span>
-			</div>
-			<div class="form-group">
-				<label asp-for="ScientificDegree" class="control-label"></label>
-				<input asp-for="ScientificDegree" class="form-control" />
-				<span asp-validation-for="ScientificDegree" class="text-danger"></span>
-			</div>
-			<div class="form-group">
-				<label asp-for="YearDegreeGained" class="control-label"></label>
-				<input asp-for="YearDegreeGained" class="form-control" />
-				<span asp-validation-for="YearDegreeGained" class="text-danger"></span>
-			</div>
-			<div class="form-group">
-				<label asp-for="AcademicStatus" class="control-label"></label>
-				<input asp-for="AcademicStatus" class="form-control" />
-				<span asp-validation-for="AcademicStatus" class="text-danger"></span>
-			</div>
-			<div class="form-group">
-				<label asp-for="YearDegreeAssigned" class="control-label"></label>
-				<input asp-for="YearDegreeAssigned" class="form-control" />
-				<span asp-validation-for="YearDegreeAssigned" class="text-danger"></span>
-			</div>
-			<div class="form-group">
-				<label asp-for="Position" class="control-label"></label>
-				<input asp-for="Position" class="form-control" />
-				<span asp-validation-for="Position" class="text-danger"></span>
-			</div>
-			<div class="form-group">
-				<label asp-for="IsApproved" class="control-label"></label>
-				<input asp-for="IsApproved" class="form-control" />
-				<span asp-validation-for="IsApproved" class="text-danger"></span>
-			</div>
-			<div class="form-group">
-				<input type="submit" value="Save" class="btn btn-primary" />
-			</div>
-		</form>
+<div class="bg-primary m-1 p-1 text-white"><h4>Edit user</h4></div>
+<div asp-validation-summary="All" class="text-danger"></div>
+<form asp-action="Edit" method="post">
+	<div class="form-group">
+		<label asp-for="Id"></label>
+		<input asp-for="Id" class="form-control" disabled/>
 	</div>
-</div>
+	<div class="form-group">
+		<label asp-for="FirstName"></label>
+		<input asp-for="FirstName" class="form-control"/>
+	</div>
+	<div class="form-group">
+		<label asp-for="MiddleName"></label>
+		<input asp-for="MiddleName" class="form-control"/>
+	</div>
+	<div class="form-group">
+		<label asp-for="LastName"></label>
+		<input asp-for="LastName" class="form-control"/>
+	</div>
+	<div class="form-group">
+		<label asp-for="PhoneNumber"></label>
+		<input asp-for="PhoneNumber" class="form-control"/>
+	</div>
+	<div class="form-group">
+		<label asp-for="BirthYear"></label>
+		<input asp-for="BirthYear" class="form-control"/>
+	</div>
+	<div class="form-group">
+		<label asp-for="GraduationYear"></label>
+		<input asp-for="GraduationYear" class="form-control"/>
+	</div>
+	<div class="form-group">
+		<label asp-for="ScientificDegree"></label>
+		<input asp-for="ScientificDegree" class="form-control"/>
+	</div>
+	<div class="form-group">
+		<label asp-for="YearDegreeAssigned"></label>
+		<input asp-for="YearDegreeAssigned" class="form-control"/>
+	</div>
+	<div class="form-group">
+		<label asp-for="AcademicStatus"></label>
+		<input asp-for="AcademicStatus" class="form-control"/>
+	</div>
+	<div class="form-group">
+		<label asp-for="YearDegreeGained"></label>
+		<input asp-for="YearDegreeGained" class="form-control"/>
+	</div>
+	<div class="form-group">
+		<label asp-for="UserName"></label>
+		<input asp-for="UserName" class="form-control"/>
+	</div>
+	<div class="form-group">
+		<label asp-for="Email"></label>
+		<input asp-for="Email" class="form-control"/>
+	</div>
+	<button type="submit" class="btn btn-primary">Save</button>
+	<a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
 
 <div>
 	<a asp-action="Index">Back to List</a>

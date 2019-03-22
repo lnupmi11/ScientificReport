@@ -36,7 +36,17 @@ namespace ScientificReport
 					Configuration.GetConnectionString("DefaultConnection")));
 						
 			services
-				.AddIdentity<UserProfile, IdentityRole<int>>()
+				.AddIdentity<UserProfile, IdentityRole>(opts =>
+					{
+						opts.User.RequireUniqueEmail = true;
+						opts.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz";
+						opts.Password.RequiredLength = 8;
+						opts.Password.RequireNonAlphanumeric = false;
+						opts.Password.RequireLowercase = true;
+						opts.Password.RequireUppercase = true;
+						opts.Password.RequireDigit = true;	
+					}
+				)
 				.AddDefaultUI(UIFramework.Bootstrap4)
 				.AddEntityFrameworkStores<ApplicationDbContext>()
 				.AddDefaultTokenProviders();

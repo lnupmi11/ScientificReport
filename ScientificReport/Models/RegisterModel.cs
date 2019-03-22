@@ -1,16 +1,15 @@
 using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Identity;
 
 namespace ScientificReport.Models
 {
-	public enum UserType
+	public class RegisterModel
 	{
-		Teacher, HeadOfDepartment, Admin,
-	}
-
-	public class UserProfile : IdentityUser
-	{
-		public UserType Type { get; set; }
+		[Required]
+		public string UserName { get; set; }
+		[Required]
+		public string Email { get; set; }
+		[Required]
+		public string Password { get; set; }
 
 		[Required]
 		public string FirstName { get; set; }
@@ -20,6 +19,9 @@ namespace ScientificReport.Models
 		
 		[Required]
 		public string LastName { get; set; }
+		
+		[Required]
+		public string PhoneNumber { get; set; }
 		
 		[Required]
 		public int BirthYear { get; set; }
@@ -38,11 +40,5 @@ namespace ScientificReport.Models
 		
 		[Required]
 		public int YearDegreeAssigned { get; set; }
-		
-		[Required]
-		public string Position { get; set; }
-		
-		[Required]
-		public bool IsApproved { get; set; }
 	}
 }
