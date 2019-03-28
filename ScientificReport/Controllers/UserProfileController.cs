@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using ScientificReport.Models;
+using ScientificReport.Forms;
 
 namespace ScientificReport.Controllers
 {

@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
+namespace ScientificReport.Models
+{
+	public class Patent
+	{
+		[Key]
+		public int Id { get; set; }
+		
+		[Required]
+		public string Name { get; set; }
+		
+		[Required]
+		public int Number { get; set; }
+		
+		[Required, DataType(DataType.DateTime)]
+		public DateTime DateTime { get; set; }
+		
+		[Required]
+		public string Type { get; set; }
+		
+		[Required]
+		public virtual ICollection<UserProfile> Authors { get; set; }
+		
+		[Required]
+		public virtual ICollection<UserProfile> Applicants { get; set; }
+	}
+}
