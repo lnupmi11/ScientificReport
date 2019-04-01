@@ -15,10 +15,10 @@ namespace ScientificReport.Models
 		public string Category { get; set; }
 		
 		[Required]
-		public string Theme { get; set; }
+		public string Title { get; set; }
 		
 		[Required]
-		public string Content { get; set; }
+		public string Contents { get; set; }
 		
 		[Required]
 		public virtual ICollection<UserProfile> Participators { get; set; }

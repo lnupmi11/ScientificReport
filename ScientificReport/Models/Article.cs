@@ -1,14 +1,21 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace ScientificReport.Models
 {
-	public class Publication
+	public class Article
 	{
 		public enum Types
 		{
-			Monograph, TextBook, HandBook, Dictionary, Translation, Comment, BibliographicIndex, Other
+			ImpactFactor,
+			IncludedInWebOfScienceScopusOthers,
+			ForeignPublishing,
+			ProfessionalPublishingOfUkraine,
+			OtherPublishingOfUkraine,
+			ReportThesis,
+			InternationalReportThesis,
+			DomesticReportThesis,
+			ForeignReportThesisWithResearchResults
 		}
 		
 		[Key]
@@ -24,7 +31,10 @@ namespace ScientificReport.Models
 		public string Title { get; set; }
 		
 		[Required]
-		public string Specification { get; set; }
+		public string LiabilityInfo { get; set; }
+		
+		[Required]
+		public string DocumentInfo { get; set; }
 		
 		[Required]
 		public string PublishingPlace { get; set; }
@@ -34,6 +44,11 @@ namespace ScientificReport.Models
 		
 		[Required]
 		public int PublishingYear { get; set; }
+		
+		public bool IsPeriodical { get; set; }
+		
+		// For periodical publications only
+		public int Number { get; set; }
 		
 		[Required]
 		public int PagesAmount { get; set; }

@@ -8,21 +8,26 @@ namespace ScientificReport.Models
 		[Required]
 		public virtual UserProfile Teacher { get; set; }
 		
-		public virtual ICollection<Publication> Publications { get; set; }
-		
 		public virtual ICollection<ScientificWork> ScientificWorks { get; set; }
 		
 		public virtual ICollection<Grant> Grants { get; set; }
 		
 		public virtual ICollection<ScientificInternship> ScientificInternships { get; set; }
 		
-		public virtual ICollection<ScientificGuidance> ScientificGuidances { get; set; }
+		// Scientific guidance field
+		public virtual ICollection<PostgraduateDissertationGuidance> PostgraduateDissertationGuidances { get; set; }
 		
-		public virtual ICollection<StudentGuidance> StudentGuidances { get; set; }
+		// Scientific guidance field
+		public virtual ICollection<PostgraduateGuidance> PostgraduateGuidances { get; set; }
+		
+		// Scientific guidance field
+		public virtual ICollection<ScientificConsultation> ScientificConsultations { get; set; }
+		
+		public virtual ICollection<string> StudentGuidances { get; set; }
+		
+		public virtual ICollection<Publication> Publications { get; set; }
 		
 		public virtual ICollection<ReportThesis> ReportTheses { get; set; }
-		
-		public virtual ICollection<Paper> Papers { get; set; }
 		
 		public virtual ICollection<Patent> Patents { get; set; }
 		
