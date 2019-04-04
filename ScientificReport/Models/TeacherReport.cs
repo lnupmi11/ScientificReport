@@ -29,12 +29,12 @@ namespace ScientificReport.Models
 		
 		public virtual ICollection<ReportThesis> ReportTheses { get; set; }
 		
-		public virtual ICollection<Patent> Patents { get; set; }
+		public virtual ICollection<PatentLicenseActivity> Patents { get; set; }
 		
 		public virtual ICollection<Review> Reviews { get; set; }
 		
-		public virtual ICollection<ParticipationInScientificSitting> ParticipationInScientificSittings { get; set; }
+		public virtual ICollection<Membership> Memberships { get; set; }
 		
-		public ICollection<string> Other { get; set; }
+		public virtual ICollection<Opposition> Oppositions { get; set; }
 	}
 }

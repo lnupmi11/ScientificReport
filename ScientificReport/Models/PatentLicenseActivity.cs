@@ -4,8 +4,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ScientificReport.Models
 {
-	public class Patent
+	public class PatentLicenseActivity
 	{
+		public enum Types
+		{
+			Patent, Application
+		}
+		
 		[Key]
 		public int Id { get; set; }
 		
@@ -19,7 +24,7 @@ namespace ScientificReport.Models
 		public DateTime DateTime { get; set; }
 		
 		[Required]
-		public string Type { get; set; }
+		public Types Type { get; set; }
 		
 		[Required]
 		public virtual ICollection<UserProfile> Authors { get; set; }

@@ -22,7 +22,7 @@ namespace ScientificReport.Controllers
 		// GET: Report
 		public async Task<IActionResult> Index()
 		{
-			return View(await _context.Reports.ToListAsync());
+			return View(await _context.TeacherReports.ToListAsync());
 		}
 
 		// GET: Report/Details/5
@@ -33,7 +33,7 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
-			var report = await _context.Reports
+			var report = await _context.TeacherReports
 				.FirstOrDefaultAsync(m => m.Id == id);
 			if (report == null)
 			{
@@ -73,7 +73,7 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
-			var report = await _context.Reports.FindAsync(id);
+			var report = await _context.TeacherReports.FindAsync(id);
 			if (report == null)
 			{
 				return NotFound();
@@ -124,7 +124,7 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
-			var report = await _context.Reports
+			var report = await _context.TeacherReports
 				.FirstOrDefaultAsync(m => m.Id == id);
 			if (report == null)
 			{
@@ -139,15 +139,15 @@ namespace ScientificReport.Controllers
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> DeleteConfirmed(int id)
 		{
-			var report = await _context.Reports.FindAsync(id);
-			_context.Reports.Remove(report);
+			var report = await _context.TeacherReports.FindAsync(id);
+			_context.TeacherReports.Remove(report);
 			await _context.SaveChangesAsync();
 			return RedirectToAction(nameof(Index));
 		}
 
 		private bool ReportExists(int id)
 		{
-			return _context.Reports.Any(e => e.Id == id);
+			return _context.TeacherReports.Any(e => e.Id == id);
 		}
 	}
 }
