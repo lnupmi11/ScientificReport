@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['errorviewmodel',['ErrorViewModel',['../a00003.html',1,'ScientificReport::Models']]]
+  ['conference',['Conference',['../a00004.html',1,'ScientificReport::Models']]]
 ];

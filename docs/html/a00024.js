@@ -1,9 +1,7 @@
 var a00024 =
 [
-    [ "UserProfile", "a00011.html", "a00011" ],
-    [ "UserType", "a00024.html#a06419df9f7c914c33029a035848ca80e", [
-      [ "Teacher", "a00024.html#a06419df9f7c914c33029a035848ca80ea8ab7bbdf01a24e988c50c4cfe9557814", null ],
-      [ "HeadOfDepartment", "a00024.html#a06419df9f7c914c33029a035848ca80ea12aff49eb990e35d6b90576a3d28da56", null ],
-      [ "Admin", "a00024.html#a06419df9f7c914c33029a035848ca80eae3afed0047b08059d0fada10f400c1e5", null ]
-    ] ]
+    [ "DissertationTitle", "a00024.html#a65152a7ebdfddb279cbb2971e895eb67", null ],
+    [ "Guide", "a00024.html#af362045121c38f1a76c70c46effe39b9", null ],
+    [ "Id", "a00024.html#a16310d4655b4031f6bbea99ff879bd99", null ],
+    [ "Name", "a00024.html#a9a539957357c569beb559dd19e6e0096", null ]
 ];

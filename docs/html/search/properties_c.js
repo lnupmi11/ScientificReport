@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['title',['Title',['../a00008.html#a5835ebecc6aa719c2982cbea87bd9ea7',1,'ScientificReport::Models::Report']]],
-  ['type',['Type',['../a00011.html#aa8d1e9dcf60c1788f0e8954dfd8f9d6d',1,'ScientificReport::Models::UserProfile']]]
+  ['opponent',['Opponent',['../a00013.html#aafefa62a00a97464962265ab4cfb5c93',1,'ScientificReport::Models::Opposition']]],
+  ['oppositions',['Oppositions',['../a00001.html#a3bcc5cc9dab2df3ab13b065e5d18ab69',1,'ScientificReport.Data.ApplicationDbContext.Oppositions()'],['../a00028.html#a013d2dcad00da2e41ed6b96d66fb057a',1,'ScientificReport.Models.TeacherReport.Oppositions()']]]
 ];

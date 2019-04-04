@@ -1,7 +1,23 @@
 var searchData=
 [
-  ['delete',['Delete',['../a00009.html#a2f7651c091088809bcbadaffdc2e91ce',1,'ScientificReport.Controllers.ReportController.Delete()'],['../a00012.html#a3726f19b49d14886215234397efe992e',1,'ScientificReport.Controllers.UserProfileController.Delete()']]],
-  ['deleteconfirmed',['DeleteConfirmed',['../a00009.html#a4f43433438db5dc8b7e11ccb5af600f1',1,'ScientificReport::Controllers::ReportController']]],
-  ['details',['Details',['../a00009.html#ad8c4719360b6505d71c0f07c8146733b',1,'ScientificReport.Controllers.ReportController.Details()'],['../a00012.html#ae98ce4e26824cf2cb606de069e943979',1,'ScientificReport.Controllers.UserProfileController.Details()']]],
-  ['down',['Down',['../a00005.html#a9efac288095703eaa26c79a32f1cdab4',1,'ScientificReport::Migrations::Initial']]]
+  ['date',['Date',['../a00004.html#af06e72463cb725845ed280655f63e715',1,'ScientificReport::Models::Conference']]],
+  ['datedegreegained',['DateDegreeGained',['../a00015.html#a1ff994fe180f2baadeb01a7e949090ce',1,'ScientificReport::Models::PostgraduateDissertationGuidance']]],
+  ['dateofopposition',['DateOfOpposition',['../a00013.html#af6a4694bc19af9a1e46c706cc3f635c6',1,'ScientificReport::Models::Opposition']]],
+  ['dateofreview',['DateOfReview',['../a00023.html#a3113cf3de6e2ac403b96271719ed7e86',1,'ScientificReport::Models::Review']]],
+  ['datetime',['DateTime',['../a00014.html#abca37a148e0f8bd54096afe5022c6775',1,'ScientificReport::Models::PatentLicenseActivity']]],
+  ['delete',['Delete',['../a00021.html#a2f7651c091088809bcbadaffdc2e91ce',1,'ScientificReport.Controllers.ReportController.Delete()'],['../a00030.html#a3726f19b49d14886215234397efe992e',1,'ScientificReport.Controllers.UserProfileController.Delete()']]],
+  ['deleteconfirmed',['DeleteConfirmed',['../a00021.html#a4f43433438db5dc8b7e11ccb5af600f1',1,'ScientificReport::Controllers::ReportController']]],
+  ['department',['Department',['../a00005.html',1,'ScientificReport::Models']]],
+  ['department_2ecs',['Department.cs',['../a00041.html',1,'']]],
+  ['departmentreport',['DepartmentReport',['../a00006.html',1,'ScientificReport::Models']]],
+  ['departmentreport_2ecs',['DepartmentReport.cs',['../a00042.html',1,'']]],
+  ['departmentreports',['DepartmentReports',['../a00001.html#a47817c29cb45f077bc3921a8614b0eb3',1,'ScientificReport.Data.ApplicationDbContext.DepartmentReports()'],['../a00008.html#ae658b845be4c020b1e1a7faed5e382b2',1,'ScientificReport.Models.FacultyReport.DepartmentReports()']]],
+  ['departments',['Departments',['../a00001.html#a7cb90a24eb22b3f0b6eaa48fb4cd8092',1,'ScientificReport::Data::ApplicationDbContext']]],
+  ['details',['Details',['../a00021.html#ad8c4719360b6505d71c0f07c8146733b',1,'ScientificReport.Controllers.ReportController.Details()'],['../a00030.html#ae98ce4e26824cf2cb606de069e943979',1,'ScientificReport.Controllers.UserProfileController.Details()']]],
+  ['dictionary',['Dictionary',['../a00018.html#a2e6feb5a21a6a2e28711829538a0920ca3beb75d1563ebc22253341be4ce57f44',1,'ScientificReport::Models::Publication']]],
+  ['dissertation',['Dissertation',['../a00015.html#afb53d3c0bb2222746af3d5a8b00b09a1',1,'ScientificReport::Models::PostgraduateDissertationGuidance']]],
+  ['dissertationtitle',['DissertationTitle',['../a00024.html#a65152a7ebdfddb279cbb2971e895eb67',1,'ScientificReport::Models::ScientificConsultation']]],
+  ['documentinfo',['DocumentInfo',['../a00003.html#aa6d465790eb9569994c5a77bdb9f4fab',1,'ScientificReport::Models::Article']]],
+  ['domesticreportthesis',['DomesticReportThesis',['../a00003.html#a7490f254a652035b0bcc98babf668293a1abebcfda33aa44be6f206e33c6ecb36',1,'ScientificReport::Models::Article']]],
+  ['down',['Down',['../a00011.html#a9efac288095703eaa26c79a32f1cdab4',1,'ScientificReport::Migrations::Initial']]]
 ];

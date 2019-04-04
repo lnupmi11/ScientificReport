@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['errorviewmodel_2ecs',['ErrorViewModel.cs',['../a00020.html',1,'']]]
+  ['conference_2ecs',['Conference.cs',['../a00040.html',1,'']]]
 ];

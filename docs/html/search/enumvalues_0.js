@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['admin',['Admin',['../a00048.html#a06419df9f7c914c33029a035848ca80eae3afed0047b08059d0fada10f400c1e5',1,'ScientificReport::Models']]]
+  ['application',['Application',['../a00014.html#a82b9010b4e34c7c7005b8e8e82918cdcae498749f3c42246d50b15c81c101d988',1,'ScientificReport::Models::PatentLicenseActivity']]]
 ];

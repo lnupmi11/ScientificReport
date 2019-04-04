@@ -1,6 +1,5 @@
 var a00008 =
 [
-    [ "Created", "a00008.html#a6e122ca6b93b71cfd27165ceaa60edac", null ],
-    [ "Id", "a00008.html#a09513cd177a16374a759acd0fa6bcdfc", null ],
-    [ "Title", "a00008.html#a5835ebecc6aa719c2982cbea87bd9ea7", null ]
+    [ "Administrator", "a00008.html#a0718bf2df2c0fffa78f81be8b11c76c3", null ],
+    [ "DepartmentReports", "a00008.html#ae658b845be4c020b1e1a7faed5e382b2", null ]
 ];

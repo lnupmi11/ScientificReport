@@ -1,4 +1,4 @@
 var annotated_dup =
 [
-    [ "ScientificReport", "a00044.html", "a00044" ]
+    [ "ScientificReport", "a00080.html", "a00080" ]
 ];

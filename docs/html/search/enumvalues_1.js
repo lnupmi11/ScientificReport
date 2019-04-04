@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['headofdepartment',['HeadOfDepartment',['../a00048.html#a06419df9f7c914c33029a035848ca80ea12aff49eb990e35d6b90576a3d28da56',1,'ScientificReport::Models']]]
+  ['bibliographicindex',['BibliographicIndex',['../a00018.html#a2e6feb5a21a6a2e28711829538a0920ca17533766d9e1f285e06e2bbc4a431f5e',1,'ScientificReport::Models::Publication']]]
 ];

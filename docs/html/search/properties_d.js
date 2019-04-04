@@ -1,4 +1,19 @@
 var searchData=
 [
-  ['username',['UserName',['../a00007.html#a93e66d56a1502c02862a46768752502c',1,'ScientificReport::Models::RegisterModel']]]
+  ['pagesamount',['PagesAmount',['../a00003.html#a3290656cc5f644abfd4d626da75c422e',1,'ScientificReport.Models.Article.PagesAmount()'],['../a00018.html#a777ec56fb4a1b56c4dfd3072ad66d8a4',1,'ScientificReport.Models.Publication.PagesAmount()']]],
+  ['participators',['Participators',['../a00026.html#a9f735947557f1094a6978815909d2571',1,'ScientificReport::Models::ScientificWork']]],
+  ['password',['Password',['../a00019.html#ac6a6a5023da45062f1a3f0292ce6dcb4',1,'ScientificReport::Forms::RegisterModel']]],
+  ['patentlicenseactivities',['PatentLicenseActivities',['../a00001.html#ae131005a13eeee1d258bdcd2809ce211',1,'ScientificReport::Data::ApplicationDbContext']]],
+  ['patents',['Patents',['../a00028.html#a398955d2217554be628e4cb6128dc792',1,'ScientificReport::Models::TeacherReport']]],
+  ['phonenumber',['PhoneNumber',['../a00019.html#a7d192524d9ca81eecdd70951586a7d9e',1,'ScientificReport::Forms::RegisterModel']]],
+  ['placeofinternship',['PlaceOfInternship',['../a00025.html#a9da3ce49fef7ed2399f733ae1a53fb5a',1,'ScientificReport::Models::ScientificInternship']]],
+  ['position',['Position',['../a00029.html#a9c5dfa1612cf7d79ee599a7906d4038c',1,'ScientificReport::Models::UserProfile']]],
+  ['postgraduatedissertationguidances',['PostgraduateDissertationGuidances',['../a00001.html#a59000780d110b0c8f2c3249063a17f1b',1,'ScientificReport.Data.ApplicationDbContext.PostgraduateDissertationGuidances()'],['../a00028.html#a7ebb06e673824e6c9b6d3106b71eea09',1,'ScientificReport.Models.TeacherReport.PostgraduateDissertationGuidances()']]],
+  ['postgraduateguidances',['PostgraduateGuidances',['../a00001.html#aca88b08ae0927a698d4283aaa7efa073',1,'ScientificReport.Data.ApplicationDbContext.PostgraduateGuidances()'],['../a00028.html#a99ee2d38edb6bc8c60635c8df3ee6535',1,'ScientificReport.Models.TeacherReport.PostgraduateGuidances()']]],
+  ['postgraduateinfo',['PostgraduateInfo',['../a00016.html#a2b148715febc2eacdf7bb12852a5af2e',1,'ScientificReport::Models::PostgraduateGuidance']]],
+  ['postgraduatename',['PostgraduateName',['../a00015.html#afd172203379a2caea13c8573cde52a4c',1,'ScientificReport.Models.PostgraduateDissertationGuidance.PostgraduateName()'],['../a00016.html#a48b8514e286d65b5039ab3d4d06cef46',1,'ScientificReport.Models.PostgraduateGuidance.PostgraduateName()']]],
+  ['publications',['Publications',['../a00001.html#a0de39558d380e1d043ca92329ecac622',1,'ScientificReport.Data.ApplicationDbContext.Publications()'],['../a00028.html#a29d115acbe5ab62a780f956d8c084214',1,'ScientificReport.Models.TeacherReport.Publications()'],['../a00029.html#a3c2f9356f99d134d5eea9e811e5e26c7',1,'ScientificReport.Models.UserProfile.Publications()']]],
+  ['publishinghousename',['PublishingHouseName',['../a00003.html#a1ffb67ef5de22a5d6769104377c95732',1,'ScientificReport.Models.Article.PublishingHouseName()'],['../a00018.html#af42da262a2f91a8c87a27cea6cd41991',1,'ScientificReport.Models.Publication.PublishingHouseName()']]],
+  ['publishingplace',['PublishingPlace',['../a00003.html#a84887b14a9ba23026a6604a071eb5099',1,'ScientificReport.Models.Article.PublishingPlace()'],['../a00018.html#ae875642275e948ca1d1e29969a7a0f58',1,'ScientificReport.Models.Publication.PublishingPlace()']]],
+  ['publishingyear',['PublishingYear',['../a00003.html#a6b47a3f9c0485f31f633689e8b1637e7',1,'ScientificReport.Models.Article.PublishingYear()'],['../a00018.html#a7a712ab5a091696cae815db116b9755a',1,'ScientificReport.Models.Publication.PublishingYear()']]]
 ];

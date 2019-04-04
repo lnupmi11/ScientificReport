@@ -1,11 +1,11 @@
 var a00012 =
 [
-    [ "UserProfileController", "a00012.html#a60ddf737e63fecc3343ebf677e9d29a5", null ],
-    [ "Delete", "a00012.html#a3726f19b49d14886215234397efe992e", null ],
-    [ "Details", "a00012.html#ae98ce4e26824cf2cb606de069e943979", null ],
-    [ "Edit", "a00012.html#ac34b7136887712b44427159434ecdc63", null ],
-    [ "Edit", "a00012.html#aa97ad0492bfb3c2aa58f783e264b3946", null ],
-    [ "Index", "a00012.html#ab07d992d9c3c1b42fa333c240aaca2f9", null ],
-    [ "Register", "a00012.html#a6c8b98005ac1254746e00f0066ed462a", null ],
-    [ "Register", "a00012.html#a81dea7bbcc1fd61c4b0bd09ba613e329", null ]
+    [ "MemberOfChoices", "a00012.html#ac4f906ba9519627c4877ae6b94d608b7", [
+      [ "EditorialBoard", "a00012.html#ac4f906ba9519627c4877ae6b94d608b7aa49e0a45e75c086f428289d64b469f96", null ],
+      [ "ScientificCouncil", "a00012.html#ac4f906ba9519627c4877ae6b94d608b7a0d1bf9d3831cac38a4a5f7856ea59396", null ],
+      [ "ExpertCouncil", "a00012.html#ac4f906ba9519627c4877ae6b94d608b7a709e626e10341618753f60e902891d9c", null ]
+    ] ],
+    [ "Id", "a00012.html#a5536de7a7e6bec3a0713bd6e210138e8", null ],
+    [ "MemberOf", "a00012.html#aa59576f6a3710a7f6cf033635e418c2d", null ],
+    [ "MembershipInfo", "a00012.html#a4e0681f46a7d16d55d8baff203581c5e", null ]
 ];

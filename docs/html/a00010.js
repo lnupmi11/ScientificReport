@@ -1,7 +1,6 @@
 var a00010 =
 [
-    [ "Startup", "a00010.html#a63d2f00d6a6c75ca48d391012d8ae7e0", null ],
-    [ "Configure", "a00010.html#a9e1ea3dabfbbd0cb2c71e0a6bbf79721", null ],
-    [ "ConfigureServices", "a00010.html#a3d34187919055e4358e3352a2ac94b19", null ],
-    [ "Configuration", "a00010.html#a4b147c6827810b2a8997403c5433aa6f", null ]
+    [ "Error", "a00010.html#ab23c5c5bb2a8f95c1c6ca4de3e32318d", null ],
+    [ "Index", "a00010.html#acc629acfd1137f0a258c5f691a71a3ce", null ],
+    [ "Privacy", "a00010.html#a246ab018cd8984cabbfaa3982b8a6a52", null ]
 ];

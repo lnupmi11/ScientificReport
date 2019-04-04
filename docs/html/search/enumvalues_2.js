@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['teacher',['Teacher',['../a00048.html#a06419df9f7c914c33029a035848ca80ea8ab7bbdf01a24e988c50c4cfe9557814',1,'ScientificReport::Models']]]
+  ['comment',['Comment',['../a00018.html#a2e6feb5a21a6a2e28711829538a0920ca0be8406951cdfda82f00f79328cf4efc',1,'ScientificReport::Models::Publication']]]
 ];
