@@ -23,8 +23,6 @@ namespace ScientificReport.Models
 		// Scientific guidance field
 		public virtual ICollection<ScientificConsultation> ScientificConsultations { get; set; }
 		
-		public virtual ICollection<string> StudentGuidances { get; set; }
-		
 		public virtual ICollection<Publication> Publications { get; set; }
 		
 		public virtual ICollection<ReportThesis> ReportTheses { get; set; }

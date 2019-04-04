@@ -9,7 +9,7 @@ namespace ScientificReport.Models
 		[Key]
 		public int Id { get; set; }
 		
-		[ForeignKey("Guide"), Required]
+		[Required]
 		public virtual UserProfile Guide { get; set; }
 		
 		[Required]

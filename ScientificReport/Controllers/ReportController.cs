@@ -22,7 +22,7 @@ namespace ScientificReport.Controllers
 		// GET: Report
 		public async Task<IActionResult> Index()
 		{
-			return View(await _context.TeacherReports.ToListAsync());
+			return View(); //await _context.TeacherReports.ToListAsync());
 		}
 
 		// GET: Report/Details/5
@@ -33,14 +33,16 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
+			/*
 			var report = await _context.TeacherReports
 				.FirstOrDefaultAsync(m => m.Id == id);
 			if (report == null)
 			{
 				return NotFound();
 			}
+			*/
 
-			return View(report);
+			return View();//report);
 		}
 
 		// GET: Report/Create
@@ -73,12 +75,15 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
+			/*
 			var report = await _context.TeacherReports.FindAsync(id);
 			if (report == null)
 			{
 				return NotFound();
 			}
-			return View(report);
+			*/
+
+			return View();//report);
 		}
 
 		// POST: Report/Edit/5
@@ -124,14 +129,16 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
+			/*
 			var report = await _context.TeacherReports
 				.FirstOrDefaultAsync(m => m.Id == id);
 			if (report == null)
 			{
 				return NotFound();
 			}
+			*/
 
-			return View(report);
+			return View(); //report);
 		}
 
 		// POST: Report/Delete/5
@@ -139,15 +146,15 @@ namespace ScientificReport.Controllers
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> DeleteConfirmed(int id)
 		{
-			var report = await _context.TeacherReports.FindAsync(id);
-			_context.TeacherReports.Remove(report);
+		//	var report = await _context.TeacherReports.FindAsync(id);
+		//	_context.TeacherReports.Remove(report);
 			await _context.SaveChangesAsync();
 			return RedirectToAction(nameof(Index));
 		}
 
 		private bool ReportExists(int id)
 		{
-			return _context.TeacherReports.Any(e => e.Id == id);
+			return false;//_context.TeacherReports.Any(e => e.Id == id);
 		}
 	}
 }

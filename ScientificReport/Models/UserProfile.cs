@@ -39,10 +39,10 @@ namespace ScientificReport.Models
 		[Required]
 		public bool IsApproved { get; set; }
 		
-		public virtual ICollection<Publication> Publications { get; set; }
+		public virtual ICollection<UserProfilesPublications> UserProfilesPublications { get; set; }
 		
-		public virtual ICollection<Grant> Grants { get; set; }
+		public virtual ICollection<UserProfilesGrants> UserProfilesGrants { get; set; }
 		
-		public virtual ICollection<ScientificWork> ScientificWorks { get; set; }
+		public virtual ICollection<UserProfilesScientificWorks> UserProfilesScientificWorks { get; set; }
 	}
 }

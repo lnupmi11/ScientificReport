@@ -9,6 +9,6 @@ namespace ScientificReport.Models
 		public int Id { get; set; }
 		
 		[Required]
-		public virtual ICollection<UserProfile> Receivers { get; set; }
+		public virtual ICollection<UserProfilesGrants> UserProfilesGrants { get; set; }
 	}
 }
