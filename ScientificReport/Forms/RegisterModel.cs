@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace ScientificReport.Models
+namespace ScientificReport.Forms
 {
 	public class RegisterModel
 	{

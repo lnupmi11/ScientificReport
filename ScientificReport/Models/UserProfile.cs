@@ -1,17 +1,11 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
 
 namespace ScientificReport.Models
 {
-	public enum UserType
-	{
-		Teacher, HeadOfDepartment, Admin,
-	}
-
 	public class UserProfile : IdentityUser
 	{
-		public UserType Type { get; set; }
-
 		[Required]
 		public string FirstName { get; set; }
 		
@@ -44,5 +38,11 @@ namespace ScientificReport.Models
 		
 		[Required]
 		public bool IsApproved { get; set; }
+		
+		public virtual ICollection<UserProfilesPublications> UserProfilesPublications { get; set; }
+		
+		public virtual ICollection<UserProfilesGrants> UserProfilesGrants { get; set; }
+		
+		public virtual ICollection<UserProfilesScientificWorks> UserProfilesScientificWorks { get; set; }
 	}
 }
