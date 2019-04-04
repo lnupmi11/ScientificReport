@@ -21,7 +21,6 @@ namespace ScientificReport.Models
 		[Required]
 		public string Contents { get; set; }
 		
-		[Required]
-		public virtual ICollection<UserProfile> Users { get; set; }
+		public virtual ICollection<UserProfilesScientificInternships> UserProfilesScientificInternships { get; set; }
 	}
 }

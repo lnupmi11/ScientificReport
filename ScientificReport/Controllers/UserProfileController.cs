@@ -12,26 +12,26 @@ namespace ScientificReport.Controllers
 {
 	public class UserProfileController : Controller
 	{
-		private UserManager<UserProfile> userManager;
-		private IUserValidator<UserProfile> userValidator;
-		private IPasswordValidator<UserProfile> passwordValidator;
-		private IPasswordHasher<UserProfile> passwordHasher;
+		private readonly UserManager<UserProfile> _userManager;
+		private readonly IUserValidator<UserProfile> _userValidator;
+		private readonly IPasswordValidator<UserProfile> _passwordValidator;
+		private readonly IPasswordHasher<UserProfile> _passwordHasher;
 
 		public UserProfileController(UserManager<UserProfile> usrMgr,
 			IUserValidator<UserProfile> userValid,
 			IPasswordValidator<UserProfile> passValid,
 			IPasswordHasher<UserProfile> passwordHash)
 		{
-			userManager = usrMgr;
-			userValidator = userValid;
-			passwordValidator = passValid;
-			passwordHasher = passwordHash;
+			_userManager = usrMgr;
+			_userValidator = userValid;
+			_passwordValidator = passValid;
+			_passwordHasher = passwordHash;
 		}
 
 		// GET: UserProfile/Index
 		public async Task<IActionResult> Index()
 		{
-			var items = await userManager.Users.ToListAsync();
+			var items = await _userManager.Users.ToListAsync();
 			if (!items.Any()) return View(items);
 			
 			// debug stuff
@@ -39,7 +39,7 @@ namespace ScientificReport.Controllers
 			Console.WriteLine();
 			Console.WriteLine(output);
 			Console.WriteLine();
-			var users = await userManager.Users.ToListAsync();
+			var users = await _userManager.Users.ToListAsync();
 			output = JsonConvert.SerializeObject(users);
 			Console.WriteLine();
 			Console.WriteLine(output);
@@ -55,7 +55,7 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
-			var userProfile = await userManager.Users.FirstOrDefaultAsync(m => m.Id == id);
+			var userProfile = await _userManager.Users.FirstOrDefaultAsync(m => m.Id == id);
 			if (userProfile == null)
 			{
 				return NotFound();
@@ -91,7 +91,7 @@ namespace ScientificReport.Controllers
 				IsApproved = false,
 				PhoneNumber = model.PhoneNumber
 			};
-			var result = await userManager.CreateAsync(user, model.Password);
+			var result = await _userManager.CreateAsync(user, model.Password);
 			if (result.Succeeded)
 			{
 				return RedirectToAction("Index");
@@ -103,7 +103,7 @@ namespace ScientificReport.Controllers
 
 		// GET: UserProfile/Edit/{id}
 		public async Task<IActionResult> Edit(string id) {
-			var user = await userManager.FindByIdAsync(id);
+			var user = await _userManager.FindByIdAsync(id);
 			if (user != null)
 			{
 				return View(user);
@@ -116,11 +116,11 @@ namespace ScientificReport.Controllers
 		[HttpPost]
 		public async Task<IActionResult> Edit(string id, string email, string password)
 		{
-			var user = await userManager.FindByIdAsync(id);
+			var user = await _userManager.FindByIdAsync(id);
 			if (user != null)
 			{
 				user.Email = email;
-				var validEmail = await userValidator.ValidateAsync(userManager, user);
+				var validEmail = await _userValidator.ValidateAsync(_userManager, user);
 				if (!validEmail.Succeeded)
 				{
 					AddErrorsFromResult(validEmail);
@@ -129,11 +129,11 @@ namespace ScientificReport.Controllers
 				IdentityResult validPass = null;
 				if (!string.IsNullOrEmpty(password))
 				{
-					validPass = await passwordValidator.ValidateAsync(userManager,
+					validPass = await _passwordValidator.ValidateAsync(_userManager,
 						user, password);
 					if (validPass.Succeeded)
 					{
-						user.PasswordHash = passwordHasher.HashPassword(user,
+						user.PasswordHash = _passwordHasher.HashPassword(user,
 							password);
 					}
 					else
@@ -149,7 +149,7 @@ namespace ScientificReport.Controllers
 				{
 					return View(user);
 				}
-				var result = await userManager.UpdateAsync(user);
+				var result = await _userManager.UpdateAsync(user);
 				if (result.Succeeded)
 				{
 					return RedirectToAction("Index");
@@ -169,10 +169,10 @@ namespace ScientificReport.Controllers
 		[HttpPost]
 		public async Task<IActionResult> Delete(string id)
 		{
-			var user = await userManager.FindByIdAsync(id);
+			var user = await _userManager.FindByIdAsync(id);
 			if (user != null)
 			{
-				var result = await userManager.DeleteAsync(user);
+				var result = await _userManager.DeleteAsync(user);
 				if (result.Succeeded)
 				{
 					return RedirectToAction("Index");
@@ -185,7 +185,7 @@ namespace ScientificReport.Controllers
 				ModelState.AddModelError("", "User Not Found");
 			}
 
-			return View("Index", userManager.Users);
+			return View("Index", _userManager.Users);
 		}
 
 		private void AddErrorsFromResult(IdentityResult result)

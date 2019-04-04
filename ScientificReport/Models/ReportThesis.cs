@@ -12,9 +12,8 @@ namespace ScientificReport.Models
 		public string Thesis { get; set; }
 		
 		[Required]
-		public virtual ICollection<UserProfile> Authors { get; set; }
-		
-		[Required]
 		public virtual Conference Conference { get; set; }
+		
+		public virtual ICollection<UserProfilesReportThesis> UserProfilesReportTheses { get; set; }
 	}
 }

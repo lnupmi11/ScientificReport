@@ -44,5 +44,15 @@ namespace ScientificReport.Models
 		public virtual ICollection<UserProfilesGrants> UserProfilesGrants { get; set; }
 		
 		public virtual ICollection<UserProfilesScientificWorks> UserProfilesScientificWorks { get; set; }
+		
+		public virtual ICollection<UserProfilesArticles> UserProfilesArticles { get; set; }
+		
+		public virtual ICollection<UserProfilesReportThesis> UserProfilesReportTheses { get; set; }
+		
+		public virtual ICollection<UserProfilesReviews> UserProfilesReviews { get; set; }
+		
+		public virtual ICollection<UserProfilesScientificInternships> UserProfilesScientificInternships { get; set; }
+		
+//		public virtual ICollection<UserProfilesPatentLicenseActivities> UserProfilesPatentLicenseActivities { get; set; }
 	}
 }

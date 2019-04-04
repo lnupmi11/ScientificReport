@@ -46,6 +46,42 @@ namespace ScientificReport.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "AspNetUsers",
+                columns: table => new
+                {
+                    Id = table.Column<string>(nullable: false),
+                    UserName = table.Column<string>(maxLength: 256, nullable: true),
+                    NormalizedUserName = table.Column<string>(maxLength: 256, nullable: true),
+                    Email = table.Column<string>(maxLength: 256, nullable: true),
+                    NormalizedEmail = table.Column<string>(maxLength: 256, nullable: true),
+                    EmailConfirmed = table.Column<bool>(nullable: false),
+                    PasswordHash = table.Column<string>(nullable: true),
+                    SecurityStamp = table.Column<string>(nullable: true),
+                    ConcurrencyStamp = table.Column<string>(nullable: true),
+                    PhoneNumber = table.Column<string>(nullable: true),
+                    PhoneNumberConfirmed = table.Column<bool>(nullable: false),
+                    TwoFactorEnabled = table.Column<bool>(nullable: false),
+                    LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
+                    LockoutEnabled = table.Column<bool>(nullable: false),
+                    AccessFailedCount = table.Column<int>(nullable: false),
+                    FirstName = table.Column<string>(nullable: false),
+                    MiddleName = table.Column<string>(nullable: false),
+                    LastName = table.Column<string>(nullable: false),
+                    BirthYear = table.Column<int>(nullable: false),
+                    GraduationYear = table.Column<int>(nullable: false),
+                    ScientificDegree = table.Column<string>(nullable: false),
+                    YearDegreeGained = table.Column<int>(nullable: false),
+                    AcademicStatus = table.Column<string>(nullable: false),
+                    YearDegreeAssigned = table.Column<int>(nullable: false),
+                    Position = table.Column<string>(nullable: false),
+                    IsApproved = table.Column<bool>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Departments",
                 columns: table => new
                 {
@@ -77,54 +113,6 @@ namespace ScientificReport.Migrations
                         principalTable: "AspNetRoles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "AspNetUsers",
-                columns: table => new
-                {
-                    Id = table.Column<string>(nullable: false),
-                    UserName = table.Column<string>(maxLength: 256, nullable: true),
-                    NormalizedUserName = table.Column<string>(maxLength: 256, nullable: true),
-                    Email = table.Column<string>(maxLength: 256, nullable: true),
-                    NormalizedEmail = table.Column<string>(maxLength: 256, nullable: true),
-                    EmailConfirmed = table.Column<bool>(nullable: false),
-                    PasswordHash = table.Column<string>(nullable: true),
-                    SecurityStamp = table.Column<string>(nullable: true),
-                    ConcurrencyStamp = table.Column<string>(nullable: true),
-                    PhoneNumber = table.Column<string>(nullable: true),
-                    PhoneNumberConfirmed = table.Column<bool>(nullable: false),
-                    TwoFactorEnabled = table.Column<bool>(nullable: false),
-                    LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
-                    LockoutEnabled = table.Column<bool>(nullable: false),
-                    AccessFailedCount = table.Column<int>(nullable: false),
-                    FirstName = table.Column<string>(nullable: false),
-                    MiddleName = table.Column<string>(nullable: false),
-                    LastName = table.Column<string>(nullable: false),
-                    BirthYear = table.Column<int>(nullable: false),
-                    GraduationYear = table.Column<int>(nullable: false),
-                    ScientificDegree = table.Column<string>(nullable: false),
-                    YearDegreeGained = table.Column<int>(nullable: false),
-                    AcademicStatus = table.Column<string>(nullable: false),
-                    YearDegreeAssigned = table.Column<int>(nullable: false),
-                    Position = table.Column<string>(nullable: false),
-                    IsApproved = table.Column<bool>(nullable: false),
-                    ArticleId = table.Column<int>(nullable: true),
-                    PatentLicenseActivityId = table.Column<int>(nullable: true),
-                    PatentLicenseActivityId1 = table.Column<int>(nullable: true),
-                    ReportThesisId = table.Column<int>(nullable: true),
-                    ReviewId = table.Column<int>(nullable: true),
-                    ScientificInternshipId = table.Column<int>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AspNetUsers", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_AspNetUsers_Articles_ArticleId",
-                        column: x => x.ArticleId,
-                        principalTable: "Articles",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -228,6 +216,32 @@ namespace ScientificReport.Migrations
                     table.ForeignKey(
                         name: "FK_FacultyReports_AspNetUsers_AdministratorId",
                         column: x => x.AdministratorId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UserProfilesArticles",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    AuthorId = table.Column<string>(nullable: false),
+                    ArticleId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserProfilesArticles", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_UserProfilesArticles_Articles_ArticleId",
+                        column: x => x.ArticleId,
+                        principalTable: "Articles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_UserProfilesArticles_AspNetUsers_AuthorId",
+                        column: x => x.AuthorId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -379,7 +393,7 @@ namespace ScientificReport.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "PatentLicenseActivities",
+                name: "PatentLicenseActivity",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -392,9 +406,9 @@ namespace ScientificReport.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PatentLicenseActivities", x => x.Id);
+                    table.PrimaryKey("PK_PatentLicenseActivity", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_PatentLicenseActivities_TeacherReports_TeacherReportId",
+                        name: "FK_PatentLicenseActivity_TeacherReports_TeacherReportId",
                         column: x => x.TeacherReportId,
                         principalTable: "TeacherReports",
                         principalColumn: "Id",
@@ -623,6 +637,39 @@ namespace ScientificReport.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "UserProfilesPatentLicenseActivities",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    AuthorId = table.Column<string>(nullable: false),
+                    ApplicantId = table.Column<string>(nullable: false),
+                    PatentLicenseActivityId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserProfilesPatentLicenseActivities", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_UserProfilesPatentLicenseActivities_AspNetUsers_ApplicantId",
+                        column: x => x.ApplicantId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_UserProfilesPatentLicenseActivities_AspNetUsers_AuthorId",
+                        column: x => x.AuthorId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_UserProfilesPatentLicenseActivities_PatentLicenseActivity_PatentLicenseActivityId",
+                        column: x => x.PatentLicenseActivityId,
+                        principalTable: "PatentLicenseActivity",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Reviews",
                 columns: table => new
                 {
@@ -676,6 +723,58 @@ namespace ScientificReport.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "UserProfilesReportTheses",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    UserProfileId = table.Column<string>(nullable: false),
+                    ReportThesisId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserProfilesReportTheses", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_UserProfilesReportTheses_ReportTheses_ReportThesisId",
+                        column: x => x.ReportThesisId,
+                        principalTable: "ReportTheses",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_UserProfilesReportTheses_AspNetUsers_UserProfileId",
+                        column: x => x.UserProfileId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UserProfilesScientificInternships",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    UserProfileId = table.Column<string>(nullable: false),
+                    ScientificInternshipId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserProfilesScientificInternships", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_UserProfilesScientificInternships_ScientificInternships_ScientificInternshipId",
+                        column: x => x.ScientificInternshipId,
+                        principalTable: "ScientificInternships",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_UserProfilesScientificInternships_AspNetUsers_UserProfileId",
+                        column: x => x.UserProfileId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "UserProfilesScientificWorks",
                 columns: table => new
                 {
@@ -696,6 +795,32 @@ namespace ScientificReport.Migrations
                     table.ForeignKey(
                         name: "FK_UserProfilesScientificWorks_AspNetUsers_UserProfileId",
                         column: x => x.UserProfileId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UserProfilesReviews",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    ReviewerId = table.Column<string>(nullable: false),
+                    ReviewId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserProfilesReviews", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_UserProfilesReviews_Reviews_ReviewId",
+                        column: x => x.ReviewId,
+                        principalTable: "Reviews",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_UserProfilesReviews_AspNetUsers_ReviewerId",
+                        column: x => x.ReviewerId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -728,11 +853,6 @@ namespace ScientificReport.Migrations
                 column: "RoleId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_AspNetUsers_ArticleId",
-                table: "AspNetUsers",
-                column: "ArticleId");
-
-            migrationBuilder.CreateIndex(
                 name: "EmailIndex",
                 table: "AspNetUsers",
                 column: "NormalizedEmail");
@@ -742,31 +862,6 @@ namespace ScientificReport.Migrations
                 table: "AspNetUsers",
                 column: "NormalizedUserName",
                 unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_AspNetUsers_PatentLicenseActivityId",
-                table: "AspNetUsers",
-                column: "PatentLicenseActivityId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_AspNetUsers_PatentLicenseActivityId1",
-                table: "AspNetUsers",
-                column: "PatentLicenseActivityId1");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_AspNetUsers_ReportThesisId",
-                table: "AspNetUsers",
-                column: "ReportThesisId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_AspNetUsers_ReviewId",
-                table: "AspNetUsers",
-                column: "ReviewId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_AspNetUsers_ScientificInternshipId",
-                table: "AspNetUsers",
-                column: "ScientificInternshipId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Conferences_DepartmentReportId",
@@ -809,8 +904,8 @@ namespace ScientificReport.Migrations
                 column: "TeacherReportId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_PatentLicenseActivities_TeacherReportId",
-                table: "PatentLicenseActivities",
+                name: "IX_PatentLicenseActivity_TeacherReportId",
+                table: "PatentLicenseActivity",
                 column: "TeacherReportId");
 
             migrationBuilder.CreateIndex(
@@ -894,6 +989,16 @@ namespace ScientificReport.Migrations
                 column: "TeacherId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_UserProfilesArticles_ArticleId",
+                table: "UserProfilesArticles",
+                column: "ArticleId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserProfilesArticles_AuthorId",
+                table: "UserProfilesArticles",
+                column: "AuthorId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_UserProfilesGrants_GrantId",
                 table: "UserProfilesGrants",
                 column: "GrantId");
@@ -902,6 +1007,21 @@ namespace ScientificReport.Migrations
                 name: "IX_UserProfilesGrants_UserProfileId",
                 table: "UserProfilesGrants",
                 column: "UserProfileId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserProfilesPatentLicenseActivities_ApplicantId",
+                table: "UserProfilesPatentLicenseActivities",
+                column: "ApplicantId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserProfilesPatentLicenseActivities_AuthorId",
+                table: "UserProfilesPatentLicenseActivities",
+                column: "AuthorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserProfilesPatentLicenseActivities_PatentLicenseActivityId",
+                table: "UserProfilesPatentLicenseActivities",
+                column: "PatentLicenseActivityId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserProfilesPublications_PublicationId",
@@ -914,6 +1034,36 @@ namespace ScientificReport.Migrations
                 column: "UserProfileId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_UserProfilesReportTheses_ReportThesisId",
+                table: "UserProfilesReportTheses",
+                column: "ReportThesisId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserProfilesReportTheses_UserProfileId",
+                table: "UserProfilesReportTheses",
+                column: "UserProfileId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserProfilesReviews_ReviewId",
+                table: "UserProfilesReviews",
+                column: "ReviewId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserProfilesReviews_ReviewerId",
+                table: "UserProfilesReviews",
+                column: "ReviewerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserProfilesScientificInternships_ScientificInternshipId",
+                table: "UserProfilesScientificInternships",
+                column: "ScientificInternshipId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserProfilesScientificInternships_UserProfileId",
+                table: "UserProfilesScientificInternships",
+                column: "UserProfileId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_UserProfilesScientificWorks_ScientificWorkId",
                 table: "UserProfilesScientificWorks",
                 column: "ScientificWorkId");
@@ -922,62 +1072,10 @@ namespace ScientificReport.Migrations
                 name: "IX_UserProfilesScientificWorks_UserProfileId",
                 table: "UserProfilesScientificWorks",
                 column: "UserProfileId");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_AspNetUsers_PatentLicenseActivities_PatentLicenseActivityId",
-                table: "AspNetUsers",
-                column: "PatentLicenseActivityId",
-                principalTable: "PatentLicenseActivities",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Restrict);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_AspNetUsers_PatentLicenseActivities_PatentLicenseActivityId1",
-                table: "AspNetUsers",
-                column: "PatentLicenseActivityId1",
-                principalTable: "PatentLicenseActivities",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Restrict);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_AspNetUsers_ReportTheses_ReportThesisId",
-                table: "AspNetUsers",
-                column: "ReportThesisId",
-                principalTable: "ReportTheses",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Restrict);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_AspNetUsers_Reviews_ReviewId",
-                table: "AspNetUsers",
-                column: "ReviewId",
-                principalTable: "Reviews",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Restrict);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_AspNetUsers_ScientificInternships_ScientificInternshipId",
-                table: "AspNetUsers",
-                column: "ScientificInternshipId",
-                principalTable: "ScientificInternships",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Restrict);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_DepartmentReports_AspNetUsers_HeadOfDepartmentId",
-                table: "DepartmentReports");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_FacultyReports_AspNetUsers_AdministratorId",
-                table: "FacultyReports");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_TeacherReports_AspNetUsers_TeacherId",
-                table: "TeacherReports");
-
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
@@ -1009,10 +1107,25 @@ namespace ScientificReport.Migrations
                 name: "ScientificConsultations");
 
             migrationBuilder.DropTable(
+                name: "UserProfilesArticles");
+
+            migrationBuilder.DropTable(
                 name: "UserProfilesGrants");
 
             migrationBuilder.DropTable(
+                name: "UserProfilesPatentLicenseActivities");
+
+            migrationBuilder.DropTable(
                 name: "UserProfilesPublications");
+
+            migrationBuilder.DropTable(
+                name: "UserProfilesReportTheses");
+
+            migrationBuilder.DropTable(
+                name: "UserProfilesReviews");
+
+            migrationBuilder.DropTable(
+                name: "UserProfilesScientificInternships");
 
             migrationBuilder.DropTable(
                 name: "UserProfilesScientificWorks");
@@ -1021,22 +1134,13 @@ namespace ScientificReport.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "Grants");
-
-            migrationBuilder.DropTable(
-                name: "ScientificWorks");
-
-            migrationBuilder.DropTable(
-                name: "Departments");
-
-            migrationBuilder.DropTable(
-                name: "AspNetUsers");
-
-            migrationBuilder.DropTable(
                 name: "Articles");
 
             migrationBuilder.DropTable(
-                name: "PatentLicenseActivities");
+                name: "Grants");
+
+            migrationBuilder.DropTable(
+                name: "PatentLicenseActivity");
 
             migrationBuilder.DropTable(
                 name: "ReportTheses");
@@ -1048,10 +1152,16 @@ namespace ScientificReport.Migrations
                 name: "ScientificInternships");
 
             migrationBuilder.DropTable(
+                name: "ScientificWorks");
+
+            migrationBuilder.DropTable(
                 name: "Conferences");
 
             migrationBuilder.DropTable(
                 name: "Publications");
+
+            migrationBuilder.DropTable(
+                name: "Departments");
 
             migrationBuilder.DropTable(
                 name: "TeacherReports");
@@ -1061,6 +1171,9 @@ namespace ScientificReport.Migrations
 
             migrationBuilder.DropTable(
                 name: "FacultyReports");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUsers");
         }
     }
 }
