@@ -1,18 +1,19 @@
 using System;
-using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
 using ScientificReport.Models;
-using ScientificReport.Forms;
+using ScientificReport.Models.ViewModels;
 
 namespace ScientificReport.Controllers
 {
+	//[Authorize]
 	public class UserProfileController : Controller
 	{
 		private readonly UserManager<UserProfile> _userManager;
+		private readonly SignInManager<UserProfile> _signInManager;
 		private readonly IUserValidator<UserProfile> _userValidator;
 		private readonly IPasswordValidator<UserProfile> _passwordValidator;
 		private readonly IPasswordHasher<UserProfile> _passwordHasher;
@@ -20,30 +21,20 @@ namespace ScientificReport.Controllers
 		public UserProfileController(UserManager<UserProfile> usrMgr,
 			IUserValidator<UserProfile> userValid,
 			IPasswordValidator<UserProfile> passValid,
-			IPasswordHasher<UserProfile> passwordHash)
+			IPasswordHasher<UserProfile> passwordHash,
+			SignInManager<UserProfile> signInManager)
 		{
 			_userManager = usrMgr;
 			_userValidator = userValid;
 			_passwordValidator = passValid;
 			_passwordHasher = passwordHash;
+			_signInManager = signInManager;
 		}
 
 		// GET: UserProfile/Index
 		public async Task<IActionResult> Index()
 		{
 			var items = await _userManager.Users.ToListAsync();
-			if (!items.Any()) return View(items);
-			
-			// debug stuff
-			var output = JsonConvert.SerializeObject(items.First());
-			Console.WriteLine();
-			Console.WriteLine(output);
-			Console.WriteLine();
-			var users = await _userManager.Users.ToListAsync();
-			output = JsonConvert.SerializeObject(users);
-			Console.WriteLine();
-			Console.WriteLine(output);
-			Console.WriteLine();
 			return View(items);
 		}
 
@@ -64,43 +55,6 @@ namespace ScientificReport.Controllers
 			return View(userProfile);
 		}
 
-		// GET: UserProfile/Register
-		public IActionResult Register() => View();
-		
-		// POST: UserProfile/Register
-		[HttpPost]
-		public async Task<IActionResult> Register(RegisterModel model) {
-			if (!ModelState.IsValid)
-			{
-				return View(model);
-			}
-			
-			var user = new UserProfile {
-				UserName = model.UserName,
-				Email = model.Email,
-				FirstName = model.FirstName,
-				LastName = model.LastName,
-				MiddleName = model.MiddleName,
-				BirthYear = model.BirthYear,
-				AcademicStatus = model.AcademicStatus,
-				GraduationYear = model.GraduationYear,
-				ScientificDegree = model.ScientificDegree,
-				YearDegreeGained = model.YearDegreeGained,
-				YearDegreeAssigned = model.YearDegreeAssigned,
-				Position = "Teacher",
-				IsApproved = false,
-				PhoneNumber = model.PhoneNumber
-			};
-			var result = await _userManager.CreateAsync(user, model.Password);
-			if (result.Succeeded)
-			{
-				return RedirectToAction("Index");
-			}
-
-			AddErrorsFromResult(result);
-			return View(model);
-		}
-
 		// GET: UserProfile/Edit/{id}
 		public async Task<IActionResult> Edit(string id) {
 			var user = await _userManager.FindByIdAsync(id);
@@ -114,55 +68,17 @@ namespace ScientificReport.Controllers
 
 		// POST: UserProfile/Edit/{id}
 		[HttpPost]
-		public async Task<IActionResult> Edit(string id, string email, string password)
+		public async Task<IActionResult> Edit(UserProfile user)
 		{
-			var user = await _userManager.FindByIdAsync(id);
-			if (user != null)
+			if (!ModelState.IsValid)
 			{
-				user.Email = email;
-				var validEmail = await _userValidator.ValidateAsync(_userManager, user);
-				if (!validEmail.Succeeded)
-				{
-					AddErrorsFromResult(validEmail);
-				}
-
-				IdentityResult validPass = null;
-				if (!string.IsNullOrEmpty(password))
-				{
-					validPass = await _passwordValidator.ValidateAsync(_userManager,
-						user, password);
-					if (validPass.Succeeded)
-					{
-						user.PasswordHash = _passwordHasher.HashPassword(user,
-							password);
-					}
-					else
-					{
-						AddErrorsFromResult(validPass);
-					}
-				}
-
-				if (
-					(!validEmail.Succeeded || validPass != null) &&
-					(!validEmail.Succeeded || password == string.Empty || !validPass.Succeeded)
-				)
-				{
-					return View(user);
-				}
-				var result = await _userManager.UpdateAsync(user);
-				if (result.Succeeded)
-				{
-					return RedirectToAction("Index");
-				}
-
-				AddErrorsFromResult(result);
-			}
-			else
-			{
-				ModelState.AddModelError("", "User Not Found");
+				return View(user);
 			}
 
-			return View(user);
+			// TODO: save user with IUserProfileRepository
+			
+			Console.Out.WriteLine(user.UserName);
+			return RedirectToAction("Index");
 		}
 
 		// POST: UserProfile/Delete/{id}
@@ -187,7 +103,85 @@ namespace ScientificReport.Controllers
 
 			return View("Index", _userManager.Users);
 		}
+		
+		// GET: UserProfile/Register
+		[AllowAnonymous]
+		public IActionResult Register() => View();
+		
+		// POST: UserProfile/Register
+		[HttpPost]
+		[AllowAnonymous]
+		[ValidateAntiForgeryToken]
+		public async Task<IActionResult> Register(RegisterModel model) {
+			if (!ModelState.IsValid)
+			{
+				return View(model);
+			}
+			
+			var user = new UserProfile {
+				UserName = model.UserName,
+				Email = model.Email,
+				FirstName = model.FirstName,
+				LastName = model.LastName,
+				MiddleName = model.MiddleName,
+				BirthYear = model.BirthYear,
+				AcademicStatus = model.AcademicStatus,
+				GraduationYear = model.GraduationYear,
+				ScientificDegree = model.ScientificDegree,
+				YearDegreeGained = model.YearDegreeGained,
+				YearDegreeAssigned = model.YearDegreeAssigned,
+				Position = "Teacher",
+				IsApproved = false,
+				PhoneNumber = model.PhoneNumber
+			};
+			if (model.Password.Equals(model.PasswordRepeat))
+			{
+				var result = await _userManager.CreateAsync(user, model.Password);
+				if (result.Succeeded)
+				{
+					return RedirectToAction("Index");
+				}
+				AddErrorsFromResult(result);
+			}
+			else
+			{
+				ModelState.AddModelError("", "Password confirmation failed");
+			}
+			
+			return View(model);
+		}
 
+		// GET: UserProfile/Login
+		[AllowAnonymous]
+		public IActionResult Login() => View();
+
+		// POST: UserProfile/Login
+		[HttpPost]
+		[AllowAnonymous]
+		[ValidateAntiForgeryToken]
+		public async Task<IActionResult> Login(LoginModel model)
+		{
+			if (ModelState.IsValid) {
+				var user = await _userManager.FindByNameAsync(model.UserName);
+				if (user != null) {
+					await _signInManager.SignOutAsync();
+					if ((await _signInManager.PasswordSignInAsync(
+							user, model.Password, false, false
+						)).Succeeded) {
+						return Redirect(model.ReturnUrl);
+					}
+				}
+			}
+			ModelState.AddModelError("", "Invalid login or password");
+			return View(model);
+		}
+
+		// GET: UserProfile/Logout
+		public async Task<IActionResult> Logout() {
+			await _signInManager.SignOutAsync();
+			return Redirect("/UserProfile/Login");
+		}
+		
 		private void AddErrorsFromResult(IdentityResult result)
 		{
 			foreach (var error in result.Errors)
