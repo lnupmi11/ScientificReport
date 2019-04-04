@@ -4,7 +4,7 @@ using ScientificReport.Models;
 
 namespace ScientificReport.Data
 {
-	public class ApplicationDbContext : IdentityDbContext
+	public class ApplicationDbContext : IdentityDbContext<UserProfile>
 	{
 		public ApplicationDbContext(DbContextOptions options)
 			: base(options)
@@ -12,6 +12,5 @@ namespace ScientificReport.Data
 		}
 
 		public DbSet<Report> Reports { get; set; }
-		public DbSet<UserProfile> UserProfile { get; set; }
 	}
 }

@@ -1,158 +1,198 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
-using ScientificReport.Data;
 using ScientificReport.Models;
 
 namespace ScientificReport.Controllers
 {
-    public class UserProfileController : Controller
-    {
-        private readonly ApplicationDbContext _context;
+	public class UserProfileController : Controller
+	{
+		private UserManager<UserProfile> userManager;
+		private IUserValidator<UserProfile> userValidator;
+		private IPasswordValidator<UserProfile> passwordValidator;
+		private IPasswordHasher<UserProfile> passwordHasher;
 
-        public UserProfileController(ApplicationDbContext context)
-        {
-            _context = context;
-        }
+		public UserProfileController(UserManager<UserProfile> usrMgr,
+			IUserValidator<UserProfile> userValid,
+			IPasswordValidator<UserProfile> passValid,
+			IPasswordHasher<UserProfile> passwordHash)
+		{
+			userManager = usrMgr;
+			userValidator = userValid;
+			passwordValidator = passValid;
+			passwordHasher = passwordHash;
+		}
 
-        // GET: UserProfile
-        public async Task<IActionResult> Index()
-        {
-            var items = await _context.UserProfile.ToListAsync();
-            if (!items.Any()) return View(items);
-            
-            // debug stuff
-            var output = JsonConvert.SerializeObject(items.First());
-            Console.WriteLine();
-            Console.WriteLine(output);
-            Console.WriteLine();
-            var users = await _context.Users.ToListAsync();
-            output = JsonConvert.SerializeObject(users);
-            Console.WriteLine();
-            Console.WriteLine(output);
-            Console.WriteLine();
-            return View(items);
-        }
+		// GET: UserProfile/Index
+		public async Task<IActionResult> Index()
+		{
+			var items = await userManager.Users.ToListAsync();
+			if (!items.Any()) return View(items);
+			
+			// debug stuff
+			var output = JsonConvert.SerializeObject(items.First());
+			Console.WriteLine();
+			Console.WriteLine(output);
+			Console.WriteLine();
+			var users = await userManager.Users.ToListAsync();
+			output = JsonConvert.SerializeObject(users);
+			Console.WriteLine();
+			Console.WriteLine(output);
+			Console.WriteLine();
+			return View(items);
+		}
 
-        // GET: UserProfile/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+		// GET: UserProfile/Details/{id}
+		public async Task<IActionResult> Details(string id)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
 
-            var userProfile = await _context.UserProfile
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (userProfile == null)
-            {
-                return NotFound();
-            }
+			var userProfile = await userManager.Users.FirstOrDefaultAsync(m => m.Id == id);
+			if (userProfile == null)
+			{
+				return NotFound();
+			}
 
-            return View(userProfile);
-        }
+			return View(userProfile);
+		}
 
-        // GET: UserProfile/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
+		// GET: UserProfile/Register
+		public IActionResult Register() => View();
+		
+		// POST: UserProfile/Register
+		[HttpPost]
+		public async Task<IActionResult> Register(RegisterModel model) {
+			if (!ModelState.IsValid)
+			{
+				return View(model);
+			}
+			
+			var user = new UserProfile {
+				UserName = model.UserName,
+				Email = model.Email,
+				FirstName = model.FirstName,
+				LastName = model.LastName,
+				MiddleName = model.MiddleName,
+				BirthYear = model.BirthYear,
+				AcademicStatus = model.AcademicStatus,
+				GraduationYear = model.GraduationYear,
+				ScientificDegree = model.ScientificDegree,
+				YearDegreeGained = model.YearDegreeGained,
+				YearDegreeAssigned = model.YearDegreeAssigned,
+				Position = "Teacher",
+				IsApproved = false,
+				PhoneNumber = model.PhoneNumber
+			};
+			var result = await userManager.CreateAsync(user, model.Password);
+			if (result.Succeeded)
+			{
+				return RedirectToAction("Index");
+			}
 
-        // POST: UserProfile/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Type,FirstName,MiddleName,LastName")] UserProfile userProfile)
-        {
-            if (!ModelState.IsValid) return View(userProfile);
-            _context.Add(userProfile);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
+			AddErrorsFromResult(result);
+			return View(model);
+		}
 
-        // GET: UserProfile/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+		// GET: UserProfile/Edit/{id}
+		public async Task<IActionResult> Edit(string id) {
+			var user = await userManager.FindByIdAsync(id);
+			if (user != null)
+			{
+				return View(user);
+			}
 
-            var userProfile = await _context.UserProfile.FindAsync(id);
-            if (userProfile == null)
-            {
-                return NotFound();
-            }
-            return View(userProfile);
-        }
+			return RedirectToAction("Index");
+		}
 
-        // POST: UserProfile/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Type,FirstName,MiddleName,LastName")] UserProfile userProfile)
-        {
-            if (id != userProfile.Id)
-            {
-                return NotFound();
-            }
+		// POST: UserProfile/Edit/{id}
+		[HttpPost]
+		public async Task<IActionResult> Edit(string id, string email, string password)
+		{
+			var user = await userManager.FindByIdAsync(id);
+			if (user != null)
+			{
+				user.Email = email;
+				var validEmail = await userValidator.ValidateAsync(userManager, user);
+				if (!validEmail.Succeeded)
+				{
+					AddErrorsFromResult(validEmail);
+				}
 
-            if (!ModelState.IsValid) return View(userProfile);
-            
-            try
-            {
-                _context.Update(userProfile);
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!UserProfileExists(userProfile.Id))
-                {
-                    return NotFound();
-                }
+				IdentityResult validPass = null;
+				if (!string.IsNullOrEmpty(password))
+				{
+					validPass = await passwordValidator.ValidateAsync(userManager,
+						user, password);
+					if (validPass.Succeeded)
+					{
+						user.PasswordHash = passwordHasher.HashPassword(user,
+							password);
+					}
+					else
+					{
+						AddErrorsFromResult(validPass);
+					}
+				}
 
-                throw;
-            }
-            return RedirectToAction(nameof(Index));
-        }
+				if (
+					(!validEmail.Succeeded || validPass != null) &&
+					(!validEmail.Succeeded || password == string.Empty || !validPass.Succeeded)
+				)
+				{
+					return View(user);
+				}
+				var result = await userManager.UpdateAsync(user);
+				if (result.Succeeded)
+				{
+					return RedirectToAction("Index");
+				}
 
-        // GET: UserProfile/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+				AddErrorsFromResult(result);
+			}
+			else
+			{
+				ModelState.AddModelError("", "User Not Found");
+			}
 
-            var userProfile = await _context.UserProfile
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (userProfile == null)
-            {
-                return NotFound();
-            }
+			return View(user);
+		}
 
-            return View(userProfile);
-        }
+		// POST: UserProfile/Delete/{id}
+		[HttpPost]
+		public async Task<IActionResult> Delete(string id)
+		{
+			var user = await userManager.FindByIdAsync(id);
+			if (user != null)
+			{
+				var result = await userManager.DeleteAsync(user);
+				if (result.Succeeded)
+				{
+					return RedirectToAction("Index");
+				}
 
-        // POST: UserProfile/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var userProfile = await _context.UserProfile.FindAsync(id);
-            _context.UserProfile.Remove(userProfile);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
+				AddErrorsFromResult(result);
+			}
+			else
+			{
+				ModelState.AddModelError("", "User Not Found");
+			}
 
-        private bool UserProfileExists(int id)
-        {
-            return _context.UserProfile.Any(e => e.Id == id);
-        }
-    }
+			return View("Index", userManager.Users);
+		}
+
+		private void AddErrorsFromResult(IdentityResult result)
+		{
+			foreach (var error in result.Errors)
+			{
+				ModelState.AddModelError("", error.Description);
+			}
+		}
+	}
 }
