@@ -10,7 +10,6 @@ var a00018 =
       [ "BibliographicIndex", "a00018.html#a2e6feb5a21a6a2e28711829538a0920ca17533766d9e1f285e06e2bbc4a431f5e", null ],
       [ "Other", "a00018.html#a2e6feb5a21a6a2e28711829538a0920ca6311ae17c1ee52b36e68aaf4ad066387", null ]
     ] ],
-    [ "Authors", "a00018.html#a1dd29d50ebce685f33ff80b2c2ab3c78", null ],
     [ "Id", "a00018.html#aa9364fa8ec410a46d45a73ddc355b8db", null ],
     [ "IsPrintCanceled", "a00018.html#a02f347a453ec97d0fe897be6a3222779", null ],
     [ "IsRecommendedToPrint", "a00018.html#ab55dd4e875ddff2de751c7a0b76c697b", null ],
@@ -20,5 +19,6 @@ var a00018 =
     [ "PublishingYear", "a00018.html#a7a712ab5a091696cae815db116b9755a", null ],
     [ "Specification", "a00018.html#aedc4a0312cb32d883398375ba897128c", null ],
     [ "Title", "a00018.html#ad59b8d72277d81fefe5e89a9241c2221", null ],
-    [ "Type", "a00018.html#a5f108cb7844b2446c6cec71d1c8b7cb7", null ]
+    [ "Type", "a00018.html#a5f108cb7844b2446c6cec71d1c8b7cb7", null ],
+    [ "UserProfilesPublications", "a00018.html#ae6b09a89b2d75d693cfb43fb89bb5048", null ]
 ];

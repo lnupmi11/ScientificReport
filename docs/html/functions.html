@@ -163,7 +163,6 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>Authors
 : <a class="el" href="a00003.html#ac2885c65da4496431a2735c86443c4f0">ScientificReport.Models.Article</a>
 , <a class="el" href="a00014.html#a929b0e327c6d163e36a085556a47222c">ScientificReport.Models.PatentLicenseActivity</a>
-, <a class="el" href="a00018.html#a1dd29d50ebce685f33ff80b2c2ab3c78">ScientificReport.Models.Publication</a>
 , <a class="el" href="a00022.html#a083af6397254c4e62447426c3052183d">ScientificReport.Models.ReportThesis</a>
 </li>
 </ul>
@@ -302,10 +301,12 @@ $(document).ready(function(){initNavTree('functions.html','');});
 , <a class="el" href="a00015.html#a59630a6224af11a553a7fb89fbcaab9a">ScientificReport.Models.PostgraduateDissertationGuidance</a>
 , <a class="el" href="a00029.html#a5c0912b289b237a236b20d02c54e4899">ScientificReport.Models.UserProfile</a>
 </li>
+<li>Grant
+: <a class="el" href="a00031.html#a509b5afc79ecc5f453fcc2cf86e6fa53">ScientificReport.Models.UserProfilesGrants</a>
+</li>
 <li>Grants
 : <a class="el" href="a00001.html#a7f4b18b239add901eb0612f9716fd948">ScientificReport.Data.ApplicationDbContext</a>
 , <a class="el" href="a00028.html#a15166b3dbf33add242b75a0fe94f366b">ScientificReport.Models.TeacherReport</a>
-, <a class="el" href="a00029.html#ac87a189633383175809a1961d2ab09fb">ScientificReport.Models.UserProfile</a>
 </li>
 <li>Guide
 : <a class="el" href="a00015.html#a17f283432cdfd41f885fedbc6adb10de">ScientificReport.Models.PostgraduateDissertationGuidance</a>
@@ -340,6 +341,9 @@ $(document).ready(function(){initNavTree('functions.html','');});
 , <a class="el" href="a00024.html#a16310d4655b4031f6bbea99ff879bd99">ScientificReport.Models.ScientificConsultation</a>
 , <a class="el" href="a00025.html#a941db70b5b44af9123a75c292482edf1">ScientificReport.Models.ScientificInternship</a>
 , <a class="el" href="a00026.html#a6aefcf98bd2b7893077986c31520c271">ScientificReport.Models.ScientificWork</a>
+, <a class="el" href="a00031.html#a5a2a7ed1f5b2e35816eae3463a4b50ed">ScientificReport.Models.UserProfilesGrants</a>
+, <a class="el" href="a00032.html#aeb50a268b77912df2b9ce498945d9e31">ScientificReport.Models.UserProfilesPublications</a>
+, <a class="el" href="a00033.html#a555845abdb4f6e28db4ba468c4b4831c">ScientificReport.Models.UserProfilesScientificWorks</a>
 </li>
 <li>Index()
 : <a class="el" href="a00010.html#acc629acfd1137f0a258c5f691a71a3ce">ScientificReport.Controllers.HomeController</a>
@@ -428,9 +432,6 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="a00003.html#a3290656cc5f644abfd4d626da75c422e">ScientificReport.Models.Article</a>
 , <a class="el" href="a00018.html#a777ec56fb4a1b56c4dfd3072ad66d8a4">ScientificReport.Models.Publication</a>
 </li>
-<li>Participators
-: <a class="el" href="a00026.html#a9f735947557f1094a6978815909d2571">ScientificReport.Models.ScientificWork</a>
-</li>
 <li>Password
 : <a class="el" href="a00019.html#ac6a6a5023da45062f1a3f0292ce6dcb4">ScientificReport.Forms.RegisterModel</a>
 </li>
@@ -467,10 +468,12 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>Privacy()
 : <a class="el" href="a00010.html#a246ab018cd8984cabbfaa3982b8a6a52">ScientificReport.Controllers.HomeController</a>
 </li>
+<li>Publication
+: <a class="el" href="a00032.html#a6816b8b1afffdf19f541e6df7291d89d">ScientificReport.Models.UserProfilesPublications</a>
+</li>
 <li>Publications
 : <a class="el" href="a00001.html#a0de39558d380e1d043ca92329ecac622">ScientificReport.Data.ApplicationDbContext</a>
 , <a class="el" href="a00028.html#a29d115acbe5ab62a780f956d8c084214">ScientificReport.Models.TeacherReport</a>
-, <a class="el" href="a00029.html#a3c2f9356f99d134d5eea9e811e5e26c7">ScientificReport.Models.UserProfile</a>
 </li>
 <li>PublishingHouseName
 : <a class="el" href="a00003.html#a1ffb67ef5de22a5d6769104377c95732">ScientificReport.Models.Article</a>
@@ -488,9 +491,6 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 
 <h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
-<li>Receivers
-: <a class="el" href="a00009.html#a253a5c4ba48dbece09da9e53985399fd">ScientificReport.Models.Grant</a>
-</li>
 <li>Register()
 : <a class="el" href="a00030.html#a6c8b98005ac1254746e00f0066ed462a">ScientificReport.Controllers.UserProfileController</a>
 </li>
@@ -527,11 +527,13 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="a00001.html#adb3aab08b7a6f46c0840804f6bbb0a2d">ScientificReport.Data.ApplicationDbContext</a>
 , <a class="el" href="a00028.html#a258a8868f25fdfb33a63a0a5ce447c8f">ScientificReport.Models.TeacherReport</a>
 </li>
+<li>ScientificWork
+: <a class="el" href="a00033.html#acdad06347b76a2c4f18ba2a00b5c5dda">ScientificReport.Models.UserProfilesScientificWorks</a>
+</li>
 <li>ScientificWorks
 : <a class="el" href="a00001.html#a1805def036d3138c1da4707e75e794dc">ScientificReport.Data.ApplicationDbContext</a>
 , <a class="el" href="a00005.html#a2904a363c45134e30c174a2ac79e6460">ScientificReport.Models.Department</a>
 , <a class="el" href="a00028.html#aa44e3ef4c35fc5beb573590112a52681">ScientificReport.Models.TeacherReport</a>
-, <a class="el" href="a00029.html#a815d03b1bc0cfa6a46eb89b01a1eaf0b">ScientificReport.Models.UserProfile</a>
 </li>
 <li>ShowRequestId
 : <a class="el" href="a00007.html#aa3808ca7668c408fc1fd0e396d0405fa">ScientificReport.Models.ErrorViewModel</a>
@@ -547,9 +549,6 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </li>
 <li>Startup()
 : <a class="el" href="a00027.html#a63d2f00d6a6c75ca48d391012d8ae7e0">ScientificReport.Startup</a>
-</li>
-<li>StudentGuidances
-: <a class="el" href="a00028.html#ac4e9a390f64d2fa5c9e76f7ea90f7f1b">ScientificReport.Models.TeacherReport</a>
 </li>
 </ul>
 
@@ -594,11 +593,31 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>UserName
 : <a class="el" href="a00019.html#a82e461ef63928c10d59fab84edf9b7e6">ScientificReport.Forms.RegisterModel</a>
 </li>
+<li>UserProfile
+: <a class="el" href="a00031.html#adec8cc14e368159d852a9ba8874bc1ac">ScientificReport.Models.UserProfilesGrants</a>
+, <a class="el" href="a00032.html#a6524f64f0ef09ea72bded29cb7f007bb">ScientificReport.Models.UserProfilesPublications</a>
+, <a class="el" href="a00033.html#ae75aa8e187f8d6d45ae13f574575bee7">ScientificReport.Models.UserProfilesScientificWorks</a>
+</li>
 <li>UserProfileController()
 : <a class="el" href="a00030.html#a60ddf737e63fecc3343ebf677e9d29a5">ScientificReport.Controllers.UserProfileController</a>
 </li>
 <li>UserProfiles
 : <a class="el" href="a00001.html#a02a86c2b8a7115fea4585482be9c26c7">ScientificReport.Data.ApplicationDbContext</a>
+</li>
+<li>UserProfilesGrants
+: <a class="el" href="a00001.html#a295364156cf3aeba0c7cb994bb2f0eff">ScientificReport.Data.ApplicationDbContext</a>
+, <a class="el" href="a00009.html#a47cbf6b7a5642fbd0a07139d273e5e26">ScientificReport.Models.Grant</a>
+, <a class="el" href="a00029.html#a1ebd89e222284eabf6da4d8e9c6da002">ScientificReport.Models.UserProfile</a>
+</li>
+<li>UserProfilesPublications
+: <a class="el" href="a00001.html#ae370c54ffc0d7c49d8652f8cec2d63bb">ScientificReport.Data.ApplicationDbContext</a>
+, <a class="el" href="a00018.html#ae6b09a89b2d75d693cfb43fb89bb5048">ScientificReport.Models.Publication</a>
+, <a class="el" href="a00029.html#a72a1902d7c01c9cce8c7308eb29b0d10">ScientificReport.Models.UserProfile</a>
+</li>
+<li>UserProfilesScientificWorks
+: <a class="el" href="a00001.html#a61f34e414d97affa6a8240bce48f3770">ScientificReport.Data.ApplicationDbContext</a>
+, <a class="el" href="a00026.html#ab316e368a684454592203103956512d7">ScientificReport.Models.ScientificWork</a>
+, <a class="el" href="a00029.html#a54ef6a21a432f9f72b87af325c78f692">ScientificReport.Models.UserProfile</a>
 </li>
 <li>Users
 : <a class="el" href="a00025.html#a7b02adc8d63b6f00ee484941900cb423">ScientificReport.Models.ScientificInternship</a>

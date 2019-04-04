@@ -2,7 +2,7 @@ var searchData=
 [
   ['teacher',['Teacher',['../a00028.html#aec9853b140fa913f3c2614d3f0adb43c',1,'ScientificReport::Models::TeacherReport']]],
   ['teacherreport',['TeacherReport',['../a00028.html',1,'ScientificReport::Models']]],
-  ['teacherreport_2ecs',['TeacherReport.cs',['../a00059.html',1,'']]],
+  ['teacherreport_2ecs',['TeacherReport.cs',['../a00062.html',1,'']]],
   ['teacherreports',['TeacherReports',['../a00001.html#a4bb33f0f6ba7aa52491a4bce8beb632c',1,'ScientificReport.Data.ApplicationDbContext.TeacherReports()'],['../a00006.html#aae6ae0c2452a3974e7d7296091eec9df',1,'ScientificReport.Models.DepartmentReport.TeacherReports()']]],
   ['textbook',['TextBook',['../a00018.html#a2e6feb5a21a6a2e28711829538a0920caf2a8c55c2916802cf57c892b33b6ec6e',1,'ScientificReport::Models::Publication']]],
   ['thesis',['Thesis',['../a00022.html#a927c4abde64a3b01c33acef50ebdd353',1,'ScientificReport::Models::ReportThesis']]],

@@ -1,5 +1,2 @@
-<map id="ScientificReport.Models.Report" name="ScientificReport.Models.Report">
-<area shape="rect" id="node2" href="$a00006.html" title="{ScientificReport.Models.\lDepartmentReport\n|+ HeadOfDepartment\l+ TeacherReports\l+ Conferences\l|}" alt="" coords="5,263,179,384"/>
-<area shape="rect" id="node3" href="$a00008.html" title="{ScientificReport.Models.\lFacultyReport\n|+ Administrator\l+ DepartmentReports\l|}" alt="" coords="203,270,376,377"/>
-<area shape="rect" id="node4" href="$a00028.html" title="{ScientificReport.Models.\lTeacherReport\n|+ Teacher\l+ ScientificWorks\l+ Grants\l+ ScientificInternships\l+ PostgraduateDissertation\lGuidances\l+ PostgraduateGuidances\l+ ScientificConsultations\l+ StudentGuidances\l+ Publications\l+ ReportTheses\l+ Patents\l+ Reviews\l+ Memberships\l+ Oppositions\l|}" alt="" coords="400,175,600,472"/>
+<map id="ScientificReport.Models.PostgraduateDissertationGuidance" name="ScientificReport.Models.PostgraduateDissertationGuidance">
 </map>

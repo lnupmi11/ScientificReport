@@ -19,5 +19,8 @@ var a00001 =
     [ "ScientificInternships", "a00001.html#adb3aab08b7a6f46c0840804f6bbb0a2d", null ],
     [ "ScientificWorks", "a00001.html#a1805def036d3138c1da4707e75e794dc", null ],
     [ "TeacherReports", "a00001.html#a4bb33f0f6ba7aa52491a4bce8beb632c", null ],
-    [ "UserProfiles", "a00001.html#a02a86c2b8a7115fea4585482be9c26c7", null ]
+    [ "UserProfiles", "a00001.html#a02a86c2b8a7115fea4585482be9c26c7", null ],
+    [ "UserProfilesGrants", "a00001.html#a295364156cf3aeba0c7cb994bb2f0eff", null ],
+    [ "UserProfilesPublications", "a00001.html#ae370c54ffc0d7c49d8652f8cec2d63bb", null ],
+    [ "UserProfilesScientificWorks", "a00001.html#a61f34e414d97affa6a8240bce48f3770", null ]
 ];

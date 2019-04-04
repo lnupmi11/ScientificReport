@@ -12,6 +12,5 @@ var a00028 =
     [ "ScientificConsultations", "a00028.html#a5c4de6f0ee1cda509762a1bc8f4b7035", null ],
     [ "ScientificInternships", "a00028.html#a258a8868f25fdfb33a63a0a5ce447c8f", null ],
     [ "ScientificWorks", "a00028.html#aa44e3ef4c35fc5beb573590112a52681", null ],
-    [ "StudentGuidances", "a00028.html#ac4e9a390f64d2fa5c9e76f7ea90f7f1b", null ],
     [ "Teacher", "a00028.html#aec9853b140fa913f3c2614d3f0adb43c", null ]
 ];

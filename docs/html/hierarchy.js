@@ -40,5 +40,8 @@ var hierarchy =
     [ "ScientificReport.Models.ScientificConsultation", "a00024.html", null ],
     [ "ScientificReport.Models.ScientificInternship", "a00025.html", null ],
     [ "ScientificReport.Models.ScientificWork", "a00026.html", null ],
-    [ "ScientificReport.Startup", "a00027.html", null ]
+    [ "ScientificReport.Startup", "a00027.html", null ],
+    [ "ScientificReport.Models.UserProfilesGrants", "a00031.html", null ],
+    [ "ScientificReport.Models.UserProfilesPublications", "a00032.html", null ],
+    [ "ScientificReport.Models.UserProfilesScientificWorks", "a00033.html", null ]
 ];

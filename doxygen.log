@@ -13,8 +13,8 @@ Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/Sc
 Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Areas/Identity/Pages
 Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Controllers
 Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Data
-Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Data/Migrations
 Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Forms
+Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Migrations
 Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models
 Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/obj
 Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Properties
@@ -34,14 +34,14 @@ Preprocessing /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Cont
 Parsing file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Controllers/UserProfileController.cs...
 Preprocessing /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Data/ApplicationDbContext.cs...
 Parsing file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Data/ApplicationDbContext.cs...
-Preprocessing /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Data/Migrations/20190322230519_Initial.cs...
-Parsing file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Data/Migrations/20190322230519_Initial.cs...
-Preprocessing /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Data/Migrations/20190322230519_Initial.Designer.cs...
-Parsing file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Data/Migrations/20190322230519_Initial.Designer.cs...
-Preprocessing /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Data/Migrations/ApplicationDbContextModelSnapshot.cs...
-Parsing file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Data/Migrations/ApplicationDbContextModelSnapshot.cs...
 Preprocessing /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Forms/RegisterModel.cs...
 Parsing file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Forms/RegisterModel.cs...
+Preprocessing /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Migrations/20190404132958_Initial.cs...
+Parsing file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Migrations/20190404132958_Initial.cs...
+Preprocessing /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Migrations/20190404132958_Initial.Designer.cs...
+Parsing file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Migrations/20190404132958_Initial.Designer.cs...
+Preprocessing /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Migrations/ApplicationDbContextModelSnapshot.cs...
+Parsing file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Migrations/ApplicationDbContextModelSnapshot.cs...
 Preprocessing /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/Article.cs...
 Parsing file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/Article.cs...
 Preprocessing /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/Conference.cs...
@@ -86,6 +86,12 @@ Preprocessing /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Mode
 Parsing file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/TeacherReport.cs...
 Preprocessing /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/UserProfile.cs...
 Parsing file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/UserProfile.cs...
+Preprocessing /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/UserProfilesGrants.cs...
+Parsing file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/UserProfilesGrants.cs...
+Preprocessing /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/UserProfilesPublications.cs...
+Parsing file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/UserProfilesPublications.cs...
+Preprocessing /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/UserProfilesScientificWorks.cs...
+Parsing file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/UserProfilesScientificWorks.cs...
 Preprocessing /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Program.cs...
 Parsing file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Program.cs...
 Preprocessing /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Startup.cs...
@@ -146,10 +152,10 @@ Generating code for file /home/travis/build/lnupmi11/ScientificReport/Scientific
 Generating code for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Controllers/ReportController.cs...
 Generating code for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Controllers/UserProfileController.cs...
 Generating code for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Data/ApplicationDbContext.cs...
-Generating code for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Data/Migrations/20190322230519_Initial.cs...
-Generating code for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Data/Migrations/20190322230519_Initial.Designer.cs...
-Generating code for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Data/Migrations/ApplicationDbContextModelSnapshot.cs...
 Generating code for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Forms/RegisterModel.cs...
+Generating code for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Migrations/20190404132958_Initial.cs...
+Generating code for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Migrations/20190404132958_Initial.Designer.cs...
+Generating code for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Migrations/ApplicationDbContextModelSnapshot.cs...
 Generating code for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/Article.cs...
 Generating code for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/Conference.cs...
 Generating code for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/Department.cs...
@@ -172,6 +178,9 @@ Generating code for file /home/travis/build/lnupmi11/ScientificReport/Scientific
 Generating code for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/SeedData.cs...
 Generating code for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/TeacherReport.cs...
 Generating code for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/UserProfile.cs...
+Generating code for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/UserProfilesGrants.cs...
+Generating code for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/UserProfilesPublications.cs...
+Generating code for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/UserProfilesScientificWorks.cs...
 Generating code for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Program.cs...
 Generating code for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Startup.cs...
 Generating file documentation...
@@ -179,10 +188,10 @@ Generating docs for file /home/travis/build/lnupmi11/ScientificReport/Scientific
 Generating docs for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Controllers/ReportController.cs...
 Generating docs for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Controllers/UserProfileController.cs...
 Generating docs for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Data/ApplicationDbContext.cs...
-Generating docs for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Data/Migrations/20190322230519_Initial.cs...
-Generating docs for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Data/Migrations/20190322230519_Initial.Designer.cs...
-Generating docs for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Data/Migrations/ApplicationDbContextModelSnapshot.cs...
 Generating docs for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Forms/RegisterModel.cs...
+Generating docs for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Migrations/20190404132958_Initial.cs...
+Generating docs for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Migrations/20190404132958_Initial.Designer.cs...
+Generating docs for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Migrations/ApplicationDbContextModelSnapshot.cs...
 Generating docs for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/Article.cs...
 Generating docs for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/Conference.cs...
 Generating docs for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/Department.cs...
@@ -205,6 +214,9 @@ Generating docs for file /home/travis/build/lnupmi11/ScientificReport/Scientific
 Generating docs for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/SeedData.cs...
 Generating docs for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/TeacherReport.cs...
 Generating docs for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/UserProfile.cs...
+Generating docs for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/UserProfilesGrants.cs...
+Generating docs for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/UserProfilesPublications.cs...
+Generating docs for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/UserProfilesScientificWorks.cs...
 Generating docs for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Program.cs...
 Generating docs for file /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Startup.cs...
 Generating page documentation...
@@ -247,6 +259,9 @@ Generating docs for compound ScientificReport::Models::ScientificInternship...
 Generating docs for compound ScientificReport::Models::ScientificWork...
 Generating docs for compound ScientificReport::Models::TeacherReport...
 Generating docs for compound ScientificReport::Models::UserProfile...
+Generating docs for compound ScientificReport::Models::UserProfilesGrants...
+Generating docs for compound ScientificReport::Models::UserProfilesPublications...
+Generating docs for compound ScientificReport::Models::UserProfilesScientificWorks...
 Generating graph info page...
 Generating directory documentation...
 Generating index page...
@@ -266,103 +281,112 @@ finalizing index lists...
 writing tag file...
 Running dot...
 Generating dot graphs using 3 parallel threads...
-Running dot for graph 1/67
-Running dot for graph 2/67
-Running dot for graph 3/67
-Running dot for graph 4/67
-Running dot for graph 5/67
-Running dot for graph 6/67
-Running dot for graph 7/67
-Running dot for graph 8/67
-Running dot for graph 9/67
-Running dot for graph 10/67
-Running dot for graph 11/67
-Running dot for graph 12/67
-Running dot for graph 13/67
-Running dot for graph 14/67
-Running dot for graph 15/67
-Running dot for graph 16/67
-Running dot for graph 17/67
-Running dot for graph 18/67
-Running dot for graph 19/67
-Running dot for graph 20/67
-Running dot for graph 21/67
-Running dot for graph 22/67
-Running dot for graph 23/67
-Running dot for graph 24/67
-Running dot for graph 25/67
-Running dot for graph 26/67
-Running dot for graph 27/67
-Running dot for graph 28/67
-Running dot for graph 29/67
-Running dot for graph 30/67
-Running dot for graph 31/67
-Running dot for graph 32/67
-Running dot for graph 33/67
-Running dot for graph 34/67
-Running dot for graph 35/67
-Running dot for graph 36/67
-Running dot for graph 37/67
-Running dot for graph 38/67
-Running dot for graph 39/67
-Running dot for graph 40/67
-Running dot for graph 41/67
-Running dot for graph 42/67
-Running dot for graph 43/67
-Running dot for graph 44/67
-Running dot for graph 45/67
-Running dot for graph 46/67
-Running dot for graph 47/67
-Running dot for graph 48/67
-Running dot for graph 49/67
-Running dot for graph 50/67
-Running dot for graph 51/67
-Running dot for graph 52/67
-Running dot for graph 53/67
-Running dot for graph 54/67
-Running dot for graph 55/67
-Running dot for graph 56/67
-Running dot for graph 57/67
-Running dot for graph 58/67
-Running dot for graph 59/67
-Running dot for graph 60/67
-Running dot for graph 61/67
-Running dot for graph 62/67
-Running dot for graph 63/67
-Running dot for graph 64/67
-Running dot for graph 65/67
-Running dot for graph 66/67
-Running dot for graph 67/67
-Patching output file 1/31
-Patching output file 2/31
-Patching output file 3/31
-Patching output file 4/31
-Patching output file 5/31
-Patching output file 6/31
-Patching output file 7/31
-Patching output file 8/31
-Patching output file 9/31
-Patching output file 10/31
-Patching output file 11/31
-Patching output file 12/31
-Patching output file 13/31
-Patching output file 14/31
-Patching output file 15/31
-Patching output file 16/31
-Patching output file 17/31
-Patching output file 18/31
-Patching output file 19/31
-Patching output file 20/31
-Patching output file 21/31
-Patching output file 22/31
-Patching output file 23/31
-Patching output file 24/31
-Patching output file 25/31
-Patching output file 26/31
-Patching output file 27/31
-Patching output file 28/31
-Patching output file 29/31
-Patching output file 30/31
-Patching output file 31/31
-lookup cache used 690/65536 hits=1764 misses=695
+Running dot for graph 1/73
+Running dot for graph 2/73
+Running dot for graph 3/73
+Running dot for graph 4/73
+Running dot for graph 5/73
+Running dot for graph 6/73
+Running dot for graph 7/73
+Running dot for graph 8/73
+Running dot for graph 9/73
+Running dot for graph 10/73
+Running dot for graph 11/73
+Running dot for graph 12/73
+Running dot for graph 13/73
+Running dot for graph 14/73
+Running dot for graph 15/73
+Running dot for graph 16/73
+Running dot for graph 17/73
+Running dot for graph 18/73
+Running dot for graph 19/73
+Running dot for graph 20/73
+Running dot for graph 21/73
+Running dot for graph 22/73
+Running dot for graph 23/73
+Running dot for graph 24/73
+Running dot for graph 25/73
+Running dot for graph 26/73
+Running dot for graph 27/73
+Running dot for graph 28/73
+Running dot for graph 29/73
+Running dot for graph 30/73
+Running dot for graph 31/73
+Running dot for graph 32/73
+Running dot for graph 33/73
+Running dot for graph 34/73
+Running dot for graph 35/73
+Running dot for graph 36/73
+Running dot for graph 37/73
+Running dot for graph 38/73
+Running dot for graph 39/73
+Running dot for graph 40/73
+Running dot for graph 41/73
+Running dot for graph 42/73
+Running dot for graph 43/73
+Running dot for graph 44/73
+Running dot for graph 45/73
+Running dot for graph 46/73
+Running dot for graph 47/73
+Running dot for graph 48/73
+Running dot for graph 49/73
+Running dot for graph 50/73
+Running dot for graph 51/73
+Running dot for graph 52/73
+Running dot for graph 53/73
+Running dot for graph 54/73
+Running dot for graph 55/73
+Running dot for graph 56/73
+Running dot for graph 57/73
+Running dot for graph 58/73
+Running dot for graph 59/73
+Running dot for graph 60/73
+Running dot for graph 61/73
+Running dot for graph 62/73
+Running dot for graph 63/73
+Running dot for graph 64/73
+Running dot for graph 65/73
+Running dot for graph 66/73
+Running dot for graph 67/73
+Running dot for graph 68/73
+Running dot for graph 69/73
+Running dot for graph 70/73
+Running dot for graph 71/73
+Running dot for graph 72/73
+Running dot for graph 73/73
+Patching output file 1/34
+Patching output file 2/34
+Patching output file 3/34
+Patching output file 4/34
+Patching output file 5/34
+Patching output file 6/34
+Patching output file 7/34
+Patching output file 8/34
+Patching output file 9/34
+Patching output file 10/34
+Patching output file 11/34
+Patching output file 12/34
+Patching output file 13/34
+Patching output file 14/34
+Patching output file 15/34
+Patching output file 16/34
+Patching output file 17/34
+Patching output file 18/34
+Patching output file 19/34
+Patching output file 20/34
+Patching output file 21/34
+Patching output file 22/34
+Patching output file 23/34
+Patching output file 24/34
+Patching output file 25/34
+Patching output file 26/34
+Patching output file 27/34
+Patching output file 28/34
+Patching output file 29/34
+Patching output file 30/34
+Patching output file 31/34
+Patching output file 32/34
+Patching output file 33/34
+Patching output file 34/34
+lookup cache used 756/65536 hits=2163 misses=761
 finished...

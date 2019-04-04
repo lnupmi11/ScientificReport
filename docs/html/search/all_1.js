@@ -7,11 +7,11 @@ var searchData=
   ['application',['Application',['../a00014.html#a82b9010b4e34c7c7005b8e8e82918cdcae498749f3c42246d50b15c81c101d988',1,'ScientificReport::Models::PatentLicenseActivity']]],
   ['applicationdbcontext',['ApplicationDbContext',['../a00001.html',1,'ScientificReport::Data']]],
   ['applicationdbcontext',['ApplicationDbContext',['../a00001.html#a1b69a7ca399e4965e30d4094625239b0',1,'ScientificReport::Data::ApplicationDbContext']]],
-  ['applicationdbcontext_2ecs',['ApplicationDbContext.cs',['../a00034.html',1,'']]],
+  ['applicationdbcontext_2ecs',['ApplicationDbContext.cs',['../a00037.html',1,'']]],
   ['applicationdbcontextmodelsnapshot',['ApplicationDbContextModelSnapshot',['../a00002.html',1,'ScientificReport::Migrations']]],
-  ['applicationdbcontextmodelsnapshot_2ecs',['ApplicationDbContextModelSnapshot.cs',['../a00037.html',1,'']]],
+  ['applicationdbcontextmodelsnapshot_2ecs',['ApplicationDbContextModelSnapshot.cs',['../a00041.html',1,'']]],
   ['article',['Article',['../a00003.html',1,'ScientificReport::Models']]],
-  ['article_2ecs',['Article.cs',['../a00039.html',1,'']]],
+  ['article_2ecs',['Article.cs',['../a00042.html',1,'']]],
   ['articles',['Articles',['../a00001.html#a2779631b29a20e24c13e12cf2b91cb86',1,'ScientificReport::Data::ApplicationDbContext']]],
-  ['authors',['Authors',['../a00003.html#ac2885c65da4496431a2735c86443c4f0',1,'ScientificReport.Models.Article.Authors()'],['../a00014.html#a929b0e327c6d163e36a085556a47222c',1,'ScientificReport.Models.PatentLicenseActivity.Authors()'],['../a00018.html#a1dd29d50ebce685f33ff80b2c2ab3c78',1,'ScientificReport.Models.Publication.Authors()'],['../a00022.html#a083af6397254c4e62447426c3052183d',1,'ScientificReport.Models.ReportThesis.Authors()']]]
+  ['authors',['Authors',['../a00003.html#ac2885c65da4496431a2735c86443c4f0',1,'ScientificReport.Models.Article.Authors()'],['../a00014.html#a929b0e327c6d163e36a085556a47222c',1,'ScientificReport.Models.PatentLicenseActivity.Authors()'],['../a00022.html#a083af6397254c4e62447426c3052183d',1,'ScientificReport.Models.ReportThesis.Authors()']]]
 ];
