@@ -157,7 +157,11 @@ namespace ScientificReport.Migrations
 
                     b.Property<int>("Type");
 
+                    b.Property<int?>("UserProfilesArticlesId");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserProfilesArticlesId");
 
                     b.ToTable("Articles");
                 });
@@ -243,9 +247,13 @@ namespace ScientificReport.Migrations
 
                     b.Property<int?>("TeacherReportId");
 
+                    b.Property<int>("UserProfilesGrantsId");
+
                     b.HasKey("Id");
 
                     b.HasIndex("TeacherReportId");
+
+                    b.HasIndex("UserProfilesGrantsId");
 
                     b.ToTable("Grants");
                 });
@@ -309,9 +317,13 @@ namespace ScientificReport.Migrations
 
                     b.Property<int>("Type");
 
+                    b.Property<int?>("UserProfilesPatentLicenseActivitiesId");
+
                     b.HasKey("Id");
 
                     b.HasIndex("TeacherReportId");
+
+                    b.HasIndex("UserProfilesPatentLicenseActivitiesId");
 
                     b.ToTable("PatentLicenseActivity");
                 });
@@ -402,9 +414,13 @@ namespace ScientificReport.Migrations
 
                     b.Property<int>("Type");
 
+                    b.Property<int>("UserProfilesPublicationsId");
+
                     b.HasKey("Id");
 
                     b.HasIndex("TeacherReportId");
+
+                    b.HasIndex("UserProfilesPublicationsId");
 
                     b.ToTable("Publications");
                 });
@@ -421,11 +437,15 @@ namespace ScientificReport.Migrations
                     b.Property<string>("Thesis")
                         .IsRequired();
 
+                    b.Property<int?>("UserProfilesReportThesesId");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ConferenceId");
 
                     b.HasIndex("TeacherReportId");
+
+                    b.HasIndex("UserProfilesReportThesesId");
 
                     b.ToTable("ReportTheses");
                 });
@@ -439,11 +459,15 @@ namespace ScientificReport.Migrations
 
                     b.Property<int?>("TeacherReportId");
 
+                    b.Property<int?>("UserProfilesReviewsId");
+
                     b.Property<int>("WorkId");
 
                     b.HasKey("Id");
 
                     b.HasIndex("TeacherReportId");
+
+                    b.HasIndex("UserProfilesReviewsId");
 
                     b.HasIndex("WorkId");
 
@@ -492,9 +516,13 @@ namespace ScientificReport.Migrations
 
                     b.Property<int?>("TeacherReportId");
 
+                    b.Property<int?>("UserProfilesScientificInternshipsId");
+
                     b.HasKey("Id");
 
                     b.HasIndex("TeacherReportId");
+
+                    b.HasIndex("UserProfilesScientificInternshipsId");
 
                     b.ToTable("ScientificInternships");
                 });
@@ -520,11 +548,15 @@ namespace ScientificReport.Migrations
                     b.Property<string>("Title")
                         .IsRequired();
 
+                    b.Property<int>("UserProfilesScientificWorksId");
+
                     b.HasKey("Id");
 
                     b.HasIndex("DepartmentId");
 
                     b.HasIndex("TeacherReportId");
+
+                    b.HasIndex("UserProfilesScientificWorksId");
 
                     b.ToTable("ScientificWorks");
                 });
@@ -614,6 +646,24 @@ namespace ScientificReport.Migrations
                     b.Property<string>("UserName")
                         .HasMaxLength(256);
 
+                    b.Property<int?>("UserProfilesArticlesId");
+
+                    b.Property<int?>("UserProfilesGrantsId");
+
+                    b.Property<int?>("UserProfilesPatentLicenseActivitiesId");
+
+                    b.Property<int?>("UserProfilesPatentLicenseActivitiesId1");
+
+                    b.Property<int?>("UserProfilesPublicationsId");
+
+                    b.Property<int?>("UserProfilesReportThesesId");
+
+                    b.Property<int?>("UserProfilesReviewsId");
+
+                    b.Property<int?>("UserProfilesScientificInternshipsId");
+
+                    b.Property<int?>("UserProfilesScientificWorksId");
+
                     b.Property<int>("YearDegreeAssigned");
 
                     b.Property<int>("YearDegreeGained");
@@ -627,6 +677,24 @@ namespace ScientificReport.Migrations
                         .IsUnique()
                         .HasName("UserNameIndex");
 
+                    b.HasIndex("UserProfilesArticlesId");
+
+                    b.HasIndex("UserProfilesGrantsId");
+
+                    b.HasIndex("UserProfilesPatentLicenseActivitiesId");
+
+                    b.HasIndex("UserProfilesPatentLicenseActivitiesId1");
+
+                    b.HasIndex("UserProfilesPublicationsId");
+
+                    b.HasIndex("UserProfilesReportThesesId");
+
+                    b.HasIndex("UserProfilesReviewsId");
+
+                    b.HasIndex("UserProfilesScientificInternshipsId");
+
+                    b.HasIndex("UserProfilesScientificWorksId");
+
                     b.ToTable("AspNetUsers");
                 });
 
@@ -635,16 +703,7 @@ namespace ScientificReport.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("ArticleId");
-
-                    b.Property<string>("AuthorId")
-                        .IsRequired();
-
                     b.HasKey("Id");
-
-                    b.HasIndex("ArticleId");
-
-                    b.HasIndex("AuthorId");
 
                     b.ToTable("UserProfilesArticles");
                 });
@@ -654,16 +713,7 @@ namespace ScientificReport.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("GrantId");
-
-                    b.Property<string>("UserProfileId")
-                        .IsRequired();
-
                     b.HasKey("Id");
-
-                    b.HasIndex("GrantId");
-
-                    b.HasIndex("UserProfileId");
 
                     b.ToTable("UserProfilesGrants");
                 });
@@ -673,21 +723,7 @@ namespace ScientificReport.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("ApplicantId")
-                        .IsRequired();
-
-                    b.Property<string>("AuthorId")
-                        .IsRequired();
-
-                    b.Property<int>("PatentLicenseActivityId");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("ApplicantId");
-
-                    b.HasIndex("AuthorId");
-
-                    b.HasIndex("PatentLicenseActivityId");
 
                     b.ToTable("UserProfilesPatentLicenseActivities");
                 });
@@ -697,16 +733,7 @@ namespace ScientificReport.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("PublicationId");
-
-                    b.Property<string>("UserProfileId")
-                        .IsRequired();
-
                     b.HasKey("Id");
-
-                    b.HasIndex("PublicationId");
-
-                    b.HasIndex("UserProfileId");
 
                     b.ToTable("UserProfilesPublications");
                 });
@@ -716,16 +743,7 @@ namespace ScientificReport.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("ReportThesisId");
-
-                    b.Property<string>("UserProfileId")
-                        .IsRequired();
-
                     b.HasKey("Id");
-
-                    b.HasIndex("ReportThesisId");
-
-                    b.HasIndex("UserProfileId");
 
                     b.ToTable("UserProfilesReportTheses");
                 });
@@ -735,16 +753,7 @@ namespace ScientificReport.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("ReviewId");
-
-                    b.Property<string>("ReviewerId")
-                        .IsRequired();
-
                     b.HasKey("Id");
-
-                    b.HasIndex("ReviewId");
-
-                    b.HasIndex("ReviewerId");
 
                     b.ToTable("UserProfilesReviews");
                 });
@@ -754,16 +763,7 @@ namespace ScientificReport.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("ScientificInternshipId");
-
-                    b.Property<string>("UserProfileId")
-                        .IsRequired();
-
                     b.HasKey("Id");
-
-                    b.HasIndex("ScientificInternshipId");
-
-                    b.HasIndex("UserProfileId");
 
                     b.ToTable("UserProfilesScientificInternships");
                 });
@@ -773,16 +773,7 @@ namespace ScientificReport.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("ScientificWorkId");
-
-                    b.Property<string>("UserProfileId")
-                        .IsRequired();
-
                     b.HasKey("Id");
-
-                    b.HasIndex("ScientificWorkId");
-
-                    b.HasIndex("UserProfileId");
 
                     b.ToTable("UserProfilesScientificWorks");
                 });
@@ -832,6 +823,13 @@ namespace ScientificReport.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("ScientificReport.Models.Article", b =>
+                {
+                    b.HasOne("ScientificReport.Models.UserProfilesArticles", "UserProfilesArticles")
+                        .WithMany("Articles")
+                        .HasForeignKey("UserProfilesArticlesId");
+                });
+
             modelBuilder.Entity("ScientificReport.Models.Conference", b =>
                 {
                     b.HasOne("ScientificReport.Models.DepartmentReport")
@@ -864,6 +862,11 @@ namespace ScientificReport.Migrations
                     b.HasOne("ScientificReport.Models.TeacherReport")
                         .WithMany("Grants")
                         .HasForeignKey("TeacherReportId");
+
+                    b.HasOne("ScientificReport.Models.UserProfilesGrants", "UserProfilesGrants")
+                        .WithMany("Grants")
+                        .HasForeignKey("UserProfilesGrantsId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("ScientificReport.Models.Membership", b =>
@@ -890,6 +893,10 @@ namespace ScientificReport.Migrations
                     b.HasOne("ScientificReport.Models.TeacherReport")
                         .WithMany("Patents")
                         .HasForeignKey("TeacherReportId");
+
+                    b.HasOne("ScientificReport.Models.UserProfilesPatentLicenseActivities", "UserProfilesPatentLicenseActivities")
+                        .WithMany("PatentLicenseActivities")
+                        .HasForeignKey("UserProfilesPatentLicenseActivitiesId");
                 });
 
             modelBuilder.Entity("ScientificReport.Models.PostgraduateDissertationGuidance", b =>
@@ -921,6 +928,11 @@ namespace ScientificReport.Migrations
                     b.HasOne("ScientificReport.Models.TeacherReport")
                         .WithMany("Publications")
                         .HasForeignKey("TeacherReportId");
+
+                    b.HasOne("ScientificReport.Models.UserProfilesPublications", "UserProfilesPublications")
+                        .WithMany("Publications")
+                        .HasForeignKey("UserProfilesPublicationsId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("ScientificReport.Models.ReportThesis", b =>
@@ -933,6 +945,10 @@ namespace ScientificReport.Migrations
                     b.HasOne("ScientificReport.Models.TeacherReport")
                         .WithMany("ReportTheses")
                         .HasForeignKey("TeacherReportId");
+
+                    b.HasOne("ScientificReport.Models.UserProfilesReportThesis", "UserProfilesReportTheses")
+                        .WithMany("ReportTheses")
+                        .HasForeignKey("UserProfilesReportThesesId");
                 });
 
             modelBuilder.Entity("ScientificReport.Models.Review", b =>
@@ -940,6 +956,10 @@ namespace ScientificReport.Migrations
                     b.HasOne("ScientificReport.Models.TeacherReport")
                         .WithMany("Reviews")
                         .HasForeignKey("TeacherReportId");
+
+                    b.HasOne("ScientificReport.Models.UserProfilesReviews", "UserProfilesReviews")
+                        .WithMany("Reviews")
+                        .HasForeignKey("UserProfilesReviewsId");
 
                     b.HasOne("ScientificReport.Models.Publication", "Work")
                         .WithMany()
@@ -964,6 +984,10 @@ namespace ScientificReport.Migrations
                     b.HasOne("ScientificReport.Models.TeacherReport")
                         .WithMany("ScientificInternships")
                         .HasForeignKey("TeacherReportId");
+
+                    b.HasOne("ScientificReport.Models.UserProfilesScientificInternships", "UserProfilesScientificInternships")
+                        .WithMany("ScientificInternships")
+                        .HasForeignKey("UserProfilesScientificInternshipsId");
                 });
 
             modelBuilder.Entity("ScientificReport.Models.ScientificWork", b =>
@@ -975,6 +999,11 @@ namespace ScientificReport.Migrations
                     b.HasOne("ScientificReport.Models.TeacherReport")
                         .WithMany("ScientificWorks")
                         .HasForeignKey("TeacherReportId");
+
+                    b.HasOne("ScientificReport.Models.UserProfilesScientificWorks", "UserProfilesScientificWorks")
+                        .WithMany("ScientificWork")
+                        .HasForeignKey("UserProfilesScientificWorksId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("ScientificReport.Models.TeacherReport", b =>
@@ -989,113 +1018,43 @@ namespace ScientificReport.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("ScientificReport.Models.UserProfilesArticles", b =>
+            modelBuilder.Entity("ScientificReport.Models.UserProfile", b =>
                 {
-                    b.HasOne("ScientificReport.Models.Article", "Article")
-                        .WithMany("UserProfilesArticles")
-                        .HasForeignKey("ArticleId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                    b.HasOne("ScientificReport.Models.UserProfilesArticles", "UserProfilesArticles")
+                        .WithMany("Authors")
+                        .HasForeignKey("UserProfilesArticlesId");
 
-                    b.HasOne("ScientificReport.Models.UserProfile", "Author")
-                        .WithMany("UserProfilesArticles")
-                        .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
+                    b.HasOne("ScientificReport.Models.UserProfilesGrants", "UserProfilesGrants")
+                        .WithMany("UserProfiles")
+                        .HasForeignKey("UserProfilesGrantsId");
 
-            modelBuilder.Entity("ScientificReport.Models.UserProfilesGrants", b =>
-                {
-                    b.HasOne("ScientificReport.Models.Grant", "Grant")
-                        .WithMany("UserProfilesGrants")
-                        .HasForeignKey("GrantId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                    b.HasOne("ScientificReport.Models.UserProfilesPatentLicenseActivities")
+                        .WithMany("Applicants")
+                        .HasForeignKey("UserProfilesPatentLicenseActivitiesId");
 
-                    b.HasOne("ScientificReport.Models.UserProfile", "UserProfile")
-                        .WithMany("UserProfilesGrants")
-                        .HasForeignKey("UserProfileId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
+                    b.HasOne("ScientificReport.Models.UserProfilesPatentLicenseActivities")
+                        .WithMany("Authors")
+                        .HasForeignKey("UserProfilesPatentLicenseActivitiesId1");
 
-            modelBuilder.Entity("ScientificReport.Models.UserProfilesPatentLicenseActivities", b =>
-                {
-                    b.HasOne("ScientificReport.Models.UserProfile", "Applicant")
-                        .WithMany()
-                        .HasForeignKey("ApplicantId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                    b.HasOne("ScientificReport.Models.UserProfilesPublications", "UserProfilesPublications")
+                        .WithMany("UserProfiles")
+                        .HasForeignKey("UserProfilesPublicationsId");
 
-                    b.HasOne("ScientificReport.Models.UserProfile", "Author")
-                        .WithMany()
-                        .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                    b.HasOne("ScientificReport.Models.UserProfilesReportThesis", "UserProfilesReportTheses")
+                        .WithMany("UserProfiles")
+                        .HasForeignKey("UserProfilesReportThesesId");
 
-                    b.HasOne("ScientificReport.Models.PatentLicenseActivity", "PatentLicenseActivity")
-                        .WithMany("UserProfilesPatentLicenseActivities")
-                        .HasForeignKey("PatentLicenseActivityId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
+                    b.HasOne("ScientificReport.Models.UserProfilesReviews", "UserProfilesReviews")
+                        .WithMany("Reviewers")
+                        .HasForeignKey("UserProfilesReviewsId");
 
-            modelBuilder.Entity("ScientificReport.Models.UserProfilesPublications", b =>
-                {
-                    b.HasOne("ScientificReport.Models.Publication", "Publication")
-                        .WithMany("UserProfilesPublications")
-                        .HasForeignKey("PublicationId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                    b.HasOne("ScientificReport.Models.UserProfilesScientificInternships", "UserProfilesScientificInternships")
+                        .WithMany("UserProfiles")
+                        .HasForeignKey("UserProfilesScientificInternshipsId");
 
-                    b.HasOne("ScientificReport.Models.UserProfile", "UserProfile")
-                        .WithMany("UserProfilesPublications")
-                        .HasForeignKey("UserProfileId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("ScientificReport.Models.UserProfilesReportThesis", b =>
-                {
-                    b.HasOne("ScientificReport.Models.ReportThesis", "ReportThesis")
-                        .WithMany("UserProfilesReportTheses")
-                        .HasForeignKey("ReportThesisId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("ScientificReport.Models.UserProfile", "UserProfile")
-                        .WithMany("UserProfilesReportTheses")
-                        .HasForeignKey("UserProfileId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("ScientificReport.Models.UserProfilesReviews", b =>
-                {
-                    b.HasOne("ScientificReport.Models.Review", "Review")
-                        .WithMany("UserProfilesReviews")
-                        .HasForeignKey("ReviewId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("ScientificReport.Models.UserProfile", "Reviewer")
-                        .WithMany("UserProfilesReviews")
-                        .HasForeignKey("ReviewerId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("ScientificReport.Models.UserProfilesScientificInternships", b =>
-                {
-                    b.HasOne("ScientificReport.Models.ScientificInternship", "ScientificInternship")
-                        .WithMany("UserProfilesScientificInternships")
-                        .HasForeignKey("ScientificInternshipId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("ScientificReport.Models.UserProfile", "UserProfile")
-                        .WithMany("UserProfilesScientificInternships")
-                        .HasForeignKey("UserProfileId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("ScientificReport.Models.UserProfilesScientificWorks", b =>
-                {
-                    b.HasOne("ScientificReport.Models.ScientificWork", "ScientificWork")
-                        .WithMany("UserProfilesScientificWorks")
-                        .HasForeignKey("ScientificWorkId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("ScientificReport.Models.UserProfile", "UserProfile")
-                        .WithMany("UserProfilesScientificWorks")
-                        .HasForeignKey("UserProfileId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                    b.HasOne("ScientificReport.Models.UserProfilesScientificWorks", "UserProfilesScientificWorks")
+                        .WithMany("UserProfile")
+                        .HasForeignKey("UserProfilesScientificWorksId");
                 });
 #pragma warning restore 612, 618
         }

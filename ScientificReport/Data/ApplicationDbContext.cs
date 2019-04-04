@@ -38,5 +38,18 @@ namespace ScientificReport.Data
 		public DbSet<TeacherReport> TeacherReports { get; set; }
 		public DbSet<DepartmentReport> DepartmentReports { get; set; }
 		public DbSet<FacultyReport> FacultyReports { get; set; }
+
+		/*
+		protected override void OnModelCreating(ModelBuilder builder)
+		{
+			base.OnModelCreating(builder);
+			builder.Entity<UserProfile>()
+				.HasOne(u => u.UserProfilesPatentLicenseActivities)
+				.WithMany(u => u.Authors);
+			builder.Entity<UserProfile>()
+				.HasOne(u => u.UserProfilesPatentLicenseActivities)
+				.WithMany(u => u.Applicants);
+		}
+		*/
 	}
 }

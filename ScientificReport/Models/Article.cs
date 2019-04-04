@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace ScientificReport.Models
@@ -54,6 +53,6 @@ namespace ScientificReport.Models
 		
 		public bool IsRecommendedToPrint { get; set; }
 		
-		public virtual ICollection<UserProfilesArticles> UserProfilesArticles { get; set; }
+		public virtual UserProfilesArticles UserProfilesArticles { get; set; }
 	}
 }

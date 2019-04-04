@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace ScientificReport.Models
@@ -8,9 +9,9 @@ namespace ScientificReport.Models
 		public int Id { get; set; }
 		
 		[Required]
-		public virtual UserProfile Reviewer { get; set; }
+		public virtual ICollection<UserProfile> Reviewers { get; set; }
 		
 		[Required]
-		public virtual Review Review { get; set; }
+		public virtual ICollection<Review> Reviews { get; set; }
 	}
 }

@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace ScientificReport.Models
@@ -14,6 +13,6 @@ namespace ScientificReport.Models
 		[Required]
 		public virtual Conference Conference { get; set; }
 		
-		public virtual ICollection<UserProfilesReportThesis> UserProfilesReportTheses { get; set; }
+		public virtual UserProfilesReportThesis UserProfilesReportTheses { get; set; }
 	}
 }

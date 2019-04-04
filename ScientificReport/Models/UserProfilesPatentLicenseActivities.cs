@@ -9,12 +9,12 @@ namespace ScientificReport.Models
 		public int Id { get; set; }
 		
 		[Required]
-		public virtual UserProfile Author { get; set; }
+		public virtual ICollection<UserProfile> Authors { get; set; }
 		
 		[Required]
-		public virtual UserProfile Applicant { get; set; }
+		public virtual ICollection<UserProfile> Applicants { get; set; }
 		
 		[Required]
-		public virtual PatentLicenseActivity PatentLicenseActivity { get; set; }
+		public virtual ICollection<PatentLicenseActivity> PatentLicenseActivities { get; set; }
 	}
 }
