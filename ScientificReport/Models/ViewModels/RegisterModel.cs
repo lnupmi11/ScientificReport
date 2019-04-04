@@ -1,15 +1,25 @@
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
-namespace ScientificReport.Forms
+namespace ScientificReport.Models.ViewModels
 {
+	[SuppressMessage("ReSharper", "Mvc.TemplateNotResolved")]
 	public class RegisterModel
 	{
 		[Required]
 		public string UserName { get; set; }
+		
 		[Required]
+		[UIHint("email")]
 		public string Email { get; set; }
+		
 		[Required]
+		[UIHint("password")]
 		public string Password { get; set; }
+		
+		[Required]
+		[UIHint("password")]
+		public string PasswordRepeat { get; set; }
 
 		[Required]
 		public string FirstName { get; set; }
