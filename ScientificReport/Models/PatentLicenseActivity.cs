@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace ScientificReport.Models
@@ -26,10 +25,6 @@ namespace ScientificReport.Models
 		[Required]
 		public Types Type { get; set; }
 		
-		[Required]
-		public virtual ICollection<UserProfile> Authors { get; set; }
-		
-		[Required]
-		public virtual ICollection<UserProfile> Applicants { get; set; }
+		public virtual UserProfilesPatentLicenseActivities UserProfilesPatentLicenseActivities { get; set; }
 	}
 }

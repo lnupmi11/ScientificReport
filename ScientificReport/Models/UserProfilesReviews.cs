@@ -3,15 +3,15 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ScientificReport.Models
 {
-	public class UserProfilesScientificWorks
+	public class UserProfilesReviews
 	{
 		[Key]
 		public int Id { get; set; }
 		
 		[Required]
-		public virtual ICollection<UserProfile> UserProfile { get; set; }
+		public virtual ICollection<UserProfile> Reviewers { get; set; }
 		
 		[Required]
-		public virtual ICollection<ScientificWork> ScientificWork { get; set; }
+		public virtual ICollection<Review> Reviews { get; set; }
 	}
 }

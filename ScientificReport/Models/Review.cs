@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace ScientificReport.Models
@@ -15,7 +14,6 @@ namespace ScientificReport.Models
 		[Required, DataType(DataType.Date)]
 		public DateTime DateOfReview { get; set; }
 		
-		[Required]
-		public virtual ICollection<UserProfile> Reviewers { get; set; }
+		public UserProfilesReviews UserProfilesReviews { get; set; }
 	}
 }

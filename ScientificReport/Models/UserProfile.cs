@@ -39,10 +39,20 @@ namespace ScientificReport.Models
 		[Required]
 		public bool IsApproved { get; set; }
 		
-		public virtual ICollection<UserProfilesPublications> UserProfilesPublications { get; set; }
+		public virtual UserProfilesPublications UserProfilesPublications { get; set; }
 		
-		public virtual ICollection<UserProfilesGrants> UserProfilesGrants { get; set; }
+		public virtual UserProfilesGrants UserProfilesGrants { get; set; }
 		
-		public virtual ICollection<UserProfilesScientificWorks> UserProfilesScientificWorks { get; set; }
+		public virtual UserProfilesScientificWorks UserProfilesScientificWorks { get; set; }
+		
+		public virtual UserProfilesArticles UserProfilesArticles { get; set; }
+		
+		public virtual UserProfilesReportThesis UserProfilesReportTheses { get; set; }
+		
+		public virtual UserProfilesReviews UserProfilesReviews { get; set; }
+		
+		public virtual UserProfilesScientificInternships UserProfilesScientificInternships { get; set; }
+		
+	//	public virtual UserProfilesPatentLicenseActivities UserProfilesPatentLicenseActivities { get; set; }
 	}
 }

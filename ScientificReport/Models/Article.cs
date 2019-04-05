@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace ScientificReport.Models
@@ -23,9 +22,6 @@ namespace ScientificReport.Models
 		
 		[Required]
 		public int Type { get; set; }
-		
-		[Required]
-		public virtual ICollection<UserProfile> Authors { get; set; }
 		
 		[Required]
 		public string Title { get; set; }
@@ -56,5 +52,7 @@ namespace ScientificReport.Models
 		public bool IsPrintCanceled { get; set; }
 		
 		public bool IsRecommendedToPrint { get; set; }
+		
+		public virtual UserProfilesArticles UserProfilesArticles { get; set; }
 	}
 }

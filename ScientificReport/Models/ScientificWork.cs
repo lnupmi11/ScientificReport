@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace ScientificReport.Models
@@ -21,6 +20,6 @@ namespace ScientificReport.Models
 		public string Contents { get; set; }
 		
 		[Required]
-		public virtual ICollection<UserProfilesScientificWorks> UserProfilesScientificWorks { get; set; }
+		public virtual UserProfilesScientificWorks UserProfilesScientificWorks { get; set; }
 	}
 }

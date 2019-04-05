@@ -18,9 +18,6 @@ namespace ScientificReport.Models
 		public int Type { get; set; }
 		
 		[Required]
-		public virtual ICollection<UserProfilesPublications> UserProfilesPublications { get; set; }
-		
-		[Required]
 		public string Title { get; set; }
 		
 		[Required]
@@ -41,5 +38,8 @@ namespace ScientificReport.Models
 		public bool IsPrintCanceled { get; set; }
 		
 		public bool IsRecommendedToPrint { get; set; }
+		
+		[Required]
+		public virtual UserProfilesPublications UserProfilesPublications { get; set; }
 	}
 }

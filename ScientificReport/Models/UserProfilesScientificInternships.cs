@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ScientificReport.Models
 {
-	public class UserProfilesPublications
+	public class UserProfilesScientificInternships
 	{
 		[Key]
 		public int Id { get; set; }
@@ -12,6 +12,6 @@ namespace ScientificReport.Models
 		public virtual ICollection<UserProfile> UserProfiles { get; set; }
 		
 		[Required]
-		public virtual ICollection<Publication> Publications { get; set; }
+		public virtual ICollection<ScientificInternship> ScientificInternships { get; set; }
 	}
 }

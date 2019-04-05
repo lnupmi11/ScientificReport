@@ -24,10 +24,19 @@
 	  <Content Include="..\README.md">
 	    <Link>README.md</Link>
 	  </Content>
+	  <Content Remove="Data\Migrations\**" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Data\Migrations" />
+	  <Compile Remove="Data\Migrations\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Remove="Data\Migrations\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Data\Migrations\**" />
 	</ItemGroup>
 
 </Project>
