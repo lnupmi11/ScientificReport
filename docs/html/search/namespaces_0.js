@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['controllers',['Controllers',['../a00087.html',1,'ScientificReport']]],
-  ['data',['Data',['../a00088.html',1,'ScientificReport']]],
-  ['forms',['Forms',['../a00089.html',1,'ScientificReport']]],
-  ['migrations',['Migrations',['../a00090.html',1,'ScientificReport']]],
-  ['models',['Models',['../a00091.html',1,'ScientificReport']]],
-  ['scientificreport',['ScientificReport',['../a00086.html',1,'']]]
+  ['controllers',['Controllers',['../a00099.html',1,'ScientificReport']]],
+  ['data',['Data',['../a00100.html',1,'ScientificReport']]],
+  ['migrations',['Migrations',['../a00101.html',1,'ScientificReport']]],
+  ['models',['Models',['../a00102.html',1,'ScientificReport']]],
+  ['scientificreport',['ScientificReport',['../a00098.html',1,'']]],
+  ['viewmodels',['ViewModels',['../a00103.html',1,'ScientificReport::Models']]]
 ];

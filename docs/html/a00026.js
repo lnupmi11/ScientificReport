@@ -1,9 +1,9 @@
 var a00026 =
 [
-    [ "Category", "a00026.html#a758f31d292465b7a034571701d759446", null ],
-    [ "Contents", "a00026.html#a30d1146cf954ad8ca451427b9c0e9170", null ],
-    [ "Cypher", "a00026.html#a2acd2daa5503fd17b45d9d7d3ba609f0", null ],
-    [ "Id", "a00026.html#a6aefcf98bd2b7893077986c31520c271", null ],
-    [ "Title", "a00026.html#a95d6481540a4ef8174c5d5664d553a84", null ],
-    [ "UserProfilesScientificWorks", "a00026.html#ab316e368a684454592203103956512d7", null ]
+    [ "Contents", "a00026.html#a90afd0bd01bb626a376a2cde587d5a37", null ],
+    [ "Ended", "a00026.html#aa9eb89ec046280547357bb375b740760", null ],
+    [ "Id", "a00026.html#a941db70b5b44af9123a75c292482edf1", null ],
+    [ "PlaceOfInternship", "a00026.html#a9da3ce49fef7ed2399f733ae1a53fb5a", null ],
+    [ "Started", "a00026.html#a85299fe23f177b57c585d01d8ee6b0a3", null ],
+    [ "UserProfilesScientificInternships", "a00026.html#affa25bf1a0c6f17df635985c634565f6", null ]
 ];

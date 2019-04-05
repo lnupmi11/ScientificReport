@@ -1,7 +1,12 @@
 var a00022 =
 [
-    [ "Authors", "a00022.html#a083af6397254c4e62447426c3052183d", null ],
-    [ "Conference", "a00022.html#a8b9e638e88c9aa9e43b0916317e445d8", null ],
-    [ "Id", "a00022.html#ac85168e148485d2ea750941a9540fc82", null ],
-    [ "Thesis", "a00022.html#a927c4abde64a3b01c33acef50ebdd353", null ]
+    [ "ReportController", "a00022.html#a579dd196e05745494abe21034094cc39", null ],
+    [ "Create", "a00022.html#a8557d329eb78a613f2cf856ca4eab287", null ],
+    [ "Create", "a00022.html#ac201faccbd6e43cf919730816a6a13ee", null ],
+    [ "Delete", "a00022.html#a2f7651c091088809bcbadaffdc2e91ce", null ],
+    [ "DeleteConfirmed", "a00022.html#a4f43433438db5dc8b7e11ccb5af600f1", null ],
+    [ "Details", "a00022.html#ad8c4719360b6505d71c0f07c8146733b", null ],
+    [ "Edit", "a00022.html#a82796d5bf1cc32cfb26ab1c2b3da4fa2", null ],
+    [ "Edit", "a00022.html#a473c9d8cc6b869895e2ef4faa24e5ad8", null ],
+    [ "Index", "a00022.html#a6ce9ca7c69f1ac617314b1ac42319ac3", null ]
 ];

@@ -1,7 +1,9 @@
 var a00027 =
 [
-    [ "Startup", "a00027.html#a63d2f00d6a6c75ca48d391012d8ae7e0", null ],
-    [ "Configure", "a00027.html#a9e1ea3dabfbbd0cb2c71e0a6bbf79721", null ],
-    [ "ConfigureServices", "a00027.html#a3d34187919055e4358e3352a2ac94b19", null ],
-    [ "Configuration", "a00027.html#a4b147c6827810b2a8997403c5433aa6f", null ]
+    [ "Category", "a00027.html#a758f31d292465b7a034571701d759446", null ],
+    [ "Contents", "a00027.html#a30d1146cf954ad8ca451427b9c0e9170", null ],
+    [ "Cypher", "a00027.html#a2acd2daa5503fd17b45d9d7d3ba609f0", null ],
+    [ "Id", "a00027.html#a6aefcf98bd2b7893077986c31520c271", null ],
+    [ "Title", "a00027.html#a95d6481540a4ef8174c5d5664d553a84", null ],
+    [ "UserProfilesScientificWorks", "a00027.html#aeaaef3cbfb1c188019097a7dc4e7f0bd", null ]
 ];

@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['scientificconsultation',['ScientificConsultation',['../a00024.html',1,'ScientificReport::Models']]],
-  ['scientificinternship',['ScientificInternship',['../a00025.html',1,'ScientificReport::Models']]],
-  ['scientificwork',['ScientificWork',['../a00026.html',1,'ScientificReport::Models']]],
-  ['startup',['Startup',['../a00027.html',1,'ScientificReport']]]
+  ['registermodel',['RegisterModel',['../a00020.html',1,'ScientificReport::Models::ViewModels']]],
+  ['report',['Report',['../a00021.html',1,'ScientificReport::Models']]],
+  ['reportcontroller',['ReportController',['../a00022.html',1,'ScientificReport::Controllers']]],
+  ['reportthesis',['ReportThesis',['../a00023.html',1,'ScientificReport::Models']]],
+  ['review',['Review',['../a00024.html',1,'ScientificReport::Models']]]
 ];

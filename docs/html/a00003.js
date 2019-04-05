@@ -11,7 +11,6 @@ var a00003 =
       [ "DomesticReportThesis", "a00003.html#a7490f254a652035b0bcc98babf668293a1abebcfda33aa44be6f206e33c6ecb36", null ],
       [ "ForeignReportThesisWithResearchResults", "a00003.html#a7490f254a652035b0bcc98babf668293a18c4d6091c6761298c1176e4afd9e2f8", null ]
     ] ],
-    [ "Authors", "a00003.html#ac2885c65da4496431a2735c86443c4f0", null ],
     [ "DocumentInfo", "a00003.html#aa6d465790eb9569994c5a77bdb9f4fab", null ],
     [ "Id", "a00003.html#ad712d7f053727b8e6ebb50404ddd14b4", null ],
     [ "IsPeriodical", "a00003.html#a348e88790fdeaf217d1dc10383d6c1e5", null ],
@@ -24,5 +23,6 @@ var a00003 =
     [ "PublishingPlace", "a00003.html#a84887b14a9ba23026a6604a071eb5099", null ],
     [ "PublishingYear", "a00003.html#a6b47a3f9c0485f31f633689e8b1637e7", null ],
     [ "Title", "a00003.html#a075c0f36fb7c7cdf357f1e7c65abd363", null ],
-    [ "Type", "a00003.html#a8ca59944eb8c99caa6f20715b01d2530", null ]
+    [ "Type", "a00003.html#a8ca59944eb8c99caa6f20715b01d2530", null ],
+    [ "UserProfilesArticles", "a00003.html#aa16489a72c39ba60e32aadd4517dda7a", null ]
 ];

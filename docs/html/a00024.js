@@ -1,7 +1,7 @@
 var a00024 =
 [
-    [ "DissertationTitle", "a00024.html#a65152a7ebdfddb279cbb2971e895eb67", null ],
-    [ "Guide", "a00024.html#af362045121c38f1a76c70c46effe39b9", null ],
-    [ "Id", "a00024.html#a16310d4655b4031f6bbea99ff879bd99", null ],
-    [ "Name", "a00024.html#a9a539957357c569beb559dd19e6e0096", null ]
+    [ "DateOfReview", "a00024.html#a3113cf3de6e2ac403b96271719ed7e86", null ],
+    [ "Id", "a00024.html#a2654b275342c1939591c53637cc80701", null ],
+    [ "UserProfilesReviews", "a00024.html#aea7bc841bef51264d1d89cdbfa35d314", null ],
+    [ "Work", "a00024.html#ab1dee136f6e03af1b2ed42fc07085166", null ]
 ];

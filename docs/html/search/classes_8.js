@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['membership',['Membership',['../a00012.html',1,'ScientificReport::Models']]]
+  ['loginmodel',['LoginModel',['../a00012.html',1,'ScientificReport::Models::ViewModels']]]
 ];

@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['scientificconsultation_2ecs',['ScientificConsultation.cs',['../a00058.html',1,'']]],
-  ['scientificinternship_2ecs',['ScientificInternship.cs',['../a00059.html',1,'']]],
-  ['scientificwork_2ecs',['ScientificWork.cs',['../a00060.html',1,'']]],
-  ['seeddata_2ecs',['SeedData.cs',['../a00061.html',1,'']]],
-  ['startup_2ecs',['Startup.cs',['../a00068.html',1,'']]]
+  ['registermodel_2ecs',['RegisterModel.cs',['../a00078.html',1,'']]],
+  ['report_2ecs',['Report.cs',['../a00060.html',1,'']]],
+  ['reportcontroller_2ecs',['ReportController.cs',['../a00041.html',1,'']]],
+  ['reportthesis_2ecs',['ReportThesis.cs',['../a00061.html',1,'']]],
+  ['review_2ecs',['Review.cs',['../a00062.html',1,'']]]
 ];

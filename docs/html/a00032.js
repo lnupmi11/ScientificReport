@@ -1,6 +1,6 @@
 var a00032 =
 [
-    [ "Id", "a00032.html#aeb50a268b77912df2b9ce498945d9e31", null ],
-    [ "Publication", "a00032.html#a6816b8b1afffdf19f541e6df7291d89d", null ],
-    [ "UserProfile", "a00032.html#a6524f64f0ef09ea72bded29cb7f007bb", null ]
+    [ "Articles", "a00032.html#a14188e1369811c9c564792cf8841946c", null ],
+    [ "Authors", "a00032.html#a8d8dc9d332cb7c1b4684ab6df20de1f8", null ],
+    [ "Id", "a00032.html#a878517c8158d62fd848fd0f93d51bc97", null ]
 ];

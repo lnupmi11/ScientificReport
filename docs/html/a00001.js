@@ -9,7 +9,6 @@ var a00001 =
     [ "Grants", "a00001.html#a7f4b18b239add901eb0612f9716fd948", null ],
     [ "Membership", "a00001.html#a0841f6f7505643e351a93a0ceeb4a532", null ],
     [ "Oppositions", "a00001.html#a3bcc5cc9dab2df3ab13b065e5d18ab69", null ],
-    [ "PatentLicenseActivities", "a00001.html#ae131005a13eeee1d258bdcd2809ce211", null ],
     [ "PostgraduateDissertationGuidances", "a00001.html#a59000780d110b0c8f2c3249063a17f1b", null ],
     [ "PostgraduateGuidances", "a00001.html#aca88b08ae0927a698d4283aaa7efa073", null ],
     [ "Publications", "a00001.html#a0de39558d380e1d043ca92329ecac622", null ],
@@ -20,7 +19,11 @@ var a00001 =
     [ "ScientificWorks", "a00001.html#a1805def036d3138c1da4707e75e794dc", null ],
     [ "TeacherReports", "a00001.html#a4bb33f0f6ba7aa52491a4bce8beb632c", null ],
     [ "UserProfiles", "a00001.html#a02a86c2b8a7115fea4585482be9c26c7", null ],
+    [ "UserProfilesArticles", "a00001.html#a79420902cdc4aaaa907cee996ae9632b", null ],
     [ "UserProfilesGrants", "a00001.html#a295364156cf3aeba0c7cb994bb2f0eff", null ],
     [ "UserProfilesPublications", "a00001.html#ae370c54ffc0d7c49d8652f8cec2d63bb", null ],
+    [ "UserProfilesReportTheses", "a00001.html#ad832cca38b49589258e42c61f3194c3b", null ],
+    [ "UserProfilesReviews", "a00001.html#a7ec5878f6ee255685beee09494afbb71", null ],
+    [ "UserProfilesScientificInternships", "a00001.html#aa6311af523ff1d5a2cbd11e09f75ef00", null ],
     [ "UserProfilesScientificWorks", "a00001.html#a61f34e414d97affa6a8240bce48f3770", null ]
 ];

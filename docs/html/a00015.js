@@ -1,10 +1,13 @@
 var a00015 =
 [
-    [ "DateDegreeGained", "a00015.html#a1ff994fe180f2baadeb01a7e949090ce", null ],
-    [ "Dissertation", "a00015.html#afb53d3c0bb2222746af3d5a8b00b09a1", null ],
-    [ "GraduationYear", "a00015.html#a59630a6224af11a553a7fb89fbcaab9a", null ],
-    [ "Guide", "a00015.html#a17f283432cdfd41f885fedbc6adb10de", null ],
-    [ "Id", "a00015.html#a9ee6d8e4005ae683850c372d71c4e252", null ],
-    [ "PostgraduateName", "a00015.html#afd172203379a2caea13c8573cde52a4c", null ],
-    [ "Speciality", "a00015.html#a9c1ade74d4f5c9e95eea22bab50deb7a", null ]
+    [ "Types", "a00015.html#a82b9010b4e34c7c7005b8e8e82918cdc", [
+      [ "Patent", "a00015.html#a82b9010b4e34c7c7005b8e8e82918cdca092ade8847d7c0575bae2ecb87ffcbc4", null ],
+      [ "Application", "a00015.html#a82b9010b4e34c7c7005b8e8e82918cdcae498749f3c42246d50b15c81c101d988", null ]
+    ] ],
+    [ "DateTime", "a00015.html#abca37a148e0f8bd54096afe5022c6775", null ],
+    [ "Id", "a00015.html#a8aa1b79915aa7a6abba36fc5dd661e1e", null ],
+    [ "Name", "a00015.html#ad1d332f121306840093d05968df70978", null ],
+    [ "Number", "a00015.html#a98d7ef9c89ecb144ee7df09f36d70a33", null ],
+    [ "Type", "a00015.html#a6795ee707a2fbbd185e1c5f020ed74fa", null ],
+    [ "UserProfilesPatentLicenseActivities", "a00015.html#a62474aa5f408a3156f1841edcd2912b8", null ]
 ];

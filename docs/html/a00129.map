@@ -1,2 +1,2 @@
-<map id="ScientificReport.Models.Conference" name="ScientificReport.Models.Conference">
+<map id="ScientificReport.Data.ApplicationDbContext" name="ScientificReport.Data.ApplicationDbContext">
 </map>
