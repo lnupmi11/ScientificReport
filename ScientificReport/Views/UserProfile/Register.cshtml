@@ -1,8 +1,8 @@
 @model ScientificReport.Models.ViewModels.RegisterModel
 
 @{
-    ViewBag.Title = "Register";
-    Layout = "_Layout";
+	ViewBag.Title = "Register";
+	Layout = "_Layout";
 }
 
 @* <div class="bg-primary m-1 p-1 text-white"><h4>Register new account</h4></div> *@
@@ -11,62 +11,62 @@
 <h4>Create a new account.</h4>
 <hr/>
 <form asp-action="Register" method="post">
-    <div class="form-group">
-        <label asp-for="FirstName"></label>
-        <input asp-for="FirstName" class="form-control"/>
-    </div>
-    <div class="form-group">
-        <label asp-for="MiddleName"></label>
-        <input asp-for="MiddleName" class="form-control"/>
-    </div>
-    <div class="form-group">
-        <label asp-for="LastName"></label>
-        <input asp-for="LastName" class="form-control"/>
-    </div>
-    <div class="form-group">
-        <label asp-for="PhoneNumber"></label>
-        <input asp-for="PhoneNumber" class="form-control"/>
-    </div>
-    <div class="form-group">
-        <label asp-for="BirthYear"></label>
-        <input asp-for="BirthYear" class="form-control"/>
-    </div>
-    <div class="form-group">
-        <label asp-for="GraduationYear"></label>
-        <input asp-for="GraduationYear" class="form-control"/>
-    </div>
-    <div class="form-group">
-        <label asp-for="ScientificDegree"></label>
-        <input asp-for="ScientificDegree" class="form-control"/>
-    </div>
-    <div class="form-group">
-        <label asp-for="YearDegreeAssigned"></label>
-        <input asp-for="YearDegreeAssigned" class="form-control"/>
-    </div>
-    <div class="form-group">
-        <label asp-for="AcademicStatus"></label>
-        <input asp-for="AcademicStatus" class="form-control"/>
-    </div>
-    <div class="form-group">
-        <label asp-for="YearDegreeGained"></label>
-        <input asp-for="YearDegreeGained" class="form-control"/>
-    </div>
-    <div class="form-group">
-        <label asp-for="UserName"></label>
-        <input asp-for="UserName" class="form-control"/>
-    </div>
-    <div class="form-group">
-        <label asp-for="Email"></label>
-        <input asp-for="Email" class="form-control"/>
-    </div>
-    <div class="form-group">
-        <label asp-for="Password"></label>
-        <input asp-for="Password" class="form-control"/>
-    </div>
-    <div class="form-group">
-        <label asp-for="PasswordRepeat"></label>
-        <input asp-for="PasswordRepeat" class="form-control"/>
-    </div>
-    <button type="submit" class="btn btn-primary">Register</button>
-    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+	<div class="form-group">
+		<label asp-for="FirstName"></label>
+		<input asp-for="FirstName" class="form-control"/>
+	</div>
+	<div class="form-group">
+		<label asp-for="MiddleName"></label>
+		<input asp-for="MiddleName" class="form-control"/>
+	</div>
+	<div class="form-group">
+		<label asp-for="LastName"></label>
+		<input asp-for="LastName" class="form-control"/>
+	</div>
+	<div class="form-group">
+		<label asp-for="PhoneNumber"></label>
+		<input asp-for="PhoneNumber" class="form-control"/>
+	</div>
+	<div class="form-group">
+		<label asp-for="BirthYear"></label>
+		<input asp-for="BirthYear" class="form-control"/>
+	</div>
+	<div class="form-group">
+		<label asp-for="GraduationYear"></label>
+		<input asp-for="GraduationYear" class="form-control"/>
+	</div>
+	<div class="form-group">
+		<label asp-for="ScientificDegree"></label>
+		<input asp-for="ScientificDegree" class="form-control"/>
+	</div>
+	<div class="form-group">
+		<label asp-for="YearDegreeAssigned"></label>
+		<input asp-for="YearDegreeAssigned" class="form-control"/>
+	</div>
+	<div class="form-group">
+		<label asp-for="AcademicStatus"></label>
+		<input asp-for="AcademicStatus" class="form-control"/>
+	</div>
+	<div class="form-group">
+		<label asp-for="YearDegreeGained"></label>
+		<input asp-for="YearDegreeGained" class="form-control"/>
+	</div>
+	<div class="form-group">
+		<label asp-for="UserName"></label>
+		<input asp-for="UserName" class="form-control"/>
+	</div>
+	<div class="form-group">
+		<label asp-for="Email"></label>
+		<input asp-for="Email" class="form-control"/>
+	</div>
+	<div class="form-group">
+		<label asp-for="Password"></label>
+		<input asp-for="Password" class="form-control"/>
+	</div>
+	<div class="form-group">
+		<label asp-for="PasswordRepeat"></label>
+		<input asp-for="PasswordRepeat" class="form-control"/>
+	</div>
+	<button type="submit" class="btn btn-primary">Register</button>
+	<a asp-action="Index" class="btn btn-secondary">Cancel</a>
 </form>
