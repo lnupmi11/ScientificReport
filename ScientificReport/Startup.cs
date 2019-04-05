@@ -34,7 +34,7 @@ namespace ScientificReport
 			services.AddDbContext<ApplicationDbContext>(options =>
 				options.UseSqlite(
 					Configuration.GetConnectionString("DefaultConnection")));
-						
+
 			services
 				.AddIdentity<UserProfile, IdentityRole>(opts =>
 					{
@@ -44,7 +44,7 @@ namespace ScientificReport
 						opts.Password.RequireNonAlphanumeric = false;
 						opts.Password.RequireLowercase = true;
 						opts.Password.RequireUppercase = true;
-						opts.Password.RequireDigit = true;	
+						opts.Password.RequireDigit = true;
 					}
 				)
 				.AddDefaultUI(UIFramework.Bootstrap4)
