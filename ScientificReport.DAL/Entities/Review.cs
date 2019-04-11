@@ -1,0 +1,19 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
+namespace ScientificReport.DAL.Entities
+{
+	public class Review
+	{
+		[Key]
+		public int Id { get; set; }
+		
+		public virtual Publication Work { get; set; }
+		
+		[DataType(DataType.Date)]
+		public DateTime DateOfReview { get; set; }
+		
+		public virtual ICollection<UserProfilesReviews> UserProfilesReviews { get; set; }
+	}
+}

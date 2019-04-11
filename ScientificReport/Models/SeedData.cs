@@ -1,9 +1,7 @@
 using System;
-using System.Linq;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using ScientificReport.Data;
+using ScientificReport.DAL.DbContext;
 
 namespace ScientificReport.Models
 {
@@ -18,7 +16,7 @@ namespace ScientificReport.Models
 		/// Initializes the basic data, the entrypoint for all seeds
 		/// </summary>
 		/// <param name="serviceProvider"></param>
-		public static void Initialize(IServiceProvider serviceProvider, ApplicationDbContext context)
+		public static void Initialize(IServiceProvider serviceProvider, ScientificReportDbContext context)
 		{
 			var env = serviceProvider.GetService<IHostingEnvironment>();
 
@@ -29,7 +27,7 @@ namespace ScientificReport.Models
 			context.SaveChanges();
 		}
 
-		private static void SeedUserProfile(ApplicationDbContext context)
+		private static void SeedUserProfile(ScientificReportDbContext context)
 		{
 			/*
 			if (context.UserProfile.Any()) return;

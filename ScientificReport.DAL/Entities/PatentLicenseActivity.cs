@@ -1,0 +1,31 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
+namespace ScientificReport.DAL.Entities
+{
+	public class PatentLicenseActivity
+	{
+		public enum Types
+		{
+			Patent, Application
+		}
+		
+		[Key]
+		public int Id { get; set; }
+		
+		public string Name { get; set; }
+		
+		public int Number { get; set; }
+		
+		[DataType(DataType.DateTime)]
+		public DateTime DateTime { get; set; }
+		
+		public Types Type { get; set; }
+		
+		public virtual ICollection<AuthorsPatentLicenseActivities> AuthorsPatentLicenseActivities { get; set; }
+		
+		public virtual ICollection<ApplicantsPatentLicenseActivities> ApplicantsPatentLicenseActivities { get; set; }
+	}
+}

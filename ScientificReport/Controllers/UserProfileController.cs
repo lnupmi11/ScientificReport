@@ -1,10 +1,11 @@
-using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ScientificReport.Models;
+using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Interfaces;
+using ScientificReport.DAL.Repositories;
 using ScientificReport.Models.ViewModels;
 
 namespace ScientificReport.Controllers
@@ -14,28 +15,24 @@ namespace ScientificReport.Controllers
 	{
 		private readonly UserManager<UserProfile> _userManager;
 		private readonly SignInManager<UserProfile> _signInManager;
-		private readonly IUserValidator<UserProfile> _userValidator;
-		private readonly IPasswordValidator<UserProfile> _passwordValidator;
-		private readonly IPasswordHasher<UserProfile> _passwordHasher;
 
-		public UserProfileController(UserManager<UserProfile> usrMgr,
-			IUserValidator<UserProfile> userValid,
-			IPasswordValidator<UserProfile> passValid,
-			IPasswordHasher<UserProfile> passwordHash,
-			SignInManager<UserProfile> signInManager)
+		private readonly IRepository<UserProfile, string> _userProfileRepository;
+
+		public UserProfileController(
+			UserManager<UserProfile> usrMgr,
+			SignInManager<UserProfile> signInManager,
+			IRepository<UserProfile, string> userProfileRepository
+		)
 		{
 			_userManager = usrMgr;
-			_userValidator = userValid;
-			_passwordValidator = passValid;
-			_passwordHasher = passwordHash;
 			_signInManager = signInManager;
+			_userProfileRepository = userProfileRepository;
 		}
 
 		// GET: UserProfile/Index
 		public async Task<IActionResult> Index()
 		{
-			var items = await _userManager.Users.ToListAsync();
-			return View(items);
+			return View(await _userManager.Users.ToListAsync());
 		}
 
 		// GET: UserProfile/Details/{id}
@@ -56,8 +53,8 @@ namespace ScientificReport.Controllers
 		}
 
 		// GET: UserProfile/Edit/{id}
-		public async Task<IActionResult> Edit(string id) {
-			var user = await _userManager.FindByIdAsync(id);
+		public IActionResult Edit(string id) {
+			var user = _userProfileRepository.Get(id);
 			if (user != null)
 			{
 				return View(user);
@@ -68,16 +65,14 @@ namespace ScientificReport.Controllers
 
 		// POST: UserProfile/Edit/{id}
 		[HttpPost]
-		public async Task<IActionResult> Edit(UserProfile user)
+		public IActionResult Edit(UserProfile user)
 		{
 			if (!ModelState.IsValid)
 			{
 				return View(user);
 			}
-
-			// TODO: save user with IUserProfileRepository
 			
-			Console.Out.WriteLine(user.UserName);
+			_userProfileRepository.Update(user);
 			return RedirectToAction("Index");
 		}
 
@@ -106,7 +101,14 @@ namespace ScientificReport.Controllers
 		
 		// GET: UserProfile/Register
 		[AllowAnonymous]
-		public IActionResult Register() => View();
+		public IActionResult Register()
+		{
+			if (User.Identity.IsAuthenticated)
+			{
+				return Redirect("/UserProfile");
+			}
+			return View();
+		}
 		
 		// POST: UserProfile/Register
 		[HttpPost]
@@ -165,9 +167,10 @@ namespace ScientificReport.Controllers
 				var user = await _userManager.FindByNameAsync(model.UserName);
 				if (user != null) {
 					await _signInManager.SignOutAsync();
-					if ((await _signInManager.PasswordSignInAsync(
-							user, model.Password, false, false
-						)).Succeeded) {
+					var result = await _signInManager.PasswordSignInAsync(
+						user.UserName, model.Password, false, false
+					);
+					if (result.Succeeded) {
 						return Redirect(model.ReturnUrl);
 					}
 				}

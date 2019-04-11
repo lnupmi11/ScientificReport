@@ -1,14 +1,18 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ScientificReport.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using ScientificReport.Models;
+using ScientificReport.DAL.DbContext;
+using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Interfaces;
+using ScientificReport.DAL.Repositories;
 
 namespace ScientificReport
 {
@@ -31,15 +35,16 @@ namespace ScientificReport
 				options.MinimumSameSitePolicy = SameSiteMode.None;
 			});
 
-			services.AddDbContext<ApplicationDbContext>(options =>
-				options.UseSqlite(
-					Configuration.GetConnectionString("DefaultConnection")));
+			services.AddDbContext<ScientificReportDbContext>(options =>
+				options.UseSqlite(Configuration.GetConnectionString("DefaultConnection"),
+					b => b.MigrationsAssembly("ScientificReport"))
+				);
 
 			services
 				.AddIdentity<UserProfile, IdentityRole>(opts =>
 					{
 						opts.User.RequireUniqueEmail = true;
-						opts.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz";
+						opts.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxy_.";
 						opts.Password.RequiredLength = 8;
 						opts.Password.RequireNonAlphanumeric = false;
 						opts.Password.RequireLowercase = true;
@@ -48,12 +53,31 @@ namespace ScientificReport
 					}
 				)
 				.AddDefaultUI(UIFramework.Bootstrap4)
-				.AddEntityFrameworkStores<ApplicationDbContext>()
+				.AddEntityFrameworkStores<ScientificReportDbContext>()
 				.AddDefaultTokenProviders();
 
+			services.AddAuthentication(IdentityConstants.ApplicationScheme)
+				.AddCookie();
+			
+			services.Configure<PasswordHasherOptions>(option => {
+				option.IterationCount = 12000;
+			});
+			
+			services.ConfigureApplicationCookie(options =>
+			{
+				// Cookie settings
+				options.Cookie.HttpOnly = true;
+				options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+
+				options.LoginPath = "/UserProfile/Login";
+				options.SlidingExpiration = true;
+			});
+			
 			services
 				.AddMvc()
 				.SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+			services.AddTransient<IRepository<UserProfile, string>, UserProfileRepository>();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
