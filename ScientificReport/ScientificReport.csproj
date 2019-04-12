@@ -39,4 +39,12 @@
 	  <None Remove="Data\Migrations\**" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\ScientificReport.DAL\ScientificReport.DAL.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Data" />
+	</ItemGroup>
+
 </Project>

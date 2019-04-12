@@ -1,52 +1,55 @@
-using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ScientificReport.Models;
+using Microsoft.Extensions.Logging;
+using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Interfaces;
 using ScientificReport.Models.ViewModels;
 
 namespace ScientificReport.Controllers
 {
-	//[Authorize]
+	// [Authorize]
 	public class UserProfileController : Controller
 	{
 		private readonly UserManager<UserProfile> _userManager;
 		private readonly SignInManager<UserProfile> _signInManager;
-		private readonly IUserValidator<UserProfile> _userValidator;
-		private readonly IPasswordValidator<UserProfile> _passwordValidator;
-		private readonly IPasswordHasher<UserProfile> _passwordHasher;
 
-		public UserProfileController(UserManager<UserProfile> usrMgr,
-			IUserValidator<UserProfile> userValid,
-			IPasswordValidator<UserProfile> passValid,
-			IPasswordHasher<UserProfile> passwordHash,
-			SignInManager<UserProfile> signInManager)
+		private readonly IRepository<UserProfile, string> _userProfileRepository;
+		
+		private readonly ILogger _logger;
+
+		public UserProfileController(
+			UserManager<UserProfile> usrMgr,
+			SignInManager<UserProfile> signInManager,
+			IRepository<UserProfile, string> userProfileRepository,
+			ILogger<UserProfileController> logger
+		)
 		{
 			_userManager = usrMgr;
-			_userValidator = userValid;
-			_passwordValidator = passValid;
-			_passwordHasher = passwordHash;
 			_signInManager = signInManager;
+			_userProfileRepository = userProfileRepository;
+			_logger = logger;
 		}
 
 		// GET: UserProfile/Index
+		[HttpGet]
 		public async Task<IActionResult> Index()
 		{
-			var items = await _userManager.Users.ToListAsync();
-			return View(items);
+			return View(await _userManager.Users.ToListAsync());
 		}
 
 		// GET: UserProfile/Details/{id}
-		public async Task<IActionResult> Details(string id)
+		[HttpGet]
+		public IActionResult Details(string id)
 		{
 			if (id == null)
 			{
 				return NotFound();
 			}
 
-			var userProfile = await _userManager.Users.FirstOrDefaultAsync(m => m.Id == id);
+			var userProfile = _userProfileRepository.Get(id);
 			if (userProfile == null)
 			{
 				return NotFound();
@@ -56,8 +59,9 @@ namespace ScientificReport.Controllers
 		}
 
 		// GET: UserProfile/Edit/{id}
-		public async Task<IActionResult> Edit(string id) {
-			var user = await _userManager.FindByIdAsync(id);
+		[HttpGet]
+		public IActionResult Edit(string id) {
+			var user = _userProfileRepository.Get(id);
 			if (user != null)
 			{
 				return View(user);
@@ -68,16 +72,15 @@ namespace ScientificReport.Controllers
 
 		// POST: UserProfile/Edit/{id}
 		[HttpPost]
-		public async Task<IActionResult> Edit(UserProfile user)
+		public IActionResult Edit(UserProfile user)
 		{
 			if (!ModelState.IsValid)
 			{
 				return View(user);
 			}
-
-			// TODO: save user with IUserProfileRepository
+			_logger.LogError(user.Id);
 			
-			Console.Out.WriteLine(user.UserName);
+			_userProfileRepository.Update(user);
 			return RedirectToAction("Index");
 		}
 
@@ -98,15 +101,23 @@ namespace ScientificReport.Controllers
 			}
 			else
 			{
-				ModelState.AddModelError("", "User Not Found");
+				ModelState.AddModelError(string.Empty, "User Not Found");
 			}
 
 			return View("Index", _userManager.Users);
 		}
 		
 		// GET: UserProfile/Register
+		[HttpGet]
 		[AllowAnonymous]
-		public IActionResult Register() => View();
+		public IActionResult Register()
+		{
+			if (User.Identity.IsAuthenticated)
+			{
+				return Redirect("/UserProfile");
+			}
+			return View();
+		}
 		
 		// POST: UserProfile/Register
 		[HttpPost]
@@ -145,15 +156,24 @@ namespace ScientificReport.Controllers
 			}
 			else
 			{
-				ModelState.AddModelError("", "Password confirmation failed");
+				ModelState.AddModelError(string.Empty, "Password confirmation failed");
 			}
 			
 			return View(model);
 		}
 
 		// GET: UserProfile/Login
+		[HttpGet]
 		[AllowAnonymous]
-		public IActionResult Login() => View();
+		public IActionResult Login()
+		{
+			if (User.Identity.IsAuthenticated)
+			{
+				return Redirect("/");
+			}
+
+			return View();
+		}
 
 		// POST: UserProfile/Login
 		[HttpPost]
@@ -165,18 +185,20 @@ namespace ScientificReport.Controllers
 				var user = await _userManager.FindByNameAsync(model.UserName);
 				if (user != null) {
 					await _signInManager.SignOutAsync();
-					if ((await _signInManager.PasswordSignInAsync(
-							user, model.Password, false, false
-						)).Succeeded) {
+					var result = await _signInManager.PasswordSignInAsync(
+						user.UserName, model.Password, true, false
+					);
+					if (result.Succeeded) {
 						return Redirect(model.ReturnUrl);
 					}
 				}
 			}
-			ModelState.AddModelError("", "Invalid login or password");
+			ModelState.AddModelError(string.Empty, "Invalid login or password");
 			return View(model);
 		}
 
 		// GET: UserProfile/Logout
+		[HttpGet]
 		public async Task<IActionResult> Logout() {
 			await _signInManager.SignOutAsync();
 			return Redirect("/UserProfile/Login");
@@ -186,7 +208,7 @@ namespace ScientificReport.Controllers
 		{
 			foreach (var error in result.Errors)
 			{
-				ModelState.AddModelError("", error.Description);
+				ModelState.AddModelError(string.Empty, error.Description);
 			}
 		}
 	}

@@ -1,20 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using ScientificReport.Data;
-using ScientificReport.Models;
+using ScientificReport.DAL.DbContext;
+using ScientificReport.DAL.Entities;
 
 namespace ScientificReport.Controllers
 {
 	public class ReportController : Controller
 	{
-		private readonly ApplicationDbContext _context;
+		private readonly ScientificReportDbContext _context;
 
-		public ReportController(ApplicationDbContext context)
+		public ReportController(ScientificReportDbContext context)
 		{
 			_context = context;
 		}
