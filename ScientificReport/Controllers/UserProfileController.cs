@@ -3,47 +3,53 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Interfaces;
-using ScientificReport.DAL.Repositories;
 using ScientificReport.Models.ViewModels;
 
 namespace ScientificReport.Controllers
 {
-	//[Authorize]
+	// [Authorize]
 	public class UserProfileController : Controller
 	{
 		private readonly UserManager<UserProfile> _userManager;
 		private readonly SignInManager<UserProfile> _signInManager;
 
 		private readonly IRepository<UserProfile, string> _userProfileRepository;
+		
+		private readonly ILogger _logger;
 
 		public UserProfileController(
 			UserManager<UserProfile> usrMgr,
 			SignInManager<UserProfile> signInManager,
-			IRepository<UserProfile, string> userProfileRepository
+			IRepository<UserProfile, string> userProfileRepository,
+			ILogger<UserProfileController> logger
 		)
 		{
 			_userManager = usrMgr;
 			_signInManager = signInManager;
 			_userProfileRepository = userProfileRepository;
+			_logger = logger;
 		}
 
 		// GET: UserProfile/Index
+		[HttpGet]
 		public async Task<IActionResult> Index()
 		{
 			return View(await _userManager.Users.ToListAsync());
 		}
 
 		// GET: UserProfile/Details/{id}
-		public async Task<IActionResult> Details(string id)
+		[HttpGet]
+		public IActionResult Details(string id)
 		{
 			if (id == null)
 			{
 				return NotFound();
 			}
 
-			var userProfile = await _userManager.Users.FirstOrDefaultAsync(m => m.Id == id);
+			var userProfile = _userProfileRepository.Get(id);
 			if (userProfile == null)
 			{
 				return NotFound();
@@ -53,6 +59,7 @@ namespace ScientificReport.Controllers
 		}
 
 		// GET: UserProfile/Edit/{id}
+		[HttpGet]
 		public IActionResult Edit(string id) {
 			var user = _userProfileRepository.Get(id);
 			if (user != null)
@@ -71,6 +78,7 @@ namespace ScientificReport.Controllers
 			{
 				return View(user);
 			}
+			_logger.LogError(user.Id);
 			
 			_userProfileRepository.Update(user);
 			return RedirectToAction("Index");
@@ -100,6 +108,7 @@ namespace ScientificReport.Controllers
 		}
 		
 		// GET: UserProfile/Register
+		[HttpGet]
 		[AllowAnonymous]
 		public IActionResult Register()
 		{
@@ -154,6 +163,7 @@ namespace ScientificReport.Controllers
 		}
 
 		// GET: UserProfile/Login
+		[HttpGet]
 		[AllowAnonymous]
 		public IActionResult Login() => View();
 
@@ -180,6 +190,7 @@ namespace ScientificReport.Controllers
 		}
 
 		// GET: UserProfile/Logout
+		[HttpGet]
 		public async Task<IActionResult> Logout() {
 			await _signInManager.SignOutAsync();
 			return Redirect("/UserProfile/Login");

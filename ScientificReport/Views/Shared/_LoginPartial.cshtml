@@ -27,7 +27,7 @@
 @* </ul> *@
 
 <ul class="navbar-nav">
-	@if (User.Identity.IsAuthenticated)
+	@if (SignInManager.IsSignedIn(User))
 	{
 		<li class="nav-item">
 			<a class="nav-link text-dark" asp-area="" asp-controller="UserProfile" asp-action="Logout">Log out</a>
