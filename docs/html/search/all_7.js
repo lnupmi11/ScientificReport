@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['graduationyear',['GraduationYear',['../a00006.html#a284a4353b1b4cb89cb99572bcad470ec',1,'ScientificReport::Models::ViewModels::RegisterModel']]]
+  ['login',['Login',['../a00007.html#ada213933d9f48f28cc1cb8b098fade07',1,'ScientificReport.Controllers.UserProfileController.Login()'],['../a00007.html#ae8d56f997555dbd409b63f7bdc9f6e58',1,'ScientificReport.Controllers.UserProfileController.Login(LoginModel model)']]],
+  ['logout',['Logout',['../a00007.html#a65d3fa00161b10075bbcf85098beedb2',1,'ScientificReport::Controllers::UserProfileController']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['academicstatus',['AcademicStatus',['../a00006.html#af600f50055ffb9f8d82bd3cb578c7fd9',1,'ScientificReport::Models::ViewModels::RegisterModel']]]
+  ['configuration',['Configuration',['../a00006.html#a4b147c6827810b2a8997403c5433aa6f',1,'ScientificReport::Startup']]]
 ];

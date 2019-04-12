@@ -1,12 +1,14 @@
 var a00007 =
 [
-    [ "ReportController", "a00007.html#a0d32c09dca71fe750c7ef27b9d0c5a6d", null ],
-    [ "Create", "a00007.html#a8557d329eb78a613f2cf856ca4eab287", null ],
-    [ "Create", "a00007.html#ac201faccbd6e43cf919730816a6a13ee", null ],
-    [ "Delete", "a00007.html#a2f7651c091088809bcbadaffdc2e91ce", null ],
-    [ "DeleteConfirmed", "a00007.html#a4f43433438db5dc8b7e11ccb5af600f1", null ],
-    [ "Details", "a00007.html#ad8c4719360b6505d71c0f07c8146733b", null ],
-    [ "Edit", "a00007.html#a82796d5bf1cc32cfb26ab1c2b3da4fa2", null ],
-    [ "Edit", "a00007.html#a473c9d8cc6b869895e2ef4faa24e5ad8", null ],
-    [ "Index", "a00007.html#a6ce9ca7c69f1ac617314b1ac42319ac3", null ]
+    [ "UserProfileController", "a00007.html#ac30735c300cd5554295cb040d5d28235", null ],
+    [ "Delete", "a00007.html#a3726f19b49d14886215234397efe992e", null ],
+    [ "Details", "a00007.html#a6194d5e32830345d0fff9aa112742494", null ],
+    [ "Edit", "a00007.html#a93b3f427311b756b0267b24a1b719b6d", null ],
+    [ "Edit", "a00007.html#a34c298afb55b561135f82ed05c6da61a", null ],
+    [ "Index", "a00007.html#ab07d992d9c3c1b42fa333c240aaca2f9", null ],
+    [ "Login", "a00007.html#ada213933d9f48f28cc1cb8b098fade07", null ],
+    [ "Login", "a00007.html#ae8d56f997555dbd409b63f7bdc9f6e58", null ],
+    [ "Logout", "a00007.html#a65d3fa00161b10075bbcf85098beedb2", null ],
+    [ "Register", "a00007.html#a6c8b98005ac1254746e00f0066ed462a", null ],
+    [ "Register", "a00007.html#a81dea7bbcc1fd61c4b0bd09ba613e329", null ]
 ];

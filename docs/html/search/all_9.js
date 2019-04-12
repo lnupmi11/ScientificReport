@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['index',['Index',['../a00002.html#acc629acfd1137f0a258c5f691a71a3ce',1,'ScientificReport.Controllers.HomeController.Index()'],['../a00007.html#a6ce9ca7c69f1ac617314b1ac42319ac3',1,'ScientificReport.Controllers.ReportController.Index()'],['../a00010.html#ab07d992d9c3c1b42fa333c240aaca2f9',1,'ScientificReport.Controllers.UserProfileController.Index()']]],
-  ['initial',['Initial',['../a00003.html',1,'ScientificReport::Migrations']]]
+  ['privacy',['Privacy',['../a00001.html#a246ab018cd8984cabbfaa3982b8a6a52',1,'ScientificReport::Controllers::HomeController']]],
+  ['program',['Program',['../a00003.html',1,'ScientificReport']]],
+  ['program_2ecs',['Program.cs',['../a00015.html',1,'']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['academicstatus',['AcademicStatus',['../a00006.html#af600f50055ffb9f8d82bd3cb578c7fd9',1,'ScientificReport::Models::ViewModels::RegisterModel']]]
+  ['buildmodel',['BuildModel',['../a00005.html#a92c1f9f2efcfaf4426579e0ddb7e4921',1,'ScientificReport::Migrations::ScientificReportDbContextModelSnapshot']]],
+  ['buildtargetmodel',['BuildTargetModel',['../a00002.html#adc14ff969d84df70027fecefa2cad0bf',1,'ScientificReport::Migrations::Initial']]]
 ];

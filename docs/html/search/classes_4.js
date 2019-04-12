@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['program',['Program',['../a00005.html',1,'ScientificReport']]]
+  ['scientificreportdbcontextmodelsnapshot',['ScientificReportDbContextModelSnapshot',['../a00005.html',1,'ScientificReport::Migrations']]],
+  ['startup',['Startup',['../a00006.html',1,'ScientificReport']]]
 ];

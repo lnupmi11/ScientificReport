@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['edit',['Edit',['../a00007.html#a82796d5bf1cc32cfb26ab1c2b3da4fa2',1,'ScientificReport.Controllers.ReportController.Edit(int?id)'],['../a00007.html#a473c9d8cc6b869895e2ef4faa24e5ad8',1,'ScientificReport.Controllers.ReportController.Edit(int id, [Bind(&quot;Id,Title,Created&quot;)] Report report)'],['../a00010.html#a93b3f427311b756b0267b24a1b719b6d',1,'ScientificReport.Controllers.UserProfileController.Edit(string id)'],['../a00010.html#a78a55983e97e4996dfa8badac8365616',1,'ScientificReport.Controllers.UserProfileController.Edit(UserProfile user)']]],
-  ['email',['Email',['../a00006.html#a9ac0d55bece3783d5df8b68786098f97',1,'ScientificReport::Models::ViewModels::RegisterModel']]],
-  ['error',['Error',['../a00002.html#ab23c5c5bb2a8f95c1c6ca4de3e32318d',1,'ScientificReport::Controllers::HomeController']]],
-  ['errorviewmodel',['ErrorViewModel',['../a00001.html',1,'ScientificReport::Models']]],
-  ['errorviewmodel_2ecs',['ErrorViewModel.cs',['../a00017.html',1,'']]]
+  ['homecontroller',['HomeController',['../a00001.html',1,'ScientificReport::Controllers']]],
+  ['homecontroller_2ecs',['HomeController.cs',['../a00008.html',1,'']]]
 ];

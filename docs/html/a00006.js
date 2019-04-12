@@ -1,17 +1,7 @@
 var a00006 =
 [
-    [ "AcademicStatus", "a00006.html#af600f50055ffb9f8d82bd3cb578c7fd9", null ],
-    [ "BirthYear", "a00006.html#aaa1d85df71b5c6d79dbb6b3366eb750c", null ],
-    [ "Email", "a00006.html#a9ac0d55bece3783d5df8b68786098f97", null ],
-    [ "FirstName", "a00006.html#a3cda38192aa6edd48c655dca27017039", null ],
-    [ "GraduationYear", "a00006.html#a284a4353b1b4cb89cb99572bcad470ec", null ],
-    [ "LastName", "a00006.html#a550c8d0dee164cd466649656987ecc79", null ],
-    [ "MiddleName", "a00006.html#a016f90ce8759d6259ba02d7518af1a0a", null ],
-    [ "Password", "a00006.html#a05728e2ae2d4cb8510843addfdb4ae6c", null ],
-    [ "PasswordRepeat", "a00006.html#ac0fd2c6ce3f5b6b14cf06c3f8f4f782e", null ],
-    [ "PhoneNumber", "a00006.html#a6a690ef2617ac7da7c77c4cc3ac098d1", null ],
-    [ "ScientificDegree", "a00006.html#ae2a5659d119cfec69121f43c567aa3af", null ],
-    [ "UserName", "a00006.html#ae47375fbf7d1fab5a24d4753d3871c3d", null ],
-    [ "YearDegreeAssigned", "a00006.html#a7a2790f3d51cf0d022055d6c7c92887d", null ],
-    [ "YearDegreeGained", "a00006.html#a40a2380cc58f9cf07e3f0ac5d1cf4027", null ]
+    [ "Startup", "a00006.html#a63d2f00d6a6c75ca48d391012d8ae7e0", null ],
+    [ "Configure", "a00006.html#a9e1ea3dabfbbd0cb2c71e0a6bbf79721", null ],
+    [ "ConfigureServices", "a00006.html#a3d34187919055e4358e3352a2ac94b19", null ],
+    [ "Configuration", "a00006.html#a4b147c6827810b2a8997403c5433aa6f", null ]
 ];

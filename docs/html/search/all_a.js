@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['lastname',['LastName',['../a00006.html#a550c8d0dee164cd466649656987ecc79',1,'ScientificReport::Models::ViewModels::RegisterModel']]],
-  ['login',['Login',['../a00010.html#ada213933d9f48f28cc1cb8b098fade07',1,'ScientificReport.Controllers.UserProfileController.Login()'],['../a00010.html#ae8d56f997555dbd409b63f7bdc9f6e58',1,'ScientificReport.Controllers.UserProfileController.Login(LoginModel model)']]],
-  ['loginmodel',['LoginModel',['../a00004.html',1,'ScientificReport::Models::ViewModels']]],
-  ['loginmodel_2ecs',['LoginModel.cs',['../a00019.html',1,'']]],
-  ['logout',['Logout',['../a00010.html#a65d3fa00161b10075bbcf85098beedb2',1,'ScientificReport::Controllers::UserProfileController']]]
+  ['register',['Register',['../a00007.html#a6c8b98005ac1254746e00f0066ed462a',1,'ScientificReport.Controllers.UserProfileController.Register()'],['../a00007.html#a81dea7bbcc1fd61c4b0bd09ba613e329',1,'ScientificReport.Controllers.UserProfileController.Register(RegisterModel model)']]],
+  ['reportcontroller',['ReportController',['../a00004.html#a0d32c09dca71fe750c7ef27b9d0c5a6d',1,'ScientificReport::Controllers::ReportController']]],
+  ['reportcontroller',['ReportController',['../a00004.html',1,'ScientificReport::Controllers']]],
+  ['reportcontroller_2ecs',['ReportController.cs',['../a00009.html',1,'']]]
 ];
