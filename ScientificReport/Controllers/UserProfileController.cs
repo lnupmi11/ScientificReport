@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using ScientificReport.BLL.Interfaces;
 using ScientificReport.DAL.Entities;
-using ScientificReport.DAL.Interfaces;
 using ScientificReport.Models.ViewModels;
 
 namespace ScientificReport.Controllers
@@ -16,20 +16,20 @@ namespace ScientificReport.Controllers
 		private readonly UserManager<UserProfile> _userManager;
 		private readonly SignInManager<UserProfile> _signInManager;
 
-		private readonly IRepository<UserProfile, string> _userProfileRepository;
+		private readonly IUserProfileService _userProfileService;
 		
 		private readonly ILogger _logger;
 
 		public UserProfileController(
 			UserManager<UserProfile> usrMgr,
 			SignInManager<UserProfile> signInManager,
-			IRepository<UserProfile, string> userProfileRepository,
+			IUserProfileService userProfileService,
 			ILogger<UserProfileController> logger
 		)
 		{
 			_userManager = usrMgr;
 			_signInManager = signInManager;
-			_userProfileRepository = userProfileRepository;
+			_userProfileService = userProfileService;
 			_logger = logger;
 		}
 
@@ -49,7 +49,7 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
-			var userProfile = _userProfileRepository.Get(id);
+			var userProfile = _userProfileService.GetById(id);
 			if (userProfile == null)
 			{
 				return NotFound();
@@ -61,7 +61,7 @@ namespace ScientificReport.Controllers
 		// GET: UserProfile/Edit/{id}
 		[HttpGet]
 		public IActionResult Edit(string id) {
-			var user = _userProfileRepository.Get(id);
+			var user = _userProfileService.GetById(id);
 			if (user != null)
 			{
 				return View(user);
@@ -72,15 +72,15 @@ namespace ScientificReport.Controllers
 
 		// POST: UserProfile/Edit/{id}
 		[HttpPost]
-		public IActionResult Edit(UserProfile user)
+		public async Task<IActionResult> Edit(UserProfile user)
 		{
 			if (!ModelState.IsValid)
 			{
 				return View(user);
 			}
 			_logger.LogError(user.Id);
-			
-			_userProfileRepository.Update(user);
+
+			await _userManager.UpdateAsync(user);
 			return RedirectToAction("Index");
 		}
 

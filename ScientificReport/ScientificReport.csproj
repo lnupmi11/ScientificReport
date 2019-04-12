@@ -25,26 +25,27 @@
 	    <Link>README.md</Link>
 	  </Content>
 	  <Content Remove="Data\Migrations\**" />
+	  <Content Remove="Data\**" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Compile Remove="Data\Migrations\**" />
+	  <Compile Remove="Data\**" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <EmbeddedResource Remove="Data\Migrations\**" />
+	  <EmbeddedResource Remove="Data\**" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <None Remove="Data\Migrations\**" />
+	  <None Remove="Data\**" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\ScientificReport.BLL\ScientificReport.BLL.csproj" />
 	  <ProjectReference Include="..\ScientificReport.DAL\ScientificReport.DAL.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Data" />
 	</ItemGroup>
 
 </Project>

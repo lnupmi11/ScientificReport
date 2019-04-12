@@ -9,7 +9,7 @@ using ScientificReport.DAL.DbContext;
 namespace ScientificReport.Migrations
 {
     [DbContext(typeof(ScientificReportDbContext))]
-    [Migration("20190411213938_Initial")]
+    [Migration("20190412223458_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -656,13 +656,13 @@ namespace ScientificReport.Migrations
 
                     b.Property<int>("UserProfileId");
 
-                    b.Property<string>("UserProfilesId");
+                    b.Property<string>("UserProfileId1");
 
                     b.HasKey("Id");
 
                     b.HasIndex("GrantId");
 
-                    b.HasIndex("UserProfilesId");
+                    b.HasIndex("UserProfileId1");
 
                     b.ToTable("UserProfilesGrants");
                 });
@@ -996,14 +996,14 @@ namespace ScientificReport.Migrations
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.UserProfilesGrants", b =>
                 {
-                    b.HasOne("ScientificReport.DAL.Entities.Grant", "Grants")
+                    b.HasOne("ScientificReport.DAL.Entities.Grant", "Grant")
                         .WithMany("UserProfilesGrants")
                         .HasForeignKey("GrantId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("ScientificReport.DAL.Entities.UserProfile", "UserProfiles")
+                    b.HasOne("ScientificReport.DAL.Entities.UserProfile", "UserProfile")
                         .WithMany("UserProfilesGrants")
-                        .HasForeignKey("UserProfilesId");
+                        .HasForeignKey("UserProfileId1");
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.UserProfilesPublications", b =>

@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ScientificReport.BLL.Interfaces;
+using ScientificReport.BLL.Services;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Interfaces;
@@ -42,7 +44,7 @@ namespace ScientificReport
 					.AddEntityFrameworkStores<ScientificReportDbContext>()
 					.AddDefaultTokenProviders();
 			
-			services.AddTransient<IRepository<UserProfile, string>, UserProfileRepository>();
+			services.AddTransient<IUserProfileService, UserProfileService>();
 
 			services.Configure<IdentityOptions>(options =>
 			{

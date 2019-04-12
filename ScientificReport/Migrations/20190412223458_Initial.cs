@@ -616,7 +616,7 @@ namespace ScientificReport.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     UserProfileId = table.Column<int>(nullable: false),
-                    UserProfilesId = table.Column<string>(nullable: true),
+                    UserProfileId1 = table.Column<string>(nullable: true),
                     GrantId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -629,8 +629,8 @@ namespace ScientificReport.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_UserProfilesGrants_AspNetUsers_UserProfilesId",
-                        column: x => x.UserProfilesId,
+                        name: "FK_UserProfilesGrants_AspNetUsers_UserProfileId1",
+                        column: x => x.UserProfileId1,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -1048,9 +1048,9 @@ namespace ScientificReport.Migrations
                 column: "GrantId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserProfilesGrants_UserProfilesId",
+                name: "IX_UserProfilesGrants_UserProfileId1",
                 table: "UserProfilesGrants",
-                column: "UserProfilesId");
+                column: "UserProfileId1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserProfilesPublications_PublicationId1",
