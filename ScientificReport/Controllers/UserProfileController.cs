@@ -101,7 +101,7 @@ namespace ScientificReport.Controllers
 			}
 			else
 			{
-				ModelState.AddModelError("", "User Not Found");
+				ModelState.AddModelError(string.Empty, "User Not Found");
 			}
 
 			return View("Index", _userManager.Users);
@@ -156,7 +156,7 @@ namespace ScientificReport.Controllers
 			}
 			else
 			{
-				ModelState.AddModelError("", "Password confirmation failed");
+				ModelState.AddModelError(string.Empty, "Password confirmation failed");
 			}
 			
 			return View(model);
@@ -165,7 +165,15 @@ namespace ScientificReport.Controllers
 		// GET: UserProfile/Login
 		[HttpGet]
 		[AllowAnonymous]
-		public IActionResult Login() => View();
+		public IActionResult Login()
+		{
+			if (User.Identity.IsAuthenticated)
+			{
+				return Redirect("/");
+			}
+
+			return View();
+		}
 
 		// POST: UserProfile/Login
 		[HttpPost]
@@ -178,14 +186,14 @@ namespace ScientificReport.Controllers
 				if (user != null) {
 					await _signInManager.SignOutAsync();
 					var result = await _signInManager.PasswordSignInAsync(
-						user.UserName, model.Password, false, false
+						user.UserName, model.Password, true, false
 					);
 					if (result.Succeeded) {
 						return Redirect(model.ReturnUrl);
 					}
 				}
 			}
-			ModelState.AddModelError("", "Invalid login or password");
+			ModelState.AddModelError(string.Empty, "Invalid login or password");
 			return View(model);
 		}
 
@@ -200,7 +208,7 @@ namespace ScientificReport.Controllers
 		{
 			foreach (var error in result.Errors)
 			{
-				ModelState.AddModelError("", error.Description);
+				ModelState.AddModelError(string.Empty, error.Description);
 			}
 		}
 	}
