@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main',['Main',['../a00018.html#ae42d2d35dbaa644476282c09ddaf277a',1,'ScientificReport::Program']]]
+  ['privacy',['Privacy',['../a00002.html#a246ab018cd8984cabbfaa3982b8a6a52',1,'ScientificReport::Controllers::HomeController']]]
 ];

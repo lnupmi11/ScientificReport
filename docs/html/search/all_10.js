@@ -1,29 +1,5 @@
 var searchData=
 [
-  ['controllers',['Controllers',['../a00099.html',1,'ScientificReport']]],
-  ['data',['Data',['../a00100.html',1,'ScientificReport']]],
-  ['migrations',['Migrations',['../a00101.html',1,'ScientificReport']]],
-  ['models',['Models',['../a00102.html',1,'ScientificReport']]],
-  ['scientificconsultation',['ScientificConsultation',['../a00025.html',1,'ScientificReport::Models']]],
-  ['scientificconsultation_2ecs',['ScientificConsultation.cs',['../a00063.html',1,'']]],
-  ['scientificconsultations',['ScientificConsultations',['../a00001.html#a1b22efa5825f47ebc7e65462197f9fc2',1,'ScientificReport.Data.ApplicationDbContext.ScientificConsultations()'],['../a00029.html#a5c4de6f0ee1cda509762a1bc8f4b7035',1,'ScientificReport.Models.TeacherReport.ScientificConsultations()']]],
-  ['scientificcouncil',['ScientificCouncil',['../a00013.html#ac4f906ba9519627c4877ae6b94d608b7a0d1bf9d3831cac38a4a5f7856ea59396',1,'ScientificReport::Models::Membership']]],
-  ['scientificdegree',['ScientificDegree',['../a00030.html#ae9919063f8f7fbfcf97afd8327a86850',1,'ScientificReport.Models.UserProfile.ScientificDegree()'],['../a00020.html#ae2a5659d119cfec69121f43c567aa3af',1,'ScientificReport.Models.ViewModels.RegisterModel.ScientificDegree()']]],
-  ['scientificinternship',['ScientificInternship',['../a00026.html',1,'ScientificReport::Models']]],
-  ['scientificinternship_2ecs',['ScientificInternship.cs',['../a00064.html',1,'']]],
-  ['scientificinternships',['ScientificInternships',['../a00001.html#adb3aab08b7a6f46c0840804f6bbb0a2d',1,'ScientificReport.Data.ApplicationDbContext.ScientificInternships()'],['../a00029.html#a258a8868f25fdfb33a63a0a5ce447c8f',1,'ScientificReport.Models.TeacherReport.ScientificInternships()'],['../a00038.html#a51f5e8fb840543c4d72a22e5a0b2b3d3',1,'ScientificReport.Models.UserProfilesScientificInternships.ScientificInternships()']]],
-  ['scientificreport',['ScientificReport',['../a00098.html',1,'']]],
-  ['scientificwork',['ScientificWork',['../a00039.html#a990835612c4b539615dcd18629cfd060',1,'ScientificReport::Models::UserProfilesScientificWorks']]],
-  ['scientificwork',['ScientificWork',['../a00027.html',1,'ScientificReport::Models']]],
-  ['scientificwork_2ecs',['ScientificWork.cs',['../a00065.html',1,'']]],
-  ['scientificworks',['ScientificWorks',['../a00001.html#a1805def036d3138c1da4707e75e794dc',1,'ScientificReport.Data.ApplicationDbContext.ScientificWorks()'],['../a00005.html#a2904a363c45134e30c174a2ac79e6460',1,'ScientificReport.Models.Department.ScientificWorks()'],['../a00029.html#aa44e3ef4c35fc5beb573590112a52681',1,'ScientificReport.Models.TeacherReport.ScientificWorks()']]],
-  ['seeddata_2ecs',['SeedData.cs',['../a00066.html',1,'']]],
-  ['showrequestid',['ShowRequestId',['../a00007.html#aa3808ca7668c408fc1fd0e396d0405fa',1,'ScientificReport::Models::ErrorViewModel']]],
-  ['speciality',['Speciality',['../a00016.html#a9c1ade74d4f5c9e95eea22bab50deb7a',1,'ScientificReport::Models::PostgraduateDissertationGuidance']]],
-  ['specification',['Specification',['../a00019.html#aedc4a0312cb32d883398375ba897128c',1,'ScientificReport::Models::Publication']]],
-  ['started',['Started',['../a00026.html#a85299fe23f177b57c585d01d8ee6b0a3',1,'ScientificReport::Models::ScientificInternship']]],
-  ['startup',['Startup',['../a00028.html',1,'ScientificReport']]],
-  ['startup',['Startup',['../a00028.html#a63d2f00d6a6c75ca48d391012d8ae7e0',1,'ScientificReport::Startup']]],
-  ['startup_2ecs',['Startup.cs',['../a00080.html',1,'']]],
-  ['viewmodels',['ViewModels',['../a00103.html',1,'ScientificReport::Models']]]
+  ['yeardegreeassigned',['YearDegreeAssigned',['../a00006.html#a7a2790f3d51cf0d022055d6c7c92887d',1,'ScientificReport::Models::ViewModels::RegisterModel']]],
+  ['yeardegreegained',['YearDegreeGained',['../a00006.html#a40a2380cc58f9cf07e3f0ac5d1cf4027',1,'ScientificReport::Models::ViewModels::RegisterModel']]]
 ];

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['department',['Department',['../a00005.html',1,'ScientificReport::Models']]],
-  ['departmentreport',['DepartmentReport',['../a00006.html',1,'ScientificReport::Models']]]
+  ['initial',['Initial',['../a00003.html',1,'ScientificReport::Migrations']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['opponent',['Opponent',['../a00014.html#aafefa62a00a97464962265ab4cfb5c93',1,'ScientificReport::Models::Opposition']]],
-  ['oppositions',['Oppositions',['../a00001.html#a3bcc5cc9dab2df3ab13b065e5d18ab69',1,'ScientificReport.Data.ApplicationDbContext.Oppositions()'],['../a00029.html#a013d2dcad00da2e41ed6b96d66fb057a',1,'ScientificReport.Models.TeacherReport.Oppositions()']]]
+  ['yeardegreeassigned',['YearDegreeAssigned',['../a00006.html#a7a2790f3d51cf0d022055d6c7c92887d',1,'ScientificReport::Models::ViewModels::RegisterModel']]],
+  ['yeardegreegained',['YearDegreeGained',['../a00006.html#a40a2380cc58f9cf07e3f0ac5d1cf4027',1,'ScientificReport::Models::ViewModels::RegisterModel']]]
 ];

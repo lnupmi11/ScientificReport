@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['headofdepartment',['HeadOfDepartment',['../a00006.html#a1e55e3c59ca286cdabfb2174cc574409',1,'ScientificReport::Models::DepartmentReport']]]
+  ['middlename',['MiddleName',['../a00006.html#a016f90ce8759d6259ba02d7518af1a0a',1,'ScientificReport::Models::ViewModels::RegisterModel']]]
 ];

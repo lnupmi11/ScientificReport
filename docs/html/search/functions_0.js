@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['applicationdbcontext',['ApplicationDbContext',['../a00001.html#a1b69a7ca399e4965e30d4094625239b0',1,'ScientificReport::Data::ApplicationDbContext']]]
+  ['buildmodel',['BuildModel',['../a00008.html#a92c1f9f2efcfaf4426579e0ddb7e4921',1,'ScientificReport::Migrations::ScientificReportDbContextModelSnapshot']]],
+  ['buildtargetmodel',['BuildTargetModel',['../a00003.html#adc14ff969d84df70027fecefa2cad0bf',1,'ScientificReport::Migrations::Initial']]]
 ];

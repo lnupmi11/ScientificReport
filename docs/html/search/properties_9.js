@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['lastname',['LastName',['../a00030.html#a561398a4e016c781e3a3998a2d48d86e',1,'ScientificReport.Models.UserProfile.LastName()'],['../a00020.html#a550c8d0dee164cd466649656987ecc79',1,'ScientificReport.Models.ViewModels.RegisterModel.LastName()']]],
-  ['liabilityinfo',['LiabilityInfo',['../a00003.html#a5fb23cef531aca8a4e87848c38d750cc',1,'ScientificReport::Models::Article']]]
+  ['requestid',['RequestId',['../a00001.html#ab396a92df6f9f53546fd1d19338fa91f',1,'ScientificReport::Models::ErrorViewModel']]],
+  ['returnurl',['ReturnUrl',['../a00004.html#ae931811b6d29924c6550c97d8c23770e',1,'ScientificReport::Models::ViewModels::LoginModel']]]
 ];

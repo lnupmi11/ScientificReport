@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['delete',['Delete',['../a00022.html#a2f7651c091088809bcbadaffdc2e91ce',1,'ScientificReport.Controllers.ReportController.Delete()'],['../a00031.html#a3726f19b49d14886215234397efe992e',1,'ScientificReport.Controllers.UserProfileController.Delete()']]],
-  ['deleteconfirmed',['DeleteConfirmed',['../a00022.html#a4f43433438db5dc8b7e11ccb5af600f1',1,'ScientificReport::Controllers::ReportController']]],
-  ['details',['Details',['../a00022.html#ad8c4719360b6505d71c0f07c8146733b',1,'ScientificReport.Controllers.ReportController.Details()'],['../a00031.html#ae98ce4e26824cf2cb606de069e943979',1,'ScientificReport.Controllers.UserProfileController.Details()']]],
-  ['down',['Down',['../a00011.html#a9efac288095703eaa26c79a32f1cdab4',1,'ScientificReport::Migrations::Initial']]]
+  ['edit',['Edit',['../a00007.html#a82796d5bf1cc32cfb26ab1c2b3da4fa2',1,'ScientificReport.Controllers.ReportController.Edit(int?id)'],['../a00007.html#a473c9d8cc6b869895e2ef4faa24e5ad8',1,'ScientificReport.Controllers.ReportController.Edit(int id, [Bind(&quot;Id,Title,Created&quot;)] Report report)'],['../a00010.html#a93b3f427311b756b0267b24a1b719b6d',1,'ScientificReport.Controllers.UserProfileController.Edit(string id)'],['../a00010.html#a78a55983e97e4996dfa8badac8365616',1,'ScientificReport.Controllers.UserProfileController.Edit(UserProfile user)']]],
+  ['error',['Error',['../a00002.html#ab23c5c5bb2a8f95c1c6ca4de3e32318d',1,'ScientificReport::Controllers::HomeController']]]
 ];

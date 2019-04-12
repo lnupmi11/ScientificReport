@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['name',['Name',['../a00015.html#ad1d332f121306840093d05968df70978',1,'ScientificReport.Models.PatentLicenseActivity.Name()'],['../a00025.html#a9a539957357c569beb559dd19e6e0096',1,'ScientificReport.Models.ScientificConsultation.Name()']]],
-  ['number',['Number',['../a00003.html#aae18ae224b4655ea835c19144a5ae7ca',1,'ScientificReport.Models.Article.Number()'],['../a00015.html#a98d7ef9c89ecb144ee7df09f36d70a33',1,'ScientificReport.Models.PatentLicenseActivity.Number()']]]
+  ['username',['UserName',['../a00004.html#a7bdba970bab431c1af1205609a9b9e02',1,'ScientificReport.Models.ViewModels.LoginModel.UserName()'],['../a00006.html#ae47375fbf7d1fab5a24d4753d3871c3d',1,'ScientificReport.Models.ViewModels.RegisterModel.UserName()']]]
 ];

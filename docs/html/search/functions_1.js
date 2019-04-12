@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['buildmodel',['BuildModel',['../a00002.html#a0c88a1b5c85feab7b761a8aea16c6b71',1,'ScientificReport::Migrations::ApplicationDbContextModelSnapshot']]],
-  ['buildtargetmodel',['BuildTargetModel',['../a00011.html#adc14ff969d84df70027fecefa2cad0bf',1,'ScientificReport::Migrations::Initial']]]
+  ['configure',['Configure',['../a00009.html#a9e1ea3dabfbbd0cb2c71e0a6bbf79721',1,'ScientificReport::Startup']]],
+  ['configureservices',['ConfigureServices',['../a00009.html#a3d34187919055e4358e3352a2ac94b19',1,'ScientificReport::Startup']]],
+  ['create',['Create',['../a00007.html#a8557d329eb78a613f2cf856ca4eab287',1,'ScientificReport.Controllers.ReportController.Create()'],['../a00007.html#ac201faccbd6e43cf919730816a6a13ee',1,'ScientificReport.Controllers.ReportController.Create([Bind(&quot;Id,Title,Created&quot;)] Report report)']]]
 ];
