@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 
-namespace ScientificReport.Models.ViewModels
+namespace ScientificReport.DTO.Models.UserProfile
 {
 	[SuppressMessage("ReSharper", "Mvc.TemplateNotResolved")]
 	public class LoginModel

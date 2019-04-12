@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using ScientificReport.BLL.Interfaces;
 using ScientificReport.DAL.Entities;
-using ScientificReport.Models.ViewModels;
+using ScientificReport.DTO.Models.UserProfile;
 
 namespace ScientificReport.Controllers
 {

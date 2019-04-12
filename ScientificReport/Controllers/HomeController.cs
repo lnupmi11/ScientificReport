@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using ScientificReport.Models;
+using ScientificReport.DTO.Models;
 
 namespace ScientificReport.Controllers
 {
