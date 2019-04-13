@@ -54,25 +54,21 @@ namespace ScientificReport.DAL.Repositories
 
 		public void Update(UserProfile item)
 		{
-			if (item == null)
+			if (item != null)
 			{
-				throw new ArgumentNullException(nameof(item), "unable to create null user profile");
+				_context.UserProfiles.Update(item);
+				_context.SaveChanges();
 			}
-
-			_context.UserProfiles.Update(item);
-			_context.SaveChanges();
 		}
 
 		public void Delete(string id)
 		{
 			var user = _context.UserProfiles.Find(id);
-			if (user == null)
+			if (user != null)
 			{
-				return;
+				_context.UserProfiles.Remove(user);
+				_context.SaveChanges();
 			}
-
-			_context.UserProfiles.Remove(user);
-			_context.SaveChanges();
 		}
 
 		public IQueryable<UserProfile> GetQuery()
