@@ -1,6 +1,6 @@
 using System;
 
-namespace ScientificReport.Models
+namespace ScientificReport.DTO.Models
 {
 	public class ErrorViewModel
 	{

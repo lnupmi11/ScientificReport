@@ -11,17 +11,15 @@ namespace ScientificReport.DAL.Repositories
 	public class UserProfileRepository : IRepository<UserProfile, string>
 	{
 		private readonly ScientificReportDbContext _context;
-		private readonly DbSet<UserProfile> _userProfiles;
 
 		public UserProfileRepository(ScientificReportDbContext context)
 		{
 			_context = context;
-			_userProfiles = context.UserProfiles;
 		}
 		
 		public IEnumerable<UserProfile> All()
 		{
-			return _userProfiles
+			return _context.UserProfiles
 				.Include(b => b.UserProfilesPublications)
 				.Include(g => g.UserProfilesGrants)
 				.Include(sw => sw.UserProfilesScientificWorks)
@@ -50,7 +48,7 @@ namespace ScientificReport.DAL.Repositories
 
 		public void Create(UserProfile item)
 		{
-			_userProfiles.Add(item);
+			_context.UserProfiles.Add(item);
 			_context.SaveChanges();
 		}
 
@@ -61,25 +59,25 @@ namespace ScientificReport.DAL.Repositories
 				throw new ArgumentNullException(nameof(item), "unable to create null user profile");
 			}
 
-			_userProfiles.Update(item);
+			_context.UserProfiles.Update(item);
 			_context.SaveChanges();
 		}
 
 		public void Delete(string id)
 		{
-			var user = _userProfiles.Find(id);
+			var user = _context.UserProfiles.Find(id);
 			if (user == null)
 			{
 				return;
 			}
 
-			_userProfiles.Remove(user);
+			_context.UserProfiles.Remove(user);
 			_context.SaveChanges();
 		}
 
 		public IQueryable<UserProfile> GetQuery()
 		{
-			return _userProfiles;
+			return _context.UserProfiles;
 		}
 	}
 }

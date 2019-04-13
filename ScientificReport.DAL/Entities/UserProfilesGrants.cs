@@ -8,9 +8,9 @@ namespace ScientificReport.DAL.Entities
 		public int Id { get; set; }
 		
 		public int UserProfileId { get; set; }
-		public virtual UserProfile UserProfiles { get; set; }
+		public virtual UserProfile UserProfile { get; set; }
 		
 		public int GrantId { get; set; }
-		public virtual Grant Grants { get; set; }
+		public virtual Grant Grant { get; set; }
 	}
 }
