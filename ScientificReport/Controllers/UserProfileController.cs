@@ -2,7 +2,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using ScientificReport.BLL.Interfaces;
 using ScientificReport.DAL.Entities;
@@ -35,9 +34,9 @@ namespace ScientificReport.Controllers
 
 		// GET: UserProfile/Index
 		[HttpGet]
-		public async Task<IActionResult> Index()
+		public IActionResult Index()
 		{
-			return View(await _userManager.Users.ToListAsync());
+			return View(_userProfileService.GetAll());
 		}
 
 		// GET: UserProfile/Details/{id}
@@ -72,7 +71,7 @@ namespace ScientificReport.Controllers
 
 		// POST: UserProfile/Edit/{id}
 		[HttpPost]
-		public async Task<IActionResult> Edit(UserProfile user)
+		public IActionResult Edit(UserProfile user)
 		{
 			if (!ModelState.IsValid)
 			{
@@ -80,44 +79,30 @@ namespace ScientificReport.Controllers
 			}
 			_logger.LogError(user.Id);
 
-			await _userManager.UpdateAsync(user);
+			if (_userProfileService.UserExists(user.Id))
+			{
+				_userProfileService.UpdateItem(user);
+			}
 			return RedirectToAction("Index");
 		}
 
 		// POST: UserProfile/Delete/{id}
 		[HttpPost]
-		public async Task<IActionResult> Delete(string id)
+		public IActionResult Delete(string id)
 		{
-			var user = await _userManager.FindByIdAsync(id);
-			if (user != null)
+			if (!_userProfileService.UserExists(id))
 			{
-				var result = await _userManager.DeleteAsync(user);
-				if (result.Succeeded)
-				{
-					return RedirectToAction("Index");
-				}
-
-				AddErrorsFromResult(result);
+				return NotFound();
 			}
-			else
-			{
-				ModelState.AddModelError(string.Empty, "User Not Found");
-			}
-
-			return View("Index", _userManager.Users);
+			
+			_userProfileService.DeleteById(id);
+			return RedirectToAction("Index");
 		}
 		
 		// GET: UserProfile/Register
 		[HttpGet]
 		[AllowAnonymous]
-		public IActionResult Register()
-		{
-			if (User.Identity.IsAuthenticated)
-			{
-				return Redirect("/UserProfile");
-			}
-			return View();
-		}
+		public IActionResult Register() => View();
 		
 		// POST: UserProfile/Register
 		[HttpPost]
@@ -127,6 +112,12 @@ namespace ScientificReport.Controllers
 			if (!ModelState.IsValid)
 			{
 				return View(model);
+			}
+
+			if (_userProfileService.Get(usr => usr.UserName == model.UserName) != null)
+			{
+				ModelState.AddModelError(string.Empty, "User already exists");
+				return BadRequest();
 			}
 			
 			var user = new UserProfile {
@@ -152,6 +143,7 @@ namespace ScientificReport.Controllers
 				{
 					return RedirectToAction("Index");
 				}
+				
 				AddErrorsFromResult(result);
 			}
 			else
@@ -181,8 +173,9 @@ namespace ScientificReport.Controllers
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> Login(LoginModel model)
 		{
-			if (ModelState.IsValid) {
-				var user = await _userManager.FindByNameAsync(model.UserName);
+			if (ModelState.IsValid)
+			{
+				var user = _userProfileService.Get(usr => usr.UserName == model.UserName);
 				if (user != null) {
 					await _signInManager.SignOutAsync();
 					var result = await _signInManager.PasswordSignInAsync(
@@ -201,7 +194,7 @@ namespace ScientificReport.Controllers
 		[HttpGet]
 		public async Task<IActionResult> Logout() {
 			await _signInManager.SignOutAsync();
-			return Redirect("/UserProfile/Login");
+			return RedirectToAction("Login");
 		}
 		
 		private void AddErrorsFromResult(IdentityResult result)
