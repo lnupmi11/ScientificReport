@@ -1,10 +1,13 @@
+using System;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Roles;
 
 namespace ScientificReport.DAL.DbContext
 {
-	public class ScientificReportDbContext : IdentityDbContext<UserProfile>
+	public class ScientificReportDbContext : IdentityDbContext<UserProfile, UserProfileRole, Guid>
 	{
 		public ScientificReportDbContext(DbContextOptions options)
 			: base(options)

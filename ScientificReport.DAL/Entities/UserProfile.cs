@@ -1,9 +1,10 @@
+using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity;
 
 namespace ScientificReport.DAL.Entities
 {
-	public class UserProfile : IdentityUser
+	public class UserProfile : IdentityUser<Guid>
 	{
 		public string FirstName { get; set; }
 		

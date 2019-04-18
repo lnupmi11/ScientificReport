@@ -7,7 +7,7 @@ namespace ScientificReport.DAL.Entities
 	public class ScientificInternship
 	{
 		[Key]
-		public int Id { get; set; }
+		public Guid Id { get; set; }
 
 		public string PlaceOfInternship { get; set; }
 		

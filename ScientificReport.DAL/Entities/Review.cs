@@ -7,7 +7,7 @@ namespace ScientificReport.DAL.Entities
 	public class Review
 	{
 		[Key]
-		public int Id { get; set; }
+		public Guid Id { get; set; }
 		
 		public virtual Publication Work { get; set; }
 		

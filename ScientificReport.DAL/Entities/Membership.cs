@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace ScientificReport.DAL.Entities
@@ -12,7 +13,7 @@ namespace ScientificReport.DAL.Entities
 		}
 		
 		[Key]
-		public int Id { get; set; }
+		public Guid Id { get; set; }
 		
 		public MemberOfChoices MemberOf { get; set; }
 		

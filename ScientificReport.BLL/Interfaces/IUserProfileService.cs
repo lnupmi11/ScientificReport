@@ -8,21 +8,21 @@ namespace ScientificReport.BLL.Interfaces
 	{
 		IEnumerable<UserProfile> GetAll();
 		IEnumerable<UserProfile> GetAllWhere(Func<UserProfile, bool> predicate);
-		UserProfile GetById(string id);
+		UserProfile GetById(Guid id);
 		UserProfile Get(Func<UserProfile, bool> predicate);
 		void CreateItem(UserProfile item);
 		void UpdateItem(UserProfile item);
-		void DeleteById(string id);
-		void SetApproved(string id, bool isApproved);
-		bool UserExists(string id);
-		ICollection<Publication> GetUserPublications(string id);
-		ICollection<Grant> GetUserGrants(string id);
-		ICollection<ScientificWork> GetUserScientificWorks(string id);
-		ICollection<Article> GetUserArticles(string id);
-		ICollection<ReportThesis> GetUserReportTheses(string id);
-		ICollection<ScientificInternship> GetUserScientificInternships(string id);
-		ICollection<Review> GetUserReviews(string id);
-		ICollection<PatentLicenseActivity> GetUserPatentLicenseActivitiesAsAuthor(string id);
-		ICollection<PatentLicenseActivity> GetUserPatentLicenseActivitiesAsApplicant(string id);
+		void DeleteById(Guid id);
+		void SetApproved(Guid id, bool isApproved);
+		bool UserExists(Guid id);
+		ICollection<Publication> GetUserPublications(Guid id);
+		ICollection<Grant> GetUserGrants(Guid id);
+		ICollection<ScientificWork> GetUserScientificWorks(Guid id);
+		ICollection<Article> GetUserArticles(Guid id);
+		ICollection<ReportThesis> GetUserReportTheses(Guid id);
+		ICollection<ScientificInternship> GetUserScientificInternships(Guid id);
+		ICollection<Review> GetUserReviews(Guid id);
+		ICollection<PatentLicenseActivity> GetUserPatentLicenseActivitiesAsAuthor(Guid id);
+		ICollection<PatentLicenseActivity> GetUserPatentLicenseActivitiesAsApplicant(Guid id);
 	}
 }

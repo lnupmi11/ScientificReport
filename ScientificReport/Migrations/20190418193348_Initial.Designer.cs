@@ -9,7 +9,7 @@ using ScientificReport.DAL.DbContext;
 namespace ScientificReport.Migrations
 {
     [DbContext(typeof(ScientificReportDbContext))]
-    [Migration("20190412223458_Initial")]
+    [Migration("20190418193348_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -18,30 +18,7 @@ namespace ScientificReport.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.2.3-servicing-35854");
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
-                {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken();
-
-                    b.Property<string>("Name")
-                        .HasMaxLength(256);
-
-                    b.Property<string>("NormalizedName")
-                        .HasMaxLength(256);
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedName")
-                        .IsUnique()
-                        .HasName("RoleNameIndex");
-
-                    b.ToTable("AspNetRoles");
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -50,8 +27,7 @@ namespace ScientificReport.Migrations
 
                     b.Property<string>("ClaimValue");
 
-                    b.Property<string>("RoleId")
-                        .IsRequired();
+                    b.Property<Guid>("RoleId");
 
                     b.HasKey("Id");
 
@@ -60,7 +36,7 @@ namespace ScientificReport.Migrations
                     b.ToTable("AspNetRoleClaims");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -69,8 +45,7 @@ namespace ScientificReport.Migrations
 
                     b.Property<string>("ClaimValue");
 
-                    b.Property<string>("UserId")
-                        .IsRequired();
+                    b.Property<Guid>("UserId");
 
                     b.HasKey("Id");
 
@@ -79,7 +54,7 @@ namespace ScientificReport.Migrations
                     b.ToTable("AspNetUserClaims");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
                 {
                     b.Property<string>("LoginProvider");
 
@@ -87,8 +62,7 @@ namespace ScientificReport.Migrations
 
                     b.Property<string>("ProviderDisplayName");
 
-                    b.Property<string>("UserId")
-                        .IsRequired();
+                    b.Property<Guid>("UserId");
 
                     b.HasKey("LoginProvider", "ProviderKey");
 
@@ -97,11 +71,11 @@ namespace ScientificReport.Migrations
                     b.ToTable("AspNetUserLogins");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
                 {
-                    b.Property<string>("UserId");
+                    b.Property<Guid>("UserId");
 
-                    b.Property<string>("RoleId");
+                    b.Property<Guid>("RoleId");
 
                     b.HasKey("UserId", "RoleId");
 
@@ -110,9 +84,9 @@ namespace ScientificReport.Migrations
                     b.ToTable("AspNetUserRoles");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
                 {
-                    b.Property<string>("UserId");
+                    b.Property<Guid>("UserId");
 
                     b.Property<string>("LoginProvider");
 
@@ -127,25 +101,29 @@ namespace ScientificReport.Migrations
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.ApplicantsPatentLicenseActivities", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("ApplicantId");
 
+                    b.Property<Guid?>("ApplicantId1");
+
                     b.Property<int>("PatentLicenseActivityId");
+
+                    b.Property<Guid?>("PatentLicenseActivityId1");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ApplicantId");
+                    b.HasIndex("ApplicantId1");
 
-                    b.HasIndex("PatentLicenseActivityId");
+                    b.HasIndex("PatentLicenseActivityId1");
 
                     b.ToTable("ApplicantsPatentLicenseActivities");
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.Article", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("DocumentInfo");
@@ -179,32 +157,34 @@ namespace ScientificReport.Migrations
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.AuthorsPatentLicenseActivities", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("AuthorId");
 
-                    b.Property<string>("AuthorId1");
+                    b.Property<Guid?>("AuthorId1");
 
                     b.Property<int>("PatentLicenseActivityId");
+
+                    b.Property<Guid?>("PatentLicenseActivityId1");
 
                     b.HasKey("Id");
 
                     b.HasIndex("AuthorId1");
 
-                    b.HasIndex("PatentLicenseActivityId");
+                    b.HasIndex("PatentLicenseActivityId1");
 
                     b.ToTable("AuthorsPatentLicenseActivities");
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.Conference", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("Date");
 
-                    b.Property<int?>("DepartmentReportId");
+                    b.Property<Guid?>("DepartmentReportId");
 
                     b.Property<string>("Topic");
 
@@ -217,7 +197,7 @@ namespace ScientificReport.Migrations
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.Department", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Title");
@@ -229,16 +209,16 @@ namespace ScientificReport.Migrations
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.DepartmentReport", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("Created");
 
                     b.Property<DateTime>("Edited");
 
-                    b.Property<int?>("FacultyReportId");
+                    b.Property<Guid?>("FacultyReportId");
 
-                    b.Property<string>("HeadOfDepartmentId");
+                    b.Property<Guid?>("HeadOfDepartmentId");
 
                     b.HasKey("Id");
 
@@ -251,10 +231,10 @@ namespace ScientificReport.Migrations
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.FacultyReport", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("AdministratorId");
+                    b.Property<Guid?>("AdministratorId");
 
                     b.Property<DateTime>("Created");
 
@@ -269,10 +249,10 @@ namespace ScientificReport.Migrations
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.Grant", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("TeacherReportId");
+                    b.Property<Guid?>("TeacherReportId");
 
                     b.HasKey("Id");
 
@@ -283,14 +263,14 @@ namespace ScientificReport.Migrations
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.Membership", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("MemberOf");
 
                     b.Property<string>("MembershipInfo");
 
-                    b.Property<int?>("TeacherReportId");
+                    b.Property<Guid?>("TeacherReportId");
 
                     b.HasKey("Id");
 
@@ -301,16 +281,16 @@ namespace ScientificReport.Migrations
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.Opposition", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("About");
 
                     b.Property<DateTime>("DateOfOpposition");
 
-                    b.Property<string>("OpponentId");
+                    b.Property<Guid?>("OpponentId");
 
-                    b.Property<int?>("TeacherReportId");
+                    b.Property<Guid?>("TeacherReportId");
 
                     b.HasKey("Id");
 
@@ -323,7 +303,7 @@ namespace ScientificReport.Migrations
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.PatentLicenseActivity", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("DateTime");
@@ -332,7 +312,7 @@ namespace ScientificReport.Migrations
 
                     b.Property<int>("Number");
 
-                    b.Property<int?>("TeacherReportId");
+                    b.Property<Guid?>("TeacherReportId");
 
                     b.Property<int>("Type");
 
@@ -345,7 +325,7 @@ namespace ScientificReport.Migrations
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.PostgraduateDissertationGuidance", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("DateDegreeGained");
@@ -354,13 +334,13 @@ namespace ScientificReport.Migrations
 
                     b.Property<int>("GraduationYear");
 
-                    b.Property<string>("GuideId");
+                    b.Property<Guid?>("GuideId");
 
                     b.Property<string>("PostgraduateName");
 
                     b.Property<string>("Speciality");
 
-                    b.Property<int?>("TeacherReportId");
+                    b.Property<Guid?>("TeacherReportId");
 
                     b.HasKey("Id");
 
@@ -373,16 +353,16 @@ namespace ScientificReport.Migrations
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.PostgraduateGuidance", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("GuideId");
+                    b.Property<Guid?>("GuideId");
 
                     b.Property<string>("PostgraduateInfo");
 
                     b.Property<string>("PostgraduateName");
 
-                    b.Property<int?>("TeacherReportId");
+                    b.Property<Guid?>("TeacherReportId");
 
                     b.HasKey("Id");
 
@@ -395,7 +375,7 @@ namespace ScientificReport.Migrations
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.Publication", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<bool>("IsPrintCanceled");
@@ -412,7 +392,7 @@ namespace ScientificReport.Migrations
 
                     b.Property<string>("Specification");
 
-                    b.Property<int?>("TeacherReportId");
+                    b.Property<Guid?>("TeacherReportId");
 
                     b.Property<string>("Title");
 
@@ -427,12 +407,12 @@ namespace ScientificReport.Migrations
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.ReportThesis", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("ConferenceId");
+                    b.Property<Guid?>("ConferenceId");
 
-                    b.Property<int?>("TeacherReportId");
+                    b.Property<Guid?>("TeacherReportId");
 
                     b.Property<string>("Thesis");
 
@@ -447,14 +427,14 @@ namespace ScientificReport.Migrations
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.Review", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("DateOfReview");
 
-                    b.Property<int?>("TeacherReportId");
+                    b.Property<Guid?>("TeacherReportId");
 
-                    b.Property<string>("WorkId");
+                    b.Property<Guid?>("WorkId");
 
                     b.HasKey("Id");
 
@@ -467,16 +447,16 @@ namespace ScientificReport.Migrations
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.ScientificConsultation", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("DissertationTitle");
 
-                    b.Property<string>("GuideId");
+                    b.Property<Guid?>("GuideId");
 
                     b.Property<string>("Name");
 
-                    b.Property<int?>("TeacherReportId");
+                    b.Property<Guid?>("TeacherReportId");
 
                     b.HasKey("Id");
 
@@ -489,7 +469,7 @@ namespace ScientificReport.Migrations
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.ScientificInternship", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Contents");
@@ -500,7 +480,7 @@ namespace ScientificReport.Migrations
 
                     b.Property<DateTime>("Started");
 
-                    b.Property<int?>("TeacherReportId");
+                    b.Property<Guid?>("TeacherReportId");
 
                     b.HasKey("Id");
 
@@ -511,7 +491,7 @@ namespace ScientificReport.Migrations
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.ScientificWork", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Category");
@@ -520,9 +500,9 @@ namespace ScientificReport.Migrations
 
                     b.Property<string>("Cypher");
 
-                    b.Property<int?>("DepartmentId");
+                    b.Property<Guid?>("DepartmentId");
 
-                    b.Property<int?>("TeacherReportId");
+                    b.Property<Guid?>("TeacherReportId");
 
                     b.Property<string>("Title");
 
@@ -537,16 +517,16 @@ namespace ScientificReport.Migrations
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.TeacherReport", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("Created");
 
-                    b.Property<int?>("DepartmentReportId");
+                    b.Property<Guid?>("DepartmentReportId");
 
                     b.Property<DateTime>("Edited");
 
-                    b.Property<string>("TeacherId");
+                    b.Property<Guid?>("TeacherId");
 
                     b.HasKey("Id");
 
@@ -559,7 +539,7 @@ namespace ScientificReport.Migrations
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.UserProfile", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("AcademicStatus");
@@ -631,36 +611,42 @@ namespace ScientificReport.Migrations
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.UserProfilesArticles", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("ArticleId");
 
+                    b.Property<Guid?>("ArticleId1");
+
                     b.Property<string>("AuthorId");
+
+                    b.Property<Guid?>("AuthorId1");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ArticleId");
+                    b.HasIndex("ArticleId1");
 
-                    b.HasIndex("AuthorId");
+                    b.HasIndex("AuthorId1");
 
                     b.ToTable("UserProfilesArticles");
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.UserProfilesGrants", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("GrantId");
 
+                    b.Property<Guid?>("GrantId1");
+
                     b.Property<int>("UserProfileId");
 
-                    b.Property<string>("UserProfileId1");
+                    b.Property<Guid?>("UserProfileId1");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("GrantId");
+                    b.HasIndex("GrantId1");
 
                     b.HasIndex("UserProfileId1");
 
@@ -669,38 +655,42 @@ namespace ScientificReport.Migrations
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.UserProfilesPublications", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("PublicationId");
 
-                    b.Property<string>("PublicationId1");
+                    b.Property<Guid?>("PublicationId1");
 
                     b.Property<string>("UserProfileId");
+
+                    b.Property<Guid?>("UserProfileId1");
 
                     b.HasKey("Id");
 
                     b.HasIndex("PublicationId1");
 
-                    b.HasIndex("UserProfileId");
+                    b.HasIndex("UserProfileId1");
 
                     b.ToTable("UserProfilesPublications");
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.UserProfilesReportThesis", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("ReportThesisId");
 
+                    b.Property<Guid?>("ReportThesisId1");
+
                     b.Property<int>("UserProfileId");
 
-                    b.Property<string>("UserProfileId1");
+                    b.Property<Guid?>("UserProfileId1");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ReportThesisId");
+                    b.HasIndex("ReportThesisId1");
 
                     b.HasIndex("UserProfileId1");
 
@@ -709,18 +699,20 @@ namespace ScientificReport.Migrations
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.UserProfilesReviews", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("ReviewId");
 
+                    b.Property<Guid?>("ReviewId1");
+
                     b.Property<int>("ReviewerId");
 
-                    b.Property<string>("ReviewerId1");
+                    b.Property<Guid?>("ReviewerId1");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ReviewId");
+                    b.HasIndex("ReviewId1");
 
                     b.HasIndex("ReviewerId1");
 
@@ -729,18 +721,20 @@ namespace ScientificReport.Migrations
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.UserProfilesScientificInternships", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("ScientificInternshipId");
 
+                    b.Property<Guid?>("ScientificInternshipId1");
+
                     b.Property<int>("UserProfileId");
 
-                    b.Property<string>("UserProfileId1");
+                    b.Property<Guid?>("UserProfileId1");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ScientificInternshipId");
+                    b.HasIndex("ScientificInternshipId1");
 
                     b.HasIndex("UserProfileId1");
 
@@ -749,31 +743,58 @@ namespace ScientificReport.Migrations
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.UserProfilesScientificWorks", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("ScientificWorkId");
 
+                    b.Property<Guid?>("ScientificWorkId1");
+
                     b.Property<string>("UserProfileId");
+
+                    b.Property<Guid?>("UserProfileId1");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ScientificWorkId");
+                    b.HasIndex("ScientificWorkId1");
 
-                    b.HasIndex("UserProfileId");
+                    b.HasIndex("UserProfileId1");
 
                     b.ToTable("UserProfilesScientificWorks");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+            modelBuilder.Entity("ScientificReport.DAL.Roles.UserProfileRole", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole")
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken();
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256);
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasName("RoleNameIndex");
+
+                    b.ToTable("AspNetRoles");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
+                {
+                    b.HasOne("ScientificReport.DAL.Roles.UserProfileRole")
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
                 {
                     b.HasOne("ScientificReport.DAL.Entities.UserProfile")
                         .WithMany()
@@ -781,7 +802,7 @@ namespace ScientificReport.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
                 {
                     b.HasOne("ScientificReport.DAL.Entities.UserProfile")
                         .WithMany()
@@ -789,9 +810,9 @@ namespace ScientificReport.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole")
+                    b.HasOne("ScientificReport.DAL.Roles.UserProfileRole")
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -802,7 +823,7 @@ namespace ScientificReport.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
                 {
                     b.HasOne("ScientificReport.DAL.Entities.UserProfile")
                         .WithMany()
@@ -814,12 +835,11 @@ namespace ScientificReport.Migrations
                 {
                     b.HasOne("ScientificReport.DAL.Entities.UserProfile", "Applicant")
                         .WithMany("ApplicantsPatentLicenseActivities")
-                        .HasForeignKey("ApplicantId");
+                        .HasForeignKey("ApplicantId1");
 
                     b.HasOne("ScientificReport.DAL.Entities.PatentLicenseActivity", "PatentLicenseActivity")
                         .WithMany("ApplicantsPatentLicenseActivities")
-                        .HasForeignKey("PatentLicenseActivityId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("PatentLicenseActivityId1");
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.AuthorsPatentLicenseActivities", b =>
@@ -830,8 +850,7 @@ namespace ScientificReport.Migrations
 
                     b.HasOne("ScientificReport.DAL.Entities.PatentLicenseActivity", "PatentLicenseActivity")
                         .WithMany("AuthorsPatentLicenseActivities")
-                        .HasForeignKey("PatentLicenseActivityId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("PatentLicenseActivityId1");
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.Conference", b =>
@@ -986,20 +1005,18 @@ namespace ScientificReport.Migrations
                 {
                     b.HasOne("ScientificReport.DAL.Entities.Article", "Article")
                         .WithMany("UserProfilesArticles")
-                        .HasForeignKey("ArticleId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ArticleId1");
 
                     b.HasOne("ScientificReport.DAL.Entities.UserProfile", "Author")
                         .WithMany("UserProfilesArticles")
-                        .HasForeignKey("AuthorId");
+                        .HasForeignKey("AuthorId1");
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.UserProfilesGrants", b =>
                 {
                     b.HasOne("ScientificReport.DAL.Entities.Grant", "Grant")
                         .WithMany("UserProfilesGrants")
-                        .HasForeignKey("GrantId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("GrantId1");
 
                     b.HasOne("ScientificReport.DAL.Entities.UserProfile", "UserProfile")
                         .WithMany("UserProfilesGrants")
@@ -1014,15 +1031,14 @@ namespace ScientificReport.Migrations
 
                     b.HasOne("ScientificReport.DAL.Entities.UserProfile", "UserProfile")
                         .WithMany("UserProfilesPublications")
-                        .HasForeignKey("UserProfileId");
+                        .HasForeignKey("UserProfileId1");
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.UserProfilesReportThesis", b =>
                 {
                     b.HasOne("ScientificReport.DAL.Entities.ReportThesis", "ReportThesis")
                         .WithMany("UserProfilesReportTheses")
-                        .HasForeignKey("ReportThesisId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ReportThesisId1");
 
                     b.HasOne("ScientificReport.DAL.Entities.UserProfile", "UserProfile")
                         .WithMany("UserProfilesReportTheses")
@@ -1033,8 +1049,7 @@ namespace ScientificReport.Migrations
                 {
                     b.HasOne("ScientificReport.DAL.Entities.Review", "Review")
                         .WithMany("UserProfilesReviews")
-                        .HasForeignKey("ReviewId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ReviewId1");
 
                     b.HasOne("ScientificReport.DAL.Entities.UserProfile", "Reviewer")
                         .WithMany("UserProfilesReviews")
@@ -1045,8 +1060,7 @@ namespace ScientificReport.Migrations
                 {
                     b.HasOne("ScientificReport.DAL.Entities.ScientificInternship", "ScientificInternship")
                         .WithMany("UserProfilesScientificInternships")
-                        .HasForeignKey("ScientificInternshipId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ScientificInternshipId1");
 
                     b.HasOne("ScientificReport.DAL.Entities.UserProfile", "UserProfile")
                         .WithMany("UserProfilesScientificInternships")
@@ -1057,12 +1071,11 @@ namespace ScientificReport.Migrations
                 {
                     b.HasOne("ScientificReport.DAL.Entities.ScientificWork", "ScientificWork")
                         .WithMany("UserProfilesScientificWorks")
-                        .HasForeignKey("ScientificWorkId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ScientificWorkId1");
 
                     b.HasOne("ScientificReport.DAL.Entities.UserProfile", "UserProfile")
                         .WithMany("UserProfilesScientificWorks")
-                        .HasForeignKey("UserProfileId");
+                        .HasForeignKey("UserProfileId1");
                 });
 #pragma warning restore 612, 618
         }

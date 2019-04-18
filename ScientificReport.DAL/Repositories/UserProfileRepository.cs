@@ -8,7 +8,7 @@ using ScientificReport.DAL.Entities;
 
 namespace ScientificReport.DAL.Repositories
 {
-	public class UserProfileRepository : IRepository<UserProfile, string>
+	public class UserProfileRepository : IRepository<UserProfile>
 	{
 		private readonly ScientificReportDbContext _context;
 
@@ -36,7 +36,7 @@ namespace ScientificReport.DAL.Repositories
 			return All().Where(predicate);
 		}
 
-		public UserProfile Get(string id)
+		public UserProfile Get(Guid id)
 		{
 			return All().FirstOrDefault(u => u.Id == id);
 		}
@@ -61,7 +61,7 @@ namespace ScientificReport.DAL.Repositories
 			}
 		}
 
-		public void Delete(string id)
+		public void Delete(Guid id)
 		{
 			var user = _context.UserProfiles.Find(id);
 			if (user != null)

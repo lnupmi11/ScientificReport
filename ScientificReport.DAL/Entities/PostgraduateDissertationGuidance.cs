@@ -1,13 +1,12 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ScientificReport.DAL.Entities
 {
 	public class PostgraduateDissertationGuidance
 	{
 		[Key]
-		public int Id { get; set; }
+		public Guid Id { get; set; }
 		
 		public virtual UserProfile Guide { get; set; }
 		
