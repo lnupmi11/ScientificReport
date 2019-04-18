@@ -30,7 +30,7 @@ namespace ScientificReport.DAL.Repositories
 
 		public Publication Get(Guid id)
 		{
-			return All().FirstOrDefault(u => u.Id == id);
+			return All().FirstOrDefault(u => u.Id.Equals(id));
 		}
 
 		public Publication Get(Func<Publication, bool> predicate)
