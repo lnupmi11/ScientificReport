@@ -477,11 +477,27 @@ namespace ScientificReport.Migrations
                     PagesAmount = table.Column<int>(nullable: false),
                     IsPrintCanceled = table.Column<bool>(nullable: false),
                     IsRecommendedToPrint = table.Column<bool>(nullable: false),
+                    CreatedAt = table.Column<DateTime>(nullable: false),
+                    CreatedById = table.Column<Guid>(nullable: true),
+                    LastEditAt = table.Column<DateTime>(nullable: false),
+                    LastEditById = table.Column<Guid>(nullable: true),
                     TeacherReportId = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Publications", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Publications_AspNetUsers_CreatedById",
+                        column: x => x.CreatedById,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Publications_AspNetUsers_LastEditById",
+                        column: x => x.LastEditById,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Publications_TeacherReports_TeacherReportId",
                         column: x => x.TeacherReportId,
@@ -957,6 +973,16 @@ namespace ScientificReport.Migrations
                 name: "IX_PostgraduateGuidances_TeacherReportId",
                 table: "PostgraduateGuidances",
                 column: "TeacherReportId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Publications_CreatedById",
+                table: "Publications",
+                column: "CreatedById");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Publications_LastEditById",
+                table: "Publications",
+                column: "LastEditById");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Publications_TeacherReportId",

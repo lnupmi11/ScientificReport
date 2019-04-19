@@ -9,7 +9,7 @@ using ScientificReport.DAL.DbContext;
 namespace ScientificReport.Migrations
 {
     [DbContext(typeof(ScientificReportDbContext))]
-    [Migration("20190418193348_Initial")]
+    [Migration("20190419065443_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -378,9 +378,17 @@ namespace ScientificReport.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<Guid?>("CreatedById");
+
                     b.Property<bool>("IsPrintCanceled");
 
                     b.Property<bool>("IsRecommendedToPrint");
+
+                    b.Property<DateTime>("LastEditAt");
+
+                    b.Property<Guid?>("LastEditById");
 
                     b.Property<int>("PagesAmount");
 
@@ -399,6 +407,10 @@ namespace ScientificReport.Migrations
                     b.Property<int>("Type");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CreatedById");
+
+                    b.HasIndex("LastEditById");
 
                     b.HasIndex("TeacherReportId");
 
@@ -934,6 +946,14 @@ namespace ScientificReport.Migrations
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.Publication", b =>
                 {
+                    b.HasOne("ScientificReport.DAL.Entities.UserProfile", "CreatedBy")
+                        .WithMany()
+                        .HasForeignKey("CreatedById");
+
+                    b.HasOne("ScientificReport.DAL.Entities.UserProfile", "LastEditBy")
+                        .WithMany()
+                        .HasForeignKey("LastEditById");
+
                     b.HasOne("ScientificReport.DAL.Entities.TeacherReport")
                         .WithMany("Publications")
                         .HasForeignKey("TeacherReportId");

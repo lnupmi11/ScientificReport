@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using ScientificReport.BLL.Interfaces;
@@ -38,20 +37,20 @@ namespace ScientificReport.BLL.Services
 			return _publicationRepository.Get(predicate);
 		}
 
-		public virtual void CreateItem(Publication item)
+		public virtual void CreateItem(UserProfile user, Publication item)
 		{
-			if (item != null)
-			{
-				_publicationRepository.Create(item);
-			}
+			item.CreatedBy = user;
+			item.LastEditBy = user;
+			item.CreatedAt = DateTime.Now;
+			item.LastEditAt = DateTime.Now;
+			_publicationRepository.Create(item);
 		}
 
-		public virtual void UpdateItem(Publication item)
+		public virtual void UpdateItem(UserProfile user, Publication item)
 		{
-			if (item != null)
-			{
-				_publicationRepository.Update(item);
-			}
+			item.LastEditBy = user;
+			item.LastEditAt = DateTime.Now;
+			_publicationRepository.Update(item);
 		}
 
 		public virtual void DeleteById(Guid id)
