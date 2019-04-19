@@ -61,11 +61,9 @@ namespace ScientificReport.BLL.Services
 		public void SetApproved(string id, bool isApproved)
 		{
 			var user = _userProfileRepository.Get(id);
-			if (user != null)
-			{
-				user.IsApproved = isApproved;
-				_userProfileRepository.Update(user);
-			}
+			if (user == null) return;
+			user.IsApproved = isApproved;
+			_userProfileRepository.Update(user);
 		}
 
 		public bool UserExists(string id)

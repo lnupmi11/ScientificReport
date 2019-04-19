@@ -1,7 +1,10 @@
 using System;
+using System.Linq;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using ScientificReport.DAL.DbContext;
+using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Entities.Reports;
 
 namespace ScientificReport.Models
 {
@@ -24,31 +27,41 @@ namespace ScientificReport.Models
 			if (!env.IsDevelopment()) return;
 
 			SeedUserProfile(context);
+			SeedTeacherReports(context);
 			context.SaveChanges();
 		}
 
 		private static void SeedUserProfile(ScientificReportDbContext context)
 		{
-			/*
-			if (context.UserProfile.Any()) return;
+			if (context.UserProfiles.Any()) return;
 
-			context.UserProfile.AddRange(
+			context.UserProfiles.AddRange(
 				new UserProfile
 				{
 					FirstName = "Testf",
 					LastName = "Testl",
 					MiddleName = "Testm",
-					Type = UserType.Admin,
 				},
 				new UserProfile
 				{
 					FirstName = "Testf2",
 					LastName = "Testl2",
 					MiddleName = "Testm2",
-					Type = UserType.Admin,
 				}
 			);
-			*/
+		}
+
+		private static void SeedTeacherReports(ScientificReportDbContext context)
+		{
+			if (context.TeacherReports.Any()) return;
+			var teacher = context.UserProfiles.First();
+
+			context.TeacherReports.AddRange(
+				new TeacherReport
+				{
+					Teacher = teacher
+				}
+			);
 		}
 	}
 }
