@@ -39,6 +39,12 @@ namespace ScientificReport
 
 		private static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
 			WebHost.CreateDefaultBuilder(args)
+				.ConfigureLogging((context, logging) => {
+					var config = context.Configuration.GetSection("Logging");
+					logging.AddConfiguration(config);
+					logging.AddConsole();
+					logging.AddFilter("Microsoft.EntityFrameworkCore.Database.Command", LogLevel.Warning);
+				})
 				.UseStartup<Startup>();
 	}
 }

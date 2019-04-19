@@ -57,29 +57,29 @@ namespace ScientificReport.Controllers
 		}
 
 		// POST: Report/Create
-		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public IActionResult Create([FromForm] TeacherReportCreateViewModel inputViewModel)
+		public IActionResult Create(string UserId)
 		{
 			if (!ModelState.IsValid)
 			{
-				inputViewModel.Users = _users.GetAll();
+				var viewModel = new TeacherReportCreateViewModel
+				{
+					Users = _users.GetAll()
+				};
 
-				return View(inputViewModel);
+				ModelState.AddModelError("key", "Failed to create");
+				return View(viewModel);
 			}
 
 			var report = new TeacherReport
 			{
-//				Teacher = _users.GetById(viewModel.UserId)
+				Teacher = _users.GetById(UserId)
 			};
 
-
-//			_teacherReport.CreateItem(report);
-//			return RedirectToAction(nameof(Index));
-			return RedirectToAction(nameof(Create));
-		}
+			_teacherReport.CreateItem(report);
+			return RedirectToAction(nameof(Index));
+		}	
 
 		// GET: Report/Edit/5
 		public IActionResult Edit(Guid? id)
@@ -157,6 +157,7 @@ namespace ScientificReport.Controllers
 	{
 		[Required]
 		public string UserId;
+		
 		public IEnumerable<UserProfile> Users;
 	}
 }
