@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -41,9 +42,9 @@ namespace ScientificReport.Controllers
 
 		// GET: UserProfile/Details/{id}
 		[HttpGet]
-		public IActionResult Details(string id)
+		public IActionResult Details(Guid id)
 		{
-			if (id == null)
+			if (id.Equals(null))
 			{
 				return NotFound();
 			}
@@ -59,7 +60,7 @@ namespace ScientificReport.Controllers
 
 		// GET: UserProfile/Edit/{id}
 		[HttpGet]
-		public IActionResult Edit(string id) {
+		public IActionResult Edit(Guid id) {
 			var user = _userProfileService.GetById(id);
 			if (user != null)
 			{
@@ -77,7 +78,7 @@ namespace ScientificReport.Controllers
 			{
 				return View(user);
 			}
-			_logger.LogError(user.Id);
+			_logger.LogError(user.Id.ToString());
 
 			if (_userProfileService.UserExists(user.Id))
 			{
@@ -88,7 +89,7 @@ namespace ScientificReport.Controllers
 
 		// POST: UserProfile/Delete/{id}
 		[HttpPost]
-		public IActionResult Delete(string id)
+		public IActionResult Delete(Guid id)
 		{
 			if (!_userProfileService.UserExists(id))
 			{

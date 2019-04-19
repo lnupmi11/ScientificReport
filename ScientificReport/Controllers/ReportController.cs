@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -87,7 +88,7 @@ namespace ScientificReport.Controllers
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Created")] Report report)
+		public async Task<IActionResult> Edit(Guid id, [Bind("Id,Title,Created")] Report report)
 		{
 			if (id != report.Id)
 			{
@@ -148,7 +149,7 @@ namespace ScientificReport.Controllers
 			return RedirectToAction(nameof(Index));
 		}
 
-		private bool ReportExists(int id)
+		private bool ReportExists(Guid id)
 		{
 			return false;//_context.TeacherReports.Any(e => e.Id == id);
 		}

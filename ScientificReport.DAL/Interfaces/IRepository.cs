@@ -4,15 +4,15 @@ using System.Linq;
 
 namespace ScientificReport.DAL.Interfaces
 {
-	public interface IRepository<T, in TKey>
+	public interface IRepository<T>
 	{
 		IEnumerable<T> All();
 		IEnumerable<T> AllWhere(Func<T, bool> predicate);
-		T Get(TKey id);
+		T Get(Guid id);
 		T Get(Func<T, bool> predicate);
 		void Create(T item);
 		void Update(T item);
-		void Delete(TKey id);
+		void Delete(Guid id);
 		IQueryable<T> GetQuery();
 	}
 }

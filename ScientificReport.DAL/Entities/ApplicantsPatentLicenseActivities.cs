@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace ScientificReport.DAL.Entities
@@ -5,7 +6,7 @@ namespace ScientificReport.DAL.Entities
 	public class ApplicantsPatentLicenseActivities
 	{
 		[Key]
-		public int Id { get; set; }
+		public Guid Id { get; set; }
 		
 		public string ApplicantId { get; set; }
 		public virtual UserProfile Applicant { get; set; }

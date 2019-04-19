@@ -6,7 +6,7 @@ namespace ScientificReport.DAL.Entities
 	public class Report
 	{
 		[Key]
-		public int Id { get; set; }
+		public Guid Id { get; set; }
 
 		[DataType(DataType.Date)]
 		public DateTime Created { get; set; }
