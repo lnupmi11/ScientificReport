@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -11,9 +12,9 @@ namespace ScientificReport.DAL.Entities
 		}
 		
 		[Key]
-		public string Id { get; set; }
+		public Guid Id { get; set; }
 		
-		public int Type { get; set; }
+		public Types Type { get; set; }
 		
 		public string Title { get; set; }
 		
@@ -32,5 +33,13 @@ namespace ScientificReport.DAL.Entities
 		public bool IsRecommendedToPrint { get; set; }
 		
 		public virtual ICollection<UserProfilesPublications> UserProfilesPublications { get; set; }
+		
+		public DateTime CreatedAt { get; set; }
+		
+		public virtual UserProfile CreatedBy { get; set; }
+		
+		public DateTime LastEditAt { get; set; }
+		
+		public virtual UserProfile LastEditBy { get; set; }
 	}
 }

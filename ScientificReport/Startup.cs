@@ -11,8 +11,7 @@ using ScientificReport.BLL.Interfaces;
 using ScientificReport.BLL.Services;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
-using ScientificReport.DAL.Interfaces;
-using ScientificReport.DAL.Repositories;
+using ScientificReport.DAL.Roles;
 
 namespace ScientificReport
 {
@@ -40,7 +39,7 @@ namespace ScientificReport
 					b => b.MigrationsAssembly("ScientificReport"))
 			);
 
-			services.AddIdentity<UserProfile, IdentityRole>()
+			services.AddIdentity<UserProfile, UserProfileRole>()
 					.AddEntityFrameworkStores<ScientificReportDbContext>()
 					.AddDefaultTokenProviders();
 			

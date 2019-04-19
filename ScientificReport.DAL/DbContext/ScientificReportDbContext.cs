@@ -1,4 +1,6 @@
 using System;
+using Microsoft.AspNetCore.Identity;
+using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -7,22 +9,25 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Roles;
 using ScientificReport.DAL.Entities.Reports;
 using ScientificReport.DAL.Interfaces;
 
 namespace ScientificReport.DAL.DbContext
 {
-	public class ScientificReportDbContext : IdentityDbContext<UserProfile>
+	public class ScientificReportDbContext : IdentityDbContext<UserProfile, UserProfileRole, Guid>
 	{
-		public ScientificReportDbContext(DbContextOptions options)
-			: base(options)
+		public ScientificReportDbContext()
+		{
+		}
+		public ScientificReportDbContext(DbContextOptions options) : base(options)
 		{
 		}
 
 		public DbSet<UserProfile> UserProfiles { get; set; }
 		public DbSet<Article> Articles { get; set; }
 		public DbSet<UserProfilesArticles> UserProfilesArticles { get; set; }
-		public DbSet<Publication> Publications { get; set; }
+		public virtual DbSet<Publication> Publications { get; set; }
 		public DbSet<UserProfilesPublications> UserProfilesPublications { get; set; }
 		public DbSet<Grant> Grants { get; set; }
 		public DbSet<UserProfilesGrants> UserProfilesGrants { get; set; }

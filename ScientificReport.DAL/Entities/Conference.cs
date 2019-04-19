@@ -6,7 +6,7 @@ namespace ScientificReport.DAL.Entities
 	public class Conference
 	{
 		[Key]
-		public int Id { get; set; }
+		public Guid Id { get; set; }
 		
 		public string Topic { get; set; }
 		

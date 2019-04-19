@@ -59,7 +59,7 @@ namespace ScientificReport.Controllers
 		// POST: Report/Create
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public IActionResult Create(string UserId)
+		public IActionResult Create(Guid UserId)
 		{
 			if (!ModelState.IsValid)
 			{

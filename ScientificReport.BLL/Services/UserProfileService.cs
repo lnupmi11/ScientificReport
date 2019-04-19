@@ -27,7 +27,7 @@ namespace ScientificReport.BLL.Services
 			return _userProfileRepository.AllWhere(predicate);
 		}
 
-		public UserProfile GetById(string id)
+		public UserProfile GetById(Guid id)
 		{
 			return _userProfileRepository.Get(id);
 		}
@@ -53,12 +53,12 @@ namespace ScientificReport.BLL.Services
 			}
 		}
 
-		public void DeleteById(string id)
+		public void DeleteById(Guid id)
 		{
 			_userProfileRepository.Delete(id);
 		}
 
-		public void SetApproved(string id, bool isApproved)
+		public void SetApproved(Guid id, bool isApproved)
 		{
 			var user = _userProfileRepository.Get(id);
 			if (user == null) return;
@@ -66,12 +66,12 @@ namespace ScientificReport.BLL.Services
 			_userProfileRepository.Update(user);
 		}
 
-		public bool UserExists(string id)
+		public bool UserExists(Guid id)
 		{
 			return _userProfileRepository.Get(id) != null;
 		}
 
-		public ICollection<Publication> GetUserPublications(string id)
+		public ICollection<Publication> GetUserPublications(Guid id)
 		{
 			var user = _userProfileRepository.Get(id);
 			ICollection<Publication> result = null;
@@ -83,7 +83,7 @@ namespace ScientificReport.BLL.Services
 			return result;
 		}
 
-		public ICollection<Grant> GetUserGrants(string id)
+		public ICollection<Grant> GetUserGrants(Guid id)
 		{
 			var user = _userProfileRepository.Get(id);
 			ICollection<Grant> result = null;
@@ -95,7 +95,7 @@ namespace ScientificReport.BLL.Services
 			return result;
 		}
 
-		public ICollection<ScientificWork> GetUserScientificWorks(string id)
+		public ICollection<ScientificWork> GetUserScientificWorks(Guid id)
 		{
 			var user = _userProfileRepository.Get(id);
 			ICollection<ScientificWork> result = null;
@@ -107,7 +107,7 @@ namespace ScientificReport.BLL.Services
 			return result;
 		}
 
-		public ICollection<Article> GetUserArticles(string id)
+		public ICollection<Article> GetUserArticles(Guid id)
 		{
 			var user = _userProfileRepository.Get(id);
 			ICollection<Article> result = null;
@@ -119,7 +119,7 @@ namespace ScientificReport.BLL.Services
 			return result;
 		}
 
-		public ICollection<ReportThesis> GetUserReportTheses(string id)
+		public ICollection<ReportThesis> GetUserReportTheses(Guid id)
 		{
 			var user = _userProfileRepository.Get(id);
 			ICollection<ReportThesis> result = null;
@@ -131,7 +131,7 @@ namespace ScientificReport.BLL.Services
 			return result;
 		}
 
-		public ICollection<ScientificInternship> GetUserScientificInternships(string id)
+		public ICollection<ScientificInternship> GetUserScientificInternships(Guid id)
 		{
 			var user = _userProfileRepository.Get(id);
 			ICollection<ScientificInternship> result = null;
@@ -143,7 +143,7 @@ namespace ScientificReport.BLL.Services
 			return result;
 		}
 
-		public ICollection<Review> GetUserReviews(string id)
+		public ICollection<Review> GetUserReviews(Guid id)
 		{
 			var user = _userProfileRepository.Get(id);
 			ICollection<Review> result = null;
@@ -155,7 +155,7 @@ namespace ScientificReport.BLL.Services
 			return result;
 		}
 
-		public ICollection<PatentLicenseActivity> GetUserPatentLicenseActivitiesAsAuthor(string id)
+		public ICollection<PatentLicenseActivity> GetUserPatentLicenseActivitiesAsAuthor(Guid id)
 		{
 			var user = _userProfileRepository.Get(id);
 			ICollection<PatentLicenseActivity> result = null;
@@ -167,7 +167,7 @@ namespace ScientificReport.BLL.Services
 			return result;
 		}
 
-		public ICollection<PatentLicenseActivity> GetUserPatentLicenseActivitiesAsApplicant(string id)
+		public ICollection<PatentLicenseActivity> GetUserPatentLicenseActivitiesAsApplicant(Guid id)
 		{
 			var user = _userProfileRepository.Get(id);
 			ICollection<PatentLicenseActivity> result = null;
