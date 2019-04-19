@@ -1,9 +1,9 @@
 var a00007 =
 [
     [ "UserProfileController", "a00007.html#ac30735c300cd5554295cb040d5d28235", null ],
-    [ "Delete", "a00007.html#ad84b936367c57e1105f84c94c870c16f", null ],
-    [ "Details", "a00007.html#a6194d5e32830345d0fff9aa112742494", null ],
-    [ "Edit", "a00007.html#a93b3f427311b756b0267b24a1b719b6d", null ],
+    [ "Delete", "a00007.html#a3518aee8f3372a965792b3d2171ea2d6", null ],
+    [ "Details", "a00007.html#a67175e6941e07580bbcf44e16e8d13ac", null ],
+    [ "Edit", "a00007.html#ad832a6a7ad1a1250f785150cb3ac8e55", null ],
     [ "Edit", "a00007.html#a78a55983e97e4996dfa8badac8365616", null ],
     [ "Index", "a00007.html#af5ae3acf2788bf5974b9576a8a892e9b", null ],
     [ "Login", "a00007.html#ada213933d9f48f28cc1cb8b098fade07", null ],

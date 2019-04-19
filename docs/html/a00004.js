@@ -7,6 +7,6 @@ var a00004 =
     [ "DeleteConfirmed", "a00004.html#a4f43433438db5dc8b7e11ccb5af600f1", null ],
     [ "Details", "a00004.html#ad8c4719360b6505d71c0f07c8146733b", null ],
     [ "Edit", "a00004.html#a82796d5bf1cc32cfb26ab1c2b3da4fa2", null ],
-    [ "Edit", "a00004.html#a473c9d8cc6b869895e2ef4faa24e5ad8", null ],
+    [ "Edit", "a00004.html#a615c32d76652b717bc4fd0e676f36309", null ],
     [ "Index", "a00004.html#a6ce9ca7c69f1ac617314b1ac42319ac3", null ]
 ];
