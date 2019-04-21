@@ -20,6 +20,7 @@ namespace ScientificReport.DAL.DbContext
 		public ScientificReportDbContext()
 		{
 		}
+
 		public ScientificReportDbContext(DbContextOptions options) : base(options)
 		{
 		}
@@ -49,17 +50,22 @@ namespace ScientificReport.DAL.DbContext
 		public DbSet<PatentLicenseActivity> PatentLicenseActivities { get; set; }
 		public DbSet<ApplicantsPatentLicenseActivities> ApplicantsPatentLicenseActivities { get; set; }
 		public DbSet<AuthorsPatentLicenseActivities> AuthorsPatentLicenseActivities { get; set; }
+
 		public DbSet<TeacherReport> TeacherReports { get; set; }
+		public DbSet<TeacherReportsScientificWorks> TeacherReportsScientificWorks { get; set; }
+
+
 		public DbSet<DepartmentReport> DepartmentReports { get; set; }
 		public DbSet<FacultyReport> FacultyReports { get; set; }
-		
+
 		public override int SaveChanges()
 		{
 			AddTimestamps();
 			return base.SaveChanges();
 		}
 
-		public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default (CancellationToken))
+		public override async Task<int> SaveChangesAsync(
+			CancellationToken cancellationToken = default(CancellationToken))
 		{
 			AddTimestamps();
 			return await base.SaveChangesAsync(cancellationToken);

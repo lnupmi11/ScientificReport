@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -15,10 +16,12 @@ namespace ScientificReport.Controllers
 	public class ScientificWorkController : Controller
 	{
 		private readonly ScientificWorkService _scientificWork;
+		private readonly UserProfileService _userProfile;
 
 		public ScientificWorkController(ScientificReportDbContext context)
 		{
 			_scientificWork = new ScientificWorkService(context);
+			_userProfile = new UserProfileService(context);
 		}
 
 		// GET: ScientificWork
@@ -82,21 +85,23 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
-			var scientificWorksDetails = new ScientificWorksDetails
+			
+			var scientificWorksEdit = new ScientificWorksEdit
 			{
 				ScientificWork = scientificWork,
-				Authors = _scientificWork.GetAuthors(scientificWork.Id).ToList()
+				Authors = _scientificWork.GetAuthors(scientificWork.Id),
+				Users = _userProfile.GetAll()
 			};
 
-			return View(scientificWorksDetails);
+			return View(scientificWorksEdit);
 		}
 
 		// POST: ScientificWork/Edit/5
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public IActionResult Edit(Guid id, ScientificWorksDetails scientificWorksDetails)
+		public IActionResult Edit(Guid id, ScientificWorksEdit scientificWorksEdit)
 		{
-			var scientificWork = scientificWorksDetails.ScientificWork;
+			var scientificWork = scientificWorksEdit.ScientificWork;
 			if (id != scientificWork.Id)
 			{
 				return NotFound();
@@ -104,8 +109,9 @@ namespace ScientificReport.Controllers
 
 			if (!ModelState.IsValid)
 			{
-				scientificWorksDetails.Authors = _scientificWork.GetAuthors(scientificWork.Id).ToList();
-				return View(scientificWorksDetails);
+				scientificWorksEdit.Authors = _scientificWork.GetAuthors(scientificWork.Id);
+				scientificWorksEdit.Users = _userProfile.GetAll();
+				return View(scientificWorksEdit);
 			}
 			try
 			{
@@ -147,6 +153,29 @@ namespace ScientificReport.Controllers
 		{
 			_scientificWork.DeleteById(id);
 			return RedirectToAction(nameof(Index));
+		}
+		
+		// POST: ScientificWork/AddAuthor/5
+		[HttpPost]
+//		[ValidateAntiForgeryToken]
+		public IActionResult AddAuthor(Guid id, [FromBody] ScientificWorkAuthorRequest request)
+		{
+			_scientificWork.AddAuthor(id, request.AuthorId);
+			return Json(new
+			{
+				Success = true
+			});
+		}
+		// POST: ScientificWork/DeleteAuthor/5
+		[HttpPost]
+//		[ValidateAntiForgeryToken]
+		public IActionResult DeleteAuthor(Guid id, [FromBody] ScientificWorkAuthorRequest request)
+		{
+			_scientificWork.RemoveAuthor(id, request.AuthorId);
+			return Json(new
+			{
+				Success = true
+			});
 		}
 	}
 }

@@ -13,13 +13,11 @@ namespace ScientificReport.BLL.Services
 	{
 		private readonly ScientificWorkRepository _scientificWorkRepository;
 		private readonly UserProfileRepository _userProfileRepository;
-		private readonly UserProfilesScientificWorksRepository _userProfilesScientificWorksRepository;
 
 		public ScientificWorkService(ScientificReportDbContext context)
 		{
 			_scientificWorkRepository = new ScientificWorkRepository(context);
 			_userProfileRepository = new UserProfileRepository(context);
-			_userProfilesScientificWorksRepository = new UserProfilesScientificWorksRepository(context);
 		}
 
 		public IEnumerable<ScientificWork> GetAll()
@@ -73,7 +71,8 @@ namespace ScientificReport.BLL.Services
 			IEnumerable<UserProfile> authors = null;
 			if (scientificWork != null)
 			{
-				authors = _userProfilesScientificWorksRepository.AllWhere(u => u.ScientificWork.Id == id).Select(u => u.UserProfile);}
+				authors = scientificWork.UserProfilesScientificWorks.Select(u => u.UserProfile);
+			}
 
 			return authors;
 		}
@@ -82,11 +81,29 @@ namespace ScientificReport.BLL.Services
 		{
 			var scientificWork = _scientificWorkRepository.Get(id);
 			var author = _userProfileRepository.Get(authorId);
-			_userProfilesScientificWorksRepository.Create(new UserProfilesScientificWorks
+			if (scientificWork.UserProfilesScientificWorks.Any(u => u.UserProfile.Id == authorId))
+			{
+				return;
+			}
+
+			scientificWork.UserProfilesScientificWorks.Add(new UserProfilesScientificWorks
 			{
 				ScientificWork = scientificWork,
 				UserProfile = author
 			});
+			_scientificWorkRepository.Update(scientificWork);
+		}
+
+		public void RemoveAuthor(Guid id, Guid authorId)
+		{
+			var scientificWork = _scientificWorkRepository.Get(id);
+			if (scientificWork.UserProfilesScientificWorks.All(u => u.UserProfile.Id != authorId))
+			{
+				return;
+			}
+
+			scientificWork.UserProfilesScientificWorks = scientificWork.UserProfilesScientificWorks
+				.Where(u => u.UserProfile.Id != authorId).ToList();
 			_scientificWorkRepository.Update(scientificWork);
 		}
 	}

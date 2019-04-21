@@ -26,6 +26,8 @@
 	  </Content>
 	  <Content Remove="Data\Migrations\**" />
 	  <Content Remove="Data\**" />
+	  <Content Include="..\scripts\generate.py" />
+	  <Content Include="..\scripts\repository.cs.j2" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -50,9 +52,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="..\scripts">
-	    <Link>scripts</Link>
-	  </Folder>
 	  <Folder Include="Migrations" />
 	</ItemGroup>
 

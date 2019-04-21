@@ -44,6 +44,8 @@ namespace ScientificReport
 					logging.AddConfiguration(config);
 					logging.AddConsole();
 					logging.AddFilter("Microsoft.EntityFrameworkCore", LogLevel.Warning);
+					logging.AddFilter("Microsoft.AspNetCore.Hosting.Internal.WebHost", LogLevel.Warning);
+					logging.AddFilter("Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware", LogLevel.Warning);
 				})
 				.UseStartup<Startup>();
 	}
