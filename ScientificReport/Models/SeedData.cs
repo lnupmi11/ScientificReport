@@ -1,7 +1,9 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using ScientificReport.BLL.Services;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Entities.Reports;
@@ -28,7 +30,7 @@ namespace ScientificReport.Models
 
 			SeedUserProfile(context);
 			SeedTeacherReports(context);
-			context.SaveChanges();
+			SeedScientificWorks(context);
 		}
 
 		private static void SeedUserProfile(ScientificReportDbContext context)
@@ -40,15 +42,16 @@ namespace ScientificReport.Models
 				{
 					FirstName = "Testf",
 					LastName = "Testl",
-					MiddleName = "Testm",
+					MiddleName = "Testm"
 				},
 				new UserProfile
 				{
 					FirstName = "Testf2",
 					LastName = "Testl2",
-					MiddleName = "Testm2",
+					MiddleName = "Testm2"
 				}
 			);
+			context.SaveChanges();
 		}
 
 		private static void SeedTeacherReports(ScientificReportDbContext context)
@@ -62,6 +65,28 @@ namespace ScientificReport.Models
 					Teacher = teacher
 				}
 			);
+			context.SaveChanges();
 		}
+		
+		private static void SeedScientificWorks(ScientificReportDbContext context)
+		{
+			if (context.ScientificWorks.Any()) return;
+
+			var scientificWorkService = new ScientificWorkService(context);
+			scientificWorkService.CreateItem(
+				new ScientificWork
+				{
+					Cypher = "123",
+					Title = "Test SW",
+					Category = "test",
+					Contents = "blabla"
+				}
+			);
+			var scientificWork = scientificWorkService.GetAll().First();
+			var author = context.UserProfiles.First();
+			
+			scientificWorkService.AddAuthor(scientificWork.Id, author.Id);
+		}
+
 	}
 }

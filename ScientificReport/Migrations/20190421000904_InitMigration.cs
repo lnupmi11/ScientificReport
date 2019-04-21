@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ScientificReport.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class InitMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,8 +11,7 @@ namespace ScientificReport.Migrations
                 name: "Articles",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    Id = table.Column<Guid>(nullable: false),
                     Type = table.Column<int>(nullable: false),
                     Title = table.Column<string>(nullable: true),
                     LiabilityInfo = table.Column<string>(nullable: true),
@@ -35,7 +34,7 @@ namespace ScientificReport.Migrations
                 name: "AspNetRoles",
                 columns: table => new
                 {
-                    Id = table.Column<string>(nullable: false),
+                    Id = table.Column<Guid>(nullable: false),
                     Name = table.Column<string>(maxLength: 256, nullable: true),
                     NormalizedName = table.Column<string>(maxLength: 256, nullable: true),
                     ConcurrencyStamp = table.Column<string>(nullable: true)
@@ -49,7 +48,7 @@ namespace ScientificReport.Migrations
                 name: "AspNetUsers",
                 columns: table => new
                 {
-                    Id = table.Column<string>(nullable: false),
+                    Id = table.Column<Guid>(nullable: false),
                     UserName = table.Column<string>(maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(maxLength: 256, nullable: true),
                     Email = table.Column<string>(maxLength: 256, nullable: true),
@@ -85,8 +84,7 @@ namespace ScientificReport.Migrations
                 name: "Departments",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    Id = table.Column<Guid>(nullable: false),
                     Title = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -100,7 +98,7 @@ namespace ScientificReport.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    RoleId = table.Column<string>(nullable: false),
+                    RoleId = table.Column<Guid>(nullable: false),
                     ClaimType = table.Column<string>(nullable: true),
                     ClaimValue = table.Column<string>(nullable: true)
                 },
@@ -121,7 +119,7 @@ namespace ScientificReport.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    UserId = table.Column<string>(nullable: false),
+                    UserId = table.Column<Guid>(nullable: false),
                     ClaimType = table.Column<string>(nullable: true),
                     ClaimValue = table.Column<string>(nullable: true)
                 },
@@ -143,7 +141,7 @@ namespace ScientificReport.Migrations
                     LoginProvider = table.Column<string>(nullable: false),
                     ProviderKey = table.Column<string>(nullable: false),
                     ProviderDisplayName = table.Column<string>(nullable: true),
-                    UserId = table.Column<string>(nullable: false)
+                    UserId = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -160,8 +158,8 @@ namespace ScientificReport.Migrations
                 name: "AspNetUserRoles",
                 columns: table => new
                 {
-                    UserId = table.Column<string>(nullable: false),
-                    RoleId = table.Column<string>(nullable: false)
+                    UserId = table.Column<Guid>(nullable: false),
+                    RoleId = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -184,7 +182,7 @@ namespace ScientificReport.Migrations
                 name: "AspNetUserTokens",
                 columns: table => new
                 {
-                    UserId = table.Column<string>(nullable: false),
+                    UserId = table.Column<Guid>(nullable: false),
                     LoginProvider = table.Column<string>(nullable: false),
                     Name = table.Column<string>(nullable: false),
                     Value = table.Column<string>(nullable: true)
@@ -207,7 +205,7 @@ namespace ScientificReport.Migrations
                     Id = table.Column<Guid>(nullable: false),
                     Created = table.Column<DateTime>(nullable: false),
                     Edited = table.Column<DateTime>(nullable: false),
-                    AdministratorId = table.Column<string>(nullable: true)
+                    AdministratorId = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -224,23 +222,24 @@ namespace ScientificReport.Migrations
                 name: "UserProfilesArticles",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    Id = table.Column<Guid>(nullable: false),
                     AuthorId = table.Column<string>(nullable: true),
-                    ArticleId = table.Column<int>(nullable: false)
+                    AuthorId1 = table.Column<Guid>(nullable: true),
+                    ArticleId = table.Column<int>(nullable: false),
+                    ArticleId1 = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_UserProfilesArticles", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_UserProfilesArticles_Articles_ArticleId",
-                        column: x => x.ArticleId,
+                        name: "FK_UserProfilesArticles_Articles_ArticleId1",
+                        column: x => x.ArticleId1,
                         principalTable: "Articles",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_UserProfilesArticles_AspNetUsers_AuthorId",
-                        column: x => x.AuthorId,
+                        name: "FK_UserProfilesArticles_AspNetUsers_AuthorId1",
+                        column: x => x.AuthorId1,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -253,7 +252,7 @@ namespace ScientificReport.Migrations
                     Id = table.Column<Guid>(nullable: false),
                     Created = table.Column<DateTime>(nullable: false),
                     Edited = table.Column<DateTime>(nullable: false),
-                    HeadOfDepartmentId = table.Column<string>(nullable: true),
+                    HeadOfDepartmentId = table.Column<Guid>(nullable: true),
                     FacultyReportId = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
@@ -277,8 +276,7 @@ namespace ScientificReport.Migrations
                 name: "Conferences",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    Id = table.Column<Guid>(nullable: false),
                     Topic = table.Column<string>(nullable: true),
                     Date = table.Column<DateTime>(nullable: false),
                     DepartmentReportId = table.Column<Guid>(nullable: true)
@@ -301,7 +299,7 @@ namespace ScientificReport.Migrations
                     Id = table.Column<Guid>(nullable: false),
                     Created = table.Column<DateTime>(nullable: false),
                     Edited = table.Column<DateTime>(nullable: false),
-                    TeacherId = table.Column<string>(nullable: true),
+                    TeacherId = table.Column<Guid>(nullable: true),
                     DepartmentReportId = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
@@ -325,8 +323,7 @@ namespace ScientificReport.Migrations
                 name: "Grants",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    Id = table.Column<Guid>(nullable: false),
                     TeacherReportId = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
@@ -344,8 +341,7 @@ namespace ScientificReport.Migrations
                 name: "Membership",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    Id = table.Column<Guid>(nullable: false),
                     MemberOf = table.Column<int>(nullable: false),
                     MembershipInfo = table.Column<string>(nullable: true),
                     TeacherReportId = table.Column<Guid>(nullable: true)
@@ -365,11 +361,10 @@ namespace ScientificReport.Migrations
                 name: "Oppositions",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    Id = table.Column<Guid>(nullable: false),
                     About = table.Column<string>(nullable: true),
                     DateOfOpposition = table.Column<DateTime>(nullable: false),
-                    OpponentId = table.Column<string>(nullable: true),
+                    OpponentId = table.Column<Guid>(nullable: true),
                     TeacherReportId = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
@@ -393,8 +388,7 @@ namespace ScientificReport.Migrations
                 name: "PatentLicenseActivities",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    Id = table.Column<Guid>(nullable: false),
                     Name = table.Column<string>(nullable: true),
                     Number = table.Column<int>(nullable: false),
                     DateTime = table.Column<DateTime>(nullable: false),
@@ -416,9 +410,8 @@ namespace ScientificReport.Migrations
                 name: "PostgraduateDissertationGuidances",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    GuideId = table.Column<string>(nullable: true),
+                    Id = table.Column<Guid>(nullable: false),
+                    GuideId = table.Column<Guid>(nullable: true),
                     PostgraduateName = table.Column<string>(nullable: true),
                     Dissertation = table.Column<string>(nullable: true),
                     Speciality = table.Column<string>(nullable: true),
@@ -447,9 +440,8 @@ namespace ScientificReport.Migrations
                 name: "PostgraduateGuidances",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    GuideId = table.Column<string>(nullable: true),
+                    Id = table.Column<Guid>(nullable: false),
+                    GuideId = table.Column<Guid>(nullable: true),
                     PostgraduateName = table.Column<string>(nullable: true),
                     PostgraduateInfo = table.Column<string>(nullable: true),
                     TeacherReportId = table.Column<Guid>(nullable: true)
@@ -475,7 +467,7 @@ namespace ScientificReport.Migrations
                 name: "Publications",
                 columns: table => new
                 {
-                    Id = table.Column<string>(nullable: false),
+                    Id = table.Column<Guid>(nullable: false),
                     Type = table.Column<int>(nullable: false),
                     Title = table.Column<string>(nullable: true),
                     Specification = table.Column<string>(nullable: true),
@@ -485,11 +477,27 @@ namespace ScientificReport.Migrations
                     PagesAmount = table.Column<int>(nullable: false),
                     IsPrintCanceled = table.Column<bool>(nullable: false),
                     IsRecommendedToPrint = table.Column<bool>(nullable: false),
+                    CreatedAt = table.Column<DateTime>(nullable: false),
+                    CreatedById = table.Column<Guid>(nullable: true),
+                    LastEditAt = table.Column<DateTime>(nullable: false),
+                    LastEditById = table.Column<Guid>(nullable: true),
                     TeacherReportId = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Publications", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Publications_AspNetUsers_CreatedById",
+                        column: x => x.CreatedById,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Publications_AspNetUsers_LastEditById",
+                        column: x => x.LastEditById,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Publications_TeacherReports_TeacherReportId",
                         column: x => x.TeacherReportId,
@@ -502,10 +510,9 @@ namespace ScientificReport.Migrations
                 name: "ReportTheses",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    Id = table.Column<Guid>(nullable: false),
                     Thesis = table.Column<string>(nullable: true),
-                    ConferenceId = table.Column<int>(nullable: true),
+                    ConferenceId = table.Column<Guid>(nullable: true),
                     TeacherReportId = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
@@ -529,9 +536,8 @@ namespace ScientificReport.Migrations
                 name: "ScientificConsultations",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    GuideId = table.Column<string>(nullable: true),
+                    Id = table.Column<Guid>(nullable: false),
+                    GuideId = table.Column<Guid>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     DissertationTitle = table.Column<string>(nullable: true),
                     TeacherReportId = table.Column<Guid>(nullable: true)
@@ -557,8 +563,7 @@ namespace ScientificReport.Migrations
                 name: "ScientificInternships",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    Id = table.Column<Guid>(nullable: false),
                     PlaceOfInternship = table.Column<string>(nullable: true),
                     Started = table.Column<DateTime>(nullable: false),
                     Ended = table.Column<DateTime>(nullable: false),
@@ -580,13 +585,12 @@ namespace ScientificReport.Migrations
                 name: "ScientificWorks",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    Id = table.Column<Guid>(nullable: false),
                     Cypher = table.Column<string>(nullable: true),
                     Category = table.Column<string>(nullable: true),
                     Title = table.Column<string>(nullable: true),
                     Contents = table.Column<string>(nullable: true),
-                    DepartmentId = table.Column<int>(nullable: true),
+                    DepartmentId = table.Column<Guid>(nullable: true),
                     TeacherReportId = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
@@ -610,21 +614,21 @@ namespace ScientificReport.Migrations
                 name: "UserProfilesGrants",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    Id = table.Column<Guid>(nullable: false),
                     UserProfileId = table.Column<int>(nullable: false),
-                    UserProfileId1 = table.Column<string>(nullable: true),
-                    GrantId = table.Column<int>(nullable: false)
+                    UserProfileId1 = table.Column<Guid>(nullable: true),
+                    GrantId = table.Column<int>(nullable: false),
+                    GrantId1 = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_UserProfilesGrants", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_UserProfilesGrants_Grants_GrantId",
-                        column: x => x.GrantId,
+                        name: "FK_UserProfilesGrants_Grants_GrantId1",
+                        column: x => x.GrantId1,
                         principalTable: "Grants",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_UserProfilesGrants_AspNetUsers_UserProfileId1",
                         column: x => x.UserProfileId1,
@@ -637,37 +641,38 @@ namespace ScientificReport.Migrations
                 name: "ApplicantsPatentLicenseActivities",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    Id = table.Column<Guid>(nullable: false),
                     ApplicantId = table.Column<string>(nullable: true),
-                    PatentLicenseActivityId = table.Column<int>(nullable: false)
+                    ApplicantId1 = table.Column<Guid>(nullable: true),
+                    PatentLicenseActivityId = table.Column<int>(nullable: false),
+                    PatentLicenseActivityId1 = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ApplicantsPatentLicenseActivities", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ApplicantsPatentLicenseActivities_AspNetUsers_ApplicantId",
-                        column: x => x.ApplicantId,
+                        name: "FK_ApplicantsPatentLicenseActivities_AspNetUsers_ApplicantId1",
+                        column: x => x.ApplicantId1,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_ApplicantsPatentLicenseActivities_PatentLicenseActivities_PatentLicenseActivityId",
-                        column: x => x.PatentLicenseActivityId,
+                        name: "FK_ApplicantsPatentLicenseActivities_PatentLicenseActivities_PatentLicenseActivityId1",
+                        column: x => x.PatentLicenseActivityId1,
                         principalTable: "PatentLicenseActivities",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
                 name: "AuthorsPatentLicenseActivities",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    Id = table.Column<Guid>(nullable: false),
                     AuthorId = table.Column<int>(nullable: false),
-                    AuthorId1 = table.Column<string>(nullable: true),
-                    PatentLicenseActivityId = table.Column<int>(nullable: false)
+                    AuthorId1 = table.Column<Guid>(nullable: true),
+                    PatentLicenseActivityId = table.Column<int>(nullable: false),
+                    PatentLicenseActivityId1 = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -679,20 +684,19 @@ namespace ScientificReport.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_AuthorsPatentLicenseActivities_PatentLicenseActivities_PatentLicenseActivityId",
-                        column: x => x.PatentLicenseActivityId,
+                        name: "FK_AuthorsPatentLicenseActivities_PatentLicenseActivities_PatentLicenseActivityId1",
+                        column: x => x.PatentLicenseActivityId1,
                         principalTable: "PatentLicenseActivities",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Reviews",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    WorkId = table.Column<string>(nullable: true),
+                    Id = table.Column<Guid>(nullable: false),
+                    WorkId = table.Column<Guid>(nullable: true),
                     DateOfReview = table.Column<DateTime>(nullable: false),
                     TeacherReportId = table.Column<Guid>(nullable: true)
                 },
@@ -717,11 +721,11 @@ namespace ScientificReport.Migrations
                 name: "UserProfilesPublications",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    Id = table.Column<Guid>(nullable: false),
                     UserProfileId = table.Column<string>(nullable: true),
+                    UserProfileId1 = table.Column<Guid>(nullable: true),
                     PublicationId = table.Column<int>(nullable: false),
-                    PublicationId1 = table.Column<string>(nullable: true)
+                    PublicationId1 = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -733,8 +737,8 @@ namespace ScientificReport.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_UserProfilesPublications_AspNetUsers_UserProfileId",
-                        column: x => x.UserProfileId,
+                        name: "FK_UserProfilesPublications_AspNetUsers_UserProfileId1",
+                        column: x => x.UserProfileId1,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -744,21 +748,21 @@ namespace ScientificReport.Migrations
                 name: "UserProfilesReportTheses",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    Id = table.Column<Guid>(nullable: false),
                     UserProfileId = table.Column<int>(nullable: false),
-                    UserProfileId1 = table.Column<string>(nullable: true),
-                    ReportThesisId = table.Column<int>(nullable: false)
+                    UserProfileId1 = table.Column<Guid>(nullable: true),
+                    ReportThesisId = table.Column<int>(nullable: false),
+                    ReportThesisId1 = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_UserProfilesReportTheses", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_UserProfilesReportTheses_ReportTheses_ReportThesisId",
-                        column: x => x.ReportThesisId,
+                        name: "FK_UserProfilesReportTheses_ReportTheses_ReportThesisId1",
+                        column: x => x.ReportThesisId1,
                         principalTable: "ReportTheses",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_UserProfilesReportTheses_AspNetUsers_UserProfileId1",
                         column: x => x.UserProfileId1,
@@ -771,21 +775,21 @@ namespace ScientificReport.Migrations
                 name: "UserProfilesScientificInternships",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    Id = table.Column<Guid>(nullable: false),
                     UserProfileId = table.Column<int>(nullable: false),
-                    UserProfileId1 = table.Column<string>(nullable: true),
-                    ScientificInternshipId = table.Column<int>(nullable: false)
+                    UserProfileId1 = table.Column<Guid>(nullable: true),
+                    ScientificInternshipId = table.Column<int>(nullable: false),
+                    ScientificInternshipId1 = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_UserProfilesScientificInternships", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_UserProfilesScientificInternships_ScientificInternships_ScientificInternshipId",
-                        column: x => x.ScientificInternshipId,
+                        name: "FK_UserProfilesScientificInternships_ScientificInternships_ScientificInternshipId1",
+                        column: x => x.ScientificInternshipId1,
                         principalTable: "ScientificInternships",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_UserProfilesScientificInternships_AspNetUsers_UserProfileId1",
                         column: x => x.UserProfileId1,
@@ -798,10 +802,9 @@ namespace ScientificReport.Migrations
                 name: "UserProfilesScientificWorks",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    UserProfileId = table.Column<string>(nullable: true),
-                    ScientificWorkId = table.Column<int>(nullable: false)
+                    Id = table.Column<Guid>(nullable: false),
+                    UserProfileId = table.Column<Guid>(nullable: true),
+                    ScientificWorkId = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -811,7 +814,7 @@ namespace ScientificReport.Migrations
                         column: x => x.ScientificWorkId,
                         principalTable: "ScientificWorks",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_UserProfilesScientificWorks_AspNetUsers_UserProfileId",
                         column: x => x.UserProfileId,
@@ -824,21 +827,21 @@ namespace ScientificReport.Migrations
                 name: "UserProfilesReviews",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    Id = table.Column<Guid>(nullable: false),
                     ReviewerId = table.Column<int>(nullable: false),
-                    ReviewerId1 = table.Column<string>(nullable: true),
-                    ReviewId = table.Column<int>(nullable: false)
+                    ReviewerId1 = table.Column<Guid>(nullable: true),
+                    ReviewId = table.Column<int>(nullable: false),
+                    ReviewId1 = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_UserProfilesReviews", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_UserProfilesReviews_Reviews_ReviewId",
-                        column: x => x.ReviewId,
+                        name: "FK_UserProfilesReviews_Reviews_ReviewId1",
+                        column: x => x.ReviewId1,
                         principalTable: "Reviews",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_UserProfilesReviews_AspNetUsers_ReviewerId1",
                         column: x => x.ReviewerId1,
@@ -848,14 +851,14 @@ namespace ScientificReport.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_ApplicantsPatentLicenseActivities_ApplicantId",
+                name: "IX_ApplicantsPatentLicenseActivities_ApplicantId1",
                 table: "ApplicantsPatentLicenseActivities",
-                column: "ApplicantId");
+                column: "ApplicantId1");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ApplicantsPatentLicenseActivities_PatentLicenseActivityId",
+                name: "IX_ApplicantsPatentLicenseActivities_PatentLicenseActivityId1",
                 table: "ApplicantsPatentLicenseActivities",
-                column: "PatentLicenseActivityId");
+                column: "PatentLicenseActivityId1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -900,9 +903,9 @@ namespace ScientificReport.Migrations
                 column: "AuthorId1");
 
             migrationBuilder.CreateIndex(
-                name: "IX_AuthorsPatentLicenseActivities_PatentLicenseActivityId",
+                name: "IX_AuthorsPatentLicenseActivities_PatentLicenseActivityId1",
                 table: "AuthorsPatentLicenseActivities",
-                column: "PatentLicenseActivityId");
+                column: "PatentLicenseActivityId1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Conferences_DepartmentReportId",
@@ -970,6 +973,16 @@ namespace ScientificReport.Migrations
                 column: "TeacherReportId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Publications_CreatedById",
+                table: "Publications",
+                column: "CreatedById");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Publications_LastEditById",
+                table: "Publications",
+                column: "LastEditById");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Publications_TeacherReportId",
                 table: "Publications",
                 column: "TeacherReportId");
@@ -1030,19 +1043,19 @@ namespace ScientificReport.Migrations
                 column: "TeacherId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserProfilesArticles_ArticleId",
+                name: "IX_UserProfilesArticles_ArticleId1",
                 table: "UserProfilesArticles",
-                column: "ArticleId");
+                column: "ArticleId1");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserProfilesArticles_AuthorId",
+                name: "IX_UserProfilesArticles_AuthorId1",
                 table: "UserProfilesArticles",
-                column: "AuthorId");
+                column: "AuthorId1");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserProfilesGrants_GrantId",
+                name: "IX_UserProfilesGrants_GrantId1",
                 table: "UserProfilesGrants",
-                column: "GrantId");
+                column: "GrantId1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserProfilesGrants_UserProfileId1",
@@ -1055,14 +1068,14 @@ namespace ScientificReport.Migrations
                 column: "PublicationId1");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserProfilesPublications_UserProfileId",
+                name: "IX_UserProfilesPublications_UserProfileId1",
                 table: "UserProfilesPublications",
-                column: "UserProfileId");
+                column: "UserProfileId1");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserProfilesReportTheses_ReportThesisId",
+                name: "IX_UserProfilesReportTheses_ReportThesisId1",
                 table: "UserProfilesReportTheses",
-                column: "ReportThesisId");
+                column: "ReportThesisId1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserProfilesReportTheses_UserProfileId1",
@@ -1070,9 +1083,9 @@ namespace ScientificReport.Migrations
                 column: "UserProfileId1");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserProfilesReviews_ReviewId",
+                name: "IX_UserProfilesReviews_ReviewId1",
                 table: "UserProfilesReviews",
-                column: "ReviewId");
+                column: "ReviewId1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserProfilesReviews_ReviewerId1",
@@ -1080,9 +1093,9 @@ namespace ScientificReport.Migrations
                 column: "ReviewerId1");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserProfilesScientificInternships_ScientificInternshipId",
+                name: "IX_UserProfilesScientificInternships_ScientificInternshipId1",
                 table: "UserProfilesScientificInternships",
-                column: "ScientificInternshipId");
+                column: "ScientificInternshipId1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserProfilesScientificInternships_UserProfileId1",

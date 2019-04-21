@@ -43,7 +43,7 @@ namespace ScientificReport
 					var config = context.Configuration.GetSection("Logging");
 					logging.AddConfiguration(config);
 					logging.AddConsole();
-					logging.AddFilter("Microsoft.EntityFrameworkCore.Database.Command", LogLevel.Warning);
+					logging.AddFilter("Microsoft.EntityFrameworkCore", LogLevel.Warning);
 				})
 				.UseStartup<Startup>();
 	}

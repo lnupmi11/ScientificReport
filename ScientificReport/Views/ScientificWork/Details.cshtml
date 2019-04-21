@@ -1,0 +1,68 @@
+@model ScientificReport.DTO.Models.ScientificWorks.ScientificWorksDetails
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Details</title>
+</head>
+<body>
+
+<div>
+    <h4>ScientificWork</h4>
+    <hr/>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ScientificWork.Cypher)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ScientificWork.Cypher)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ScientificWork.Category)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ScientificWork.Category)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ScientificWork.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ScientificWork.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ScientificWork.Contents)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ScientificWork.Contents)
+        </dd>
+        <dt class="col-sm-2">
+            Authors
+        </dt>
+        <dd class="col-sm-10">
+            @if (Model.Authors != null)
+            {
+                <ul>
+                    @foreach (var author in Model.Authors)
+                    {
+                        if (author != null)
+                         {
+                             <li>@author.FirstName @author.LastName</li>
+                         }
+                    }
+                </ul>
+            }
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ScientificWork.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+</body>
+</html>

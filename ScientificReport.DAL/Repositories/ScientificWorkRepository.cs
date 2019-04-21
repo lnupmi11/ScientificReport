@@ -45,21 +45,18 @@ namespace ScientificReport.DAL.Repositories
 		}
 
 		public void Update(ScientificWork item)
-		{if (item != null)
-			{
-				_context.ScientificWorks.Update(item);
-				_context.SaveChanges();
-			}
+		{
+			if (item == null) return;
+			_context.ScientificWorks.Update(item);
+			_context.SaveChanges();
 		}
 
 		public void Delete(Guid id)
 		{
 			var user = _context.ScientificWorks.Find(id);
-			if (user != null)
-			{
-				_context.ScientificWorks.Remove(user);
-				_context.SaveChanges();
-			}
+			if (user == null) return;
+			_context.ScientificWorks.Remove(user);
+			_context.SaveChanges();
 		}
 
 		public IQueryable<ScientificWork> GetQuery()

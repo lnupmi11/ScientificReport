@@ -50,7 +50,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Folder Include="..\scripts">
+	    <Link>scripts</Link>
+	  </Folder>
 	  <Folder Include="Migrations" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <_ContentIncludedByDefault Remove="Views\ScientificWork\Create.cshtml" />
+	  <_ContentIncludedByDefault Remove="Views\ScientificWork\Delete.cshtml" />
+	  <_ContentIncludedByDefault Remove="Views\ScientificWork\Details.cshtml" />
+	  <_ContentIncludedByDefault Remove="Views\ScientificWork\Edit.cshtml" />
+	  <_ContentIncludedByDefault Remove="Views\ScientificWork\Index.cshtml" />
 	</ItemGroup>
 
 </Project>
