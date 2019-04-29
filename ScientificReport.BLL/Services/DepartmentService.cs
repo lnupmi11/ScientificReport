@@ -84,24 +84,24 @@ namespace ScientificReport.BLL.Services
 		public void AddUser(Guid id, UserProfile user)
 		{
 			var department = _departmentRepository.Get(id);
-			if (department.UserProfiles.Any(u => u.Id == user.Id))
+			if (department.Staff.Any(u => u.Id == user.Id))
 			{
 				return;
 			}
 			
-			department.UserProfiles.Add(user);
+			department.Staff.Add(user);
 			_departmentRepository.Update(department);
 		}
 
 		public void RemoveUser(Guid id, UserProfile user)
 		{
 			var department = _departmentRepository.Get(id);
-			if (department.UserProfiles.All(u => u.Id != user.Id))
+			if (department.Staff.All(u => u.Id != user.Id))
 			{
 				return;
 			}
 			
-			department.UserProfiles.Remove(user);
+			department.Staff.Remove(user);
 			_departmentRepository.Update(department);
 		}
 	}

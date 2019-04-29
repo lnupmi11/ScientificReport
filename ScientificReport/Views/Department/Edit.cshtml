@@ -1,0 +1,57 @@
+@model ScientificReport.DTO.Models.Department.DepartmentEditModel
+
+@{
+	ViewData["Title"] = "Edit";
+	Layout = "_Layout";
+}
+
+<style type="text/css">
+	.roles-list {
+		overflow-y: scroll;
+		height: 400px;
+	}
+	.text-green { color: rgb(0, 179, 0); }
+	.text-red { color: rgb(177, 0, 0); }
+	.cursor-pointer { cursor: pointer; }
+	.hidden { display: none; }
+</style>
+
+<div class="bg-primary m-1 p-1 text-white"><h4>Edit user</h4></div>
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<div>
+	<a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+	<script>    
+		const toggleUserRole = (endpoint, tagName) => (tag, roleName, userId) => {
+			const config = {
+				method: 'POST',
+				body: JSON.stringify({
+					RoleName: roleName
+				}),
+				headers: {
+					'Content-Type': 'application/json'
+				}
+			};
+			
+			console.info(roleName);
+			
+			fetch(`/UserProfile/${endpoint}/${userId}`, config).then(response => {
+			
+				console.log(response);
+			
+				if (response.status !== 200) throw {msg: "Failed to toggle user roles", response};
+				tag.classList.add('hidden');
+				tag.parentElement.getElementsByClassName(tagName)[0].classList.remove('hidden');
+			}).catch(e => {
+				console.error(e);
+			});
+		}
+
+		const addUserToRole = toggleUserRole('AddUserToRole', 'remove-role');
+		const removeUserFromRole = toggleUserRole('RemoveUserFromRole', 'add-role');
+	</script>
+	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

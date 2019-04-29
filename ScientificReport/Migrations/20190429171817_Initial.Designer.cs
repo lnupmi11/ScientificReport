@@ -9,7 +9,7 @@ using ScientificReport.DAL.DbContext;
 namespace ScientificReport.Migrations
 {
     [DbContext(typeof(ScientificReportDbContext))]
-    [Migration("20190429150102_Initial")]
+    [Migration("20190429171817_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -200,9 +200,13 @@ namespace ScientificReport.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<Guid?>("HeadId");
+
                     b.Property<string>("Title");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("HeadId");
 
                     b.ToTable("Departments");
                 });
@@ -876,6 +880,13 @@ namespace ScientificReport.Migrations
                         .HasForeignKey("DepartmentReportId");
                 });
 
+            modelBuilder.Entity("ScientificReport.DAL.Entities.Department", b =>
+                {
+                    b.HasOne("ScientificReport.DAL.Entities.UserProfile", "Head")
+                        .WithMany()
+                        .HasForeignKey("HeadId");
+                });
+
             modelBuilder.Entity("ScientificReport.DAL.Entities.DepartmentReport", b =>
                 {
                     b.HasOne("ScientificReport.DAL.Entities.FacultyReport")
@@ -1028,7 +1039,7 @@ namespace ScientificReport.Migrations
             modelBuilder.Entity("ScientificReport.DAL.Entities.UserProfile", b =>
                 {
                     b.HasOne("ScientificReport.DAL.Entities.Department")
-                        .WithMany("UserProfiles")
+                        .WithMany("Staff")
                         .HasForeignKey("DepartmentId");
                 });
 

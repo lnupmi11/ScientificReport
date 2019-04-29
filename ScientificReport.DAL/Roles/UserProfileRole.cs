@@ -9,8 +9,11 @@ namespace ScientificReport.DAL.Roles
 		public const string HeadOfDepartment = "HeadOfDepartment";
 		public const string Administrator = "Administrator";
 
-		// Allow all roles except anonymous users
+		// Allows all roles except anonymous users
 		public const string Any = Teacher + "," + HeadOfDepartment + "," + Administrator;
+		
+		// Allows only head of department or administrator
+		public const string HeadOfDepartmentOrAdmin = HeadOfDepartment + "," + Administrator;
 
 		public static readonly string[] Roles =
 		{

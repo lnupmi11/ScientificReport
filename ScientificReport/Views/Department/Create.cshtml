@@ -1,0 +1,26 @@
+@model ScientificReport.DTO.Models.Department.DepartmentCreateModel
+
+@{
+	ViewBag.Title = "Create department";
+	Layout = "_Layout";
+}
+
+<h1>Create department</h1>
+<div asp-validation-summary="ModelOnly" class="text-danger validation-summary-valid"></div>
+<h4>Create new department. Department will be created only if it does not exist.</h4>
+<hr/>
+<form asp-action="Create" method="post">
+	<div class="form-group">
+		<label asp-for="Title"></label>
+		<input asp-for="Title" class="form-control"/>
+	</div>
+	<div class="form-group">
+		<label asp-for="SelectedHeadId"></label>
+		<div class="col-md-5">
+			@Html.DropDownListFor(x => Model.SelectedHeadId, new SelectList(Model.UserSelection, "Value", "Text"), new { @class = "form-control"})
+			@Html.ValidationMessageFor(x => x.SelectedHeadId, "", new { @class = "text-danger" })
+		</div>
+	</div>
+	<button type="submit" class="btn btn-primary">Create</button>
+	<a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

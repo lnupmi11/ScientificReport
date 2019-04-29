@@ -21,7 +21,8 @@ namespace ScientificReport.DAL.Repositories
 		{
 			return _context.Departments
 				.Include(b => b.ScientificWorks)
-				.Include(u => u.UserProfiles);
+				.Include(u => u.Staff)
+				.Include(h => h.Head);
 		}
 
 		public IEnumerable<Department> AllWhere(Func<Department, bool> predicate)

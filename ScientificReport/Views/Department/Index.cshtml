@@ -1,0 +1,44 @@
+@model IEnumerable<ScientificReport.DAL.Entities.Department>
+
+@{
+	ViewData["Title"] = "Departments";
+}
+
+<h2>Departments</h2>
+<button type="button" class="btn btn-success" onclick="location.href = '@Url.Action("Create", "Department")'">Create</button>
+
+<table class="table">
+	<thead>
+	<tr>
+		<th>
+			@Html.DisplayNameFor(model => model.Title)
+		</th>
+		<th>Staff number</th>
+		<th>Scientific works total</th>
+		<th></th>
+	</tr>
+	</thead>
+	<tbody>
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.Title)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Staff.Count)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.ScientificWorks.Count)
+			</td>
+			<td>
+				<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+				<a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+				<form asp-action="Delete" asp-route-id="@item.Id" method="post">
+					<button type="submit" class="btn btn-sm btn-danger">Delete</button>
+				</form>
+			</td>
+		</tr>
+	}
+	</tbody>
+</table>
