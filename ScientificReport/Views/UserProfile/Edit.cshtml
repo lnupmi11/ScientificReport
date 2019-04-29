@@ -1,68 +1,78 @@
-@model ScientificReport.DAL.Entities.UserProfile
+@model ScientificReport.DTO.Models.UserProfile.UserProfileEditModel
 
 @{
 	ViewData["Title"] = "Edit";
 	Layout = "_Layout";
 }
 
+<style type="text/css">
+	.roles-list {
+		overflow-y: scroll;
+		height: 400px;
+	}
+	.text-green { color: rgb(0, 179, 0); }
+	.text-red { color: rgb(177, 0, 0); }
+	.hidden { display: none; }
+</style>
+
 <div class="bg-primary m-1 p-1 text-white"><h4>Edit user</h4></div>
 <div asp-validation-summary="All" class="text-danger"></div>
 <form asp-action="Edit" method="post">
 	<div class="form-group">
-		<label asp-for="Id"></label>
-		<input asp-for="Id" class="form-control" disabled/>
+		<label asp-for="UserProfile.FirstName"></label>
+		<input asp-for="UserProfile.FirstName" class="form-control"/>
 	</div>
 	<div class="form-group">
-		<label asp-for="FirstName"></label>
-		<input asp-for="FirstName" class="form-control"/>
+		<label asp-for="UserProfile.MiddleName"></label>
+		<input asp-for="UserProfile.MiddleName" class="form-control"/>
 	</div>
 	<div class="form-group">
-		<label asp-for="MiddleName"></label>
-		<input asp-for="MiddleName" class="form-control"/>
+		<label asp-for="UserProfile.LastName"></label>
+		<input asp-for="UserProfile.LastName" class="form-control"/>
 	</div>
 	<div class="form-group">
-		<label asp-for="LastName"></label>
-		<input asp-for="LastName" class="form-control"/>
+		<label asp-for="UserProfile.PhoneNumber"></label>
+		<input asp-for="UserProfile.PhoneNumber" class="form-control"/>
 	</div>
 	<div class="form-group">
-		<label asp-for="PhoneNumber"></label>
-		<input asp-for="PhoneNumber" class="form-control"/>
+		<label asp-for="UserProfile.BirthYear"></label>
+		<input asp-for="UserProfile.BirthYear" class="form-control"/>
 	</div>
 	<div class="form-group">
-		<label asp-for="BirthYear"></label>
-		<input asp-for="BirthYear" class="form-control"/>
+		<label asp-for="UserProfile.GraduationYear"></label>
+		<input asp-for="UserProfile.GraduationYear" class="form-control"/>
 	</div>
 	<div class="form-group">
-		<label asp-for="GraduationYear"></label>
-		<input asp-for="GraduationYear" class="form-control"/>
+		<label asp-for="UserProfile.ScientificDegree"></label>
+		<input asp-for="UserProfile.ScientificDegree" class="form-control"/>
 	</div>
 	<div class="form-group">
-		<label asp-for="ScientificDegree"></label>
-		<input asp-for="ScientificDegree" class="form-control"/>
+		<label asp-for="UserProfile.YearDegreeAssigned"></label>
+		<input asp-for="UserProfile.YearDegreeAssigned" class="form-control"/>
+	</div>
+
+	<div class="form-group">@{
+		                        // TODO: add roles selection
+	                        }
+		<label asp-for="Roles"></label>
+		<input asp-for="Roles" class="form-control"/>
+	</div>
+	
+	<div class="form-group">
+		<label asp-for="UserProfile.AcademicStatus"></label>
+		<input asp-for="UserProfile.AcademicStatus" class="form-control"/>
 	</div>
 	<div class="form-group">
-		<label asp-for="YearDegreeAssigned"></label>
-		<input asp-for="YearDegreeAssigned" class="form-control"/>
+		<label asp-for="UserProfile.YearDegreeGained"></label>
+		<input asp-for="UserProfile.YearDegreeGained" class="form-control"/>
 	</div>
 	<div class="form-group">
-		<label asp-for="Position"></label>
-		<input asp-for="Position" class="form-control"/>
+		<label asp-for="UserProfile.UserName"></label>
+		<input asp-for="UserProfile.UserName" class="form-control"/>
 	</div>
 	<div class="form-group">
-		<label asp-for="AcademicStatus"></label>
-		<input asp-for="AcademicStatus" class="form-control"/>
-	</div>
-	<div class="form-group">
-		<label asp-for="YearDegreeGained"></label>
-		<input asp-for="YearDegreeGained" class="form-control"/>
-	</div>
-	<div class="form-group">
-		<label asp-for="UserName"></label>
-		<input asp-for="UserName" class="form-control"/>
-	</div>
-	<div class="form-group">
-		<label asp-for="Email"></label>
-		<input asp-for="Email" class="form-control"/>
+		<label asp-for="UserProfile.Email"></label>
+		<input asp-for="UserProfile.Email" class="form-control"/>
 	</div>
 	<button type="submit" class="btn btn-primary">Save</button>
 	<a asp-action="Index" class="btn btn-secondary">Cancel</a>

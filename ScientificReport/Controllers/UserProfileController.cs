@@ -11,11 +11,12 @@ using ScientificReport.DTO.Models.UserProfile;
 
 namespace ScientificReport.Controllers
 {
-	[Authorize(Roles = UserProfileRole.Administrator)]
+//	[Authorize(Roles = UserProfileRole.Administrator)]
 	public class UserProfileController : Controller
 	{
 		private readonly UserManager<UserProfile> _userManager;
 		private readonly SignInManager<UserProfile> _signInManager;
+		private readonly RoleManager<UserProfileRole> _roleManager;
 		
 		private readonly IUserProfileService _userProfileService;
 		
@@ -24,12 +25,14 @@ namespace ScientificReport.Controllers
 		public UserProfileController(
 			UserManager<UserProfile> usrMgr,
 			SignInManager<UserProfile> signInManager,
+			RoleManager<UserProfileRole> roleManager,
 			IUserProfileService userProfileService,
 			ILogger<UserProfileController> logger
 		)
 		{
 			_userManager = usrMgr;
 			_signInManager = signInManager;
+			_roleManager = roleManager;
 			_userProfileService = userProfileService;
 			_logger = logger;
 		}
@@ -43,14 +46,14 @@ namespace ScientificReport.Controllers
 
 		// GET: UserProfile/Details/{id}
 		[HttpGet]
-		public IActionResult Details(Guid id)
+		public IActionResult Details(Guid? id)
 		{
-			if (id.Equals(null))
+			if (id == null)
 			{
 				return NotFound();
 			}
 
-			var userProfile = _userProfileService.GetById(id);
+			var userProfile = _userProfileService.GetById(id.Value);
 			if (userProfile == null)
 			{
 				return NotFound();
@@ -61,11 +64,19 @@ namespace ScientificReport.Controllers
 
 		// GET: UserProfile/Edit/{id}
 		[HttpGet]
-		public IActionResult Edit(Guid id) {
-			var user = _userProfileService.GetById(id);
+		public IActionResult Edit(Guid? id) {
+			if (id == null)
+			{
+				return NotFound();
+			}
+			var user = _userProfileService.GetById(id.Value);
 			if (user != null)
 			{
-				return View(user);
+				return View(new UserProfileEditModel
+				{
+					UserProfile = user,
+					Roles = _roleManager.Roles
+				});
 			}
 
 			return RedirectToAction("Index");
@@ -73,34 +84,40 @@ namespace ScientificReport.Controllers
 
 		// POST: UserProfile/Edit/{id}
 		[HttpPost]
-		public IActionResult Edit(UserProfile user)
+		public async Task<IActionResult> Edit(UserProfileEditModel model)
 		{
 			if (!ModelState.IsValid)
 			{
-				return View(user);
+				return View(model);
 			}
-			_logger.LogError(user.Id.ToString());
+			_logger.LogError(model.UserProfile.Id.ToString());
 
-			if (_userProfileService.UserExists(user.Id))
+			if (_userProfileService.UserExists(model.UserProfile.Id))
 			{
-				_userProfileService.UpdateItem(user);
+				_userProfileService.UpdateItem(model.UserProfile);
+				await _userProfileService.UpdateUserRolesAsync(model.UserProfile, model.Roles, _userManager);
 			}
 			return RedirectToAction("Index");
 		}
 
 		// POST: UserProfile/Delete/{id}
 		[HttpPost]
-		public IActionResult Delete(Guid id)
+		public IActionResult Delete(Guid? id)
 		{
-			if (!_userProfileService.UserExists(id))
+			if (id == null)
 			{
 				return NotFound();
 			}
 			
-			_userProfileService.DeleteById(id);
+			if (!_userProfileService.UserExists(id.Value))
+			{
+				return NotFound();
+			}
+			
+			_userProfileService.DeleteById(id.Value);
 			return RedirectToAction("Index");
 		}
-		
+
 		// GET: UserProfile/Register
 		[HttpGet]
 		[AllowAnonymous]
@@ -134,7 +151,7 @@ namespace ScientificReport.Controllers
 				ScientificDegree = model.ScientificDegree,
 				YearDegreeGained = model.YearDegreeGained,
 				YearDegreeAssigned = model.YearDegreeAssigned,
-				Position = "Teacher",
+				Position = UserProfileRole.Teacher,
 				IsApproved = false,
 				PhoneNumber = model.PhoneNumber
 			};
@@ -143,8 +160,10 @@ namespace ScientificReport.Controllers
 				var result = await _userManager.CreateAsync(user, model.Password);
 				if (result.Succeeded)
 				{
-					var createdUser = await _userManager.FindByNameAsync(user.UserName);
-					var addUserToRoleResult = await _userManager.AddToRoleAsync(createdUser, UserProfileRole.Teacher);
+					var createdUser = _userProfileService.Get(u => u.UserName == user.UserName);
+					var addUserToRoleResult = await _userProfileService.AddToRoleAsync(
+						createdUser, UserProfileRole.Teacher, _userManager
+					);
 					if (addUserToRoleResult.Succeeded)
 					{
 						return RedirectToAction("Index");	
