@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['edit',['Edit',['../a00004.html#a82796d5bf1cc32cfb26ab1c2b3da4fa2',1,'ScientificReport.Controllers.ReportController.Edit(int?id)'],['../a00004.html#a615c32d76652b717bc4fd0e676f36309',1,'ScientificReport.Controllers.ReportController.Edit(Guid id, [Bind(&quot;Id,Title,Created&quot;)] Report report)'],['../a00008.html#aef57de717ad34b924bb176e422402caa',1,'ScientificReport.Controllers.UserProfileController.Edit(Guid?id)'],['../a00008.html#aa2f2631e03a62380b14a49ddb655991b',1,'ScientificReport.Controllers.UserProfileController.Edit(UserProfileEditModel model)']]],
-  ['error',['Error',['../a00001.html#ab23c5c5bb2a8f95c1c6ca4de3e32318d',1,'ScientificReport::Controllers::HomeController']]]
+  ['delete',['Delete',['../a00004.html#a2f7651c091088809bcbadaffdc2e91ce',1,'ScientificReport.Controllers.ReportController.Delete()'],['../a00008.html#a48780abfce15ce82c58a1b5710185e83',1,'ScientificReport.Controllers.UserProfileController.Delete()']]],
+  ['deleteconfirmed',['DeleteConfirmed',['../a00004.html#a4f43433438db5dc8b7e11ccb5af600f1',1,'ScientificReport::Controllers::ReportController']]],
+  ['details',['Details',['../a00004.html#ad8c4719360b6505d71c0f07c8146733b',1,'ScientificReport.Controllers.ReportController.Details()'],['../a00008.html#a84b3e5b1373867e10ccee532630b6392',1,'ScientificReport.Controllers.UserProfileController.Details()']]],
+  ['down',['Down',['../a00002.html#a9efac288095703eaa26c79a32f1cdab4',1,'ScientificReport::Migrations::Initial']]]
 ];

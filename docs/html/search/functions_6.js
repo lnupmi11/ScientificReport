@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['main',['Main',['../a00003.html#ae42d2d35dbaa644476282c09ddaf277a',1,'ScientificReport::Program']]]
+  ['login',['Login',['../a00008.html#ada213933d9f48f28cc1cb8b098fade07',1,'ScientificReport.Controllers.UserProfileController.Login()'],['../a00008.html#ae8d56f997555dbd409b63f7bdc9f6e58',1,'ScientificReport.Controllers.UserProfileController.Login(LoginModel model)']]],
+  ['logout',['Logout',['../a00008.html#a65d3fa00161b10075bbcf85098beedb2',1,'ScientificReport::Controllers::UserProfileController']]]
 ];

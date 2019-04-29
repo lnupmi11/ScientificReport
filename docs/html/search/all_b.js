@@ -1,14 +1,8 @@
 var searchData=
 [
-  ['controllers',['Controllers',['../a00035.html',1,'ScientificReport']]],
-  ['migrations',['Migrations',['../a00041.html',1,'ScientificReport']]],
-  ['models',['Models',['../a00042.html',1,'ScientificReport']]],
-  ['scientificreport',['ScientificReport',['../a00032.html',1,'']]],
-  ['scientificreportdbcontextmodelsnapshot',['ScientificReportDbContextModelSnapshot',['../a00005.html',1,'ScientificReport::Migrations']]],
-  ['scientificreportdbcontextmodelsnapshot_2ecs',['ScientificReportDbContextModelSnapshot.cs',['../a00014.html',1,'']]],
-  ['seeddata',['SeedData',['../a00006.html',1,'ScientificReport::Models']]],
-  ['seeddata_2ecs',['SeedData.cs',['../a00015.html',1,'']]],
-  ['startup',['Startup',['../a00007.html#a63d2f00d6a6c75ca48d391012d8ae7e0',1,'ScientificReport::Startup']]],
-  ['startup',['Startup',['../a00007.html',1,'ScientificReport']]],
-  ['startup_2ecs',['Startup.cs',['../a00017.html',1,'']]]
+  ['register',['Register',['../a00008.html#a6c8b98005ac1254746e00f0066ed462a',1,'ScientificReport.Controllers.UserProfileController.Register()'],['../a00008.html#a81dea7bbcc1fd61c4b0bd09ba613e329',1,'ScientificReport.Controllers.UserProfileController.Register(RegisterModel model)']]],
+  ['removeuserfromrole',['RemoveUserFromRole',['../a00008.html#a9a6a95dac91c994fe7f69689c5255cf2',1,'ScientificReport::Controllers::UserProfileController']]],
+  ['reportcontroller',['ReportController',['../a00004.html#a0d32c09dca71fe750c7ef27b9d0c5a6d',1,'ScientificReport::Controllers::ReportController']]],
+  ['reportcontroller',['ReportController',['../a00004.html',1,'ScientificReport::Controllers']]],
+  ['reportcontroller_2ecs',['ReportController.cs',['../a00010.html',1,'']]]
 ];

@@ -1,7 +1,14 @@
 var searchData=
 [
-  ['up',['Up',['../a00002.html#abb39d64d082fd0192edf5ad7f098f945',1,'ScientificReport::Migrations::Initial']]],
-  ['userprofilecontroller',['UserProfileController',['../a00008.html#ad61f6886bf4d9db672ab48d991fd708b',1,'ScientificReport::Controllers::UserProfileController']]],
-  ['userprofilecontroller',['UserProfileController',['../a00008.html',1,'ScientificReport::Controllers']]],
-  ['userprofilecontroller_2ecs',['UserProfileController.cs',['../a00011.html',1,'']]]
+  ['controllers',['Controllers',['../a00035.html',1,'ScientificReport']]],
+  ['migrations',['Migrations',['../a00041.html',1,'ScientificReport']]],
+  ['models',['Models',['../a00042.html',1,'ScientificReport']]],
+  ['scientificreport',['ScientificReport',['../a00032.html',1,'']]],
+  ['scientificreportdbcontextmodelsnapshot',['ScientificReportDbContextModelSnapshot',['../a00005.html',1,'ScientificReport::Migrations']]],
+  ['scientificreportdbcontextmodelsnapshot_2ecs',['ScientificReportDbContextModelSnapshot.cs',['../a00014.html',1,'']]],
+  ['seeddata',['SeedData',['../a00006.html',1,'ScientificReport::Models']]],
+  ['seeddata_2ecs',['SeedData.cs',['../a00015.html',1,'']]],
+  ['startup',['Startup',['../a00007.html#a63d2f00d6a6c75ca48d391012d8ae7e0',1,'ScientificReport::Startup']]],
+  ['startup',['Startup',['../a00007.html',1,'ScientificReport']]],
+  ['startup_2ecs',['Startup.cs',['../a00017.html',1,'']]]
 ];
