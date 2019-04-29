@@ -1,0 +1,88 @@
+@model ScientificReport.DAL.Entities.Department
+
+@{
+	ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+	<h4>Department</h4>
+	<hr />
+	<dl class="row">
+		<dt class = "col-sm-2">
+			@Html.DisplayNameFor(model => model.Title)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.Title)
+		</dd>
+		<dt class = "col-sm-2">
+			@Html.DisplayNameFor(model => model.Head)
+		</dt>
+		<dd class="col-sm-10">
+			<a href="@Url.Action("Details", "UserProfile", new {id = Model.Head.Id})">
+				@Model.Head.FirstName @Model.Head.MiddleName @Model.Head.LastName
+			</a>
+		</dd>
+		<dt class="col-sm-2">
+			Staff
+		</dt>
+		<dd class="col-sm-10">
+			@if (Model.Staff != null)
+			{
+				if (Model.Staff.Count > 0)
+				{
+					<ul>
+						@foreach (var user in Model.Staff)
+						{
+							if (user != null)
+							{
+								<li>
+									<a href="@Url.Action("Details", "UserProfile", user.Id)">
+										@user.FirstName @user.MiddleName @user.LastName
+									</a>
+								</li>
+							}
+						}
+					</ul>
+				}
+				else
+				{
+					<p>No staff</p>
+				}
+			}
+		</dd>
+		<dt class="col-sm-2">
+			Scientific works
+		</dt>
+		<dd class="col-sm-10">
+			@if (Model.ScientificWorks != null)
+			{
+				if (Model.ScientificWorks.Count > 0)
+				{
+					<ul>
+						@foreach (var scientificWork in Model.ScientificWorks)
+						{
+							if (scientificWork != null)
+							{
+								<li>
+									<a href="#TODO-link-to-scientific-work-details">
+										@scientificWork.Title
+									</a>
+								</li>
+							}
+						}
+					</ul>
+				}
+				else
+				{
+					<p>No scientific works</p>
+				}
+			}
+		</dd>
+	</dl>
+</div>
+<div>
+	<a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+	<a asp-action="Index">Back to List</a>
+</div>

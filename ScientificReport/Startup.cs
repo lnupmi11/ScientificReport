@@ -44,6 +44,7 @@ namespace ScientificReport
 					.AddDefaultTokenProviders();
 			
 			services.AddTransient<IUserProfileService, UserProfileService>();
+			services.AddTransient<IDepartmentService, DepartmentService>();
 
 			services.Configure<IdentityOptions>(options =>
 			{
