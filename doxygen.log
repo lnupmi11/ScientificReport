@@ -119,6 +119,7 @@ Generating class documentation...
 Generating namespace index...
 Generating docs for namespace ScientificReport
 Generating docs for compound ScientificReport::Program...
+Generating call graph for function ScientificReport.Program.Main
 Generating docs for compound ScientificReport::Startup...
 Generating docs for namespace ScientificReport::Controllers
 Generating docs for compound ScientificReport::Controllers::HomeController...
@@ -128,6 +129,8 @@ Generating docs for namespace ScientificReport::Migrations
 Generating docs for compound ScientificReport::Migrations::Initial...
 Generating docs for compound ScientificReport::Migrations::ScientificReportDbContextModelSnapshot...
 Generating docs for namespace ScientificReport::Models
+Generating docs for compound ScientificReport::Models::SeedData...
+Generating caller graph for function ScientificReport.Models.SeedData.Initialize
 Generating graph info page...
 Generating directory documentation...
 Generating index page...
@@ -147,31 +150,36 @@ finalizing index lists...
 writing tag file...
 Running dot...
 Generating dot graphs using 3 parallel threads...
-Running dot for graph 1/18
-Running dot for graph 2/18
-Running dot for graph 3/18
-Running dot for graph 4/18
-Running dot for graph 5/18
-Running dot for graph 6/18
-Running dot for graph 7/18
-Running dot for graph 8/18
-Running dot for graph 9/18
-Running dot for graph 10/18
-Running dot for graph 11/18
-Running dot for graph 12/18
-Running dot for graph 13/18
-Running dot for graph 14/18
-Running dot for graph 15/18
-Running dot for graph 16/18
-Running dot for graph 17/18
-Running dot for graph 18/18
-Patching output file 1/8
-Patching output file 2/8
-Patching output file 3/8
-Patching output file 4/8
-Patching output file 5/8
-Patching output file 6/8
-Patching output file 7/8
-Patching output file 8/8
-lookup cache used 103/65536 hits=263 misses=104
+Running dot for graph 1/22
+Running dot for graph 2/22
+Running dot for graph 3/22
+Running dot for graph 4/22
+Running dot for graph 5/22
+Running dot for graph 6/22
+Running dot for graph 7/22
+Running dot for graph 8/22
+Running dot for graph 9/22
+Running dot for graph 10/22
+Running dot for graph 11/22
+Running dot for graph 12/22
+Running dot for graph 13/22
+Running dot for graph 14/22
+Running dot for graph 15/22
+Running dot for graph 16/22
+Running dot for graph 17/22
+Running dot for graph 18/22
+Running dot for graph 19/22
+Running dot for graph 20/22
+Running dot for graph 21/22
+Running dot for graph 22/22
+Patching output file 1/9
+Patching output file 2/9
+Patching output file 3/9
+Patching output file 4/9
+Patching output file 5/9
+Patching output file 6/9
+Patching output file 7/9
+Patching output file 8/9
+Patching output file 9/9
+lookup cache used 107/65536 hits=281 misses=108
 finished...
