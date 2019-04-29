@@ -17,6 +17,6 @@ namespace ScientificReport.DAL.Entities
 		
 		public string Contents { get; set; }
 		
-		public virtual ICollection<UserProfilesScientificWorks> UserProfilesScientificWorks { get; set; }
+		public ICollection<UserProfilesScientificWorks> UserProfilesScientificWorks { get; set; }
 	}
 }

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ScientificReport.Migrations
 {
-    public partial class Initial : Migration
+    public partial class InitMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -803,23 +803,21 @@ namespace ScientificReport.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    UserProfileId = table.Column<string>(nullable: true),
-                    UserProfileId1 = table.Column<Guid>(nullable: true),
-                    ScientificWorkId = table.Column<int>(nullable: false),
-                    ScientificWorkId1 = table.Column<Guid>(nullable: true)
+                    UserProfileId = table.Column<Guid>(nullable: true),
+                    ScientificWorkId = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_UserProfilesScientificWorks", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_UserProfilesScientificWorks_ScientificWorks_ScientificWorkId1",
-                        column: x => x.ScientificWorkId1,
+                        name: "FK_UserProfilesScientificWorks_ScientificWorks_ScientificWorkId",
+                        column: x => x.ScientificWorkId,
                         principalTable: "ScientificWorks",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_UserProfilesScientificWorks_AspNetUsers_UserProfileId1",
-                        column: x => x.UserProfileId1,
+                        name: "FK_UserProfilesScientificWorks_AspNetUsers_UserProfileId",
+                        column: x => x.UserProfileId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -1105,14 +1103,14 @@ namespace ScientificReport.Migrations
                 column: "UserProfileId1");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserProfilesScientificWorks_ScientificWorkId1",
+                name: "IX_UserProfilesScientificWorks_ScientificWorkId",
                 table: "UserProfilesScientificWorks",
-                column: "ScientificWorkId1");
+                column: "ScientificWorkId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserProfilesScientificWorks_UserProfileId1",
+                name: "IX_UserProfilesScientificWorks_UserProfileId",
                 table: "UserProfilesScientificWorks",
-                column: "UserProfileId1");
+                column: "UserProfileId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

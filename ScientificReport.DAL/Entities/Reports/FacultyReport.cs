@@ -1,7 +1,6 @@
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
-namespace ScientificReport.DAL.Entities
+namespace ScientificReport.DAL.Entities.Reports
 {
 	public class FacultyReport : Report
 	{

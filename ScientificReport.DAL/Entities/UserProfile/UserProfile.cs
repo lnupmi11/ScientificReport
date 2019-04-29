@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Identity;
 namespace ScientificReport.DAL.Entities
 {
 	public class UserProfile : IdentityUser<Guid>
-	{
+	{		
 		public string FirstName { get; set; }
 		
 		public string MiddleName { get; set; }
@@ -32,7 +32,7 @@ namespace ScientificReport.DAL.Entities
 		
 		public virtual ICollection<UserProfilesGrants> UserProfilesGrants { get; set; }
 		
-		public virtual ICollection<UserProfilesScientificWorks> UserProfilesScientificWorks { get; set; }
+		public virtual ICollection<UserProfilesScientificWorks> UserProfilesScientificWorks{ get; set; }
 		
 		public virtual ICollection<UserProfilesArticles> UserProfilesArticles { get; set; }
 		

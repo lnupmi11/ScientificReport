@@ -33,7 +33,10 @@
 				<partial name="_LoginPartial"/>
 				<ul class="navbar-nav flex-grow-1">
 					<li class="nav-item">
-						<a class="nav-link text-dark" asp-area="" asp-controller="Report" asp-action="Index">Reports</a>
+						<a class="nav-link text-dark" asp-area="" asp-controller="TeacherReport" asp-action="Index">Teacher Reports</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-dark" asp-area="" asp-controller="ScientificWork" asp-action="Index">Scientific Works</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link text-dark" asp-area="" asp-controller="UserProfile" asp-action="Index">User Profiles</a>
@@ -78,6 +81,7 @@
 	</script>
 </environment>
 <script src="~/js/site.js" asp-append-version="true"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
 
 @RenderSection("Scripts", required: false)
 </body>
