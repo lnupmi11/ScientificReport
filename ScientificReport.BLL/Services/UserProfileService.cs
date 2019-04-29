@@ -7,7 +7,6 @@ using ScientificReport.BLL.Interfaces;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Repositories;
-using ScientificReport.DAL.Roles;
 
 namespace ScientificReport.BLL.Services
 {
@@ -81,18 +80,14 @@ namespace ScientificReport.BLL.Services
 			return await userManager.AddToRoleAsync(userProfile, roleName);
 		}
 
-		public async Task UpdateUserRolesAsync(UserProfile userProfile, IEnumerable<UserProfileRole> newRoles, UserManager<UserProfile> userManager)
+		public async Task<IdentityResult> RemoveFromRoleAsync(UserProfile userProfile, string roleName, UserManager<UserProfile> userManager)
 		{
-			var userRoles = userManager.GetRolesAsync(userProfile);
-			foreach (var userRole in userRoles.Result)
-			{
-				await userManager.RemoveFromRoleAsync(userProfile, userRole);
-			}
+			return await userManager.RemoveFromRoleAsync(userProfile, roleName);
+		}
 
-			foreach (var userRole in newRoles)
-			{
-				await userManager.AddToRoleAsync(userProfile, userRole.Name);
-			}
+		public async Task<bool> IsInRoleAsync(UserProfile user, string roleName, UserManager<UserProfile> userManager)
+		{
+			return await userManager.IsInRoleAsync(user, roleName);
 		}
 
 		public ICollection<Publication> GetUserPublications(Guid id)

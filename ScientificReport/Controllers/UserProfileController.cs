@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -64,7 +65,7 @@ namespace ScientificReport.Controllers
 
 		// GET: UserProfile/Edit/{id}
 		[HttpGet]
-		public IActionResult Edit(Guid? id) {
+		public async Task<IActionResult> Edit(Guid? id) {
 			if (id == null)
 			{
 				return NotFound();
@@ -75,7 +76,8 @@ namespace ScientificReport.Controllers
 				return View(new UserProfileEditModel
 				{
 					UserProfile = user,
-					Roles = _roleManager.Roles
+					AllRoles = _roleManager.Roles.ToList(),
+					UserRoles = await _userManager.GetRolesAsync(user)
 				});
 			}
 
@@ -84,20 +86,75 @@ namespace ScientificReport.Controllers
 
 		// POST: UserProfile/Edit/{id}
 		[HttpPost]
-		public async Task<IActionResult> Edit(UserProfileEditModel model)
+		public IActionResult Edit(UserProfileEditModel model)
 		{
 			if (!ModelState.IsValid)
 			{
 				return View(model);
 			}
+
 			_logger.LogError(model.UserProfile.Id.ToString());
 
 			if (_userProfileService.UserExists(model.UserProfile.Id))
 			{
 				_userProfileService.UpdateItem(model.UserProfile);
-				await _userProfileService.UpdateUserRolesAsync(model.UserProfile, model.Roles, _userManager);
 			}
+			else
+			{
+				return NotFound();
+			}
+			
 			return RedirectToAction("Index");
+		}
+
+		// POST: UserProfile/AddUserToRole/{userId}
+		[HttpPost]
+		public async Task<IActionResult> AddUserToRole(Guid? id, [FromBody] UserProfileUpdateRolesRequest request)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
+			
+			var userExists = _userProfileService.UserExists(id.Value);
+			if (userExists)
+			{
+				var user = _userProfileService.GetById(id.Value);
+				if (!await _userProfileService.IsInRoleAsync(user, request.RoleName, _userManager))
+				{
+					await _userProfileService.AddToRoleAsync(user, request.RoleName, _userManager);	
+				}	
+			}
+			
+			return Json(new
+			{
+				Success = userExists
+			});
+		}
+		
+		// POST: UserProfile/RemoveUserFromRole/{userId}
+		[HttpPost]
+		public async Task<IActionResult> RemoveUserFromRole(Guid? id, [FromBody] UserProfileUpdateRolesRequest request)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
+			
+			var userExists = _userProfileService.UserExists(id.Value);
+			if (userExists)
+			{
+				var user = _userProfileService.GetById(id.Value);
+				if (await _userProfileService.IsInRoleAsync(user, request.RoleName, _userManager))
+				{
+					await _userProfileService.RemoveFromRoleAsync(user, request.RoleName, _userManager);	
+				}
+			}
+			
+			return Json(new
+			{
+				Success = userExists
+			});
 		}
 
 		// POST: UserProfile/Delete/{id}

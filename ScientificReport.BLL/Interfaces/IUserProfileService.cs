@@ -19,7 +19,8 @@ namespace ScientificReport.BLL.Interfaces
 		void SetApproved(Guid id, bool isApproved);
 		bool UserExists(Guid id);
 		Task<IdentityResult> AddToRoleAsync(UserProfile user, string roleName, UserManager<UserProfile> userManager);
-		Task UpdateUserRolesAsync(UserProfile userProfile, IEnumerable<UserProfileRole> roles, UserManager<UserProfile> userManager);
+		Task<IdentityResult> RemoveFromRoleAsync(UserProfile user, string roleName, UserManager<UserProfile> userManager);
+		Task<bool> IsInRoleAsync(UserProfile user, string roleName, UserManager<UserProfile> userManager);
 		ICollection<Publication> GetUserPublications(Guid id);
 		ICollection<Grant> GetUserGrants(Guid id);
 		ICollection<ScientificWork> GetUserScientificWorks(Guid id);

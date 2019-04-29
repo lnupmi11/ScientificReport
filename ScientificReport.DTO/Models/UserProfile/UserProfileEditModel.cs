@@ -7,6 +7,8 @@ namespace ScientificReport.DTO.Models.UserProfile
 	{
 		public DAL.Entities.UserProfile UserProfile { get; set; }
 		
-		public IEnumerable<DAL.Roles.UserProfileRole> Roles { get; set; }
+		public IEnumerable<DAL.Roles.UserProfileRole> AllRoles { get; set; }
+		
+		public IEnumerable<string> UserRoles { get; set; }
 	}
 }
