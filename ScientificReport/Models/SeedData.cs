@@ -1,10 +1,15 @@
 using System;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
+using ScientificReport.BLL.Services;
 using ScientificReport.DAL.DbContext;
+using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Entities.Reports;
+using Microsoft.Extensions.Logging;
 using ScientificReport.DAL.Roles;
 
 namespace ScientificReport.Models
@@ -28,35 +33,68 @@ namespace ScientificReport.Models
 
 			var logger = serviceProvider.GetRequiredService<ILogger<SeedData>>();
 
+      await SeedUserRoles(serviceProvider.GetRequiredService<RoleManager<UserProfileRole>>(), logger);
 			SeedUserProfile(context);
-			await SeedUserRoles(serviceProvider.GetRequiredService<RoleManager<UserProfileRole>>(), logger);
+			SeedTeacherReports(context);
+			SeedScientificWorks(context);			
 			context.SaveChanges();
 		}
 
 		private static void SeedUserProfile(ScientificReportDbContext context)
 		{
-			/*
-			if (context.UserProfile.Any()) return;
+			if (context.UserProfiles.Any()) return;
 
-			context.UserProfile.AddRange(
+			context.UserProfiles.AddRange(
 				new UserProfile
 				{
 					FirstName = "Testf",
 					LastName = "Testl",
-					MiddleName = "Testm",
-					Type = UserType.Admin,
+					MiddleName = "Testm"
 				},
 				new UserProfile
 				{
 					FirstName = "Testf2",
 					LastName = "Testl2",
-					MiddleName = "Testm2",
-					Type = UserType.Admin,
+					MiddleName = "Testm2"
 				}
 			);
-			*/
+			context.SaveChanges();
 		}
+    
+		private static void SeedTeacherReports(ScientificReportDbContext context)
+		{
+			if (context.TeacherReports.Any()) return;
+			var teacher = context.UserProfiles.First();
 
+			context.TeacherReports.AddRange(
+				new TeacherReport
+				{
+					Teacher = teacher
+				}
+			);
+			context.SaveChanges();
+		}
+		
+		private static void SeedScientificWorks(ScientificReportDbContext context)
+		{
+			if (context.ScientificWorks.Any()) return;
+
+			var scientificWorkService = new ScientificWorkService(context);
+			scientificWorkService.CreateItem(
+				new ScientificWork
+				{
+					Cypher = "123",
+					Title = "Test SW",
+					Category = "test",
+					Contents = "blabla"
+				}
+			);
+			var scientificWork = scientificWorkService.GetAll().First();
+			var author = context.UserProfiles.First();
+			
+			scientificWorkService.AddAuthor(scientificWork.Id, author.Id);
+		}
+    
 		private static async Task SeedUserRoles(RoleManager<UserProfileRole> roleManager, ILogger logger)
 		{
 			foreach (var roleName in UserProfileRole.Roles)

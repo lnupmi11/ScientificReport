@@ -39,6 +39,19 @@ namespace ScientificReport
 
 		private static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
 			WebHost.CreateDefaultBuilder(args)
+				.ConfigureLogging((context, logging) => {
+					var config = context.Configuration.GetSection("Logging");
+					logging.AddConfiguration(config);
+					logging.AddConsole();
+					logging.AddFilter("Microsoft.EntityFrameworkCore", LogLevel.Warning);
+					logging.AddFilter("Microsoft.AspNetCore.HttpsPolicy", LogLevel.Error);
+					logging.AddFilter("Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager", LogLevel.Warning);
+					logging.AddFilter("Microsoft.AspNetCore.Hosting.Internal.WebHost", LogLevel.Warning);
+					logging.AddFilter("Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware", LogLevel.Warning);
+//					logging.AddFilter("Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker", LogLevel.Warning);
+					logging.AddFilter("Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor", LogLevel.Warning);
+					logging.AddFilter("Microsoft.AspNetCore.Mvc.Formatters", LogLevel.Warning);
+				})
 				.UseStartup<Startup>();
 	}
 }

@@ -1,9 +1,17 @@
 using System;
 using Microsoft.AspNetCore.Identity;
+using System;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Roles;
+using ScientificReport.DAL.Entities.Reports;
+using ScientificReport.DAL.Interfaces;
 
 namespace ScientificReport.DAL.DbContext
 {
@@ -12,6 +20,7 @@ namespace ScientificReport.DAL.DbContext
 		public ScientificReportDbContext()
 		{
 		}
+
 		public ScientificReportDbContext(DbContextOptions options) : base(options)
 		{
 		}
@@ -41,13 +50,41 @@ namespace ScientificReport.DAL.DbContext
 		public DbSet<PatentLicenseActivity> PatentLicenseActivities { get; set; }
 		public DbSet<ApplicantsPatentLicenseActivities> ApplicantsPatentLicenseActivities { get; set; }
 		public DbSet<AuthorsPatentLicenseActivities> AuthorsPatentLicenseActivities { get; set; }
+
 		public DbSet<TeacherReport> TeacherReports { get; set; }
+		public DbSet<TeacherReportsScientificWorks> TeacherReportsScientificWorks { get; set; }
+
+
 		public DbSet<DepartmentReport> DepartmentReports { get; set; }
 		public DbSet<FacultyReport> FacultyReports { get; set; }
 
-		protected override void OnModelCreating(ModelBuilder builder)
+		public override int SaveChanges()
 		{
-			base.OnModelCreating(builder);
+			AddTimestamps();
+			return base.SaveChanges();
+		}
+
+		public override async Task<int> SaveChangesAsync(
+			CancellationToken cancellationToken = default(CancellationToken))
+		{
+			AddTimestamps();
+			return await base.SaveChangesAsync(cancellationToken);
+		}
+
+		private void AddTimestamps()
+		{
+			var entities = ChangeTracker.Entries().Where(x =>
+				x.Entity is ITrackable && (x.State == EntityState.Added || x.State == EntityState.Modified));
+
+			foreach (var entity in entities)
+			{
+				if (entity.State == EntityState.Added)
+				{
+					((ITrackable) entity.Entity).Created = DateTime.UtcNow;
+				}
+
+				((ITrackable) entity.Entity).Edited = DateTime.UtcNow;
+			}
 		}
 	}
 }

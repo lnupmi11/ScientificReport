@@ -1,0 +1,65 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using ScientificReport.DAL.DbContext;
+using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Interfaces;
+
+namespace ScientificReport.DAL.Repositories
+{
+	public class {{ entity }}Repository: IRepository<{{ entity }}>
+	{
+		private readonly ScientificReportDbContext _context;
+		
+		public {{ entity }}Repository(ScientificReportDbContext context)
+		{
+			_context = context;
+		}
+		
+		public IEnumerable<{{ entity }}> All()
+		{
+			return _context.{{ entity_singular }}s;
+		}
+
+		public IEnumerable<{{ entity }}> AllWhere(Func<{{ entity }}, bool> predicate)
+		{
+			return All().Where(predicate);
+		}
+
+		public {{ entity }} Get(Guid id)
+		{
+			return All().FirstOrDefault(u => u.Id == id);
+		}
+
+		public {{ entity }} Get(Func<{{ entity }}, bool> predicate)
+		{
+			return All().Where(predicate).FirstOrDefault();
+		}
+
+		public void Create({{ entity }} item)
+		{
+			_context.{{ entity_singular }}s.Add(item);
+			_context.SaveChanges();
+		}
+
+		public void Update({{ entity }} item)
+		{
+			if (item == null) return;
+			_context.{{ entity_singular }}s.Update(item);
+			_context.SaveChanges();
+		}
+
+		public void Delete(Guid id)
+		{
+			var item = _context.{{ entity_singular }}s.Find(id);
+			if (item == null) return;
+			_context.{{ entity_singular }}s.Remove(item);
+			_context.SaveChanges();
+		}
+
+		public IQueryable<{{ entity }}> GetQuery()
+		{
+			return _context.{{ entity_singular }}s;
+		}
+	}
+}

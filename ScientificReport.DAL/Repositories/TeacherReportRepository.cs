@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using ScientificReport.DAL.DbContext;
-using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Entities.Reports;
 using ScientificReport.DAL.Interfaces;
 
 namespace ScientificReport.DAL.Repositories
@@ -11,7 +11,7 @@ namespace ScientificReport.DAL.Repositories
 	public class TeacherReportRepository: IRepository<TeacherReport>
 	{
 		private readonly ScientificReportDbContext _context;
-		
+
 		public TeacherReportRepository(ScientificReportDbContext context)
 		{
 			_context = context;
@@ -20,6 +20,7 @@ namespace ScientificReport.DAL.Repositories
 		public IEnumerable<TeacherReport> All()
 		{
 			return _context.TeacherReports
+						.Include(r => r.Teacher)
 						.Include(g => g.Grants)
 						.Include(b=> b.Reviews)
 						.Include(o=>o.Oppositions)
@@ -55,21 +56,18 @@ namespace ScientificReport.DAL.Repositories
 		}
 
 		public void Update(TeacherReport item)
-		{if (item != null)
-			{
-				_context.TeacherReports.Update(item);
-				_context.SaveChanges();
-			}
+		{
+			if (item == null) return;
+			_context.TeacherReports.Update(item);
+			_context.SaveChanges();
 		}
 
 		public void Delete(Guid id)
 		{
-			var user = _context.TeacherReports.Find(id);
-			if (user != null)
-			{
-				_context.TeacherReports.Remove(user);
-				_context.SaveChanges();
-			}
+			var report = _context.TeacherReports.Find(id);
+			if (report == null) return;
+			_context.TeacherReports.Remove(report);
+			_context.SaveChanges();
 		}
 
 		public IQueryable<TeacherReport> GetQuery()

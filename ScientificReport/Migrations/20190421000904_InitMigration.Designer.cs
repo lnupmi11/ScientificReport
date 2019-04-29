@@ -2,19 +2,21 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ScientificReport.DAL.DbContext;
 
 namespace ScientificReport.Migrations
 {
     [DbContext(typeof(ScientificReportDbContext))]
-    partial class ScientificReportDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190421000904_InitMigration")]
+    partial class InitMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062");
+                .HasAnnotation("ProductVersion", "2.2.3-servicing-35854");
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
@@ -198,13 +200,9 @@ namespace ScientificReport.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<Guid?>("HeadId");
-
                     b.Property<string>("Title");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("HeadId");
 
                     b.ToTable("Departments");
                 });
@@ -565,8 +563,6 @@ namespace ScientificReport.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
-                    b.Property<Guid?>("DepartmentId");
-
                     b.Property<string>("Email")
                         .HasMaxLength(256);
 
@@ -614,8 +610,6 @@ namespace ScientificReport.Migrations
                     b.Property<int>("YearDegreeGained");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("DepartmentId");
 
                     b.HasIndex("NormalizedEmail")
                         .HasName("EmailIndex");
@@ -874,31 +868,6 @@ namespace ScientificReport.Migrations
                         .HasForeignKey("DepartmentReportId");
                 });
 
-            modelBuilder.Entity("ScientificReport.DAL.Entities.Department", b =>
-                {
-                    b.HasOne("ScientificReport.DAL.Entities.UserProfile", "Head")
-                        .WithMany()
-                        .HasForeignKey("HeadId");
-                });
-
-            modelBuilder.Entity("ScientificReport.DAL.Entities.DepartmentReport", b =>
-                {
-                    b.HasOne("ScientificReport.DAL.Entities.FacultyReport")
-                        .WithMany("DepartmentReports")
-                        .HasForeignKey("FacultyReportId");
-
-                    b.HasOne("ScientificReport.DAL.Entities.UserProfile", "HeadOfDepartment")
-                        .WithMany()
-                        .HasForeignKey("HeadOfDepartmentId");
-                });
-
-            modelBuilder.Entity("ScientificReport.DAL.Entities.FacultyReport", b =>
-                {
-                    b.HasOne("ScientificReport.DAL.Entities.UserProfile", "Administrator")
-                        .WithMany()
-                        .HasForeignKey("AdministratorId");
-                });
-                
             modelBuilder.Entity("ScientificReport.DAL.Entities.Grant", b =>
                 {
                     b.HasOne("ScientificReport.DAL.Entities.Reports.TeacherReport")
@@ -1046,24 +1015,6 @@ namespace ScientificReport.Migrations
                     b.HasOne("ScientificReport.DAL.Entities.Reports.TeacherReport")
                         .WithMany("ScientificWorks")
                         .HasForeignKey("TeacherReportId");
-                });
-                
-            modelBuilder.Entity("ScientificReport.DAL.Entities.TeacherReport", b =>
-                {
-                    b.HasOne("ScientificReport.DAL.Entities.DepartmentReport")
-                        .WithMany("TeacherReports")
-                        .HasForeignKey("DepartmentReportId");
-
-                    b.HasOne("ScientificReport.DAL.Entities.UserProfile", "Teacher")
-                        .WithMany()
-                        .HasForeignKey("TeacherId");
-                });
-
-            modelBuilder.Entity("ScientificReport.DAL.Entities.UserProfile", b =>
-                {
-                    b.HasOne("ScientificReport.DAL.Entities.Department")
-                        .WithMany("Staff")
-                        .HasForeignKey("DepartmentId");
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.UserProfilesArticles", b =>

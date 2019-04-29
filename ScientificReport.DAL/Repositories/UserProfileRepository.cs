@@ -54,21 +54,17 @@ namespace ScientificReport.DAL.Repositories
 
 		public void Update(UserProfile item)
 		{
-			if (item != null)
-			{
-				_context.UserProfiles.Update(item);
-				_context.SaveChanges();
-			}
+			if (item == null) return;
+			_context.UserProfiles.Update(item);
+			_context.SaveChanges();
 		}
 
 		public void Delete(Guid id)
 		{
 			var user = _context.UserProfiles.Find(id);
-			if (user != null)
-			{
-				_context.UserProfiles.Remove(user);
-				_context.SaveChanges();
-			}
+			if (user == null) return;
+			_context.UserProfiles.Remove(user);
+			_context.SaveChanges();
 		}
 
 		public IQueryable<UserProfile> GetQuery()
