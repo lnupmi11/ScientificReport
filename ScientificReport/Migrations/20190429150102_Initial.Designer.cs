@@ -9,14 +9,14 @@ using ScientificReport.DAL.DbContext;
 namespace ScientificReport.Migrations
 {
     [DbContext(typeof(ScientificReportDbContext))]
-    [Migration("20190419065443_Initial")]
+    [Migration("20190429150102_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.3-servicing-35854");
+                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062");
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
@@ -563,6 +563,8 @@ namespace ScientificReport.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
+                    b.Property<Guid?>("DepartmentId");
+
                     b.Property<string>("Email")
                         .HasMaxLength(256);
 
@@ -610,6 +612,8 @@ namespace ScientificReport.Migrations
                     b.Property<int>("YearDegreeGained");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("DepartmentId");
 
                     b.HasIndex("NormalizedEmail")
                         .HasName("EmailIndex");
@@ -1019,6 +1023,13 @@ namespace ScientificReport.Migrations
                     b.HasOne("ScientificReport.DAL.Entities.UserProfile", "Teacher")
                         .WithMany()
                         .HasForeignKey("TeacherId");
+                });
+
+            modelBuilder.Entity("ScientificReport.DAL.Entities.UserProfile", b =>
+                {
+                    b.HasOne("ScientificReport.DAL.Entities.Department")
+                        .WithMany("UserProfiles")
+                        .HasForeignKey("DepartmentId");
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.UserProfilesArticles", b =>

@@ -20,7 +20,8 @@ namespace ScientificReport.DAL.Repositories
 		public IEnumerable<Department> All()
 		{
 			return _context.Departments
-						.Include(b => b.ScientificWorks);
+				.Include(b => b.ScientificWorks)
+				.Include(u => u.UserProfiles);
 		}
 
 		public IEnumerable<Department> AllWhere(Func<Department, bool> predicate)
@@ -45,7 +46,8 @@ namespace ScientificReport.DAL.Repositories
 		}
 
 		public void Update(Department item)
-		{if (item != null)
+		{
+			if (item != null)
 			{
 				_context.Departments.Update(item);
 				_context.SaveChanges();
@@ -68,3 +70,4 @@ namespace ScientificReport.DAL.Repositories
 		}
 	}
 }
+
