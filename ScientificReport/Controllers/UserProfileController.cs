@@ -6,16 +6,17 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ScientificReport.BLL.Interfaces;
 using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Roles;
 using ScientificReport.DTO.Models.UserProfile;
 
 namespace ScientificReport.Controllers
 {
-	// [Authorize]
+	[Authorize(Roles = UserProfileRole.Administrator)]
 	public class UserProfileController : Controller
 	{
 		private readonly UserManager<UserProfile> _userManager;
 		private readonly SignInManager<UserProfile> _signInManager;
-
+		
 		private readonly IUserProfileService _userProfileService;
 		
 		private readonly ILogger _logger;
@@ -142,7 +143,14 @@ namespace ScientificReport.Controllers
 				var result = await _userManager.CreateAsync(user, model.Password);
 				if (result.Succeeded)
 				{
-					return RedirectToAction("Index");
+					var createdUser = await _userManager.FindByNameAsync(user.UserName);
+					var addUserToRoleResult = await _userManager.AddToRoleAsync(createdUser, UserProfileRole.Teacher);
+					if (addUserToRoleResult.Succeeded)
+					{
+						return RedirectToAction("Index");	
+					}
+					
+					AddErrorsFromResult(addUserToRoleResult);
 				}
 				
 				AddErrorsFromResult(result);
@@ -178,9 +186,8 @@ namespace ScientificReport.Controllers
 			{
 				var user = _userProfileService.Get(usr => usr.UserName == model.UserName);
 				if (user != null) {
-					await _signInManager.SignOutAsync();
 					var result = await _signInManager.PasswordSignInAsync(
-						user.UserName, model.Password, true, false
+						user.UserName, model.Password, model.RememberMe, false
 					);
 					if (result.Succeeded) {
 						return Redirect(model.ReturnUrl);
@@ -193,6 +200,7 @@ namespace ScientificReport.Controllers
 
 		// GET: UserProfile/Logout
 		[HttpGet]
+		[Authorize(Roles = UserProfileRole.Any)]
 		public async Task<IActionResult> Logout() {
 			await _signInManager.SignOutAsync();
 			return RedirectToAction("Login");
