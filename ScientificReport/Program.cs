@@ -19,17 +19,17 @@ namespace ScientificReport
 			// just for automated migration and seeding on startup
 			using (var scope = host.Services.CreateScope())
 			{
-				var services = scope.ServiceProvider;
+				var serviceProvider = scope.ServiceProvider;
 
 				try
 				{
-					var context = services.GetRequiredService<ScientificReportDbContext>();
+					var context = serviceProvider.GetRequiredService<ScientificReportDbContext>();
 					context.Database.Migrate();
-					SeedData.Initialize(services, context);
+					SeedData.Initialize(serviceProvider, context).Wait();
 				}
 				catch (Exception ex)
 				{
-					var logger = services.GetRequiredService<ILogger<Program>>();
+					var logger = serviceProvider.GetRequiredService<ILogger<Program>>();
 					logger.LogError(ex, "An error occurred seeding the DB.");
 				}
 			}

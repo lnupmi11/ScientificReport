@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using ScientificReport.BLL.Interfaces;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
@@ -71,6 +73,21 @@ namespace ScientificReport.BLL.Services
 		public bool UserExists(Guid id)
 		{
 			return _userProfileRepository.Get(id) != null;
+		}
+
+		public async Task<IdentityResult> AddToRoleAsync(UserProfile userProfile, string roleName, UserManager<UserProfile> userManager)
+		{
+			return await userManager.AddToRoleAsync(userProfile, roleName);
+		}
+
+		public async Task<IdentityResult> RemoveFromRoleAsync(UserProfile userProfile, string roleName, UserManager<UserProfile> userManager)
+		{
+			return await userManager.RemoveFromRoleAsync(userProfile, roleName);
+		}
+
+		public async Task<bool> IsInRoleAsync(UserProfile user, string roleName, UserManager<UserProfile> userManager)
+		{
+			return await userManager.IsInRoleAsync(user, roleName);
 		}
 
 		public ICollection<Publication> GetUserPublications(Guid id)

@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -6,16 +7,18 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ScientificReport.BLL.Interfaces;
 using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Roles;
 using ScientificReport.DTO.Models.UserProfile;
 
 namespace ScientificReport.Controllers
 {
-	// [Authorize]
+//	[Authorize(Roles = UserProfileRole.Administrator)]
 	public class UserProfileController : Controller
 	{
 		private readonly UserManager<UserProfile> _userManager;
 		private readonly SignInManager<UserProfile> _signInManager;
-
+		private readonly RoleManager<UserProfileRole> _roleManager;
+		
 		private readonly IUserProfileService _userProfileService;
 		
 		private readonly ILogger _logger;
@@ -23,12 +26,14 @@ namespace ScientificReport.Controllers
 		public UserProfileController(
 			UserManager<UserProfile> usrMgr,
 			SignInManager<UserProfile> signInManager,
+			RoleManager<UserProfileRole> roleManager,
 			IUserProfileService userProfileService,
 			ILogger<UserProfileController> logger
 		)
 		{
 			_userManager = usrMgr;
 			_signInManager = signInManager;
+			_roleManager = roleManager;
 			_userProfileService = userProfileService;
 			_logger = logger;
 		}
@@ -42,14 +47,14 @@ namespace ScientificReport.Controllers
 
 		// GET: UserProfile/Details/{id}
 		[HttpGet]
-		public IActionResult Details(Guid id)
+		public IActionResult Details(Guid? id)
 		{
-			if (id.Equals(null))
+			if (id == null)
 			{
 				return NotFound();
 			}
 
-			var userProfile = _userProfileService.GetById(id);
+			var userProfile = _userProfileService.GetById(id.Value);
 			if (userProfile == null)
 			{
 				return NotFound();
@@ -60,11 +65,20 @@ namespace ScientificReport.Controllers
 
 		// GET: UserProfile/Edit/{id}
 		[HttpGet]
-		public IActionResult Edit(Guid id) {
-			var user = _userProfileService.GetById(id);
+		public async Task<IActionResult> Edit(Guid? id) {
+			if (id == null)
+			{
+				return NotFound();
+			}
+			var user = _userProfileService.GetById(id.Value);
 			if (user != null)
 			{
-				return View(user);
+				return View(new UserProfileEditModel
+				{
+					UserProfile = user,
+					AllRoles = _roleManager.Roles.ToList(),
+					UserRoles = await _userManager.GetRolesAsync(user)
+				});
 			}
 
 			return RedirectToAction("Index");
@@ -72,34 +86,95 @@ namespace ScientificReport.Controllers
 
 		// POST: UserProfile/Edit/{id}
 		[HttpPost]
-		public IActionResult Edit(UserProfile user)
+		public IActionResult Edit(UserProfileEditModel model)
 		{
 			if (!ModelState.IsValid)
 			{
-				return View(user);
+				return View(model);
 			}
-			_logger.LogError(user.Id.ToString());
 
-			if (_userProfileService.UserExists(user.Id))
+			_logger.LogError(model.UserProfile.Id.ToString());
+
+			if (_userProfileService.UserExists(model.UserProfile.Id))
 			{
-				_userProfileService.UpdateItem(user);
+				_userProfileService.UpdateItem(model.UserProfile);
 			}
-			return RedirectToAction("Index");
-		}
-
-		// POST: UserProfile/Delete/{id}
-		[HttpPost]
-		public IActionResult Delete(Guid id)
-		{
-			if (!_userProfileService.UserExists(id))
+			else
 			{
 				return NotFound();
 			}
 			
-			_userProfileService.DeleteById(id);
 			return RedirectToAction("Index");
 		}
+
+		// POST: UserProfile/AddUserToRole/{userId}
+		[HttpPost]
+		public async Task<IActionResult> AddUserToRole(Guid? id, [FromBody] UserProfileUpdateRolesRequest request)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
+			
+			var userExists = _userProfileService.UserExists(id.Value);
+			if (userExists)
+			{
+				var user = _userProfileService.GetById(id.Value);
+				if (!await _userProfileService.IsInRoleAsync(user, request.RoleName, _userManager))
+				{
+					await _userProfileService.AddToRoleAsync(user, request.RoleName, _userManager);	
+				}	
+			}
+			
+			return Json(new
+			{
+				Success = userExists
+			});
+		}
 		
+		// POST: UserProfile/RemoveUserFromRole/{userId}
+		[HttpPost]
+		public async Task<IActionResult> RemoveUserFromRole(Guid? id, [FromBody] UserProfileUpdateRolesRequest request)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
+			
+			var userExists = _userProfileService.UserExists(id.Value);
+			if (userExists)
+			{
+				var user = _userProfileService.GetById(id.Value);
+				if (await _userProfileService.IsInRoleAsync(user, request.RoleName, _userManager))
+				{
+					await _userProfileService.RemoveFromRoleAsync(user, request.RoleName, _userManager);	
+				}
+			}
+			
+			return Json(new
+			{
+				Success = userExists
+			});
+		}
+
+		// POST: UserProfile/Delete/{id}
+		[HttpPost]
+		public IActionResult Delete(Guid? id)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
+			
+			if (!_userProfileService.UserExists(id.Value))
+			{
+				return NotFound();
+			}
+			
+			_userProfileService.DeleteById(id.Value);
+			return RedirectToAction("Index");
+		}
+
 		// GET: UserProfile/Register
 		[HttpGet]
 		[AllowAnonymous]
@@ -133,7 +208,7 @@ namespace ScientificReport.Controllers
 				ScientificDegree = model.ScientificDegree,
 				YearDegreeGained = model.YearDegreeGained,
 				YearDegreeAssigned = model.YearDegreeAssigned,
-				Position = "Teacher",
+				Position = UserProfileRole.Teacher,
 				IsApproved = false,
 				PhoneNumber = model.PhoneNumber
 			};
@@ -142,7 +217,16 @@ namespace ScientificReport.Controllers
 				var result = await _userManager.CreateAsync(user, model.Password);
 				if (result.Succeeded)
 				{
-					return RedirectToAction("Index");
+					var createdUser = _userProfileService.Get(u => u.UserName == user.UserName);
+					var addUserToRoleResult = await _userProfileService.AddToRoleAsync(
+						createdUser, UserProfileRole.Teacher, _userManager
+					);
+					if (addUserToRoleResult.Succeeded)
+					{
+						return RedirectToAction("Index");	
+					}
+					
+					AddErrorsFromResult(addUserToRoleResult);
 				}
 				
 				AddErrorsFromResult(result);
@@ -178,9 +262,8 @@ namespace ScientificReport.Controllers
 			{
 				var user = _userProfileService.Get(usr => usr.UserName == model.UserName);
 				if (user != null) {
-					await _signInManager.SignOutAsync();
 					var result = await _signInManager.PasswordSignInAsync(
-						user.UserName, model.Password, true, false
+						user.UserName, model.Password, model.RememberMe, false
 					);
 					if (result.Succeeded) {
 						return Redirect(model.ReturnUrl);
@@ -193,6 +276,7 @@ namespace ScientificReport.Controllers
 
 		// GET: UserProfile/Logout
 		[HttpGet]
+		[Authorize(Roles = UserProfileRole.Any)]
 		public async Task<IActionResult> Logout() {
 			await _signInManager.SignOutAsync();
 			return RedirectToAction("Login");
