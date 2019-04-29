@@ -1,12 +1,16 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using ScientificReport.BLL.Services;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Entities.Reports;
+using Microsoft.Extensions.Logging;
+using ScientificReport.DAL.Roles;
 
 namespace ScientificReport.Models
 {
@@ -15,22 +19,25 @@ namespace ScientificReport.Models
 	/// in both frontend and backend and
 	/// it is for development purposes only
 	/// </summary>
-	public static class SeedData
+	public class SeedData
 	{
 		/// <summary>
 		/// Initializes the basic data, the entrypoint for all seeds
 		/// </summary>
-		/// <param name="serviceProvider"></param>
-		public static void Initialize(IServiceProvider serviceProvider, ScientificReportDbContext context)
+		public static async Task Initialize(IServiceProvider serviceProvider, ScientificReportDbContext context)
 		{
 			var env = serviceProvider.GetService<IHostingEnvironment>();
 
 			// prevents usage on any non-development environment
 			if (!env.IsDevelopment()) return;
 
+			var logger = serviceProvider.GetRequiredService<ILogger<SeedData>>();
+
+      await SeedUserRoles(serviceProvider.GetRequiredService<RoleManager<UserProfileRole>>(), logger);
 			SeedUserProfile(context);
 			SeedTeacherReports(context);
-			SeedScientificWorks(context);
+			SeedScientificWorks(context);			
+			context.SaveChanges();
 		}
 
 		private static void SeedUserProfile(ScientificReportDbContext context)
@@ -53,7 +60,7 @@ namespace ScientificReport.Models
 			);
 			context.SaveChanges();
 		}
-
+    
 		private static void SeedTeacherReports(ScientificReportDbContext context)
 		{
 			if (context.TeacherReports.Any()) return;
@@ -87,6 +94,20 @@ namespace ScientificReport.Models
 			
 			scientificWorkService.AddAuthor(scientificWork.Id, author.Id);
 		}
-
+    
+		private static async Task SeedUserRoles(RoleManager<UserProfileRole> roleManager, ILogger logger)
+		{
+			foreach (var roleName in UserProfileRole.Roles)
+			{
+				if (!await roleManager.RoleExistsAsync(roleName))
+				{
+					var taskResult = await roleManager.CreateAsync(new UserProfileRole(roleName));
+					if (!taskResult.Succeeded)
+					{
+						logger.LogWarning("Could not create role: " + roleName);
+					}
+				}
+			}
+		}
 	}
 }
