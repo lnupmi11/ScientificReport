@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['scientificreportdbcontextmodelsnapshot',['ScientificReportDbContextModelSnapshot',['../a00005.html',1,'ScientificReport::Migrations']]],
-  ['seeddata',['SeedData',['../a00006.html',1,'ScientificReport::Models']]],
-  ['startup',['Startup',['../a00007.html',1,'ScientificReport']]]
+  ['teacherreportcontroller',['TeacherReportController',['../a00008.html',1,'ScientificReport::Controllers']]],
+  ['teacherreportcreateviewmodel',['TeacherReportCreateViewModel',['../a00009.html',1,'ScientificReport::Controllers']]]
 ];

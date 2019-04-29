@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['initial',['Initial',['../a00002.html',1,'ScientificReport::Migrations']]]
+  ['initmigration',['InitMigration',['../a00002.html',1,'ScientificReport::Migrations']]]
 ];

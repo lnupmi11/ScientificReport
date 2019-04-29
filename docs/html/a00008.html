@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>ScientificReport: ScientificReport.Controllers.UserProfileController Class Reference</title>
+<title>ScientificReport: ScientificReport.Controllers.TeacherReportController Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -107,121 +107,192 @@ $(document).ready(function(){initNavTree('a00008.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a00057.html">List of all members</a>  </div>
+<a href="a00067.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ScientificReport.Controllers.UserProfileController Class Reference</div>  </div>
+<div class="title">ScientificReport.Controllers.TeacherReportController Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Inheritance diagram for ScientificReport.Controllers.UserProfileController:</div>
+Inheritance diagram for ScientificReport.Controllers.TeacherReportController:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00058.png" border="0" usemap="#_scientific_report_8_controllers_8_user_profile_controller_inherit__map" alt="Inheritance graph"/></div>
-<map name="_scientific_report_8_controllers_8_user_profile_controller_inherit__map" id="_scientific_report_8_controllers_8_user_profile_controller_inherit__map">
+<div class="center"><img src="a00068.png" border="0" usemap="#_scientific_report_8_controllers_8_teacher_report_controller_inherit__map" alt="Inheritance graph"/></div>
+<map name="_scientific_report_8_controllers_8_teacher_report_controller_inherit__map" id="_scientific_report_8_controllers_8_teacher_report_controller_inherit__map">
 </map>
 </div>
 <div class="dynheader">
-Collaboration diagram for ScientificReport.Controllers.UserProfileController:</div>
+Collaboration diagram for ScientificReport.Controllers.TeacherReportController:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00059.png" border="0" usemap="#_scientific_report_8_controllers_8_user_profile_controller_coll__map" alt="Collaboration graph"/></div>
-<map name="_scientific_report_8_controllers_8_user_profile_controller_coll__map" id="_scientific_report_8_controllers_8_user_profile_controller_coll__map">
+<div class="center"><img src="a00069.png" border="0" usemap="#_scientific_report_8_controllers_8_teacher_report_controller_coll__map" alt="Collaboration graph"/></div>
+<map name="_scientific_report_8_controllers_8_teacher_report_controller_coll__map" id="_scientific_report_8_controllers_8_teacher_report_controller_coll__map">
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad61f6886bf4d9db672ab48d991fd708b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00008.html#ad61f6886bf4d9db672ab48d991fd708b">UserProfileController</a> (UserManager&lt; UserProfile &gt; usrMgr, SignInManager&lt; UserProfile &gt; signInManager, RoleManager&lt; UserProfileRole &gt; roleManager, IUserProfileService userProfileService, ILogger&lt; <a class="el" href="a00008.html">UserProfileController</a> &gt; logger)</td></tr>
-<tr class="separator:ad61f6886bf4d9db672ab48d991fd708b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5ae3acf2788bf5974b9576a8a892e9b"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00008.html#af5ae3acf2788bf5974b9576a8a892e9b">Index</a> ()</td></tr>
-<tr class="separator:af5ae3acf2788bf5974b9576a8a892e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84b3e5b1373867e10ccee532630b6392"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00008.html#a84b3e5b1373867e10ccee532630b6392">Details</a> (Guid?id)</td></tr>
-<tr class="separator:a84b3e5b1373867e10ccee532630b6392"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a301fe8b8081fe11b59b4c90a4e76b2b1"><td class="memItemLeft" align="right" valign="top">async Task&lt; IActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00008.html#a301fe8b8081fe11b59b4c90a4e76b2b1">Edit</a> (Guid?id)</td></tr>
-<tr class="separator:a301fe8b8081fe11b59b4c90a4e76b2b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc0fcd82bb476a213dd6177b450b39fb"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00008.html#acc0fcd82bb476a213dd6177b450b39fb">Edit</a> (UserProfileEditModel model)</td></tr>
-<tr class="separator:acc0fcd82bb476a213dd6177b450b39fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab5360b0be8958952631807c6c4cb799"><td class="memItemLeft" align="right" valign="top">async Task&lt; IActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00008.html#aab5360b0be8958952631807c6c4cb799">AddUserToRole</a> (Guid?id, [FromBody] UserProfileUpdateRolesRequest request)</td></tr>
-<tr class="separator:aab5360b0be8958952631807c6c4cb799"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a6a95dac91c994fe7f69689c5255cf2"><td class="memItemLeft" align="right" valign="top">async Task&lt; IActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00008.html#a9a6a95dac91c994fe7f69689c5255cf2">RemoveUserFromRole</a> (Guid?id, [FromBody] UserProfileUpdateRolesRequest request)</td></tr>
-<tr class="separator:a9a6a95dac91c994fe7f69689c5255cf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48780abfce15ce82c58a1b5710185e83"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00008.html#a48780abfce15ce82c58a1b5710185e83">Delete</a> (Guid?id)</td></tr>
-<tr class="separator:a48780abfce15ce82c58a1b5710185e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c8b98005ac1254746e00f0066ed462a"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00008.html#a6c8b98005ac1254746e00f0066ed462a">Register</a> ()</td></tr>
-<tr class="separator:a6c8b98005ac1254746e00f0066ed462a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81dea7bbcc1fd61c4b0bd09ba613e329"><td class="memItemLeft" align="right" valign="top">async Task&lt; IActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00008.html#a81dea7bbcc1fd61c4b0bd09ba613e329">Register</a> (RegisterModel model)</td></tr>
-<tr class="separator:a81dea7bbcc1fd61c4b0bd09ba613e329"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada213933d9f48f28cc1cb8b098fade07"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00008.html#ada213933d9f48f28cc1cb8b098fade07">Login</a> ()</td></tr>
-<tr class="separator:ada213933d9f48f28cc1cb8b098fade07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8d56f997555dbd409b63f7bdc9f6e58"><td class="memItemLeft" align="right" valign="top">async Task&lt; IActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00008.html#ae8d56f997555dbd409b63f7bdc9f6e58">Login</a> (LoginModel model)</td></tr>
-<tr class="separator:ae8d56f997555dbd409b63f7bdc9f6e58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65d3fa00161b10075bbcf85098beedb2"><td class="memItemLeft" align="right" valign="top">async Task&lt; IActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00008.html#a65d3fa00161b10075bbcf85098beedb2">Logout</a> ()</td></tr>
-<tr class="separator:a65d3fa00161b10075bbcf85098beedb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5972bc75bed741961c2fe8c9cf5badc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00008.html#af5972bc75bed741961c2fe8c9cf5badc">TeacherReportController</a> (ScientificReportDbContext context)</td></tr>
+<tr class="separator:af5972bc75bed741961c2fe8c9cf5badc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5561a7927a4586d654deeacc259f88dd"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00008.html#a5561a7927a4586d654deeacc259f88dd">Index</a> ()</td></tr>
+<tr class="separator:a5561a7927a4586d654deeacc259f88dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a635d58ca103e12b890c073d321b68b53"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00008.html#a635d58ca103e12b890c073d321b68b53">Details</a> (Guid?id)</td></tr>
+<tr class="separator:a635d58ca103e12b890c073d321b68b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6f3535d91804167f7eeae6580679a89"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00008.html#ad6f3535d91804167f7eeae6580679a89">Create</a> ()</td></tr>
+<tr class="separator:ad6f3535d91804167f7eeae6580679a89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a329e413c7fe01c9608c40d4a38bbe58b"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00008.html#a329e413c7fe01c9608c40d4a38bbe58b">Create</a> (Guid UserId)</td></tr>
+<tr class="separator:a329e413c7fe01c9608c40d4a38bbe58b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18a783eb681c3a1cde7ce8337dbbbc35"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00008.html#a18a783eb681c3a1cde7ce8337dbbbc35">Edit</a> (Guid?id)</td></tr>
+<tr class="separator:a18a783eb681c3a1cde7ce8337dbbbc35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa87e16aa425ad868793929e14cc9069a"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00008.html#aa87e16aa425ad868793929e14cc9069a">Edit</a> (Guid id, [Bind(&quot;Id,Created&quot;)] TeacherReport report)</td></tr>
+<tr class="separator:aa87e16aa425ad868793929e14cc9069a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a891e57c2bc26135543cb9fb97efd081c"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00008.html#a891e57c2bc26135543cb9fb97efd081c">Delete</a> (Guid?id)</td></tr>
+<tr class="separator:a891e57c2bc26135543cb9fb97efd081c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a665886dfd60f90d84ff77e481f299d1f"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00008.html#a665886dfd60f90d84ff77e481f299d1f">DeleteConfirmed</a> (Guid id)</td></tr>
+<tr class="separator:a665886dfd60f90d84ff77e481f299d1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="a00011_source.html#l00016">16</a> of file <a class="el" href="a00011_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00013_source.html#l00014">14</a> of file <a class="el" href="a00013_source.html">TeacherReportController.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ad61f6886bf4d9db672ab48d991fd708b"></a>
+<a class="anchor" id="af5972bc75bed741961c2fe8c9cf5badc"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">ScientificReport.Controllers.UserProfileController.UserProfileController </td>
+          <td class="memname">ScientificReport.Controllers.TeacherReportController.TeacherReportController </td>
           <td>(</td>
-          <td class="paramtype">UserManager&lt; UserProfile &gt;&#160;</td>
-          <td class="paramname"><em>usrMgr</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">ScientificReportDbContext&#160;</td>
+          <td class="paramname"><em>context</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">SignInManager&lt; UserProfile &gt;&#160;</td>
-          <td class="paramname"><em>signInManager</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">RoleManager&lt; UserProfileRole &gt;&#160;</td>
-          <td class="paramname"><em>roleManager</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">IUserProfileService&#160;</td>
-          <td class="paramname"><em>userProfileService</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">ILogger&lt; <a class="el" href="a00008.html">UserProfileController</a> &gt;&#160;</td>
-          <td class="paramname"><em>logger</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00011_source.html#l00026">26</a> of file <a class="el" href="a00011_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00013_source.html#l00019">19</a> of file <a class="el" href="a00013_source.html">TeacherReportController.cs</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aab5360b0be8958952631807c6c4cb799"></a>
+<a class="anchor" id="ad6f3535d91804167f7eeae6580679a89"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">async Task&lt;IActionResult&gt; ScientificReport.Controllers.UserProfileController.AddUserToRole </td>
+          <td class="memname">IActionResult ScientificReport.Controllers.TeacherReportController.Create </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00013_source.html#l00049">49</a> of file <a class="el" href="a00013_source.html">TeacherReportController.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a329e413c7fe01c9608c40d4a38bbe58b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IActionResult ScientificReport.Controllers.TeacherReportController.Create </td>
+          <td>(</td>
+          <td class="paramtype">Guid&#160;</td>
+          <td class="paramname"><em>UserId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00013_source.html#l00062">62</a> of file <a class="el" href="a00013_source.html">TeacherReportController.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a891e57c2bc26135543cb9fb97efd081c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IActionResult ScientificReport.Controllers.TeacherReportController.Delete </td>
           <td>(</td>
           <td class="paramtype">Guid?&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00013_source.html#l00130">130</a> of file <a class="el" href="a00013_source.html">TeacherReportController.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a665886dfd60f90d84ff77e481f299d1f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IActionResult ScientificReport.Controllers.TeacherReportController.DeleteConfirmed </td>
+          <td>(</td>
+          <td class="paramtype">Guid&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00013_source.html#l00149">149</a> of file <a class="el" href="a00013_source.html">TeacherReportController.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a635d58ca103e12b890c073d321b68b53"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IActionResult ScientificReport.Controllers.TeacherReportController.Details </td>
+          <td>(</td>
+          <td class="paramtype">Guid?&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00013_source.html#l00032">32</a> of file <a class="el" href="a00013_source.html">TeacherReportController.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a18a783eb681c3a1cde7ce8337dbbbc35"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IActionResult ScientificReport.Controllers.TeacherReportController.Edit </td>
+          <td>(</td>
+          <td class="paramtype">Guid?&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00013_source.html#l00085">85</a> of file <a class="el" href="a00013_source.html">TeacherReportController.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa87e16aa425ad868793929e14cc9069a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IActionResult ScientificReport.Controllers.TeacherReportController.Edit </td>
+          <td>(</td>
+          <td class="paramtype">Guid&#160;</td>
           <td class="paramname"><em>id</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">[FromBody] UserProfileUpdateRolesRequest&#160;</td>
-          <td class="paramname"><em>request</em>&#160;</td>
+          <td class="paramtype">[Bind(&quot;Id,Created&quot;)] TeacherReport&#160;</td>
+          <td class="paramname"><em>report</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -231,88 +302,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00011_source.html#l00112">112</a> of file <a class="el" href="a00011_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00013_source.html#l00106">106</a> of file <a class="el" href="a00013_source.html">TeacherReportController.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a48780abfce15ce82c58a1b5710185e83"></a>
+<a class="anchor" id="a5561a7927a4586d654deeacc259f88dd"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">IActionResult ScientificReport.Controllers.UserProfileController.Delete </td>
-          <td>(</td>
-          <td class="paramtype">Guid?&#160;</td>
-          <td class="paramname"><em>id</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00011_source.html#l00162">162</a> of file <a class="el" href="a00011_source.html">UserProfileController.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a84b3e5b1373867e10ccee532630b6392"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">IActionResult ScientificReport.Controllers.UserProfileController.Details </td>
-          <td>(</td>
-          <td class="paramtype">Guid?&#160;</td>
-          <td class="paramname"><em>id</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00011_source.html#l00050">50</a> of file <a class="el" href="a00011_source.html">UserProfileController.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a301fe8b8081fe11b59b4c90a4e76b2b1"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">async Task&lt;IActionResult&gt; ScientificReport.Controllers.UserProfileController.Edit </td>
-          <td>(</td>
-          <td class="paramtype">Guid?&#160;</td>
-          <td class="paramname"><em>id</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00011_source.html#l00068">68</a> of file <a class="el" href="a00011_source.html">UserProfileController.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="acc0fcd82bb476a213dd6177b450b39fb"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">IActionResult ScientificReport.Controllers.UserProfileController.Edit </td>
-          <td>(</td>
-          <td class="paramtype">UserProfileEditModel&#160;</td>
-          <td class="paramname"><em>model</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00011_source.html#l00089">89</a> of file <a class="el" href="a00011_source.html">UserProfileController.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="af5ae3acf2788bf5974b9576a8a892e9b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">IActionResult ScientificReport.Controllers.UserProfileController.Index </td>
+          <td class="memname">IActionResult ScientificReport.Controllers.TeacherReportController.Index </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -320,132 +319,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00011_source.html#l00043">43</a> of file <a class="el" href="a00011_source.html">UserProfileController.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ada213933d9f48f28cc1cb8b098fade07"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">IActionResult ScientificReport.Controllers.UserProfileController.Login </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00011_source.html#l00245">245</a> of file <a class="el" href="a00011_source.html">UserProfileController.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ae8d56f997555dbd409b63f7bdc9f6e58"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">async Task&lt;IActionResult&gt; ScientificReport.Controllers.UserProfileController.Login </td>
-          <td>(</td>
-          <td class="paramtype">LoginModel&#160;</td>
-          <td class="paramname"><em>model</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00011_source.html#l00259">259</a> of file <a class="el" href="a00011_source.html">UserProfileController.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a65d3fa00161b10075bbcf85098beedb2"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">async Task&lt;IActionResult&gt; ScientificReport.Controllers.UserProfileController.Logout </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00011_source.html#l00280">280</a> of file <a class="el" href="a00011_source.html">UserProfileController.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a6c8b98005ac1254746e00f0066ed462a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">IActionResult ScientificReport.Controllers.UserProfileController.Register </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a81dea7bbcc1fd61c4b0bd09ba613e329"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">async Task&lt;IActionResult&gt; ScientificReport.Controllers.UserProfileController.Register </td>
-          <td>(</td>
-          <td class="paramtype">RegisterModel&#160;</td>
-          <td class="paramname"><em>model</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00011_source.html#l00187">187</a> of file <a class="el" href="a00011_source.html">UserProfileController.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a9a6a95dac91c994fe7f69689c5255cf2"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">async Task&lt;IActionResult&gt; ScientificReport.Controllers.UserProfileController.RemoveUserFromRole </td>
-          <td>(</td>
-          <td class="paramtype">Guid?&#160;</td>
-          <td class="paramname"><em>id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">[FromBody] UserProfileUpdateRolesRequest&#160;</td>
-          <td class="paramname"><em>request</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00011_source.html#l00137">137</a> of file <a class="el" href="a00011_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00013_source.html#l00026">26</a> of file <a class="el" href="a00013_source.html">TeacherReportController.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/travis/build/lnupmi11/ScientificReport/ScientificReport/Controllers/<a class="el" href="a00011_source.html">UserProfileController.cs</a></li>
+<li>/home/travis/build/lnupmi11/ScientificReport/ScientificReport/Controllers/<a class="el" href="a00013_source.html">TeacherReportController.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00032.html">ScientificReport</a></li><li class="navelem"><a class="el" href="a00035.html">Controllers</a></li><li class="navelem"><a class="el" href="a00008.html">UserProfileController</a></li>
+    <li class="navelem"><a class="el" href="a00036.html">ScientificReport</a></li><li class="navelem"><a class="el" href="a00039.html">Controllers</a></li><li class="navelem"><a class="el" href="a00008.html">TeacherReportController</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
