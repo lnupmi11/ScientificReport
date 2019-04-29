@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['teacherreportcontroller',['TeacherReportController',['../a00010.html',1,'ScientificReport::Controllers']]],
-  ['teacherreportcreateviewmodel',['TeacherReportCreateViewModel',['../a00011.html',1,'ScientificReport::Controllers']]]
+  ['teacherreportcontroller',['TeacherReportController',['../a00009.html',1,'ScientificReport::Controllers']]],
+  ['teacherreportcreateviewmodel',['TeacherReportCreateViewModel',['../a00010.html',1,'ScientificReport::Controllers']]]
 ];

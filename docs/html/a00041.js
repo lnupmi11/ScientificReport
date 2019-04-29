@@ -1,8 +1,9 @@
 var a00041 =
 [
-    [ "Controllers", "a00044.html", "a00044" ],
-    [ "Migrations", "a00053.html", "a00053" ],
-    [ "Models", "a00054.html", "a00054" ],
-    [ "Program", "a00005.html", null ],
-    [ "Startup", "a00009.html", "a00009" ]
+    [ "DepartmentController", "a00001.html", "a00001" ],
+    [ "HomeController", "a00002.html", "a00002" ],
+    [ "ScientificWorkController", "a00006.html", "a00006" ],
+    [ "TeacherReportController", "a00009.html", "a00009" ],
+    [ "TeacherReportCreateViewModel", "a00010.html", "a00010" ],
+    [ "UserProfileController", "a00011.html", "a00011" ]
 ];
