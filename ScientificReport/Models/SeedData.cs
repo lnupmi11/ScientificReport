@@ -1,5 +1,4 @@
 using System;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
@@ -10,6 +9,7 @@ using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Entities.Reports;
 using Microsoft.Extensions.Logging;
+using ScientificReport.DAL.Entities.UserProfile;
 using ScientificReport.DAL.Roles;
 
 namespace ScientificReport.Models

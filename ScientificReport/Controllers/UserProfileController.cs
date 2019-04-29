@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ScientificReport.BLL.Interfaces;
-using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Entities.UserProfile;
 using ScientificReport.DAL.Roles;
 using ScientificReport.DTO.Models.UserProfile;
 

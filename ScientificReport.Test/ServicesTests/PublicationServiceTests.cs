@@ -6,6 +6,7 @@ using Moq;
 using ScientificReport.BLL.Services;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Entities.UserProfile;
 using Xunit;
 
 namespace ScientificReport.Test.ServicesTests

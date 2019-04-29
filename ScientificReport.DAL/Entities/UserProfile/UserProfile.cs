@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity;
 
-namespace ScientificReport.DAL.Entities
+namespace ScientificReport.DAL.Entities.UserProfile
 {
 	public class UserProfile : IdentityUser<Guid>
 	{		

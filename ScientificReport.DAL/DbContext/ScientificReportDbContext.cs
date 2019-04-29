@@ -1,16 +1,13 @@
 using System;
-using Microsoft.AspNetCore.Identity;
-using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Roles;
 using ScientificReport.DAL.Entities.Reports;
+using ScientificReport.DAL.Entities.UserProfile;
 using ScientificReport.DAL.Interfaces;
 
 namespace ScientificReport.DAL.DbContext

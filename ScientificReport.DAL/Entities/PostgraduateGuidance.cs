@@ -8,7 +8,7 @@ namespace ScientificReport.DAL.Entities
 		[Key]
 		public Guid Id { get; set; }
 		
-		public virtual UserProfile Guide { get; set; }
+		public virtual UserProfile.UserProfile Guide { get; set; }
 
 		public string PostgraduateName { get; set; }
 		

@@ -4,7 +4,7 @@ namespace ScientificReport.DAL.Entities.Reports
 {
 	public class DepartmentReport : Report
 	{
-		public virtual UserProfile HeadOfDepartment { get; set; }
+		public virtual UserProfile.UserProfile HeadOfDepartment { get; set; }
 		
 		public virtual ICollection<TeacherReport> TeacherReports { get; set; }
 		

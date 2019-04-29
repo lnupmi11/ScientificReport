@@ -13,6 +13,6 @@ namespace ScientificReport.DAL.Entities
 		[DataType(DataType.Date)]
 		public DateTime DateOfOpposition { get; set; }
 		
-		public virtual UserProfile Opponent { get; set; }
+		public virtual UserProfile.UserProfile Opponent { get; set; }
 	}
 }
