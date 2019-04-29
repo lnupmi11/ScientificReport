@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ScientificReport.BLL.Interfaces;
 using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Entities.UserProfile;
 using ScientificReport.DTO.Models.Department;
 
 namespace ScientificReport.Controllers

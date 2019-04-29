@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace ScientificReport.DAL.Entities
+namespace ScientificReport.DAL.Entities.UserProfile
 {
 	public class UserProfilesScientificInternships
 	{

@@ -4,7 +4,7 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Interfaces;
-using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Entities.UserProfile;
 
 namespace ScientificReport.DAL.Repositories
 {

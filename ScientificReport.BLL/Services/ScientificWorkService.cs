@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Sockets;
 using ScientificReport.BLL.Interfaces;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Entities.UserProfile;
 using ScientificReport.DAL.Repositories;
 
 namespace ScientificReport.BLL.Services

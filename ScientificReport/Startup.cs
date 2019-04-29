@@ -10,7 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using ScientificReport.BLL.Interfaces;
 using ScientificReport.BLL.Services;
 using ScientificReport.DAL.DbContext;
-using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Entities.UserProfile;
 using ScientificReport.DAL.Roles;
 
 namespace ScientificReport

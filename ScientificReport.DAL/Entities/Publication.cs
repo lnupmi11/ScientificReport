@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using ScientificReport.DAL.Entities.UserProfile;
 
 namespace ScientificReport.DAL.Entities
 {
@@ -36,10 +37,10 @@ namespace ScientificReport.DAL.Entities
 		
 		public DateTime CreatedAt { get; set; }
 		
-		public virtual UserProfile CreatedBy { get; set; }
+		public virtual UserProfile.UserProfile CreatedBy { get; set; }
 		
 		public DateTime LastEditAt { get; set; }
 		
-		public virtual UserProfile LastEditBy { get; set; }
+		public virtual UserProfile.UserProfile LastEditBy { get; set; }
 	}
 }
