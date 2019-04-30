@@ -9,7 +9,7 @@ using ScientificReport.DAL.Repositories;
 
 namespace ScientificReport.BLL.Services
 {
-	public class ScientificWorkService : IScientificWorkService<Guid>
+	public class ScientificWorkService : IScientificWorkService
 	{
 		private readonly ScientificWorkRepository _scientificWorkRepository;
 		private readonly UserProfileRepository _userProfileRepository;

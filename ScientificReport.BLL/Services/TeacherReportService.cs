@@ -8,7 +8,7 @@ using ScientificReport.DAL.Repositories;
 
 namespace ScientificReport.BLL.Services
 {
-	public class TeacherReportService : ITeacherReportService<Guid>
+	public class TeacherReportService : ITeacherReportService
 	{
 		private readonly TeacherReportRepository _teacherReportRepository;
 
