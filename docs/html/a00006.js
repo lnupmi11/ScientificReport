@@ -1,6 +1,6 @@
 var a00006 =
 [
-    [ "ScientificWorkController", "a00006.html#a01406ad6843270491143275497fe7edd", null ],
+    [ "ScientificWorkController", "a00006.html#a6b2820e98813d5e11c07b8c154131c8f", null ],
     [ "AddAuthor", "a00006.html#a71fa6d15933924ecdeff87eeec4de7f7", null ],
     [ "Create", "a00006.html#a6f0d3e30f7fe1da3b839b1e37431fa28", null ],
     [ "Create", "a00006.html#a6f339bf02af981c9b77871de8483d7ec", null ],

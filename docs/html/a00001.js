@@ -1,6 +1,6 @@
 var a00001 =
 [
-    [ "DepartmentController", "a00001.html#a1631b90f8a6600075149855fe00f99d5", null ],
+    [ "DepartmentController", "a00001.html#a538baff4db99d708ec17d15626f9b804", null ],
     [ "Create", "a00001.html#adb6aaa2bcd83ca73047f485d1b2126a0", null ],
     [ "Create", "a00001.html#aa525451e43ad28999e1425750bb81bbb", null ],
     [ "Delete", "a00001.html#a749915789c6ee73487b79e1838df19ff", null ],

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['teacherreportcontroller',['TeacherReportController',['../a00009.html#af5972bc75bed741961c2fe8c9cf5badc',1,'ScientificReport::Controllers::TeacherReportController']]]
+  ['teacherreportcontroller',['TeacherReportController',['../a00009.html#a9ae124cbaf13e5ccf5b7b6a588ae0047',1,'ScientificReport::Controllers::TeacherReportController']]]
 ];

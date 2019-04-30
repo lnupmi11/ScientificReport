@@ -4,8 +4,7 @@ var indexSectionsWithContent =
   1: "dhipstu",
   2: "s",
   3: "2dhpstu",
-  4: "abcdeilmprstu",
-  5: "u"
+  4: "abcdeilmprstu"
 };
 
 var indexSectionNames =
@@ -14,8 +13,7 @@ var indexSectionNames =
   1: "classes",
   2: "namespaces",
   3: "files",
-  4: "functions",
-  5: "variables"
+  4: "functions"
 };
 
 var indexSectionLabels =
@@ -24,7 +22,6 @@ var indexSectionLabels =
   1: "Classes",
   2: "Namespaces",
   3: "Files",
-  4: "Functions",
-  5: "Variables"
+  4: "Functions"
 };
 

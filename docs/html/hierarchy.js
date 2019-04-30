@@ -5,7 +5,7 @@ var hierarchy =
       [ "ScientificReport.Controllers.HomeController", "a00002.html", null ],
       [ "ScientificReport.Controllers.ScientificWorkController", "a00006.html", null ],
       [ "ScientificReport.Controllers.TeacherReportController", "a00009.html", null ],
-      [ "ScientificReport.Controllers.UserProfileController", "a00011.html", null ]
+      [ "ScientificReport.Controllers.UserProfileController", "a00010.html", null ]
     ] ],
     [ "Migration", null, [
       [ "ScientificReport.Migrations.Initial", "a00003.html", null ]
@@ -15,6 +15,5 @@ var hierarchy =
     ] ],
     [ "ScientificReport.Program", "a00004.html", null ],
     [ "ScientificReport.Models.SeedData", "a00007.html", null ],
-    [ "ScientificReport.Startup", "a00008.html", null ],
-    [ "ScientificReport.Controllers.TeacherReportCreateViewModel", "a00010.html", null ]
+    [ "ScientificReport.Startup", "a00008.html", null ]
 ];
