@@ -141,8 +141,16 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa525451e43ad28999e1425750bb81bbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a5cfc571346661e1bd3308c0b0ec4e3"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html#a8a5cfc571346661e1bd3308c0b0ec4e3">Edit</a> (Guid?id)</td></tr>
 <tr class="separator:a8a5cfc571346661e1bd3308c0b0ec4e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0471f820d161c8d5d56af0d9b8c2ffc5"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html#a0471f820d161c8d5d56af0d9b8c2ffc5">Edit</a> (DepartmentEditModel model)</td></tr>
-<tr class="separator:a0471f820d161c8d5d56af0d9b8c2ffc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1f412e3a61027f600d2d4167a795da8"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html#aa1f412e3a61027f600d2d4167a795da8">Edit</a> (Guid?id, [Bind(&quot;Title,SelectedHeadId&quot;)] DepartmentEditModel model)</td></tr>
+<tr class="separator:aa1f412e3a61027f600d2d4167a795da8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8683ffde0f7094727ae68150a48c6cbc"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html#a8683ffde0f7094727ae68150a48c6cbc">AddUserToStaff</a> (Guid?id, [FromBody] DepartmentUpdateStaffRequest request)</td></tr>
+<tr class="separator:a8683ffde0f7094727ae68150a48c6cbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9eea829c2f7de89b01bab2e7b33fe816"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html#a9eea829c2f7de89b01bab2e7b33fe816">RemoveUserFromStaff</a> (Guid?id, [FromBody] DepartmentUpdateStaffRequest request)</td></tr>
+<tr class="separator:a9eea829c2f7de89b01bab2e7b33fe816"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a74bac1debc55ed2c6b972bf1a20e92"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html#a9a74bac1debc55ed2c6b972bf1a20e92">AddScientificWork</a> (Guid?id, [FromBody] DepartmentUpdateScientificWorksRequest request)</td></tr>
+<tr class="separator:a9a74bac1debc55ed2c6b972bf1a20e92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e37396d1bb29fc08715660e5458da18"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html#a5e37396d1bb29fc08715660e5458da18">RemoveScientificWork</a> (Guid?id, [FromBody] DepartmentUpdateScientificWorksRequest request)</td></tr>
+<tr class="separator:a5e37396d1bb29fc08715660e5458da18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a749915789c6ee73487b79e1838df19ff"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html#a749915789c6ee73487b79e1838df19ff">Delete</a> (Guid?id)</td></tr>
 <tr class="separator:a749915789c6ee73487b79e1838df19ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -185,6 +193,62 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a9a74bac1debc55ed2c6b972bf1a20e92"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IActionResult ScientificReport.Controllers.DepartmentController.AddScientificWork </td>
+          <td>(</td>
+          <td class="paramtype">Guid?&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[FromBody] DepartmentUpdateScientificWorksRequest&#160;</td>
+          <td class="paramname"><em>request</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00011_source.html#l00260">260</a> of file <a class="el" href="a00011_source.html">DepartmentController.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8683ffde0f7094727ae68150a48c6cbc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IActionResult ScientificReport.Controllers.DepartmentController.AddUserToStaff </td>
+          <td>(</td>
+          <td class="paramtype">Guid?&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[FromBody] DepartmentUpdateStaffRequest&#160;</td>
+          <td class="paramname"><em>request</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00011_source.html#l00194">194</a> of file <a class="el" href="a00011_source.html">DepartmentController.cs</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="adb6aaa2bcd83ca73047f485d1b2126a0"></a>
 <div class="memitem">
 <div class="memproto">
@@ -234,7 +298,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00011_source.html#l00162">162</a> of file <a class="el" href="a00011_source.html">DepartmentController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00011_source.html#l00326">326</a> of file <a class="el" href="a00011_source.html">DepartmentController.cs</a>.</p>
 
 </div>
 </div>
@@ -274,21 +338,31 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a0471f820d161c8d5d56af0d9b8c2ffc5"></a>
+<a class="anchor" id="aa1f412e3a61027f600d2d4167a795da8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">IActionResult ScientificReport.Controllers.DepartmentController.Edit </td>
           <td>(</td>
-          <td class="paramtype">DepartmentEditModel&#160;</td>
-          <td class="paramname"><em>model</em></td><td>)</td>
+          <td class="paramtype">Guid?&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">[Bind(&quot;Title,SelectedHeadId&quot;)] DepartmentEditModel&#160;</td>
+          <td class="paramname"><em>model</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00011_source.html#l00139">139</a> of file <a class="el" href="a00011_source.html">DepartmentController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00011_source.html#l00158">158</a> of file <a class="el" href="a00011_source.html">DepartmentController.cs</a>.</p>
 
 </div>
 </div>
@@ -306,6 +380,62 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="a00011_source.html#l00029">29</a> of file <a class="el" href="a00011_source.html">DepartmentController.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5e37396d1bb29fc08715660e5458da18"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IActionResult ScientificReport.Controllers.DepartmentController.RemoveScientificWork </td>
+          <td>(</td>
+          <td class="paramtype">Guid?&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[FromBody] DepartmentUpdateScientificWorksRequest&#160;</td>
+          <td class="paramname"><em>request</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00011_source.html#l00293">293</a> of file <a class="el" href="a00011_source.html">DepartmentController.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9eea829c2f7de89b01bab2e7b33fe816"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IActionResult ScientificReport.Controllers.DepartmentController.RemoveUserFromStaff </td>
+          <td>(</td>
+          <td class="paramtype">Guid?&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[FromBody] DepartmentUpdateStaffRequest&#160;</td>
+          <td class="paramname"><em>request</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00011_source.html#l00227">227</a> of file <a class="el" href="a00011_source.html">DepartmentController.cs</a>.</p>
 
 </div>
 </div>
