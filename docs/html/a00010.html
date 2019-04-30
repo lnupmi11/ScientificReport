@@ -129,20 +129,20 @@ Collaboration diagram for ScientificReport.Controllers.UserProfileController:</d
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad61f6886bf4d9db672ab48d991fd708b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#ad61f6886bf4d9db672ab48d991fd708b">UserProfileController</a> (UserManager&lt; UserProfile &gt; usrMgr, SignInManager&lt; UserProfile &gt; signInManager, RoleManager&lt; UserProfileRole &gt; roleManager, IUserProfileService userProfileService, ILogger&lt; <a class="el" href="a00010.html">UserProfileController</a> &gt; logger)</td></tr>
-<tr class="separator:ad61f6886bf4d9db672ab48d991fd708b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadae477c2f05905548dd5262b9d9ac65"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#aadae477c2f05905548dd5262b9d9ac65">UserProfileController</a> (UserManager&lt; UserProfile &gt; usrMgr, SignInManager&lt; UserProfile &gt; signInManager, RoleManager&lt; UserProfileRole &gt; roleManager, IUserProfileService userProfileService, IDepartmentService departmentService)</td></tr>
+<tr class="separator:aadae477c2f05905548dd5262b9d9ac65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5ae3acf2788bf5974b9576a8a892e9b"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#af5ae3acf2788bf5974b9576a8a892e9b">Index</a> ()</td></tr>
 <tr class="separator:af5ae3acf2788bf5974b9576a8a892e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84b3e5b1373867e10ccee532630b6392"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a84b3e5b1373867e10ccee532630b6392">Details</a> (Guid?id)</td></tr>
 <tr class="separator:a84b3e5b1373867e10ccee532630b6392"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a301fe8b8081fe11b59b4c90a4e76b2b1"><td class="memItemLeft" align="right" valign="top">async Task&lt; IActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a301fe8b8081fe11b59b4c90a4e76b2b1">Edit</a> (Guid?id)</td></tr>
 <tr class="separator:a301fe8b8081fe11b59b4c90a4e76b2b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc0fcd82bb476a213dd6177b450b39fb"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#acc0fcd82bb476a213dd6177b450b39fb">Edit</a> (UserProfileEditModel model)</td></tr>
-<tr class="separator:acc0fcd82bb476a213dd6177b450b39fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab5360b0be8958952631807c6c4cb799"><td class="memItemLeft" align="right" valign="top">async Task&lt; IActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#aab5360b0be8958952631807c6c4cb799">AddUserToRole</a> (Guid?id, [FromBody] UserProfileUpdateRolesRequest request)</td></tr>
-<tr class="separator:aab5360b0be8958952631807c6c4cb799"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a6a95dac91c994fe7f69689c5255cf2"><td class="memItemLeft" align="right" valign="top">async Task&lt; IActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a9a6a95dac91c994fe7f69689c5255cf2">RemoveUserFromRole</a> (Guid?id, [FromBody] UserProfileUpdateRolesRequest request)</td></tr>
-<tr class="separator:a9a6a95dac91c994fe7f69689c5255cf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae81af6a998d2987865ce274806dcc7f4"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#ae81af6a998d2987865ce274806dcc7f4">Edit</a> (Guid?id, UserProfileEditModel model)</td></tr>
+<tr class="separator:ae81af6a998d2987865ce274806dcc7f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb37027360b4e896fd1b885e419367ca"><td class="memItemLeft" align="right" valign="top">async Task&lt; IActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#adb37027360b4e896fd1b885e419367ca">AddUserToAdministration</a> (Guid?id, [FromBody] UserProfileUpdateRolesRequest request)</td></tr>
+<tr class="separator:adb37027360b4e896fd1b885e419367ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0f1ba68a83e6c606e48e1b1fdbda5bf"><td class="memItemLeft" align="right" valign="top">async Task&lt; IActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#aa0f1ba68a83e6c606e48e1b1fdbda5bf">RemoveUserFromAdministration</a> (Guid?id, [FromBody] UserProfileUpdateRolesRequest request)</td></tr>
+<tr class="separator:aa0f1ba68a83e6c606e48e1b1fdbda5bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48780abfce15ce82c58a1b5710185e83"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a48780abfce15ce82c58a1b5710185e83">Delete</a> (Guid?id)</td></tr>
 <tr class="separator:a48780abfce15ce82c58a1b5710185e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c8b98005ac1254746e00f0066ed462a"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a6c8b98005ac1254746e00f0066ed462a">Register</a> ()</td></tr>
@@ -158,9 +158,9 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="a00015_source.html#l00016">16</a> of file <a class="el" href="a00015_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00015_source.html#l00015">15</a> of file <a class="el" href="a00015_source.html">UserProfileController.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ad61f6886bf4d9db672ab48d991fd708b"></a>
+<a class="anchor" id="aadae477c2f05905548dd5262b9d9ac65"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -191,8 +191,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ILogger&lt; <a class="el" href="a00010.html">UserProfileController</a> &gt;&#160;</td>
-          <td class="paramname"><em>logger</em>&#160;</td>
+          <td class="paramtype">IDepartmentService&#160;</td>
+          <td class="paramname"><em>departmentService</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -202,17 +202,17 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00015_source.html#l00026">26</a> of file <a class="el" href="a00015_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00015_source.html#l00024">24</a> of file <a class="el" href="a00015_source.html">UserProfileController.cs</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aab5360b0be8958952631807c6c4cb799"></a>
+<a class="anchor" id="adb37027360b4e896fd1b885e419367ca"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">async Task&lt;IActionResult&gt; ScientificReport.Controllers.UserProfileController.AddUserToRole </td>
+          <td class="memname">async Task&lt;IActionResult&gt; ScientificReport.Controllers.UserProfileController.AddUserToAdministration </td>
           <td>(</td>
           <td class="paramtype">Guid?&#160;</td>
           <td class="paramname"><em>id</em>, </td>
@@ -231,7 +231,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00015_source.html#l00112">112</a> of file <a class="el" href="a00015_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00015_source.html#l00150">150</a> of file <a class="el" href="a00015_source.html">UserProfileController.cs</a>.</p>
 
 </div>
 </div>
@@ -249,7 +249,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00015_source.html#l00162">162</a> of file <a class="el" href="a00015_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00015_source.html#l00208">208</a> of file <a class="el" href="a00015_source.html">UserProfileController.cs</a>.</p>
 
 </div>
 </div>
@@ -267,7 +267,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00015_source.html#l00050">50</a> of file <a class="el" href="a00015_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00015_source.html#l00048">48</a> of file <a class="el" href="a00015_source.html">UserProfileController.cs</a>.</p>
 
 </div>
 </div>
@@ -285,25 +285,35 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00015_source.html#l00068">68</a> of file <a class="el" href="a00015_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00015_source.html#l00074">74</a> of file <a class="el" href="a00015_source.html">UserProfileController.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="acc0fcd82bb476a213dd6177b450b39fb"></a>
+<a class="anchor" id="ae81af6a998d2987865ce274806dcc7f4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">IActionResult ScientificReport.Controllers.UserProfileController.Edit </td>
           <td>(</td>
-          <td class="paramtype">UserProfileEditModel&#160;</td>
-          <td class="paramname"><em>model</em></td><td>)</td>
+          <td class="paramtype">Guid?&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">UserProfileEditModel&#160;</td>
+          <td class="paramname"><em>model</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00015_source.html#l00089">89</a> of file <a class="el" href="a00015_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00015_source.html#l00108">108</a> of file <a class="el" href="a00015_source.html">UserProfileController.cs</a>.</p>
 
 </div>
 </div>
@@ -320,7 +330,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00015_source.html#l00043">43</a> of file <a class="el" href="a00015_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00015_source.html#l00041">41</a> of file <a class="el" href="a00015_source.html">UserProfileController.cs</a>.</p>
 
 </div>
 </div>
@@ -337,7 +347,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00015_source.html#l00245">245</a> of file <a class="el" href="a00015_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00015_source.html#l00291">291</a> of file <a class="el" href="a00015_source.html">UserProfileController.cs</a>.</p>
 
 </div>
 </div>
@@ -355,7 +365,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00015_source.html#l00259">259</a> of file <a class="el" href="a00015_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00015_source.html#l00305">305</a> of file <a class="el" href="a00015_source.html">UserProfileController.cs</a>.</p>
 
 </div>
 </div>
@@ -372,7 +382,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00015_source.html#l00280">280</a> of file <a class="el" href="a00015_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00015_source.html#l00326">326</a> of file <a class="el" href="a00015_source.html">UserProfileController.cs</a>.</p>
 
 </div>
 </div>
@@ -405,16 +415,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00015_source.html#l00187">187</a> of file <a class="el" href="a00015_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00015_source.html#l00233">233</a> of file <a class="el" href="a00015_source.html">UserProfileController.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a9a6a95dac91c994fe7f69689c5255cf2"></a>
+<a class="anchor" id="aa0f1ba68a83e6c606e48e1b1fdbda5bf"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">async Task&lt;IActionResult&gt; ScientificReport.Controllers.UserProfileController.RemoveUserFromRole </td>
+          <td class="memname">async Task&lt;IActionResult&gt; ScientificReport.Controllers.UserProfileController.RemoveUserFromAdministration </td>
           <td>(</td>
           <td class="paramtype">Guid?&#160;</td>
           <td class="paramname"><em>id</em>, </td>
@@ -433,7 +443,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00015_source.html#l00137">137</a> of file <a class="el" href="a00015_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00015_source.html#l00178">178</a> of file <a class="el" href="a00015_source.html">UserProfileController.cs</a>.</p>
 
 </div>
 </div>
