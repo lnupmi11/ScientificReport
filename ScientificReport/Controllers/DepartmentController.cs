@@ -1,11 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ScientificReport.BLL.Interfaces;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Entities.UserProfile;
+using ScientificReport.DAL.Roles;
 using ScientificReport.DTO.Models.Department;
 
 namespace ScientificReport.Controllers
@@ -13,12 +16,15 @@ namespace ScientificReport.Controllers
 //	[Authorize(Roles = UserProfileRole.Administrator)]
 	public class DepartmentController : Controller
 	{
+		private readonly UserManager<UserProfile> _userManager;
+		
 		private readonly IDepartmentService _departmentService;
 		private readonly IUserProfileService _userProfileService;
 		private readonly IScientificWorkService _scientificWorkService;
 		
-		public DepartmentController(IDepartmentService departmentService, IUserProfileService userProfileService, IScientificWorkService scientificWorkService)
+		public DepartmentController(IDepartmentService departmentService, IUserProfileService userProfileService, IScientificWorkService scientificWorkService, UserManager<UserProfile> userManager)
 		{
+			_userManager = userManager;
 			_departmentService = departmentService;
 			_userProfileService = userProfileService;
 			_scientificWorkService = scientificWorkService;
@@ -155,7 +161,7 @@ namespace ScientificReport.Controllers
 		// POST: Department/Edit/{id}
 		[HttpPost]
 //		[Authorize(Roles = UserProfileRole.HeadOfDepartmentOrAdmin)]
-		public IActionResult Edit(Guid? id, [Bind("Title,SelectedHeadId")] DepartmentEditModel model)
+		public async Task<IActionResult> Edit(Guid? id, [Bind("Title,SelectedHeadId")] DepartmentEditModel model)
 		{
 			if (!ModelState.IsValid)
 			{
@@ -176,7 +182,16 @@ namespace ScientificReport.Controllers
 				var departments = _departmentService.GetAllWhere(d => !d.Id.Equals(department.Id));
 				if (newHead != null && departments.All(d => !d.Staff.Contains(newHead)))
 				{
+					var oldHead = department.Head;
+					oldHead.Position = "Викладач";
+					_userProfileService.UpdateItem(oldHead);
+					await _userProfileService.RemoveFromRoleAsync(oldHead, UserProfileRole.HeadOfDepartment, _userManager);
+					
 					department.Head = newHead;
+					
+					newHead.Position = "Завідувач";
+					_userProfileService.UpdateItem(newHead);
+					await _userProfileService.AddToRoleAsync(newHead, UserProfileRole.HeadOfDepartment, _userManager);
 				}
 				
 				_departmentService.UpdateItem(department);

@@ -1,3 +1,4 @@
+@using ScientificReport.DAL.Roles
 @model ScientificReport.DTO.Models.UserProfile.UserProfileEditModel
 
 @{
@@ -19,75 +20,105 @@
 <div class="bg-primary m-1 p-1 text-white"><h4>Edit user</h4></div>
 <div asp-validation-summary="All" class="text-danger"></div>
 <form asp-action="Edit" method="post">
-	<div class="form-group">
-		<label asp-for="UserProfile.FirstName"></label>
-		<input asp-for="UserProfile.FirstName" class="form-control"/>
-	</div>
-	<div class="form-group">
-		<label asp-for="UserProfile.MiddleName"></label>
-		<input asp-for="UserProfile.MiddleName" class="form-control"/>
-	</div>
-	<div class="form-group">
-		<label asp-for="UserProfile.LastName"></label>
-		<input asp-for="UserProfile.LastName" class="form-control"/>
-	</div>
-	<div class="form-group">
-		<label asp-for="UserProfile.PhoneNumber"></label>
-		<input asp-for="UserProfile.PhoneNumber" class="form-control"/>
-	</div>
-	<div class="form-group">
-		<label asp-for="UserProfile.BirthYear"></label>
-		<input asp-for="UserProfile.BirthYear" class="form-control"/>
-	</div>
-	<div class="form-group">
-		<label asp-for="UserProfile.GraduationYear"></label>
-		<input asp-for="UserProfile.GraduationYear" class="form-control"/>
-	</div>
-	<div class="form-group">
-		<label asp-for="UserProfile.ScientificDegree"></label>
-		<input asp-for="UserProfile.ScientificDegree" class="form-control"/>
-	</div>
-	<div class="form-group">
-		<label asp-for="UserProfile.YearDegreeAssigned"></label>
-		<input asp-for="UserProfile.YearDegreeAssigned" class="form-control"/>
-	</div>
-
-	<div class="col-md-4">
-		<label>Roles:</label>
-		<div class="authors-list">
-			@if (Model.AllRoles != null && Model.UserRoles != null)
-			{
-				foreach (var role in Model.AllRoles)
-				{
-					if (role != null)
-					{
-						var contains = Model.UserRoles.Contains(role.Name);
-						<p>
-							<i class="add-role fas fa-plus-circle fa-lg cursor-pointer text-green @(contains ? "hidden" : "")" onclick="addUserToRole(this, '@role.Name', '@Model.UserProfile.Id')"></i>
-							<i class="remove-role fas fa-minus-circle fa-lg cursor-pointer text-red @(contains ? "" : "hidden")" onclick="removeUserFromRole(this, '@role.Name', '@Model.UserProfile.Id')"></i>
-							@role.Name
-						</p>
-					}
-				}
-			}
+	<div class="row">
+		<div class="col-md-4">
+			<div class="form-group">
+				<label asp-for="FirstName"></label>
+				<input asp-for="FirstName" class="form-control"/>
+				<span asp-validation-for="FirstName" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="MiddleName"></label>
+				<input asp-for="MiddleName" class="form-control"/>
+				<span asp-validation-for="MiddleName" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="LastName"></label>
+				<input asp-for="LastName" class="form-control"/>
+				<span asp-validation-for="LastName" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="PhoneNumber"></label>
+				<input asp-for="PhoneNumber" class="form-control"/>
+				<span asp-validation-for="PhoneNumber" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="BirthYear"></label>
+				<input asp-for="BirthYear" class="form-control"/>
+				<span asp-validation-for="BirthYear" class="text-danger"></span>
+			</div>
 		</div>
-	</div>
-	
-	<div class="form-group">
-		<label asp-for="UserProfile.AcademicStatus"></label>
-		<input asp-for="UserProfile.AcademicStatus" class="form-control"/>
-	</div>
-	<div class="form-group">
-		<label asp-for="UserProfile.YearDegreeGained"></label>
-		<input asp-for="UserProfile.YearDegreeGained" class="form-control"/>
-	</div>
-	<div class="form-group">
-		<label asp-for="UserProfile.UserName"></label>
-		<input asp-for="UserProfile.UserName" class="form-control"/>
-	</div>
-	<div class="form-group">
-		<label asp-for="UserProfile.Email"></label>
-		<input asp-for="UserProfile.Email" class="form-control"/>
+		<div class="col-md-4">
+			<div class="form-group">
+				<label asp-for="GraduationYear"></label>
+				<input asp-for="GraduationYear" class="form-control"/>
+				<span asp-validation-for="GraduationYear" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="ScientificDegree"></label>
+				<input asp-for="ScientificDegree" class="form-control"/>
+				<span asp-validation-for="ScientificDegree" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="YearDegreeAssigned"></label>
+				<input asp-for="YearDegreeAssigned" class="form-control"/>
+				<span asp-validation-for="YearDegreeAssigned" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label>Roles:</label>
+				<div class="authors-list">
+					@if (Model.AllRoles != null && Model.UserRoles != null)
+					{
+						foreach (var role in Model.AllRoles)
+						{
+							if (role != null)
+							{
+								var contains = Model.UserRoles.Contains(role.Name);
+								<p>
+									@if (role.Name != UserProfileRole.Teacher && role.Name != UserProfileRole.HeadOfDepartment)
+									{
+										<i class="add-role fas fa-plus-circle fa-lg cursor-pointer text-green @(contains ? "hidden" : "")" onclick="addUserToAdministration(this, '@role.Name', '@Model.UserId')"></i>
+										<i class="remove-role fas fa-minus-circle fa-lg cursor-pointer text-red @(contains ? "" : "hidden")" onclick="removeUserFromAdministration(this, '@role.Name', '@Model.UserId')"></i>	
+									}
+									else
+									{
+										<i class="fas fa-@(contains ? "minus" : "plus")-circle fa-lg" title="Unable to @(contains ? "remove" : "add") role"></i>
+									}
+									@role.Name
+								</p>
+							}
+						}
+					}
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="form-group">
+				<label asp-for="AcademicStatus"></label>
+				<input asp-for="AcademicStatus" class="form-control"/>
+				<span asp-validation-for="AcademicStatus" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="YearDegreeGained"></label>
+				<input asp-for="YearDegreeGained" class="form-control"/>
+				<span asp-validation-for="YearDegreeGained" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="UserName"></label>
+				<input asp-for="UserName" class="form-control"/>
+				<span asp-validation-for="UserName" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Email"></label>
+				<input asp-for="Email" class="form-control"/>
+				<span asp-validation-for="Email" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="IsApproved"></label>
+				<input asp-for="IsApproved" class="form-control"/>
+				<span asp-validation-for="IsApproved" class="text-danger"></span>
+			</div>
+		</div>
 	</div>
 	<button type="submit" class="btn btn-primary">Save</button>
 	<a asp-action="Index" class="btn btn-secondary">Cancel</a>
@@ -99,7 +130,7 @@
 
 @section Scripts {
 	<script>    
-		const toggleUserRole = (endpoint, tagName) => (tag, roleName, userId) => {
+		const toggle = (endpoint, tagName) => (tag, roleName, userId) => {
 			const config = {
 				method: 'POST',
 				body: JSON.stringify({
@@ -109,13 +140,7 @@
 					'Content-Type': 'application/json'
 				}
 			};
-			
-			console.info(roleName);
-			
 			fetch(`/UserProfile/${endpoint}/${userId}`, config).then(response => {
-			
-				console.log(response);
-			
 				if (response.status !== 200) throw {msg: "Failed to toggle user roles", response};
 				tag.classList.add('hidden');
 				tag.parentElement.getElementsByClassName(tagName)[0].classList.remove('hidden');
@@ -124,8 +149,8 @@
 			});
 		}
 
-		const addUserToRole = toggleUserRole('AddUserToRole', 'remove-role');
-		const removeUserFromRole = toggleUserRole('RemoveUserFromRole', 'add-role');
+		const addUserToAdministration = toggle('AddUserToAdministration', 'remove-role');
+		const removeUserFromAdministration = toggle('RemoveUserFromAdministration', 'add-role');
 	</script>
 	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
