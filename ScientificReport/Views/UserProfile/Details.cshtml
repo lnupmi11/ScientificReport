@@ -1,4 +1,4 @@
-@model ScientificReport.DAL.Entities.UserProfile.UserProfile
+@model ScientificReport.DTO.Models.UserProfile.UserDetailsModel
 
 @{
 	ViewData["Title"] = "Details";
@@ -11,74 +11,74 @@
 	<hr />
 	<dl class="row">
 		<dt class = "col-sm-2">
-			@Html.DisplayNameFor(model => model.FirstName)
+			@Html.DisplayNameFor(model => model.User.FirstName)
 		</dt>
 		<dd class = "col-sm-10">
-			@Html.DisplayFor(model => model.FirstName)
+			@Html.DisplayFor(model => model.User.FirstName)
 		</dd>
 		<dt class = "col-sm-2">
-			@Html.DisplayNameFor(model => model.MiddleName)
+			@Html.DisplayNameFor(model => model.User.MiddleName)
 		</dt>
 		<dd class = "col-sm-10">
-			@Html.DisplayFor(model => model.MiddleName)
+			@Html.DisplayFor(model => model.User.MiddleName)
 		</dd>
 		<dt class = "col-sm-2">
-			@Html.DisplayNameFor(model => model.LastName)
+			@Html.DisplayNameFor(model => model.User.LastName)
 		</dt>
 		<dd class = "col-sm-10">
-			@Html.DisplayFor(model => model.LastName)
+			@Html.DisplayFor(model => model.User.LastName)
 		</dd>
 		<dt class = "col-sm-2">
-			@Html.DisplayNameFor(model => model.BirthYear)
+			@Html.DisplayNameFor(model => model.User.BirthYear)
 		</dt>
 		<dd class = "col-sm-10">
-			@Html.DisplayFor(model => model.BirthYear)
+			@Html.DisplayFor(model => model.User.BirthYear)
 		</dd>
 		<dt class = "col-sm-2">
-			@Html.DisplayNameFor(model => model.GraduationYear)
+			@Html.DisplayNameFor(model => model.User.GraduationYear)
 		</dt>
 		<dd class = "col-sm-10">
-		@Html.DisplayFor(model => model.GraduationYear)
+		@Html.DisplayFor(model => model.User.GraduationYear)
 		</dd>
 		<dt class = "col-sm-2">
-			@Html.DisplayNameFor(model => model.ScientificDegree)
+			@Html.DisplayNameFor(model => model.User.ScientificDegree)
 		</dt>
 		<dd class = "col-sm-10">
-			@Html.DisplayFor(model => model.ScientificDegree)
+			@Html.DisplayFor(model => model.User.ScientificDegree)
 		</dd>
 		<dt class = "col-sm-2">
-			@Html.DisplayNameFor(model => model.YearDegreeGained)
+			@Html.DisplayNameFor(model => model.User.YearDegreeGained)
 		</dt>
 		<dd class = "col-sm-10">
-			@Html.DisplayFor(model => model.YearDegreeGained)
+			@Html.DisplayFor(model => model.User.YearDegreeGained)
 		</dd>
 		<dt class = "col-sm-2">
-			@Html.DisplayNameFor(model => model.AcademicStatus)
+			@Html.DisplayNameFor(model => model.User.AcademicStatus)
 		</dt>
 		<dd class = "col-sm-10">
-			@Html.DisplayFor(model => model.AcademicStatus)
+			@Html.DisplayFor(model => model.User.AcademicStatus)
 		</dd>
 		<dt class = "col-sm-2">
-			@Html.DisplayNameFor(model => model.YearDegreeAssigned)
+			@Html.DisplayNameFor(model => model.User.YearDegreeAssigned)
 		</dt>
 		<dd class = "col-sm-10">
-			@Html.DisplayFor(model => model.YearDegreeAssigned)
+			@Html.DisplayFor(model => model.User.YearDegreeAssigned)
 		</dd>
 		<dt class = "col-sm-2">
-			@Html.DisplayNameFor(model => model.Position)
+			@Html.DisplayNameFor(model => model.User.Position)
 		</dt>
 		<dd class = "col-sm-10">
-			@Html.DisplayFor(model => model.Position)
+			@Html.DisplayFor(model => model.User.Position) @Html.DisplayFor(model => model.DepartmentName)
 		</dd>
 		<dt class = "col-sm-2">
-			@Html.DisplayNameFor(model => model.IsApproved)
+			@Html.DisplayNameFor(model => model.User.IsApproved)
 		</dt>
 		<dd class = "col-sm-10">
-			@Html.DisplayFor(model => model.IsApproved)
+			@Html.DisplayFor(model => model.User.IsApproved)
 		</dd>
 	</dl>
 </div>
 <div>
-	<a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+	<a asp-action="Edit" asp-route-id="@Model.User.Id">Edit</a> |
 	<a asp-action="Index">Back to List</a>
 </div>

@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using ScientificReport.BLL.Interfaces;
 using ScientificReport.DAL.Entities.UserProfile;
 using ScientificReport.DAL.Roles;
@@ -20,22 +19,21 @@ namespace ScientificReport.Controllers
 		private readonly RoleManager<UserProfileRole> _roleManager;
 		
 		private readonly IUserProfileService _userProfileService;
-		
-		private readonly ILogger _logger;
+		private readonly IDepartmentService _departmentService;
 
 		public UserProfileController(
 			UserManager<UserProfile> usrMgr,
 			SignInManager<UserProfile> signInManager,
 			RoleManager<UserProfileRole> roleManager,
 			IUserProfileService userProfileService,
-			ILogger<UserProfileController> logger
+			IDepartmentService departmentService
 		)
 		{
 			_userManager = usrMgr;
 			_signInManager = signInManager;
 			_roleManager = roleManager;
 			_userProfileService = userProfileService;
-			_logger = logger;
+			_departmentService = departmentService;
 		}
 
 		// GET: UserProfile/Index
@@ -60,7 +58,15 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
-			return View(userProfile);
+			var department = _departmentService.Get(d => d.Staff.Contains(userProfile));
+			
+			var detailsModel = new UserDetailsModel
+			{
+				User = userProfile,
+				DepartmentName = department != null ? "кафедри " + department.Title : ""
+			};
+
+			return View(detailsModel);
 		}
 
 		// GET: UserProfile/Edit/{id}
@@ -75,7 +81,20 @@ namespace ScientificReport.Controllers
 			{
 				return View(new UserProfileEditModel
 				{
-					UserProfile = user,
+					UserId = user.Id,
+					FirstName = user.FirstName,
+					MiddleName = user.MiddleName,
+					LastName = user.LastName,
+					BirthYear = user.BirthYear,
+					GraduationYear = user.GraduationYear,
+					ScientificDegree = user.ScientificDegree,
+					YearDegreeGained = user.YearDegreeGained,
+					AcademicStatus = user.AcademicStatus,
+					YearDegreeAssigned = user.YearDegreeAssigned,
+					PhoneNumber = user.PhoneNumber,
+					IsApproved = user.IsApproved,
+					UserName = user.UserName,
+					Email = user.Email,
 					AllRoles = _roleManager.Roles.ToList(),
 					UserRoles = await _userManager.GetRolesAsync(user)
 				});
@@ -86,18 +105,37 @@ namespace ScientificReport.Controllers
 
 		// POST: UserProfile/Edit/{id}
 		[HttpPost]
-		public IActionResult Edit(UserProfileEditModel model)
+		public IActionResult Edit(Guid? id, UserProfileEditModel model)
 		{
 			if (!ModelState.IsValid)
 			{
 				return View(model);
 			}
 
-			_logger.LogError(model.UserProfile.Id.ToString());
-
-			if (_userProfileService.UserExists(model.UserProfile.Id))
+			if (id == null)
 			{
-				_userProfileService.UpdateItem(model.UserProfile);
+				return NotFound();
+			}
+
+			if (_userProfileService.UserExists(id.Value))
+			{
+				var user = _userProfileService.GetById(id.Value);
+
+				user.FirstName = model.FirstName;
+				user.MiddleName = model.MiddleName;
+				user.LastName = model.LastName;
+				user.BirthYear = model.BirthYear;
+				user.GraduationYear = model.GraduationYear;
+				user.ScientificDegree = model.ScientificDegree;
+				user.YearDegreeGained = model.YearDegreeGained;
+				user.AcademicStatus = model.AcademicStatus;
+				user.YearDegreeAssigned = model.YearDegreeAssigned;
+				user.PhoneNumber = model.PhoneNumber;
+				user.IsApproved = model.IsApproved;
+				user.UserName = model.UserName;
+				user.Email = model.Email;
+				
+				_userProfileService.UpdateItem(user);
 			}
 			else
 			{
@@ -107,13 +145,19 @@ namespace ScientificReport.Controllers
 			return RedirectToAction("Index");
 		}
 
-		// POST: UserProfile/AddUserToRole/{userId}
+		// POST: UserProfile/AddUserToAdministration/{userId}
 		[HttpPost]
-		public async Task<IActionResult> AddUserToRole(Guid? id, [FromBody] UserProfileUpdateRolesRequest request)
+		public async Task<IActionResult> AddUserToAdministration(Guid? id, [FromBody] UserProfileUpdateRolesRequest request)
 		{
 			if (id == null)
 			{
 				return NotFound();
+			}
+
+			if (request.RoleName.Equals(UserProfileRole.Teacher) ||
+			    request.RoleName.Equals(UserProfileRole.HeadOfDepartment))
+			{
+				return Json(new {Success = false});
 			}
 			
 			var userExists = _userProfileService.UserExists(id.Value);
@@ -122,19 +166,16 @@ namespace ScientificReport.Controllers
 				var user = _userProfileService.GetById(id.Value);
 				if (!await _userProfileService.IsInRoleAsync(user, request.RoleName, _userManager))
 				{
-					await _userProfileService.AddToRoleAsync(user, request.RoleName, _userManager);	
+					await _userProfileService.AddToRoleAsync(user, request.RoleName, _userManager);
 				}	
 			}
-			
-			return Json(new
-			{
-				Success = userExists
-			});
+
+			return Json(new {Success = userExists});
 		}
 		
-		// POST: UserProfile/RemoveUserFromRole/{userId}
+		// POST: UserProfile/RemoveUserFromAdministration/{userId}
 		[HttpPost]
-		public async Task<IActionResult> RemoveUserFromRole(Guid? id, [FromBody] UserProfileUpdateRolesRequest request)
+		public async Task<IActionResult> RemoveUserFromAdministration(Guid? id, [FromBody] UserProfileUpdateRolesRequest request)
 		{
 			if (id == null)
 			{
@@ -147,7 +188,12 @@ namespace ScientificReport.Controllers
 				var user = _userProfileService.GetById(id.Value);
 				if (await _userProfileService.IsInRoleAsync(user, request.RoleName, _userManager))
 				{
-					await _userProfileService.RemoveFromRoleAsync(user, request.RoleName, _userManager);	
+					await _userProfileService.RemoveFromRoleAsync(user, request.RoleName, _userManager);
+					if (request.RoleName == UserProfileRole.HeadOfDepartment)
+					{
+						user.Position = "Викладач";
+						_userProfileService.UpdateItem(user);
+					}
 				}
 			}
 			
@@ -208,7 +254,7 @@ namespace ScientificReport.Controllers
 				ScientificDegree = model.ScientificDegree,
 				YearDegreeGained = model.YearDegreeGained,
 				YearDegreeAssigned = model.YearDegreeAssigned,
-				Position = UserProfileRole.Teacher,
+				Position = "Викладач",
 				IsApproved = false,
 				PhoneNumber = model.PhoneNumber
 			};
