@@ -38,7 +38,7 @@
 							if (user != null)
 							{
 								<li>
-									<a href="@Url.Action("Details", "UserProfile", user.Id)">
+									<a href="@Url.Action("Details", "UserProfile", new {id = user.Id})">
 										@user.FirstName @user.MiddleName @user.LastName
 									</a>
 								</li>

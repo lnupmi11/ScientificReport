@@ -4,8 +4,8 @@
 	ViewData["Title"] = "Departments";
 }
 
-<h2>Departments</h2>
-<button type="button" class="btn btn-success" onclick="location.href = '@Url.Action("Create", "Department")'">Create</button>
+<h2 style="float: left;">Departments</h2>
+<button type="button" style="float: right;" class="btn btn-success" onclick="location.href = '@Url.Action("Create", "Department")'">Create</button>
 
 <table class="table">
 	<thead>
@@ -32,9 +32,9 @@
 				@Html.DisplayFor(modelItem => item.ScientificWorks.Count)
 			</td>
 			<td>
-				<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-				<a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-				<form asp-action="Delete" asp-route-id="@item.Id" method="post">
+				<a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-light">Details</a>
+				<a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-success">Edit</a>
+				<form asp-action="Delete" asp-route-id="@item.Id" method="post" style="display: inline;">
 					<button type="submit" class="btn btn-sm btn-danger">Delete</button>
 				</form>
 			</td>

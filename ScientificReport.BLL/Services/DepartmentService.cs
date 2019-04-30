@@ -105,5 +105,10 @@ namespace ScientificReport.BLL.Services
 			department.Staff.Remove(user);
 			_departmentRepository.Update(department);
 		}
+
+		public bool UserIsHired(UserProfile user)
+		{
+			return _departmentRepository.All().Any(d => d.Staff.Contains(user));
+		}
 	}
 }

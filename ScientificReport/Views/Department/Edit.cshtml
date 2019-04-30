@@ -16,9 +16,9 @@
 	.hidden { display: none; }
 </style>
 
-<div class="bg-primary m-1 p-1 text-white"><h4>Edit user</h4></div>
+<div class="bg-primary m-1 p-1 text-white"><h4>Edit department</h4></div>
 <div asp-validation-summary="All" class="text-danger"></div>
-<form asp-action="Create" method="post">
+<form asp-action="Edit" method="post">
 	<div class="form-group">
 		<label asp-for="Title"></label>
 		<input asp-for="Title" class="form-control"/>
@@ -30,7 +30,54 @@
 			@Html.ValidationMessageFor(x => x.SelectedHeadId, "", new { @class = "text-danger" })
 		</div>
 	</div>
-	<button type="submit" class="btn btn-primary">Create</button>
+	<div class="col-md-4">
+		<label>Staff:</label>
+		<div class="authors-list">
+			@if (Model.UserSelection != null && Model.Staff != null)
+			{
+				foreach (var user in Model.UserSelection)
+				{
+					if (user != null)
+					{
+						var contains = Model.Staff.Any(s => s.Id.ToString().Equals(user.Value));
+						<p>
+							@if (!Model.Head.Id.ToString().Equals(user.Value))
+							{
+								<i class="add-user fas fa-plus-circle fa-lg cursor-pointer text-green @(contains ? "hidden" : "")" onclick="addUserToStaff(this, '@user.Value', '@Model.DepartmentId')"></i>
+								<i class="remove-user fas fa-minus-circle fa-lg cursor-pointer text-red @(contains ? "" : "hidden")" onclick="removeUserFromStaff(this, '@user.Value', '@Model.DepartmentId')"></i>
+							}
+							else
+							{
+								<i class="remove-user fas fa-minus-circle fa-lg" title="Can not remove head of department"></i>	
+							}
+							@user.Text
+						</p>
+					}
+				}
+			}
+		</div>
+	</div>
+	<div class="col-md-4">
+		<label>Scientific works:</label>
+		<div class="authors-list">
+			@if (Model.ScientificWorkItems != null && Model.ScientificWorks != null)
+			{
+				foreach (var scientificWork in Model.ScientificWorkItems)
+				{
+					if (scientificWork != null)
+					{
+						var contains = Model.ScientificWorks.Any(sw => sw.Id.ToString().Equals(scientificWork.Value));
+						<p>
+							<i class="add-scientific-work fas fa-plus-circle fa-lg cursor-pointer text-green @(contains ? "hidden" : "")" onclick="addScientificWork(this, '@scientificWork.Value', '@Model.DepartmentId')"></i>
+							<i class="remove-scientific-work fas fa-minus-circle fa-lg cursor-pointer text-red @(contains ? "" : "hidden")" onclick="removeScientificWork(this, '@scientificWork.Value', '@Model.DepartmentId')"></i>
+							@scientificWork.Text
+						</p>
+					}
+				}
+			}
+		</div>
+	</div>
+	<button type="submit" class="btn btn-primary">Save</button>
 	<a asp-action="Index" class="btn btn-secondary">Cancel</a>
 </form>
 <div>
@@ -38,25 +85,17 @@
 </div>
 
 @section Scripts {
-	<script>    
-		const toggleUserRole = (endpoint, tagName) => (tag, roleName, userId) => {
+	<script>
+		const toggle = (tagName, actionName, bodyFn) => (tag, firstParam, secondParam) => {
 			const config = {
 				method: 'POST',
-				body: JSON.stringify({
-					RoleName: roleName
-				}),
+				body: JSON.stringify(bodyFn(firstParam)),
 				headers: {
 					'Content-Type': 'application/json'
 				}
 			};
-			
-			console.info(roleName);
-			
-			fetch(`/UserProfile/${endpoint}/${userId}`, config).then(response => {
-			
-				console.log(response);
-			
-				if (response.status !== 200) throw {msg: "Failed to toggle user roles", response};
+			fetch('/Department/' + actionName + `/${secondParam}`, config).then(response => {
+				if (response.status !== 200) throw { msg: `Failed to toggle ${tagName}`, response };
 				tag.classList.add('hidden');
 				tag.parentElement.getElementsByClassName(tagName)[0].classList.remove('hidden');
 			}).catch(e => {
@@ -64,8 +103,17 @@
 			});
 		}
 
-		const addUserToRole = toggleUserRole('AddUserToRole', 'remove-role');
-		const removeUserFromRole = toggleUserRole('RemoveUserFromRole', 'add-role');
+		let staffBody = (userId) => {
+			return { UserId: userId };
+		};
+		const addUserToStaff = toggle('remove-user', 'AddUserToStaff', staffBody);
+		const removeUserFromStaff = toggle('add-user', 'RemoveUserFromStaff', staffBody);
+		
+		let scientificWorkBody = (scientificWorkId) => {
+			return { ScientificWorkId: scientificWorkId };
+		};
+		const addScientificWork = toggle('remove-scientific-work', 'AddScientificWork', scientificWorkBody);
+		const removeScientificWork = toggle('add-scientific-work', 'RemoveScientificWork', scientificWorkBody);
 	</script>
 	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
