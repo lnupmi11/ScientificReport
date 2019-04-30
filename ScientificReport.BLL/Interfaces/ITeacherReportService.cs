@@ -5,16 +5,16 @@ using ScientificReport.DAL.Entities.Reports;
 
 namespace ScientificReport.BLL.Interfaces
 {
-	public interface ITeacherReportService<in T>
+	public interface ITeacherReportService
 	{
 			IEnumerable<TeacherReport> GetAll();
 			IEnumerable<TeacherReport> GetAllWhere(Func<TeacherReport, bool> predicate);
-			TeacherReport GetById(T id);
+			TeacherReport GetById(Guid id);
 			TeacherReport Get(Func<TeacherReport, bool> predicate);
 			void CreateItem(TeacherReport item);
 			void UpdateItem(TeacherReport item);
-			void DeleteById(T id);
+			void DeleteById(Guid id);
 			bool Any(Func<TeacherReport, bool> predicate);
-			bool Exists(T id);
+			bool Exists(Guid id);
 	}
 }

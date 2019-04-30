@@ -1,13 +1,8 @@
 using System;
-using System.Collections.Generic;
-using System.Drawing.Printing;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using ScientificReport.BLL.Services;
-using ScientificReport.DAL.DbContext;
+using ScientificReport.BLL.Interfaces;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DTO.Models.ScientificWorks;
 
@@ -15,19 +10,19 @@ namespace ScientificReport.Controllers
 {
 	public class ScientificWorkController : Controller
 	{
-		private readonly ScientificWorkService _scientificWork;
-		private readonly UserProfileService _userProfile;
+		private readonly IScientificWorkService _scientificWorkService;
+		private readonly IUserProfileService _userProfileService;
 
-		public ScientificWorkController(ScientificReportDbContext context)
+		public ScientificWorkController(IScientificWorkService scientificWorkService, IUserProfileService userProfileService)
 		{
-			_scientificWork = new ScientificWorkService(context);
-			_userProfile = new UserProfileService(context);
+			_scientificWorkService = scientificWorkService;
+			_userProfileService = userProfileService;
 		}
 
 		// GET: ScientificWork
 		public IActionResult Index()
 		{
-			return View(_scientificWork.GetAll());
+			return View(_scientificWorkService.GetAll());
 		}
 
 		// GET: ScientificWork/Details/5
@@ -38,7 +33,7 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
-			var scientificWork = _scientificWork.GetById(id.Value);
+			var scientificWork = _scientificWorkService.GetById(id.Value);
 			if (scientificWork == null)
 			{
 				return NotFound();
@@ -47,7 +42,7 @@ namespace ScientificReport.Controllers
 			var scientificWorksDetails = new ScientificWorksDetails
 			{
 				ScientificWork = scientificWork,
-				Authors = _scientificWork.GetAuthors(scientificWork.Id).ToList()
+				Authors = _scientificWorkService.GetAuthors(scientificWork.Id).ToList()
 			};
 
 			return View(scientificWorksDetails);
@@ -67,7 +62,7 @@ namespace ScientificReport.Controllers
 		{
 			if (!ModelState.IsValid) return View(scientificWork);
 
-			_scientificWork.CreateItem(scientificWork);
+			_scientificWorkService.CreateItem(scientificWork);
 			return RedirectToAction(nameof(Index));
 		}
 
@@ -79,7 +74,7 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
-			var scientificWork = _scientificWork.GetById(id.Value);
+			var scientificWork = _scientificWorkService.GetById(id.Value);
 			if (scientificWork == null)
 			{
 				return NotFound();
@@ -89,8 +84,8 @@ namespace ScientificReport.Controllers
 			var scientificWorksEdit = new ScientificWorksEdit
 			{
 				ScientificWork = scientificWork,
-				Authors = _scientificWork.GetAuthors(scientificWork.Id),
-				Users = _userProfile.GetAll()
+				Authors = _scientificWorkService.GetAuthors(scientificWork.Id),
+				Users = _userProfileService.GetAll()
 			};
 
 			return View(scientificWorksEdit);
@@ -109,17 +104,17 @@ namespace ScientificReport.Controllers
 
 			if (!ModelState.IsValid)
 			{
-				scientificWorksEdit.Authors = _scientificWork.GetAuthors(scientificWork.Id);
-				scientificWorksEdit.Users = _userProfile.GetAll();
+				scientificWorksEdit.Authors = _scientificWorkService.GetAuthors(scientificWork.Id);
+				scientificWorksEdit.Users = _userProfileService.GetAll();
 				return View(scientificWorksEdit);
 			}
 			try
 			{
-				_scientificWork.UpdateItem(scientificWork);
+				_scientificWorkService.UpdateItem(scientificWork);
 			}
 			catch (DbUpdateConcurrencyException)
 			{
-				if (!_scientificWork.Exists(scientificWork.Id))
+				if (!_scientificWorkService.Exists(scientificWork.Id))
 				{
 					return NotFound();
 				}
@@ -137,7 +132,7 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
-			var scientificWork = _scientificWork.GetById(id.Value);
+			var scientificWork = _scientificWorkService.GetById(id.Value);
 			if (scientificWork == null)
 			{
 				return NotFound();
@@ -151,7 +146,7 @@ namespace ScientificReport.Controllers
 		[ValidateAntiForgeryToken]
 		public IActionResult DeleteConfirmed(Guid id)
 		{
-			_scientificWork.DeleteById(id);
+			_scientificWorkService.DeleteById(id);
 			return RedirectToAction(nameof(Index));
 		}
 		
@@ -160,7 +155,7 @@ namespace ScientificReport.Controllers
 //		[ValidateAntiForgeryToken]
 		public IActionResult AddAuthor(Guid id, [FromBody] ScientificWorkAuthorRequest request)
 		{
-			_scientificWork.AddAuthor(id, request.AuthorId);
+			_scientificWorkService.AddAuthor(id, request.AuthorId);
 			return Json(new
 			{
 				Success = true
@@ -171,7 +166,7 @@ namespace ScientificReport.Controllers
 //		[ValidateAntiForgeryToken]
 		public IActionResult DeleteAuthor(Guid id, [FromBody] ScientificWorkAuthorRequest request)
 		{
-			_scientificWork.RemoveAuthor(id, request.AuthorId);
+			_scientificWorkService.RemoveAuthor(id, request.AuthorId);
 			return Json(new
 			{
 				Success = true

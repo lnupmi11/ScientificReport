@@ -15,13 +15,15 @@ namespace ScientificReport.Controllers
 	{
 		private readonly IDepartmentService _departmentService;
 		private readonly IUserProfileService _userProfileService;
+		private readonly IScientificWorkService _scientificWorkService;
 		
-		public DepartmentController(IDepartmentService departmentService, IUserProfileService userProfileService)
+		public DepartmentController(IDepartmentService departmentService, IUserProfileService userProfileService, IScientificWorkService scientificWorkService)
 		{
 			_departmentService = departmentService;
 			_userProfileService = userProfileService;
+			_scientificWorkService = scientificWorkService;
 		}
-		
+
 		// GET: Department/Index
 		[HttpGet]
 		public IActionResult Index()
@@ -106,24 +108,27 @@ namespace ScientificReport.Controllers
 //		[Authorize(Roles = UserProfileRole.HeadOfDepartmentOrAdmin)]
 		public IActionResult Edit(Guid? id)
 		{
-			/*
 			if (id == null)
 			{
 				return NotFound();
 			}
 
 			var department = _departmentService.GetById(id.Value);
+			var allDepartments = _departmentService.GetAll();
 			if (department != null)
 			{
 				return View(new DepartmentEditModel
 				{
-					Department = department,
+					Title = department.Title,
+					Head = department.Head,
 					Users = _userProfileService.GetAll(),
-					ScientificWorks = null, // TODO: get all scientific works using it's service
-					IsEditingByHead = false	// TODO: check if user in request is administrator
+					ScientificWorks = _scientificWorkService.GetAllWhere(
+						sw => allDepartments.All(d => !d.ScientificWorks.Contains(sw))
+					),
+					// TODO: uncomment User.IsInRole... after 'login' is fixed
+					IsEditingByHead = true // User.IsInRole(UserProfileRole.Administrator)
 				});
 			}
-			*/
 
 			return RedirectToAction("Index");
 		}

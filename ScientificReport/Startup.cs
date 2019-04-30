@@ -45,6 +45,8 @@ namespace ScientificReport
 			
 			services.AddTransient<IUserProfileService, UserProfileService>();
 			services.AddTransient<IDepartmentService, DepartmentService>();
+			services.AddTransient<IScientificWorkService, ScientificWorkService>();
+			services.AddTransient<ITeacherReportService, TeacherReportService>();
 
 			services.Configure<IdentityOptions>(options =>
 			{

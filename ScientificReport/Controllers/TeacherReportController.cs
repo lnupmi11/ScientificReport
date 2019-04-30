@@ -1,33 +1,30 @@
 using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ScientificReport.BLL.Services;
-using ScientificReport.DAL.DbContext;
+using ScientificReport.BLL.Interfaces;
 using ScientificReport.DAL.Entities.Reports;
-using ScientificReport.DAL.Entities.UserProfile;
+using ScientificReport.DTO.Models.TeacherReport;
 
 namespace ScientificReport.Controllers
 {
 	public class TeacherReportController : Controller
 	{
-		private readonly TeacherReportService _teacherReport;
-		private readonly UserProfileService _users;
+		private readonly ITeacherReportService _teacherReportService;
+		private readonly IUserProfileService _userProfileService;
 
-		public TeacherReportController(ScientificReportDbContext context)
+		public TeacherReportController(ITeacherReportService teacherReportService, IUserProfileService userProfileService)
 		{
-			_teacherReport = new TeacherReportService(context);
-			_users = new UserProfileService(context);
+			_teacherReportService = teacherReportService;
+			_userProfileService = userProfileService;
 		}
 
 		// GET: Report
 		public IActionResult Index()
 		{
-			return View(_teacherReport.GetAll());
+			return View(_teacherReportService.GetAll());
 		}
 
-		// GET: Report/Details/5
+		// GET: Report/Details/{id}
 		public IActionResult Details(Guid? id)
 		{
 			if (id == null)
@@ -35,7 +32,7 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
-			var report = _teacherReport.GetById(id.Value);
+			var report = _teacherReportService.GetById(id.Value);
 			if (report == null)
 			{
 				return NotFound();
@@ -49,7 +46,7 @@ namespace ScientificReport.Controllers
 		{
 			var viewModel = new TeacherReportCreateViewModel
 			{
-				Users = _users.GetAll()
+				Users = _userProfileService.GetAll()
 			};
 
 			return View(viewModel);
@@ -64,7 +61,7 @@ namespace ScientificReport.Controllers
 			{
 				var viewModel = new TeacherReportCreateViewModel
 				{
-					Users = _users.GetAll()
+					Users = _userProfileService.GetAll()
 				};
 
 				ModelState.AddModelError("key", "Failed to create");
@@ -73,14 +70,14 @@ namespace ScientificReport.Controllers
 
 			var report = new TeacherReport
 			{
-				Teacher = _users.GetById(UserId)
+				Teacher = _userProfileService.GetById(UserId)
 			};
 
-			_teacherReport.CreateItem(report);
+			_teacherReportService.CreateItem(report);
 			return RedirectToAction(nameof(Index));
 		}	
 
-		// GET: Report/Edit/5
+		// GET: Report/Edit/{id}
 		public IActionResult Edit(Guid? id)
 		{
 			if (id == null)
@@ -88,7 +85,7 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
-			var report = _teacherReport.GetById(id.Value);
+			var report = _teacherReportService.GetById(id.Value);
 			if (report == null)
 			{
 				return NotFound();
@@ -97,7 +94,7 @@ namespace ScientificReport.Controllers
 			return View(report);
 		}
 
-		// POST: Report/Edit/5
+		// POST: Report/Edit/{id}
 		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
@@ -112,11 +109,11 @@ namespace ScientificReport.Controllers
 			if (!ModelState.IsValid) return View(report);
 			try
 			{
-				_teacherReport.UpdateItem(report);
+				_teacherReportService.UpdateItem(report);
 			}
 			catch (DbUpdateConcurrencyException)
 			{
-				if (!_teacherReport.Exists(report.Id))
+				if (!_teacherReportService.Exists(report.Id))
 					return NotFound();
 
 				throw;
@@ -125,7 +122,7 @@ namespace ScientificReport.Controllers
 			return RedirectToAction(nameof(Index));
 		}
 
-		// GET: Report/Delete/5
+		// GET: Report/Delete/{id}
 		public IActionResult Delete(Guid? id)
 		{
 			if (id == null)
@@ -133,7 +130,7 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
-			var report = _teacherReport.GetById(id.Value);
+			var report = _teacherReportService.GetById(id.Value);
 			if (report == null)
 			{
 				return NotFound();
@@ -142,21 +139,13 @@ namespace ScientificReport.Controllers
 			return View(report);
 		}
 
-		// POST: Report/Delete/5
+		// POST: Report/Delete/{id}
 		[HttpPost, ActionName("Delete")]
 		[ValidateAntiForgeryToken]
 		public IActionResult DeleteConfirmed(Guid id)
 		{
-			_teacherReport.DeleteById(id);
+			_teacherReportService.DeleteById(id);
 			return RedirectToAction(nameof(Index));
 		}
-	}
-
-	public class TeacherReportCreateViewModel
-	{
-		[Required]
-		public string UserId;
-		
-		public IEnumerable<UserProfile> Users;
 	}
 }
