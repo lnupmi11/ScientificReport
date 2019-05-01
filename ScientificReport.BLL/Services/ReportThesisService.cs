@@ -18,47 +18,47 @@ namespace ScientificReport.BLL.Services
 			_reportThesisRepository = new ReportThesisRepository(context);
 		}
 
-		public IEnumerable<ReportThesis> GetAll()
+		public virtual IEnumerable<ReportThesis> GetAll()
 		{
 			return _reportThesisRepository.All();
 		}
 
-		public IEnumerable<ReportThesis> GetAllWhere(Func<ReportThesis, bool> predicate)
+		public virtual IEnumerable<ReportThesis> GetAllWhere(Func<ReportThesis, bool> predicate)
 		{
 			return GetAll().Where(predicate);
 		}
 
-		public ReportThesis GetById(Guid id)
+		public virtual ReportThesis GetById(Guid id)
 		{
 			return _reportThesisRepository.Get(id);
 		}
 
-		public ReportThesis Get(Func<ReportThesis, bool> predicate)
+		public virtual ReportThesis Get(Func<ReportThesis, bool> predicate)
 		{
 			return _reportThesisRepository.Get(predicate);
 		}
 
-		public void CreateItem(ReportThesis reportThesis)
+		public virtual void CreateItem(ReportThesis reportThesis)
 		{
 			_reportThesisRepository.Create(reportThesis);
 		}
 
-		public void UpdateItem(ReportThesis reportThesis)
+		public virtual void UpdateItem(ReportThesis reportThesis)
 		{
 			_reportThesisRepository.Update(reportThesis);
 		}
 
-		public void DeleteById(Guid id)
+		public virtual void DeleteById(Guid id)
 		{
 			_reportThesisRepository.Delete(id);
 		}
 
-		public bool Exists(Guid id)
+		public virtual bool Exists(Guid id)
 		{
 			return _reportThesisRepository.Get(id) != null;
 		}
 
-		public IEnumerable<UserProfile> GetAuthors(Guid id)
+		public virtual IEnumerable<UserProfile> GetAuthors(Guid id)
 		{
 			var reportThesis = _reportThesisRepository.Get(id);
 			IEnumerable<UserProfile> authors = null;

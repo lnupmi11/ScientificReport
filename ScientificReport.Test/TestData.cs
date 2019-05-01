@@ -47,7 +47,7 @@ namespace ScientificReport.Test
 			MiddleName = "MiddleName3",
 			PhoneNumber = "+380000000003",
 		};
-
+		
 		public static readonly ScientificWork ScientificWork1 = new ScientificWork
 		{
 			Id = Guid.NewGuid(),
@@ -683,5 +683,85 @@ namespace ScientificReport.Test
 				DepartmentReport3, DepartmentReport2
 			}
 		};
+
+		private static readonly Random Rand = new Random();
+
+		private static readonly string[] Words =
+		{
+			"Lorem", "Ipsum", "Dolor", "Sit", "Amet", "Consectetuer",
+			"Adipiscing", "Elit", "Sed", "Diam", "Nonummy", "Nibh", "Euismod",
+			"Tincidunt", "Ut", "Laoreet", "Dolore", "Magna", "Aliquam", "Erat"
+		};
+
+		private static string RandWord()
+		{
+			return Words[Rand.Next(Words.Length)];
+		}
+		
+		private static string RandText(int wordsNumber)
+		{
+			var text = "";
+			for (var i = 0; i < wordsNumber; i++)
+			{
+				text += RandWord() + " ";
+			}
+
+			return text;
+		}
+
+		private static bool RandBool()
+		{
+			return Rand.Next(2) == 1;
+		}
+
+		public static UserProfile RandUser(bool setApproved = false)
+		{
+			var fName = RandWord();
+			var lName = RandWord();
+			var uName = $"{fName.ToLower()}_{lName.ToLower()}";
+			return new UserProfile
+			{
+				Id = Guid.NewGuid(),
+				Email = $"{uName}@email.com",
+				Position = RandWord(),
+				LastName = lName,
+				UserName = uName,
+				BirthYear = Rand.Next(1920, 1996),
+				FirstName = fName,
+				IsApproved = setApproved || RandBool(),
+				MiddleName = "MiddleName",
+				PhoneNumber = $"+380{Rand.Next(100000000, 999999999)}",
+			};
+		}
+
+		public static ScientificWork RandScientificWork()
+		{
+			return new ScientificWork
+			{
+				Id = Guid.NewGuid(),
+				Title = RandText(3),
+				Cypher = Rand.Next(100000, 99999).ToString(),
+				Category = RandWord(),
+				Contents = RandText(7)
+			};
+		}
+
+		public static Publication RandPublication()
+		{
+			var randBool = RandBool();
+			return new Publication
+			{
+				Id = Guid.NewGuid(),
+				Type = Publication.Types.Comment,
+				Title = RandText(3),
+				Specification = RandWord(),
+				PagesAmount = Rand.Next(3, 100),
+				PublishingYear = Rand.Next(1990, 2018),
+				PublishingPlace = RandText(4),
+				IsPrintCanceled = randBool,
+				PublishingHouseName = RandText(4),
+				IsRecommendedToPrint = !randBool
+			};
+		}
 	}
 }

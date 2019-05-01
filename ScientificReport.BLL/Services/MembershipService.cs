@@ -17,42 +17,42 @@ namespace ScientificReport.BLL.Services
 			_membershipRepository = new MembershipRepository(context);
 		}
 
-		public IEnumerable<Membership> GetAll()
+		public virtual IEnumerable<Membership> GetAll()
 		{
 			return _membershipRepository.All();
 		}
 
-		public IEnumerable<Membership> GetAllWhere(Func<Membership, bool> predicate)
+		public virtual IEnumerable<Membership> GetAllWhere(Func<Membership, bool> predicate)
 		{
 			return GetAll().Where(predicate);
 		}
 
-		public Membership GetById(Guid id)
+		public virtual Membership GetById(Guid id)
 		{
 			return _membershipRepository.Get(id);
 		}
 
-		public Membership Get(Func<Membership, bool> predicate)
+		public virtual Membership Get(Func<Membership, bool> predicate)
 		{
 			return _membershipRepository.Get(predicate);
 		}
 
-		public void CreateItem(Membership membership)
+		public virtual void CreateItem(Membership membership)
 		{
 			_membershipRepository.Create(membership);
 		}
 
-		public void UpdateItem(Membership membership)
+		public virtual void UpdateItem(Membership membership)
 		{
 			_membershipRepository.Update(membership);
 		}
 
-		public void DeleteById(Guid id)
+		public virtual void DeleteById(Guid id)
 		{
 			_membershipRepository.Delete(id);
 		}
 
-		public bool Exists(Guid id)
+		public virtual bool Exists(Guid id)
 		{
 			return _membershipRepository.Get(id) != null;
 		}

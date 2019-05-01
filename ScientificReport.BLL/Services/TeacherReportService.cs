@@ -17,47 +17,47 @@ namespace ScientificReport.BLL.Services
 			_teacherReportRepository = new TeacherReportRepository(context);
 		}
 
-		public IEnumerable<TeacherReport> GetAll()
+		public virtual IEnumerable<TeacherReport> GetAll()
 		{
 			return _teacherReportRepository.All();
 		}
 
-		public IEnumerable<TeacherReport> GetAllWhere(Func<TeacherReport, bool> predicate)
+		public virtual IEnumerable<TeacherReport> GetAllWhere(Func<TeacherReport, bool> predicate)
 		{
 			return _teacherReportRepository.AllWhere(predicate);
 		}
 
-		public TeacherReport GetById(Guid id)
+		public virtual TeacherReport GetById(Guid id)
 		{
 			return _teacherReportRepository.Get(id);
 		}
 
-		public TeacherReport Get(Func<TeacherReport, bool> predicate)
+		public virtual TeacherReport Get(Func<TeacherReport, bool> predicate)
 		{
 			return _teacherReportRepository.Get(predicate);
 		}
 
-		public void CreateItem(TeacherReport item)
+		public virtual void CreateItem(TeacherReport item)
 		{
 			_teacherReportRepository.Create(item);
 		}
 
-		public void UpdateItem(TeacherReport item)
+		public virtual void UpdateItem(TeacherReport item)
 		{
 			_teacherReportRepository.Update(item);
 		}
 
-		public void DeleteById(Guid id)
+		public virtual void DeleteById(Guid id)
 		{
 			_teacherReportRepository.Delete(id);
 		}
 
-		public bool Any(Func<TeacherReport, bool> predicate)
+		public virtual bool Any(Func<TeacherReport, bool> predicate)
 		{
 			return _teacherReportRepository.AllWhere(predicate).Any();
 		}
 
-		public bool Exists(Guid id)
+		public virtual bool Exists(Guid id)
 		{
 			return Any(r => r.Id == id);
 		}

@@ -340,7 +340,7 @@ namespace ScientificReport.Controllers
 		[HttpPost]
 		public IActionResult Delete(Guid? id)
 		{
-			if (id == null || !_departmentService.DepartmentExists(id.Value))
+			if (id == null || !_departmentService.Exists(id.Value))
 			{
 				return NotFound();
 			}

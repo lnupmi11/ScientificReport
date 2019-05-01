@@ -20,52 +20,52 @@ namespace ScientificReport.BLL.Services
 			_reportThesisRepository = new ReportThesisRepository(context);
 		}
 
-		public IEnumerable<Conference> GetAll()
+		public virtual IEnumerable<Conference> GetAll()
 		{
 			return _conferenceRepository.All();
 		}
 
-		public IEnumerable<Conference> GetAllWhere(Func<Conference, bool> predicate)
+		public virtual IEnumerable<Conference> GetAllWhere(Func<Conference, bool> predicate)
 		{
 			return GetAll().Where(predicate);
 		}
 
-		public Conference GetById(Guid id)
+		public virtual Conference GetById(Guid id)
 		{
 			return _conferenceRepository.Get(id);
 		}
 
-		public Conference Get(Func<Conference, bool> predicate)
+		public virtual Conference Get(Func<Conference, bool> predicate)
 		{
 			return _conferenceRepository.Get(predicate);
 		}
 
-		public void CreateItem(Conference conference)
+		public virtual void CreateItem(Conference conference)
 		{
 			_conferenceRepository.Create(conference);
 		}
 
-		public void UpdateItem(Conference conference)
+		public virtual void UpdateItem(Conference conference)
 		{
 			_conferenceRepository.Update(conference);
 		}
 
-		public void DeleteById(Guid id)
+		public virtual void DeleteById(Guid id)
 		{
 			_conferenceRepository.Delete(id);
 		}
 
-		public bool Exists(Guid id)
+		public virtual bool Exists(Guid id)
 		{
 			return _conferenceRepository.Get(id) != null;
 		}
 
-		public IEnumerable<ReportThesis> GetReportTheses(Guid id)
+		public virtual IEnumerable<ReportThesis> GetReportTheses(Guid id)
 		{
 			return _reportThesisRepository.AllWhere(t => t.Conference.Id.Equals(id));
 		}
 
-		public IEnumerable<UserProfile> GetParticipators(Guid id)
+		public virtual IEnumerable<UserProfile> GetParticipators(Guid id)
 		{
 			var theses = GetReportTheses(id).ToList();
 			IList<UserProfile> participators = new List<UserProfile>();

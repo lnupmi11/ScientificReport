@@ -20,27 +20,27 @@ namespace ScientificReport.BLL.Services
 			_userProfileRepository = new UserProfileRepository(context);
 		}
 
-		public IEnumerable<UserProfile> GetAll()
+		public virtual IEnumerable<UserProfile> GetAll()
 		{
 			return _userProfileRepository.All();
 		}
 
-		public IEnumerable<UserProfile> GetAllWhere(Func<UserProfile, bool> predicate)
+		public virtual IEnumerable<UserProfile> GetAllWhere(Func<UserProfile, bool> predicate)
 		{
 			return _userProfileRepository.AllWhere(predicate);
 		}
 
-		public UserProfile GetById(Guid id)
+		public virtual UserProfile GetById(Guid id)
 		{
 			return _userProfileRepository.Get(id);
 		}
 
-		public UserProfile Get(Func<UserProfile, bool> predicate)
+		public virtual UserProfile Get(Func<UserProfile, bool> predicate)
 		{
 			return _userProfileRepository.Get(predicate);
 		}
 
-		public void CreateItem(UserProfile item)
+		public virtual void CreateItem(UserProfile item)
 		{
 			if (item != null)
 			{
@@ -48,7 +48,7 @@ namespace ScientificReport.BLL.Services
 			}
 		}
 
-		public void UpdateItem(UserProfile item)
+		public virtual void UpdateItem(UserProfile item)
 		{
 			if (item != null)
 			{
@@ -56,12 +56,12 @@ namespace ScientificReport.BLL.Services
 			}
 		}
 
-		public void DeleteById(Guid id)
+		public virtual void DeleteById(Guid id)
 		{
 			_userProfileRepository.Delete(id);
 		}
 
-		public void SetApproved(Guid id, bool isApproved)
+		public virtual void SetApproved(Guid id, bool isApproved)
 		{
 			var user = _userProfileRepository.Get(id);
 			if (user == null) return;
@@ -69,27 +69,27 @@ namespace ScientificReport.BLL.Services
 			_userProfileRepository.Update(user);
 		}
 
-		public bool UserExists(Guid id)
+		public virtual bool UserExists(Guid id)
 		{
 			return _userProfileRepository.Get(id) != null;
 		}
 
-		public async Task<IdentityResult> AddToRoleAsync(UserProfile userProfile, string roleName, UserManager<UserProfile> userManager)
+		public virtual async Task<IdentityResult> AddToRoleAsync(UserProfile userProfile, string roleName, UserManager<UserProfile> userManager)
 		{
 			return await userManager.AddToRoleAsync(userProfile, roleName);
 		}
 
-		public async Task<IdentityResult> RemoveFromRoleAsync(UserProfile userProfile, string roleName, UserManager<UserProfile> userManager)
+		public virtual async Task<IdentityResult> RemoveFromRoleAsync(UserProfile userProfile, string roleName, UserManager<UserProfile> userManager)
 		{
 			return await userManager.RemoveFromRoleAsync(userProfile, roleName);
 		}
 
-		public async Task<bool> IsInRoleAsync(UserProfile user, string roleName, UserManager<UserProfile> userManager)
+		public virtual async Task<bool> IsInRoleAsync(UserProfile user, string roleName, UserManager<UserProfile> userManager)
 		{
 			return await userManager.IsInRoleAsync(user, roleName);
 		}
 
-		public ICollection<Publication> GetUserPublications(Guid id)
+		public virtual ICollection<Publication> GetUserPublications(Guid id)
 		{
 			var user = _userProfileRepository.Get(id);
 			ICollection<Publication> result = null;
@@ -101,7 +101,7 @@ namespace ScientificReport.BLL.Services
 			return result;
 		}
 
-		public ICollection<Grant> GetUserGrants(Guid id)
+		public virtual ICollection<Grant> GetUserGrants(Guid id)
 		{
 			var user = _userProfileRepository.Get(id);
 			ICollection<Grant> result = null;
@@ -113,7 +113,7 @@ namespace ScientificReport.BLL.Services
 			return result;
 		}
 
-		public ICollection<ScientificWork> GetUserScientificWorks(Guid id)
+		public virtual ICollection<ScientificWork> GetUserScientificWorks(Guid id)
 		{
 			var user = _userProfileRepository.Get(id);
 			ICollection<ScientificWork> result = null;
@@ -125,7 +125,7 @@ namespace ScientificReport.BLL.Services
 			return result;
 		}
 
-		public ICollection<Article> GetUserArticles(Guid id)
+		public virtual ICollection<Article> GetUserArticles(Guid id)
 		{
 			var user = _userProfileRepository.Get(id);
 			ICollection<Article> result = null;
@@ -137,7 +137,7 @@ namespace ScientificReport.BLL.Services
 			return result;
 		}
 
-		public ICollection<ReportThesis> GetUserReportTheses(Guid id)
+		public virtual ICollection<ReportThesis> GetUserReportTheses(Guid id)
 		{
 			var user = _userProfileRepository.Get(id);
 			ICollection<ReportThesis> result = null;
@@ -149,7 +149,7 @@ namespace ScientificReport.BLL.Services
 			return result;
 		}
 
-		public ICollection<ScientificInternship> GetUserScientificInternships(Guid id)
+		public virtual ICollection<ScientificInternship> GetUserScientificInternships(Guid id)
 		{
 			var user = _userProfileRepository.Get(id);
 			ICollection<ScientificInternship> result = null;
@@ -161,7 +161,7 @@ namespace ScientificReport.BLL.Services
 			return result;
 		}
 
-		public ICollection<Review> GetUserReviews(Guid id)
+		public virtual ICollection<Review> GetUserReviews(Guid id)
 		{
 			var user = _userProfileRepository.Get(id);
 			ICollection<Review> result = null;
@@ -173,7 +173,7 @@ namespace ScientificReport.BLL.Services
 			return result;
 		}
 
-		public ICollection<PatentLicenseActivity> GetUserPatentLicenseActivitiesAsAuthor(Guid id)
+		public virtual ICollection<PatentLicenseActivity> GetUserPatentLicenseActivitiesAsAuthor(Guid id)
 		{
 			var user = _userProfileRepository.Get(id);
 			ICollection<PatentLicenseActivity> result = null;
@@ -185,7 +185,7 @@ namespace ScientificReport.BLL.Services
 			return result;
 		}
 
-		public ICollection<PatentLicenseActivity> GetUserPatentLicenseActivitiesAsApplicant(Guid id)
+		public virtual ICollection<PatentLicenseActivity> GetUserPatentLicenseActivitiesAsApplicant(Guid id)
 		{
 			var user = _userProfileRepository.Get(id);
 			ICollection<PatentLicenseActivity> result = null;

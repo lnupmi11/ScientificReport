@@ -18,47 +18,47 @@ namespace ScientificReport.BLL.Services
 			_grantRepository = new GrantRepository(context);
 		}
 
-		public IEnumerable<Grant> GetAll()
+		public virtual IEnumerable<Grant> GetAll()
 		{
 			return _grantRepository.All();
 		}
 
-		public IEnumerable<Grant> GetAllWhere(Func<Grant, bool> predicate)
+		public virtual IEnumerable<Grant> GetAllWhere(Func<Grant, bool> predicate)
 		{
 			return GetAll().Where(predicate);
 		}
 
-		public Grant GetById(Guid id)
+		public virtual Grant GetById(Guid id)
 		{
 			return _grantRepository.Get(id);
 		}
 
-		public Grant Get(Func<Grant, bool> predicate)
+		public virtual Grant Get(Func<Grant, bool> predicate)
 		{
 			return _grantRepository.Get(predicate);
 		}
 
-		public void CreateItem(Grant grant)
+		public virtual void CreateItem(Grant grant)
 		{
 			_grantRepository.Create(grant);
 		}
 
-		public void UpdateItem(Grant grant)
+		public virtual void UpdateItem(Grant grant)
 		{
 			_grantRepository.Update(grant);
 		}
 
-		public void DeleteById(Guid id)
+		public virtual void DeleteById(Guid id)
 		{
 			_grantRepository.Delete(id);
 		}
 
-		public bool Exists(Guid id)
+		public virtual bool Exists(Guid id)
 		{
 			return _grantRepository.Get(id) != null;
 		}
 
-		public IEnumerable<UserProfile> GetUsers(Guid id)
+		public virtual IEnumerable<UserProfile> GetUsers(Guid id)
 		{
 			var grant = _grantRepository.Get(id);
 			IEnumerable<UserProfile> users = null;

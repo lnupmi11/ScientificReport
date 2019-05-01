@@ -20,52 +20,52 @@ namespace ScientificReport.BLL.Services
 			_userProfileRepository = new UserProfileRepository(context);
 		}
 
-		public IEnumerable<ScientificWork> GetAll()
+		public virtual IEnumerable<ScientificWork> GetAll()
 		{
 			return _scientificWorkRepository.All();
 		}
 
-		public IEnumerable<ScientificWork> GetAllWhere(Func<ScientificWork, bool> predicate)
+		public virtual IEnumerable<ScientificWork> GetAllWhere(Func<ScientificWork, bool> predicate)
 		{
 			return _scientificWorkRepository.AllWhere(predicate);
 		}
 
-		public ScientificWork GetById(Guid id)
+		public virtual ScientificWork GetById(Guid id)
 		{
 			return _scientificWorkRepository.Get(id);
 		}
 
-		public ScientificWork Get(Func<ScientificWork, bool> predicate)
+		public virtual ScientificWork Get(Func<ScientificWork, bool> predicate)
 		{
 			return _scientificWorkRepository.Get(predicate);
 		}
 
-		public void CreateItem(ScientificWork item)
+		public virtual void CreateItem(ScientificWork item)
 		{
 			_scientificWorkRepository.Create(item);
 		}
 
-		public void UpdateItem(ScientificWork item)
+		public virtual void UpdateItem(ScientificWork item)
 		{
 			_scientificWorkRepository.Update(item);
 		}
 
-		public void DeleteById(Guid id)
+		public virtual void DeleteById(Guid id)
 		{
 			_scientificWorkRepository.Delete(id);
 		}
 
-		public bool Any(Func<ScientificWork, bool> predicate)
+		public virtual bool Any(Func<ScientificWork, bool> predicate)
 		{
 			return _scientificWorkRepository.AllWhere(predicate).Any();
 		}
 
-		public bool Exists(Guid id)
+		public virtual bool Exists(Guid id)
 		{
 			return Any(r => r.Id == id);
 		}
 
-		public IEnumerable<UserProfile> GetAuthors(Guid id)
+		public virtual IEnumerable<UserProfile> GetAuthors(Guid id)
 		{
 			var scientificWork = _scientificWorkRepository.Get(id);
 			IEnumerable<UserProfile> authors = null;
@@ -77,7 +77,7 @@ namespace ScientificReport.BLL.Services
 			return authors;
 		}
 
-		public void AddAuthor(Guid id, Guid authorId)
+		public virtual void AddAuthor(Guid id, Guid authorId)
 		{
 			var scientificWork = _scientificWorkRepository.Get(id);
 			var author = _userProfileRepository.Get(authorId);
@@ -94,7 +94,7 @@ namespace ScientificReport.BLL.Services
 			_scientificWorkRepository.Update(scientificWork);
 		}
 
-		public void RemoveAuthor(Guid id, Guid authorId)
+		public virtual void RemoveAuthor(Guid id, Guid authorId)
 		{
 			var scientificWork = _scientificWorkRepository.Get(id);
 			if (scientificWork.UserProfilesScientificWorks.All(u => u.UserProfile.Id != authorId))

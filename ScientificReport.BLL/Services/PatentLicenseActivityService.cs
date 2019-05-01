@@ -18,47 +18,47 @@ namespace ScientificReport.BLL.Services
 			_patentLicenseActivityRepository = new PatentLicenseActivityRepository(context);
 		}
 
-		public IEnumerable<PatentLicenseActivity> GetAll()
+		public virtual IEnumerable<PatentLicenseActivity> GetAll()
 		{
 			return _patentLicenseActivityRepository.All();
 		}
 
-		public IEnumerable<PatentLicenseActivity> GetAllWhere(Func<PatentLicenseActivity, bool> predicate)
+		public virtual IEnumerable<PatentLicenseActivity> GetAllWhere(Func<PatentLicenseActivity, bool> predicate)
 		{
 			return GetAll().Where(predicate);
 		}
 
-		public PatentLicenseActivity GetById(Guid id)
+		public virtual PatentLicenseActivity GetById(Guid id)
 		{
 			return _patentLicenseActivityRepository.Get(id);
 		}
 
-		public PatentLicenseActivity Get(Func<PatentLicenseActivity, bool> predicate)
+		public virtual PatentLicenseActivity Get(Func<PatentLicenseActivity, bool> predicate)
 		{
 			return _patentLicenseActivityRepository.Get(predicate);
 		}
 
-		public void CreateItem(PatentLicenseActivity patentLicenseActivity)
+		public virtual void CreateItem(PatentLicenseActivity patentLicenseActivity)
 		{
 			_patentLicenseActivityRepository.Create(patentLicenseActivity);
 		}
 
-		public void UpdateItem(PatentLicenseActivity patentLicenseActivity)
+		public virtual void UpdateItem(PatentLicenseActivity patentLicenseActivity)
 		{
 			_patentLicenseActivityRepository.Update(patentLicenseActivity);
 		}
 
-		public void DeleteById(Guid id)
+		public virtual void DeleteById(Guid id)
 		{
 			_patentLicenseActivityRepository.Delete(id);
 		}
 
-		public bool Exists(Guid id)
+		public virtual bool Exists(Guid id)
 		{
 			return _patentLicenseActivityRepository.Get(id) != null;
 		}
 
-		public IEnumerable<UserProfile> GetAuthors(Guid id)
+		public virtual IEnumerable<UserProfile> GetAuthors(Guid id)
 		{
 			var patentLicenseActivity = _patentLicenseActivityRepository.Get(id);
 			IEnumerable<UserProfile> authors = null;
@@ -70,7 +70,7 @@ namespace ScientificReport.BLL.Services
 			return authors;
 		}
 
-		public IEnumerable<UserProfile> GetApplicants(Guid id)
+		public virtual IEnumerable<UserProfile> GetApplicants(Guid id)
 		{
 			var patentLicenseActivity = _patentLicenseActivityRepository.Get(id);
 			IEnumerable<UserProfile> applicants = null;
@@ -82,7 +82,7 @@ namespace ScientificReport.BLL.Services
 			return applicants;
 		}
 		
-		public IEnumerable<string> GetCoauthors(Guid id)
+		public virtual IEnumerable<string> GetCoauthors(Guid id)
 		{
 			var patentLicenseActivity = _patentLicenseActivityRepository.Get(id);
 			IEnumerable<string> coauthors = null;
@@ -94,7 +94,7 @@ namespace ScientificReport.BLL.Services
 			return coauthors;
 		}
 
-		public IEnumerable<string> GetCoApplicants(Guid id)
+		public virtual IEnumerable<string> GetCoApplicants(Guid id)
 		{
 			var patentLicenseActivity = _patentLicenseActivityRepository.Get(id);
 			IEnumerable<string> coApplicants = null;

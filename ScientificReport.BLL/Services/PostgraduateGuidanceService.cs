@@ -17,42 +17,42 @@ namespace ScientificReport.BLL.Services
 			_postgraduateGuidanceRepository = new PostgraduateGuidanceRepository(context);
 		}
 
-		public IEnumerable<PostgraduateGuidance> GetAll()
+		public virtual IEnumerable<PostgraduateGuidance> GetAll()
 		{
 			return _postgraduateGuidanceRepository.All();
 		}
 
-		public IEnumerable<PostgraduateGuidance> GetAllWhere(Func<PostgraduateGuidance, bool> predicate)
+		public virtual IEnumerable<PostgraduateGuidance> GetAllWhere(Func<PostgraduateGuidance, bool> predicate)
 		{
 			return GetAll().Where(predicate);
 		}
 
-		public PostgraduateGuidance GetById(Guid id)
+		public virtual PostgraduateGuidance GetById(Guid id)
 		{
 			return _postgraduateGuidanceRepository.Get(id);
 		}
 
-		public PostgraduateGuidance Get(Func<PostgraduateGuidance, bool> predicate)
+		public virtual PostgraduateGuidance Get(Func<PostgraduateGuidance, bool> predicate)
 		{
 			return _postgraduateGuidanceRepository.Get(predicate);
 		}
 
-		public void CreateItem(PostgraduateGuidance postgraduateGuidance)
+		public virtual void CreateItem(PostgraduateGuidance postgraduateGuidance)
 		{
 			_postgraduateGuidanceRepository.Create(postgraduateGuidance);
 		}
 
-		public void UpdateItem(PostgraduateGuidance postgraduateGuidance)
+		public virtual void UpdateItem(PostgraduateGuidance postgraduateGuidance)
 		{
 			_postgraduateGuidanceRepository.Update(postgraduateGuidance);
 		}
 
-		public void DeleteById(Guid id)
+		public virtual void DeleteById(Guid id)
 		{
 			_postgraduateGuidanceRepository.Delete(id);
 		}
 
-		public bool Exists(Guid id)
+		public virtual bool Exists(Guid id)
 		{
 			return _postgraduateGuidanceRepository.Get(id) != null;
 		}
