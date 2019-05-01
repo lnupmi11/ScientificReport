@@ -25,6 +25,10 @@ namespace ScientificReport.DAL.Entities
 		
 		public virtual ICollection<AuthorsPatentLicenseActivities> AuthorsPatentLicenseActivities { get; set; }
 		
+		public virtual ICollection<string> CoauthorsPatentLicenseActivities { get; set; }
+		
 		public virtual ICollection<ApplicantsPatentLicenseActivities> ApplicantsPatentLicenseActivities { get; set; }
+		
+		public virtual ICollection<string> CoApplicantsPatentLicenseActivities { get; set; }
 	}
 }

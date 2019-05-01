@@ -10,7 +10,7 @@ namespace ScientificReport.DAL.Entities
 		
 		public virtual UserProfile.UserProfile Guide { get; set; }
 
-		public string Name { get; set; }
+		public string CandidateName { get; set; }
 		
 		public string DissertationTitle { get; set; }
 	}
