@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using ScientificReport.DAL.DbContext;
-using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Entities.Reports;
 using ScientificReport.DAL.Interfaces;
 
@@ -18,43 +17,44 @@ namespace ScientificReport.DAL.Repositories
 			_context = context;
 		}
 		
-		public IEnumerable<DepartmentReport> All()
+		public virtual IEnumerable<DepartmentReport> All()
 		{
 			return _context.DepartmentReports
 						.Include(b => b.TeacherReports)
 						.Include(c => c.Conferences);
 		}
 
-		public IEnumerable<DepartmentReport> AllWhere(Func<DepartmentReport, bool> predicate)
+		public virtual IEnumerable<DepartmentReport> AllWhere(Func<DepartmentReport, bool> predicate)
 		{
 			return All().Where(predicate);
 		}
 
-		public DepartmentReport Get(Guid id)
+		public virtual DepartmentReport Get(Guid id)
 		{
 			return All().FirstOrDefault(u => u.Id == id);
 		}
 
-		public DepartmentReport Get(Func<DepartmentReport, bool> predicate)
+		public virtual DepartmentReport Get(Func<DepartmentReport, bool> predicate)
 		{
 			return All().Where(predicate).FirstOrDefault();
 		}
 
-		public void Create(DepartmentReport item)
+		public virtual void Create(DepartmentReport item)
 		{
 			_context.DepartmentReports.Add(item);
 			_context.SaveChanges();
 		}
 
-		public void Update(DepartmentReport item)
-		{if (item != null)
+		public virtual void Update(DepartmentReport item)
+		{
+			if (item != null)
 			{
 				_context.DepartmentReports.Update(item);
 				_context.SaveChanges();
 			}
 		}
 
-		public void Delete(Guid id)
+		public virtual void Delete(Guid id)
 		{
 			var user = _context.DepartmentReports.Find(id);
 			if (user != null)
@@ -64,7 +64,7 @@ namespace ScientificReport.DAL.Repositories
 			}
 		}
 
-		public IQueryable<DepartmentReport> GetQuery()
+		public virtual IQueryable<DepartmentReport> GetQuery()
 		{
 			return _context.DepartmentReports;
 		}

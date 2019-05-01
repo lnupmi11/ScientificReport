@@ -1,0 +1,112 @@
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using Moq;
+using ScientificReport.DAL.DbContext;
+using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Repositories;
+using Xunit;
+
+namespace ScientificReport.Test.RepositoriesTests
+{
+	public class {{ entity }}RepositoryTests
+	{
+		private static IEnumerable<{{ entity }}> GetTestData()
+		{
+			return new[]
+			{
+				TestData.{{ entity }}1,
+				TestData.{{ entity }}2,
+				TestData.{{ entity }}3
+			};
+		}
+
+		private static Mock<ScientificReportDbContext> GetMockContext()
+        {
+        	var mockContext = new Mock<ScientificReportDbContext>();
+        	mockContext.Setup(item => item.{{ entity }}s).Returns(
+        		MockProvider.GetMockSet(GetTestData()).Object
+        	);
+        	return mockContext;
+        }
+
+		[Fact]
+		public void AllTest()
+		{
+			var repository = new Mock<{{ entity }}Repository>(GetMockContext().Object);
+
+			repository.Setup(a => a.All());
+			repository.Object.All();
+			repository.Verify(a => a.All());
+		}
+
+		[Fact]
+		public void AllWhereTest()
+		{
+			var repository = new {{ entity }}Repository(GetMockContext().Object);
+
+			var actual = repository.AllWhere(x => x.Id.Equals(TestData.{{ entity }}1.Id));
+			Assert.Single(actual);
+		}
+
+		[Fact]
+		public void GetByIdTest()
+		{
+			var repository = new Mock<{{ entity }}Repository>(GetMockContext().Object);
+
+			var {{ entity_name }} = GetTestData().First();
+			repository.Object.Create({{ entity_name }});
+
+			repository.Setup(item => item.Get({{ entity_name }}.Id));
+			repository.Object.Get({{ entity_name }}.Id);
+			repository.Verify(item => item.Get({{ entity_name }}.Id));
+		}
+
+		[Fact]
+		public void CreateTest()
+		{
+			var repository = new Mock<{{ entity }}Repository>(GetMockContext().Object);
+
+			var {{ entity_name }} = GetTestData().First();
+			repository.Setup(it => it.Create({{ entity_name }}));
+			repository.Object.Create({{ entity_name }});
+			repository.Verify(it => it.Create({{ entity_name }}), Times.Once);
+		}
+
+		[Fact]
+		public void UpdateTest()
+		{
+			var mockDbSet = new Mock<DbSet<{{ entity }}>>();
+			var mockContext = new Mock<ScientificReportDbContext>();
+
+			mockContext.Setup(item => item.{{ entity }}s).Returns(mockDbSet.Object);
+
+			var repository = new Mock<{{ entity }}Repository>(mockContext.Object);
+
+			var {{ entity_name }} = GetTestData().First();
+
+			repository.Object.Create({{ entity_name }});
+
+			repository.Setup(a => a.Update({{ entity_name }}));
+			repository.Object.Update({{ entity_name }});
+			repository.Verify(a => a.Update({{ entity_name }}));
+		}
+
+		[Fact]
+		public void DeleteTest()
+		{
+			var mockDbSet = new Mock<DbSet<{{ entity }}>>();
+			var mockContext = new Mock<ScientificReportDbContext>();
+
+			mockContext.Setup(item => item.{{ entity }}s).Returns(mockDbSet.Object);
+
+			var repository = new Mock<{{ entity }}Repository>(mockContext.Object);
+
+			var {{ entity_name }} = GetTestData().First();
+
+			repository.Setup(x => x.Delete({{ entity_name }}.Id));
+			repository.Object.Delete({{ entity_name }}.Id);
+			repository.Verify(i => i.Delete({{ entity_name }}.Id));
+		}
+	}
+}

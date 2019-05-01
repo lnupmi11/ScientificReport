@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Interfaces;
@@ -17,53 +16,54 @@ namespace ScientificReport.DAL.Repositories
 			_context = context;
 		}
 		
-		public IEnumerable<Membership> All()
+		public virtual IEnumerable<Membership> All()
 		{
-			return _context.Membership;
+			return _context.Memberships;
 		}
 
-		public IEnumerable<Membership> AllWhere(Func<Membership, bool> predicate)
+		public virtual IEnumerable<Membership> AllWhere(Func<Membership, bool> predicate)
 		{
 			return All().Where(predicate);
 		}
 
-		public Membership Get(Guid id)
+		public virtual Membership Get(Guid id)
 		{
 			return All().FirstOrDefault(u => u.Id == id);
 		}
 
-		public Membership Get(Func<Membership, bool> predicate)
+		public virtual Membership Get(Func<Membership, bool> predicate)
 		{
 			return All().Where(predicate).FirstOrDefault();
 		}
 
-		public void Create(Membership item)
+		public virtual void Create(Membership item)
 		{
-			_context.Membership.Add(item);
+			_context.Memberships.Add(item);
 			_context.SaveChanges();
 		}
 
-		public void Update(Membership item)
-		{if (item != null)
+		public virtual void Update(Membership item)
+		{
+			if (item != null)
 			{
-				_context.Membership.Update(item);
+				_context.Memberships.Update(item);
 				_context.SaveChanges();
 			}
 		}
 
-		public void Delete(Guid id)
+		public virtual void Delete(Guid id)
 		{
-			var user = _context.Membership.Find(id);
+			var user = _context.Memberships.Find(id);
 			if (user != null)
 			{
-				_context.Membership.Remove(user);
+				_context.Memberships.Remove(user);
 				_context.SaveChanges();
 			}
 		}
 
-		public IQueryable<Membership> GetQuery()
+		public virtual IQueryable<Membership> GetQuery()
 		{
-			return _context.Membership;
+			return _context.Memberships;
 		}
 	}
 }

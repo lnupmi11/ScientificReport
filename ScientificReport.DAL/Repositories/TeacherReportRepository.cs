@@ -17,7 +17,7 @@ namespace ScientificReport.DAL.Repositories
 			_context = context;
 		}
 		
-		public IEnumerable<TeacherReport> All()
+		public virtual IEnumerable<TeacherReport> All()
 		{
 			return _context.TeacherReports
 						.Include(r => r.Teacher)
@@ -34,35 +34,35 @@ namespace ScientificReport.DAL.Repositories
 						.Include(p=>p.Patents);
 		}
 
-		public IEnumerable<TeacherReport> AllWhere(Func<TeacherReport, bool> predicate)
+		public virtual IEnumerable<TeacherReport> AllWhere(Func<TeacherReport, bool> predicate)
 		{
 			return All().Where(predicate);
 		}
 
-		public TeacherReport Get(Guid id)
+		public virtual TeacherReport Get(Guid id)
 		{
 			return All().FirstOrDefault(u => u.Id == id);
 		}
 
-		public TeacherReport Get(Func<TeacherReport, bool> predicate)
+		public virtual TeacherReport Get(Func<TeacherReport, bool> predicate)
 		{
 			return All().Where(predicate).FirstOrDefault();
 		}
 
-		public void Create(TeacherReport item)
+		public virtual void Create(TeacherReport item)
 		{
 			_context.TeacherReports.Add(item);
 			_context.SaveChanges();
 		}
 
-		public void Update(TeacherReport item)
+		public virtual void Update(TeacherReport item)
 		{
 			if (item == null) return;
 			_context.TeacherReports.Update(item);
 			_context.SaveChanges();
 		}
 
-		public void Delete(Guid id)
+		public virtual void Delete(Guid id)
 		{
 			var report = _context.TeacherReports.Find(id);
 			if (report == null) return;
@@ -70,7 +70,7 @@ namespace ScientificReport.DAL.Repositories
 			_context.SaveChanges();
 		}
 
-		public IQueryable<TeacherReport> GetQuery()
+		public virtual IQueryable<TeacherReport> GetQuery()
 		{
 			return _context.TeacherReports;
 		}

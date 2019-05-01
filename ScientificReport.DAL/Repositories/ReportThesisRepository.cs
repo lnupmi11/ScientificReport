@@ -17,41 +17,42 @@ namespace ScientificReport.DAL.Repositories
 			_context = context;
 		}
 		
-		public IEnumerable<ReportThesis> All()
+		public virtual IEnumerable<ReportThesis> All()
 		{
 			return _context.ReportTheses.Include(b => b.UserProfilesReportTheses);
 		}
 
-		public IEnumerable<ReportThesis> AllWhere(Func<ReportThesis, bool> predicate)
+		public virtual IEnumerable<ReportThesis> AllWhere(Func<ReportThesis, bool> predicate)
 		{
 			return All().Where(predicate);
 		}
 
-		public ReportThesis Get(Guid id)
+		public virtual ReportThesis Get(Guid id)
 		{
 			return All().FirstOrDefault(u => u.Id == id);
 		}
 
-		public ReportThesis Get(Func<ReportThesis, bool> predicate)
+		public virtual ReportThesis Get(Func<ReportThesis, bool> predicate)
 		{
 			return All().Where(predicate).FirstOrDefault();
 		}
 
-		public void Create(ReportThesis item)
+		public virtual void Create(ReportThesis item)
 		{
 			_context.ReportTheses.Add(item);
 			_context.SaveChanges();
 		}
 
-		public void Update(ReportThesis item)
-		{if (item != null)
+		public virtual void Update(ReportThesis item)
+		{
+			if (item != null)
 			{
 				_context.ReportTheses.Update(item);
 				_context.SaveChanges();
 			}
 		}
 
-		public void Delete(Guid id)
+		public virtual void Delete(Guid id)
 		{
 			var user = _context.ReportTheses.Find(id);
 			if (user != null)
@@ -61,7 +62,7 @@ namespace ScientificReport.DAL.Repositories
 			}
 		}
 
-		public IQueryable<ReportThesis> GetQuery()
+		public virtual IQueryable<ReportThesis> GetQuery()
 		{
 			return _context.ReportTheses;
 		}

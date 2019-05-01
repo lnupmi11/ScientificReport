@@ -17,7 +17,7 @@ namespace ScientificReport.DAL.Repositories
 			_context = context;
 		}
 		
-		public IEnumerable<Department> All()
+		public virtual IEnumerable<Department> All()
 		{
 			return _context.Departments
 				.Include(b => b.ScientificWorks)
@@ -25,28 +25,28 @@ namespace ScientificReport.DAL.Repositories
 				.Include(h => h.Head);
 		}
 
-		public IEnumerable<Department> AllWhere(Func<Department, bool> predicate)
+		public virtual IEnumerable<Department> AllWhere(Func<Department, bool> predicate)
 		{
 			return All().Where(predicate);
 		}
 
-		public Department Get(Guid id)
+		public virtual Department Get(Guid id)
 		{
 			return All().FirstOrDefault(u => u.Id == id);
 		}
 
-		public Department Get(Func<Department, bool> predicate)
+		public virtual Department Get(Func<Department, bool> predicate)
 		{
 			return All().Where(predicate).FirstOrDefault();
 		}
 
-		public void Create(Department item)
+		public virtual void Create(Department item)
 		{
 			_context.Departments.Add(item);
 			_context.SaveChanges();
 		}
 
-		public void Update(Department item)
+		public virtual void Update(Department item)
 		{
 			if (item != null)
 			{
@@ -55,7 +55,7 @@ namespace ScientificReport.DAL.Repositories
 			}
 		}
 
-		public void Delete(Guid id)
+		public virtual void Delete(Guid id)
 		{
 			var user = _context.Departments.Find(id);
 			if (user != null)
@@ -65,10 +65,9 @@ namespace ScientificReport.DAL.Repositories
 			}
 		}
 
-		public IQueryable<Department> GetQuery()
+		public virtual IQueryable<Department> GetQuery()
 		{
 			return _context.Departments;
 		}
 	}
 }
-
