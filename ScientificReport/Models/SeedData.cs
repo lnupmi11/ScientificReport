@@ -36,7 +36,10 @@ namespace ScientificReport.Models
       await SeedUserRoles(serviceProvider.GetRequiredService<RoleManager<UserProfileRole>>(), logger);
 			SeedUserProfile(context);
 			SeedTeacherReports(context);
-			SeedScientificWorks(context);			
+			SeedScientificWorks(context);	
+			SeedConference(context);
+			SeedPublications(context);
+			SeedArticle(context);
 			context.SaveChanges();
 		}
 
@@ -74,6 +77,94 @@ namespace ScientificReport.Models
 			);
 			context.SaveChanges();
 		}
+		private static void SeedConference(ScientificReportDbContext context)
+		{
+			if (context.Conferences.Any()) return;
+	
+			context.Conferences.AddRange(
+				new Conference
+				{
+					Topic = "Best topic ever",
+					Date = DateTime.Now
+				}
+			);
+			context.SaveChanges();
+		}
+		
+		private static void SeedArticle(ScientificReportDbContext context)
+		{
+			if (context.Articles.Any()) return;
+
+			
+			context.Articles.AddRange(
+				new Article
+				{
+					Title = "my first Article",
+					Type = Article.Types.ImpactFactor,
+					PublishingPlace = "LNU",
+					PublishingHouseName = "Lnu oreo",
+					PublishingYear = 2019,
+					PagesAmount = 250,
+					IsPrintCanceled = true,
+					IsRecommendedToPrint = false,
+					LiabilityInfo = "some txt",
+					DocumentInfo = "doc txt"
+				},
+				new Article
+				{
+					Title = "my second Article",
+					Type = Article.Types.ForeignPublishing,
+					PublishingPlace = "my second publishing place",
+					PublishingHouseName = "Lnu new oreo",
+					PublishingYear = 2009,
+					PagesAmount = 1000,
+					IsPrintCanceled = false,
+					IsRecommendedToPrint = true,
+					LiabilityInfo = "some txt 2",
+					DocumentInfo = "doc txt 2"
+				}
+			);
+			context.SaveChanges();
+		}
+		
+		private static void SeedPublications(ScientificReportDbContext context)
+		{
+			if (context.Publications.Any()) return;
+
+			
+			context.Publications.AddRange(
+				new Publication
+				{
+					Type = Publication.Types.Monograph,
+					Title = "my first publication",
+					PublishingPlace = "my first publishing place",
+					Specification = "some first specification",
+					PublishingHouseName = "new oreo",
+					PublishingYear = 1999,
+					PagesAmount = 200,
+					IsPrintCanceled = true,
+					IsRecommendedToPrint = false,
+					CreatedAt = DateTime.Today,
+					LastEditAt = DateTime.Now
+				},
+				new Publication
+				{
+					Type = Publication.Types.TextBook,
+					Title = "my second publication",
+					PublishingPlace = "my second publishing place",
+					Specification = "some second specification",
+					PublishingHouseName = "new oreo",
+					PublishingYear = 2999,
+					PagesAmount = 300,
+					IsPrintCanceled = false,
+					IsRecommendedToPrint = true,
+					CreatedAt = DateTime.Today,
+					LastEditAt = DateTime.Now
+				}
+			);
+			context.SaveChanges();
+		}
+
 		
 		private static void SeedScientificWorks(ScientificReportDbContext context)
 		{
