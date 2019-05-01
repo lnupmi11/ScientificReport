@@ -16,40 +16,40 @@ namespace ScientificReport.DAL.Repositories
 			_context = context;
 		}
 
-		public IEnumerable<TeacherReportsScientificWorks> All()
+		public virtual IEnumerable<TeacherReportsScientificWorks> All()
 		{
 			return _context.TeacherReportsScientificWorks;
 		}
 
-		public IEnumerable<TeacherReportsScientificWorks> AllWhere(Func<TeacherReportsScientificWorks, bool> predicate)
+		public virtual IEnumerable<TeacherReportsScientificWorks> AllWhere(Func<TeacherReportsScientificWorks, bool> predicate)
 		{
 			return All().Where(predicate);
 		}
 
-		public TeacherReportsScientificWorks Get(Guid id)
+		public virtual TeacherReportsScientificWorks Get(Guid id)
 		{
 			return All().FirstOrDefault(u => u.Id == id);
 		}
 
-		public TeacherReportsScientificWorks Get(Func<TeacherReportsScientificWorks, bool> predicate)
+		public virtual TeacherReportsScientificWorks Get(Func<TeacherReportsScientificWorks, bool> predicate)
 		{
 			return All().Where(predicate).FirstOrDefault();
 		}
 
-		public void Create(TeacherReportsScientificWorks item)
+		public virtual void Create(TeacherReportsScientificWorks item)
 		{
 			_context.TeacherReportsScientificWorks.Add(item);
 			_context.SaveChanges();
 		}
 
-		public void Update(TeacherReportsScientificWorks item)
+		public virtual void Update(TeacherReportsScientificWorks item)
 		{
 			if (item == null) return;
 			_context.TeacherReportsScientificWorks.Update(item);
 			_context.SaveChanges();
 		}
 
-		public void Delete(Guid id)
+		public virtual void Delete(Guid id)
 		{
 			var item = _context.TeacherReportsScientificWorks.Find(id);
 			if (item == null) return;
@@ -57,7 +57,7 @@ namespace ScientificReport.DAL.Repositories
 			_context.SaveChanges();
 		}
 
-		public IQueryable<TeacherReportsScientificWorks> GetQuery()
+		public virtual IQueryable<TeacherReportsScientificWorks> GetQuery()
 		{
 			return _context.TeacherReportsScientificWorks;
 		}

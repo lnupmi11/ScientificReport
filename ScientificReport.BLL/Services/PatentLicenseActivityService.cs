@@ -81,5 +81,29 @@ namespace ScientificReport.BLL.Services
 
 			return applicants;
 		}
+		
+		public IEnumerable<string> GetCoauthors(Guid id)
+		{
+			var patentLicenseActivity = _patentLicenseActivityRepository.Get(id);
+			IEnumerable<string> coauthors = null;
+			if (patentLicenseActivity != null)
+			{
+				coauthors = patentLicenseActivity.CoauthorsPatentLicenseActivities.Select(u => u.Coauthor);
+			}
+
+			return coauthors;
+		}
+
+		public IEnumerable<string> GetCoApplicants(Guid id)
+		{
+			var patentLicenseActivity = _patentLicenseActivityRepository.Get(id);
+			IEnumerable<string> coApplicants = null;
+			if (patentLicenseActivity != null)
+			{
+				coApplicants = patentLicenseActivity.CoApplicantsPatentLicenseActivities.Select(u => u.CoApplicant);
+			}
+
+			return coApplicants;
+		}
 	}
 }

@@ -12,6 +12,7 @@ namespace ScientificReport.DAL.Entities
 		public virtual UserProfile.UserProfile Author { get; set; }
 		
 		public int PatentLicenseActivityId { get; set; }
+		
 		public virtual PatentLicenseActivity PatentLicenseActivity { get; set; }
 	}
 }

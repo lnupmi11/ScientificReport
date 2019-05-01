@@ -17,34 +17,34 @@ namespace ScientificReport.DAL.Repositories
 			_context = context;
 		}
 		
-		public IEnumerable<Grant> All()
+		public virtual IEnumerable<Grant> All()
 		{
 			return _context.Grants
 						.Include(b => b.UserProfilesGrants);
 		}
 
-		public IEnumerable<Grant> AllWhere(Func<Grant, bool> predicate)
+		public virtual IEnumerable<Grant> AllWhere(Func<Grant, bool> predicate)
 		{
 			return All().Where(predicate);
 		}
 
-		public Grant Get(Guid id)
+		public virtual Grant Get(Guid id)
 		{
 			return All().FirstOrDefault(u => u.Id == id);
 		}
 
-		public Grant Get(Func<Grant, bool> predicate)
+		public virtual Grant Get(Func<Grant, bool> predicate)
 		{
 			return All().Where(predicate).FirstOrDefault();
 		}
 
-		public void Create(Grant item)
+		public virtual void Create(Grant item)
 		{
 			_context.Grants.Add(item);
 			_context.SaveChanges();
 		}
 
-		public void Update(Grant item)
+		public virtual void Update(Grant item)
 		{if (item != null)
 			{
 				_context.Grants.Update(item);
@@ -52,7 +52,7 @@ namespace ScientificReport.DAL.Repositories
 			}
 		}
 
-		public void Delete(Guid id)
+		public virtual void Delete(Guid id)
 		{
 			var user = _context.Grants.Find(id);
 			if (user != null)
@@ -62,7 +62,7 @@ namespace ScientificReport.DAL.Repositories
 			}
 		}
 
-		public IQueryable<Grant> GetQuery()
+		public virtual IQueryable<Grant> GetQuery()
 		{
 			return _context.Grants;
 		}
