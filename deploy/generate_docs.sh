@@ -69,7 +69,7 @@ git checkout -- _config.yml || true
 ################################################################################
 ##### Generate the Doxygen code documentation and log the output.          #####
 echo 'Generating Doxygen code documentation...'
-cat "$DOXYFILE" | sed -e '/INPUT /s/ = .*/ = ..\/..\/'"${GH_REPO_NAME}"'/' > Doxyfile
+cat "$DOXYFILE" | sed -e '/INPUT /s/ = .*/ = ..\/../' > Doxyfile
 # Redirect both stderr and stdout to the log file AND the console.
 doxygen 2>&1 > doxygen.log
 
@@ -82,7 +82,7 @@ cp -v "$TRAVIS_BUILD_DIR/"*.md ./ || true
 # Check this by verifying that the html directory and the file html/index.html
 # both exist. This is a good indication that Doxygen did it's work.
 
-if [ -d "docs/html" ] && [ -f "docs/html/index.html" ]; then
+if [[ -d "docs/html" ]] && [[ -f "docs/html/index.html" ]]; then
     echo 'Uploading documentation to the gh-pages branch...'
     # Add everything in this directory (the Doxygen code documentation) to the
     # gh-pages branch.

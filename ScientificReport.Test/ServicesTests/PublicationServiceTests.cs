@@ -76,8 +76,7 @@ namespace ScientificReport.Test.ServicesTests
 			};
 		}
 
-		[Fact]
-		public void GetAllTest()
+		private static Mock<ScientificReportDbContext> GetMockContext()
 		{
 			var list = GetTestData().AsQueryable();
 			var mockSet = new Mock<DbSet<Publication>>();
@@ -85,10 +84,18 @@ namespace ScientificReport.Test.ServicesTests
 			mockSet.As<IQueryable<Publication>>().Setup(m => m.Expression).Returns(list.Expression);
 			mockSet.As<IQueryable<Publication>>().Setup(m => m.ElementType).Returns(list.ElementType);
 			mockSet.As<IQueryable<Publication>>().Setup(m => m.GetEnumerator()).Returns(list.GetEnumerator());
-
 			var mockContext = new Mock<ScientificReportDbContext>();
 			mockContext.Setup(item => item.Publications).Returns(mockSet.Object);
 
+			return mockContext;
+		}
+
+
+		[Fact]
+		public void GetAllTest()
+		{
+			var list = GetTestData().AsQueryable();
+			var mockContext = GetMockContext();
 			var service = new PublicationService(mockContext.Object);
 
 			var actual = service.GetAll();
@@ -99,16 +106,7 @@ namespace ScientificReport.Test.ServicesTests
 		[Fact]
 		public void GetAllWhereTest()
 		{
-			var list = GetTestData().AsQueryable();
-			var mockSet = new Mock<DbSet<Publication>>();
-			mockSet.As<IQueryable<Publication>>().Setup(m => m.Provider).Returns(list.Provider);
-			mockSet.As<IQueryable<Publication>>().Setup(m => m.Expression).Returns(list.Expression);
-			mockSet.As<IQueryable<Publication>>().Setup(m => m.ElementType).Returns(list.ElementType);
-			mockSet.As<IQueryable<Publication>>().Setup(m => m.GetEnumerator()).Returns(list.GetEnumerator());
-
-			var mockContext = new Mock<ScientificReportDbContext>();
-			mockContext.Setup(item => item.Publications).Returns(mockSet.Object);
-
+			var mockContext = GetMockContext();
 			var service = new PublicationService(mockContext.Object);
 
 			var actual = service.GetAllWhere(u => u.PublishingYear == 2007);
@@ -119,22 +117,13 @@ namespace ScientificReport.Test.ServicesTests
 		[Fact]
 		public void GetByIdTest()
 		{
-			var list = GetTestData().AsQueryable();
-			var mockSet = new Mock<DbSet<Publication>>();
-			mockSet.As<IQueryable<Publication>>().Setup(m => m.Provider).Returns(list.Provider);
-			mockSet.As<IQueryable<Publication>>().Setup(m => m.Expression).Returns(list.Expression);
-			mockSet.As<IQueryable<Publication>>().Setup(m => m.ElementType).Returns(list.ElementType);
-			mockSet.As<IQueryable<Publication>>().Setup(m => m.GetEnumerator()).Returns(list.GetEnumerator());
-
-			var mockContext = new Mock<ScientificReportDbContext>();
-			mockContext.Setup(item => item.Publications).Returns(mockSet.Object);
-
+			var mockContext = GetMockContext();
 			var expected = GetTestData().First();
-			
+
 			var service = new Mock<PublicationService>(mockContext.Object);
-			
+
 			service.Object.CreateItem(GetTestUser(), expected);
-			
+
 			service.Setup(item => item.GetById(expected.Id));
 			service.Object.GetById(expected.Id);
 			service.Verify(item => item.GetById(expected.Id));
@@ -143,16 +132,7 @@ namespace ScientificReport.Test.ServicesTests
 		[Fact]
 		public void CreateItemTest()
 		{
-			var list = GetTestData().AsQueryable();
-			var mockSet = new Mock<DbSet<Publication>>();
-			mockSet.As<IQueryable<Publication>>().Setup(m => m.Provider).Returns(list.Provider);
-			mockSet.As<IQueryable<Publication>>().Setup(m => m.Expression).Returns(list.Expression);
-			mockSet.As<IQueryable<Publication>>().Setup(m => m.ElementType).Returns(list.ElementType);
-			mockSet.As<IQueryable<Publication>>().Setup(m => m.GetEnumerator()).Returns(list.GetEnumerator());
-
-			var mockContext = new Mock<ScientificReportDbContext>();
-			mockContext.Setup(item => item.Publications).Returns(mockSet.Object);
-
+			var mockContext = GetMockContext();
 			var service = new Mock<PublicationService>(mockContext.Object);
 
 			var expectedPublication = new Publication
@@ -169,7 +149,7 @@ namespace ScientificReport.Test.ServicesTests
 				IsRecommendedToPrint = true
 			};
 			var user = GetTestUser();
-			
+
 			service.Setup(it => it.CreateItem(user, expectedPublication));
 			service.Object.CreateItem(user, expectedPublication);
 			service.Verify(it => it.CreateItem(user, expectedPublication), Times.Once);
@@ -188,10 +168,10 @@ namespace ScientificReport.Test.ServicesTests
 			var publication = GetTestData().First();
 
 			var user = GetTestUser();
-			
+
 			service.CreateItem(user, publication);
 			service.UpdateItem(user, publication);
-			
+
 			mockDbSet.Verify(m => m.Update(It.IsAny<Publication>()), Times.Once());
 		}
 
@@ -206,7 +186,7 @@ namespace ScientificReport.Test.ServicesTests
 			var service = new Mock<PublicationService>(mockContext.Object);
 
 			var publication = GetTestData().First();
-			
+
 			service.Setup(x => x.DeleteById(publication.Id));
 			service.Object.DeleteById(publication.Id);
 
@@ -225,7 +205,7 @@ namespace ScientificReport.Test.ServicesTests
 
 			var publication = GetTestData().First();
 			service.Object.CreateItem(GetTestUser(), publication);
-			
+
 			service.Setup(a => a.PublicationExists(publication.Id));
 			service.Object.PublicationExists(publication.Id);
 			service.Verify(a => a.PublicationExists(publication.Id));

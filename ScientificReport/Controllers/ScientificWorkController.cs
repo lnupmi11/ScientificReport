@@ -3,6 +3,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ScientificReport.BLL.Interfaces;
+using ScientificReport.Controllers.Utils;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DTO.Models.ScientificWorks;
 
@@ -156,10 +157,7 @@ namespace ScientificReport.Controllers
 		public IActionResult AddAuthor(Guid id, [FromBody] ScientificWorkAuthorRequest request)
 		{
 			_scientificWorkService.AddAuthor(id, request.AuthorId);
-			return Json(new
-			{
-				Success = true
-			});
+			return Json(ApiResponse.Ok);
 		}
 		// POST: ScientificWork/DeleteAuthor/5
 		[HttpPost]
@@ -167,10 +165,7 @@ namespace ScientificReport.Controllers
 		public IActionResult DeleteAuthor(Guid id, [FromBody] ScientificWorkAuthorRequest request)
 		{
 			_scientificWorkService.RemoveAuthor(id, request.AuthorId);
-			return Json(new
-			{
-				Success = true
-			});
+			return Json(ApiResponse.Ok);
 		}
 	}
 }

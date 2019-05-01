@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ScientificReport.DTO.Models.Department
 {
+	
 	public class DepartmentEditModel
 	{
 	//	public DAL.Entities.Department Department { get; set; }
@@ -18,9 +18,9 @@ namespace ScientificReport.DTO.Models.Department
 		[Display(Name = "Head of Department")]
 		public Guid SelectedHeadId { get; set; }
 		
-		public IEnumerable<SelectListItem> UserSelection { get; set; }
+		public IEnumerable<SelectItem> UserSelection { get; set; }
 		
-		public IEnumerable<SelectListItem> ScientificWorkItems { get; set; }
+		public IEnumerable<SelectItem> ScientificWorkItems { get; set; }
 		
 		public IEnumerable<DAL.Entities.UserProfile.UserProfile> Staff { get; set; }
 		

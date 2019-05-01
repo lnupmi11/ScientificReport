@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ScientificReport.DTO.Models.Department
 {
@@ -14,6 +13,6 @@ namespace ScientificReport.DTO.Models.Department
 		[Display(Name = "Head of Department")]
 		public Guid SelectedHeadId { get; set; }
 		
-		public IEnumerable<SelectListItem> UserSelection { get; set; }
+		public IEnumerable<SelectItem> UserSelection { get; set; }
 	}
 }

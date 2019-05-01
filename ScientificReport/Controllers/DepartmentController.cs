@@ -4,8 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using ScientificReport.BLL.Interfaces;
+using ScientificReport.Controllers.Utils;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Entities.UserProfile;
 using ScientificReport.DAL.Roles;
@@ -17,12 +17,13 @@ namespace ScientificReport.Controllers
 	public class DepartmentController : Controller
 	{
 		private readonly UserManager<UserProfile> _userManager;
-		
+
 		private readonly IDepartmentService _departmentService;
 		private readonly IUserProfileService _userProfileService;
 		private readonly IScientificWorkService _scientificWorkService;
-		
-		public DepartmentController(IDepartmentService departmentService, IUserProfileService userProfileService, IScientificWorkService scientificWorkService, UserManager<UserProfile> userManager)
+
+		public DepartmentController(IDepartmentService departmentService, IUserProfileService userProfileService,
+			IScientificWorkService scientificWorkService, UserManager<UserProfile> userManager)
 		{
 			_userManager = userManager;
 			_departmentService = departmentService;
@@ -59,18 +60,13 @@ namespace ScientificReport.Controllers
 		[HttpGet]
 		public IActionResult Create()
 		{
-			var allUsers = _userProfileService.GetAll().ToList();
-			var allDepartments = _departmentService.GetAll().ToList();
+			var allUsers = _userProfileService.GetAll();
+			var allDepartments = _departmentService.GetAll();
 
-			var availableUsers = new List<SelectListItem>();
-			foreach (var user in allUsers)
-			{
-				if (allDepartments.All(d => d.Head.Id != user.Id && !d.Staff.Contains(user)))
-				{
-					availableUsers.Add(new SelectListItem(user.FirstName + " " + user.MiddleName + " " + user.LastName, user.Id.ToString()));
-				}
-			}
-
+			var availableUsers = allUsers
+				.Where(user => allDepartments.All(d => d.Head.Id != user.Id && !d.Staff.Contains(user)))
+				.Select(user => new SelectItem(user.FullName, user.Id.ToString()));
+			
 			return View(new DepartmentCreateModel
 			{
 				UserSelection = availableUsers
@@ -122,21 +118,14 @@ namespace ScientificReport.Controllers
 			var department = _departmentService.GetById(id.Value);
 			var departments = _departmentService.GetAllWhere(d => d.Id != department.Id).ToList();
 			var allUsers = _userProfileService.GetAll();
-			var availableUsers = new List<SelectListItem>();
-			foreach (var user in allUsers)
-			{
-				if (departments.All(d => !d.Staff.Contains(user)))
-				{
-					availableUsers.Add(new SelectListItem(
-						user.FirstName + " " + user.MiddleName + " " + user.LastName, user.Id.ToString(), user.Id.Equals(department.Head.Id)
-					));
-				}
-			}
+
+			var availableUsers = allUsers
+				.Where(user => departments.All(d => !d.Staff.Contains(user)))
+				.Select(user => new SelectItem(user.FullName, user.Id.ToString(), user.Id.Equals(department.Head.Id)));
 
 			var availableScientificWorks = _scientificWorkService
 				.GetAllWhere(sw => departments.All(d => !d.ScientificWorks.Contains(sw)))
-				.Select(scientificWork => new SelectListItem(scientificWork.Title, scientificWork.Id.ToString()))
-				.ToList();
+				.Select(scientificWork => new SelectItem(scientificWork.Title, scientificWork.Id.ToString()));
 
 			if (department != null)
 			{
@@ -174,32 +163,31 @@ namespace ScientificReport.Controllers
 			}
 
 			var department = _departmentService.GetById(id.Value);
-			
-			if (department != null)
-			{
-				department.Title = model.Title;
-				var newHead = _userProfileService.GetById(model.SelectedHeadId);
-				var departments = _departmentService.GetAllWhere(d => !d.Id.Equals(department.Id));
-				if (newHead != null && departments.All(d => !d.Staff.Contains(newHead)))
-				{
-					var oldHead = department.Head;
-					oldHead.Position = "Викладач";
-					_userProfileService.UpdateItem(oldHead);
-					await _userProfileService.RemoveFromRoleAsync(oldHead, UserProfileRole.HeadOfDepartment, _userManager);
-					
-					department.Head = newHead;
-					
-					newHead.Position = "Завідувач";
-					_userProfileService.UpdateItem(newHead);
-					await _userProfileService.AddToRoleAsync(newHead, UserProfileRole.HeadOfDepartment, _userManager);
-				}
-				
-				_departmentService.UpdateItem(department);
-			}
-			else
+
+			if (department == null)
 			{
 				return NotFound();
 			}
+
+			department.Title = model.Title;
+			var newHead = _userProfileService.GetById(model.SelectedHeadId);
+			var departments = _departmentService.GetAllWhere(d => !d.Id.Equals(department.Id));
+			if (newHead != null && departments.All(d => !d.Staff.Contains(newHead)))
+			{
+				var oldHead = department.Head;
+				oldHead.Position = "Викладач";
+				_userProfileService.UpdateItem(oldHead);
+				await _userProfileService.RemoveFromRoleAsync(oldHead, UserProfileRole.HeadOfDepartment,
+					_userManager);
+
+				department.Head = newHead;
+
+				newHead.Position = "Завідувач";
+				_userProfileService.UpdateItem(newHead);
+				await _userProfileService.AddToRoleAsync(newHead, UserProfileRole.HeadOfDepartment, _userManager);
+			}
+
+			_departmentService.UpdateItem(department);
 
 			return RedirectToAction("Index");
 		}
@@ -212,31 +200,22 @@ namespace ScientificReport.Controllers
 			{
 				return NotFound();
 			}
-			
-			var department = _departmentService.GetById(id.Value);
-			if (department != null)
-			{
-				var user = _userProfileService.GetById(request.UserId);
-				if (user != null && !_departmentService.UserIsHired(user))
-				{
-					department.Staff.Add(user);
-					_departmentService.UpdateItem(department);
-				}
-				else
-				{
-					return Json(new
-					{
-						Success = false
-					});
-				}
-			}
 
-			return Json(new
-			{
-				Success = department != null
-			});
+			var department = _departmentService.GetById(id.Value);
+			if (department == null)
+				return Json(ApiResponse.Fail);
+
+			var user = _userProfileService.GetById(request.UserId);
+			
+			if (user == null || _departmentService.UserIsHired(user))
+				return Json(ApiResponse.Fail);
+
+			department.Staff.Add(user);
+			_departmentService.UpdateItem(department);
+
+			return Json(ApiResponse.Ok);
 		}
-		
+
 		// POST: Department/RemoveUserFromStaff/{departmentId}
 		[HttpPost]
 		public IActionResult RemoveUserFromStaff(Guid? id, [FromBody] DepartmentUpdateStaffRequest request)
@@ -245,31 +224,23 @@ namespace ScientificReport.Controllers
 			{
 				return NotFound();
 			}
-			
+
 			var department = _departmentService.GetById(id.Value);
-			if (department != null)
+			if (department == null)
+				return Json(ApiResponse.Fail);
+			var user = _userProfileService.GetById(request.UserId);
+			
+			if (user == null || !department.Staff.Contains(user) || department.Head.Id.Equals(user.Id))
 			{
-				var user = _userProfileService.GetById(request.UserId);
-				if (user != null && department.Staff.Contains(user) && !department.Head.Id.Equals(user.Id))
-				{
-					department.Staff.Remove(user);
-					_departmentService.UpdateItem(department);
-				}
-				else
-				{
-					return Json(new
-					{
-						Success = false
-					});
-				}
+				return Json(ApiResponse.Fail);
 			}
 
-			return Json(new
-			{
-				Success = department != null
-			});
+			department.Staff.Remove(user);
+			_departmentService.UpdateItem(department);
+
+			return Json(ApiResponse.Ok);
 		}
-		
+
 		// POST: Department/AddScientificWork/{departmentId}
 		[HttpPost]
 		public IActionResult AddScientificWork(Guid? id, [FromBody] DepartmentUpdateScientificWorksRequest request)
@@ -278,31 +249,33 @@ namespace ScientificReport.Controllers
 			{
 				return NotFound();
 			}
-			
+
 			var department = _departmentService.GetById(id.Value);
-			if (department != null)
+			if (department == null)
+				return Json(new
+				{
+					Success = false
+				});
+			
+			var scientificWork = _scientificWorkService.GetById(request.ScientificWorkId);
+			if (scientificWork == null ||
+			    _departmentService.GetAll().Any(d => d.ScientificWorks.Contains(scientificWork)))
 			{
-				var scientificWork = _scientificWorkService.GetById(request.ScientificWorkId);
-				if (scientificWork != null && !_departmentService.GetAll().Any(d => d.ScientificWorks.Contains(scientificWork)))
+				return Json(new
 				{
-					department.ScientificWorks.Add(scientificWork);
-					_departmentService.UpdateItem(department);
-				}
-				else
-				{
-					return Json(new
-					{
-						Success = false
-					});
-				}
+					Success = false
+				});
 			}
+
+			department.ScientificWorks.Add(scientificWork);
+			_departmentService.UpdateItem(department);
 
 			return Json(new
 			{
-				Success = department != null
+				Success = true
 			});
 		}
-		
+
 		// POST: Department/RemoveScientificWork/{departmentId}
 		[HttpPost]
 		public IActionResult RemoveScientificWork(Guid? id, [FromBody] DepartmentUpdateScientificWorksRequest request)
@@ -311,28 +284,28 @@ namespace ScientificReport.Controllers
 			{
 				return NotFound();
 			}
-			
+
 			var department = _departmentService.GetById(id.Value);
-			if (department != null)
+			if (department == null)
+				return Json(new
+				{
+					Success = false
+				});
+			var scientificWork = _scientificWorkService.GetById(request.ScientificWorkId);
+			if (scientificWork == null || !department.ScientificWorks.Contains(scientificWork))
 			{
-				var scientificWork = _scientificWorkService.GetById(request.ScientificWorkId);
-				if (scientificWork != null && department.ScientificWorks.Contains(scientificWork))
+				return Json(new
 				{
-					department.ScientificWorks.Remove(scientificWork);
-					_departmentService.UpdateItem(department);
-				}
-				else
-				{
-					return Json(new
-					{
-						Success = false
-					});
-				}
+					Success = false
+				});
 			}
+
+			department.ScientificWorks.Remove(scientificWork);
+			_departmentService.UpdateItem(department);
 
 			return Json(new
 			{
-				Success = department != null
+				Success = true
 			});
 		}
 
@@ -344,7 +317,7 @@ namespace ScientificReport.Controllers
 			{
 				return NotFound();
 			}
-	
+
 			_departmentService.DeleteById(id.Value);
 			return RedirectToAction("Index");
 		}
