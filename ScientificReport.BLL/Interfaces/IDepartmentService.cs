@@ -14,7 +14,7 @@ namespace ScientificReport.BLL.Interfaces
 		void CreateItem(Department department);
 		void UpdateItem(Department department);
 		void DeleteById(Guid id);
-		bool DepartmentExists(Guid id);
+		bool Exists(Guid id);
 		void AddScientificWork(Guid id, ScientificWork scientificWork);
 		void RemoveScientificWork(Guid id, ScientificWork scientificWork);
 		void AddUser(Guid id, UserProfile user);

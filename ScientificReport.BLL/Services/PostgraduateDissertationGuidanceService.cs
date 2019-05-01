@@ -17,42 +17,42 @@ namespace ScientificReport.BLL.Services
 			_postgraduateDissertationGuidanceRepository = new PostgraduateDissertationGuidanceRepository(context);
 		}
 
-		public IEnumerable<PostgraduateDissertationGuidance> GetAll()
+		public virtual IEnumerable<PostgraduateDissertationGuidance> GetAll()
 		{
 			return _postgraduateDissertationGuidanceRepository.All();
 		}
 
-		public IEnumerable<PostgraduateDissertationGuidance> GetAllWhere(Func<PostgraduateDissertationGuidance, bool> predicate)
+		public virtual IEnumerable<PostgraduateDissertationGuidance> GetAllWhere(Func<PostgraduateDissertationGuidance, bool> predicate)
 		{
 			return GetAll().Where(predicate);
 		}
 
-		public PostgraduateDissertationGuidance GetById(Guid id)
+		public virtual PostgraduateDissertationGuidance GetById(Guid id)
 		{
 			return _postgraduateDissertationGuidanceRepository.Get(id);
 		}
 
-		public PostgraduateDissertationGuidance Get(Func<PostgraduateDissertationGuidance, bool> predicate)
+		public virtual PostgraduateDissertationGuidance Get(Func<PostgraduateDissertationGuidance, bool> predicate)
 		{
 			return _postgraduateDissertationGuidanceRepository.Get(predicate);
 		}
 
-		public void CreateItem(PostgraduateDissertationGuidance postgraduateDissertationGuidance)
+		public virtual void CreateItem(PostgraduateDissertationGuidance postgraduateDissertationGuidance)
 		{
 			_postgraduateDissertationGuidanceRepository.Create(postgraduateDissertationGuidance);
 		}
 
-		public void UpdateItem(PostgraduateDissertationGuidance postgraduateDissertationGuidance)
+		public virtual void UpdateItem(PostgraduateDissertationGuidance postgraduateDissertationGuidance)
 		{
 			_postgraduateDissertationGuidanceRepository.Update(postgraduateDissertationGuidance);
 		}
 
-		public void DeleteById(Guid id)
+		public virtual void DeleteById(Guid id)
 		{
 			_postgraduateDissertationGuidanceRepository.Delete(id);
 		}
 
-		public bool Exists(Guid id)
+		public virtual bool Exists(Guid id)
 		{
 			return _postgraduateDissertationGuidanceRepository.Get(id) != null;
 		}

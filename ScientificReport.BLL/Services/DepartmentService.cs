@@ -18,47 +18,47 @@ namespace ScientificReport.BLL.Services
 			_departmentRepository = new DepartmentRepository(context);
 		}
 
-		public IEnumerable<Department> GetAll()
+		public virtual IEnumerable<Department> GetAll()
 		{
 			return _departmentRepository.All();
 		}
 
-		public IEnumerable<Department> GetAllWhere(Func<Department, bool> predicate)
+		public virtual IEnumerable<Department> GetAllWhere(Func<Department, bool> predicate)
 		{
 			return GetAll().Where(predicate);
 		}
 
-		public Department GetById(Guid id)
+		public virtual Department GetById(Guid id)
 		{
 			return _departmentRepository.Get(id);
 		}
 
-		public Department Get(Func<Department, bool> predicate)
+		public virtual Department Get(Func<Department, bool> predicate)
 		{
 			return _departmentRepository.Get(predicate);
 		}
 
-		public void CreateItem(Department department)
+		public virtual void CreateItem(Department department)
 		{
 			_departmentRepository.Create(department);
 		}
 
-		public void UpdateItem(Department department)
+		public virtual void UpdateItem(Department department)
 		{
 			_departmentRepository.Update(department);
 		}
 
-		public void DeleteById(Guid id)
+		public virtual void DeleteById(Guid id)
 		{
 			_departmentRepository.Delete(id);
 		}
 
-		public bool DepartmentExists(Guid id)
+		public virtual bool Exists(Guid id)
 		{
 			return _departmentRepository.Get(id) != null;
 		}
 
-		public void AddScientificWork(Guid id, ScientificWork scientificWork)
+		public virtual void AddScientificWork(Guid id, ScientificWork scientificWork)
 		{
 			var department = _departmentRepository.Get(id);
 			if (department.ScientificWorks.Any(sw => sw.Id == scientificWork.Id))
@@ -70,7 +70,7 @@ namespace ScientificReport.BLL.Services
 			_departmentRepository.Update(department);
 		}
 
-		public void RemoveScientificWork(Guid id, ScientificWork scientificWork)
+		public virtual void RemoveScientificWork(Guid id, ScientificWork scientificWork)
 		{
 			var department = _departmentRepository.Get(id);
 			if (department.ScientificWorks.All(sw => sw.Id != scientificWork.Id))
@@ -82,7 +82,7 @@ namespace ScientificReport.BLL.Services
 			_departmentRepository.Update(department);
 		}
 
-		public void AddUser(Guid id, UserProfile user)
+		public virtual void AddUser(Guid id, UserProfile user)
 		{
 			var department = _departmentRepository.Get(id);
 			if (department.Staff.Any(u => u.Id == user.Id))
@@ -94,7 +94,7 @@ namespace ScientificReport.BLL.Services
 			_departmentRepository.Update(department);
 		}
 
-		public void RemoveUser(Guid id, UserProfile user)
+		public virtual void RemoveUser(Guid id, UserProfile user)
 		{
 			var department = _departmentRepository.Get(id);
 			if (department.Staff.All(u => u.Id != user.Id))
@@ -106,7 +106,7 @@ namespace ScientificReport.BLL.Services
 			_departmentRepository.Update(department);
 		}
 
-		public bool UserIsHired(UserProfile user)
+		public virtual bool UserIsHired(UserProfile user)
 		{
 			return _departmentRepository.All().Any(d => d.Staff.Contains(user));
 		}

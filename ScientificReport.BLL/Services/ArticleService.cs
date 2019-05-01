@@ -18,47 +18,47 @@ namespace ScientificReport.BLL.Services
 			_articleRepository = new ArticleRepository(context);
 		}
 
-		public IEnumerable<Article> GetAll()
+		public virtual IEnumerable<Article> GetAll()
 		{
 			return _articleRepository.All();
 		}
 
-		public IEnumerable<Article> GetAllWhere(Func<Article, bool> predicate)
+		public virtual IEnumerable<Article> GetAllWhere(Func<Article, bool> predicate)
 		{
 			return GetAll().Where(predicate);
 		}
 
-		public Article GetById(Guid id)
+		public virtual Article GetById(Guid id)
 		{
 			return _articleRepository.Get(id);
 		}
 
-		public Article Get(Func<Article, bool> predicate)
+		public virtual Article Get(Func<Article, bool> predicate)
 		{
 			return _articleRepository.Get(predicate);
 		}
 
-		public void CreateItem(Article article)
+		public virtual void CreateItem(Article article)
 		{
 			_articleRepository.Create(article);
 		}
 
-		public void UpdateItem(Article article)
+		public virtual void UpdateItem(Article article)
 		{
 			_articleRepository.Update(article);
 		}
 
-		public void DeleteById(Guid id)
+		public virtual void DeleteById(Guid id)
 		{
 			_articleRepository.Delete(id);
 		}
 
-		public bool Exists(Guid id)
+		public virtual bool Exists(Guid id)
 		{
 			return _articleRepository.Get(id) != null;
 		}
 
-		public IEnumerable<UserProfile> GetAuthors(Guid id)
+		public virtual IEnumerable<UserProfile> GetAuthors(Guid id)
 		{
 			var article = _articleRepository.Get(id);
 			IEnumerable<UserProfile> authors = null;
