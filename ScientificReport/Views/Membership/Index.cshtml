@@ -13,13 +13,10 @@
 	{
 		<tr>
 			<td>
-				@Html.DisplayFor(modelItem => item.Title)
+				@Html.DisplayFor(modelItem => item.MemberOf)
 			</td>
 			<td>
-				@Html.DisplayFor(modelItem => item.Staff.Count)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.ScientificWorks.Count)
+				@Html.DisplayFor(modelItem => item.MembershipInfo)
 			</td>
 			<td>
 				<a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-light">Details</a>

@@ -1,2 +1,35 @@
-@model object
+@model ScientificReport.DAL.Entities.Membership
 
+@{
+	ViewData["Title"] = "Create";
+}
+
+<h4>ScientificWork</h4>
+<hr/>
+<div class="row">
+	<div class="col-md-4">
+		<form asp-action="Create">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="form-group">
+				<label asp-for="MemberOf" class="control-label"></label>
+				<select asp-for="MemberOf" style="width: 90%">
+					<option value="ScientificCouncil">Вчена рада</option>
+					<option value="ExpertCouncil">Експертна рада</option>
+					<option value="EditorialBoard">Редколегія наукового журналу</option>
+				</select>
+				<span asp-validation-for="MemberOf" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="MembershipInfo" class="control-label"></label>
+				<input asp-for="MembershipInfo" class="form-control"/>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Create" class="btn btn-primary"/>
+			</div>
+		</form>
+	</div>
+</div>
+
+<div>
+	<a asp-action="Index">Back to List</a>
+</div>
