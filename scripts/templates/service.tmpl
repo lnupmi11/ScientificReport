@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using ScientificReport.BLL.Interfaces;
+using ScientificReport.DAL.DbContext;
+using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Repositories;
+
+namespace ScientificReport.BLL.Services
+{
+	public class {{ entity }}Service : I{{ entity }}Service
+	{
+		private readonly {{ entity }}Repository _{{ entity_name }}Repository;
+
+		public {{ entity }}Service(ScientificReportDbContext context)
+		{
+			_{{ entity_name }}Repository = new {{ entity }}Repository(context);
+		}
+
+		public IEnumerable<{{ entity }}> GetAll()
+		{
+			return _{{ entity_name }}Repository.All();
+		}
+
+		public IEnumerable<{{ entity }}> GetAllWhere(Func<{{ entity }}, bool> predicate)
+		{
+			return GetAll().Where(predicate);
+		}
+
+		public {{ entity }} GetById(Guid id)
+		{
+			return _{{ entity_name }}Repository.Get(id);
+		}
+
+		public {{ entity }} Get(Func<{{ entity }}, bool> predicate)
+		{
+			return _{{ entity_name }}Repository.Get(predicate);
+		}
+
+		public void CreateItem({{ entity }} {{ entity_name }})
+		{
+			_{{ entity_name }}Repository.Create({{ entity_name }});
+		}
+
+		public void UpdateItem({{ entity }} {{ entity_name }})
+		{
+			_{{ entity_name }}Repository.Update({{ entity_name }});
+		}
+
+		public void DeleteById(Guid id)
+		{
+			_{{ entity_name }}Repository.Delete(id);
+		}
+
+		public bool Exists(Guid id)
+		{
+			return _{{ entity_name }}Repository.Get(id) != null;
+		}
+	}
+}
