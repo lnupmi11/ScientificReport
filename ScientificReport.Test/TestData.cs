@@ -409,21 +409,21 @@ namespace ScientificReport.Test
 		public static readonly ScientificConsultation ScientificConsultation1 = new ScientificConsultation
 		{
 			Id = Guid.NewGuid(),
-			Name = "Some name 1",
+			CandidateName = "Some name 1",
 			Guide = User1,
 			DissertationTitle = "Dissertation Title 1"
 		};
 		public static readonly ScientificConsultation ScientificConsultation2 = new ScientificConsultation
 		{
 			Id = Guid.NewGuid(),
-			Name = "Some name 2",
+			CandidateName = "Some name 2",
 			Guide = User2,
 			DissertationTitle = "Dissertation Title 2"
 		};
 		public static readonly ScientificConsultation ScientificConsultation3 = new ScientificConsultation
 		{
 			Id = Guid.NewGuid(),
-			Name = "Some name 3",
+			CandidateName = "Some name 3",
 			Guide = User3,
 			DissertationTitle = "Dissertation Title 3"
 		};
