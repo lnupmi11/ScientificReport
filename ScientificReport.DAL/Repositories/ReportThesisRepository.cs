@@ -8,7 +8,7 @@ using ScientificReport.DAL.Interfaces;
 
 namespace ScientificReport.DAL.Repositories
 {
-	public class ReportThesisRepository: IRepository<ReportThesis>
+	public class ReportThesisRepository : IRepository<ReportThesis>
 	{
 		private readonly ScientificReportDbContext _context;
 		
@@ -19,8 +19,7 @@ namespace ScientificReport.DAL.Repositories
 		
 		public IEnumerable<ReportThesis> All()
 		{
-			return _context.ReportTheses
-						.Include(b => b.UserProfilesReportTheses);
+			return _context.ReportTheses.Include(b => b.UserProfilesReportTheses);
 		}
 
 		public IEnumerable<ReportThesis> AllWhere(Func<ReportThesis, bool> predicate)

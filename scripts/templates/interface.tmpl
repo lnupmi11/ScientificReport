@@ -1,0 +1,18 @@
+using System;
+using System.Collections.Generic;
+using ScientificReport.DAL.Entities;
+
+namespace ScientificReport.BLL.Interfaces
+{
+	public interface I{{ entity }}Service
+	{
+		IEnumerable<{{ entity }}> GetAll();
+		IEnumerable<{{ entity }}> GetAllWhere(Func<{{ entity }}, bool> predicate);
+		{{ entity }} GetById(Guid id);
+		{{ entity }} Get(Func<{{ entity }}, bool> predicate);
+		void CreateItem({{ entity }} {{ entity_name }});
+		void UpdateItem({{ entity }} {{ entity_name }});
+		void DeleteById(Guid id);
+		bool Exists(Guid id);
+	}
+}

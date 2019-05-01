@@ -47,6 +47,18 @@ namespace ScientificReport
 			services.AddTransient<IDepartmentService, DepartmentService>();
 			services.AddTransient<IScientificWorkService, ScientificWorkService>();
 			services.AddTransient<ITeacherReportService, TeacherReportService>();
+			services.AddTransient<IArticleService, ArticleService>();
+			services.AddTransient<IConferenceService, ConferenceService>();
+			services.AddTransient<IGrantService, GrantService>();
+			services.AddTransient<IMembershipService, MembershipService>();
+			services.AddTransient<IOppositionService, OppositionService>();
+			services.AddTransient<IPatentLicenseActivityService, PatentLicenseActivityService>();
+			services.AddTransient<IPostgraduateDissertationGuidanceService, PostgraduateDissertationGuidanceService>();
+			services.AddTransient<IPostgraduateGuidanceService, PostgraduateGuidanceService>();
+			services.AddTransient<IReportThesisService, ReportThesisService>();
+			services.AddTransient<IReviewService, ReviewService>();
+			services.AddTransient<IScientificConsultationService, ScientificConsultationService>();
+			services.AddTransient<IScientificInternshipService, ScientificInternshipService>();
 
 			services.Configure<IdentityOptions>(options =>
 			{
