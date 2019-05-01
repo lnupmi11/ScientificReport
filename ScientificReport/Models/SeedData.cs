@@ -114,7 +114,7 @@ namespace ScientificReport.Models
 				new Article
 				{
 					Title = "my first Article",
-					Type = Article.Types.ImpactFactor,
+					Type = (int)Article.Types.ImpactFactor,
 					PublishingPlace = "LNU",
 					PublishingHouseName = "Lnu oreo",
 					PublishingYear = 2019,
