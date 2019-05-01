@@ -9,7 +9,7 @@ using ScientificReport.DAL.DbContext;
 namespace ScientificReport.Migrations
 {
     [DbContext(typeof(ScientificReportDbContext))]
-    [Migration("20190429211125_Initial")]
+    [Migration("20190501164124_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -177,6 +177,42 @@ namespace ScientificReport.Migrations
                     b.ToTable("AuthorsPatentLicenseActivities");
                 });
 
+            modelBuilder.Entity("ScientificReport.DAL.Entities.CoApplicantsPatentLicenseActivities", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CoApplicant");
+
+                    b.Property<int>("PatentLicenseActivityId");
+
+                    b.Property<Guid?>("PatentLicenseActivityId1");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PatentLicenseActivityId1");
+
+                    b.ToTable("CoApplicantsPatentLicenseActivities");
+                });
+
+            modelBuilder.Entity("ScientificReport.DAL.Entities.CoauthorsPatentLicenseActivities", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Coauthor");
+
+                    b.Property<int>("PatentLicenseActivityId");
+
+                    b.Property<Guid?>("PatentLicenseActivityId1");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PatentLicenseActivityId1");
+
+                    b.ToTable("CoauthorsPatentLicenseActivities");
+                });
+
             modelBuilder.Entity("ScientificReport.DAL.Entities.Conference", b =>
                 {
                     b.Property<Guid>("Id")
@@ -240,7 +276,7 @@ namespace ScientificReport.Migrations
 
                     b.HasIndex("TeacherReportId");
 
-                    b.ToTable("Membership");
+                    b.ToTable("Memberships");
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.Opposition", b =>
@@ -506,11 +542,11 @@ namespace ScientificReport.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("CandidateName");
+
                     b.Property<string>("DissertationTitle");
 
                     b.Property<Guid?>("GuideId");
-
-                    b.Property<string>("Name");
 
                     b.Property<Guid?>("TeacherReportId");
 
@@ -884,6 +920,20 @@ namespace ScientificReport.Migrations
 
                     b.HasOne("ScientificReport.DAL.Entities.PatentLicenseActivity", "PatentLicenseActivity")
                         .WithMany("AuthorsPatentLicenseActivities")
+                        .HasForeignKey("PatentLicenseActivityId1");
+                });
+
+            modelBuilder.Entity("ScientificReport.DAL.Entities.CoApplicantsPatentLicenseActivities", b =>
+                {
+                    b.HasOne("ScientificReport.DAL.Entities.PatentLicenseActivity", "PatentLicenseActivity")
+                        .WithMany("CoApplicantsPatentLicenseActivities")
+                        .HasForeignKey("PatentLicenseActivityId1");
+                });
+
+            modelBuilder.Entity("ScientificReport.DAL.Entities.CoauthorsPatentLicenseActivities", b =>
+                {
+                    b.HasOne("ScientificReport.DAL.Entities.PatentLicenseActivity", "PatentLicenseActivity")
+                        .WithMany("CoauthorsPatentLicenseActivities")
                         .HasForeignKey("PatentLicenseActivityId1");
                 });
 

@@ -17,5 +17,7 @@ namespace ScientificReport.BLL.Interfaces
 		bool Exists(Guid id);
 		IEnumerable<UserProfile> GetAuthors(Guid id);
 		IEnumerable<UserProfile> GetApplicants(Guid id);
+		IEnumerable<string> GetCoauthors(Guid id);
+		IEnumerable<string> GetCoApplicants(Guid id);
 	}
 }
