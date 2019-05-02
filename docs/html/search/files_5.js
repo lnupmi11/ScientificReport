@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['scientificreportdbcontextmodelsnapshot_2ecs',['ScientificReportDbContextModelSnapshot.cs',['../a00020.html',1,'']]],
-  ['scientificworkcontroller_2ecs',['ScientificWorkController.cs',['../a00015.html',1,'']]],
-  ['seeddata_2ecs',['SeedData.cs',['../a00021.html',1,'']]],
-  ['startup_2ecs',['Startup.cs',['../a00023.html',1,'']]]
+  ['teacherreportcontroller_2ecs',['TeacherReportController.cs',['../a00014.html',1,'']]]
 ];

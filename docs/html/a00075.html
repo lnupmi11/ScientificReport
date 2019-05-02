@@ -87,7 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00004.html','');});
+$(document).ready(function(){initNavTree('a00010.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -106,21 +106,25 @@ $(document).ready(function(){initNavTree('a00004.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">ScientificReport.Controllers.MembershipController Member List</div>  </div>
+<div class="title">ScientificReport.Controllers.UserProfileController Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00004.html">ScientificReport.Controllers.MembershipController</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a00010.html">ScientificReport.Controllers.UserProfileController</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00004.html#a02fc0df2311db12137a8a0c92d1a090d">Create</a>()</td><td class="entry"><a class="el" href="a00004.html">ScientificReport.Controllers.MembershipController</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00004.html#a7cd43d190224bed84c187351187bfda2">Create</a>(Membership model)</td><td class="entry"><a class="el" href="a00004.html">ScientificReport.Controllers.MembershipController</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00004.html#ad1c4a70e5821478431d69512ab141dd3">Delete</a>(Guid?id)</td><td class="entry"><a class="el" href="a00004.html">ScientificReport.Controllers.MembershipController</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00004.html#ac18fdf04bec9e4d488de6aa4c079c83c">DeleteConfirmed</a>(Guid id)</td><td class="entry"><a class="el" href="a00004.html">ScientificReport.Controllers.MembershipController</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00004.html#aff0d6a630d864f73a73627d0131d2aa6">Details</a>(Guid?id)</td><td class="entry"><a class="el" href="a00004.html">ScientificReport.Controllers.MembershipController</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00004.html#ab2f07709962468b166fc10e2c4ca5c8a">Edit</a>(Guid?id)</td><td class="entry"><a class="el" href="a00004.html">ScientificReport.Controllers.MembershipController</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00004.html#a8930fee3a596da9cdba5f6a61c40ee86">Edit</a>(Guid id, [Bind(&quot;Id,MemberOf,MembershipInfo&quot;)] Membership membership)</td><td class="entry"><a class="el" href="a00004.html">ScientificReport.Controllers.MembershipController</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00004.html#a147cdc8fc6d70aa1af4ed06b9fcb46dd">Index</a>()</td><td class="entry"><a class="el" href="a00004.html">ScientificReport.Controllers.MembershipController</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00004.html#a0444c4777cf274b06f98985fdf285590">MembershipController</a>(IMembershipService membershipService, IUserProfileService userProfileService)</td><td class="entry"><a class="el" href="a00004.html">ScientificReport.Controllers.MembershipController</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00010.html#adb37027360b4e896fd1b885e419367ca">AddUserToAdministration</a>(Guid?id, [FromBody] UserProfileUpdateRolesRequest request)</td><td class="entry"><a class="el" href="a00010.html">ScientificReport.Controllers.UserProfileController</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00010.html#a48780abfce15ce82c58a1b5710185e83">Delete</a>(Guid?id)</td><td class="entry"><a class="el" href="a00010.html">ScientificReport.Controllers.UserProfileController</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00010.html#a84b3e5b1373867e10ccee532630b6392">Details</a>(Guid?id)</td><td class="entry"><a class="el" href="a00010.html">ScientificReport.Controllers.UserProfileController</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00010.html#a301fe8b8081fe11b59b4c90a4e76b2b1">Edit</a>(Guid?id)</td><td class="entry"><a class="el" href="a00010.html">ScientificReport.Controllers.UserProfileController</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00010.html#ae81af6a998d2987865ce274806dcc7f4">Edit</a>(Guid?id, UserProfileEditModel model)</td><td class="entry"><a class="el" href="a00010.html">ScientificReport.Controllers.UserProfileController</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00010.html#af5ae3acf2788bf5974b9576a8a892e9b">Index</a>()</td><td class="entry"><a class="el" href="a00010.html">ScientificReport.Controllers.UserProfileController</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00010.html#ada213933d9f48f28cc1cb8b098fade07">Login</a>()</td><td class="entry"><a class="el" href="a00010.html">ScientificReport.Controllers.UserProfileController</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00010.html#ae8d56f997555dbd409b63f7bdc9f6e58">Login</a>(LoginModel model)</td><td class="entry"><a class="el" href="a00010.html">ScientificReport.Controllers.UserProfileController</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00010.html#a65d3fa00161b10075bbcf85098beedb2">Logout</a>()</td><td class="entry"><a class="el" href="a00010.html">ScientificReport.Controllers.UserProfileController</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00010.html#a6c8b98005ac1254746e00f0066ed462a">Register</a>()</td><td class="entry"><a class="el" href="a00010.html">ScientificReport.Controllers.UserProfileController</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00010.html#a81dea7bbcc1fd61c4b0bd09ba613e329">Register</a>(RegisterModel model)</td><td class="entry"><a class="el" href="a00010.html">ScientificReport.Controllers.UserProfileController</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00010.html#aa0f1ba68a83e6c606e48e1b1fdbda5bf">RemoveUserFromAdministration</a>(Guid?id, [FromBody] UserProfileUpdateRolesRequest request)</td><td class="entry"><a class="el" href="a00010.html">ScientificReport.Controllers.UserProfileController</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00010.html#aadae477c2f05905548dd5262b9d9ac65">UserProfileController</a>(UserManager&lt; UserProfile &gt; usrMgr, SignInManager&lt; UserProfile &gt; signInManager, RoleManager&lt; UserProfileRole &gt; roleManager, IUserProfileService userProfileService, IDepartmentService departmentService)</td><td class="entry"><a class="el" href="a00010.html">ScientificReport.Controllers.UserProfileController</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
