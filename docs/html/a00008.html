@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>ScientificReport: ScientificReport.Startup Class Reference</title>
+<title>ScientificReport: ScientificReport.Models.SeedData Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,67 +106,52 @@ $(document).ready(function(){initNavTree('a00008.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a00060.html">List of all members</a>  </div>
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="a00088.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ScientificReport.Startup Class Reference</div>  </div>
+<div class="title">ScientificReport.Models.SeedData Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This class is created to seed the basic data to be used in both frontend and backend and it is for development purposes only  
+ <a href="a00008.html#details">More...</a></p>
 <div class="dynheader">
-Collaboration diagram for ScientificReport.Startup:</div>
+Collaboration diagram for ScientificReport.Models.SeedData:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00061.png" border="0" usemap="#_scientific_report_8_startup_coll__map" alt="Collaboration graph"/></div>
-<map name="_scientific_report_8_startup_coll__map" id="_scientific_report_8_startup_coll__map">
+<div class="center"><img src="a00089.png" border="0" usemap="#_scientific_report_8_models_8_seed_data_coll__map" alt="Collaboration graph"/></div>
+<map name="_scientific_report_8_models_8_seed_data_coll__map" id="_scientific_report_8_models_8_seed_data_coll__map">
 </map>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a63d2f00d6a6c75ca48d391012d8ae7e0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00008.html#a63d2f00d6a6c75ca48d391012d8ae7e0">Startup</a> (IConfiguration configuration)</td></tr>
-<tr class="separator:a63d2f00d6a6c75ca48d391012d8ae7e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d34187919055e4358e3352a2ac94b19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00008.html#a3d34187919055e4358e3352a2ac94b19">ConfigureServices</a> (IServiceCollection services)</td></tr>
-<tr class="separator:a3d34187919055e4358e3352a2ac94b19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e1ea3dabfbbd0cb2c71e0a6bbf79721"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00008.html#a9e1ea3dabfbbd0cb2c71e0a6bbf79721">Configure</a> (IApplicationBuilder app, IHostingEnvironment env)</td></tr>
-<tr class="separator:a9e1ea3dabfbbd0cb2c71e0a6bbf79721"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a4dc9376e8602a5a4b95443859601a6b5"><td class="memItemLeft" align="right" valign="top">static async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00008.html#a4dc9376e8602a5a4b95443859601a6b5">Initialize</a> (IServiceProvider serviceProvider, ScientificReportDbContext context)</td></tr>
+<tr class="memdesc:a4dc9376e8602a5a4b95443859601a6b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the basic data, the entrypoint for all seeds  <a href="#a4dc9376e8602a5a4b95443859601a6b5">More...</a><br /></td></tr>
+<tr class="separator:a4dc9376e8602a5a4b95443859601a6b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="a00021_source.html#l00018">18</a> of file <a class="el" href="a00021_source.html">Startup.cs</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a63d2f00d6a6c75ca48d391012d8ae7e0"></a>
+<div class="textblock"><p>This class is created to seed the basic data to be used in both frontend and backend and it is for development purposes only </p>
+
+<p>Definition at line <a class="el" href="a00021_source.html#l00022">22</a> of file <a class="el" href="a00021_source.html">SeedData.cs</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a4dc9376e8602a5a4b95443859601a6b5"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">ScientificReport.Startup.Startup </td>
+          <td class="memname">static async Task ScientificReport.Models.SeedData.Initialize </td>
           <td>(</td>
-          <td class="paramtype">IConfiguration&#160;</td>
-          <td class="paramname"><em>configuration</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00021_source.html#l00020">20</a> of file <a class="el" href="a00021_source.html">Startup.cs</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a9e1ea3dabfbbd0cb2c71e0a6bbf79721"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ScientificReport.Startup.Configure </td>
-          <td>(</td>
-          <td class="paramtype">IApplicationBuilder&#160;</td>
-          <td class="paramname"><em>app</em>, </td>
+          <td class="paramtype">IServiceProvider&#160;</td>
+          <td class="paramname"><em>serviceProvider</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">IHostingEnvironment&#160;</td>
-          <td class="paramname"><em>env</em>&#160;</td>
+          <td class="paramtype">ScientificReportDbContext&#160;</td>
+          <td class="paramname"><em>context</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -174,39 +159,38 @@ Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00021_source.html#l00099">99</a> of file <a class="el" href="a00021_source.html">Startup.cs</a>.</p>
+<p>Initializes the basic data, the entrypoint for all seeds </p>
 
-</div>
-</div>
-<a class="anchor" id="a3d34187919055e4358e3352a2ac94b19"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ScientificReport.Startup.ConfigureServices </td>
-          <td>(</td>
-          <td class="paramtype">IServiceCollection&#160;</td>
-          <td class="paramname"><em>services</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Definition at line <a class="el" href="a00021_source.html#l00027">27</a> of file <a class="el" href="a00021_source.html">SeedData.cs</a>.</p>
 
-<p>Definition at line <a class="el" href="a00021_source.html#l00028">28</a> of file <a class="el" href="a00021_source.html">Startup.cs</a>.</p>
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00008_a4dc9376e8602a5a4b95443859601a6b5_icgraph.png" border="0" usemap="#a00008_a4dc9376e8602a5a4b95443859601a6b5_icgraph" alt=""/></div>
+<map name="a00008_a4dc9376e8602a5a4b95443859601a6b5_icgraph" id="a00008_a4dc9376e8602a5a4b95443859601a6b5_icgraph">
+<area shape="rect" id="node2" href="a00005.html#ae42d2d35dbaa644476282c09ddaf277a" title="ScientificReport.Program.Main" alt="" coords="227,13,440,39"/>
+</map>
+</div>
+</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/travis/build/lnupmi11/ScientificReport/ScientificReport/<a class="el" href="a00021_source.html">Startup.cs</a></li>
+<li>/home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models/<a class="el" href="a00021_source.html">SeedData.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00037.html">ScientificReport</a></li><li class="navelem"><a class="el" href="a00008.html">Startup</a></li>
+    <li class="navelem"><a class="el" href="a00039.html">ScientificReport</a></li><li class="navelem"><a class="el" href="a00054.html">Models</a></li><li class="navelem"><a class="el" href="a00008.html">SeedData</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
