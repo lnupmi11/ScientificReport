@@ -81,21 +81,21 @@ namespace ScientificReport.Controllers
 		// POST: Membership/Edit/{id}
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public IActionResult Edit(Guid id, [Bind("Id,Created")] Membership report)
+		public IActionResult Edit(Guid id, [Bind("Id,MemberOf,MembershipInfo")] Membership membership)
 		{
-			if (id != report.Id)
+			if (id != membership.Id)
 			{
 				return NotFound();
 			}
 
-			if (!ModelState.IsValid) return View(report);
+			if (!ModelState.IsValid) return View(membership);
 			try
 			{
-				_membershipService.UpdateItem(report);
+				_membershipService.UpdateItem(membership);
 			}
 			catch (DbUpdateConcurrencyException)
 			{
-				if (!_membershipService.Exists(report.Id))
+				if (!_membershipService.Exists(membership.Id))
 					return NotFound();
 
 				throw;
