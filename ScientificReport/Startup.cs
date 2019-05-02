@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
@@ -81,12 +82,12 @@ namespace ScientificReport
 				options.User.RequireUniqueEmail = true;
 			});
 
+			services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
 			services.ConfigureApplicationCookie(options =>
 			{
 				// Cookie settings
 				options.Cookie.HttpOnly = true;
 				options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
-
 				options.LoginPath = "/UserProfile/Login";
 				options.AccessDeniedPath = "/UserProfile/AccessDenied";
 				options.SlidingExpiration = true;
@@ -108,10 +109,11 @@ namespace ScientificReport
 				app.UseExceptionHandler("/Home/Error");
 				app.UseHsts();
 			}
-			app.UseAuthentication();
 			app.UseHttpsRedirection();
 			app.UseStaticFiles();
 			app.UseCookiePolicy();
+			
+			app.UseAuthentication();
 
 			app.UseMvc(routes =>
 			{
