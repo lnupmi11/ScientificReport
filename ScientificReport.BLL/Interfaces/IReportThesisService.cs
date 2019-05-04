@@ -16,5 +16,7 @@ namespace ScientificReport.BLL.Interfaces
 		void DeleteById(Guid id);
 		bool Exists(Guid id);
 		IEnumerable<UserProfile> GetAuthors(Guid id);
+		void AddAuthor(Guid id, Guid authorId);
+		void RemoveAuthor(Guid id, Guid authorId);
 	}
 }

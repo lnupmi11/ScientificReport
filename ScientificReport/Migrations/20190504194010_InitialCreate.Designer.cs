@@ -9,7 +9,7 @@ using ScientificReport.DAL.DbContext;
 namespace ScientificReport.Migrations
 {
     [DbContext(typeof(ScientificReportDbContext))]
-    [Migration("20190501202329_InitialCreate")]
+    [Migration("20190504194010_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -718,19 +718,15 @@ namespace ScientificReport.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("ReportThesisId");
+                    b.Property<Guid?>("ReportThesisId");
 
-                    b.Property<Guid?>("ReportThesisId1");
-
-                    b.Property<int>("UserProfileId");
-
-                    b.Property<Guid?>("UserProfileId1");
+                    b.Property<Guid?>("UserProfileId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ReportThesisId1");
+                    b.HasIndex("ReportThesisId");
 
-                    b.HasIndex("UserProfileId1");
+                    b.HasIndex("UserProfileId");
 
                     b.ToTable("UserProfilesReportTheses");
                 });
@@ -1105,11 +1101,11 @@ namespace ScientificReport.Migrations
                 {
                     b.HasOne("ScientificReport.DAL.Entities.ReportThesis", "ReportThesis")
                         .WithMany("UserProfilesReportTheses")
-                        .HasForeignKey("ReportThesisId1");
+                        .HasForeignKey("ReportThesisId");
 
                     b.HasOne("ScientificReport.DAL.Entities.UserProfile.UserProfile", "UserProfile")
                         .WithMany("UserProfilesReportTheses")
-                        .HasForeignKey("UserProfileId1");
+                        .HasForeignKey("UserProfileId");
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.UserProfile.UserProfilesReviews", b =>

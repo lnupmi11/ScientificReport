@@ -1,0 +1,51 @@
+@model ScientificReport.DTO.Models.ReportThesis.ReportThesisDetails
+
+@{
+	ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+	<h4>ReportThesis</h4>
+	<hr/>
+	<dl class="row">
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.ReportThesis.Thesis)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.ReportThesis.Thesis)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.ReportThesis.Conference)
+		</dt>
+		<dd class="col-sm-10">
+			<a asp-controller="Conference" asp-action="Details"
+			   asp-route-id="@Model.ReportThesis.Conference.Id">
+				@Model.ReportThesis.Conference.Topic (@Model.ReportThesis.Conference.Date.ToString("MM/dd/yyyy"))
+			</a>
+		</dd>
+		<dt class="col-sm-2">
+			Authors
+		</dt>
+		@if (Model.Authors != null)
+		{
+			<dd class="col-sm-10">
+				<ul style="list-style-type: none;">
+					@foreach (var author in Model.Authors)
+					{
+						if (author != null)
+						{
+							<li style="position: relative; left: -40px;">@author.FirstName @author.LastName</li>
+						}
+					}
+				</ul>
+			</dd>
+		}
+	</dl>
+
+</div>
+<div>
+	<a asp-action="Edit" asp-route-id="@Model.ReportThesis.Id">Edit</a> |
+	<a asp-action="Index">Back to List</a>
+</div>

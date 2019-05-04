@@ -23,7 +23,7 @@ namespace ScientificReport.DAL.Entities
 		[Key]
 		public Guid Id { get; set; }
 		
-		public int Type { get; set; }
+		public Types Type { get; set; }
 		
 		public string Title { get; set; }
 		

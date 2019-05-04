@@ -8,15 +8,15 @@ using ScientificReport.DAL.Interfaces;
 
 namespace ScientificReport.DAL.Repositories
 {
-	public class ConferenceRepository: IRepository<Conference>
+	public class ConferenceRepository : IRepository<Conference>
 	{
 		private readonly ScientificReportDbContext _context;
-		
+
 		public ConferenceRepository(ScientificReportDbContext context)
 		{
 			_context = context;
 		}
-		
+
 		public IEnumerable<Conference> All()
 		{
 			return _context.Conferences;
@@ -44,7 +44,8 @@ namespace ScientificReport.DAL.Repositories
 		}
 
 		public void Update(Conference item)
-		{if (item != null)
+		{
+			if (item != null)
 			{
 				_context.Conferences.Update(item);
 				_context.SaveChanges();

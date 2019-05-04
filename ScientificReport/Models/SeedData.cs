@@ -300,19 +300,27 @@ namespace ScientificReport.Models
 			if (context.ReportTheses.Any()) return;
 
 			var reportThesesService = new ReportThesisService(context);
+			var conference = context.Conferences.First();
 
 			reportThesesService.CreateItem(
 				new ReportThesis
 				{
-					Thesis = "My first thesis"
+					Thesis = "My first thesis",
+					Conference = conference
 				}
 			);
 			reportThesesService.CreateItem(
 				new ReportThesis()
 				{
-					Thesis = "My second thesis"
+					Thesis = "My second thesis",
+					Conference = conference
 				}
 			);
+
+			var reportThesis = reportThesesService.GetAll().First();
+			var author = context.UserProfiles.First();
+			
+			reportThesesService.AddAuthor(reportThesis.Id, author.Id);
 		}
 
 		private static void SeedPostgraduateGuidance(ScientificReportDbContext context)
