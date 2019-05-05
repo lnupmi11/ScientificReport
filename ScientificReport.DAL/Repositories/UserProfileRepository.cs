@@ -17,7 +17,7 @@ namespace ScientificReport.DAL.Repositories
 			_context = context;
 		}
 		
-		public IEnumerable<UserProfile> All()
+		public virtual IEnumerable<UserProfile> All()
 		{
 			return _context.UserProfiles
 				.Include(b => b.UserProfilesPublications)
@@ -31,35 +31,35 @@ namespace ScientificReport.DAL.Repositories
 				.Include(apl => apl.ApplicantsPatentLicenseActivities);
 		}
 
-		public IEnumerable<UserProfile> AllWhere(Func<UserProfile, bool> predicate)
+		public virtual IEnumerable<UserProfile> AllWhere(Func<UserProfile, bool> predicate)
 		{
 			return All().Where(predicate);
 		}
 
-		public UserProfile Get(Guid id)
+		public virtual UserProfile Get(Guid id)
 		{
 			return All().FirstOrDefault(u => u.Id == id);
 		}
 
-		public UserProfile Get(Func<UserProfile, bool> predicate)
+		public virtual UserProfile Get(Func<UserProfile, bool> predicate)
 		{
 			return All().Where(predicate).FirstOrDefault();
 		}
 
-		public void Create(UserProfile item)
+		public virtual void Create(UserProfile item)
 		{
 			_context.UserProfiles.Add(item);
 			_context.SaveChanges();
 		}
 
-		public void Update(UserProfile item)
+		public virtual void Update(UserProfile item)
 		{
 			if (item == null) return;
 			_context.UserProfiles.Update(item);
 			_context.SaveChanges();
 		}
 
-		public void Delete(Guid id)
+		public virtual void Delete(Guid id)
 		{
 			var user = _context.UserProfiles.Find(id);
 			if (user == null) return;
@@ -67,7 +67,7 @@ namespace ScientificReport.DAL.Repositories
 			_context.SaveChanges();
 		}
 
-		public IQueryable<UserProfile> GetQuery()
+		public virtual IQueryable<UserProfile> GetQuery()
 		{
 			return _context.UserProfiles;
 		}

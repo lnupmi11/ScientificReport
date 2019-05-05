@@ -17,42 +17,42 @@ namespace ScientificReport.DAL.Repositories
 			_context = context;
 		}
 		
-		public IEnumerable<UserProfilesScientificWorks> All()
+		public virtual IEnumerable<UserProfilesScientificWorks> All()
 		{
 			return _context.UserProfilesScientificWorks
 				.Include(u => u.ScientificWork)
 				.Include(u => u.UserProfile);
 		}
 
-		public IEnumerable<UserProfilesScientificWorks> AllWhere(Func<UserProfilesScientificWorks, bool> predicate)
+		public virtual IEnumerable<UserProfilesScientificWorks> AllWhere(Func<UserProfilesScientificWorks, bool> predicate)
 		{
 			return All().Where(predicate);
 		}
 
-		public UserProfilesScientificWorks Get(Guid id)
+		public virtual UserProfilesScientificWorks Get(Guid id)
 		{
 			return All().FirstOrDefault(u => u.Id == id);
 		}
 
-		public UserProfilesScientificWorks Get(Func<UserProfilesScientificWorks, bool> predicate)
+		public virtual UserProfilesScientificWorks Get(Func<UserProfilesScientificWorks, bool> predicate)
 		{
 			return All().Where(predicate).FirstOrDefault();
 		}
 
-		public void Create(UserProfilesScientificWorks item)
+		public virtual void Create(UserProfilesScientificWorks item)
 		{
 			_context.UserProfilesScientificWorks.Add(item);
 			_context.SaveChanges();
 		}
 
-		public void Update(UserProfilesScientificWorks item)
+		public virtual void Update(UserProfilesScientificWorks item)
 		{
 			if (item == null) return;
 			_context.UserProfilesScientificWorks.Update(item);
 			_context.SaveChanges();
 		}
 
-		public void Delete(Guid id)
+		public virtual void Delete(Guid id)
 		{
 			var user = _context.UserProfilesScientificWorks.Find(id);
 			if (user == null) return;
@@ -60,7 +60,7 @@ namespace ScientificReport.DAL.Repositories
 			_context.SaveChanges();
 		}
 
-		public IQueryable<UserProfilesScientificWorks> GetQuery()
+		public virtual IQueryable<UserProfilesScientificWorks> GetQuery()
 		{
 			return _context.UserProfilesScientificWorks;
 		}

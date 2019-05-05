@@ -17,42 +17,42 @@ namespace ScientificReport.BLL.Services
 			_scientificConsultationRepository = new ScientificConsultationRepository(context);
 		}
 
-		public IEnumerable<ScientificConsultation> GetAll()
+		public virtual IEnumerable<ScientificConsultation> GetAll()
 		{
 			return _scientificConsultationRepository.All();
 		}
 
-		public IEnumerable<ScientificConsultation> GetAllWhere(Func<ScientificConsultation, bool> predicate)
+		public virtual IEnumerable<ScientificConsultation> GetAllWhere(Func<ScientificConsultation, bool> predicate)
 		{
 			return GetAll().Where(predicate);
 		}
 
-		public ScientificConsultation GetById(Guid id)
+		public virtual ScientificConsultation GetById(Guid id)
 		{
 			return _scientificConsultationRepository.Get(id);
 		}
 
-		public ScientificConsultation Get(Func<ScientificConsultation, bool> predicate)
+		public virtual ScientificConsultation Get(Func<ScientificConsultation, bool> predicate)
 		{
 			return _scientificConsultationRepository.Get(predicate);
 		}
 
-		public void CreateItem(ScientificConsultation scientificConsultation)
+		public virtual void CreateItem(ScientificConsultation scientificConsultation)
 		{
 			_scientificConsultationRepository.Create(scientificConsultation);
 		}
 
-		public void UpdateItem(ScientificConsultation scientificConsultation)
+		public virtual void UpdateItem(ScientificConsultation scientificConsultation)
 		{
 			_scientificConsultationRepository.Update(scientificConsultation);
 		}
 
-		public void DeleteById(Guid id)
+		public virtual void DeleteById(Guid id)
 		{
 			_scientificConsultationRepository.Delete(id);
 		}
 
-		public bool Exists(Guid id)
+		public virtual bool Exists(Guid id)
 		{
 			return _scientificConsultationRepository.Get(id) != null;
 		}

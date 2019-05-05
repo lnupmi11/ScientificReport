@@ -282,14 +282,14 @@ namespace ScientificReport.Models
 			scientificConsultationsService.CreateItem(
 				new ScientificConsultation
 				{
-					Name = "First consultation",
+					CandidateName = "Igor",
 					DissertationTitle = "Work in Africa"
 				}
 			);
 			scientificConsultationsService.CreateItem(
 				new ScientificConsultation
 				{
-					Name = "Second consultation",
+					CandidateName = "Yura",
 					DissertationTitle = "Work in Canada"
 				}
 			);
@@ -408,7 +408,7 @@ namespace ScientificReport.Models
 
 		private static void SeedMembership(ScientificReportDbContext context)
 		{
-			if(context.Membership.Any()) return;
+			if(context.Memberships.Any()) return;
 			
 			var membershipService = new MembershipService(context);
 			

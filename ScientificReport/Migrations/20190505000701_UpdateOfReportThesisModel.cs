@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ScientificReport.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class UpdateOfReportThesisModel : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -334,7 +334,7 @@ namespace ScientificReport.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Membership",
+                name: "Memberships",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
@@ -344,9 +344,9 @@ namespace ScientificReport.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Membership", x => x.Id);
+                    table.PrimaryKey("PK_Memberships", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Membership_TeacherReports_TeacherReportId",
+                        name: "FK_Memberships_TeacherReports_TeacherReportId",
                         column: x => x.TeacherReportId,
                         principalTable: "TeacherReports",
                         principalColumn: "Id",
@@ -534,7 +534,7 @@ namespace ScientificReport.Migrations
                 {
                     Id = table.Column<Guid>(nullable: false),
                     GuideId = table.Column<Guid>(nullable: true),
-                    Name = table.Column<string>(nullable: true),
+                    CandidateName = table.Column<string>(nullable: true),
                     DissertationTitle = table.Column<string>(nullable: true),
                     TeacherReportId = table.Column<Guid>(nullable: true)
                 },
@@ -629,6 +629,46 @@ namespace ScientificReport.Migrations
                         name: "FK_UserProfilesGrants_AspNetUsers_UserProfileId1",
                         column: x => x.UserProfileId1,
                         principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CoApplicantsPatentLicenseActivities",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    CoApplicant = table.Column<string>(nullable: true),
+                    PatentLicenseActivityId = table.Column<int>(nullable: false),
+                    PatentLicenseActivityId1 = table.Column<Guid>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CoApplicantsPatentLicenseActivities", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CoApplicantsPatentLicenseActivities_PatentLicenseActivities_PatentLicenseActivityId1",
+                        column: x => x.PatentLicenseActivityId1,
+                        principalTable: "PatentLicenseActivities",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CoauthorsPatentLicenseActivities",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    Coauthor = table.Column<string>(nullable: true),
+                    PatentLicenseActivityId = table.Column<int>(nullable: false),
+                    PatentLicenseActivityId1 = table.Column<Guid>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CoauthorsPatentLicenseActivities", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CoauthorsPatentLicenseActivities_PatentLicenseActivities_PatentLicenseActivityId1",
+                        column: x => x.PatentLicenseActivityId1,
+                        principalTable: "PatentLicenseActivities",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -878,6 +918,16 @@ namespace ScientificReport.Migrations
                 column: "PatentLicenseActivityId1");
 
             migrationBuilder.CreateIndex(
+                name: "IX_CoApplicantsPatentLicenseActivities_PatentLicenseActivityId1",
+                table: "CoApplicantsPatentLicenseActivities",
+                column: "PatentLicenseActivityId1");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CoauthorsPatentLicenseActivities_PatentLicenseActivityId1",
+                table: "CoauthorsPatentLicenseActivities",
+                column: "PatentLicenseActivityId1");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Conferences_DepartmentReportId",
                 table: "Conferences",
                 column: "DepartmentReportId");
@@ -908,8 +958,8 @@ namespace ScientificReport.Migrations
                 column: "TeacherReportId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Membership_TeacherReportId",
-                table: "Membership",
+                name: "IX_Memberships_TeacherReportId",
+                table: "Memberships",
                 column: "TeacherReportId");
 
             migrationBuilder.CreateIndex(
@@ -1222,7 +1272,13 @@ namespace ScientificReport.Migrations
                 name: "AuthorsPatentLicenseActivities");
 
             migrationBuilder.DropTable(
-                name: "Membership");
+                name: "CoApplicantsPatentLicenseActivities");
+
+            migrationBuilder.DropTable(
+                name: "CoauthorsPatentLicenseActivities");
+
+            migrationBuilder.DropTable(
+                name: "Memberships");
 
             migrationBuilder.DropTable(
                 name: "Oppositions");

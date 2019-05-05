@@ -17,43 +17,44 @@ namespace ScientificReport.DAL.Repositories
 			_context = context;
 		}
 		
-		public IEnumerable<PatentLicenseActivity> All()
+		public virtual IEnumerable<PatentLicenseActivity> All()
 		{
 			return _context.PatentLicenseActivities
 						.Include(b => b.AuthorsPatentLicenseActivities)
 						.Include(a=>a.ApplicantsPatentLicenseActivities);
 		}
 
-		public IEnumerable<PatentLicenseActivity> AllWhere(Func<PatentLicenseActivity, bool> predicate)
+		public virtual IEnumerable<PatentLicenseActivity> AllWhere(Func<PatentLicenseActivity, bool> predicate)
 		{
 			return All().Where(predicate);
 		}
 
-		public PatentLicenseActivity Get(Guid id)
+		public virtual PatentLicenseActivity Get(Guid id)
 		{
 			return All().FirstOrDefault(u => u.Id == id);
 		}
 
-		public PatentLicenseActivity Get(Func<PatentLicenseActivity, bool> predicate)
+		public virtual PatentLicenseActivity Get(Func<PatentLicenseActivity, bool> predicate)
 		{
 			return All().Where(predicate).FirstOrDefault();
 		}
 
-		public void Create(PatentLicenseActivity item)
+		public virtual void Create(PatentLicenseActivity item)
 		{
 			_context.PatentLicenseActivities.Add(item);
 			_context.SaveChanges();
 		}
 
-		public void Update(PatentLicenseActivity item)
-		{if (item != null)
+		public virtual void Update(PatentLicenseActivity item)
+		{
+			if (item != null)
 			{
 				_context.PatentLicenseActivities.Update(item);
 				_context.SaveChanges();
 			}
 		}
 
-		public void Delete(Guid id)
+		public virtual void Delete(Guid id)
 		{
 			var user = _context.PatentLicenseActivities.Find(id);
 			if (user != null)
@@ -63,7 +64,7 @@ namespace ScientificReport.DAL.Repositories
 			}
 		}
 
-		public IQueryable<PatentLicenseActivity> GetQuery()
+		public virtual IQueryable<PatentLicenseActivity> GetQuery()
 		{
 			return _context.PatentLicenseActivities;
 		}

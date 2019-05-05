@@ -17,42 +17,42 @@ namespace ScientificReport.DAL.Repositories
 			_context = context;
 		}
 		
-		public IEnumerable<Article> All()
+		public virtual IEnumerable<Article> All()
 		{
-			return _context.Articles
-						.Include(b => b.UserProfilesArticles);
+			return _context.Articles.Include(b => b.UserProfilesArticles);
 		}
 
-		public IEnumerable<Article> AllWhere(Func<Article, bool> predicate)
+		public virtual IEnumerable<Article> AllWhere(Func<Article, bool> predicate)
 		{
 			return All().Where(predicate);
 		}
 
-		public Article Get(Guid id)
+		public virtual Article Get(Guid id)
 		{
 			return All().FirstOrDefault(u => u.Id == id);
 		}
 
-		public Article Get(Func<Article, bool> predicate)
+		public virtual Article Get(Func<Article, bool> predicate)
 		{
 			return All().Where(predicate).FirstOrDefault();
 		}
 
-		public void Create(Article item)
+		public virtual void Create(Article item)
 		{
 			_context.Articles.Add(item);
 			_context.SaveChanges();
 		}
 
-		public void Update(Article item)
-		{if (item != null)
+		public virtual void Update(Article item)
+		{
+			if (item != null)
 			{
 				_context.Articles.Update(item);
 				_context.SaveChanges();
 			}
 		}
 
-		public void Delete(Guid id)
+		public virtual void Delete(Guid id)
 		{
 			var user = _context.Articles.Find(id);
 			if (user != null)
@@ -62,7 +62,7 @@ namespace ScientificReport.DAL.Repositories
 			}
 		}
 
-		public IQueryable<Article> GetQuery()
+		public virtual IQueryable<Article> GetQuery()
 		{
 			return _context.Articles;
 		}

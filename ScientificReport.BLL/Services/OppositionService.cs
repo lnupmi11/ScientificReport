@@ -18,42 +18,42 @@ namespace ScientificReport.BLL.Services
 			_oppositionRepository = new OppositionRepository(context);
 		}
 
-		public IEnumerable<Opposition> GetAll()
+		public virtual IEnumerable<Opposition> GetAll()
 		{
 			return _oppositionRepository.All();
 		}
 
-		public IEnumerable<Opposition> GetAllWhere(Func<Opposition, bool> predicate)
+		public virtual IEnumerable<Opposition> GetAllWhere(Func<Opposition, bool> predicate)
 		{
 			return GetAll().Where(predicate);
 		}
 
-		public Opposition GetById(Guid id)
+		public virtual Opposition GetById(Guid id)
 		{
 			return _oppositionRepository.Get(id);
 		}
 
-		public Opposition Get(Func<Opposition, bool> predicate)
+		public virtual Opposition Get(Func<Opposition, bool> predicate)
 		{
 			return _oppositionRepository.Get(predicate);
 		}
 
-		public void CreateItem(Opposition opposition)
+		public virtual void CreateItem(Opposition opposition)
 		{
 			_oppositionRepository.Create(opposition);
 		}
 
-		public void UpdateItem(Opposition opposition)
+		public virtual void UpdateItem(Opposition opposition)
 		{
 			_oppositionRepository.Update(opposition);
 		}
 
-		public void DeleteById(Guid id)
+		public virtual void DeleteById(Guid id)
 		{
 			_oppositionRepository.Delete(id);
 		}
 
-		public bool Exists(Guid id)
+		public virtual bool Exists(Guid id)
 		{
 			return _oppositionRepository.Get(id) != null;
 		}

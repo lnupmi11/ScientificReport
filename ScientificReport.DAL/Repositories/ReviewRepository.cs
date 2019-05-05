@@ -17,42 +17,43 @@ namespace ScientificReport.DAL.Repositories
 			_context = context;
 		}
 		
-		public IEnumerable<Review> All()
+		public virtual IEnumerable<Review> All()
 		{
 			return _context.Reviews
 						.Include(b => b.UserProfilesReviews);
 		}
 
-		public IEnumerable<Review> AllWhere(Func<Review, bool> predicate)
+		public virtual IEnumerable<Review> AllWhere(Func<Review, bool> predicate)
 		{
 			return All().Where(predicate);
 		}
 
-		public Review Get(Guid id)
+		public virtual Review Get(Guid id)
 		{
 			return All().FirstOrDefault(u => u.Id == id);
 		}
 
-		public Review Get(Func<Review, bool> predicate)
+		public virtual Review Get(Func<Review, bool> predicate)
 		{
 			return All().Where(predicate).FirstOrDefault();
 		}
 
-		public void Create(Review item)
+		public virtual void Create(Review item)
 		{
 			_context.Reviews.Add(item);
 			_context.SaveChanges();
 		}
 
-		public void Update(Review item)
-		{if (item != null)
+		public virtual void Update(Review item)
+		{
+			if (item != null)
 			{
 				_context.Reviews.Update(item);
 				_context.SaveChanges();
 			}
 		}
 
-		public void Delete(Guid id)
+		public virtual void Delete(Guid id)
 		{
 			var user = _context.Reviews.Find(id);
 			if (user != null)
@@ -62,7 +63,7 @@ namespace ScientificReport.DAL.Repositories
 			}
 		}
 
-		public IQueryable<Review> GetQuery()
+		public virtual IQueryable<Review> GetQuery()
 		{
 			return _context.Reviews;
 		}

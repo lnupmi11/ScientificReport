@@ -17,41 +17,42 @@ namespace ScientificReport.DAL.Repositories
 			_context = context;
 		}
 		
-		public IEnumerable<PostgraduateGuidance> All()
+		public virtual IEnumerable<PostgraduateGuidance> All()
 		{
 			return _context.PostgraduateGuidances;
 		}
 
-		public IEnumerable<PostgraduateGuidance> AllWhere(Func<PostgraduateGuidance, bool> predicate)
+		public virtual IEnumerable<PostgraduateGuidance> AllWhere(Func<PostgraduateGuidance, bool> predicate)
 		{
 			return All().Where(predicate);
 		}
 
-		public PostgraduateGuidance Get(Guid id)
+		public virtual PostgraduateGuidance Get(Guid id)
 		{
 			return All().FirstOrDefault(u => u.Id == id);
 		}
 
-		public PostgraduateGuidance Get(Func<PostgraduateGuidance, bool> predicate)
+		public virtual PostgraduateGuidance Get(Func<PostgraduateGuidance, bool> predicate)
 		{
 			return All().Where(predicate).FirstOrDefault();
 		}
 
-		public void Create(PostgraduateGuidance item)
+		public virtual void Create(PostgraduateGuidance item)
 		{
 			_context.PostgraduateGuidances.Add(item);
 			_context.SaveChanges();
 		}
 
-		public void Update(PostgraduateGuidance item)
-		{if (item != null)
+		public virtual void Update(PostgraduateGuidance item)
+		{
+			if (item != null)
 			{
 				_context.PostgraduateGuidances.Update(item);
 				_context.SaveChanges();
 			}
 		}
 
-		public void Delete(Guid id)
+		public virtual void Delete(Guid id)
 		{
 			var user = _context.PostgraduateGuidances.Find(id);
 			if (user != null)
@@ -61,7 +62,7 @@ namespace ScientificReport.DAL.Repositories
 			}
 		}
 
-		public IQueryable<PostgraduateGuidance> GetQuery()
+		public virtual IQueryable<PostgraduateGuidance> GetQuery()
 		{
 			return _context.PostgraduateGuidances;
 		}
