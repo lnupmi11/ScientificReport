@@ -123,6 +123,7 @@ EXCLUDE_PATTERNS      += */venv/*
 EXCLUDE_PATTERNS      += */node_modules/*
 EXCLUDE_PATTERNS      += */obj/*
 EXCLUDE_PATTERNS      += */bin/*
+EXCLUDE_PATTERNS      += */wwwroot/*
 EXCLUDE_SYMBOLS        =
 EXAMPLE_PATH           =
 EXAMPLE_PATTERNS       = 
