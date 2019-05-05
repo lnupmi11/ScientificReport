@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ScientificReport.Migrations
 {
-    public partial class Initial : Migration
+    public partial class UpdateOfReportThesisModel : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -731,23 +731,21 @@ namespace ScientificReport.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    UserProfileId = table.Column<int>(nullable: false),
-                    UserProfileId1 = table.Column<Guid>(nullable: true),
-                    ReportThesisId = table.Column<int>(nullable: false),
-                    ReportThesisId1 = table.Column<Guid>(nullable: true)
+                    UserProfileId = table.Column<Guid>(nullable: true),
+                    ReportThesisId = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_UserProfilesReportTheses", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_UserProfilesReportTheses_ReportTheses_ReportThesisId1",
-                        column: x => x.ReportThesisId1,
+                        name: "FK_UserProfilesReportTheses_ReportTheses_ReportThesisId",
+                        column: x => x.ReportThesisId,
                         principalTable: "ReportTheses",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_UserProfilesReportTheses_AspNetUsers_UserProfileId1",
-                        column: x => x.UserProfileId1,
+                        name: "FK_UserProfilesReportTheses_AspNetUsers_UserProfileId",
+                        column: x => x.UserProfileId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -1110,14 +1108,14 @@ namespace ScientificReport.Migrations
                 column: "UserProfileId1");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserProfilesReportTheses_ReportThesisId1",
+                name: "IX_UserProfilesReportTheses_ReportThesisId",
                 table: "UserProfilesReportTheses",
-                column: "ReportThesisId1");
+                column: "ReportThesisId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserProfilesReportTheses_UserProfileId1",
+                name: "IX_UserProfilesReportTheses_UserProfileId",
                 table: "UserProfilesReportTheses",
-                column: "UserProfileId1");
+                column: "UserProfileId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserProfilesReviews_ReviewId1",

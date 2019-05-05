@@ -9,14 +9,14 @@ using ScientificReport.DAL.DbContext;
 namespace ScientificReport.Migrations
 {
     [DbContext(typeof(ScientificReportDbContext))]
-    [Migration("20190501164124_Initial")]
-    partial class Initial
+    [Migration("20190505000701_UpdateOfReportThesisModel")]
+    partial class UpdateOfReportThesisModel
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062");
+                .HasAnnotation("ProductVersion", "2.2.3-servicing-35854");
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
@@ -754,19 +754,15 @@ namespace ScientificReport.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("ReportThesisId");
+                    b.Property<Guid?>("ReportThesisId");
 
-                    b.Property<Guid?>("ReportThesisId1");
-
-                    b.Property<int>("UserProfileId");
-
-                    b.Property<Guid?>("UserProfileId1");
+                    b.Property<Guid?>("UserProfileId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ReportThesisId1");
+                    b.HasIndex("ReportThesisId");
 
-                    b.HasIndex("UserProfileId1");
+                    b.HasIndex("UserProfileId");
 
                     b.ToTable("UserProfilesReportTheses");
                 });
@@ -1155,11 +1151,11 @@ namespace ScientificReport.Migrations
                 {
                     b.HasOne("ScientificReport.DAL.Entities.ReportThesis", "ReportThesis")
                         .WithMany("UserProfilesReportTheses")
-                        .HasForeignKey("ReportThesisId1");
+                        .HasForeignKey("ReportThesisId");
 
                     b.HasOne("ScientificReport.DAL.Entities.UserProfile.UserProfile", "UserProfile")
                         .WithMany("UserProfilesReportTheses")
-                        .HasForeignKey("UserProfileId1");
+                        .HasForeignKey("UserProfileId");
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.UserProfile.UserProfilesReviews", b =>

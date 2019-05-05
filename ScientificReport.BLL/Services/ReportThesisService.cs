@@ -12,10 +12,12 @@ namespace ScientificReport.BLL.Services
 	public class ReportThesisService : IReportThesisService
 	{
 		private readonly ReportThesisRepository _reportThesisRepository;
+		private readonly UserProfileRepository _userProfileRepository;
 
 		public ReportThesisService(ScientificReportDbContext context)
 		{
 			_reportThesisRepository = new ReportThesisRepository(context);
+			_userProfileRepository = new UserProfileRepository(context);
 		}
 
 		public virtual IEnumerable<ReportThesis> GetAll()
@@ -68,6 +70,36 @@ namespace ScientificReport.BLL.Services
 			}
 
 			return authors;
+		}
+		
+		public void AddAuthor(Guid id, Guid authorId)
+		{
+			var reportThesis = _reportThesisRepository.Get(id);
+			var author = _userProfileRepository.Get(authorId);
+			if (reportThesis.UserProfilesReportTheses.Any(u => u.UserProfile.Id == authorId))
+			{
+				return;
+			}
+
+			reportThesis.UserProfilesReportTheses.Add(new UserProfilesReportThesis
+			{
+				ReportThesis = reportThesis,
+				UserProfile = author
+			});
+			_reportThesisRepository.Update(reportThesis);
+		}
+
+		public void RemoveAuthor(Guid id, Guid authorId)
+		{
+			var reportThesis = _reportThesisRepository.Get(id);
+			if (reportThesis.UserProfilesReportTheses.All(u => u.UserProfile.Id != authorId))
+			{
+				return;
+			}
+
+			reportThesis.UserProfilesReportTheses = reportThesis.UserProfilesReportTheses
+				.Where(u => u.UserProfile.Id != authorId).ToList();
+			_reportThesisRepository.Update(reportThesis);
 		}
 	}
 }

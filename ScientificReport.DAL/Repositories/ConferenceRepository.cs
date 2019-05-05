@@ -1,13 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Interfaces;
 
 namespace ScientificReport.DAL.Repositories
 {
-	public class ConferenceRepository: IRepository<Conference>
+	public class ConferenceRepository : IRepository<Conference>
 	{
 		private readonly ScientificReportDbContext _context;
 
@@ -15,7 +16,7 @@ namespace ScientificReport.DAL.Repositories
 		{
 			_context = context;
 		}
-		
+
 		public virtual IEnumerable<Conference> All()
 		{
 			return _context.Conferences;
@@ -44,21 +45,17 @@ namespace ScientificReport.DAL.Repositories
 
 		public virtual void Update(Conference item)
 		{
-			if (item != null)
-			{
-				_context.Conferences.Update(item);
-				_context.SaveChanges();
-			}
+			if (item == null) return;
+			_context.Conferences.Update(item);
+			_context.SaveChanges();
 		}
 
 		public virtual void Delete(Guid id)
 		{
 			var user = _context.Conferences.Find(id);
-			if (user != null)
-			{
-				_context.Conferences.Remove(user);
-				_context.SaveChanges();
-			}
+			if (user == null) return;
+			_context.Conferences.Remove(user);
+			_context.SaveChanges();
 		}
 
 		public virtual IQueryable<Conference> GetQuery()

@@ -11,15 +11,18 @@ namespace ScientificReport.DAL.Repositories
 	public class ReportThesisRepository : IRepository<ReportThesis>
 	{
 		private readonly ScientificReportDbContext _context;
-		
+
 		public ReportThesisRepository(ScientificReportDbContext context)
 		{
 			_context = context;
 		}
-		
+
 		public virtual IEnumerable<ReportThesis> All()
 		{
-			return _context.ReportTheses.Include(b => b.UserProfilesReportTheses);
+			return _context.ReportTheses
+				.Include(r => r.Conference)
+				.Include(r => r.UserProfilesReportTheses)
+				.ThenInclude(r => r.UserProfile);
 		}
 
 		public virtual IEnumerable<ReportThesis> AllWhere(Func<ReportThesis, bool> predicate)
@@ -45,21 +48,17 @@ namespace ScientificReport.DAL.Repositories
 
 		public virtual void Update(ReportThesis item)
 		{
-			if (item != null)
-			{
-				_context.ReportTheses.Update(item);
-				_context.SaveChanges();
-			}
+			if (item == null) return;
+			_context.ReportTheses.Update(item);
+			_context.SaveChanges();
 		}
 
 		public virtual void Delete(Guid id)
 		{
 			var user = _context.ReportTheses.Find(id);
-			if (user != null)
-			{
-				_context.ReportTheses.Remove(user);
-				_context.SaveChanges();
-			}
+			if (user == null) return;
+			_context.ReportTheses.Remove(user);
+			_context.SaveChanges();
 		}
 
 		public virtual IQueryable<ReportThesis> GetQuery()
