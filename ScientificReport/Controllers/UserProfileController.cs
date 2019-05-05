@@ -11,7 +11,7 @@ using ScientificReport.DTO.Models.UserProfile;
 
 namespace ScientificReport.Controllers
 {
-//	[Authorize(Roles = UserProfileRole.Administrator)]
+	[Authorize(Roles = UserProfileRole.Administrator)]
 	public class UserProfileController : Controller
 	{
 		private readonly UserManager<UserProfile> _userManager;
@@ -307,7 +307,8 @@ namespace ScientificReport.Controllers
 			if (ModelState.IsValid)
 			{
 				var user = _userProfileService.Get(usr => usr.UserName == model.UserName);
-				if (user != null) {
+				if (user != null)
+				{
 					var result = await _signInManager.PasswordSignInAsync(
 						user.UserName, model.Password, model.RememberMe, false
 					);
@@ -322,12 +323,13 @@ namespace ScientificReport.Controllers
 
 		// GET: UserProfile/Logout
 		[HttpGet]
-		[Authorize(Roles = UserProfileRole.Any)]
-		public async Task<IActionResult> Logout() {
+		[AllowAnonymous]
+		public async Task<IActionResult> Logout()
+		{
 			await _signInManager.SignOutAsync();
-			return RedirectToAction("Login");
+			return Redirect("/");
 		}
-		
+
 		private void AddErrorsFromResult(IdentityResult result)
 		{
 			foreach (var error in result.Errors)
