@@ -1,0 +1,89 @@
+@model ScientificReport.DAL.Entities.Article
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Article</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Type" class="control-label"></label>
+                <select asp-for="Type" class="form-control"></select>
+                <span asp-validation-for="Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LiabilityInfo" class="control-label"></label>
+                <input asp-for="LiabilityInfo" class="form-control" />
+                <span asp-validation-for="LiabilityInfo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DocumentInfo" class="control-label"></label>
+                <input asp-for="DocumentInfo" class="form-control" />
+                <span asp-validation-for="DocumentInfo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PublishingPlace" class="control-label"></label>
+                <input asp-for="PublishingPlace" class="form-control" />
+                <span asp-validation-for="PublishingPlace" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PublishingHouseName" class="control-label"></label>
+                <input asp-for="PublishingHouseName" class="form-control" />
+                <span asp-validation-for="PublishingHouseName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PublishingYear" class="control-label"></label>
+                <input asp-for="PublishingYear" class="form-control" />
+                <span asp-validation-for="PublishingYear" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsPeriodical" /> @Html.DisplayNameFor(model => model.IsPeriodical)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Number" class="control-label"></label>
+                <input asp-for="Number" class="form-control" />
+                <span asp-validation-for="Number" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PagesAmount" class="control-label"></label>
+                <input asp-for="PagesAmount" class="form-control" />
+                <span asp-validation-for="PagesAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsPrintCanceled" /> @Html.DisplayNameFor(model => model.IsPrintCanceled)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsRecommendedToPrint" /> @Html.DisplayNameFor(model => model.IsRecommendedToPrint)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
