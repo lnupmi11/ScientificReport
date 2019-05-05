@@ -17,52 +17,48 @@ namespace ScientificReport.DAL.Repositories
 			_context = context;
 		}
 
-		public IEnumerable<Conference> All()
+		public virtual IEnumerable<Conference> All()
 		{
 			return _context.Conferences;
 		}
 
-		public IEnumerable<Conference> AllWhere(Func<Conference, bool> predicate)
+		public virtual IEnumerable<Conference> AllWhere(Func<Conference, bool> predicate)
 		{
 			return All().Where(predicate);
 		}
 
-		public Conference Get(Guid id)
+		public virtual Conference Get(Guid id)
 		{
 			return All().FirstOrDefault(u => u.Id == id);
 		}
 
-		public Conference Get(Func<Conference, bool> predicate)
+		public virtual Conference Get(Func<Conference, bool> predicate)
 		{
 			return All().Where(predicate).FirstOrDefault();
 		}
 
-		public void Create(Conference item)
+		public virtual void Create(Conference item)
 		{
 			_context.Conferences.Add(item);
 			_context.SaveChanges();
 		}
 
-		public void Update(Conference item)
+		public virtual void Update(Conference item)
 		{
-			if (item != null)
-			{
-				_context.Conferences.Update(item);
-				_context.SaveChanges();
-			}
+			if (item == null) return;
+			_context.Conferences.Update(item);
+			_context.SaveChanges();
 		}
 
-		public void Delete(Guid id)
+		public virtual void Delete(Guid id)
 		{
 			var user = _context.Conferences.Find(id);
-			if (user != null)
-			{
-				_context.Conferences.Remove(user);
-				_context.SaveChanges();
-			}
+			if (user == null) return;
+			_context.Conferences.Remove(user);
+			_context.SaveChanges();
 		}
 
-		public IQueryable<Conference> GetQuery()
+		public virtual IQueryable<Conference> GetQuery()
 		{
 			return _context.Conferences;
 		}
