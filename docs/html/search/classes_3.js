@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['membershipcontroller',['MembershipController',['../a00004.html',1,'ScientificReport::Controllers']]]
+  ['errorviewmodel',['ErrorViewModel',['../a00037.html',1,'ScientificReport::DTO::Models']]]
 ];

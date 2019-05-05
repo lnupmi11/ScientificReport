@@ -1,16 +1,12 @@
 var a00011 =
 [
-    [ "UserProfileController", "a00011.html#aadae477c2f05905548dd5262b9d9ac65", null ],
-    [ "AddUserToAdministration", "a00011.html#adb37027360b4e896fd1b885e419367ca", null ],
-    [ "Delete", "a00011.html#a48780abfce15ce82c58a1b5710185e83", null ],
-    [ "Details", "a00011.html#a84b3e5b1373867e10ccee532630b6392", null ],
-    [ "Edit", "a00011.html#a301fe8b8081fe11b59b4c90a4e76b2b1", null ],
-    [ "Edit", "a00011.html#ae81af6a998d2987865ce274806dcc7f4", null ],
-    [ "Index", "a00011.html#af5ae3acf2788bf5974b9576a8a892e9b", null ],
-    [ "Login", "a00011.html#ada213933d9f48f28cc1cb8b098fade07", null ],
-    [ "Login", "a00011.html#ae8d56f997555dbd409b63f7bdc9f6e58", null ],
-    [ "Logout", "a00011.html#a65d3fa00161b10075bbcf85098beedb2", null ],
-    [ "Register", "a00011.html#a6c8b98005ac1254746e00f0066ed462a", null ],
-    [ "Register", "a00011.html#a81dea7bbcc1fd61c4b0bd09ba613e329", null ],
-    [ "RemoveUserFromAdministration", "a00011.html#aa0f1ba68a83e6c606e48e1b1fdbda5bf", null ]
+    [ "CreateItemTest", "a00011.html#a5c5089ae1f2202fec0db150fd5216cf8", null ],
+    [ "DeleteItemTest", "a00011.html#aa726a7020feb0e668dada8ec245927e5", null ],
+    [ "DoesNotExistTest", "a00011.html#aa0c625807aee5971c57de9d92035dd48", null ],
+    [ "ExistsTest", "a00011.html#ad1990fcb7251084bce262d56dedef76c", null ],
+    [ "GetAllTest", "a00011.html#abeff179bf70fc4e648aa2ed886a164df", null ],
+    [ "GetAllWhereTest", "a00011.html#ab41de2f16f8a9e4f9c99e683c0d6bc87", null ],
+    [ "GetAuthorsTest", "a00011.html#a872b260a5727cb37af5f0a560d732c68", null ],
+    [ "GetByIdTest", "a00011.html#adcfdade96ea481af8ddf9f9408106c68", null ],
+    [ "UpdateItemTest", "a00011.html#a6d720644f34509fe077c55695d5c1be0", null ]
 ];

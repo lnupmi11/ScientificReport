@@ -1,5 +1,10 @@
 var searchData=
 [
-  ['edit',['Edit',['../a00001.html#a8a5cfc571346661e1bd3308c0b0ec4e3',1,'ScientificReport.Controllers.DepartmentController.Edit(Guid?id)'],['../a00001.html#a0b145e9565ffd32c529a5e63d1596c3e',1,'ScientificReport.Controllers.DepartmentController.Edit(Guid?id, [Bind(&quot;Title,SelectedHeadId&quot;)] DepartmentEditModel model)'],['../a00004.html#ab2f07709962468b166fc10e2c4ca5c8a',1,'ScientificReport.Controllers.MembershipController.Edit(Guid?id)'],['../a00004.html#ad09f6bf03a6e386a7c6258735c5eaed1',1,'ScientificReport.Controllers.MembershipController.Edit(Guid?id, [Bind(&quot;MemberOf,MembershipInfo&quot;)] Membership membership)'],['../a00007.html#ab053f61e772332e278284c8a7e4eb55b',1,'ScientificReport.Controllers.ScientificWorkController.Edit(Guid?id)'],['../a00007.html#a0a7fe6ecc4a4236b16a9737ee1571541',1,'ScientificReport.Controllers.ScientificWorkController.Edit(Guid id, ScientificWorksEdit scientificWorksEdit)'],['../a00010.html#a18a783eb681c3a1cde7ce8337dbbbc35',1,'ScientificReport.Controllers.TeacherReportController.Edit(Guid?id)'],['../a00010.html#aa87e16aa425ad868793929e14cc9069a',1,'ScientificReport.Controllers.TeacherReportController.Edit(Guid id, [Bind(&quot;Id,Created&quot;)] TeacherReport report)'],['../a00011.html#a301fe8b8081fe11b59b4c90a4e76b2b1',1,'ScientificReport.Controllers.UserProfileController.Edit(Guid?id)'],['../a00011.html#ae81af6a998d2987865ce274806dcc7f4',1,'ScientificReport.Controllers.UserProfileController.Edit(Guid?id, UserProfileEditModel model)']]],
-  ['error',['Error',['../a00002.html#ab23c5c5bb2a8f95c1c6ca4de3e32318d',1,'ScientificReport::Controllers::HomeController']]]
+  ['be',['Be',['../a00357.html#ab3e19c2a0cffca68ef59a6fc143d9e39',1,'bootstrap.bundle.min.js']]],
+  ['boxmodeladjustment',['boxModelAdjustment',['../a00367.html#a2fce17d1c46564d5d8cee405ba8b064a',1,'jquery.js']]],
+  ['bt',['bt',['../a00357.html#a2ddde56796966b8dd1b2396320254254',1,'bootstrap.bundle.min.js']]],
+  ['buildfragment',['buildFragment',['../a00367.html#a2e7bd626da7d1f83e42b77971e3f19f6',1,'jquery.js']]],
+  ['buildmodel',['BuildModel',['../a00136.html#a92c1f9f2efcfaf4426579e0ddb7e4921',1,'ScientificReport::Migrations::ScientificReportDbContextModelSnapshot']]],
+  ['buildparams',['buildParams',['../a00367.html#a3c4f3b337daa2444fa73ee856be5f9d8',1,'jquery.js']]],
+  ['buildtargetmodel',['BuildTargetModel',['../a00158.html#a7209dcd8b9bb0bcc2603600e21f8405e',1,'ScientificReport::Migrations::UpdateOfReportThesisModel']]]
 ];

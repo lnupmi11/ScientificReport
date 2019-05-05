@@ -111,13 +111,18 @@ WARN_LOGFILE           =
 #---------------------------------------------------------------------------
 # Configuration options related to the input files
 #---------------------------------------------------------------------------
-INPUT                  = ../../ScientificReport
+INPUT                  = ../..
 INPUT_ENCODING         = UTF-8
 FILE_PATTERNS          = 
 RECURSIVE              = YES
 EXCLUDE                = obj
 EXCLUDE_SYMLINKS       = NO
-EXCLUDE_PATTERNS       = */wwwroot/*
+EXCLUDE_PATTERNS       = */.git/*
+EXCLUDE_PATTERNS      += */Docs/*
+EXCLUDE_PATTERNS      += */venv/*
+EXCLUDE_PATTERNS      += */node_modules/*
+EXCLUDE_PATTERNS      += */obj/*
+EXCLUDE_PATTERNS      += */bin/*
 EXCLUDE_SYMBOLS        =
 EXAMPLE_PATH           =
 EXAMPLE_PATTERNS       = 

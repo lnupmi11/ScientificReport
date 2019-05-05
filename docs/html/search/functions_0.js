@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['addauthor',['AddAuthor',['../a00007.html#a71fa6d15933924ecdeff87eeec4de7f7',1,'ScientificReport::Controllers::ScientificWorkController']]],
-  ['addscientificwork',['AddScientificWork',['../a00001.html#a9a74bac1debc55ed2c6b972bf1a20e92',1,'ScientificReport::Controllers::DepartmentController']]],
-  ['addusertoadministration',['AddUserToAdministration',['../a00011.html#adb37027360b4e896fd1b885e419367ca',1,'ScientificReport::Controllers::UserProfileController']]],
-  ['addusertostaff',['AddUserToStaff',['../a00001.html#a8683ffde0f7094727ae68150a48c6cbc',1,'ScientificReport::Controllers::DepartmentController']]]
+  ['_21function',['!function',['../a00354.html#a6e2c9a4472a75ae2ec32ee54ff87c001',1,'!function(t):&#160;materialize.min.js'],['../a00357.html#afcc778a3e07eb56672fb93c2a8eef157',1,'!function(e, t):&#160;bootstrap.bundle.min.js'],['../a00357.html#a068b66dd20c792ec676087e0dbb4d689',1,'!function(e):&#160;bootstrap.bundle.min.js'],['../a00359.html#aa2bdb854ead8cc8b8018b1e7f536e543',1,'!function(t, e):&#160;bootstrap.min.js'],['../a00359.html#a6e2c9a4472a75ae2ec32ee54ff87c001',1,'!function(t):&#160;bootstrap.min.js'],['../a00368.html#afcc778a3e07eb56672fb93c2a8eef157',1,'!function(e, t):&#160;jquery.min.js'],['../a00363.html#afaeef3a1a07af568051b656bbbffec25',1,'!function(a):&#160;additional-methods.min.js'],['../a00365.html#afaeef3a1a07af568051b656bbbffec25',1,'!function(a):&#160;jquery.validate.min.js'],['../a00361.html#afaeef3a1a07af568051b656bbbffec25',1,'!function(a):&#160;jquery.validate.unobtrusive.min.js']]]
 ];
