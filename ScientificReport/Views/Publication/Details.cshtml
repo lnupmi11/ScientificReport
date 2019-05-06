@@ -10,75 +10,75 @@
     <h4>Publication</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class = "col s2">
             @Html.DisplayNameFor(model => model.Type)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col s10">
             @Html.DisplayFor(model => model.Type)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col s2">
             @Html.DisplayNameFor(model => model.Title)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col s10">
             @Html.DisplayFor(model => model.Title)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col s2">
             @Html.DisplayNameFor(model => model.Specification)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col s10">
             @Html.DisplayFor(model => model.Specification)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col s2">
             @Html.DisplayNameFor(model => model.PublishingPlace)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col s10">
             @Html.DisplayFor(model => model.PublishingPlace)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col s2">
             @Html.DisplayNameFor(model => model.PublishingHouseName)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col s10">
             @Html.DisplayFor(model => model.PublishingHouseName)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col s2">
             @Html.DisplayNameFor(model => model.PublishingYear)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col s10">
             @Html.DisplayFor(model => model.PublishingYear)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col s2">
             @Html.DisplayNameFor(model => model.PagesAmount)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col s10">
             @Html.DisplayFor(model => model.PagesAmount)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col s2">
             @Html.DisplayNameFor(model => model.IsPrintCanceled)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col s10">
             @Html.DisplayFor(model => model.IsPrintCanceled)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col s2">
             @Html.DisplayNameFor(model => model.IsRecommendedToPrint)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col s10">
             @Html.DisplayFor(model => model.IsRecommendedToPrint)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col s2">
             @Html.DisplayNameFor(model => model.CreatedAt)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col s10">
             @Html.DisplayFor(model => model.CreatedAt)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col s2">
             @Html.DisplayNameFor(model => model.LastEditAt)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col s10">
             @Html.DisplayFor(model => model.LastEditAt)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="waves-effect btn-small waves-light">Edit</a>
+    <a asp-action="Index" class="btn-small blue darken-3">Back to List</a>
 </div>

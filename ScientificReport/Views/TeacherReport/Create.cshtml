@@ -8,7 +8,7 @@
 <h4>Report</h4>
 <hr />
 <div class="row">
-	<div class="col-md-4">
+	<div class="col m4">
 		<form asp-action="Create">
 			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 			<div class="form-group">
@@ -16,14 +16,14 @@
 					x => x.UserId,
 					new SelectList(Model.Users, "Id", "FirstName", Model.UserId)					)
 				@Html.ValidationMessageFor(x => x.UserId)
-				<input type="submit" value="Create" class="btn btn-primary"/>
+				<input type="submit" value="Create" class="waves-effect btn-small green darken-3"/>
 			</div>
 		</form>
 	</div>
 </div>
 
 <div>
-	<a asp-action="Index">Back to List</a>
+	<a asp-action="Index" class="btn-small blue darken-3">Back to List</a>
 </div>
 
 @section Scripts {

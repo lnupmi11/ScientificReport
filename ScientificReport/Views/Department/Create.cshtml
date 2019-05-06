@@ -21,6 +21,6 @@
 			@Html.ValidationMessageFor(x => x.SelectedHeadId, "", new { @class = "text-danger" })
 		</div>
 	</div>
-	<button type="submit" class="btn btn-primary">Create</button>
+	<button type="submit" asp-action="Index">Create</button>
 	<a asp-action="Index" class="btn btn-secondary">Cancel</a>
 </form>
