@@ -89,7 +89,7 @@ namespace ScientificReport
 				options.Cookie.HttpOnly = true;
 				options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
 				options.LoginPath = "/UserProfile/Login";
-				options.AccessDeniedPath = "/UserProfile/AccessDenied";
+				options.AccessDeniedPath = "/Home/AccessDenied";
 				options.SlidingExpiration = true;
 			});
 
