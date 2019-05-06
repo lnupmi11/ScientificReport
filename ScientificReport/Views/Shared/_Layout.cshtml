@@ -60,8 +60,15 @@
 </div>
 
 <footer class="border-top footer text-muted">
-	<div class="container">
-		&copy; 2019 - ScientificReport - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="container">
+				&copy; 2019 - ScientificReport - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+			</div>
+		</div>
+		<div class="col-sm-6 text-right">
+			@await Html.PartialAsync("_SelectLanguagePartial")
+		</div>
 	</div>
 </footer>
 

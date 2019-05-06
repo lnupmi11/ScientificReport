@@ -1,84 +1,85 @@
+@using Microsoft.AspNetCore.Mvc.Localization
 @model ScientificReport.DTO.Models.UserProfile.UserDetailsModel
+@inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = "Details";
+	ViewData["Title"] = Localizer["Details"];
 }
 
-<h1>Details</h1>
+<h1>@ViewData["Title"]</h1>
 
 <div>
-	<h4>UserProfile</h4>
-	<hr />
+	<hr/>
 	<dl class="row">
-		<dt class = "col-sm-2">
-			@Html.DisplayNameFor(model => model.User.FirstName)
+		<dt class = "col-sm-4">
+			@Localizer[Html.DisplayNameFor(model => model.User.FirstName)]
 		</dt>
-		<dd class = "col-sm-10">
+		<dd class = "col-sm-8">
 			@Html.DisplayFor(model => model.User.FirstName)
 		</dd>
-		<dt class = "col-sm-2">
-			@Html.DisplayNameFor(model => model.User.MiddleName)
+		<dt class = "col-sm-4">
+			@Localizer[Html.DisplayNameFor(model => model.User.MiddleName)]
 		</dt>
-		<dd class = "col-sm-10">
+		<dd class = "col-sm-8">
 			@Html.DisplayFor(model => model.User.MiddleName)
 		</dd>
-		<dt class = "col-sm-2">
-			@Html.DisplayNameFor(model => model.User.LastName)
+		<dt class = "col-sm-4">
+			@Localizer[Html.DisplayNameFor(model => model.User.LastName)]
 		</dt>
-		<dd class = "col-sm-10">
+		<dd class = "col-sm-8">
 			@Html.DisplayFor(model => model.User.LastName)
 		</dd>
-		<dt class = "col-sm-2">
-			@Html.DisplayNameFor(model => model.User.BirthYear)
+		<dt class = "col-sm-4">
+			@Localizer[Html.DisplayNameFor(model => model.User.BirthYear)]
 		</dt>
-		<dd class = "col-sm-10">
+		<dd class = "col-sm-8">
 			@Html.DisplayFor(model => model.User.BirthYear)
 		</dd>
-		<dt class = "col-sm-2">
-			@Html.DisplayNameFor(model => model.User.GraduationYear)
+		<dt class = "col-sm-4">
+			@Localizer[Html.DisplayNameFor(model => model.User.GraduationYear)]
 		</dt>
-		<dd class = "col-sm-10">
+		<dd class = "col-sm-8">
 		@Html.DisplayFor(model => model.User.GraduationYear)
 		</dd>
-		<dt class = "col-sm-2">
-			@Html.DisplayNameFor(model => model.User.ScientificDegree)
+		<dt class = "col-sm-4">
+			@Localizer[Html.DisplayNameFor(model => model.User.ScientificDegree)]
 		</dt>
-		<dd class = "col-sm-10">
+		<dd class = "col-sm-8">
 			@Html.DisplayFor(model => model.User.ScientificDegree)
 		</dd>
-		<dt class = "col-sm-2">
-			@Html.DisplayNameFor(model => model.User.YearDegreeGained)
+		<dt class = "col-sm-4">
+			@Localizer[Html.DisplayNameFor(model => model.User.YearDegreeGained)]
 		</dt>
-		<dd class = "col-sm-10">
+		<dd class = "col-sm-8">
 			@Html.DisplayFor(model => model.User.YearDegreeGained)
 		</dd>
-		<dt class = "col-sm-2">
-			@Html.DisplayNameFor(model => model.User.AcademicStatus)
+		<dt class = "col-sm-4">
+			@Localizer[Html.DisplayNameFor(model => model.User.AcademicStatus)]
 		</dt>
-		<dd class = "col-sm-10">
+		<dd class = "col-sm-8">
 			@Html.DisplayFor(model => model.User.AcademicStatus)
 		</dd>
-		<dt class = "col-sm-2">
-			@Html.DisplayNameFor(model => model.User.YearDegreeAssigned)
+		<dt class = "col-sm-4">
+			@Localizer[Html.DisplayNameFor(model => model.User.YearDegreeAssigned)]
 		</dt>
-		<dd class = "col-sm-10">
+		<dd class = "col-sm-8">
 			@Html.DisplayFor(model => model.User.YearDegreeAssigned)
 		</dd>
-		<dt class = "col-sm-2">
-			@Html.DisplayNameFor(model => model.User.Position)
+		<dt class = "col-sm-4">
+			@Localizer[Html.DisplayNameFor(model => model.User.Position)]
 		</dt>
-		<dd class = "col-sm-10">
+		<dd class = "col-sm-8">
 			@Html.DisplayFor(model => model.User.Position) @Html.DisplayFor(model => model.DepartmentName)
 		</dd>
-		<dt class = "col-sm-2">
-			@Html.DisplayNameFor(model => model.User.IsApproved)
+		<dt class = "col-sm-4">
+			@Localizer[Html.DisplayNameFor(model => model.User.IsApproved)]
 		</dt>
-		<dd class = "col-sm-10">
+		<dd class = "col-sm-8">
 			@Html.DisplayFor(model => model.User.IsApproved)
 		</dd>
 	</dl>
 </div>
 <div>
-	<a asp-action="Edit" asp-route-id="@Model.User.Id">Edit</a> |
-	<a asp-action="Index">Back to List</a>
+	<a asp-action="Edit" asp-route-id="@Model.User.Id">@Localizer["Edit"]</a> |
+	<a asp-action="Index">@Localizer["Back to List"]</a>
 </div>

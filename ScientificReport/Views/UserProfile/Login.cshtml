@@ -1,26 +1,28 @@
+@using Microsoft.AspNetCore.Mvc.Localization
 @model ScientificReport.DTO.Models.UserProfile.LoginModel
+@inject IViewLocalizer Localizer
 
 @{
-	ViewBag.Title = "Log In";
+	ViewBag.Title = Localizer["Log In"];
 	Layout = "_Layout";
 }
-<h1>Log in</h1>
+<h1>@Localizer["Log In"]</h1>
 <div asp-validation-summary="All" class="text-danger validation-summary-valid"></div>
-<h4>Use a local account to log in.</h4>
+<h4>@Localizer["Use a local account to log in."]</h4>
 <hr/>
 <form asp-action="Login" method="post">
 	<div class="form-group">
-		<label asp-for="UserName"></label>
+		<label asp-for="UserName">@Localizer["UserName"]</label>
 		<input asp-for="UserName" class="form-control"/>
 	</div>
 	<div class="form-group">
-		<label asp-for="Password"></label>
+		<label asp-for="Password">@Localizer["Password"]</label>
 		<input asp-for="Password" class="form-control"/>
 	</div>
 	<div class="form-group">
-    	<label asp-for="RememberMe"></label>
+    	<label asp-for="RememberMe">@Localizer["RememberMe"]</label>
     	<input asp-for="RememberMe" class="form-control"/>
     </div>
-	<button type="submit" class="btn btn-primary">Log In</button>
-	<a asp-action="Index" class="btn btn-secondary">Cancel</a>
+	<button type="submit" class="btn btn-primary">@Localizer["Log In"]</button>
+	<a asp-action="Index" class="btn btn-secondary">@Localizer["Cancel"]</a>
 </form>

@@ -1,8 +1,10 @@
+@using Microsoft.AspNetCore.Mvc.Localization
 @using ScientificReport.DAL.Roles
+@inject IViewLocalizer Localizer
 @model ScientificReport.DTO.Models.UserProfile.UserProfileEditModel
 
 @{
-	ViewData["Title"] = "Edit";
+	ViewData["Title"] = Localizer["Edit"];
 	Layout = "_Layout";
 }
 
@@ -17,50 +19,50 @@
 	.hidden { display: none; }
 </style>
 
-<div class="bg-primary m-1 p-1 text-white"><h4>Edit user</h4></div>
+<div class="bg-primary m-1 p-1 text-white"><h4>@Localizer["Edit user"]</h4></div>
 <div asp-validation-summary="All" class="text-danger"></div>
 <form asp-action="Edit" method="post">
 	<div class="row">
 		<div class="col-md-4">
 			<div class="form-group">
-				<label asp-for="FirstName"></label>
+				<label asp-for="FirstName">@Localizer["FirstName"]</label>
 				<input asp-for="FirstName" class="form-control"/>
 				<span asp-validation-for="FirstName" class="text-danger"></span>
 			</div>
 			<div class="form-group">
-				<label asp-for="MiddleName"></label>
+				<label asp-for="MiddleName">@Localizer["MiddleName"]</label>
 				<input asp-for="MiddleName" class="form-control"/>
 				<span asp-validation-for="MiddleName" class="text-danger"></span>
 			</div>
 			<div class="form-group">
-				<label asp-for="LastName"></label>
+				<label asp-for="LastName">@Localizer["LastName"]</label>
 				<input asp-for="LastName" class="form-control"/>
 				<span asp-validation-for="LastName" class="text-danger"></span>
 			</div>
 			<div class="form-group">
-				<label asp-for="PhoneNumber"></label>
+				<label asp-for="PhoneNumber">@Localizer["PhoneNumber"]</label>
 				<input asp-for="PhoneNumber" class="form-control"/>
 				<span asp-validation-for="PhoneNumber" class="text-danger"></span>
 			</div>
 			<div class="form-group">
-				<label asp-for="BirthYear"></label>
+				<label asp-for="BirthYear">@Localizer["BirthYear"]</label>
 				<input asp-for="BirthYear" class="form-control"/>
 				<span asp-validation-for="BirthYear" class="text-danger"></span>
 			</div>
 		</div>
 		<div class="col-md-4">
 			<div class="form-group">
-				<label asp-for="GraduationYear"></label>
+				<label asp-for="GraduationYear">@Localizer["GraduationYear"]</label>
 				<input asp-for="GraduationYear" class="form-control"/>
 				<span asp-validation-for="GraduationYear" class="text-danger"></span>
 			</div>
 			<div class="form-group">
-				<label asp-for="ScientificDegree"></label>
+				<label asp-for="ScientificDegree">@Localizer["ScientificDegree"]</label>
 				<input asp-for="ScientificDegree" class="form-control"/>
 				<span asp-validation-for="ScientificDegree" class="text-danger"></span>
 			</div>
 			<div class="form-group">
-				<label asp-for="YearDegreeAssigned"></label>
+				<label asp-for="YearDegreeAssigned">@Localizer["YearDegreeAssigned"]</label>
 				<input asp-for="YearDegreeAssigned" class="form-control"/>
 				<span asp-validation-for="YearDegreeAssigned" class="text-danger"></span>
 			</div>
@@ -84,7 +86,7 @@
 									{
 										<i class="fas fa-@(contains ? "minus" : "plus")-circle fa-lg" title="Unable to @(contains ? "remove" : "add") role"></i>
 									}
-									@role.Name
+									@Localizer[role.Name]
 								</p>
 							}
 						}
@@ -94,38 +96,38 @@
 		</div>
 		<div class="col-md-4">
 			<div class="form-group">
-				<label asp-for="AcademicStatus"></label>
+				<label asp-for="AcademicStatus">@Localizer["AcademicStatus"]</label>
 				<input asp-for="AcademicStatus" class="form-control"/>
 				<span asp-validation-for="AcademicStatus" class="text-danger"></span>
 			</div>
 			<div class="form-group">
-				<label asp-for="YearDegreeGained"></label>
+				<label asp-for="YearDegreeGained">@Localizer["YearDegreeGained"]</label>
 				<input asp-for="YearDegreeGained" class="form-control"/>
 				<span asp-validation-for="YearDegreeGained" class="text-danger"></span>
 			</div>
 			<div class="form-group">
-				<label asp-for="UserName"></label>
+				<label asp-for="UserName">@Localizer["UserName"]</label>
 				<input asp-for="UserName" class="form-control"/>
 				<span asp-validation-for="UserName" class="text-danger"></span>
 			</div>
 			<div class="form-group">
-				<label asp-for="Email"></label>
+				<label asp-for="Email">@Localizer["Email"]</label>
 				<input asp-for="Email" class="form-control"/>
 				<span asp-validation-for="Email" class="text-danger"></span>
 			</div>
 			<div class="form-group">
-				<label asp-for="IsApproved"></label>
+				<label asp-for="IsApproved">@Localizer["IsApproved"]</label>
 				<input asp-for="IsApproved" class="form-control"/>
 				<span asp-validation-for="IsApproved" class="text-danger"></span>
 			</div>
 		</div>
 	</div>
-	<button type="submit" class="btn btn-primary">Save</button>
-	<a asp-action="Index" class="btn btn-secondary">Cancel</a>
+	<button type="submit" class="btn btn-primary">@Localizer["Save"]</button>
+	<a asp-action="Index" class="btn btn-secondary">@Localizer["Cancel"]</a>
 </form>
 
 <div>
-	<a asp-action="Index">Back to List</a>
+	<a asp-action="Index">@Localizer["Back to List"]</a>
 </div>
 
 @section Scripts {

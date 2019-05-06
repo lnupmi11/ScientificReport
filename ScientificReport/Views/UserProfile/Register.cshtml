@@ -1,72 +1,73 @@
+@using Microsoft.AspNetCore.Mvc.Localization
 @model ScientificReport.DTO.Models.UserProfile.RegisterModel
+@inject IViewLocalizer Localizer
 
 @{
-	ViewBag.Title = "Register";
+	ViewBag.Title = Localizer["Register"];
 	Layout = "_Layout";
 }
 
 @* <div class="bg-primary m-1 p-1 text-white"><h4>Register new account</h4></div> *@
-<h1>Register</h1>
+<h1>@Localizer["Register"]</h1>
 <div asp-validation-summary="All" class="text-danger validation-summary-valid"></div>
-<h4>Create a new account.</h4>
 <hr/>
 <form asp-action="Register" method="post">
 	<div class="form-group">
-		<label asp-for="FirstName"></label>
+		<label asp-for="FirstName">@Localizer["FirstName"]</label>
 		<input asp-for="FirstName" class="form-control"/>
 	</div>
 	<div class="form-group">
-		<label asp-for="MiddleName"></label>
+		<label asp-for="MiddleName">@Localizer["MiddleName"]</label>
 		<input asp-for="MiddleName" class="form-control"/>
 	</div>
 	<div class="form-group">
-		<label asp-for="LastName"></label>
+		<label asp-for="LastName">@Localizer["LastName"]</label>
 		<input asp-for="LastName" class="form-control"/>
 	</div>
 	<div class="form-group">
-		<label asp-for="PhoneNumber"></label>
+		<label asp-for="PhoneNumber">@Localizer["PhoneNumber"]</label>
 		<input asp-for="PhoneNumber" class="form-control"/>
 	</div>
 	<div class="form-group">
-		<label asp-for="BirthYear"></label>
+		<label asp-for="BirthYear">@Localizer["BirthYear"]</label>
 		<input asp-for="BirthYear" class="form-control"/>
 	</div>
 	<div class="form-group">
-		<label asp-for="GraduationYear"></label>
+		<label asp-for="GraduationYear">@Localizer["GraduationYear"]</label>
 		<input asp-for="GraduationYear" class="form-control"/>
 	</div>
 	<div class="form-group">
-		<label asp-for="ScientificDegree"></label>
+		<label asp-for="ScientificDegree">@Localizer["ScientificDegree"]</label>
 		<input asp-for="ScientificDegree" class="form-control"/>
 	</div>
 	<div class="form-group">
-		<label asp-for="YearDegreeAssigned"></label>
+		<label asp-for="YearDegreeAssigned">@Localizer["YearDegreeAssigned"]</label>
 		<input asp-for="YearDegreeAssigned" class="form-control"/>
 	</div>
 	<div class="form-group">
-		<label asp-for="AcademicStatus"></label>
+		<label asp-for="AcademicStatus">@Localizer["AcademicStatus"]</label>
 		<input asp-for="AcademicStatus" class="form-control"/>
 	</div>
 	<div class="form-group">
-		<label asp-for="YearDegreeGained"></label>
+		<label asp-for="YearDegreeGained">@Localizer["YearDegreeGained"]</label>
 		<input asp-for="YearDegreeGained" class="form-control"/>
 	</div>
 	<div class="form-group">
-		<label asp-for="UserName"></label>
+		<label asp-for="UserName">@Localizer["UserName"]</label>
 		<input asp-for="UserName" class="form-control"/>
 	</div>
 	<div class="form-group">
-		<label asp-for="Email"></label>
+		<label asp-for="Email">@Localizer["Email"]</label>
 		<input asp-for="Email" class="form-control"/>
 	</div>
 	<div class="form-group">
-		<label asp-for="Password"></label>
+		<label asp-for="Password">@Localizer["Password"]</label>
 		<input asp-for="Password" class="form-control"/>
 	</div>
 	<div class="form-group">
-		<label asp-for="PasswordRepeat"></label>
+		<label asp-for="PasswordRepeat">@Localizer["PasswordRepeat"]</label>
 		<input asp-for="PasswordRepeat" class="form-control"/>
 	</div>
-	<button type="submit" class="btn btn-primary">Register</button>
-	<a asp-action="Index" class="btn btn-secondary">Cancel</a>
+	<button type="submit" class="btn btn-primary">@Localizer["Register"]</button>
+	<a asp-action="Index" class="btn btn-secondary">@Localizer["Cancel"]</a>
 </form>
