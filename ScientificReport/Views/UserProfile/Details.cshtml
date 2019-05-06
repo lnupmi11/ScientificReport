@@ -88,14 +88,7 @@
 			@Html.DisplayNameFor(model => model.User.IsApproved)
 		</div>
 		<div class="col s10">
-			@if (@Model.User.IsApproved)
-			{
-				<span>Yes</span>
-			}
-			else
-			{
-				<span>No</span>
-			}
+			<span>@(Model.User.IsApproved ? "Yes" : "No")</span>
 		</div>
 	</div>
 </div>

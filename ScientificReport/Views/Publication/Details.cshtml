@@ -56,13 +56,13 @@
             @Html.DisplayNameFor(model => model.IsPrintCanceled)
         </dt>
         <dd class = "col s10">
-            @Html.DisplayFor(model => model.IsPrintCanceled)
+            <span>@(Model.IsPrintCanceled ? "Yes" : "No")</span>
         </dd>
         <dt class = "col s2">
             @Html.DisplayNameFor(model => model.IsRecommendedToPrint)
         </dt>
         <dd class = "col s10">
-            @Html.DisplayFor(model => model.IsRecommendedToPrint)
+            <span>@(Model.IsRecommendedToPrint ? "Yes" : "No")</span>
         </dd>
         <dt class = "col s2">
             @Html.DisplayNameFor(model => model.CreatedAt)
