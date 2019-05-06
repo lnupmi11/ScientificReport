@@ -309,11 +309,20 @@ namespace ScientificReport.Controllers
 				var user = _userProfileService.Get(usr => usr.UserName == model.UserName);
 				if (user != null)
 				{
-					var result = await _signInManager.PasswordSignInAsync(
-						user.UserName, model.Password, model.RememberMe, false
-					);
-					if (result.Succeeded) {
-						return Redirect(model.ReturnUrl);
+					if (user.IsApproved)
+					{
+						var result = await _signInManager.PasswordSignInAsync(
+							user.UserName, model.Password, model.RememberMe, false
+						);
+						if (result.Succeeded)
+						{
+							return Redirect(model.ReturnUrl);
+						}	
+					}
+					else
+					{
+						ModelState.AddModelError(string.Empty, "Account is not approved yet");
+						return View(model);
 					}
 				}
 			}
