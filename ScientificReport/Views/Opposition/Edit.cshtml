@@ -9,30 +9,35 @@
 <h4>Opposition</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col s12">
         <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div asp-validation-summary="ModelOnly" class="validate"></div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="About" class="control-label"></label>
-                <input asp-for="About" class="form-control" />
-                <span asp-validation-for="About" class="text-danger"></span>
+            <div class="row">
+                <div class="input-field col s6">
+                    <textarea asp-for="About" class="materialize-textarea"></textarea>
+                    <label asp-for="About"></label>
+                    <span class="helper-text" asp-validation-for="About" 
+                          data-length="400" data-error="" data-success=""></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="DateOfOpposition" class="control-label"></label>
-                <input asp-for="DateOfOpposition" class="form-control" />
-                <span asp-validation-for="DateOfOpposition" class="text-danger"></span>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input asp-for="DateOfOpposition" type="date" class="validate"/>
+                    <label asp-for="DateOfOpposition"></label>
+                    <span class="helper-text" asp-validation-for="DateOfOpposition" 
+                          data-length="400" data-error="" data-success=""></span>
+                </div>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+	
+            <div class="row">
+                <input type="submit" value="Save" class="waves-effect btn-small  amber accent-2"/>
+                <a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

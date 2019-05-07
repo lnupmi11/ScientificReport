@@ -9,44 +9,57 @@
 <h4>PostgraduateDissertationGuidance</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col s12">
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="PostgraduateName" class="control-label"></label>
-                <input asp-for="PostgraduateName" class="form-control" />
-                <span asp-validation-for="PostgraduateName" class="text-danger"></span>
+            <div asp-validation-summary="ModelOnly" class="validate"></div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input asp-for="PostgraduateName" type="text" class="validate">
+                    <label asp-for="PostgraduateName"></label>
+                    <span class="helper-text" asp-validation-for="PostgraduateName" 
+                          data-error="" data-success=""></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Dissertation" class="control-label"></label>
-                <input asp-for="Dissertation" class="form-control" />
-                <span asp-validation-for="Dissertation" class="text-danger"></span>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input asp-for="Dissertation" type="text" class="validate">
+                    <label asp-for="Dissertation"></label>
+                    <span class="helper-text" asp-validation-for="Dissertation" 
+                           data-error="" data-success=""></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Speciality" class="control-label"></label>
-                <input asp-for="Speciality" class="form-control" />
-                <span asp-validation-for="Speciality" class="text-danger"></span>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input asp-for="Speciality" type="text" class="validate"/>
+                    <label asp-for="Speciality"></label>
+                    <span class="helper-text" asp-validation-for="Speciality" 
+                          data-error="" data-success=""></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="DateDegreeGained" class="control-label"></label>
-                <input asp-for="DateDegreeGained" class="form-control" />
-                <span asp-validation-for="DateDegreeGained" class="text-danger"></span>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input asp-for="DateDegreeGained" type="date" class="validate"/>
+                    <label asp-for="DateDegreeGained"></label>
+                    <span class="helper-text" asp-validation-for="DateDegreeGained" 
+                          data-error="" data-success=""></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="GraduationYear" class="control-label"></label>
-                <input asp-for="GraduationYear" class="form-control" />
-                <span asp-validation-for="GraduationYear" class="text-danger"></span>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input asp-for="GraduationYear" type="number" class="validate"/>
+                    <label asp-for="GraduationYear"></label>
+                    <span class="helper-text" asp-validation-for="GraduationYear" 
+                          data-error="" data-success=""></span>
+                </div>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="waves-effect btn-small green darken-3"/>
+            <div class="row">
+                <input type="submit" value="Create" class="waves-effect btn-small  amber accent-2"/>
+                <a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

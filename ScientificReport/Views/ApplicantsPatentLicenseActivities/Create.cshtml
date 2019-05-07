@@ -6,32 +6,34 @@
 
 <h1>Create</h1>
 
-<h4>ApplicantsPatentLicenseActivities</h4>
+<h4>Applicants Patent License Activities</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col s12">
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="ApplicantId" class="control-label"></label>
-                <input asp-for="ApplicantId" class="form-control" />
-                <span asp-validation-for="ApplicantId" class="text-danger"></span>
+            <div asp-validation-summary="ModelOnly" class="validate"></div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input asp-for="ApplicantId" type="number" class="validate">
+                    <label asp-for="ApplicantId">Applicant Id</label>
+                    <span class="helper-text" asp-validation-for="ApplicantId" data-error="some data is in bad format" data-success=""></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="PatentLicenseActivityId" class="control-label"></label>
-                <input asp-for="PatentLicenseActivityId" class="form-control" />
-                <span asp-validation-for="PatentLicenseActivityId" class="text-danger"></span>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input asp-for="PatentLicenseActivityId" type="number" class="validate">
+                    <label asp-for="PatentLicenseActivityId">Patent License Activity Id</label>
+                    <span asp-validation-for="PatentLicenseActivityId" data-error="" data-success=""></span>
+                </div>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="waves-effect btn-small green darken-3"/>
+            <div class="row">
+                <input type="submit" value="Create" class="waves-effect btn-small  amber accent-2"/>
+                <a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
