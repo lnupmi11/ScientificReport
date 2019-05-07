@@ -36,19 +36,19 @@ echo 'Setting up the script...'
 set -ex
 
 # Create a clean working directory for this script.
-mkdir code_docs
+mkdir -p code_docs
 cd code_docs
 
 # Get the current gh-pages branch
-git clone -b gh-pages "https://git@$GH_REPO_REF"
+git clone -b gh-pages --depth 1 "https://git@$GH_REPO_REF"
 cd "$GH_REPO_NAME"
 
 ##### Configure git.
 # Set the push default to simple i.e. push only the current branch.
-git config --global push.default simple
+git config --local push.default simple
 # Pretend to be an user called Travis CI.
-git config user.name "Travis CI"
-git config user.email "travis@travis-ci.org"
+git config --local user.name "Travis CI"
+git config --local user.email "travis@travis-ci.org"
 
 # Remove everything currently in the gh-pages branch.
 # GitHub is smart enough to know which files have changed and which files have
@@ -82,13 +82,13 @@ cp -v "$TRAVIS_BUILD_DIR/"*.md ./ || true
 # Check this by verifying that the html directory and the file html/index.html
 # both exist. This is a good indication that Doxygen did it's work.
 
-if [[ -d "docs/html" ]] && [[ -f "docs/html/index.html" ]]; then
-    echo 'Uploading documentation to the gh-pages branch...'
-    # Add everything in this directory (the Doxygen code documentation) to the
-    # gh-pages branch.
-    # GitHub is smart enough to know which files have changed and which files have
-    # stayed the same and will only update the changed files.
-		git add --all
+if [ -d "docs/html" ] && [ -f "docs/html/index.html" ]; then
+	echo 'Uploading documentation to the gh-pages branch...'
+	# Add everything in this directory (the Doxygen code documentation) to the
+	# gh-pages branch.
+	# GitHub is smart enough to know which files have changed and which files have
+	# stayed the same and will only update the changed files.
+	git add --all
 
 		if ! git diff --exit-code --cached 2>&1 1>/dev/null; then
 			# Commit the added files with a title and description containing the Travis CI
