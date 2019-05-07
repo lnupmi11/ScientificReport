@@ -9,29 +9,31 @@
 <h4>ScientificConsultation</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col s12">
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="CandidateName" class="control-label"></label>
-                <input asp-for="CandidateName" class="form-control" />
-                <span asp-validation-for="CandidateName" class="text-danger"></span>
+            <div asp-validation-summary="ModelOnly" class="validate"></div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input asp-for="CandidateName" type="text" class="validate">
+                    <label asp-for="CandidateName"></label>
+                    <span class="helper-text" asp-validation-for="CandidateName" data-error="" data-success=""></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="DissertationTitle" class="control-label"></label>
-                <input asp-for="DissertationTitle" class="form-control" />
-                <span asp-validation-for="DissertationTitle" class="text-danger"></span>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input asp-for="DissertationTitle" type="text" class="validate">
+                    <label asp-for="DissertationTitle"></label>
+                    <span class="helper-text" asp-validation-for="DissertationTitle" data-error="" data-success=""></span>
+                </div>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="waves-effect btn-small green darken-3"/>
+            <div class="row">
+                <input type="submit" value="Create" class="waves-effect btn-small  amber accent-2"/>
+                <a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

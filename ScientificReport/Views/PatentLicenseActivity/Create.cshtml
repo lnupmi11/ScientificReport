@@ -9,40 +9,59 @@
 <h4>PatentLicenseActivity</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col s12">
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+            <div asp-validation-summary="ModelOnly" class="validate"></div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input asp-for="Name" type="text" class="validate">
+                    <label asp-for="Name"></label>
+                    <span class="helper-text" asp-validation-for="Name" 
+                          data-error="" data-success=""></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Number" class="control-label"></label>
-                <input asp-for="Number" class="form-control" />
-                <span asp-validation-for="Number" class="text-danger"></span>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input asp-for="Number" type="number" class="validate">
+                    <label asp-for="Number"></label>
+                    <span class="helper-text" asp-validation-for="Name" 
+                           data-error="" data-success=""></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="DateTime" class="control-label"></label>
-                <input asp-for="DateTime" class="form-control" />
-                <span asp-validation-for="DateTime" class="text-danger"></span>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input asp-for="DateTime" type="date" class="validate"/>
+                    <label asp-for="DateTime"></label>
+                    <span class="helper-text" asp-validation-for="DateTime" 
+                           data-error="" data-success=""></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Type" class="control-label"></label>
-                <select asp-for="Type" class="form-control"></select>
-                <span asp-validation-for="Type" class="text-danger"></span>
+            
+            <div class="row">
+                <div class="input-field col s6">
+                    <select asp-for="Type" class="col s12 push-s2">
+                        <option value="" disabled selected>Choose your option</option>
+                        <option value="Patent">Patent</option>
+                        <option value="Application">Application</option>
+                    </select>
+                    <label asp-for="Type">Type</label>
+                </div>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="waves-effect btn-small green darken-3"/>
+	
+            <div class="row">
+                <input type="submit" value="Create" class="waves-effect btn-small  amber accent-2"/>
+                <a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
-</div>
 
 @section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('select').formSelect();
+        });
+    </script>
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

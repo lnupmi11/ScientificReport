@@ -12,63 +12,107 @@
 <h1>Register</h1>
 <h4>Create a new account.</h4>
 <hr/>
-<form asp-action="Register" method="post">
-	<div class="form-group">
-		<label asp-for="FirstName"></label>
-		<input asp-for="FirstName" class="form-control"/>
+
+<div class="row">
+	<div class="col s12">
+		<form asp-action="Register" method="post">
+			<div asp-validation-summary="ModelOnly" class="validate"></div>
+			<div class="row">
+				<div class="input-field col s4">
+					<input asp-for="FirstName" type="text" class="validate">
+					<label asp-for="FirstName"></label>
+					<span class="helper-text" asp-validation-for="FirstName" data-error="" data-success=""></span>
+				</div>
+			
+				<div class="input-field col s4">
+					<input asp-for="MiddleName" type="text" class="validate">
+					<label asp-for="MiddleName"></label>
+					<span class="helper-text" asp-validation-for="MiddleName" data-error="" data-success=""></span>
+				</div>
+			
+				<div class="input-field col s4">
+					<input asp-for="LastName" type="text" class="validate">
+					<label asp-for="LastName"></label>
+					<span class="helper-text" asp-validation-for="LastName" data-error="" data-success=""></span>
+				</div>
+			
+				<div class="input-field col s8">
+					<input asp-for="PhoneNumber" type="text" class="validate">
+					<label asp-for="PhoneNumber"></label>
+					<span class="helper-text" asp-validation-for="PhoneNumber" data-error="" data-success=""></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s4">
+					<input asp-for="BirthYear" type="number" class="validate">
+					<label asp-for="BirthYear"></label>
+					<span class="helper-text" asp-validation-for="BirthYear" data-error="" data-success=""></span>
+				</div>
+		
+				<div class="input-field col s4">
+					<input asp-for="GraduationYear" type="number" class="validate">
+					<label asp-for="GraduationYear"></label>
+					<span class="helper-text" asp-validation-for="GraduationYear" data-error="" data-success=""></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s8">
+					<input asp-for="ScientificDegree" type="text" class="validate">
+					<label asp-for="ScientificDegree"></label>
+					<span class="helper-text" asp-validation-for="ScientificDegree" data-error="" data-success=""></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s4">
+					<input asp-for="YearDegreeAssigned" type="number" class="validate">
+					<label asp-for="YearDegreeAssigned"></label>
+					<span class="helper-text" asp-validation-for="YearDegreeAssigned" data-error="" data-success=""></span>
+				</div>
+			
+				<div class="input-field col s4">
+					<input asp-for="YearDegreeGained" type="number" class="validate">
+					<label asp-for="YearDegreeGained"></label>
+					<span class="helper-text" asp-validation-for="YearDegreeGained" data-error="" data-success=""></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s8">
+					<input asp-for="AcademicStatus" type="text" class="validate">
+					<label asp-for="AcademicStatus"></label>
+					<span class="helper-text" asp-validation-for="AcademicStatus" data-error="" data-success=""></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s4">
+					<input asp-for="UserName" type="text" class="validate">
+					<label asp-for="UserName"></label>
+					<span class="helper-text" asp-validation-for="UserName" data-error="" data-success=""></span>
+				</div>
+			
+				<div class="input-field col s4">
+					<input asp-for="Email" type="email" class="validate">
+					<label asp-for="Email"></label>
+					<span class="helper-text" asp-validation-for="Email" data-error="" data-success=""></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s4">
+					<input asp-for="Password" type="password" class="validate">
+					<label asp-for="Password"></label>
+					<span class="helper-text" asp-validation-for="Password" data-error="" data-success=""></span>
+				</div>
+		
+				<div class="input-field col s4">
+					<input asp-for="PasswordRepeat" type="password" class="validate">
+					<label asp-for="PasswordRepeat"></label>
+					<span class="helper-text" asp-validation-for="PasswordRepeat" data-error="" data-success=""></span>
+				</div>
+			</div>
+
+			<div class="row">
+				<input type="submit" value="Register" class="waves-effect btn-small  waves-light"/>
+				<a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
+			</div>
+		</form>
 	</div>
-	<div class="form-group">
-		<label asp-for="MiddleName"></label>
-		<input asp-for="MiddleName" class="form-control"/>
-	</div>
-	<div class="form-group">
-		<label asp-for="LastName"></label>
-		<input asp-for="LastName" class="form-control"/>
-	</div>
-	<div class="form-group">
-		<label asp-for="PhoneNumber"></label>
-		<input asp-for="PhoneNumber" class="form-control"/>
-	</div>
-	<div class="form-group">
-		<label asp-for="BirthYear"></label>
-		<input asp-for="BirthYear" class="form-control"/>
-	</div>
-	<div class="form-group">
-		<label asp-for="GraduationYear"></label>
-		<input asp-for="GraduationYear" class="form-control"/>
-	</div>
-	<div class="form-group">
-		<label asp-for="ScientificDegree"></label>
-		<input asp-for="ScientificDegree" class="form-control"/>
-	</div>
-	<div class="form-group">
-		<label asp-for="YearDegreeAssigned"></label>
-		<input asp-for="YearDegreeAssigned" class="form-control"/>
-	</div>
-	<div class="form-group">
-		<label asp-for="AcademicStatus"></label>
-		<input asp-for="AcademicStatus" class="form-control"/>
-	</div>
-	<div class="form-group">
-		<label asp-for="YearDegreeGained"></label>
-		<input asp-for="YearDegreeGained" class="form-control"/>
-	</div>
-	<div class="form-group">
-		<label asp-for="UserName"></label>
-		<input asp-for="UserName" class="form-control"/>
-	</div>
-	<div class="form-group">
-		<label asp-for="Email"></label>
-		<input asp-for="Email" class="form-control"/>
-	</div>
-	<div class="form-group">
-		<label asp-for="Password"></label>
-		<input asp-for="Password" class="form-control"/>
-	</div>
-	<div class="form-group">
-		<label asp-for="PasswordRepeat"></label>
-		<input asp-for="PasswordRepeat" class="form-control"/>
-	</div>
-	<button type="submit" class="btn btn-primary">Register</button>
-	<a asp-action="Index" class="btn btn-secondary">Cancel</a>
-</form>
+</div>

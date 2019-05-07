@@ -7,36 +7,42 @@
 <h4>ScientificWork</h4>
 <hr />
 <div class="row">
-    <div class="col m4">
+    <div class="col s12">
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Cypher" class="control-label"></label>
-                <input asp-for="Cypher" class="form-control" />
-                <span asp-validation-for="Cypher" class="text-danger"></span>
+            <div asp-validation-summary="ModelOnly" class="validate"></div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input asp-for="Cypher" type="text" class="validate">
+                    <label asp-for="Cypher"></label>
+                    <span class="helper-text" asp-validation-for="Cypher" data-error="" data-success=""></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Category" class="control-label"></label>
-                <input asp-for="Category" class="form-control" />
-                <span asp-validation-for="Category" class="text-danger"></span>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input asp-for="Category" type="date" class="validate">
+                    <label asp-for="Category"></label>
+                    <span class="helper-text" asp-validation-for="Category" data-error="" data-success=""></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input asp-for="Title" type="date" class="validate">
+                    <label asp-for="Title"></label>
+                    <span class="helper-text" asp-validation-for="Title" data-error="" data-success=""></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Contents" class="control-label"></label>
-                <input asp-for="Contents" class="form-control" />
-                <span asp-validation-for="Contents" class="text-danger"></span>
+            <div class="row">
+                <div class="input-field col s6">
+                    <textarea asp-for="Contents" class="materialize-textarea"></textarea>
+                    <label asp-for="Contents"></label>
+                    <span class="helper-text" asp-validation-for="Contents" 
+                          data-length="400" data-error="" data-success=""></span>
+                </div>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="waves-effect btn-small green darken-3"/>
+            <div class="row">
+                <input type="submit" value="Create" class="waves-effect btn-small  amber accent-2"/>
+                <a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
 </div>

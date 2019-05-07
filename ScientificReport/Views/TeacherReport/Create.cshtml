@@ -6,26 +6,35 @@
 <h1>Create</h1>
 
 <h4>Report</h4>
-<hr />
+<hr/>
 <div class="row">
-	<div class="col m4">
+	<div class="col s12">
 		<form asp-action="Create">
-			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
-			<div class="form-group">
-				@Html.DropDownListFor(
-					x => x.UserId,
-					new SelectList(Model.Users, "Id", "FirstName", Model.UserId)					)
-				@Html.ValidationMessageFor(x => x.UserId)
-				<input type="submit" value="Create" class="waves-effect btn-small green darken-3"/>
+			<div asp-validation-summary="ModelOnly" class="validate"></div>
+			<div class="row">
+				<div class="input-field col s7">
+					@Html.DropDownListFor(
+						x => x.UserId,
+						new SelectList(Model.Users, "Id", "FirstName", Model.UserId), new {@class = "col s6 push-s6"})
+					@Html.ValidationMessageFor(x => x.UserId, "", new {@class = "validate"})
+				</div>
 			</div>
+			<br/>
+			<div class="row">
+				<input type="submit" value="Create" class="waves-effect btn-small  amber accent-2"/>
+				<a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
+			</div>
+
 		</form>
 	</div>
 </div>
 
-<div>
-	<a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
-</div>
 
 @section Scripts {
-	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('select').formSelect();
+		});
+	</script>
+	@{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
 }

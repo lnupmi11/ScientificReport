@@ -9,21 +9,30 @@
 <h4>PostgraduateGuidance</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col s12">
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="PostgraduateName" class="control-label"></label>
-                <input asp-for="PostgraduateName" class="form-control" />
-                <span asp-validation-for="PostgraduateName" class="text-danger"></span>
+            <div asp-validation-summary="ModelOnly" class="validate"></div>
+           
+            <div class="row">
+                <div class="input-field col s6">
+                    <input asp-for="PostgraduateName" type="text" class="validate"/>
+                    <label asp-for="PostgraduateName"></label>
+                    <span class="helper-text" asp-validation-for="PostgraduateName" 
+                          data-error="" data-success=""></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="PostgraduateInfo" class="control-label"></label>
-                <input asp-for="PostgraduateInfo" class="form-control" />
-                <span asp-validation-for="PostgraduateInfo" class="text-danger"></span>
+            <div class="row">
+                <div class="input-field col s6">
+                    <textarea asp-for="PostgraduateInfo" class="materialize-textarea"></textarea>
+                    <label asp-for="PostgraduateInfo"></label>
+                    <span class="helper-text" asp-validation-for="PostgraduateInfo" 
+                          data-length="400" data-error="" data-success=""></span>
+                </div>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="waves-effect btn-small green darken-3"/>
+	
+            <div class="row">
+                <input type="submit" value="Create" class="waves-effect btn-small  amber accent-2"/>
+                <a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
             </div>
         </form>
     </div>
