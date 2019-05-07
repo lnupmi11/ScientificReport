@@ -5,9 +5,11 @@
 	Layout = "_Layout";
 }
 
-@* <div class="bg-primary m-1 p-1 text-white"><h4>Register new account</h4></div> *@
+<style>
+	input[type="submit"] { color: white !important; }
+</style>
+
 <h1>Register</h1>
-<div asp-validation-summary="All" class="text-danger validation-summary-valid"></div>
 <h4>Create a new account.</h4>
 <hr/>
 <form asp-action="Register" method="post">
