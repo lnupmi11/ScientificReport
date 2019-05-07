@@ -1,6 +1,5 @@
 var a00158 =
 [
-    [ "BuildTargetModel", "a00158.html#a7209dcd8b9bb0bcc2603600e21f8405e", null ],
-    [ "Down", "a00158.html#ad20d8408f8fc7ece837f6f62051dbf0b", null ],
-    [ "Up", "a00158.html#a71ebaa032953c4a8e26cd49f72cacd48", null ]
+    [ "DepartmentName", "a00158.html#a9d68937c0c08dce30993e203ce2c992c", null ],
+    [ "User", "a00158.html#af3a38310da28002ac44a6be61a8f630a", null ]
 ];

@@ -1,9 +1,21 @@
 var searchData=
 [
-  ['opposition_2ecs',['Opposition.cs',['../a00222.html',1,'']]],
-  ['oppositioncontroller_2ecs',['OppositionController.cs',['../a00335.html',1,'']]],
-  ['oppositionrepository_2ecs',['OppositionRepository.cs',['../a00254.html',1,'']]],
-  ['oppositionrepositorytests_2ecs',['OppositionRepositoryTests.cs',['../a00297.html',1,'']]],
-  ['oppositionservice_2ecs',['OppositionService.cs',['../a00200.html',1,'']]],
-  ['oppositionservicetests_2ecs',['OppositionServiceTests.cs',['../a00314.html',1,'']]]
+  ['readme_2emd',['README.md',['../a00176.html',1,'']]],
+  ['registermodel_2ecs',['RegisterModel.cs',['../a00284.html',1,'']]],
+  ['report_2ecs',['Report.cs',['../a00228.html',1,'']]],
+  ['reportthesis_2ecs',['ReportThesis.cs',['../a00231.html',1,'']]],
+  ['reportthesisauthorrequest_2ecs',['ReportThesisAuthorRequest.cs',['../a00276.html',1,'']]],
+  ['reportthesiscontroller_2ecs',['ReportThesisController.cs',['../a00339.html',1,'']]],
+  ['reportthesisdetails_2ecs',['ReportThesisDetails.cs',['../a00277.html',1,'']]],
+  ['reportthesisedit_2ecs',['ReportThesisEdit.cs',['../a00278.html',1,'']]],
+  ['reportthesisrepository_2ecs',['ReportThesisRepository.cs',['../a00258.html',1,'']]],
+  ['reportthesisrepositorytests_2ecs',['ReportThesisRepositoryTests.cs',['../a00301.html',1,'']]],
+  ['reportthesisservice_2ecs',['ReportThesisService.cs',['../a00204.html',1,'']]],
+  ['reportthesisservicetests_2ecs',['ReportThesisServiceTests.cs',['../a00318.html',1,'']]],
+  ['review_2ecs',['Review.cs',['../a00232.html',1,'']]],
+  ['reviewcontroller_2ecs',['ReviewController.cs',['../a00340.html',1,'']]],
+  ['reviewrepository_2ecs',['ReviewRepository.cs',['../a00259.html',1,'']]],
+  ['reviewrepositorytests_2ecs',['ReviewRepositoryTests.cs',['../a00302.html',1,'']]],
+  ['reviewservice_2ecs',['ReviewService.cs',['../a00205.html',1,'']]],
+  ['reviewservicetests_2ecs',['ReviewServiceTests.cs',['../a00319.html',1,'']]]
 ];

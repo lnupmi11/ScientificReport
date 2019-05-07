@@ -1,5 +1,12 @@
 var a00151 =
 [
-    [ "UserId", "a00151.html#a106482a8585b88321ea7f7a4678a6264", null ],
-    [ "Users", "a00151.html#a30e07cec0014930de00f8ec881bd9971", null ]
+    [ "TeacherReportRepository", "a00151.html#a50e232d5434886259cf5106991bf479d", null ],
+    [ "All", "a00151.html#ab37197ffa9f26a1d9eacff88708434db", null ],
+    [ "AllWhere", "a00151.html#a791e927ee6303175a19372cb90a95b6b", null ],
+    [ "Create", "a00151.html#a41f32b1bb6208e78d7feb0dac97485bf", null ],
+    [ "Delete", "a00151.html#a95b9f550796e9bea58418d856e368237", null ],
+    [ "Get", "a00151.html#abf7f3c93e612d1e2244661b8f62496e6", null ],
+    [ "Get", "a00151.html#a97d81aa9fb46ae405e11806cd924c25e", null ],
+    [ "GetQuery", "a00151.html#aadb805875b52a0f82403cb398faa0cc0", null ],
+    [ "Update", "a00151.html#a2f5ed16419f2d9927b28d330701c3ba0", null ]
 ];

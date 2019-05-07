@@ -1,13 +1,16 @@
 var searchData=
 [
-  ['coapplicantspatentlicenseactivities_2ecs',['CoApplicantsPatentLicenseActivities.cs',['../a00216.html',1,'']]],
-  ['coauthorspatentlicenseactivities_2ecs',['CoauthorsPatentLicenseActivities.cs',['../a00217.html',1,'']]],
-  ['conference_2ecs',['Conference.cs',['../a00218.html',1,'']]],
-  ['conferencecontroller_2ecs',['ConferenceController.cs',['../a00330.html',1,'']]],
-  ['conferencedetails_2ecs',['ConferenceDetails.cs',['../a00269.html',1,'']]],
-  ['conferenceedit_2ecs',['ConferenceEdit.cs',['../a00270.html',1,'']]],
-  ['conferencerepository_2ecs',['ConferenceRepository.cs',['../a00248.html',1,'']]],
-  ['conferencerepositorytests_2ecs',['ConferenceRepositoryTests.cs',['../a00291.html',1,'']]],
-  ['conferenceservice_2ecs',['ConferenceService.cs',['../a00196.html',1,'']]],
-  ['conferenceservicetests_2ecs',['ConferenceServiceTests.cs',['../a00310.html',1,'']]]
+  ['department_2ecs',['Department.cs',['../a00218.html',1,'']]],
+  ['departmentcontroller_2ecs',['DepartmentController.cs',['../a00330.html',1,'']]],
+  ['departmentcreatemodel_2ecs',['DepartmentCreateModel.cs',['../a00270.html',1,'']]],
+  ['departmenteditmodel_2ecs',['DepartmentEditModel.cs',['../a00271.html',1,'']]],
+  ['departmentreport_2ecs',['DepartmentReport.cs',['../a00226.html',1,'']]],
+  ['departmentreportrepository_2ecs',['DepartmentReportRepository.cs',['../a00248.html',1,'']]],
+  ['departmentreportrepositorytests_2ecs',['DepartmentReportRepositoryTests.cs',['../a00291.html',1,'']]],
+  ['departmentrepository_2ecs',['DepartmentRepository.cs',['../a00249.html',1,'']]],
+  ['departmentrepositorytests_2ecs',['DepartmentRepositoryTests.cs',['../a00292.html',1,'']]],
+  ['departmentservice_2ecs',['DepartmentService.cs',['../a00196.html',1,'']]],
+  ['departmentservicetests_2ecs',['DepartmentServiceTests.cs',['../a00310.html',1,'']]],
+  ['departmentupdatescientificworksrequest_2ecs',['DepartmentUpdateScientificWorksRequest.cs',['../a00272.html',1,'']]],
+  ['departmentupdatestaffrequest_2ecs',['DepartmentUpdateStaffRequest.cs',['../a00273.html',1,'']]]
 ];

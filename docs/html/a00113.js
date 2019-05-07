@@ -1,12 +1,9 @@
 var a00113 =
 [
-    [ "ReportThesisRepository", "a00113.html#af88a92b8eb26aa2ad54ca123dc7de7d3", null ],
-    [ "All", "a00113.html#a74a69648619f642cfcbfc9e501050cfa", null ],
-    [ "AllWhere", "a00113.html#a778be722f6f361956dbfb699b24df7e1", null ],
-    [ "Create", "a00113.html#afb10cfb54cb3c8e08a368f01c8cb06af", null ],
-    [ "Delete", "a00113.html#a03821b7c0f5ed91bf72ebab5168d2165", null ],
-    [ "Get", "a00113.html#a96c58819ee839854e5282e590e85ae41", null ],
-    [ "Get", "a00113.html#a71b4dd6351ab1544db87260ed4f3ff36", null ],
-    [ "GetQuery", "a00113.html#a19af17ed571e5fe4115cf7ba77d3c007", null ],
-    [ "Update", "a00113.html#a432fb84bc7a671f08fe10611fa84be1d", null ]
+    [ "AllTest", "a00113.html#ab476a2156c008b7834f4afb3f1fca44f", null ],
+    [ "AllWhereTest", "a00113.html#a7eab4b9cb9fbe086ac64ab7f36452297", null ],
+    [ "CreateTest", "a00113.html#ab0c90a9c5315453a88387a15b37a4843", null ],
+    [ "DeleteTest", "a00113.html#a87105a6c894be48428439569b887c096", null ],
+    [ "GetByIdTest", "a00113.html#a24e0abbb83c6493ee50d747a7f8aa784", null ],
+    [ "UpdateTest", "a00113.html#a2cc355a5da74a92eb191f91ed1dcd9d2", null ]
 ];

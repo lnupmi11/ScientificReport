@@ -1,9 +1,0 @@
-<map id="domManip" name="domManip">
-<area shape="rect" id="node2" href="$a00367.html#a2e7bd626da7d1f83e42b77971e3f19f6" title="buildFragment" alt="" coords="143,56,256,83"/>
-<area shape="rect" id="node4" href="$a00367.html#a70cf34f8c1021062b0b9e8a2f5b0629b" title="getAll" alt="" coords="329,107,387,133"/>
-<area shape="rect" id="node6" href="$a00367.html#a7e16d3514c9c5be87f4385e19959ebb0" title="disableScript" alt="" coords="147,157,251,184"/>
-<area shape="rect" id="node7" href="$a00367.html#a548c5e10ccd9bac9e45d283a9c5905df" title="restoreScript" alt="" coords="147,208,252,235"/>
-<area shape="rect" id="node8" href="$a00367.html#a9a35832f77246cace3666aacd757e3eb" title="DOMEval" alt="" coords="160,259,239,285"/>
-<area shape="rect" id="node3" href="$a00367.html#a99a61df3bfa1a891ee24a5cf6a4d9b90" title="toType" alt="" coords="327,5,389,32"/>
-<area shape="rect" id="node5" href="$a00367.html#a105bee78729acf37d181cd39694745fc" title="setGlobalEval" alt="" coords="304,56,412,83"/>
-</map>

@@ -1,25 +1,5 @@
 var searchData=
 [
-  ['d',['D',['../a00359.html#ad741d7cd7e6eda75030b55e36b706c0a',1,'D():&#160;bootstrap.min.js'],['../a00354.html#a36541169dfff685f807208881a4f0021',1,'d():&#160;materialize.min.js'],['../a00359.html#aeb337d295abaddb5ec3cb34cc2e2bbc9',1,'d():&#160;bootstrap.min.js'],['../a00368.html#aeb337d295abaddb5ec3cb34cc2e2bbc9',1,'d():&#160;jquery.min.js']]],
-  ['datapriv',['dataPriv',['../a00367.html#a00da6d485af059d4b5a333c8fe4db777',1,'jquery.js']]],
-  ['datauser',['dataUser',['../a00367.html#ad6f1d342df1a1213e1eccf55bce2d6fe',1,'jquery.js']]],
-  ['de',['de',['../a00359.html#a4f3ede5c81c594c796643846e2a71108',1,'de():&#160;bootstrap.min.js'],['../a00359.html#ad72f3c9d54acf200903de416d2931ded',1,'De():&#160;bootstrap.min.js']]],
-  ['debounce',['debounce',['../a00356.html#a1086dd4e23ce39ca6cf57fb61ac759c7',1,'bootstrap.bundle.js']]],
-  ['defaultdisplaymap',['defaultDisplayMap',['../a00367.html#ace9af54e6091935b58be4f2cb953c12e',1,'jquery.js']]],
-  ['defaults',['Defaults',['../a00357.html#ab98235ea22b259268e2315c2e1f1c479',1,'bootstrap.bundle.min.js']]],
-  ['defineproperty',['defineProperty',['../a00354.html#a720860a6bb1d2a13e406949d2bd95c8a',1,'defineProperty():&#160;materialize.min.js'],['../a00356.html#a817fcb70b363027b28fec000da90139a',1,'defineProperty():&#160;bootstrap.bundle.js']]],
-  ['delay',['delay',['../a00367.html#afd564c048cc51264c198cfe26d88b7c6',1,'jquery.js']]],
-  ['di',['di',['../a00357.html#a52cd37ba9c0f2fdd70733d8f80cb96b3',1,'di():&#160;bootstrap.bundle.min.js'],['../a00357.html#a77a1d7e91d8ccc92e21dfad8526f896f',1,'Di():&#160;bootstrap.bundle.min.js']]],
-  ['dir',['dir',['../a00367.html#a2a297348e1717ffd9ad78297181e31b0',1,'jquery.js']]],
-  ['displayeffect',['displayEffect',['../a00354.html#af0d65b527cfa0074a625ded249c55f2f',1,'materialize.min.js']]],
-  ['distribute',['distribute',['../a00369.html#aaf067a71f14d0ec45d339828ab97b21d',1,'LICENSE.txt']]],
-  ['dn',['dn',['../a00357.html#ab5e3f3e2b2507b73e2d8092caa5c8650',1,'dn():&#160;bootstrap.bundle.min.js'],['../a00359.html#ab5e3f3e2b2507b73e2d8092caa5c8650',1,'dn():&#160;bootstrap.min.js'],['../a00357.html#a6d471e1dd2d67d7272aa42316a550a63',1,'Dn():&#160;bootstrap.bundle.min.js'],['../a00359.html#a6d471e1dd2d67d7272aa42316a550a63',1,'Dn():&#160;bootstrap.min.js']]],
-  ['dochandleblur',['docHandleBlur',['../a00354.html#a2f1be858d709be1577d4e88568c50256',1,'materialize.min.js']]],
-  ['dochandlefocus',['docHandleFocus',['../a00354.html#afb8ffddfeb160b020ed42f47522a9b63',1,'materialize.min.js']]],
-  ['dochandlekeydown',['docHandleKeydown',['../a00354.html#aad67fd47d31b845bf92d7f5e8fa4592a',1,'materialize.min.js']]],
-  ['dochandlekeyup',['docHandleKeyup',['../a00354.html#ad0b9131ffedd5c0981926abce4ba02d6',1,'materialize.min.js']]],
-  ['document',['document',['../a00367.html#af61dbe660d8213297c7fed5b5c99d223',1,'jquery.js']]],
-  ['documentelement',['documentElement',['../a00367.html#a12d745c52a876a7d00f55b9b76d1e9ac',1,'jquery.js']]],
-  ['dropdown',['Dropdown',['../a00354.html#a1ad233b38aa8a375e2ba938ca959bd15',1,'Dropdown():&#160;materialize.min.js'],['../a00356.html#a1ad233b38aa8a375e2ba938ca959bd15',1,'Dropdown():&#160;bootstrap.bundle.js'],['../a00357.html#a7e359b36793f788ad5e3a2a341c5c660',1,'Dropdown():&#160;bootstrap.bundle.min.js'],['../a00358.html#a1ad233b38aa8a375e2ba938ca959bd15',1,'Dropdown():&#160;bootstrap.js'],['../a00359.html#a6174f2fc2c57933a177931aa5c26d265',1,'Dropdown():&#160;bootstrap.min.js']]],
-  ['dt',['dt',['../a00359.html#ac0b6b44b40e79c01a5afc17fd8b1d344',1,'dt():&#160;bootstrap.min.js'],['../a00357.html#aa4b213c2c2407c1a87c6a2a986e5d100',1,'Dt():&#160;bootstrap.bundle.min.js'],['../a00359.html#aa4b213c2c2407c1a87c6a2a986e5d100',1,'Dt():&#160;bootstrap.min.js']]]
+  ['headofdepartment',['HeadOfDepartment',['../a00164.html#ad6a18be97146be4cdcb150df239e35ae',1,'ScientificReport::DAL::Roles::UserProfileRole']]],
+  ['headofdepartmentoradmin',['HeadOfDepartmentOrAdmin',['../a00164.html#a4f3e774d1843ff13195312057b15a34a',1,'ScientificReport::DAL::Roles::UserProfileRole']]]
 ];

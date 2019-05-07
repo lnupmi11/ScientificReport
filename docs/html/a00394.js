@@ -1,5 +1,4 @@
 var a00394 =
 [
-    [ "Interfaces", "a00395.html", "a00395" ],
-    [ "Services", "a00396.html", "a00396" ]
+    [ "TeacherReportCreateViewModel", "a00150.html", "a00150" ]
 ];

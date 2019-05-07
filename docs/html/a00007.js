@@ -1,12 +1,12 @@
 var a00007 =
 [
-    [ "ArticleController", "a00007.html#ae7ba0ef094021430cea12650f2b55ff4", null ],
-    [ "Create", "a00007.html#a0bad194c5c227a76a99a60dbe10677b2", null ],
-    [ "Create", "a00007.html#a2f488563dee503e77532f8bb64ba2e25", null ],
-    [ "Delete", "a00007.html#a43b193c6cc934bff461fa469d69e03e8", null ],
-    [ "DeleteConfirmed", "a00007.html#a26e1bcd5b05ab96d18d796252cc08a76", null ],
-    [ "Details", "a00007.html#adbf709a7fdfbaf073e51e475d0f7e785", null ],
-    [ "Edit", "a00007.html#a21919fb78c19a6b6a92db0ec9bf94189", null ],
-    [ "Edit", "a00007.html#a4c80d0827bb3d98032da3b0ab40c40ef", null ],
-    [ "Index", "a00007.html#abf4ca6db9d251064055af647e81d0527", null ]
+    [ "ArticleRepository", "a00007.html#a872d0f4ade710c8d17ca3dcfc99eaafc", null ],
+    [ "All", "a00007.html#a543f33a59982aa0246b5b103baad4824", null ],
+    [ "AllWhere", "a00007.html#a1a91bbc7b2738c21aed689eacf6d4a0e", null ],
+    [ "Create", "a00007.html#a9a01cf3a1a2d0deec8eab9e0a8fa6a27", null ],
+    [ "Delete", "a00007.html#a722e2f133d7011e51b01d20ec47c1098", null ],
+    [ "Get", "a00007.html#acf653728b8f218b7a1e410ffb85016ac", null ],
+    [ "Get", "a00007.html#ac11cf874bcc5f3a4e1b809ba2fba2e92", null ],
+    [ "GetQuery", "a00007.html#ab8a4668c9e9f53f7e8245c6812e11082", null ],
+    [ "Update", "a00007.html#ae194dacb48ffaa69486c35b2ac12e98f", null ]
 ];

@@ -1,8 +1,12 @@
 var a00012 =
 [
-    [ "Author", "a00012.html#a042a63870e696fd60df3b7c43a00518b", null ],
-    [ "AuthorId", "a00012.html#a83e7f71950e5ce10027c86db97f49c1f", null ],
-    [ "Id", "a00012.html#aa2cb217437d335030ccd125699cc2bbd", null ],
-    [ "PatentLicenseActivity", "a00012.html#a910e58ce8a5ec44efab4e4bdcab04070", null ],
-    [ "PatentLicenseActivityId", "a00012.html#a88febc5e4fbde206ea1ee1d8391554ef", null ]
+    [ "AuthorsPatentLicenseActivitiesController", "a00012.html#af1fa948add837cc18268a43a0900c189", null ],
+    [ "Create", "a00012.html#a5da576965f709e42f8584fce5ee8c16e", null ],
+    [ "Create", "a00012.html#a758398f3d4bfef7844cbdb57b09c1d00", null ],
+    [ "Delete", "a00012.html#a4ba477df7d28c3cfeda053d983331a3d", null ],
+    [ "DeleteConfirmed", "a00012.html#a54104728110323f70375a54a5813aa29", null ],
+    [ "Details", "a00012.html#a52949d2d5ec4fe77c4dcfeb50204c608", null ],
+    [ "Edit", "a00012.html#a5a9c241ae86ca4c7f1acd7ff76e706b4", null ],
+    [ "Edit", "a00012.html#adc0b10453072861c1811f976969e9cc1", null ],
+    [ "Index", "a00012.html#ade7381b5cde7cdec5d6cb8c6b709bca3", null ]
 ];

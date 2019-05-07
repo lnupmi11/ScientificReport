@@ -2,61 +2,61 @@ var dir_9c0c3254eaff7259438333c8fd056aaa =
 [
     [ "Reports", "dir_5780ccdb6abdac1888669fe7e9a47cad.html", "dir_5780ccdb6abdac1888669fe7e9a47cad" ],
     [ "UserProfile", "dir_0298a203780ace67c15e0ed3cb2543e1.html", "dir_0298a203780ace67c15e0ed3cb2543e1" ],
-    [ "ApplicantsPatentLicenseActivities.cs", "a00213.html", [
-      [ "ApplicantsPatentLicenseActivities", "a00004.html", "a00004" ]
+    [ "ApplicantsPatentLicenseActivities.cs", "a00212.html", [
+      [ "ApplicantsPatentLicenseActivities", "a00003.html", "a00003" ]
     ] ],
-    [ "Article.cs", "a00214.html", [
-      [ "Article", "a00006.html", "a00006" ]
+    [ "Article.cs", "a00213.html", [
+      [ "Article", "a00005.html", "a00005" ]
     ] ],
-    [ "AuthorsPatentLicenseActivities.cs", "a00215.html", [
-      [ "AuthorsPatentLicenseActivities", "a00012.html", "a00012" ]
+    [ "AuthorsPatentLicenseActivities.cs", "a00214.html", [
+      [ "AuthorsPatentLicenseActivities", "a00011.html", "a00011" ]
     ] ],
-    [ "CoApplicantsPatentLicenseActivities.cs", "a00216.html", [
-      [ "CoApplicantsPatentLicenseActivities", "a00014.html", "a00014" ]
+    [ "CoApplicantsPatentLicenseActivities.cs", "a00215.html", [
+      [ "CoApplicantsPatentLicenseActivities", "a00013.html", "a00013" ]
     ] ],
-    [ "CoauthorsPatentLicenseActivities.cs", "a00217.html", [
-      [ "CoauthorsPatentLicenseActivities", "a00015.html", "a00015" ]
+    [ "CoauthorsPatentLicenseActivities.cs", "a00216.html", [
+      [ "CoauthorsPatentLicenseActivities", "a00014.html", "a00014" ]
     ] ],
-    [ "Conference.cs", "a00218.html", [
-      [ "Conference", "a00016.html", "a00016" ]
+    [ "Conference.cs", "a00217.html", [
+      [ "Conference", "a00015.html", "a00015" ]
     ] ],
-    [ "Department.cs", "a00219.html", [
-      [ "Department", "a00024.html", "a00024" ]
+    [ "Department.cs", "a00218.html", [
+      [ "Department", "a00023.html", "a00023" ]
     ] ],
-    [ "Grant.cs", "a00220.html", [
-      [ "Grant", "a00041.html", "a00041" ]
+    [ "Grant.cs", "a00219.html", [
+      [ "Grant", "a00040.html", "a00040" ]
     ] ],
-    [ "Membership.cs", "a00221.html", [
-      [ "Membership", "a00068.html", "a00068" ]
+    [ "Membership.cs", "a00220.html", [
+      [ "Membership", "a00067.html", "a00067" ]
     ] ],
-    [ "Opposition.cs", "a00222.html", [
-      [ "Opposition", "a00075.html", "a00075" ]
+    [ "Opposition.cs", "a00221.html", [
+      [ "Opposition", "a00074.html", "a00074" ]
     ] ],
-    [ "PatentLicenseActivity.cs", "a00223.html", [
-      [ "PatentLicenseActivity", "a00081.html", "a00081" ]
+    [ "PatentLicenseActivity.cs", "a00222.html", [
+      [ "PatentLicenseActivity", "a00080.html", "a00080" ]
     ] ],
-    [ "PostgraduateDissertationGuidance.cs", "a00224.html", [
-      [ "PostgraduateDissertationGuidance", "a00087.html", "a00087" ]
+    [ "PostgraduateDissertationGuidance.cs", "a00223.html", [
+      [ "PostgraduateDissertationGuidance", "a00086.html", "a00086" ]
     ] ],
-    [ "PostgraduateGuidance.cs", "a00225.html", [
-      [ "PostgraduateGuidance", "a00093.html", "a00093" ]
+    [ "PostgraduateGuidance.cs", "a00224.html", [
+      [ "PostgraduateGuidance", "a00092.html", "a00092" ]
     ] ],
-    [ "Publication.cs", "a00226.html", [
-      [ "Publication", "a00100.html", "a00100" ]
+    [ "Publication.cs", "a00225.html", [
+      [ "Publication", "a00099.html", "a00099" ]
     ] ],
-    [ "ReportThesis.cs", "a00232.html", [
-      [ "ReportThesis", "a00108.html", "a00108" ]
+    [ "ReportThesis.cs", "a00231.html", [
+      [ "ReportThesis", "a00107.html", "a00107" ]
     ] ],
-    [ "Review.cs", "a00233.html", [
-      [ "Review", "a00117.html", "a00117" ]
+    [ "Review.cs", "a00232.html", [
+      [ "Review", "a00116.html", "a00116" ]
     ] ],
-    [ "ScientificConsultation.cs", "a00234.html", [
-      [ "ScientificConsultation", "a00123.html", "a00123" ]
+    [ "ScientificConsultation.cs", "a00233.html", [
+      [ "ScientificConsultation", "a00122.html", "a00122" ]
     ] ],
-    [ "ScientificInternship.cs", "a00235.html", [
-      [ "ScientificInternship", "a00129.html", "a00129" ]
+    [ "ScientificInternship.cs", "a00234.html", [
+      [ "ScientificInternship", "a00128.html", "a00128" ]
     ] ],
-    [ "ScientificWork.cs", "a00236.html", [
-      [ "ScientificWork", "a00137.html", "a00137" ]
+    [ "ScientificWork.cs", "a00235.html", [
+      [ "ScientificWork", "a00136.html", "a00136" ]
     ] ]
 ];

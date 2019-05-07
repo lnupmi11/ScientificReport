@@ -1,2 +1,2 @@
-<map id="ScientificReport.Controllers.ReviewController" name="ScientificReport.Controllers.ReviewController">
+<map id="ScientificReport.DAL.DbContext.ScientificReportDbContext" name="ScientificReport.DAL.DbContext.ScientificReportDbContext">
 </map>

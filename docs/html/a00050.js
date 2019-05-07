@@ -1,16 +1,12 @@
 var a00050 =
 [
-    [ "AddScientificWork", "a00050.html#a4d89ddb94370d21ea76b56570bbe465f", null ],
-    [ "AddUser", "a00050.html#a3386ba2fa225deebfd5c904d935b9eeb", null ],
-    [ "CreateItem", "a00050.html#aa245507ede892dee742fbfea4b7747b8", null ],
-    [ "DeleteById", "a00050.html#a07a61f31577774434ef1c9932afe92dd", null ],
-    [ "Exists", "a00050.html#a56cc165384f033de5a599039a2367ad6", null ],
-    [ "Get", "a00050.html#a8a33f541531bb57fe680552e76a4c08f", null ],
-    [ "GetAll", "a00050.html#a3120202f6ff52f5e975062577607e6e5", null ],
-    [ "GetAllWhere", "a00050.html#ab79df98d8b294241c931d5c256d90599", null ],
-    [ "GetById", "a00050.html#abf0398ddfc7a4a43bcc076ba9d4b544d", null ],
-    [ "RemoveScientificWork", "a00050.html#a63d02ce4f4f86e1b08dcf3dccf452548", null ],
-    [ "RemoveUser", "a00050.html#a5189807885b6aa2c3d9a770b17f23a4e", null ],
-    [ "UpdateItem", "a00050.html#ad9b93d87f5d5fde0e15d5df1e4e6ad1f", null ],
-    [ "UserIsHired", "a00050.html#a61e608924ff7187e22137f6de5934a2c", null ]
+    [ "CreateItem", "a00050.html#a43e329c3123b7c8741949f4789f653f0", null ],
+    [ "DeleteById", "a00050.html#ae52635af00af3701521c9059b77893e9", null ],
+    [ "Exists", "a00050.html#ab85fe24eaf05a005013be62a95dd6284", null ],
+    [ "Get", "a00050.html#a2c763dbd83ea9f902f894d5c0cd997a5", null ],
+    [ "GetAll", "a00050.html#a891321320ac9cb8e37f53b8e45f5972a", null ],
+    [ "GetAllWhere", "a00050.html#af5804580dae258e91fbc79972c251b69", null ],
+    [ "GetById", "a00050.html#abf2b116ede548247a35588f34ba73555", null ],
+    [ "GetUsers", "a00050.html#a762e67efec033272180a12a771f30ddc", null ],
+    [ "UpdateItem", "a00050.html#a7f26599fb73f40b1520c3bf2ae3648c0", null ]
 ];

@@ -1,9 +1,13 @@
 var a00120 =
 [
-    [ "AllTest", "a00120.html#acf2ab1e2a5b695895ee2aaa47eb91264", null ],
-    [ "AllWhereTest", "a00120.html#aaab8f9c7958c99bd725abbf43582a506", null ],
-    [ "CreateTest", "a00120.html#ae99bec27048c4dc2c260f23e5a78d739", null ],
-    [ "DeleteTest", "a00120.html#a447cffbae3d2adb849be436533b3020c", null ],
-    [ "GetByIdTest", "a00120.html#a13f0b8d8ba127151c4c109d7bf46bcf1", null ],
-    [ "UpdateTest", "a00120.html#a1784c5b15933e8b208f25c91977cf5d4", null ]
+    [ "ReviewService", "a00120.html#a3ebc9d58291036a3acfb935605c48039", null ],
+    [ "CreateItem", "a00120.html#a82111298600384d3ccd88eab0e285209", null ],
+    [ "DeleteById", "a00120.html#a3c2a8cb6d90c7c8cabfd53bb9da989c2", null ],
+    [ "Exists", "a00120.html#a3f69b085dabab4611a3ceb4b47455c83", null ],
+    [ "Get", "a00120.html#adbd1e73a282fe7caab73b71de0e71edc", null ],
+    [ "GetAll", "a00120.html#a6d9416d5e19edda47c9e272b5d9a05ad", null ],
+    [ "GetAllWhere", "a00120.html#a9f74a804ae39aa8e6d5fd02eafd0bcbd", null ],
+    [ "GetById", "a00120.html#a7fd119e67a7edfb650868c9ae281657e", null ],
+    [ "GetReviewers", "a00120.html#a739101f24b0e6468276ca9bc5df202d6", null ],
+    [ "UpdateItem", "a00120.html#aa81215860679dcfa0309df719f84c6ca", null ]
 ];

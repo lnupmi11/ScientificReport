@@ -1,12 +1,11 @@
 var a00127 =
 [
-    [ "ScientificConsultationService", "a00127.html#afaaf71499fce7df14b2525d212e79987", null ],
-    [ "CreateItem", "a00127.html#a98331bd4a9e4df7ce8bee0faa12d377f", null ],
-    [ "DeleteById", "a00127.html#ae66a4734fe604b279849dd0c9af29d00", null ],
-    [ "Exists", "a00127.html#a22995fd70000b87664d320b289d2bfdb", null ],
-    [ "Get", "a00127.html#a1a81309adc311365e726d1e4fe85ec67", null ],
-    [ "GetAll", "a00127.html#aa0cb94338a5279dbee432999ec9a5513", null ],
-    [ "GetAllWhere", "a00127.html#a4ef14027f345b179fe4443b08e35d1b9", null ],
-    [ "GetById", "a00127.html#affc52a6da850d946e638e0828b0fdb78", null ],
-    [ "UpdateItem", "a00127.html#a545d379c3130fe28106acb5bb9ab365b", null ]
+    [ "CreateItemTest", "a00127.html#a172fe3e49b0168583c313ef4027e2a4b", null ],
+    [ "DeleteItemTest", "a00127.html#a473d53139ec602157f32b45a467335cb", null ],
+    [ "DoesNotExistTest", "a00127.html#aab46fa473b956b86189879e2c4bf437a", null ],
+    [ "ExistsTest", "a00127.html#a060658c9f331431435f73207641a8d60", null ],
+    [ "GetAllTest", "a00127.html#a3eec4d544f1e5dd1229761bb833aab78", null ],
+    [ "GetAllWhereTest", "a00127.html#a5ab77f7b39c9945d51abbe724b53bb95", null ],
+    [ "GetByIdTest", "a00127.html#a3af2b82799477561d181178cec7c2b46", null ],
+    [ "UpdateItemTest", "a00127.html#a21e6981eeb79d0022310a0e7233475e2", null ]
 ];

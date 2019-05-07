@@ -1,12 +1,12 @@
 var a00094 =
 [
-    [ "PostgraduateGuidanceController", "a00094.html#a421f44848cc72375b263a411bf65678e", null ],
-    [ "Create", "a00094.html#a6b160f1a1dbb78395689911afcd7921d", null ],
-    [ "Create", "a00094.html#a108695c61d3e721a630a7e90e531f5ea", null ],
-    [ "Delete", "a00094.html#afb54e3605ed1739ae05c2e4b1e1969d1", null ],
-    [ "DeleteConfirmed", "a00094.html#ac992273feab07f7079bf0f1206f1eafd", null ],
-    [ "Details", "a00094.html#abe5f7025a81da32e588875f3cdd98372", null ],
-    [ "Edit", "a00094.html#a6886be5f8181ed08cdb44df2031b4883", null ],
-    [ "Edit", "a00094.html#aedad124360aa40591f26fdfbda1ea1a8", null ],
-    [ "Index", "a00094.html#a79ffab9a9f3d547d56ce502c6fb5dfd9", null ]
+    [ "PostgraduateGuidanceRepository", "a00094.html#af453e27791b38258d979b6475f7c5d20", null ],
+    [ "All", "a00094.html#a2e0eb5f92321aed5f6d575e45821650c", null ],
+    [ "AllWhere", "a00094.html#a90dadf6e413ef6f1aeb2923787adf8d3", null ],
+    [ "Create", "a00094.html#a7b3a3950eb4be06495c1780547f60a50", null ],
+    [ "Delete", "a00094.html#a7a712df9d41f95f1a08dfc9d5f33944d", null ],
+    [ "Get", "a00094.html#aa5ad20edd512a313d67375d1b5af2ba1", null ],
+    [ "Get", "a00094.html#aa813fd7199ad6400f7cc28098efff62f", null ],
+    [ "GetQuery", "a00094.html#aa448165c2ef252d20de491cdf2a95f65", null ],
+    [ "Update", "a00094.html#abb1b0afe252005b150fe15ea7e1f8ac5", null ]
 ];

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>ScientificReport: ScientificReport.Controllers.ArticleController Class Reference</title>
+<title>ScientificReport: ScientificReport.DAL.Repositories.ArticleRepository Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -108,231 +108,287 @@ $(document).ready(function(){initNavTree('a00007.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a00540.html">List of all members</a>  </div>
+<a href="a00655.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ScientificReport.Controllers.ArticleController Class Reference</div>  </div>
+<div class="title">ScientificReport.DAL.Repositories.ArticleRepository Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Inheritance diagram for ScientificReport.Controllers.ArticleController:</div>
+Inheritance diagram for ScientificReport.DAL.Repositories.ArticleRepository:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00541.png" border="0" usemap="#_scientific_report_8_controllers_8_article_controller_inherit__map" alt="Inheritance graph"/></div>
-<map name="_scientific_report_8_controllers_8_article_controller_inherit__map" id="_scientific_report_8_controllers_8_article_controller_inherit__map">
+<div class="center"><img src="a00656.png" border="0" usemap="#_scientific_report_8_d_a_l_8_repositories_8_article_repository_inherit__map" alt="Inheritance graph"/></div>
+<map name="_scientific_report_8_d_a_l_8_repositories_8_article_repository_inherit__map" id="_scientific_report_8_d_a_l_8_repositories_8_article_repository_inherit__map">
+<area shape="rect" id="node2" href="a00058.html" title="{IRepository\&lt; Article \&gt;\n||}" alt="" coords="42,5,203,83"/>
 </map>
 </div>
 <div class="dynheader">
-Collaboration diagram for ScientificReport.Controllers.ArticleController:</div>
+Collaboration diagram for ScientificReport.DAL.Repositories.ArticleRepository:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00542.png" border="0" usemap="#_scientific_report_8_controllers_8_article_controller_coll__map" alt="Collaboration graph"/></div>
-<map name="_scientific_report_8_controllers_8_article_controller_coll__map" id="_scientific_report_8_controllers_8_article_controller_coll__map">
+<div class="center"><img src="a00657.png" border="0" usemap="#_scientific_report_8_d_a_l_8_repositories_8_article_repository_coll__map" alt="Collaboration graph"/></div>
+<map name="_scientific_report_8_d_a_l_8_repositories_8_article_repository_coll__map" id="_scientific_report_8_d_a_l_8_repositories_8_article_repository_coll__map">
+<area shape="rect" id="node2" href="a00058.html" title="{IRepository\&lt; Article \&gt;\n||}" alt="" coords="42,5,203,83"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae7ba0ef094021430cea12650f2b55ff4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00007.html#ae7ba0ef094021430cea12650f2b55ff4">ArticleController</a> (<a class="el" href="a00135.html">ScientificReportDbContext</a> context)</td></tr>
-<tr class="separator:ae7ba0ef094021430cea12650f2b55ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf4ca6db9d251064055af647e81d0527"><td class="memItemLeft" align="right" valign="top">async Task&lt; IActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00007.html#abf4ca6db9d251064055af647e81d0527">Index</a> ()</td></tr>
-<tr class="separator:abf4ca6db9d251064055af647e81d0527"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbf709a7fdfbaf073e51e475d0f7e785"><td class="memItemLeft" align="right" valign="top">async Task&lt; IActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00007.html#adbf709a7fdfbaf073e51e475d0f7e785">Details</a> (Guid?id)</td></tr>
-<tr class="separator:adbf709a7fdfbaf073e51e475d0f7e785"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bad194c5c227a76a99a60dbe10677b2"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00007.html#a0bad194c5c227a76a99a60dbe10677b2">Create</a> ()</td></tr>
-<tr class="separator:a0bad194c5c227a76a99a60dbe10677b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f488563dee503e77532f8bb64ba2e25"><td class="memItemLeft" align="right" valign="top">async Task&lt; IActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00007.html#a2f488563dee503e77532f8bb64ba2e25">Create</a> ([Bind(&quot;Id,Type,Title,LiabilityInfo,DocumentInfo,PublishingPlace,PublishingHouseName,PublishingYear,IsPeriodical,Number,PagesAmount,IsPrintCanceled,IsRecommendedToPrint&quot;)] Article article)</td></tr>
-<tr class="separator:a2f488563dee503e77532f8bb64ba2e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21919fb78c19a6b6a92db0ec9bf94189"><td class="memItemLeft" align="right" valign="top">async Task&lt; IActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00007.html#a21919fb78c19a6b6a92db0ec9bf94189">Edit</a> (Guid?id)</td></tr>
-<tr class="separator:a21919fb78c19a6b6a92db0ec9bf94189"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c80d0827bb3d98032da3b0ab40c40ef"><td class="memItemLeft" align="right" valign="top">async Task&lt; IActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00007.html#a4c80d0827bb3d98032da3b0ab40c40ef">Edit</a> (Guid id, [Bind(&quot;Id,Type,Title,LiabilityInfo,DocumentInfo,PublishingPlace,PublishingHouseName,PublishingYear,IsPeriodical,Number,PagesAmount,IsPrintCanceled,IsRecommendedToPrint&quot;)] Article article)</td></tr>
-<tr class="separator:a4c80d0827bb3d98032da3b0ab40c40ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43b193c6cc934bff461fa469d69e03e8"><td class="memItemLeft" align="right" valign="top">async Task&lt; IActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00007.html#a43b193c6cc934bff461fa469d69e03e8">Delete</a> (Guid?id)</td></tr>
-<tr class="separator:a43b193c6cc934bff461fa469d69e03e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26e1bcd5b05ab96d18d796252cc08a76"><td class="memItemLeft" align="right" valign="top">async Task&lt; IActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00007.html#a26e1bcd5b05ab96d18d796252cc08a76">DeleteConfirmed</a> (Guid id)</td></tr>
-<tr class="separator:a26e1bcd5b05ab96d18d796252cc08a76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a872d0f4ade710c8d17ca3dcfc99eaafc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00007.html#a872d0f4ade710c8d17ca3dcfc99eaafc">ArticleRepository</a> (<a class="el" href="a00134.html">ScientificReportDbContext</a> context)</td></tr>
+<tr class="separator:a872d0f4ade710c8d17ca3dcfc99eaafc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a543f33a59982aa0246b5b103baad4824"><td class="memItemLeft" align="right" valign="top">virtual IEnumerable&lt; <a class="el" href="a00005.html">Article</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00007.html#a543f33a59982aa0246b5b103baad4824">All</a> ()</td></tr>
+<tr class="separator:a543f33a59982aa0246b5b103baad4824"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a91bbc7b2738c21aed689eacf6d4a0e"><td class="memItemLeft" align="right" valign="top">virtual IEnumerable&lt; <a class="el" href="a00005.html">Article</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00007.html#a1a91bbc7b2738c21aed689eacf6d4a0e">AllWhere</a> (Func&lt; <a class="el" href="a00005.html">Article</a>, bool &gt; predicate)</td></tr>
+<tr class="separator:a1a91bbc7b2738c21aed689eacf6d4a0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf653728b8f218b7a1e410ffb85016ac"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00005.html">Article</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00007.html#acf653728b8f218b7a1e410ffb85016ac">Get</a> (Guid id)</td></tr>
+<tr class="separator:acf653728b8f218b7a1e410ffb85016ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac11cf874bcc5f3a4e1b809ba2fba2e92"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00005.html">Article</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00007.html#ac11cf874bcc5f3a4e1b809ba2fba2e92">Get</a> (Func&lt; <a class="el" href="a00005.html">Article</a>, bool &gt; predicate)</td></tr>
+<tr class="separator:ac11cf874bcc5f3a4e1b809ba2fba2e92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a01cf3a1a2d0deec8eab9e0a8fa6a27"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00007.html#a9a01cf3a1a2d0deec8eab9e0a8fa6a27">Create</a> (<a class="el" href="a00005.html">Article</a> item)</td></tr>
+<tr class="separator:a9a01cf3a1a2d0deec8eab9e0a8fa6a27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae194dacb48ffaa69486c35b2ac12e98f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00007.html#ae194dacb48ffaa69486c35b2ac12e98f">Update</a> (<a class="el" href="a00005.html">Article</a> item)</td></tr>
+<tr class="separator:ae194dacb48ffaa69486c35b2ac12e98f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a722e2f133d7011e51b01d20ec47c1098"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00007.html#a722e2f133d7011e51b01d20ec47c1098">Delete</a> (Guid id)</td></tr>
+<tr class="separator:a722e2f133d7011e51b01d20ec47c1098"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8a4668c9e9f53f7e8245c6812e11082"><td class="memItemLeft" align="right" valign="top">virtual IQueryable&lt; <a class="el" href="a00005.html">Article</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00007.html#ab8a4668c9e9f53f7e8245c6812e11082">GetQuery</a> ()</td></tr>
+<tr class="separator:ab8a4668c9e9f53f7e8245c6812e11082"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="a00328_source.html#l00013">13</a> of file <a class="el" href="a00328_source.html">ArticleController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00246_source.html#l00011">11</a> of file <a class="el" href="a00246_source.html">ArticleRepository.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ae7ba0ef094021430cea12650f2b55ff4"></a>
+<a class="anchor" id="a872d0f4ade710c8d17ca3dcfc99eaafc"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">ScientificReport.Controllers.ArticleController.ArticleController </td>
+          <td class="memname">ScientificReport.DAL.Repositories.ArticleRepository.ArticleRepository </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00135.html">ScientificReportDbContext</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="a00134.html">ScientificReportDbContext</a>&#160;</td>
           <td class="paramname"><em>context</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00328_source.html#l00017">17</a> of file <a class="el" href="a00328_source.html">ArticleController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00246_source.html#l00015">15</a> of file <a class="el" href="a00246_source.html">ArticleRepository.cs</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a0bad194c5c227a76a99a60dbe10677b2"></a>
+<a class="anchor" id="a543f33a59982aa0246b5b103baad4824"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">IActionResult ScientificReport.Controllers.ArticleController.Create </td>
+          <td class="memname">virtual IEnumerable&lt;<a class="el" href="a00005.html">Article</a>&gt; ScientificReport.DAL.Repositories.ArticleRepository.All </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00328_source.html#l00047">47</a> of file <a class="el" href="a00328_source.html">ArticleController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00246_source.html#l00020">20</a> of file <a class="el" href="a00246_source.html">ArticleRepository.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a2f488563dee503e77532f8bb64ba2e25"></a>
+<a class="anchor" id="a1a91bbc7b2738c21aed689eacf6d4a0e"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">async Task&lt;IActionResult&gt; ScientificReport.Controllers.ArticleController.Create </td>
+          <td class="memname">virtual IEnumerable&lt;<a class="el" href="a00005.html">Article</a>&gt; ScientificReport.DAL.Repositories.ArticleRepository.AllWhere </td>
           <td>(</td>
-          <td class="paramtype">[Bind(&quot;Id,Type,Title,LiabilityInfo,DocumentInfo,PublishingPlace,PublishingHouseName,PublishingYear,IsPeriodical,Number,PagesAmount,IsPrintCanceled,IsRecommendedToPrint&quot;)] <a class="el" href="a00006.html">Article</a>&#160;</td>
-          <td class="paramname"><em>article</em></td><td>)</td>
+          <td class="paramtype">Func&lt; <a class="el" href="a00005.html">Article</a>, bool &gt;&#160;</td>
+          <td class="paramname"><em>predicate</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00328_source.html#l00057">57</a> of file <a class="el" href="a00328_source.html">ArticleController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00246_source.html#l00025">25</a> of file <a class="el" href="a00246_source.html">ArticleRepository.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a43b193c6cc934bff461fa469d69e03e8"></a>
+<a class="anchor" id="a9a01cf3a1a2d0deec8eab9e0a8fa6a27"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">async Task&lt;IActionResult&gt; ScientificReport.Controllers.ArticleController.Delete </td>
+          <td class="memname">virtual void ScientificReport.DAL.Repositories.ArticleRepository.Create </td>
           <td>(</td>
-          <td class="paramtype">Guid?&#160;</td>
-          <td class="paramname"><em>id</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="a00005.html">Article</a>&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00328_source.html#l00121">121</a> of file <a class="el" href="a00328_source.html">ArticleController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00246_source.html#l00040">40</a> of file <a class="el" href="a00246_source.html">ArticleRepository.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a26e1bcd5b05ab96d18d796252cc08a76"></a>
+<a class="anchor" id="a722e2f133d7011e51b01d20ec47c1098"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">async Task&lt;IActionResult&gt; ScientificReport.Controllers.ArticleController.DeleteConfirmed </td>
+          <td class="memname">virtual void ScientificReport.DAL.Repositories.ArticleRepository.Delete </td>
           <td>(</td>
           <td class="paramtype">Guid&#160;</td>
           <td class="paramname"><em>id</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00328_source.html#l00141">141</a> of file <a class="el" href="a00328_source.html">ArticleController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00246_source.html#l00055">55</a> of file <a class="el" href="a00246_source.html">ArticleRepository.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="adbf709a7fdfbaf073e51e475d0f7e785"></a>
+<a class="anchor" id="acf653728b8f218b7a1e410ffb85016ac"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">async Task&lt;IActionResult&gt; ScientificReport.Controllers.ArticleController.Details </td>
-          <td>(</td>
-          <td class="paramtype">Guid?&#160;</td>
-          <td class="paramname"><em>id</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00328_source.html#l00029">29</a> of file <a class="el" href="a00328_source.html">ArticleController.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a21919fb78c19a6b6a92db0ec9bf94189"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">async Task&lt;IActionResult&gt; ScientificReport.Controllers.ArticleController.Edit </td>
-          <td>(</td>
-          <td class="paramtype">Guid?&#160;</td>
-          <td class="paramname"><em>id</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00328_source.html#l00070">70</a> of file <a class="el" href="a00328_source.html">ArticleController.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a4c80d0827bb3d98032da3b0ab40c40ef"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">async Task&lt;IActionResult&gt; ScientificReport.Controllers.ArticleController.Edit </td>
+          <td class="memname">virtual <a class="el" href="a00005.html">Article</a> ScientificReport.DAL.Repositories.ArticleRepository.Get </td>
           <td>(</td>
           <td class="paramtype">Guid&#160;</td>
-          <td class="paramname"><em>id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>id</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">[Bind(&quot;Id,Type,Title,LiabilityInfo,DocumentInfo,PublishingPlace,PublishingHouseName,PublishingYear,IsPeriodical,Number,PagesAmount,IsPrintCanceled,IsRecommendedToPrint&quot;)] <a class="el" href="a00006.html">Article</a>&#160;</td>
-          <td class="paramname"><em>article</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00328_source.html#l00090">90</a> of file <a class="el" href="a00328_source.html">ArticleController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00246_source.html#l00030">30</a> of file <a class="el" href="a00246_source.html">ArticleRepository.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="abf4ca6db9d251064055af647e81d0527"></a>
+<a class="anchor" id="ac11cf874bcc5f3a4e1b809ba2fba2e92"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">async Task&lt;IActionResult&gt; ScientificReport.Controllers.ArticleController.Index </td>
+          <td class="memname">virtual <a class="el" href="a00005.html">Article</a> ScientificReport.DAL.Repositories.ArticleRepository.Get </td>
+          <td>(</td>
+          <td class="paramtype">Func&lt; <a class="el" href="a00005.html">Article</a>, bool &gt;&#160;</td>
+          <td class="paramname"><em>predicate</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00246_source.html#l00035">35</a> of file <a class="el" href="a00246_source.html">ArticleRepository.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab8a4668c9e9f53f7e8245c6812e11082"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual IQueryable&lt;<a class="el" href="a00005.html">Article</a>&gt; ScientificReport.DAL.Repositories.ArticleRepository.GetQuery </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00328_source.html#l00023">23</a> of file <a class="el" href="a00328_source.html">ArticleController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00246_source.html#l00065">65</a> of file <a class="el" href="a00246_source.html">ArticleRepository.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae194dacb48ffaa69486c35b2ac12e98f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ScientificReport.DAL.Repositories.ArticleRepository.Update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00005.html">Article</a>&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00246_source.html#l00046">46</a> of file <a class="el" href="a00246_source.html">ArticleRepository.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/travis/build/lnupmi11/ScientificReport/ScientificReport/Controllers/<a class="el" href="a00328_source.html">ArticleController.cs</a></li>
+<li>/home/travis/build/lnupmi11/ScientificReport/ScientificReport.DAL/Repositories/<a class="el" href="a00246_source.html">ArticleRepository.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00393.html">ScientificReport</a></li><li class="navelem"><a class="el" href="a00397.html">Controllers</a></li><li class="navelem"><a class="el" href="a00007.html">ArticleController</a></li>
+    <li class="navelem"><a class="el" href="a00374.html">ScientificReport</a></li><li class="navelem"><a class="el" href="a00380.html">DAL</a></li><li class="navelem"><a class="el" href="a00386.html">Repositories</a></li><li class="navelem"><a class="el" href="a00007.html">ArticleRepository</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>

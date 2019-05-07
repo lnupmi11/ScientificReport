@@ -1,9 +1,12 @@
 var a00096 =
 [
-    [ "AllTest", "a00096.html#a8fa6ffb6e903086f3ac745bbff4a7299", null ],
-    [ "AllWhereTest", "a00096.html#a3f6569a2fde3c2ccf8aa72c3be941cbc", null ],
-    [ "CreateTest", "a00096.html#a5dfc5606557ca0cb0de922772d3de1fc", null ],
-    [ "DeleteTest", "a00096.html#a241bcb1d40470b408f1b40ab08612e94", null ],
-    [ "GetByIdTest", "a00096.html#adabec6755b7f982db7a771655e89b30d", null ],
-    [ "UpdateTest", "a00096.html#abda74db0367c536ccdffb632786c81e4", null ]
+    [ "PostgraduateGuidanceService", "a00096.html#ada85cce2f75a409a2259a578c5400387", null ],
+    [ "CreateItem", "a00096.html#a38bb97752137563fcb0b7afc7b7bf2ba", null ],
+    [ "DeleteById", "a00096.html#a75385ab5404cb23a391f0a316f3b23b6", null ],
+    [ "Exists", "a00096.html#ae72dcab49fbf0c3f54120451dba505a7", null ],
+    [ "Get", "a00096.html#acb2319f4aef2d5020c26ec970da6e2d5", null ],
+    [ "GetAll", "a00096.html#a18c3a847614a692e12bf7a108c8eaf1d", null ],
+    [ "GetAllWhere", "a00096.html#a9c55278d94f9e0781faac52319d09cff", null ],
+    [ "GetById", "a00096.html#aa7cbb03cbab971f45b11e8c64b51e39d", null ],
+    [ "UpdateItem", "a00096.html#aa395c9a56e0f42d43e4f103b374e5502", null ]
 ];

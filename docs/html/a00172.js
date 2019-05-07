@@ -1,8 +1,8 @@
 var a00172 =
 [
-    [ "Id", "a00172.html#a9df4b2af28e3fdcd308e06d56a78ea70", null ],
-    [ "Review", "a00172.html#a8d17449089e6f71ca0156be81edd3288", null ],
-    [ "Reviewer", "a00172.html#afefc8c8fe1ab89d9b7f8312e86ce8316", null ],
-    [ "ReviewerId", "a00172.html#ad1581db04b0c2e25165bb13428f8bcc2", null ],
-    [ "ReviewId", "a00172.html#a55d10e1c927832f8743ff6e6b7044157", null ]
+    [ "Id", "a00172.html#a4ec81c68791ba278ce711d575a821e8c", null ],
+    [ "ScientificInternship", "a00172.html#a24d76e129452c24a6690e82af6376f7f", null ],
+    [ "ScientificInternshipId", "a00172.html#a8257134c8a4ee7debcdacc28077d72fb", null ],
+    [ "UserProfile", "a00172.html#aae49ffd0cf666f99bbba33dd482c5e69", null ],
+    [ "UserProfileId", "a00172.html#a48608c140285d74114df103eb32ddac8", null ]
 ];

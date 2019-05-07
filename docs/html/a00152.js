@@ -1,12 +1,9 @@
 var a00152 =
 [
-    [ "TeacherReportRepository", "a00152.html#a50e232d5434886259cf5106991bf479d", null ],
-    [ "All", "a00152.html#ab37197ffa9f26a1d9eacff88708434db", null ],
-    [ "AllWhere", "a00152.html#a791e927ee6303175a19372cb90a95b6b", null ],
-    [ "Create", "a00152.html#a41f32b1bb6208e78d7feb0dac97485bf", null ],
-    [ "Delete", "a00152.html#a95b9f550796e9bea58418d856e368237", null ],
-    [ "Get", "a00152.html#abf7f3c93e612d1e2244661b8f62496e6", null ],
-    [ "Get", "a00152.html#a97d81aa9fb46ae405e11806cd924c25e", null ],
-    [ "GetQuery", "a00152.html#aadb805875b52a0f82403cb398faa0cc0", null ],
-    [ "Update", "a00152.html#a2f5ed16419f2d9927b28d330701c3ba0", null ]
+    [ "AllTest", "a00152.html#aa6af57445f47b73f705e44ad66a8069a", null ],
+    [ "AllWhereTest", "a00152.html#a0431565ed28502d22f1967375b1764fd", null ],
+    [ "CreateTest", "a00152.html#ad4dbf256bac88922bd707936c649d39f", null ],
+    [ "DeleteTest", "a00152.html#a70a9e780dcf87ed93bcddd8086d9a459", null ],
+    [ "GetByIdTest", "a00152.html#ae0797899632efd2dcc98743c53e7224b", null ],
+    [ "UpdateTest", "a00152.html#a27687fbbf564f20229dc3c03854990fe", null ]
 ];

@@ -1,13 +1,11 @@
 var a00154 =
 [
-    [ "TeacherReportService", "a00154.html#a51b1bf375374ab13e9e65747d7d0c382", null ],
-    [ "Any", "a00154.html#afc5ff72d8c8c31ce25f5447df752f0f2", null ],
-    [ "CreateItem", "a00154.html#a3e776339b589ffa0b5b30714b86e0b97", null ],
-    [ "DeleteById", "a00154.html#a57ea58f553a3d42274e134fe41a8a40a", null ],
-    [ "Exists", "a00154.html#a782dd0c6610e26ef181f66ce9f23ef47", null ],
-    [ "Get", "a00154.html#a0258f8b08b9fd58e653163bcbba9f7e0", null ],
-    [ "GetAll", "a00154.html#a7686a0db3234780eb65e46c3c6e2e242", null ],
-    [ "GetAllWhere", "a00154.html#a67232616bdf0fb7a72d022509754a8a1", null ],
-    [ "GetById", "a00154.html#a9094c57021d0c7cbd8fdfbff346affcb", null ],
-    [ "UpdateItem", "a00154.html#a01684ed0ab22b91830cf45114dcd36bd", null ]
+    [ "CreateItemTest", "a00154.html#a2f00e84607dd40f7e8374be588e8ea3c", null ],
+    [ "DeleteItemTest", "a00154.html#a75227d93fb4280a7817bd782185dc788", null ],
+    [ "DoesNotExistTest", "a00154.html#a10c964a2c121d04c5824d5b9144bc51e", null ],
+    [ "ExistsTest", "a00154.html#a64dd8bb96425e03a173c01ee24cd0bf9", null ],
+    [ "GetAllTest", "a00154.html#ae731ea13213cd60ded24e9fff641173a", null ],
+    [ "GetAllWhereTest", "a00154.html#a2aad20117436087939750a0475600333", null ],
+    [ "GetByIdTest", "a00154.html#aad46ad020242e306de3cbecb4802196e", null ],
+    [ "UpdateItemTest", "a00154.html#a66ce146e6122b38545c61badb5fb0342", null ]
 ];

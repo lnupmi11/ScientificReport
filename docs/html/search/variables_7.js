@@ -1,19 +1,7 @@
 var searchData=
 [
-  ['f',['F',['../a00359.html#a04d9082506e3640041cd22bef9ab6566',1,'F():&#160;bootstrap.min.js'],['../a00359.html#a9cf09a2972472098a4c689fd988f4dfc',1,'f():&#160;bootstrap.min.js'],['../a00368.html#a9cf09a2972472098a4c689fd988f4dfc',1,'f():&#160;jquery.min.js']]],
-  ['factory',['factory',['../a00356.html#abf075bdbe59fd2c3336ed052c9c72b31',1,'factory():&#160;bootstrap.bundle.js'],['../a00358.html#abf075bdbe59fd2c3336ed052c9c72b31',1,'factory():&#160;bootstrap.js'],['../a00367.html#abf075bdbe59fd2c3336ed052c9c72b31',1,'factory():&#160;jquery.js']]],
-  ['fail',['Fail',['../a00003.html#ad76c84e2a8b47f0158288680bebd9af6',1,'ScientificReport::Controllers::Utils::ApiResponse']]],
-  ['fe',['fe',['../a00359.html#aec59ac52d3a657d1d26454350187e7bb',1,'fe():&#160;bootstrap.min.js'],['../a00359.html#aea9b367ebd9c11ae24129defe15f645f',1,'Fe():&#160;bootstrap.min.js']]],
-  ['fi',['fi',['../a00357.html#ac2351d6f350c65b71ae7f00ac64f5aef',1,'fi():&#160;bootstrap.bundle.min.js'],['../a00357.html#a4f11e39337b47a52c1ad9a035696acf9',1,'Fi():&#160;bootstrap.bundle.min.js']]],
-  ['filename',['FILENAME',['../a00372.html#a0f1b5cacf0547093af0c185859508984',1,'generate.FILENAME()'],['../a00372.html#a0760e3dfae566e1340da8ae061da4427',1,'generate.filename()']]],
-  ['filter',['filter',['../a00367.html#a416d078c0ae6e311bcc3867bd87ed2e4',1,'jquery.js']]],
-  ['find',['find',['../a00367.html#a55fc855d7b79b5914e96c09c3d1e2651',1,'jquery.js']]],
-  ['fn',['fn',['../a00357.html#a37b9e1ceee4c6d2616fa6081784b5468',1,'fn():&#160;bootstrap.bundle.min.js'],['../a00359.html#a37b9e1ceee4c6d2616fa6081784b5468',1,'fn():&#160;bootstrap.min.js'],['../a00367.html#acef6bdaf6b9b20fdcca1ea86f0902c3b',1,'fn():&#160;jquery.js'],['../a00368.html#a8a938b10dab9fa9d43908785f7e2c002',1,'fn():&#160;jquery.min.js'],['../a00357.html#a023f2532bb0b59ffcdd6f3030309d2a5',1,'Fn():&#160;bootstrap.bundle.min.js'],['../a00359.html#a023f2532bb0b59ffcdd6f3030309d2a5',1,'Fn():&#160;bootstrap.min.js']]],
-  ['fntostring',['fnToString',['../a00367.html#a0892590a482dae7c20ce31d5934035cd',1,'jquery.js']]],
-  ['focusin',['focusin',['../a00367.html#a0965ca3ee659f6c0208bd36c34acc95b',1,'jquery.js']]],
-  ['from',['FROM',['../a00369.html#ad20dada78dc01ff9f6a9eba39b737a79',1,'LICENSE.txt']]],
-  ['ft',['Ft',['../a00357.html#a0cb3f9e3fcef602adbab963356fbb226',1,'Ft():&#160;bootstrap.bundle.min.js'],['../a00359.html#a0cb3f9e3fcef602adbab963356fbb226',1,'Ft():&#160;bootstrap.min.js'],['../a00359.html#ae14c364b12d78f858ecd2d4a10d016f7',1,'ft():&#160;bootstrap.min.js']]],
-  ['fullname',['FullName',['../a00160.html#ac998087addff577dc5e8db36175598c7',1,'ScientificReport::DAL::Entities::UserProfile::UserProfile']]],
-  ['fx',['fx',['../a00367.html#afbcf56cb9545c8bc885722b4fe4253ce',1,'jquery.js']]],
-  ['fxnow',['fxNow',['../a00367.html#a008b3271e2f410e89917bc6d96096296',1,'jquery.js']]]
+  ['repository_5fdir',['REPOSITORY_DIR',['../a00354.html#ae7745e2c60f117f4458a661a1c445b1f',1,'generate']]],
+  ['repository_5ftemplate',['repository_template',['../a00354.html#aeaa1a1664670335122d3d4f28c7f52b3',1,'generate']]],
+  ['repository_5ftemplate_5ffile',['REPOSITORY_TEMPLATE_FILE',['../a00354.html#ad6818ee6435e1466bbcb12dc97abeefd',1,'generate']]],
+  ['roles',['Roles',['../a00164.html#abcfb1819d5bb55faec53ed8d6ebd5f76',1,'ScientificReport::DAL::Roles::UserProfileRole']]]
 ];

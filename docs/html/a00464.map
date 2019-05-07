@@ -1,2 +1,3 @@
-<map id="ScientificReport.BLL.Interfaces.IPublicationService" name="ScientificReport.BLL.Interfaces.IPublicationService">
+<map id="ScientificReport.BLL.Interfaces.IUserProfileService" name="ScientificReport.BLL.Interfaces.IUserProfileService">
+<area shape="rect" id="node2" href="$a00166.html" title="{ScientificReport.BLL.Services.\lUserProfileService\n||+ UserProfileService()\l+ GetAll()\l+ GetAllWhere()\l+ GetById()\l+ Get()\l+ CreateItem()\l+ UpdateItem()\l+ DeleteById()\l+ SetApproved()\l+ UserExists()\land 12 more...\l}" alt="" coords="10,292,219,531"/>
 </map>

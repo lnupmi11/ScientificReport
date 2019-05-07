@@ -1,20 +1,4 @@
 var searchData=
 [
-  ['_5f',['_',['../a00359.html#a6e69a5af94d7d53886e51f89fb3bd6b4',1,'_():&#160;bootstrap.min.js'],['../a00367.html#a6e69a5af94d7d53886e51f89fb3bd6b4',1,'_():&#160;jquery.js']]],
-  ['_5fcontainer',['_container',['../a00354.html#a758df4b5a3c8b38c431a087cac8b7cb5',1,'materialize.min.js']]],
-  ['_5fcount',['_count',['../a00354.html#a18bc768c713f571a898fb99a488969b3',1,'materialize.min.js']]],
-  ['_5fcreateclass',['_createClass',['../a00354.html#a4223697e87f3e7e34695e6462837d56f',1,'materialize.min.js']]],
-  ['_5fdraggedtoast',['_draggedToast',['../a00354.html#a634eda48d02c71b44819fb8cef159567',1,'materialize.min.js']]],
-  ['_5fdropdowns',['_dropdowns',['../a00354.html#a0dab195b30c0613ce3e8fd36b91981d4',1,'materialize.min.js']]],
-  ['_5fe',['_e',['../a00359.html#a2a9bee6a6b583bbb52166a3a0d71f242',1,'bootstrap.min.js']]],
-  ['_5fevalurl',['_evalUrl',['../a00367.html#a3df854ea600b5f5f02a872ad0feccfc2',1,'jquery.js']]],
-  ['_5fextends',['_extends',['../a00356.html#ac2eea16a19b83a9509e2f9188c0fdc0f',1,'bootstrap.bundle.js']]],
-  ['_5fget',['_get',['../a00354.html#ac24375d772b718ec9d0ee4cbdbfadf9b',1,'materialize.min.js']]],
-  ['_5fi',['_i',['../a00357.html#a41101654f9c2d023a7b4a45d8ea92868',1,'bootstrap.bundle.min.js']]],
-  ['_5fjquery',['_jQuery',['../a00367.html#aceac666b46ac9e54a243817d92e9bb13',1,'jquery.js']]],
-  ['_5fmodalsopen',['_modalsOpen',['../a00354.html#ad7f0d7a0935af249153bae18fdb89a75',1,'materialize.min.js']]],
-  ['_5fn',['_n',['../a00357.html#ab62fe920493b39a652dec8a6b9eed80a',1,'_n():&#160;bootstrap.bundle.min.js'],['../a00359.html#ab62fe920493b39a652dec8a6b9eed80a',1,'_n():&#160;bootstrap.min.js']]],
-  ['_5fparallaxes',['_parallaxes',['../a00354.html#a5c2a9a1a5ed9fb264569c5a2428a647c',1,'materialize.min.js']]],
-  ['_5ft',['_t',['../a00359.html#a850a11edcddfc9344a50f8f6437ff3f1',1,'bootstrap.min.js']]],
-  ['_5ftoasts',['_toasts',['../a00354.html#ac769283e4e7f738abdf9a45385e30148',1,'materialize.min.js']]]
+  ['base_5fdir',['BASE_DIR',['../a00354.html#aa9bf821ee6f64aa0164222b86da5271d',1,'generate']]]
 ];

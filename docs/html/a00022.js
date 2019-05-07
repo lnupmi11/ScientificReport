@@ -1,14 +1,13 @@
 var a00022 =
 [
-    [ "ConferenceService", "a00022.html#adfd9440fd7634ab13c77b149811468d1", null ],
-    [ "CreateItem", "a00022.html#a7d552f87a511e6864dd499f283a15640", null ],
-    [ "DeleteById", "a00022.html#af0fe6ede8736c4b2503b3fd888848f4a", null ],
-    [ "Exists", "a00022.html#af3496d56120cad0dc8424e5210642314", null ],
-    [ "Get", "a00022.html#ace85dba616700aacf6b2ab3193b91935", null ],
-    [ "GetAll", "a00022.html#ae12ad94391b318ff9e7e6bed3dea32ad", null ],
-    [ "GetAllWhere", "a00022.html#aaf1912058f13eaac4758321ab9feff60", null ],
-    [ "GetById", "a00022.html#a5b6ade041a9e31c60b8122162abf8061", null ],
-    [ "GetParticipators", "a00022.html#a9d65ac6e1f21da0ce863ffb0fff5b459", null ],
-    [ "GetReportTheses", "a00022.html#a3319756de6812bff6c7addc0590baae7", null ],
-    [ "UpdateItem", "a00022.html#a58c0fff6837254d5035bd10d21038cc9", null ]
+    [ "CreateItemTest", "a00022.html#a4d83b882f5a5c5a2b9b04758d10b8339", null ],
+    [ "DeleteItemTest", "a00022.html#a3d4111cc0086b6f8d6ff3c49fbc2b450", null ],
+    [ "DoesNotExistTest", "a00022.html#ab13774bf28b7adf02e5c54f89756091e", null ],
+    [ "ExistsTest", "a00022.html#aa3b2fd3e32bd8e1641f983a839fe7602", null ],
+    [ "GetAllTest", "a00022.html#a74c45133080ee62c2ea811aa42254f0b", null ],
+    [ "GetAllWhereTest", "a00022.html#a5f8cad17115048636f4d5bedeb4bea0c", null ],
+    [ "GetByIdTest", "a00022.html#a08943da1ced4708fcb317059183218fc", null ],
+    [ "GetParticipatorsTest", "a00022.html#ae5ed6ba5267139540f2622786f281cf0", null ],
+    [ "GetReportThesesTest", "a00022.html#a2e5256a0f732ca0272b2f2725115b288", null ],
+    [ "UpdateItemTest", "a00022.html#a2ae5094b4f5a63a8900ab02f5ef0291c", null ]
 ];

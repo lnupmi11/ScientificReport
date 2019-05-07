@@ -1,12 +1,11 @@
 var a00091 =
 [
-    [ "PostgraduateDissertationGuidanceService", "a00091.html#a0704cab3354522bb03ef5d34598d5a58", null ],
-    [ "CreateItem", "a00091.html#ab43e26841685e9a8a8587bcb3aca5f56", null ],
-    [ "DeleteById", "a00091.html#a003e15733def65d16e513a4b67b27fd7", null ],
-    [ "Exists", "a00091.html#a0cd4a02174c9e500673695d8e6ea9309", null ],
-    [ "Get", "a00091.html#abba92bb22c6b06c5da0f665fa5603ba4", null ],
-    [ "GetAll", "a00091.html#a745a0be150394724a2ee68a17eee379d", null ],
-    [ "GetAllWhere", "a00091.html#a412c3a9c5ebd0ef24e8fa72d2b9b1416", null ],
-    [ "GetById", "a00091.html#a493c8060034278c57cc91c2b42fae42f", null ],
-    [ "UpdateItem", "a00091.html#af53bce4fa4bad730fd9bfe56fcf039f4", null ]
+    [ "CreateItemTest", "a00091.html#a721f96f57e4f40c0eb477c11496ca4fc", null ],
+    [ "DeleteItemTest", "a00091.html#a8c627f9794d0337d083a9fc9bbbc2e33", null ],
+    [ "DoesNotExistTest", "a00091.html#a550facca5f055d7c09ba121965ed8552", null ],
+    [ "ExistsTest", "a00091.html#a4371ae926400d156a139db35aad3a67e", null ],
+    [ "GetAllTest", "a00091.html#a051a883310b518e83f204d88e325659a", null ],
+    [ "GetAllWhereTest", "a00091.html#a3ba89d8336d6010347c530e3338e1b27", null ],
+    [ "GetByIdTest", "a00091.html#a92d7222ecb77f99195dcb9b13037014a", null ],
+    [ "UpdateItemTest", "a00091.html#a78788923eb9e0a86db155c31ee9fad15", null ]
 ];

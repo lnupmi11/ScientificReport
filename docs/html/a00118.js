@@ -1,12 +1,12 @@
 var a00118 =
 [
-    [ "ReviewController", "a00118.html#aa5cc95c3b8f863650d1b2875a6a8fc62", null ],
-    [ "Create", "a00118.html#a9f4aaaba262b6eeb64de8e1481d97381", null ],
-    [ "Create", "a00118.html#a071c36e671d08b7d2328b37032b803e1", null ],
-    [ "Delete", "a00118.html#abd6fa741a2b896f953831887900bde54", null ],
-    [ "DeleteConfirmed", "a00118.html#a1aef2fd65831230cae98aa1ac4cdcf79", null ],
-    [ "Details", "a00118.html#ab8d3c27eb6cafba1bc38ed4b5f9129b9", null ],
-    [ "Edit", "a00118.html#ae0857ee40dea71063af9640bffee5728", null ],
-    [ "Edit", "a00118.html#adfd52300d0862f751a0613b9fb772f90", null ],
-    [ "Index", "a00118.html#a5d869ba429feb8f7a75d9c4c9d469224", null ]
+    [ "ReviewRepository", "a00118.html#add9026b0c333df3b7d77efbc81881eda", null ],
+    [ "All", "a00118.html#a06eb3bcb9751848570c62ab1319d993e", null ],
+    [ "AllWhere", "a00118.html#aeba88443b6bfefeea6cf9e32bf60b033", null ],
+    [ "Create", "a00118.html#a7753464f983301771e7d90ad46acfc45", null ],
+    [ "Delete", "a00118.html#a215a01f807c5111848951f66073b4ff7", null ],
+    [ "Get", "a00118.html#a36a3908f2e671ed5500684c3a150e653", null ],
+    [ "Get", "a00118.html#a1d2aa0afff6db43c93f42ee4425b5173", null ],
+    [ "GetQuery", "a00118.html#ad864a579e12844afb875c825468068b5", null ],
+    [ "Update", "a00118.html#aa8b3997b177c4ce3a4b357d911e97901", null ]
 ];

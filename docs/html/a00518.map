@@ -1,3 +1,2 @@
-<map id="ScientificReport.BLL.Services.ReportThesisService" name="ScientificReport.BLL.Services.ReportThesisService">
-<area shape="rect" id="node2" href="$a00058.html" title="{IReportThesisService\n||+ GetAll()\l+ GetAllWhere()\l+ GetById()\l+ Get()\l+ CreateItem()\l+ UpdateItem()\l+ DeleteById()\l+ Exists()\l+ GetAuthors()\l+ AddAuthor()\l+ RemoveAuthor()\l}" alt="" coords="33,5,187,229"/>
+<map id="ScientificReport.Controllers.ApplicantsPatentLicenseActivitiesController" name="ScientificReport.Controllers.ApplicantsPatentLicenseActivitiesController">
 </map>
