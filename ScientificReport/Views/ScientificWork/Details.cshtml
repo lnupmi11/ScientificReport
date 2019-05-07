@@ -8,52 +8,54 @@
 	<h4>ScientificWork</h4>
 	<hr/>
 	<dl class="row">
-		<dt class="col-sm-2">
+		<dt class="col s2">
 			@Html.DisplayNameFor(model => model.ScientificWork.Cypher)
 		</dt>
-		<dd class="col-sm-10">
+		<dd class="col s10">
 			@Html.DisplayFor(model => model.ScientificWork.Cypher)
 		</dd>
-		<dt class="col-sm-2">
+		<dt class="col s2">
 			@Html.DisplayNameFor(model => model.ScientificWork.Category)
 		</dt>
-		<dd class="col-sm-10">
+		<dd class="col s10">
 			@Html.DisplayFor(model => model.ScientificWork.Category)
 		</dd>
-		<dt class="col-sm-2">
+		<dt class="col s2">
 			@Html.DisplayNameFor(model => model.ScientificWork.Title)
 		</dt>
-		<dd class="col-sm-10">
+		<dd class="col s10">
 			@Html.DisplayFor(model => model.ScientificWork.Title)
 		</dd>
-		<dt class="col-sm-2">
+		<dt class="col s2">
 			@Html.DisplayNameFor(model => model.ScientificWork.Contents)
 		</dt>
-		<dd class="col-sm-10">
+		<dd class="col s10">
 			@Html.DisplayFor(model => model.ScientificWork.Contents)
 		</dd>
-		<dt class="col-sm-2">
+		<dt class="col s2">
 			Authors
 		</dt>
 		@if (Model.Authors != null)
-		{	
-			<dd class="col-sm-10">
-
-				<ul style="list-style-type: none;">
-					@foreach (var author in Model.Authors)
-					{
-						if (author != null)
-						{
-							<li style="position: relative; left: -40px;">@author.FirstName @author.LastName</li>
-						}
-					}
-				</ul>
-
+		{
+			var authors = "";
+			foreach (var author in Model.Authors)
+			 {
+				 if (author != null && Model.Authors.Last() != author)
+				 {
+					 authors += $"{author.FirstName} {author.LastName}, ";
+				 }
+				 else if (author != null )
+				 {
+					 authors += $"{author.FirstName} {author.LastName}";
+				 }
+			 }
+			<dd class="col s10">
+					@authors
 			</dd>
 		}
 	</dl>
 </div>
 <div>
-	<a asp-action="Edit" asp-route-id="@Model.ScientificWork.Id">Edit</a> |
-	<a asp-action="Index">Back to List</a>
+	<a asp-action="Edit" asp-route-id="@Model.ScientificWork.Id" class="waves-effect btn-small waves-light">Edit</a>
+	<a asp-action="Index" class="btn-small blue darken-3">Back to List</a>
 </div>

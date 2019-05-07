@@ -1,4 +1,4 @@
-@model ScientificReport.DAL.Entities.Membership
+ @model ScientificReport.DAL.Entities.Membership
 
 @{
 	ViewData["Title"] = "Details";
@@ -8,23 +8,23 @@
 	<h4>Membership</h4>
 	<hr/>
 	<dl class="row">
-		<dt class = "col-sm-3">
+		<dt class = "col s3">
 			@Html.DisplayNameFor(model => model.MemberOf)
 		</dt>
-		<dd class = "col-sm-9">
+		<dd class = "col s9">
 			@Html.DisplayFor(model => model.MemberOf)
 		</dd>
 	</dl>
 	<dl class="row">
-		<dt class = "col-sm-3">
+		<dt class = "col s3">
 			@Html.DisplayNameFor(model => model.MembershipInfo)
 		</dt>
-		<dd class = "col-sm-9">
+		<dd class = "col s9">
 			@Html.DisplayFor(model => model.MembershipInfo)
 		</dd>
 	</dl>
 </div>
 <div>
-	<a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-	<a asp-action="Index">Back to List</a>
+	<a asp-action="Edit" asp-route-id="@Model.Id" class="waves-effect btn-small waves-light">Edit</a>
+	<a asp-action="Index" class="btn-small blue darken-3">Back to List</a>
 </div>

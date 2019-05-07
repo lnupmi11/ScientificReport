@@ -4,52 +4,31 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h2>Publication</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="waves-effect btn-small green darken-3">Create New</a>
 </p>
-<table class="table">
+<table class="responsive-table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Type)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Specification)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PublishingPlace)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PublishingHouseName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PublishingYear)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PagesAmount)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsPrintCanceled)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsRecommendedToPrint)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreatedAt)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastEditAt)
-            </th>
-            <th></th>
-        </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PublishingHouseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PublishingYear)
+        </th>
+        <th></th>
+    </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+    @foreach (var item in Model) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Type)
@@ -58,38 +37,20 @@
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Specification)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PublishingPlace)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.PublishingHouseName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.PublishingYear)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PagesAmount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsPrintCanceled)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsRecommendedToPrint)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedAt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastEditAt)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn-small blue darken-3">Details</a>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="waves-effect btn-small waves-light">Edit</a>
+                <form asp-action="Delete" asp-route-id="@item.Id" method="post" style="display: inline;">
+                    <button type="submit" class="waves-effect btn-small deep-orange darken-3">Delete</button>
+                </form>
             </td>
         </tr>
-}
+    }
     </tbody>
 </table>
+

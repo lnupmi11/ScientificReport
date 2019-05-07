@@ -8,77 +8,91 @@
 
 <div>
 	<h4>UserProfile</h4>
-	<hr />
-	<dl class="row">
-		<dt class = "col-sm-2">
+	<hr/>
+	<div class="row">
+		<div class="col s2">
 			@Html.DisplayNameFor(model => model.User.FirstName)
-		</dt>
-		<dd class = "col-sm-10">
+		</div>
+		<div class="col s10">
 			@Html.DisplayFor(model => model.User.FirstName)
-		</dd>
-		<dt class = "col-sm-2">
+		</div>
+		<div class="col s2">
 			@Html.DisplayNameFor(model => model.User.MiddleName)
-		</dt>
-		<dd class = "col-sm-10">
+		</div>
+		<div class="col s10">
 			@Html.DisplayFor(model => model.User.MiddleName)
-		</dd>
-		<dt class = "col-sm-2">
+		</div>
+		<div class="col s2">
 			@Html.DisplayNameFor(model => model.User.LastName)
-		</dt>
-		<dd class = "col-sm-10">
+		</div>
+		<div class="col s10">
 			@Html.DisplayFor(model => model.User.LastName)
-		</dd>
-		<dt class = "col-sm-2">
+		</div>
+		<div class="col s2">
 			@Html.DisplayNameFor(model => model.User.BirthYear)
-		</dt>
-		<dd class = "col-sm-10">
+		</div>
+		<div class="col s10">
 			@Html.DisplayFor(model => model.User.BirthYear)
-		</dd>
-		<dt class = "col-sm-2">
+		</div>
+		<div class="col s2">
 			@Html.DisplayNameFor(model => model.User.GraduationYear)
-		</dt>
-		<dd class = "col-sm-10">
-		@Html.DisplayFor(model => model.User.GraduationYear)
-		</dd>
-		<dt class = "col-sm-2">
+		</div>
+		<div class="col s10">
+			@Html.DisplayFor(model => model.User.GraduationYear)
+		</div>
+		<div class="col s2">
 			@Html.DisplayNameFor(model => model.User.ScientificDegree)
-		</dt>
-		<dd class = "col-sm-10">
-			@Html.DisplayFor(model => model.User.ScientificDegree)
-		</dd>
-		<dt class = "col-sm-2">
+		</div>
+		<div class="col s10">
+			@if (@Model.User.ScientificDegree != null)
+			{
+				@Html.DisplayFor(model => model.User.ScientificDegree)
+			}
+			else
+			{
+				<span>You don't have any scientific degree</span>
+			}
+		</div>
+		<div class="col s2">
 			@Html.DisplayNameFor(model => model.User.YearDegreeGained)
-		</dt>
-		<dd class = "col-sm-10">
+		</div>
+		<div class="col s10">
 			@Html.DisplayFor(model => model.User.YearDegreeGained)
-		</dd>
-		<dt class = "col-sm-2">
+		</div>
+		<div class="col s2">
 			@Html.DisplayNameFor(model => model.User.AcademicStatus)
-		</dt>
-		<dd class = "col-sm-10">
-			@Html.DisplayFor(model => model.User.AcademicStatus)
-		</dd>
-		<dt class = "col-sm-2">
+		</div>
+		<div class="col s10">
+			@if (@Model.User.AcademicStatus != null)
+			{
+				@Html.DisplayFor(model => model.User.AcademicStatus)
+			}
+			else
+			{
+				<span>You don't have any Academic status</span>
+			}
+		</div>
+		<div class="col s2">
 			@Html.DisplayNameFor(model => model.User.YearDegreeAssigned)
-		</dt>
-		<dd class = "col-sm-10">
+		</div>
+		<div class="col s10">
 			@Html.DisplayFor(model => model.User.YearDegreeAssigned)
-		</dd>
-		<dt class = "col-sm-2">
+		</div>
+		<div class="col s2">
 			@Html.DisplayNameFor(model => model.User.Position)
-		</dt>
-		<dd class = "col-sm-10">
+		</div>
+		<div class="col s10">
 			@Html.DisplayFor(model => model.User.Position) @Html.DisplayFor(model => model.DepartmentName)
-		</dd>
-		<dt class = "col-sm-2">
+		</div>
+		<div class="col s2">
 			@Html.DisplayNameFor(model => model.User.IsApproved)
-		</dt>
-		<dd class = "col-sm-10">
-			@Html.DisplayFor(model => model.User.IsApproved)
-		</dd>
-	</dl>
+		</div>
+		<div class="col s10">
+			<span>@(Model.User.IsApproved ? "Yes" : "No")</span>
+		</div>
+	</div>
 </div>
 <div>
-	<a asp-action="Edit" asp-route-id="@Model.User.Id">Edit</a> |
-	<a asp-action="Index">Back to List</a>
+	<a asp-action="Edit" asp-route-id="@Model.User.Id" class="waves-effect btn-small waves-light">Edit</a>
+	<a asp-action="Index" class="btn-small blue darken-3">Back to List</a>
 </div>
