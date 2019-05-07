@@ -1,7 +1,9 @@
 @using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Mvc.Localization
 @using ScientificReport.DAL.Entities.UserProfile
 @inject SignInManager<UserProfile> SignInManager
 @inject UserManager<UserProfile> UserManager
+@inject IViewLocalizer Localizer
 
 @* <ul class="navbar-nav"> *@
 @* 	@if (SignInManager.IsSignedIn(User)) *@
@@ -30,16 +32,16 @@
 	@if (User.Identity.IsAuthenticated)
 	{
 		<li>
-			<a asp-area="" asp-controller="UserProfile" asp-action="Logout">Log out</a>
+			<a asp-area="" asp-controller="UserProfile" asp-action="Logout">@Localizer["Log out"]</a>
 		</li>
 	}
 	else
 	{
 		<li>
-			<a asp-area="" asp-controller="UserProfile" asp-action="Register">Register</a>
+			<a asp-area="" asp-controller="UserProfile" asp-action="Register">@Localizer["Register"]</a>
 		</li>
 		<li>
-			<a asp-area="" asp-controller="UserProfile" asp-action="Login">Log in</a>
+			<a asp-area="" asp-controller="UserProfile" asp-action="Login">@Localizer["Log In"]</a>
 		</li>
 	}
 </ul>

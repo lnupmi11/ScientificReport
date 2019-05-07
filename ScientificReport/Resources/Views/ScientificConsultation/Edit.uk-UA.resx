@@ -13,9 +13,22 @@
 	<resheader name="writer">
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
-
-	<data name="" xml:space="preserve">
-		<value></value>
+	<data name="Edit" xml:space="preserve">
+		<value>Редагувати</value>
 	</data>
-
+	<data name="ScientificConsultation" xml:space="preserve">
+		<value>Наукова консультація</value>
+	</data>
+	<data name="CandidateName" xml:space="preserve">
+		<value>Прізвище, ім'я та по-батькові кандидата</value>
+	</data>
+	<data name="DissertationTitle" xml:space="preserve">
+		<value>Назва дисертації</value>
+	</data>
+	<data name="Back to List" xml:space="preserve">
+		<value>Повернутися до списку</value>
+	</data>
+	<data name="Save" xml:space="preserve">
+		<value>Зберегти</value>
+	</data>
 </root>

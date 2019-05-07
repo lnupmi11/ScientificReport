@@ -1,17 +1,19 @@
+@using Microsoft.AspNetCore.Mvc.Localization
 @model ScientificReport.DAL.Entities.Review
+@inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = Localizer["Details"];
 }
 
-<h1>Details</h1>
+<h1>@Localizer["Details"]</h1>
 
 <div>
-    <h4>Review</h4>
+    <h4>@Localizer["Review"]</h4>
     <hr />
     <dl class="row">
         <dt class = "col s2">
-            @Html.DisplayNameFor(model => model.DateOfReview)
+            @Localizer[Html.DisplayNameFor(model => model.DateOfReview)]
         </dt>
         <dd class = "col s10">
             @Html.DisplayFor(model => model.DateOfReview)
@@ -19,6 +21,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id" class="waves-effect btn-small waves-light">Edit</a>
-    <a asp-action="Index" class="btn-small blue darken-3">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
+    <a asp-action="Index" class="btn-small blue darken-3">@Localizer["Back to List"]</a>
 </div>

@@ -1,31 +1,33 @@
+@using Microsoft.AspNetCore.Mvc.Localization
 @model ScientificReport.DAL.Entities.ReportThesis
+@inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = Localizer["Create"];
 }
 
-<h1>Create</h1>
+<h1>@Localizer["Create"]</h1>
 
-<h4>ReportThesis</h4>
+<h4>@Localizer["ReportThesis"]</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Thesis" class="control-label"></label>
+                <label asp-for="Thesis" class="control-label">@Localizer["Thesis"]</label>
                 <input asp-for="Thesis" class="form-control" />
                 <span asp-validation-for="Thesis" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="waves-effect btn-small green darken-3"/>
+                <input type="submit" value="@Localizer["Create"]" class="waves-effect btn-small green darken-3"/>
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
+    <a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
 </div>
 
 @section Scripts {

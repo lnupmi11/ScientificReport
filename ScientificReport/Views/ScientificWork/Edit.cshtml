@@ -1,7 +1,9 @@
+@using Microsoft.AspNetCore.Mvc.Localization
 @model ScientificReport.DTO.Models.ScientificWorks.ScientificWorksEdit
+@inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = Localizer["Edit"];
 }
 <style type="text/css">
     .authors-list {
@@ -16,7 +18,7 @@
     .hidden { display: none; }
 </style>
 
-<h4>ScientificWork</h4>
+<h4>@Localizer["ScientificWork"]</h4>
 <hr/>
 <div class="row">
     <div class="col-md-4">
@@ -24,32 +26,32 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="ScientificWork.Id"/>
             <div class="form-group">
-                <label asp-for="ScientificWork.Cypher" class="control-label"></label>
+                <label asp-for="ScientificWork.Cypher" class="control-label">@Localizer["Cypher"]</label>
                 <input asp-for="ScientificWork.Cypher" class="form-control"/>
                 <span asp-validation-for="ScientificWork.Cypher" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ScientificWork.Category" class="control-label"></label>
+                <label asp-for="ScientificWork.Category" class="control-label">@Localizer["Category"]</label>
                 <input asp-for="ScientificWork.Category" class="form-control"/>
                 <span asp-validation-for="ScientificWork.Category" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ScientificWork.Title" class="control-label"></label>
+                <label asp-for="ScientificWork.Title" class="control-label">@Localizer["Title"]</label>
                 <input asp-for="ScientificWork.Title" class="form-control"/>
                 <span asp-validation-for="ScientificWork.Title" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ScientificWork.Contents" class="control-label"></label>
+                <label asp-for="ScientificWork.Contents" class="control-label">@Localizer["Contents"]</label>
                 <input asp-for="ScientificWork.Contents" class="form-control"/>
                 <span asp-validation-for="ScientificWork.Contents" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary"/>
+                <input type="submit" value="@Localizer["Save"]" class="btn btn-primary"/>
             </div>
         </form>
     </div>
     <div class="col-md-4">
-        <h4>Authors:</h4>
+        <h4>@Localizer["Authors"]:</h4>
         <div class="authors-list">
             @if (Model.Users != null)
             {
@@ -71,7 +73,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">@Localizer["Back to List"]</a>
 </div>
 
 <script>    

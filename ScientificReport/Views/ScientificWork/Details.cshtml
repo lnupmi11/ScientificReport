@@ -1,39 +1,41 @@
+@using Microsoft.AspNetCore.Mvc.Localization
 @model ScientificReport.DTO.Models.ScientificWorks.ScientificWorksDetails
+@inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = "Details";
+	ViewData["Title"] = Localizer["Details"];
 }
 
 <div>
-	<h4>ScientificWork</h4>
+	<h4>@Localizer["ScientificWork"]</h4>
 	<hr/>
 	<dl class="row">
 		<dt class="col s2">
-			@Html.DisplayNameFor(model => model.ScientificWork.Cypher)
+			@Localizer[Html.DisplayNameFor(model => model.ScientificWork.Cypher)]
 		</dt>
 		<dd class="col s10">
 			@Html.DisplayFor(model => model.ScientificWork.Cypher)
 		</dd>
 		<dt class="col s2">
-			@Html.DisplayNameFor(model => model.ScientificWork.Category)
+			@Localizer[Html.DisplayNameFor(model => model.ScientificWork.Category)]
 		</dt>
 		<dd class="col s10">
 			@Html.DisplayFor(model => model.ScientificWork.Category)
 		</dd>
 		<dt class="col s2">
-			@Html.DisplayNameFor(model => model.ScientificWork.Title)
+			@Localizer[Html.DisplayNameFor(model => model.ScientificWork.Title)]
 		</dt>
 		<dd class="col s10">
 			@Html.DisplayFor(model => model.ScientificWork.Title)
 		</dd>
 		<dt class="col s2">
-			@Html.DisplayNameFor(model => model.ScientificWork.Contents)
+			@Localizer[Html.DisplayNameFor(model => model.ScientificWork.Contents)]
 		</dt>
 		<dd class="col s10">
 			@Html.DisplayFor(model => model.ScientificWork.Contents)
 		</dd>
 		<dt class="col s2">
-			Authors
+			@Localizer["Authors"]
 		</dt>
 		@if (Model.Authors != null)
 		{
@@ -50,12 +52,12 @@
 				 }
 			 }
 			<dd class="col s10">
-					@authors
+				@authors
 			</dd>
 		}
 	</dl>
 </div>
 <div>
-	<a asp-action="Edit" asp-route-id="@Model.ScientificWork.Id" class="waves-effect btn-small waves-light">Edit</a>
-	<a asp-action="Index" class="btn-small blue darken-3">Back to List</a>
+	<a asp-action="Edit" asp-route-id="@Model.ScientificWork.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
+	<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Back to List"]</a>
 </div>

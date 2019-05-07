@@ -1,7 +1,9 @@
+@using Microsoft.AspNetCore.Mvc.Localization
 @model ScientificReport.DTO.Models.ReportThesis.ReportThesisEdit
+@inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = "Edit";
+	ViewData["Title"] = Localizer["Edit"];
 }
 <style type="text/css">
 	.authors-list {
@@ -11,10 +13,10 @@
 	.text-green { color: rgb(0, 179, 0); }
 	.text-red { color: rgb(177, 0, 0); }
 	.hidden { display: none; }
+	.cursor-pointer { cursor: pointer; }
 </style>
 
-
-<h4>ReportThesis</h4>
+<h4>@Localizer["ReportThesis"]</h4>
 <hr/>
 <div class="row">
 	<div class="col-md-4">
@@ -22,17 +24,17 @@
 			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 			<input type="hidden" asp-for="ReportThesis.Id"/>
 			<div class="form-group">
-				<label asp-for="ReportThesis.Thesis" class="control-label"></label>
+				<label asp-for="ReportThesis.Thesis" class="control-label">@Localizer["Thesis"]</label>
 				<input asp-for="ReportThesis.Thesis" class="form-control"/>
 				<span asp-validation-for="ReportThesis.Thesis" class="text-danger"></span>
 			</div>
 			<div class="form-group">
-				<input type="submit" value="Save" class="btn btn-primary"/>
+				<input type="submit" value="@Localizer["Save"]" class="btn btn-primary"/>
 			</div>
 		</form>
 	</div>
 	<div class="col-md-4">
-		<h4>Authors:</h4>
+		<h4>@Localizer["Authors"]:</h4>
 		<div class="authors-list">
 			@if (Model.Users != null)
 			{
@@ -43,8 +45,8 @@
 						var exists = Model.Authors.Any(u => u.Id == user.Id);
 						<p>
 							@user.FirstName @user.LastName
-							<i class="add-user fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addAuthor(this, '@Model.ReportThesis.Id', '@user.Id')"></i>
-							<i class="remove-user fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteAuthor(this, '@Model.ReportThesis.Id', '@user.Id')"></i>
+							<i class="cursor-pointer add-user fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addAuthor(this, '@Model.ReportThesis.Id', '@user.Id')"></i>
+							<i class="cursor-pointer remove-user fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteAuthor(this, '@Model.ReportThesis.Id', '@user.Id')"></i>
 						</p>
 					}
 				}
@@ -55,7 +57,7 @@
 
 
 <div>
-	<a asp-action="Index">Back to List</a>
+	<a asp-action="Index">@Localizer["Back to List"]</a>
 </div>
 
 <script>

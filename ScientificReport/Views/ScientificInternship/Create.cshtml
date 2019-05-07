@@ -1,48 +1,50 @@
+@using Microsoft.AspNetCore.Mvc.Localization
 @model ScientificReport.DAL.Entities.ScientificInternship
+@inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = "Create";
+	ViewData["Title"] = Localizer["Create"];
 }
 
-<h1>Create</h1>
+<h1>@Localizer["Create"]</h1>
 
-<h4>ScientificInternship</h4>
+<h4>@Localizer["ScientificInternship"]</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="PlaceOfInternship" class="control-label"></label>
-                <input asp-for="PlaceOfInternship" class="form-control" />
-                <span asp-validation-for="PlaceOfInternship" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Started" class="control-label"></label>
-                <input asp-for="Started" class="form-control" />
-                <span asp-validation-for="Started" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Ended" class="control-label"></label>
-                <input asp-for="Ended" class="form-control" />
-                <span asp-validation-for="Ended" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contents" class="control-label"></label>
-                <input asp-for="Contents" class="form-control" />
-                <span asp-validation-for="Contents" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="waves-effect btn-small green darken-3"/>
-            </div>
-        </form>
-    </div>
+	<div class="col-md-4">
+		<form asp-action="Create">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="form-group">
+				<label asp-for="PlaceOfInternship" class="control-label">@Localizer["PlaceOfInternship"]</label>
+				<input asp-for="PlaceOfInternship" class="form-control" />
+				<span asp-validation-for="PlaceOfInternship" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Started" class="control-label">@Localizer["Started"]</label>
+				<input asp-for="Started" class="form-control" />
+				<span asp-validation-for="Started" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Ended" class="control-label">@Localizer["Ended"]</label>
+				<input asp-for="Ended" class="form-control" />
+				<span asp-validation-for="Ended" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Contents" class="control-label">@Localizer["Contents"]</label>
+				<input asp-for="Contents" class="form-control" />
+				<span asp-validation-for="Contents" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="@Localizer["Create"]" class="waves-effect btn-small green darken-3"/>
+			</div>
+		</form>
+	</div>
 </div>
 
 <div>
-    <a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
+	<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
