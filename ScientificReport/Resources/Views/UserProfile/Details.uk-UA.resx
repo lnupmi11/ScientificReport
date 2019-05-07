@@ -13,6 +13,9 @@
 	<resheader name="writer">
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
+	<data name="UserProfile" xml:space="preserve">
+		<value>Обліковий запис користувача</value>
+	</data>
 	<data name="Details" xml:space="preserve">
 		<value>Деталі</value>
 	</data>
@@ -34,6 +37,12 @@
 	<data name="ScientificDegree" xml:space="preserve">
 		<value>Науковий ступінь</value>
 	</data>
+	<data name="You don't have any Academic status" xml:space="preserve">
+		<value>У вас немає вченого звання</value>
+	</data>
+	<data name="You don't have any scientific degree" xml:space="preserve">
+		<value>У вас немає наукового ступеня</value>
+	</data>
 	<data name="YearDegreeGained" xml:space="preserve">
 		<value>Рік захисту наукового ступеня</value>
 	</data>
@@ -48,6 +57,12 @@
 	</data>
 	<data name="IsApproved" xml:space="preserve">
 		<value>Схвалений</value>
+	</data>
+	<data name="Yes" xml:space="preserve">
+		<value>Так</value>
+	</data>
+	<data name="No" xml:space="preserve">
+		<value>Ні</value>
 	</data>
 	<data name="Edit" xml:space="preserve">
 		<value>Редагувати</value>

@@ -13,6 +13,9 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
+	<data name="UserProfile" xml:space="preserve">
+		<value>User Profile</value>
+	</data>
     <data name="Details" xml:space="preserve">
 		<value>Details</value>
 	</data>
@@ -34,6 +37,12 @@
     <data name="ScientificDegree" xml:space="preserve">
 		<value>Scientific Degree</value>
 	</data>
+	<data name="You don't have any Academic status" xml:space="preserve">
+		<value>You don't have any Academic status</value>
+	</data>
+	<data name="You don't have any scientific degree" xml:space="preserve">
+		<value>You don't have any Academic status</value>
+	</data>
     <data name="YearDegreeGained" xml:space="preserve">
 		<value>Year Degree Gained</value>
 	</data>
@@ -48,6 +57,12 @@
 	</data>
     <data name="IsApproved" xml:space="preserve">
 		<value>Is Approved</value>
+	</data>
+	<data name="Yes" xml:space="preserve">
+		<value>Yes</value>
+	</data>
+	<data name="No" xml:space="preserve">
+		<value>No</value>
 	</data>
     <data name="Edit" xml:space="preserve">
 		<value>Edit</value>

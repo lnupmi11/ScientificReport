@@ -4,10 +4,12 @@
 	ViewData["Title"] = "Departments";
 }
 
-<h2 style="float: left;">Departments</h2>
-<button type="button" style="float: right;" class="btn btn-success" onclick="location.href = '@Url.Action("Create", "Department")'">Create</button>
 
-<table class="table">
+<h2>Departments</h2>
+
+<button type="button" class="waves-effect btn-small green darken-3" onclick="location.href = '@Url.Action("Create", "Department")'">Create</button>
+
+<table class="responsive-table">
 	<thead>
 	<tr>
 		<th>
@@ -32,10 +34,10 @@
 				@Html.DisplayFor(modelItem => item.ScientificWorks.Count)
 			</td>
 			<td>
-				<a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-light">Details</a>
-				<a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-success">Edit</a>
+				<a asp-action="Details" asp-route-id="@item.Id" class="btn-small blue darken-3">Details</a>
+				<a asp-action="Edit" asp-route-id="@item.Id" class="waves-effect btn-small waves-light">Edit</a>
 				<form asp-action="Delete" asp-route-id="@item.Id" method="post" style="display: inline;">
-					<button type="submit" class="btn btn-sm btn-danger">Delete</button>
+					<button type="submit" class="waves-effect btn-small deep-orange darken-3">Delete</button>
 				</form>
 			</td>
 		</tr>

@@ -11,78 +11,109 @@
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Type" class="control-label"></label>
-                <select asp-for="Type" class="form-control"></select>
-                <span asp-validation-for="Type" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LiabilityInfo" class="control-label"></label>
-                <input asp-for="LiabilityInfo" class="form-control" />
-                <span asp-validation-for="LiabilityInfo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DocumentInfo" class="control-label"></label>
-                <input asp-for="DocumentInfo" class="form-control" />
-                <span asp-validation-for="DocumentInfo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PublishingPlace" class="control-label"></label>
-                <input asp-for="PublishingPlace" class="form-control" />
-                <span asp-validation-for="PublishingPlace" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PublishingHouseName" class="control-label"></label>
-                <input asp-for="PublishingHouseName" class="form-control" />
-                <span asp-validation-for="PublishingHouseName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PublishingYear" class="control-label"></label>
-                <input asp-for="PublishingYear" class="form-control" />
-                <span asp-validation-for="PublishingYear" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsPeriodical" /> @Html.DisplayNameFor(model => model.IsPeriodical)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="Number" class="control-label"></label>
-                <input asp-for="Number" class="form-control" />
-                <span asp-validation-for="Number" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PagesAmount" class="control-label"></label>
-                <input asp-for="PagesAmount" class="form-control" />
-                <span asp-validation-for="PagesAmount" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsPrintCanceled" /> @Html.DisplayNameFor(model => model.IsPrintCanceled)
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsRecommendedToPrint" /> @Html.DisplayNameFor(model => model.IsRecommendedToPrint)
-                </label>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
+	        <div asp-validation-summary="ModelOnly" class="validate"></div>
+	        <input type="hidden" asp-for="Id" />
+			<div class="row">
+				<div class="input-field col s6">
+					<label asp-for="Type"></label>
+					<select asp-for="Type" class="browser-default col s6 push-s2">
+						<option value="" disabled selected>Choose your option</option>
+						<option value="ImpactFactor">Impact Factor</option>
+						<option value="IncludedInWebOfScienceScopusOthers">Included In Web Of Science Scopus Others</option>
+						<option value="ForeignPublishing">Foreign Publishing</option>
+						<option value="ProfessionalPublishingOfUkraine">Professional Publishing Of Ukraine</option>
+						<option value="OtherPublishingOfUkraine">Other Publishing Of Ukraine</option>
+						<option value="ReportThesis">Report Thesis</option>
+						<option value="InternationalReportThesis">International Report Thesis</option>
+						<option value="DomesticReportThesis">Domestic Report Thesis</option>
+						<option value="ForeignReportThesisWithResearchResults">Foreign Report Thesis With Research Results</option>
+					</select>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="input-field col s6">
+					<input asp-for="Title" type="text" class="validate">
+					<label asp-for="Title"></label>
+					<span class="helper-text" asp-validation-for="Title" data-error="" data-success=""></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s6">
+					<input asp-for="LiabilityInfo" type="text" class="validate">
+					<label asp-for="LiabilityInfo"></label>
+					<span class="helper-text" asp-validation-for="LiabilityInfo" data-error="" data-success=""></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s6">
+					<input asp-for="DocumentInfo" type="text" class="validate">
+					<label asp-for="DocumentInfo"></label>
+					<span class="helper-text" asp-validation-for="DocumentInfo" data-error="" data-success=""></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s6">
+					<input asp-for="PublishingPlace" type="text" class="validate">
+					<label asp-for="PublishingPlace"></label>
+					<span class="helper-text" asp-validation-for="PublishingPlace" data-error="" data-success=""></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s6">
+					<input asp-for="PublishingHouseName" type="text" class="validate">
+					<label asp-for="PublishingHouseName"></label>
+					<span class="helper-text" asp-validation-for="PublishingHouseName" data-error="" data-success=""></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s6">
+					<input asp-for="PublishingYear" type="date" class="validate">
+					<label asp-for="PublishingYear"></label>
+					<span class="helper-text" asp-validation-for="PublishingYear" data-error="" data-success=""></span>
+				</div>
+			</div>
+			<div class="row">
+				<label class="col s6">
+					<input type="checkbox" class="filled-in" asp-for="IsPeriodical"/>
+					<span>@Html.DisplayNameFor(model => model.IsPeriodical)</span>
+				</label>
+			</div>
+			<div class="row">
+				<label class="col s6">
+					<input type="checkbox" class="filled-in" asp-for="IsPrintCanceled"/>
+					<span>@Html.DisplayNameFor(model => model.IsPrintCanceled)</span>
+				</label>
+			</div>
+			<div class="row">
+				<label class="col s6">
+					<input type="checkbox" class="filled-in" asp-for="IsRecommendedToPrint"/>
+					<span>@Html.DisplayNameFor(model => model.IsRecommendedToPrint)</span>
+				</label>
+			</div>
+			<div class="row">
+				<div class="input-field col s6">
+					<input asp-for="Number" type="text" class="validate">
+					<label asp-for="Number"></label>
+					<span class="helper-text" asp-validation-for="Number" data-error="" data-success=""></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s6">
+					<input asp-for="PagesAmount" type="text" class="validate">
+					<label asp-for="PagesAmount"></label>
+					<span class="helper-text" asp-validation-for="PagesAmount" data-error="" data-success=""></span>
+				</div>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Save" class="waves-effect btn-small amber accent-2"/>
+				<a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
+			</div>
+		
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

@@ -4,10 +4,13 @@
     ViewData["Title"] = "Index";
 }
 
+<h2>Scientific Work</h2>
+
 <p>
-    <a asp-action="Create">Create New</a>
+    <button type="button" class="waves-effect btn-small green darken-3" 
+            onclick="location.href = '@Url.Action("Create", "ScientificWork")'">Create</button>
 </p>
-<table class="table">
+<table class="responsive-table">
     <thead>
         <tr>
             <th>
@@ -41,9 +44,11 @@
                 @Html.DisplayFor(modelItem => item.Contents)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn-small blue darken-3">Details</a>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="waves-effect btn-small waves-light">Edit</a>
+                <form asp-action="Delete" asp-route-id="@item.Id" method="post" style="display: inline;">
+                    <button type="submit" class="waves-effect btn-small deep-orange darken-3">Delete</button>
+                </form>
             </td>
         </tr>
 }

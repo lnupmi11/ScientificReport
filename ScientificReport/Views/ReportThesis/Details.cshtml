@@ -10,18 +10,18 @@
 	<h4>ReportThesis</h4>
 	<hr/>
 	<dl class="row">
-		<dt class="col-sm-2">
+		<dt class="co s2">
 			@Html.DisplayNameFor(model => model.ReportThesis.Thesis)
 		</dt>
-		<dd class="col-sm-10">
+		<dd class="co s10">
 			@Html.DisplayFor(model => model.ReportThesis.Thesis)
 		</dd>
-		<dt class="col-sm-2">
+		<dt class="co s2">
 			@Html.DisplayNameFor(model => model.ReportThesis.Conference)
 		</dt>
 		@if (Model.ReportThesis.Conference != null)
 		{
-			<dd class="col-sm-10">
+			<dd class="col s10">
 				<a asp-controller="Conference" asp-action="Details"
 				   asp-route-id="@Model.ReportThesis.Conference.Id ">
 					@Model.ReportThesis.Conference.Topic (@Model.ReportThesis.Conference.Date.ToString("MM/dd/yyyy"))
@@ -30,29 +30,33 @@
 		}
 		else
 		{
-			<dd class="col-sm-10">There isn't any conferences exist</dd>
+			<dd class="col s10">There isn't any conferences exist</dd>
 		}
-		<dt class="col-sm-2">
+		<dt class="col s2">
 			Authors
 		</dt>
 		@if (Model.Authors != null)
 		{
-			<dd class="col-sm-10">
-				<ul style="list-style-type: none;">
-					@foreach (var author in Model.Authors)
-					{
-						if (author != null)
-						{
-							<li style="position: relative; left: -40px;">@author.FirstName @author.LastName</li>
-						}
-					}
-				</ul>
+			var authors = "";
+			foreach (var author in Model.Authors)
+			{
+				if (author != null && Model.Authors.Last() != author)
+				{
+					authors += $"{author.FirstName} {author.LastName}, ";
+				}
+				else if (author != null )
+				{
+					authors += $"{author.FirstName} {author.LastName}";
+				}
+			}
+			<dd class="col s10">
+				@authors
 			</dd>
 		}
 	</dl>
 
 </div>
 <div>
-	<a asp-action="Edit" asp-route-id="@Model.ReportThesis.Id">Edit</a> |
-	<a asp-action="Index">Back to List</a>
+	<a asp-action="Edit" asp-route-id="@Model.ReportThesis.Id" class="waves-effect btn-small waves-light">Edit</a>
+	<a asp-action="Index" class="btn-small blue darken-3">Back to List</a>
 </div>
