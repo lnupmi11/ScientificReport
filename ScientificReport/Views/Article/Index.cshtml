@@ -1,3 +1,4 @@
+@using ScientificReport.DAL.Entities
 @model IEnumerable<ScientificReport.DAL.Entities.Article>
 
 @{
@@ -31,7 +32,42 @@
     @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Type)
+                @if (item.Type == Article.Types.ImpactFactor)
+                {
+                    <span>Impact Factor</span>
+                }
+                else if(item.Type == Article.Types.InternationalReportThesis)
+                {
+                    <span>International Report Thesis</span>
+                }
+                else if(item.Type == Article.Types.ReportThesis)
+                {
+                    <span>Report Thesis</span>
+                }
+                else if(item.Type == Article.Types.DomesticReportThesis)
+                {
+                    <span>Domestic Report Thesis</span>
+                }
+                else if(item.Type == Article.Types.InternationalReportThesis)
+                {
+                    <span>International Report Thesis</span>
+                }
+               else if(item.Type == Article.Types.OtherPublishingOfUkraine)
+                {    
+                    <span>Other Publishing Of Ukraine</span>
+                }
+                else if(item.Type == Article.Types.ProfessionalPublishingOfUkraine)
+                {
+                    <span>Professional Publishing Of Ukraine</span>
+                }
+                else if(item.Type == Article.Types.ForeignReportThesisWithResearchResults)
+                {
+                    <span>Foreign Report Thesis With Research Results</span>
+                }
+                else if(item.Type == Article.Types.IncludedInWebOfScienceScopusOthers)
+                {
+                    <span>Included In Web Of Science Scopus Others</span>
+                }
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
