@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.Extensions.DependencyInjection;
 using ScientificReport.BLL.Services;
@@ -35,7 +36,7 @@ namespace ScientificReport.Models
 			var logger = serviceProvider.GetRequiredService<ILogger<SeedData>>();
 
 			await SeedUserRoles(serviceProvider.GetRequiredService<RoleManager<UserProfileRole>>(), logger);
-			SeedUserProfile(context);
+			await SeedUserProfile(context);
 			SeedTeacherReports(context);
 			SeedScientificWorks(context);
 			SeedConference(context);
@@ -54,25 +55,46 @@ namespace ScientificReport.Models
 			context.SaveChanges();
 		}
 
-		private static void SeedUserProfile(ScientificReportDbContext context)
+		private static async Task SeedUserProfile(ScientificReportDbContext context)
 		{
 			if (context.UserProfiles.Any()) return;
 
-			context.UserProfiles.AddRange(
-				new UserProfile
-				{
-					FirstName = "Testf",
-					LastName = "Testl",
-					MiddleName = "Testm"
-				},
-				new UserProfile
-				{
-					FirstName = "Testf2",
-					LastName = "Testl2",
-					MiddleName = "Testm2"
-				}
-			);
-			context.SaveChanges();
+			var service = new UserProfileService(context);
+			
+			service.CreateItem(new UserProfile
+			{
+				Id = Guid.NewGuid(),
+				Email = "orest@gmail.com",
+				Position = "Some position1",
+				LastName = "Hopiak",
+				UserName = "orest",
+				BirthYear = 1999,
+				FirstName = "Orest",
+				IsApproved = true,
+				MiddleName = "DevOps",
+				PhoneNumber = "+380000000001",
+				PasswordHash = "AQAAAAEAACcQAAAAEBO5Hc1EKb+esiKTjXGFwjq54R8bh5NlhXIztb0fhj+YjJJYhzA4IFo6QDk3agpXhQ=="
+			});
+
+			var user2 = new UserProfile
+			{
+				Id = Guid.NewGuid(),
+				Email = "orest@gmail.com",
+				Position = "Teacher",
+				LastName = "Lisovskiy",
+				UserName = "yura",
+				BirthYear = 1999,
+				FirstName = "Yura",
+				IsApproved = true,
+				MiddleName = "Coder",
+				PhoneNumber = "+380000000001",
+				PasswordHash = "AQAAAAEAACcQAAAAEBO5Hc1EKb+esiKTjXGFwjq54R8bh5NlhXIztb0fhj+YjJJYhzA4IFo6QDk3agpXhQ=="
+			};
+			
+			service.CreateItem(user2);
+
+			var role = await context.Roles.FindAsync("Administrator");
+			
 		}
 
 		private static void SeedTeacherReports(ScientificReportDbContext context)
