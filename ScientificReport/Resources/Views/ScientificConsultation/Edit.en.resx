@@ -28,7 +28,7 @@
 	<data name="Save" xml:space="preserve">
 		<value>Save</value>
 	</data>
-	<data name="Back to List" xml:space="preserve">
-		<value>Back to List</value>
+	<data name="Cancel" xml:space="preserve">
+		<value>Cancel</value>
 	</data>
 </root>

@@ -13,8 +13,8 @@
 	<resheader name="writer">
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
-	<data name="Save" xml:space="preserve">
-		<value>Зберегти</value>
+	<data name="Create" xml:space="preserve">
+		<value>Створити</value>
 	</data>
 	<data name="ScientificInternship" xml:space="preserve">
 		<value>Наукове стажування</value>
@@ -34,7 +34,7 @@
 	<data name="Edit" xml:space="preserve">
 		<value>Редагувати</value>
 	</data>
-	<data name="Back to List" xml:space="preserve">
-		<value>Повернутися до списку</value>
+	<data name="Cancel" xml:space="preserve">
+		<value>Відмінити</value>
 	</data>
 </root>

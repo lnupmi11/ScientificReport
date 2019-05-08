@@ -7,7 +7,8 @@
 <h2>Teacher Report</h2>
 
 <p>
-    <a asp-action="Create" >Create New</a>
+    <button type="button" class="waves-effect btn-small green darken-3" 
+            onclick="location.href = '@Url.Action("Create", "TeacherReport")'">Create</button>
 </p>
 <table class="responsive-table">
     <thead>
@@ -18,6 +19,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Teacher)
         </th>
+        <th></th>
     </tr>
     </thead>
     <tbody>

@@ -8,7 +8,7 @@
 <style type="text/css">
     .authors-list {
         overflow-y: scroll;
-        height: 400px;
+        height: 100px;
     }
 
     .text-green { color: rgb(0, 179, 0); }
@@ -21,59 +21,68 @@
 <h4>@Localizer["ScientificWork"]</h4>
 <hr/>
 <div class="row">
-    <div class="col-md-4">
+    <div class="col s12">
         <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div asp-validation-summary="ModelOnly" class="validate"></div>
             <input type="hidden" asp-for="ScientificWork.Id"/>
-            <div class="form-group">
-                <label asp-for="ScientificWork.Cypher" class="control-label">@Localizer["Cypher"]</label>
-                <input asp-for="ScientificWork.Cypher" class="form-control"/>
-                <span asp-validation-for="ScientificWork.Cypher" class="text-danger"></span>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input asp-for="ScientificWork.Cypher" type="text" class="validate">
+                    <label asp-for="ScientificWork.Cypher">@Localizer["Cypher"]</label>
+                    <span class="helper-text" asp-validation-for="ScientificWork.Cypher" data-error="" data-success=""></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="ScientificWork.Category" class="control-label">@Localizer["Category"]</label>
-                <input asp-for="ScientificWork.Category" class="form-control"/>
-                <span asp-validation-for="ScientificWork.Category" class="text-danger"></span>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input asp-for="ScientificWork.Category" type="date" class="validate">
+                    <label asp-for="ScientificWork.Category">@Localizer["Category"]</label>
+                    <span class="helper-text" asp-validation-for="ScientificWork.Category" data-error="" data-success=""></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="ScientificWork.Title" class="control-label">@Localizer["Title"]</label>
-                <input asp-for="ScientificWork.Title" class="form-control"/>
-                <span asp-validation-for="ScientificWork.Title" class="text-danger"></span>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input asp-for="ScientificWork.Title" type="date" class="validate">
+                    <label asp-for="ScientificWork.Title">@Localizer["Title"]</label>
+                    <span class="helper-text" asp-validation-for="ScientificWork.Title" data-error="" data-success=""></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="ScientificWork.Contents" class="control-label">@Localizer["Contents"]</label>
-                <input asp-for="ScientificWork.Contents" class="form-control"/>
-                <span asp-validation-for="ScientificWork.Contents" class="text-danger"></span>
+            <div class="row">
+                <div class="input-field col s6">
+                    <textarea asp-for="ScientificWork.Contents" class="materialize-textarea"></textarea>
+                    <label asp-for="ScientificWork.Contents">@Localizer["Contents"]</label>
+                    <span class="helper-text" asp-validation-for="ScientificWork.Contents" 
+                          data-length="400" data-error="" data-success=""></span>
+                </div>
             </div>
-            <div class="form-group">
-                <input type="submit" value="@Localizer["Save"]" class="btn btn-primary"/>
+            <div class="row">
+                <div class="col s6">
+                    <h4>@Localizer["Create"]:</h4>
+                    <div class="authors-list">
+                        @if (Model.Users != null)
+                        {
+                            foreach (var user in Model.Users)
+                            {
+                                if (user != null)
+                                {
+                                    var exists = Model.Authors.Any(u => u.Id == user.Id);
+                                    <p>
+                                        @user.FirstName @user.LastName
+                                        <i class="add-user fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addAuthor(this, '@Model.ScientificWork.Id', '@user.Id')"></i>
+                                        <i class="remove-user fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteAuthor(this, '@Model.ScientificWork.Id', '@user.Id')"></i>
+                                    </p>
+                                }
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <input type="submit" value="@Localizer["Create"]" class="waves-effect btn-small  amber accent-2"/>
+                <a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
             </div>
         </form>
     </div>
-    <div class="col-md-4">
-        <h4>@Localizer["Authors"]:</h4>
-        <div class="authors-list">
-            @if (Model.Users != null)
-            {
-                foreach (var user in Model.Users)
-                {
-                    if (user != null)
-                    {
-                        var exists = Model.Authors.Any(u => u.Id == user.Id);
-                        <p>
-                            @user.FirstName @user.LastName
-                            <i class="add-user fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addAuthor(this, '@Model.ScientificWork.Id', '@user.Id')"></i>
-                            <i class="remove-user fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteAuthor(this, '@Model.ScientificWork.Id', '@user.Id')"></i>
-                        </p>
-                    }
-                }
-            }
-        </div>
-    </div>
-</div>
-
-<div>
-    <a asp-action="Index">@Localizer["Back to List"]</a>
+    
 </div>
 
 <script>    

@@ -1,22 +1,21 @@
 @model ScientificReport.DAL.Entities.Article
 
 @{
-    ViewData["Title"] = "Edit";
+	ViewData["Title"] = "Edit";
 }
 
 <h1>Edit</h1>
 
 <h4>Article</h4>
-<hr />
+<hr/>
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-	        <div asp-validation-summary="ModelOnly" class="validate"></div>
-	        <input type="hidden" asp-for="Id" />
+	<div class="col s12">
+		<form asp-action="Edit">
+			<div asp-validation-summary="ModelOnly" class="validate"></div>
+			<input type="hidden" asp-for="Id"/>
 			<div class="row">
-				<div class="input-field col s6">
-					<label asp-for="Type"></label>
-					<select asp-for="Type" class="browser-default col s6 push-s2">
+				<div class="input-field col s7">
+					<select asp-for="Type" class="col s12 push-s2">
 						<option value="" disabled selected>Choose your option</option>
 						<option value="ImpactFactor">Impact Factor</option>
 						<option value="IncludedInWebOfScienceScopusOthers">Included In Web Of Science Scopus Others</option>
@@ -28,47 +27,48 @@
 						<option value="DomesticReportThesis">Domestic Report Thesis</option>
 						<option value="ForeignReportThesisWithResearchResults">Foreign Report Thesis With Research Results</option>
 					</select>
+					<label asp-for="Type">Type</label>
 				</div>
 			</div>
-			
+
 			<div class="row">
-				<div class="input-field col s6">
+				<div class="input-field col s7">
 					<input asp-for="Title" type="text" class="validate">
 					<label asp-for="Title"></label>
 					<span class="helper-text" asp-validation-for="Title" data-error="" data-success=""></span>
 				</div>
 			</div>
 			<div class="row">
-				<div class="input-field col s6">
-					<input asp-for="LiabilityInfo" type="text" class="validate">
+				<div class="input-field col s7">
+					<textarea asp-for="LiabilityInfo" class="materialize-textarea"></textarea>
 					<label asp-for="LiabilityInfo"></label>
 					<span class="helper-text" asp-validation-for="LiabilityInfo" data-error="" data-success=""></span>
 				</div>
 			</div>
 			<div class="row">
-				<div class="input-field col s6">
-					<input asp-for="DocumentInfo" type="text" class="validate">
+				<div class="input-field col s7">
+					<textarea asp-for="DocumentInfo" class="materialize-textarea"></textarea>
 					<label asp-for="DocumentInfo"></label>
 					<span class="helper-text" asp-validation-for="DocumentInfo" data-error="" data-success=""></span>
 				</div>
 			</div>
 			<div class="row">
-				<div class="input-field col s6">
+				<div class="input-field col s7">
 					<input asp-for="PublishingPlace" type="text" class="validate">
 					<label asp-for="PublishingPlace"></label>
 					<span class="helper-text" asp-validation-for="PublishingPlace" data-error="" data-success=""></span>
 				</div>
 			</div>
 			<div class="row">
-				<div class="input-field col s6">
+				<div class="input-field col s7">
 					<input asp-for="PublishingHouseName" type="text" class="validate">
 					<label asp-for="PublishingHouseName"></label>
 					<span class="helper-text" asp-validation-for="PublishingHouseName" data-error="" data-success=""></span>
 				</div>
 			</div>
 			<div class="row">
-				<div class="input-field col s6">
-					<input asp-for="PublishingYear" type="date" class="validate">
+				<div class="input-field col s7">
+					<input asp-for="PublishingYear" type="number" class="validate">
 					<label asp-for="PublishingYear"></label>
 					<span class="helper-text" asp-validation-for="PublishingYear" data-error="" data-success=""></span>
 				</div>
@@ -80,41 +80,45 @@
 				</label>
 			</div>
 			<div class="row">
-				<label class="col s6">
+				<label class="col s7">
 					<input type="checkbox" class="filled-in" asp-for="IsPrintCanceled"/>
 					<span>@Html.DisplayNameFor(model => model.IsPrintCanceled)</span>
 				</label>
 			</div>
 			<div class="row">
-				<label class="col s6">
+				<label class="col s7">
 					<input type="checkbox" class="filled-in" asp-for="IsRecommendedToPrint"/>
 					<span>@Html.DisplayNameFor(model => model.IsRecommendedToPrint)</span>
 				</label>
 			</div>
 			<div class="row">
-				<div class="input-field col s6">
-					<input asp-for="Number" type="text" class="validate">
+				<div class="input-field col s7">
+					<input asp-for="Number" type="number" class="validate">
 					<label asp-for="Number"></label>
 					<span class="helper-text" asp-validation-for="Number" data-error="" data-success=""></span>
 				</div>
 			</div>
 			<div class="row">
-				<div class="input-field col s6">
-					<input asp-for="PagesAmount" type="text" class="validate">
+				<div class="input-field col s7">
+					<input asp-for="PagesAmount" type="number" class="validate">
 					<label asp-for="PagesAmount"></label>
 					<span class="helper-text" asp-validation-for="PagesAmount" data-error="" data-success=""></span>
 				</div>
 			</div>
-			<div class="form-group">
-				<input type="submit" value="Save" class="waves-effect btn-small amber accent-2"/>
+			<div class="row">
+				<input type="submit" value="Save" class="waves-effect btn-small  amber accent-2"/>
 				<a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
 			</div>
-		
-        </form>
-    </div>
+		</form>
+	</div>
 </div>
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('select').formSelect();
+		});
+	</script>
+	@{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
 }

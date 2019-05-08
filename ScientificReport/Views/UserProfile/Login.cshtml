@@ -6,23 +6,41 @@
 	ViewBag.Title = Localizer["Log In"];
 	Layout = "_Layout";
 }
+
+<style>
+	input[type="submit"] {
+		color: white !important;
+	}
+</style>
 <h1>@Localizer["Log In"]</h1>
 <div asp-validation-summary="All" class="text-danger validation-summary-valid"></div>
 <h4>@Localizer["Use a local account to log in."]</h4>
 <hr/>
 <form asp-action="Login" method="post">
-	<div class="form-group">
-		<label asp-for="UserName">@Localizer["UserName"]</label>
-		<input asp-for="UserName" class="form-control"/>
+	<div asp-validation-summary="ModelOnly" class="validate"></div>
+	<div class="row">
+		<div class="input-field col s6">
+			<input asp-for="UserName" type="text" class="validate">
+			<label asp-for="UserName">@Localizer["UserName"]</label>
+			<span class="helper-text" asp-validation-for="UserName" data-error="" data-success=""></span>
+		</div>
 	</div>
-	<div class="form-group">
-		<label asp-for="Password">@Localizer["Password"]</label>
-		<input asp-for="Password" class="form-control"/>
+	<div class="row">
+		<div class="input-field col s6">
+			<input asp-for="Password" type="password" class="validate">
+			<label asp-for="Password">@Localizer["Password"]</label>
+			<span class="helper-text" asp-validation-for="Password" data-error="" data-success=""></span>
+		</div>
 	</div>
-	<div class="form-group">
-    	<label asp-for="RememberMe">@Localizer["RememberMe"]</label>
-    	<input asp-for="RememberMe" class="form-control"/>
-    </div>
-	<button type="submit" class="btn btn-primary">@Localizer["Log In"]</button>
-	<a asp-action="Index" class="btn btn-secondary">@Localizer["Cancel"]</a>
+	<div class="row">
+		<label class="col s7">
+			<input type="checkbox" class="filled-in" asp-for="RememberMe"/>
+			<span>@Localizer[Html.DisplayNameFor(model => model.RememberMe)]</span>
+		</label>
+	</div>
+	
+	<div class="row">
+		<input type="submit" value="@Localizer["Log In"]" class="waves-effect btn-small  waves-light"/>
+		<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
+	</div>
 </form>

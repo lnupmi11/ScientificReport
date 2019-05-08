@@ -7,29 +7,43 @@
 <h4>ScientificWork</h4>
 <hr/>
 <div class="row">
-	<div class="col-md-4">
+	<div class="col s12">
 		<form asp-action="Create">
-			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
-			<div class="form-group">
-				<label asp-for="MemberOf" class="control-label"></label>
-				<select asp-for="MemberOf" style="width: 90%">
-					<option value="ScientificCouncil">Вчена рада</option>
-					<option value="ExpertCouncil">Експертна рада</option>
-					<option value="EditorialBoard">Редколегія наукового журналу</option>
-				</select>
-				<span asp-validation-for="MemberOf" class="text-danger"></span>
+			<div asp-validation-summary="ModelOnly" class="validate"></div>
+			<div class="row">
+				<div class="input-field col s7">
+					<select asp-for="MemberOf" class="col s12 push-s2">
+						<option value="" disabled selected>Член: </option>
+						<option value="ScientificCouncil">Вчена рада</option>
+						<option value="ExpertCouncil">Експертна рада</option>
+						<option value="EditorialBoard">Редколегія наукового журналу</option>
+					</select>
+					<label asp-for="MemberOf"></label>
+				</div>
 			</div>
-			<div class="form-group">
-				<label asp-for="MembershipInfo" class="control-label"></label>
-				<input asp-for="MembershipInfo" class="form-control"/>
+
+			<div class="row">
+				<div class="input-field col s7">
+					<textarea asp-for="MembershipInfo" class="materialize-textarea"></textarea>
+					<label asp-for="MembershipInfo"></label>
+					<span class="helper-text" asp-validation-for="MembershipInfo" 
+					      data-length="400" data-error="" data-success=""></span>
+				</div>
 			</div>
-			<div class="form-group">
-				<input type="submit" value="Create" class="waves-effect btn-small green darken-3"/>
+	
+			<div class="row">
+				<input type="submit" value="Create" class="waves-effect btn-small  amber accent-2"/>
+				<a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
 			</div>
 		</form>
 	</div>
 </div>
 
-<div>
-	<a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
-</div>
+
+@section Scripts {
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('select').formSelect();
+		});
+	</script>
+}

@@ -3,42 +3,48 @@
 @inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = Localizer["Create"];
+	ViewData["Title"] = Localizer["Create"];
 }
 
 <h4>@Localizer["ScientificWork"]</h4>
 <hr />
 <div class="row">
-    <div class="col m4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Cypher" class="control-label">@Localizer["Cypher"]</label>
-                <input asp-for="Cypher" class="form-control" />
-                <span asp-validation-for="Cypher" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Category" class="control-label">@Localizer["Category"]</label>
-                <input asp-for="Category" class="form-control" />
-                <span asp-validation-for="Category" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Title" class="control-label">@Localizer["Title"]</label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contents" class="control-label">@Localizer["Contents"]</label>
-                <input asp-for="Contents" class="form-control" />
-                <span asp-validation-for="Contents" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="@Localizer["Create"]" class="waves-effect btn-small green darken-3"/>
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
+	<div class="col s12">
+		<form asp-action="Create">
+			<div asp-validation-summary="ModelOnly" class="validate"></div>
+			<div class="row">
+				<div class="input-field col s6">
+					<input asp-for="Cypher" type="text" class="validate">
+					<label asp-for="Cypher">@Localizer["Cypher"]</label>
+					<span class="helper-text" asp-validation-for="Cypher" data-error="" data-success=""></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s6">
+					<input asp-for="Category" type="date" class="validate">
+					<label asp-for="Category">@Localizer["Category"]</label>
+					<span class="helper-text" asp-validation-for="Category" data-error="" data-success=""></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s6">
+					<input asp-for="Title" type="date" class="validate">
+					<label asp-for="Title">@Localizer["Title"]</label>
+					<span class="helper-text" asp-validation-for="Title" data-error="" data-success=""></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s6">
+					<textarea asp-for="Contents" class="materialize-textarea"></textarea>
+					<label asp-for="Contents">@Localizer["Contents"]</label>
+					<span class="helper-text" asp-validation-for="Contents" 
+					      data-length="400" data-error="" data-success=""></span>
+				</div>
+			</div>
+			<div class="row">
+				<input type="submit" value="Create" class="waves-effect btn-small  amber accent-2"/>
+				<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
+			</div>
+		</form>
+	</div>
 </div>

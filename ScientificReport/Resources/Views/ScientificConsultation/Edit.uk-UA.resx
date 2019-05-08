@@ -25,8 +25,8 @@
 	<data name="DissertationTitle" xml:space="preserve">
 		<value>Назва дисертації</value>
 	</data>
-	<data name="Back to List" xml:space="preserve">
-		<value>Повернутися до списку</value>
+	<data name="Cancel" xml:space="preserve">
+		<value>Відмінити</value>
 	</data>
 	<data name="Save" xml:space="preserve">
 		<value>Зберегти</value>
