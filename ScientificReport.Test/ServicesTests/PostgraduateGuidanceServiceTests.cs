@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
@@ -12,23 +11,21 @@ namespace ScientificReport.Test.ServicesTests
 {
 	public class PostgraduateGuidanceServiceTests
 	{
-		private readonly Mock<ScientificReportDbContext> _mockContext = GetMockContext();
+		private readonly Mock<DbSet<PostgraduateGuidance>> _mockDbSet = MockProvider.GetMockSet(GetTestData().AsQueryable());
 
 		private static IEnumerable<PostgraduateGuidance> GetTestData()
 		{
 			return new[]
 			{
 				TestData.PostgraduateGuidance1,
-				TestData.PostgraduateGuidance2,
-				TestData.PostgraduateGuidance3
+				TestData.PostgraduateGuidance2
 			};
 		}
 
-		private static Mock<ScientificReportDbContext> GetMockContext()
+		private Mock<ScientificReportDbContext> GetMockContext()
 		{
-			var list = GetTestData().AsQueryable();
 			var mockContext = new Mock<ScientificReportDbContext>();
-			mockContext.Setup(item => item.PostgraduateGuidances).Returns(MockProvider.GetMockSet(list).Object);
+			mockContext.Setup(item => item.PostgraduateGuidances).Returns(_mockDbSet.Object);
 			return mockContext;
 		}
 
@@ -39,7 +36,6 @@ namespace ScientificReport.Test.ServicesTests
 
 			var mockContext = new Mock<ScientificReportDbContext>();
 			mockContext.Setup(item => item.PostgraduateGuidances).Returns(MockProvider.GetMockSet(list).Object);
-
 			var service = new PostgraduateGuidanceService(mockContext.Object);
 
 			var actual = service.GetAll();
@@ -50,7 +46,7 @@ namespace ScientificReport.Test.ServicesTests
 		[Fact]
 		public void GetAllWhereTest()
 		{
-			var service = new PostgraduateGuidanceService(_mockContext.Object);
+			var service = new PostgraduateGuidanceService(GetMockContext().Object);
 			var actual = service.GetAllWhere(u => u.Id.Equals(TestData.PostgraduateGuidance1.Id));
 			Assert.Single(actual);
 		}
@@ -59,80 +55,72 @@ namespace ScientificReport.Test.ServicesTests
 		public void GetByIdTest()
 		{
 			var expected = GetTestData().First();
+			var service = new PostgraduateGuidanceService(GetMockContext().Object);
 
-			var service = new Mock<PostgraduateGuidanceService>(_mockContext.Object);
+			var actual = service.GetById(expected.Id);
 
-			service.Object.CreateItem(expected);
-
-			service.Setup(item => item.GetById(expected.Id));
-			service.Object.GetById(expected.Id);
-			service.Verify(item => item.GetById(expected.Id));
+			Assert.NotNull(actual);
+			Assert.Equal(expected.Id, actual.Id);
 		}
 
 		[Fact]
 		public void CreateItemTest()
 		{
-			var service = new Mock<PostgraduateGuidanceService>(_mockContext.Object);
+			var service = new PostgraduateGuidanceService(GetMockContext().Object);
 
-			var expectedPostgraduateGuidance = TestData.PostgraduateGuidance1;
+			var expected = TestData.PostgraduateGuidance3;
+			service.CreateItem(expected);
 
-			service.Setup(it => it.CreateItem(expectedPostgraduateGuidance));
-			service.Object.CreateItem(expectedPostgraduateGuidance);
-			service.Verify(it => it.CreateItem(expectedPostgraduateGuidance), Times.Once);
+			_mockDbSet.Verify(m => m.Add(It.IsAny<PostgraduateGuidance>()), Times.Once);
 		}
 
 		[Fact]
 		public void UpdateItemTest()
 		{
-			var mockDbSet = new Mock<DbSet<PostgraduateGuidance>>();
-			var mockContext = new Mock<ScientificReportDbContext>();
+			var service = new PostgraduateGuidanceService(GetMockContext().Object);
 
-			mockContext.Setup(item => item.PostgraduateGuidances).Returns(mockDbSet.Object);
+			var expected = GetTestData().First();
+			expected.PostgraduateInfo = TestData.PostgraduateGuidance3.PostgraduateInfo;
+			service.UpdateItem(expected);
 
-			var service = new PostgraduateGuidanceService(mockContext.Object);
-
-			var postgraduateGuidance = GetTestData().First();
-
-			service.CreateItem(postgraduateGuidance);
-			service.UpdateItem(postgraduateGuidance);
-
-			mockDbSet.Verify(m => m.Update(It.IsAny<PostgraduateGuidance>()), Times.Once());
+			_mockDbSet.Verify(m => m.Update(expected), Times.Once);
 		}
 
 		[Fact]
 		public void DeleteItemTest()
 		{
-			var service = new Mock<PostgraduateGuidanceService>(_mockContext.Object);
+			var mockContext = GetMockContext();
+			var service = new PostgraduateGuidanceService(mockContext.Object);
 
-			var postgraduateGuidance = GetTestData().First();
+			var item = mockContext.Object.PostgraduateGuidances.First();
 
-			service.Setup(x => x.DeleteById(postgraduateGuidance.Id));
-			service.Object.DeleteById(postgraduateGuidance.Id);
-			service.Verify(i => i.DeleteById(postgraduateGuidance.Id));
+			Assert.True(service.Exists(item.Id));
+
+			service.DeleteById(item.Id);
+
+			Assert.False(service.Exists(item.Id));
 		}
 
 		[Fact]
 		public void ExistsTest()
 		{
-			var service = new Mock<PostgraduateGuidanceService>(_mockContext.Object);
+			var service = new PostgraduateGuidanceService(GetMockContext().Object);
 
-			var postgraduateGuidance = GetTestData().First();
-			service.Object.CreateItem(postgraduateGuidance);
+			var item = GetTestData().First();
+			var exists = service.Exists(item.Id);
 
-			service.Setup(a => a.Exists(postgraduateGuidance.Id));
-			service.Object.Exists(postgraduateGuidance.Id);
-			service.Verify(a => a.Exists(postgraduateGuidance.Id));
+			Assert.True(exists);
 		}
 
 		[Fact]
 		public void DoesNotExistTest()
 		{
-			var service = new Mock<PostgraduateGuidanceService>(_mockContext.Object);
+			var service = new PostgraduateGuidanceService(GetMockContext().Object);
 
-			var guid = Guid.NewGuid();
-			service.Setup(a => a.Exists(guid));
-			service.Object.Exists(guid);
-			service.Verify(a => a.Exists(guid));
+			var item = TestData.PostgraduateGuidance3;
+			var exists = service.Exists(item.Id);
+
+			Assert.False(exists);
 		}
 	}
 }

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
@@ -12,23 +11,21 @@ namespace ScientificReport.Test.ServicesTests
 {
 	public class PatentLicenseActivityServiceTests
 	{
-		private readonly Mock<ScientificReportDbContext> _mockContext = GetMockContext();
+		private readonly Mock<DbSet<PatentLicenseActivity>> _mockDbSet = MockProvider.GetMockSet(GetTestData().AsQueryable());
 
 		private static IEnumerable<PatentLicenseActivity> GetTestData()
 		{
 			return new[]
 			{
 				TestData.PatentLicenseActivity1,
-				TestData.PatentLicenseActivity2,
-				TestData.PatentLicenseActivity3
+				TestData.PatentLicenseActivity2
 			};
 		}
 
-		private static Mock<ScientificReportDbContext> GetMockContext()
+		private Mock<ScientificReportDbContext> GetMockContext()
 		{
-			var list = GetTestData().AsQueryable();
 			var mockContext = new Mock<ScientificReportDbContext>();
-			mockContext.Setup(item => item.PatentLicenseActivities).Returns(MockProvider.GetMockSet(list).Object);
+			mockContext.Setup(item => item.PatentLicenseActivities).Returns(_mockDbSet.Object);
 			return mockContext;
 		}
 
@@ -39,7 +36,6 @@ namespace ScientificReport.Test.ServicesTests
 
 			var mockContext = new Mock<ScientificReportDbContext>();
 			mockContext.Setup(item => item.PatentLicenseActivities).Returns(MockProvider.GetMockSet(list).Object);
-
 			var service = new PatentLicenseActivityService(mockContext.Object);
 
 			var actual = service.GetAll();
@@ -50,7 +46,7 @@ namespace ScientificReport.Test.ServicesTests
 		[Fact]
 		public void GetAllWhereTest()
 		{
-			var service = new PatentLicenseActivityService(_mockContext.Object);
+			var service = new PatentLicenseActivityService(GetMockContext().Object);
 			var actual = service.GetAllWhere(u => u.Id.Equals(TestData.PatentLicenseActivity1.Id));
 			Assert.Single(actual);
 		}
@@ -59,80 +55,72 @@ namespace ScientificReport.Test.ServicesTests
 		public void GetByIdTest()
 		{
 			var expected = GetTestData().First();
+			var service = new PatentLicenseActivityService(GetMockContext().Object);
 
-			var service = new Mock<PatentLicenseActivityService>(_mockContext.Object);
+			var actual = service.GetById(expected.Id);
 
-			service.Object.CreateItem(expected);
-
-			service.Setup(item => item.GetById(expected.Id));
-			service.Object.GetById(expected.Id);
-			service.Verify(item => item.GetById(expected.Id));
+			Assert.NotNull(actual);
+			Assert.Equal(expected.Id, actual.Id);
 		}
 
 		[Fact]
 		public void CreateItemTest()
 		{
-			var service = new Mock<PatentLicenseActivityService>(_mockContext.Object);
+			var service = new PatentLicenseActivityService(GetMockContext().Object);
 
-			var expectedPatentLicenseActivity = TestData.PatentLicenseActivity1;
+			var expected = TestData.PatentLicenseActivity3;
+			service.CreateItem(expected);
 
-			service.Setup(it => it.CreateItem(expectedPatentLicenseActivity));
-			service.Object.CreateItem(expectedPatentLicenseActivity);
-			service.Verify(it => it.CreateItem(expectedPatentLicenseActivity), Times.Once);
+			_mockDbSet.Verify(m => m.Add(It.IsAny<PatentLicenseActivity>()), Times.Once);
 		}
 
 		[Fact]
 		public void UpdateItemTest()
 		{
-			var mockDbSet = new Mock<DbSet<PatentLicenseActivity>>();
-			var mockContext = new Mock<ScientificReportDbContext>();
+			var service = new PatentLicenseActivityService(GetMockContext().Object);
 
-			mockContext.Setup(item => item.PatentLicenseActivities).Returns(mockDbSet.Object);
+			var expected = GetTestData().First();
+			expected.Name = TestData.PatentLicenseActivity3.Name;
+			service.UpdateItem(expected);
 
-			var service = new PatentLicenseActivityService(mockContext.Object);
-
-			var patentLicenseActivity = GetTestData().First();
-
-			service.CreateItem(patentLicenseActivity);
-			service.UpdateItem(patentLicenseActivity);
-
-			mockDbSet.Verify(m => m.Update(It.IsAny<PatentLicenseActivity>()), Times.Once());
+			_mockDbSet.Verify(m => m.Update(expected), Times.Once);
 		}
 
 		[Fact]
 		public void DeleteItemTest()
 		{
-			var service = new Mock<PatentLicenseActivityService>(_mockContext.Object);
+			var mockContext = GetMockContext();
+			var service = new PatentLicenseActivityService(mockContext.Object);
 
-			var patentLicenseActivity = GetTestData().First();
+			var item = mockContext.Object.PatentLicenseActivities.First();
 
-			service.Setup(x => x.DeleteById(patentLicenseActivity.Id));
-			service.Object.DeleteById(patentLicenseActivity.Id);
-			service.Verify(i => i.DeleteById(patentLicenseActivity.Id));
+			Assert.True(service.Exists(item.Id));
+
+			service.DeleteById(item.Id);
+
+			Assert.False(service.Exists(item.Id));
 		}
 
 		[Fact]
 		public void ExistsTest()
 		{
-			var service = new Mock<PatentLicenseActivityService>(_mockContext.Object);
+			var service = new PatentLicenseActivityService(GetMockContext().Object);
 
-			var patentLicenseActivity = GetTestData().First();
-			service.Object.CreateItem(patentLicenseActivity);
+			var item = GetTestData().First();
+			var exists = service.Exists(item.Id);
 
-			service.Setup(a => a.Exists(patentLicenseActivity.Id));
-			service.Object.Exists(patentLicenseActivity.Id);
-			service.Verify(a => a.Exists(patentLicenseActivity.Id));
+			Assert.True(exists);
 		}
 
 		[Fact]
 		public void DoesNotExistTest()
 		{
-			var service = new Mock<PatentLicenseActivityService>(_mockContext.Object);
+			var service = new PatentLicenseActivityService(GetMockContext().Object);
 
-			var guid = Guid.NewGuid();
-			service.Setup(a => a.Exists(guid));
-			service.Object.Exists(guid);
-			service.Verify(a => a.Exists(guid));
+			var item = TestData.PatentLicenseActivity3;
+			var exists = service.Exists(item.Id);
+
+			Assert.False(exists);
 		}
 		
 		[Fact]
@@ -140,7 +128,7 @@ namespace ScientificReport.Test.ServicesTests
 		{
 			var patentLicenseActivity = GetTestData().First();
 
-			var service = new Mock<PatentLicenseActivityService>(_mockContext.Object);
+			var service = new Mock<PatentLicenseActivityService>(GetMockContext().Object);
 
 			service.Setup(item => item.GetAuthors(patentLicenseActivity.Id));
 			service.Object.GetAuthors(patentLicenseActivity.Id);
@@ -152,7 +140,7 @@ namespace ScientificReport.Test.ServicesTests
 		{
 			var patentLicenseActivity = GetTestData().First();
 
-			var service = new Mock<PatentLicenseActivityService>(_mockContext.Object);
+			var service = new Mock<PatentLicenseActivityService>(GetMockContext().Object);
 
 			service.Setup(item => item.GetApplicants(patentLicenseActivity.Id));
 			service.Object.GetApplicants(patentLicenseActivity.Id);
@@ -164,7 +152,7 @@ namespace ScientificReport.Test.ServicesTests
 		{
 			var patentLicenseActivity = GetTestData().First();
 
-			var service = new Mock<PatentLicenseActivityService>(_mockContext.Object);
+			var service = new Mock<PatentLicenseActivityService>(GetMockContext().Object);
 
 			service.Setup(item => item.GetCoauthors(patentLicenseActivity.Id));
 			service.Object.GetCoauthors(patentLicenseActivity.Id);
@@ -176,7 +164,7 @@ namespace ScientificReport.Test.ServicesTests
 		{
 			var patentLicenseActivity = GetTestData().First();
 
-			var service = new Mock<PatentLicenseActivityService>(_mockContext.Object);
+			var service = new Mock<PatentLicenseActivityService>(GetMockContext().Object);
 
 			service.Setup(item => item.GetCoApplicants(patentLicenseActivity.Id));
 			service.Object.GetCoApplicants(patentLicenseActivity.Id);

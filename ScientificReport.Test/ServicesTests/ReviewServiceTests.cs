@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
@@ -12,23 +11,21 @@ namespace ScientificReport.Test.ServicesTests
 {
 	public class ReviewServiceTests
 	{
-		private readonly Mock<ScientificReportDbContext> _mockContext = GetMockContext();
+		private readonly Mock<DbSet<Review>> _mockDbSet = MockProvider.GetMockSet(GetTestData().AsQueryable());
 
 		private static IEnumerable<Review> GetTestData()
 		{
 			return new[]
 			{
 				TestData.Review1,
-				TestData.Review2,
-				TestData.Review3
+				TestData.Review2
 			};
 		}
 
-		private static Mock<ScientificReportDbContext> GetMockContext()
+		private Mock<ScientificReportDbContext> GetMockContext()
 		{
-			var list = GetTestData().AsQueryable();
 			var mockContext = new Mock<ScientificReportDbContext>();
-			mockContext.Setup(item => item.Reviews).Returns(MockProvider.GetMockSet(list).Object);
+			mockContext.Setup(item => item.Reviews).Returns(_mockDbSet.Object);
 			return mockContext;
 		}
 
@@ -39,7 +36,6 @@ namespace ScientificReport.Test.ServicesTests
 
 			var mockContext = new Mock<ScientificReportDbContext>();
 			mockContext.Setup(item => item.Reviews).Returns(MockProvider.GetMockSet(list).Object);
-
 			var service = new ReviewService(mockContext.Object);
 
 			var actual = service.GetAll();
@@ -50,7 +46,7 @@ namespace ScientificReport.Test.ServicesTests
 		[Fact]
 		public void GetAllWhereTest()
 		{
-			var service = new ReviewService(_mockContext.Object);
+			var service = new ReviewService(GetMockContext().Object);
 			var actual = service.GetAllWhere(u => u.Id.Equals(TestData.Review1.Id));
 			Assert.Single(actual);
 		}
@@ -59,80 +55,72 @@ namespace ScientificReport.Test.ServicesTests
 		public void GetByIdTest()
 		{
 			var expected = GetTestData().First();
+			var service = new ReviewService(GetMockContext().Object);
 
-			var service = new Mock<ReviewService>(_mockContext.Object);
+			var actual = service.GetById(expected.Id);
 
-			service.Object.CreateItem(expected);
-
-			service.Setup(item => item.GetById(expected.Id));
-			service.Object.GetById(expected.Id);
-			service.Verify(item => item.GetById(expected.Id));
+			Assert.NotNull(actual);
+			Assert.Equal(expected.Id, actual.Id);
 		}
 
 		[Fact]
 		public void CreateItemTest()
 		{
-			var service = new Mock<ReviewService>(_mockContext.Object);
+			var service = new ReviewService(GetMockContext().Object);
 
-			var expectedReview = TestData.Review1;
+			var expected = TestData.Review3;
+			service.CreateItem(expected);
 
-			service.Setup(it => it.CreateItem(expectedReview));
-			service.Object.CreateItem(expectedReview);
-			service.Verify(it => it.CreateItem(expectedReview), Times.Once);
+			_mockDbSet.Verify(m => m.Add(It.IsAny<Review>()), Times.Once);
 		}
 
 		[Fact]
 		public void UpdateItemTest()
 		{
-			var mockDbSet = new Mock<DbSet<Review>>();
-			var mockContext = new Mock<ScientificReportDbContext>();
+			var service = new ReviewService(GetMockContext().Object);
 
-			mockContext.Setup(item => item.Reviews).Returns(mockDbSet.Object);
+			var expected = GetTestData().First();
+			expected.DateOfReview = TestData.Review3.DateOfReview;
+			service.UpdateItem(expected);
 
-			var service = new ReviewService(mockContext.Object);
-
-			var review = GetTestData().First();
-
-			service.CreateItem(review);
-			service.UpdateItem(review);
-
-			mockDbSet.Verify(m => m.Update(It.IsAny<Review>()), Times.Once());
+			_mockDbSet.Verify(m => m.Update(expected), Times.Once);
 		}
 
 		[Fact]
 		public void DeleteItemTest()
 		{
-			var service = new Mock<ReviewService>(_mockContext.Object);
+			var mockContext = GetMockContext();
+			var service = new ReviewService(mockContext.Object);
 
-			var review = GetTestData().First();
+			var item = mockContext.Object.Reviews.First();
 
-			service.Setup(x => x.DeleteById(review.Id));
-			service.Object.DeleteById(review.Id);
-			service.Verify(i => i.DeleteById(review.Id));
+			Assert.True(service.Exists(item.Id));
+
+			service.DeleteById(item.Id);
+
+			Assert.False(service.Exists(item.Id));
 		}
 
 		[Fact]
 		public void ExistsTest()
 		{
-			var service = new Mock<ReviewService>(_mockContext.Object);
+			var service = new ReviewService(GetMockContext().Object);
 
-			var review = GetTestData().First();
-			service.Object.CreateItem(review);
+			var item = GetTestData().First();
+			var exists = service.Exists(item.Id);
 
-			service.Setup(a => a.Exists(review.Id));
-			service.Object.Exists(review.Id);
-			service.Verify(a => a.Exists(review.Id));
+			Assert.True(exists);
 		}
 
 		[Fact]
 		public void DoesNotExistTest()
 		{
-			var service = new Mock<ReviewService>(_mockContext.Object);
+			var service = new ReviewService(GetMockContext().Object);
 
-			var guid = Guid.NewGuid();
-			service.Setup(a => a.Exists(guid));
-			service.Object.Exists(guid);
-			service.Verify(a => a.Exists(guid));
+			var item = TestData.Review3;
+			var exists = service.Exists(item.Id);
+
+			Assert.False(exists);
 		}
 		
 		[Fact]
@@ -140,7 +128,7 @@ namespace ScientificReport.Test.ServicesTests
 		{
 			var review = GetTestData().First();
 
-			var service = new Mock<ReviewService>(_mockContext.Object);
+			var service = new Mock<ReviewService>(GetMockContext().Object);
 
 			service.Setup(item => item.GetReviewers(review.Id));
 			service.Object.GetReviewers(review.Id);
