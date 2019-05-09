@@ -15,6 +15,17 @@
 	</resheader>
 	
 	
+	<data name="Opposition" xml:space="preserve">
+		<value>Опонування</value>
+	</data>
+	<data name="About" xml:space="preserve">
+		<value>Інфррмація</value>
+	</data>
+	<data name="DateOfOpposition" xml:space="preserve">
+		<value>Дата</value>
+	</data>
+	
+	
 	<data name="Create New" xml:space="preserve">
 		<value>Створити нове</value>
 	</data>
