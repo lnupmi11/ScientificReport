@@ -1,14 +1,17 @@
 using System;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ScientificReport.BLL.Interfaces;
 using ScientificReport.Controllers.Utils;
 using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Roles;
 using ScientificReport.DTO.Models.ScientificWorks;
 
 namespace ScientificReport.Controllers
 {
+//	[Authorize(Roles = UserProfileRole.Teacher)]
 	public class ScientificWorkController : Controller
 	{
 		private readonly IScientificWorkService _scientificWorkService;

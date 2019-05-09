@@ -89,6 +89,50 @@ namespace ScientificReport.BLL.Services
 			return await userManager.IsInRoleAsync(user, roleName);
 		}
 
+		public virtual async Task<string> ChangePassword(UserProfile user, string oldPassword, string newPassword, string newPasswordRepeat, UserManager<UserProfile> userManager)
+		{
+			string result = null;
+			
+			// Checks if entered password is equal to current user password
+			if (await userManager.CheckPasswordAsync(user, oldPassword))
+			{
+				// Checks if new password and repeated password are equal
+				if (newPassword.Equals(newPasswordRepeat))
+				{
+					// Checks if new password is equal to current user password
+					if (!oldPassword.Equals(newPassword))
+					{
+						var passwordValidator = new PasswordValidator<UserProfile>();
+						
+						// Validates new password
+						var validationResult = await passwordValidator.ValidateAsync(userManager, user, newPassword);
+						if (validationResult.Succeeded)
+						{
+							await userManager.ChangePasswordAsync(user, oldPassword, newPassword);
+						}
+						else
+						{
+							result = validationResult.ToString();	
+						}
+					}
+					else
+					{
+						result = "New password must differ from an old one";	
+					}
+				}
+				else
+				{
+					result = "Repeated password does not mach a new one";
+				}
+			}
+			else
+			{
+				result = "Old password is incorrect";	
+			}
+
+			return result;
+		}
+
 		public virtual ICollection<Publication> GetUserPublications(Guid id)
 		{
 			var user = _userProfileRepository.Get(id);

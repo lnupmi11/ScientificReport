@@ -12,145 +12,146 @@ using ScientificReport.DTO.Models.Conference;
 
 namespace ScientificReport.Controllers
 {
-    public class ConferenceController : Controller
-    {
-        private readonly IConferenceService _conferenceService;
+//	[Authorize(Roles = UserProfileRole.Teacher)]
+	public class ConferenceController : Controller
+	{
+		private readonly IConferenceService _conferenceService;
 
-        public ConferenceController(IConferenceService conferenceService)
-        {
-            _conferenceService = conferenceService;
-        }
+		public ConferenceController(IConferenceService conferenceService)
+		{
+			_conferenceService = conferenceService;
+		}
 
-        // GET: Conference
-        public IActionResult Index()
-        {
-            return View(_conferenceService.GetAll());
-        }
+		// GET: Conference
+		public IActionResult Index()
+		{
+			return View(_conferenceService.GetAll());
+		}
 
-        // GET: Conference/Details/5
-        public IActionResult Details(Guid? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+		// GET: Conference/Details/5
+		public IActionResult Details(Guid? id)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
 
-            var conference = _conferenceService.GetById(id.Value);
-            
-            if (conference == null)
-            {
-                return NotFound();
-            }
+			var conference = _conferenceService.GetById(id.Value);
+			
+			if (conference == null)
+			{
+				return NotFound();
+			}
 
-            var conferenceDetails = new ConferenceDetails
-            {
-                Conference = conference
-            };
+			var conferenceDetails = new ConferenceDetails
+			{
+				Conference = conference
+			};
 
-            return View(conferenceDetails);
-        }
+			return View(conferenceDetails);
+		}
 
-        // GET: Conference/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
+		// GET: Conference/Create
+		public IActionResult Create()
+		{
+			return View();
+		}
 
-        // POST: Conference/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("Id,Topic,Date")] Conference conference)
-        {
-            if (!ModelState.IsValid) return View(conference);
+		// POST: Conference/Create
+		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public IActionResult Create([Bind("Id,Topic,Date")] Conference conference)
+		{
+			if (!ModelState.IsValid) return View(conference);
 
-            _conferenceService.CreateItem(conference);
-            return RedirectToAction(nameof(Index));
-        }
+			_conferenceService.CreateItem(conference);
+			return RedirectToAction(nameof(Index));
+		}
 
-        // GET: Conference/Edit/5
-        public IActionResult Edit(Guid? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+		// GET: Conference/Edit/5
+		public IActionResult Edit(Guid? id)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
 
-            var conference = _conferenceService.GetById(id.Value);
-            if (conference == null)
-            {
-                return NotFound();
-            }
+			var conference = _conferenceService.GetById(id.Value);
+			if (conference == null)
+			{
+				return NotFound();
+			}
 
 			
-            var conferenceEdit = new ConferenceEdit
-            {
-                Conference = conference
-            };
+			var conferenceEdit = new ConferenceEdit
+			{
+				Conference = conference
+			};
 
-            return View(conferenceEdit);
-        }
+			return View(conferenceEdit);
+		}
 
-        // POST: Conference/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Edit(Guid id, ConferenceEdit conferenceEdit)
-        {
-            var conference = conferenceEdit.Conference;
-            if (id != conference.Id)
-            {
-                return NotFound();
-            }
+		// POST: Conference/Edit/5
+		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public IActionResult Edit(Guid id, ConferenceEdit conferenceEdit)
+		{
+			var conference = conferenceEdit.Conference;
+			if (id != conference.Id)
+			{
+				return NotFound();
+			}
 
-            if (!ModelState.IsValid) return View(conferenceEdit);
-            try
-            {
-                _conferenceService.UpdateItem(conference);
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!_conferenceService.Exists(conference.Id))
-                {
-                    return NotFound();
-                }
-                throw;
-            }
+			if (!ModelState.IsValid) return View(conferenceEdit);
+			try
+			{
+				_conferenceService.UpdateItem(conference);
+			}
+			catch (DbUpdateConcurrencyException)
+			{
+				if (!_conferenceService.Exists(conference.Id))
+				{
+					return NotFound();
+				}
+				throw;
+			}
 
-            return RedirectToAction(nameof(Index));
-        }
+			return RedirectToAction(nameof(Index));
+		}
 
-        // GET: Conference/Delete/5
-        public IActionResult Delete(Guid? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+		// GET: Conference/Delete/5
+		public IActionResult Delete(Guid? id)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
 
-            var conference = _conferenceService.GetById(id.Value);
-            if (conference == null)
-            {
-                return NotFound();
-            }
+			var conference = _conferenceService.GetById(id.Value);
+			if (conference == null)
+			{
+				return NotFound();
+			}
 
-            return View(conference);
-        }
+			return View(conference);
+		}
 
-        // POST: Conference/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public IActionResult DeleteConfirmed(Guid id)
-        {
-            _conferenceService.DeleteById(id);
-            return RedirectToAction(nameof(Index));
-        }
+		// POST: Conference/Delete/5
+		[HttpPost, ActionName("Delete")]
+		[ValidateAntiForgeryToken]
+		public IActionResult DeleteConfirmed(Guid id)
+		{
+			_conferenceService.DeleteById(id);
+			return RedirectToAction(nameof(Index));
+		}
 
-        private bool ConferenceExists(Guid id)
-        {
-            return _conferenceService.Exists(id);
-        }
-    }
+		private bool ConferenceExists(Guid id)
+		{
+			return _conferenceService.Exists(id);
+		}
+	}
 }

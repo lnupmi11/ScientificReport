@@ -30,6 +30,9 @@
 	@if (User.Identity.IsAuthenticated)
 	{
 		<li>
+			<a asp-area="" asp-controller="UserProfile" asp-action="ChangePassword">Change password</a>
+		</li>
+		<li>
 			<a asp-area="" asp-controller="UserProfile" asp-action="Logout">Log out</a>
 		</li>
 	}
