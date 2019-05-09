@@ -7,6 +7,5 @@ var a00046 =
     [ "GetAllTest", "a00046.html#aeaaab27bcf957a75766c8e1d9a448344", null ],
     [ "GetAllWhereTest", "a00046.html#a9b7061d76bf207dc237ba9497d852daa", null ],
     [ "GetByIdTest", "a00046.html#a322d8623113277595e1773b0b445c297", null ],
-    [ "GetUsersTest", "a00046.html#a394248d1ae190abdc295d2b146f1be81", null ],
     [ "UpdateItemTest", "a00046.html#aea6b414138a8a6ac17c9dcccc1a8055e", null ]
 ];
