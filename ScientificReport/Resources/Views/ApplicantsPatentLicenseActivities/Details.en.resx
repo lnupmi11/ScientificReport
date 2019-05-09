@@ -13,7 +13,22 @@
 	<resheader name="writer">
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
-
+	
+	
+	<data name="Application Patent Licence" xml:space="preserve">
+		<value>Patent Licence Activity (Applicant)</value>
+	</data>
+	<data name="ApplicantId" xml:space="preserve">
+		<value>Applicant Id</value>
+	</data>
+	<data name="PatentLicenseActivityId" xml:space="preserve">
+		<value>Patent License Activity Id</value>
+	</data>
+	
+	
+	
+	
+	
 	
 	<data name="Create New" xml:space="preserve">
 		<value>Create New</value>

@@ -15,6 +15,22 @@
 	</resheader>
 	
 	
+	<data name="Application Patent Licence" xml:space="preserve">
+		<value>Патентно ліцензійна діяльність (Заявники)</value>
+	</data>
+	<data name="ApplicantId" xml:space="preserve">
+		<value>Id Заявника</value>
+	</data>
+	<data name="PatentLicenseActivityId" xml:space="preserve">
+		<value>Id Патенту/Заявки</value>
+	</data>
+	
+	
+	
+	
+	
+	
+	
 	<data name="Create New" xml:space="preserve">
 		<value>Створити нове</value>
 	</data>
