@@ -5,9 +5,9 @@
 }
 
 
-<h1>Create</h1>
+<h3>Create</h3>
+<h5>Article</h5>
 
-<h4>Article</h4>
 <hr/>
             
 <div class="row">
@@ -76,24 +76,7 @@
 					<span class="helper-text" asp-validation-for="PublishingYear" data-error="" data-success=""></span>
 				</div>
 			</div>
-			<div class="row">
-				<label class="col s7">
-					<input type="checkbox" class="filled-in" asp-for="IsPeriodical"/>
-					<span>@Html.DisplayNameFor(model => model.IsPeriodical)</span>
-				</label>
-			</div>
-			<div class="row">
-				<label class="col s7">
-					<input type="checkbox" class="filled-in" asp-for="IsPrintCanceled"/>
-					<span>@Html.DisplayNameFor(model => model.IsPrintCanceled)</span>
-				</label>
-			</div>
-			<div class="row">
-				<label class="col s7">
-					<input type="checkbox" class="filled-in" asp-for="IsRecommendedToPrint"/>
-					<span>@Html.DisplayNameFor(model => model.IsRecommendedToPrint)</span>
-				</label>
-			</div>
+		
 			<div class="row">
 				<div class="input-field col s7">
 					<input asp-for="Number" type="number" class="validate">
@@ -108,7 +91,23 @@
 					<span class="helper-text" asp-validation-for="PagesAmount" data-error="" data-success=""></span>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row myButtons">
+				<label class="col s2">
+					<input type="checkbox" class="filled-in" asp-for="IsPeriodical"/>
+					<span>@Html.DisplayNameFor(model => model.IsPeriodical)</span>
+				</label>
+			
+				<label class="col s2">
+					<input type="checkbox" class="filled-in" asp-for="IsPrintCanceled"/>
+					<span>@Html.DisplayNameFor(model => model.IsPrintCanceled)</span>
+				</label>
+			
+				<label class="col s2">
+					<input type="checkbox" class="filled-in" asp-for="IsRecommendedToPrint"/>
+					<span>@Html.DisplayNameFor(model => model.IsRecommendedToPrint)</span>
+				</label>
+			</div>
+			<div class="row myButtons">
 				<input type="submit" value="Create" class="waves-effect btn-small  amber accent-2"/>
 				<a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
 			</div>

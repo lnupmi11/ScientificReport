@@ -31,37 +31,42 @@
 		<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
 	</environment>
 	<link rel="stylesheet" href="~/css/site.css"/>
+	<link rel="stylesheet" href="~/css/hrStyles.css"/>
+	<link rel="stylesheet" href="~/css/inputsStyle.css"/>
 	<style>
-		html, body {
-			height: 100%;
-		}
+		
+		html, body { height: 100%; }
+
 		body {
 			display: flex;
 			flex-direction: column;
 		}
+
 		.mylogo {
 			width: 50px;
 			height: 50px;
 			margin-top: 5px;
-			margin-left: 5px;
+			margin-right: 10px;
+			margin-left: 10px;
 			-ms-border-radius: 50%;
 			border-radius: 50%;
 		}
+
 		#dropdown1 {
 			position: absolute;
 			top: -48px;
 			height: auto;
 		}
-		.dropdown-content li {
-			min-height: 32px;
-		}
-		
-		.dropdown-content li>a {
+
+		.dropdown-content li { min-height: 32px; }
+
+		.dropdown-content li > a {
 			font-size: 15px;
 			color: black;
 			padding: 5px 9px;
 			cursor: pointer;
 		}
+
 		footer {
 			padding-top: 10px;
 			margin-top: 20px;
@@ -134,7 +139,8 @@
 		<div class="nav-wrapper light-blue darken-4">
 			<partial name="_LoginPartial"/>
 			<a class="left" asp-area="" asp-controller="Home" asp-action="Index">
-				<img class="mylogo" src="~/css/mathlogo.png" alt="Main"/></a>
+				<img class="mylogo" src="~/css/mathlogo.png" alt="Main"/>
+			</a>
 			<ul class="left hide-on-med-and-down">
 				<li>
 					<a asp-area="" asp-controller="TeacherReport" asp-action="Index">Teacher Reports</a>
@@ -149,12 +155,13 @@
 					<a asp-area="" asp-controller="Department" asp-action="Index">Departments</a>
 				</li>
 				<li>
-					<a class="dropdown-trigger"  data-target="dropdown1">Available pages<i class="material-icons right">arrow_drop_down</i></a>
+					<a class="dropdown-trigger" data-target="dropdown1">Available pages<i class="material-icons right">arrow_drop_down</i></a>
 				</li>
 			</ul>
 		</div>
 	</nav>
 </header>
+
 <div class="container content">
 	@* <partial name="_CookieConsentPartial"/> *@
 	<main role="main" class="pb-3">
@@ -162,13 +169,14 @@
 	</main>
 </div>
 
+
 <footer class="blue darken-1" style="height: 50px;">
-	
-		<div class="container">
-			<span style="color: white;">&copy; 2019 - ScientificReport -</span>
-			<a asp-area="" asp-controller="Home" asp-action="Privacy" style="text-decoration: none; color: darkblue;">Privacy</a>
-		</div>
-	
+
+	<div class="container">
+		<span style="color: white;">&copy; 2019 - ScientificReport -</span>
+		<a asp-area="" asp-controller="Home" asp-action="Privacy" style="text-decoration: none; color: darkblue;">Privacy</a>
+	</div>
+
 </footer>
 
 <environment include="Development">
