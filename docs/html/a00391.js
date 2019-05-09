@@ -1,4 +1,5 @@
 var a00391 =
 [
-    [ "Models", "a00392.html", "a00392" ]
+    [ "IRepository", "a00059.html", null ],
+    [ "ITrackable", "a00065.html", "a00065" ]
 ];

@@ -1,6 +1,10 @@
 var a00395 =
 [
-    [ "ReportThesisAuthorRequest", "a00109.html", "a00109" ],
-    [ "ReportThesisDetails", "a00111.html", "a00111" ],
-    [ "ReportThesisEdit", "a00112.html", "a00112" ]
+    [ "Conference", "a00396.html", "a00396" ],
+    [ "Department", "a00397.html", "a00397" ],
+    [ "ReportThesis", "a00398.html", "a00398" ],
+    [ "ScientificWorks", "a00399.html", "a00399" ],
+    [ "TeacherReport", "a00400.html", "a00400" ],
+    [ "UserProfile", "a00401.html", "a00401" ],
+    [ "ErrorViewModel", "a00037.html", "a00037" ]
 ];

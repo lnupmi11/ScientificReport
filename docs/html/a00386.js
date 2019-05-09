@@ -1,8 +1,8 @@
 var a00386 =
 [
-    [ "DepartmentReport", "a00028.html", "a00028" ],
-    [ "FacultyReport", "a00038.html", "a00038" ],
-    [ "Report", "a00107.html", "a00107" ],
-    [ "TeacherReport", "a00149.html", "a00149" ],
-    [ "TeacherReportsScientificWorks", "a00156.html", "a00156" ]
+    [ "DbContext", "a00387.html", "a00387" ],
+    [ "Entities", "a00388.html", "a00388" ],
+    [ "Interfaces", "a00391.html", "a00391" ],
+    [ "Repositories", "a00392.html", "a00392" ],
+    [ "Roles", "a00393.html", "a00393" ]
 ];

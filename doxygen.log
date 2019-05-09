@@ -22,6 +22,28 @@ Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/Sc
 Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Migrations
 Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Models
 Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/obj
+Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Resources
+Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Resources/Views
+Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Resources/Views/ApplicantsPatentLicenseActivities
+Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Resources/Views/Article
+Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Resources/Views/AuthorsPatentLicenseActivities
+Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Resources/Views/Conference
+Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Resources/Views/Department
+Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Resources/Views/Grant
+Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Resources/Views/Home
+Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Resources/Views/Membership
+Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Resources/Views/Opposition
+Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Resources/Views/PatentLicenseActivity
+Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Resources/Views/PostgraduateDissertationGuidance
+Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Resources/Views/PostgraduateGuidance
+Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Resources/Views/Publication
+Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Resources/Views/ReportThesis
+Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Resources/Views/Review
+Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Resources/Views/ScientificConsultation
+Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Resources/Views/ScientificInternship
+Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Resources/Views/ScientificWork
+Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Resources/Views/Shared
+Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Resources/Views/UserProfile
 Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Views
 Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Views/ApplicantsPatentLicenseActivities
 Searching for files in directory /home/travis/build/lnupmi11/ScientificReport/ScientificReport/Views/Article
@@ -1883,5 +1905,5 @@ Patching output file 173/176
 Patching output file 174/176
 Patching output file 175/176
 Patching output file 176/176
-lookup cache used 4872/65536 hits=19810 misses=5208
+lookup cache used 4873/65536 hits=19815 misses=5209
 finished...

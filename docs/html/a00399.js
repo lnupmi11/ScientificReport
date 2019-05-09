@@ -1,5 +1,6 @@
 var a00399 =
 [
-    [ "ScientificReportDbContextModelSnapshot", "a00136.html", "a00136" ],
-    [ "UpdateOfReportThesisModel", "a00158.html", "a00158" ]
+    [ "ScientificWorkAuthorRequest", "a00138.html", "a00138" ],
+    [ "ScientificWorksDetails", "a00142.html", "a00142" ],
+    [ "ScientificWorksEdit", "a00143.html", "a00143" ]
 ];
