@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
 using Moq;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
@@ -11,102 +10,77 @@ namespace ScientificReport.Test.RepositoriesTests
 {
 	public class PostgraduateGuidanceRepositoryTests
 	{
-		private static IEnumerable<PostgraduateGuidance> GetTestData()
+		private static readonly IEnumerable<PostgraduateGuidance> TestPostgraduateGuidances = new[]
 		{
-			return new[]
-			{
-				TestData.PostgraduateGuidance1,
-				TestData.PostgraduateGuidance2,
-				TestData.PostgraduateGuidance3
-			};
-		}
+			TestData.PostgraduateGuidance1,
+			TestData.PostgraduateGuidance2,
+			TestData.PostgraduateGuidance3
+		};
 
 		private static Mock<ScientificReportDbContext> GetMockContext()
-        {
-        	var mockContext = new Mock<ScientificReportDbContext>();
-        	mockContext.Setup(item => item.PostgraduateGuidances).Returns(
-        		MockProvider.GetMockSet(GetTestData()).Object
-        	);
-        	return mockContext;
-        }
+		{
+			var mockContext = new Mock<ScientificReportDbContext>();
+			mockContext.Setup(item => item.PostgraduateGuidances).Returns(
+				MockProvider.GetMockSet(TestPostgraduateGuidances).Object
+			);
+			return mockContext;
+		}
 
 		[Fact]
 		public void AllTest()
 		{
-			var repository = new Mock<PostgraduateGuidanceRepository>(GetMockContext().Object);
-
-			repository.Setup(a => a.All());
-			repository.Object.All();
-			repository.Verify(a => a.All());
+			var repository = new PostgraduateGuidanceRepository(GetMockContext().Object);
+			var actual = repository.All();
+			Assert.Equal(TestPostgraduateGuidances.Count(), actual.Count());
 		}
 
 		[Fact]
 		public void AllWhereTest()
 		{
-			var repository = new PostgraduateGuidanceRepository(GetMockContext().Object);
-
-			var actual = repository.AllWhere(x => x.Id.Equals(TestData.PostgraduateGuidance1.Id));
+			var mockContext = GetMockContext();
+			var repository = new PostgraduateGuidanceRepository(mockContext.Object);
+			var actual = repository.AllWhere(a => a.Id == mockContext.Object.PostgraduateGuidances.First().Id);
 			Assert.Single(actual);
 		}
 
 		[Fact]
 		public void GetByIdTest()
 		{
-			var repository = new Mock<PostgraduateGuidanceRepository>(GetMockContext().Object);
-
-			var postgraduateGuidance = GetTestData().First();
-			repository.Object.Create(postgraduateGuidance);
-
-			repository.Setup(item => item.Get(postgraduateGuidance.Id));
-			repository.Object.Get(postgraduateGuidance.Id);
-			repository.Verify(item => item.Get(postgraduateGuidance.Id));
+			var mockContext = GetMockContext();
+			var repository = new PostgraduateGuidanceRepository(mockContext.Object);
+			var expected = mockContext.Object.PostgraduateGuidances.First();
+			var actual = repository.Get(expected.Id);
+			Assert.NotNull(actual);
 		}
 
 		[Fact]
 		public void CreateTest()
 		{
-			var repository = new Mock<PostgraduateGuidanceRepository>(GetMockContext().Object);
-
-			var postgraduateGuidance = GetTestData().First();
-			repository.Setup(it => it.Create(postgraduateGuidance));
-			repository.Object.Create(postgraduateGuidance);
-			repository.Verify(it => it.Create(postgraduateGuidance), Times.Once);
+			var mockContext = GetMockContext();
+			var repository = new PostgraduateGuidanceRepository(mockContext.Object);
+			Assert.Equal(TestPostgraduateGuidances.Count(), mockContext.Object.PostgraduateGuidances.Count());
+			repository.Create(TestData.PostgraduateGuidance1);
+			Assert.Equal(TestPostgraduateGuidances.Count(), repository.All().Count());
 		}
 
 		[Fact]
 		public void UpdateTest()
 		{
-			var mockDbSet = new Mock<DbSet<PostgraduateGuidance>>();
-			var mockContext = new Mock<ScientificReportDbContext>();
-
-			mockContext.Setup(item => item.PostgraduateGuidances).Returns(mockDbSet.Object);
-
-			var repository = new Mock<PostgraduateGuidanceRepository>(mockContext.Object);
-
-			var postgraduateGuidance = GetTestData().First();
-
-			repository.Object.Create(postgraduateGuidance);
-
-			repository.Setup(a => a.Update(postgraduateGuidance));
-			repository.Object.Update(postgraduateGuidance);
-			repository.Verify(a => a.Update(postgraduateGuidance));
+			var mockContext = GetMockContext();
+			var repository = new PostgraduateGuidanceRepository(mockContext.Object);
+			var item = mockContext.Object.PostgraduateGuidances.First();
+			repository.Update(item);
+			Assert.NotNull(repository.Get(item.Id));
 		}
 
 		[Fact]
 		public void DeleteTest()
 		{
-			var mockDbSet = new Mock<DbSet<PostgraduateGuidance>>();
-			var mockContext = new Mock<ScientificReportDbContext>();
-
-			mockContext.Setup(item => item.PostgraduateGuidances).Returns(mockDbSet.Object);
-
-			var repository = new Mock<PostgraduateGuidanceRepository>(mockContext.Object);
-
-			var postgraduateGuidance = GetTestData().First();
-
-			repository.Setup(x => x.Delete(postgraduateGuidance.Id));
-			repository.Object.Delete(postgraduateGuidance.Id);
-			repository.Verify(i => i.Delete(postgraduateGuidance.Id));
+			var mockContext = GetMockContext();
+			var repository = new PostgraduateGuidanceRepository(mockContext.Object);
+			var item = mockContext.Object.PostgraduateGuidances.First();
+			repository.Delete(item.Id);
+			Assert.Null(mockContext.Object.PostgraduateGuidances.Find(item.Id));
 		}
 	}
 }

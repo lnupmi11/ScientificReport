@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
 using Moq;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
@@ -11,102 +10,77 @@ namespace ScientificReport.Test.RepositoriesTests
 {
 	public class ScientificInternshipRepositoryTests
 	{
-		private static IEnumerable<ScientificInternship> GetTestData()
+		private static readonly IEnumerable<ScientificInternship> TestScientificInternships = new[]
 		{
-			return new[]
-			{
-				TestData.ScientificInternship1,
-				TestData.ScientificInternship2,
-				TestData.ScientificInternship3
-			};
-		}
+			TestData.ScientificInternship1,
+			TestData.ScientificInternship2,
+			TestData.ScientificInternship3
+		};
 
 		private static Mock<ScientificReportDbContext> GetMockContext()
-        {
-        	var mockContext = new Mock<ScientificReportDbContext>();
-        	mockContext.Setup(item => item.ScientificInternships).Returns(
-        		MockProvider.GetMockSet(GetTestData()).Object
-        	);
-        	return mockContext;
-        }
+		{
+			var mockContext = new Mock<ScientificReportDbContext>();
+			mockContext.Setup(item => item.ScientificInternships).Returns(
+				MockProvider.GetMockSet(TestScientificInternships).Object
+			);
+			return mockContext;
+		}
 
 		[Fact]
 		public void AllTest()
 		{
-			var repository = new Mock<ScientificInternshipRepository>(GetMockContext().Object);
-
-			repository.Setup(a => a.All());
-			repository.Object.All();
-			repository.Verify(a => a.All());
+			var repository = new ScientificInternshipRepository(GetMockContext().Object);
+			var actual = repository.All();
+			Assert.Equal(TestScientificInternships.Count(), actual.Count());
 		}
 
 		[Fact]
 		public void AllWhereTest()
 		{
-			var repository = new ScientificInternshipRepository(GetMockContext().Object);
-
-			var actual = repository.AllWhere(x => x.Id.Equals(TestData.ScientificInternship1.Id));
+			var mockContext = GetMockContext();
+			var repository = new ScientificInternshipRepository(mockContext.Object);
+			var actual = repository.AllWhere(a => a.Id == mockContext.Object.ScientificInternships.First().Id);
 			Assert.Single(actual);
 		}
 
 		[Fact]
 		public void GetByIdTest()
 		{
-			var repository = new Mock<ScientificInternshipRepository>(GetMockContext().Object);
-
-			var scientificInternship = GetTestData().First();
-			repository.Object.Create(scientificInternship);
-
-			repository.Setup(item => item.Get(scientificInternship.Id));
-			repository.Object.Get(scientificInternship.Id);
-			repository.Verify(item => item.Get(scientificInternship.Id));
+			var mockContext = GetMockContext();
+			var repository = new ScientificInternshipRepository(mockContext.Object);
+			var expected = mockContext.Object.ScientificInternships.First();
+			var actual = repository.Get(expected.Id);
+			Assert.NotNull(actual);
 		}
 
 		[Fact]
 		public void CreateTest()
 		{
-			var repository = new Mock<ScientificInternshipRepository>(GetMockContext().Object);
-
-			var scientificInternship = GetTestData().First();
-			repository.Setup(it => it.Create(scientificInternship));
-			repository.Object.Create(scientificInternship);
-			repository.Verify(it => it.Create(scientificInternship), Times.Once);
+			var mockContext = GetMockContext();
+			var repository = new ScientificInternshipRepository(mockContext.Object);
+			Assert.Equal(TestScientificInternships.Count(), mockContext.Object.ScientificInternships.Count());
+			repository.Create(TestData.ScientificInternship1);
+			Assert.Equal(TestScientificInternships.Count(), repository.All().Count());
 		}
 
 		[Fact]
 		public void UpdateTest()
 		{
-			var mockDbSet = new Mock<DbSet<ScientificInternship>>();
-			var mockContext = new Mock<ScientificReportDbContext>();
-
-			mockContext.Setup(item => item.ScientificInternships).Returns(mockDbSet.Object);
-
-			var repository = new Mock<ScientificInternshipRepository>(mockContext.Object);
-
-			var scientificInternship = GetTestData().First();
-
-			repository.Object.Create(scientificInternship);
-
-			repository.Setup(a => a.Update(scientificInternship));
-			repository.Object.Update(scientificInternship);
-			repository.Verify(a => a.Update(scientificInternship));
+			var mockContext = GetMockContext();
+			var repository = new ScientificInternshipRepository(mockContext.Object);
+			var item = mockContext.Object.ScientificInternships.First();
+			repository.Update(item);
+			Assert.NotNull(repository.Get(item.Id));
 		}
 
 		[Fact]
 		public void DeleteTest()
 		{
-			var mockDbSet = new Mock<DbSet<ScientificInternship>>();
-			var mockContext = new Mock<ScientificReportDbContext>();
-
-			mockContext.Setup(item => item.ScientificInternships).Returns(mockDbSet.Object);
-
-			var repository = new Mock<ScientificInternshipRepository>(mockContext.Object);
-
-			var scientificInternship = GetTestData().First();
-
-			repository.Setup(x => x.Delete(scientificInternship.Id));
-			repository.Object.Delete(scientificInternship.Id);
-			repository.Verify(i => i.Delete(scientificInternship.Id));
+			var mockContext = GetMockContext();
+			var repository = new ScientificInternshipRepository(mockContext.Object);
+			var item = mockContext.Object.ScientificInternships.First();
+			repository.Delete(item.Id);
+			Assert.Null(mockContext.Object.ScientificInternships.Find(item.Id));
 		}
 	}
 }
