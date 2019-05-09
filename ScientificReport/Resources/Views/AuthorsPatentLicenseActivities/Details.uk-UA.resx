@@ -15,6 +15,20 @@
 	</resheader>
 	
 	
+	<data name="Authors Patent License Activities" xml:space="preserve">
+		<value>Патентно ліцензійна діяльність (Автори)</value>
+	</data>
+	<data name="AuthorId" xml:space="preserve">
+		<value>Id Автора</value>
+	</data>
+	<data name="PatentLicenseActivityId" xml:space="preserve">
+		<value>Id Патенту/Заявки</value>
+	</data>
+	
+	
+	
+	
+	
 	<data name="Create New" xml:space="preserve">
 		<value>Створити нове</value>
 	</data>

@@ -15,6 +15,17 @@
 	</resheader>
 	
 	
+	<data name="Conference" xml:space="preserve">
+		<value>Конференція</value>
+	</data>
+	<data name="Topic" xml:space="preserve">
+		<value>Тема</value>
+	</data>
+	<data name="Date" xml:space="preserve">
+		<value>Дата проведення</value>
+	</data>
+	
+	
 	<data name="Create New" xml:space="preserve">
 		<value>Створити нове</value>
 	</data>

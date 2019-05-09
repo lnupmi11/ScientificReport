@@ -15,6 +15,19 @@
 	</resheader>
 	
 	
+	<data name="Conference" xml:space="preserve">
+		<value>Conference</value>
+	</data>
+	<data name="Topic" xml:space="preserve">
+		<value>Topic</value>
+	</data>
+	<data name="Date" xml:space="preserve">
+		<value>Date</value>
+	</data>
+	
+	
+	
+	
 	<data name="Create New" xml:space="preserve">
 		<value>Create New</value>
 	</data>

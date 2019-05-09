@@ -15,6 +15,12 @@
 	</resheader>
 	
 	
+	
+	<data name="Welcome" xml:space="preserve">
+		<value>Welcome</value>
+	</data>
+	
+	
 	<data name="Create New" xml:space="preserve">
 		<value>Create New</value>
 	</data>

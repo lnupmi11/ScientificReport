@@ -15,6 +15,20 @@
 	</resheader>
 	
 	
+	<data name="Authors Patent License Activities" xml:space="preserve">
+		<value>Patent License Activities (Authors)</value>
+	</data>
+	<data name="AuthorId" xml:space="preserve">
+		<value>Author Id</value>
+	</data>
+	<data name="PatentLicenseActivityId" xml:space="preserve">
+		<value>Patent License Activity Id</value>
+	</data>
+	
+	
+	
+	
+	
 	<data name="Create New" xml:space="preserve">
 		<value>Create New</value>
 	</data>
