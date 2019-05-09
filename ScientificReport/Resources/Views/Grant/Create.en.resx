@@ -15,6 +15,9 @@
 	</resheader>
 	
 	
+	<data name="Grant" xml:space="preserve">
+		<value>Grant</value>
+	</data>
 	<data name="Create New" xml:space="preserve">
 		<value>Create New</value>
 	</data>

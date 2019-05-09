@@ -15,6 +15,9 @@
 	</resheader>
 	
 	
+	<data name="Grant" xml:space="preserve">
+		<value>Грант</value>
+	</data>
 	<data name="Create New" xml:space="preserve">
 		<value>Створити нове</value>
 	</data>
