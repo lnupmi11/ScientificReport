@@ -15,40 +15,43 @@
 	</resheader>
 	
 	<data name="Postgraduate Dissertation Guidance" xml:space="preserve">
-		<value>Наукове консультування при написанні дисертацій</value>
+		<value>Postgraduate Dissertation Guidance</value>
 	</data>
 	<data name="Create New" xml:space="preserve">
-		<value>Створити нове</value>
+		<value>Create New</value>
 	</data>
 	<data name="PostgraduateName" xml:space="preserve">
-		<value>Ім'я дисертанта</value>
+		<value>PostgraduateName</value>
 	</data>
 	<data name="Dissertation" xml:space="preserve">
-		<value>Дисертація</value>
+		<value>Dissertation</value>
 	</data>
 	<data name="Speciality" xml:space="preserve">
-		<value>Спеціальність</value>
+		<value>Speciality</value>
 	</data>
 	<data name="DateDegreeGained" xml:space="preserve">
-		<value>Дата захисту</value>
+		<value>DateDegreeGained</value>
 	</data>
 	<data name="GraduationYear" xml:space="preserve">
-		<value>Рік закінчення аспірантури, докторантури</value>
+		<value>GraduationYear</value>
 	</data>
 	<data name="Details" xml:space="preserve">
-		<value>Деталі</value>
+		<value>Details</value>
 	</data>
 	<data name="Edit" xml:space="preserve">
-		<value>Редагувати</value>
+		<value>Edit</value>
 	</data>
 	<data name="Delete" xml:space="preserve">
-		<value>Видалити</value>
+		<value>Delete</value>
 	</data>
 	<data name="Save" xml:space="preserve">
-		<value>Зберегти</value>
+		<value>Save</value>
+	</data>
+	<data name="Create" xml:space="preserve">
+		<value>Create</value>
 	</data>
 	<data name="Cancel" xml:space="preserve">
-		<value>Скасувати</value>
+		<value>Cancel</value>
 	</data>
 
 </root>
