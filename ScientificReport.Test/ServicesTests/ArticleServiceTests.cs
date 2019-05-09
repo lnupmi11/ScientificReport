@@ -12,23 +12,21 @@ namespace ScientificReport.Test.ServicesTests
 {
 	public class ArticleServiceTests
 	{
-		private readonly Mock<ScientificReportDbContext> _mockContext = GetMockContext();
+		private readonly Mock<DbSet<Article>> _mockDbSet = MockProvider.GetMockSet(GetTestData().AsQueryable());
 		
 		private static IEnumerable<Article> GetTestData()
 		{
 			return new[]
 			{
 				TestData.Article1,
-				TestData.Article2,
-				TestData.Article3
+				TestData.Article2
 			};
 		}
 		
-		private static Mock<ScientificReportDbContext> GetMockContext()
+		private Mock<ScientificReportDbContext> GetMockContext()
 		{
-			var list = GetTestData().AsQueryable();
 			var mockContext = new Mock<ScientificReportDbContext>();
-			mockContext.Setup(item => item.Articles).Returns(MockProvider.GetMockSet(list).Object);
+			mockContext.Setup(item => item.Articles).Returns(_mockDbSet.Object);
 			return mockContext;
 		}
 
@@ -39,7 +37,6 @@ namespace ScientificReport.Test.ServicesTests
 
 			var mockContext = new Mock<ScientificReportDbContext>();
 			mockContext.Setup(item => item.Articles).Returns(MockProvider.GetMockSet(list).Object);
-
 			var service = new ArticleService(mockContext.Object);
 
 			var actual = service.GetAll();
@@ -50,7 +47,7 @@ namespace ScientificReport.Test.ServicesTests
 		[Fact]
 		public void GetAllWhereTest()
 		{
-			var service = new ArticleService(_mockContext.Object);
+			var service = new ArticleService(GetMockContext().Object);
 			var actual = service.GetAllWhere(u => u.Id.Equals(TestData.Article1.Id));
 			Assert.Single(actual);
 		}
@@ -59,82 +56,74 @@ namespace ScientificReport.Test.ServicesTests
 		public void GetByIdTest()
 		{
 			var expected = GetTestData().First();
+			var service = new ArticleService(GetMockContext().Object);
 
-			var service = new Mock<ArticleService>(_mockContext.Object);
-
-			service.Object.CreateItem(expected);
-
-			service.Setup(item => item.GetById(expected.Id));
-			service.Object.GetById(expected.Id);
-			service.Verify(item => item.GetById(expected.Id));
+			var actual = service.GetById(expected.Id);
+			
+			Assert.NotNull(actual);
+			Assert.Equal(expected.Id, actual.Id);
 		}
 
 		[Fact]
 		public void CreateItemTest()
 		{
-			var service = new Mock<ArticleService>(_mockContext.Object);
+			var service = new ArticleService(GetMockContext().Object);
 
-			var expected = TestData.Article1;
+			var expected = TestData.Article3;
+			service.CreateItem(expected);
 
-			service.Setup(it => it.CreateItem(expected));
-			service.Object.CreateItem(expected);
-			service.Verify(it => it.CreateItem(expected), Times.Once);
+			_mockDbSet.Verify(m => m.Add(It.IsAny<Article>()), Times.Once);
 		}
 
 		[Fact]
 		public void UpdateItemTest()
 		{
-			var mockDbSet = new Mock<DbSet<Article>>();
-			var mockContext = new Mock<ScientificReportDbContext>();
+			var service = new ArticleService(GetMockContext().Object);
 
-			mockContext.Setup(item => item.Articles).Returns(mockDbSet.Object);
+			var expected = GetTestData().First();
+			expected.Title = TestData.Article3.Title;
+			service.UpdateItem(expected);
 
-			var service = new ArticleService(mockContext.Object);
-
-			var article = GetTestData().First();
-
-			service.CreateItem(article);
-			service.UpdateItem(article);
-
-			mockDbSet.Verify(m => m.Update(It.IsAny<Article>()), Times.Once());
+			_mockDbSet.Verify(m => m.Update(expected), Times.Once);
 		}
 
 		[Fact]
 		public void DeleteItemTest()
 		{
-			var service = new Mock<ArticleService>(_mockContext.Object);
+			var mockContext = GetMockContext();
+			var service = new ArticleService(mockContext.Object);
+	
+			var item = mockContext.Object.Articles.First();
+			
+			Assert.True(service.Exists(item.Id));
+			
+			service.DeleteById(item.Id);
 
-			var article = GetTestData().First();
-
-			service.Setup(x => x.DeleteById(article.Id));
-			service.Object.DeleteById(article.Id);
-			service.Verify(i => i.DeleteById(article.Id));
+			Assert.False(service.Exists(item.Id));
 		}
 
 		[Fact]
 		public void ExistsTest()
 		{
-			var service = new Mock<ArticleService>(_mockContext.Object);
+			var service = new ArticleService(GetMockContext().Object);
 
-			var article = GetTestData().First();
-			service.Object.CreateItem(article);
-
-			service.Setup(a => a.Exists(article.Id));
-			service.Object.Exists(article.Id);
-			service.Verify(a => a.Exists(article.Id));
+			var item = GetTestData().First();
+			var exists = service.Exists(item.Id);
+			
+			Assert.True(exists);
 		}
 
 		[Fact]
 		public void DoesNotExistTest()
 		{
-			var service = new Mock<ArticleService>(_mockContext.Object);
+			var service = new ArticleService(GetMockContext().Object);
 
-			var guid = Guid.NewGuid();
-			service.Setup(a => a.Exists(guid));
-			service.Object.Exists(guid);
-			service.Verify(a => a.Exists(guid));
+			var item = TestData.Article3;
+			var exists = service.Exists(item.Id);
+			
+			Assert.False(exists);
 		}
-		
+
 		[Fact]
 		public void GetAuthorsTest()
 		{
