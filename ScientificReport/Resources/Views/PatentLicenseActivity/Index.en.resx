@@ -15,6 +15,24 @@
 	</resheader>
 	
 	
+	<data name="Patent Licence Activity" xml:space="preserve">
+		<value>Patent Licence Activity</value>
+	</data>
+	<data name="Name" xml:space="preserve">
+		<value>Name</value>
+	</data>
+	<data name="Number" xml:space="preserve">
+		<value>Number</value>
+	</data>
+	<data name="DateTime" xml:space="preserve">
+		<value>Date</value>
+	</data>
+	<data name="Details" xml:space="preserve">
+		<value>Details</value>
+	</data>
+	
+	
+	
 	<data name="Create New" xml:space="preserve">
 		<value>Create New</value>
 	</data>

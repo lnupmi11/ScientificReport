@@ -15,6 +15,34 @@
 	</resheader>
 	
 	
+	<data name="Patent Licence Activity" xml:space="preserve">
+		<value>Патентно-ліцензійна діяльність</value>
+	</data>
+	<data name="Name" xml:space="preserve">
+		<value>Назва патенту</value>
+	</data>
+	<data name="Number" xml:space="preserve">
+		<value>Номер</value>
+	</data>
+	<data name="DateTime" xml:space="preserve">
+		<value>Дата</value>
+	</data>
+	<data name="Details" xml:space="preserve">
+		<value>Тип</value>
+	</data>
+	
+	
+	<data name="Choose your option" xml:space="preserve">
+		<value>Оберіть варіант</value>
+	</data>
+	<data name="Patent" xml:space="preserve">
+		<value>Патент</value>
+	</data>
+	<data name="Application" xml:space="preserve">
+		<value>Заявка</value>
+	</data>
+	
+	
 	<data name="Create New" xml:space="preserve">
 		<value>Створити нове</value>
 	</data>
