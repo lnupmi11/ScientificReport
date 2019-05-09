@@ -17,7 +17,6 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-
     <data name="Publication" xml:space="preserve">
 		<value>Публікація</value>
 	</data>
@@ -81,5 +80,4 @@
 	<data name="Cancel" xml:space="preserve">
 		<value>Скасувати</value>
 	</data>
-
 </root>

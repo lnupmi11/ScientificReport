@@ -26,4 +26,7 @@
     <data name="Log In" xml:space="preserve">
 		<value>Log In</value>
 	</data>
+	<data name="Change password" xml:space="preserve">
+		<value>Change password</value>
+	</data>
 </root>

@@ -46,6 +46,6 @@ namespace ScientificReport.DAL.Entities.UserProfile
 		
 		public virtual ICollection<ApplicantsPatentLicenseActivities> ApplicantsPatentLicenseActivities { get; set; }
 		
-		public string FullName => $"{FirstName} {MiddleName} {LastName}";
+		public string FullName => $"{LastName} {FirstName} {MiddleName}";
 	}
 }

@@ -1,31 +1,33 @@
+@using Microsoft.AspNetCore.Mvc.Localization
 @model IEnumerable<ScientificReport.DAL.Entities.Grant>
+@inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = "Index";
+	ViewData["Title"] = Localizer["Index"];
 }
 
-<h3>Grant</h3>
+<h3>@Localizer["Grant"]</h3>
 
 <p>
-    <a asp-action="Create" class="waves-effect btn-small green darken-3">Create New</a>
+	<a asp-action="Create" class="waves-effect btn-small green darken-3">@Localizer["Create New"]</a>
 </p>
 <table class="responsive-table">
-    <thead>
-        <tr>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
+	<thead>
+		<tr>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
 @foreach (var item in Model) {
-        <tr>
-            <td>
-                <a asp-action="Details" asp-route-id="@item.Id" class="btn-small blue darken-3">Details</a>
-                <a asp-action="Edit" asp-route-id="@item.Id" class="waves-effect btn-small waves-light">Edit</a>
-                <form asp-action="Delete" asp-route-id="@item.Id" method="post" style="display: inline;">
-                    <button type="submit" class="waves-effect btn-small deep-orange darken-3">Delete</button>
-                </form>
-            </td>
-        </tr>
+		<tr>
+			<td>
+				<a asp-action="Details" asp-route-id="@item.Id" class="btn-small blue darken-3">@Localizer["Details"]</a>
+				<a asp-action="Edit" asp-route-id="@item.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
+				<form asp-action="Delete" asp-route-id="@item.Id" method="post" style="display: inline;">
+					<button type="submit" class="waves-effect btn-small deep-orange darken-3">@Localizer["Delete"]</button>
+				</form>
+			</td>
+		</tr>
 }
-    </tbody>
+	</tbody>
 </table>

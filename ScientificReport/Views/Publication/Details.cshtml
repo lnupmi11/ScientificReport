@@ -3,7 +3,7 @@
 @inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = "Details";
+	ViewData["Title"] = Localizer["Details"];
 }
 
 <h3>@Localizer["Details"]</h3>
@@ -58,13 +58,13 @@
 			@Localizer[Html.DisplayNameFor(model => model.IsPrintCanceled)]
 		</dt>
 		<dd class="col s10">
-			<span>@(Model.IsPrintCanceled ? "Yes" : "No")</span>
+			<span>@Localizer[(Model.IsPrintCanceled ? "Yes" : "No")]</span>
 		</dd>
 		<dt class="col s2">
 			@Localizer[Html.DisplayNameFor(model => model.IsRecommendedToPrint)]
 		</dt>
 		<dd class="col s10">
-			<span>@(Model.IsRecommendedToPrint ? "Yes" : "No")</span>
+			<span>@Localizer[(Model.IsRecommendedToPrint ? "Yes" : "No")]</span>
 		</dd>
 		<dt class="col s2">
 			@Localizer[Html.DisplayNameFor(model => model.CreatedAt)]

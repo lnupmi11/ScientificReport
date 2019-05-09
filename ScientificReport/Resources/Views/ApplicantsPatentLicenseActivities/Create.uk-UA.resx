@@ -17,9 +17,7 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-
-
-    <data name="Application Patent Licence" xml:space="preserve">
+    <data name="Applicants Patent License Activities" xml:space="preserve">
 		<value>Патентно ліцензійна діяльність (Заявники)</value>
 	</data>
 	<data name="ApplicantId" xml:space="preserve">
@@ -28,13 +26,6 @@
 	<data name="PatentLicenseActivityId" xml:space="preserve">
 		<value>Id Патенту/Заявки</value>
 	</data>
-	
-	
-	
-	
-	
-	
-	
 	<data name="Create New" xml:space="preserve">
 		<value>Створити нове</value>
 	</data>
@@ -59,5 +50,4 @@
 	<data name="Create" xml:space="preserve">
 		<value>Створити</value>
 	</data>
-
 </root>

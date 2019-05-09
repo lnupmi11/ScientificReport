@@ -17,8 +17,6 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-
-
     <data name="Patent Licence Activity" xml:space="preserve">
 		<value>Патентно-ліцензійна діяльність</value>
 	</data>
@@ -31,11 +29,6 @@
 	<data name="DateTime" xml:space="preserve">
 		<value>Дата</value>
 	</data>
-	<data name="Details" xml:space="preserve">
-		<value>Тип</value>
-	</data>
-	
-	
 	<data name="Create New" xml:space="preserve">
 		<value>Створити нове</value>
 	</data>
@@ -60,5 +53,4 @@
 	<data name="Create" xml:space="preserve">
 		<value>Створити</value>
 	</data>
-
 </root>

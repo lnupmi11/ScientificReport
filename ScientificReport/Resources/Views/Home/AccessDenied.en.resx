@@ -17,31 +17,10 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-
-
-    <data name="Create New" xml:space="preserve">
-		<value>Create New</value>
+    <data name="Access denied" xml:space="preserve">
+		<value>Access denied</value>
 	</data>
-	<data name="Details" xml:space="preserve">
-		<value>Details</value>
+	<data name="Unable to load this page because of the lack of user permissions" xml:space="preserve">
+		<value>Unable to load this page because of the lack of user permissions</value>
 	</data>
-	<data name="Edit" xml:space="preserve">
-		<value>Edit</value>
-	</data>
-	<data name="Delete" xml:space="preserve">
-		<value>Delete</value>
-	</data>
-	<data name="Save" xml:space="preserve">
-		<value>Save</value>
-	</data>
-	<data name="Create" xml:space="preserve">
-		<value>Create</value>
-	</data>
-	<data name="Cancel" xml:space="preserve">
-		<value>Cancel</value>
-	</data>
-	<data name="Back to List" xml:space="preserve">
-		<value>Back to List</value>
-	</data>
-
 </root>

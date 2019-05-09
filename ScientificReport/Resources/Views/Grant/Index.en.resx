@@ -17,8 +17,6 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-
-
     <data name="Grant" xml:space="preserve">
 		<value>Grant</value>
 	</data>
@@ -46,5 +44,4 @@
 	<data name="Back to List" xml:space="preserve">
 		<value>Back to List</value>
 	</data>
-
 </root>

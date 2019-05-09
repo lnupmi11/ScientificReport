@@ -1,31 +1,33 @@
+@using Microsoft.AspNetCore.Mvc.Localization
 @model ScientificReport.DAL.Entities.Department
+@inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = "Details";
+	ViewData["Title"] = Localizer["Details"];
 }
 
-<h3>Details</h3>
+<h3>@Localizer["Details"]</h3>
 
 <div>
-	<h5>Department</h5>
+	<h5>@Localizer["Department"]</h5>
 	<hr />
 	<dl class="row">
 		<dt class = "col s2">
-			@Html.DisplayNameFor(model => model.Title)
+			@Localizer[Html.DisplayNameFor(model => model.Title)]
 		</dt>
 		<dd class="col s10">
 			@Html.DisplayFor(model => model.Title)
 		</dd>
 		<dt class = "col s2">
-			@Html.DisplayNameFor(model => model.Head)
+			@Localizer[Html.DisplayNameFor(model => model.Head)]
 		</dt>
 		<dd class="col s10">
 			<a href="@Url.Action("Details", "UserProfile", new {id = Model.Head.Id})">
-				@Model.Head.FirstName @Model.Head.MiddleName @Model.Head.LastName
+				@Model.Head.LastName @Model.Head.FirstName @Model.Head.MiddleName
 			</a>
 		</dd>
 		<dt class="col s2">
-			Staff
+			@Localizer["Staff"]
 		</dt>
 		<dd class="col s10">
 			@if (Model.Staff != null)
@@ -39,7 +41,7 @@
 							{
 								<li>
 									<a href="@Url.Action("Details", "UserProfile", new {id = user.Id})">
-										@user.FirstName @user.MiddleName @user.LastName
+										@user.LastName @user.FirstName @user.MiddleName
 									</a>
 								</li>
 							}
@@ -48,12 +50,12 @@
 				}
 				else
 				{
-					<p>No staff</p>
+					<p>@Localizer["No staff"]</p>
 				}
 			}
 		</dd>
 		<dt class="col s2">
-			Scientific works
+			@Localizer["Scientific works"]
 		</dt>
 		<dd class="col s10">
 			@if (Model.ScientificWorks != null)
@@ -76,13 +78,13 @@
 				}
 				else
 				{
-					<p>No scientific works</p>
+					<p>@Localizer["No scientific works"]</p>
 				}
 			}
 		</dd>
 	</dl>
 </div>
 <div>
-	<a asp-action="Edit" asp-route-id="@Model.Id" class="waves-effect btn-small waves-light">Edit</a>
-	<a asp-action="Index" class="btn-small blue darken-3">Back to List</a>
+	<a asp-action="Edit" asp-route-id="@Model.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
+	<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Back to List"]</a>
 </div>

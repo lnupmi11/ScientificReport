@@ -1,13 +1,15 @@
+@using Microsoft.AspNetCore.Mvc.Localization
 @model ScientificReport.DAL.Entities.ApplicantsPatentLicenseActivities
+@inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = Localizer["Create"];
 }
 
 
-<h3>Create</h3>
+<h3>@Localizer["Create"]</h3>
 
-<h5>Applicants Patent License Activities</h5>
+<h5>@Localizer["Applicants Patent License Activities"]</h5>
 <hr />
 <div class="row">
     <div class="col s12">
@@ -16,25 +18,24 @@
             <div class="row">
                 <div class="input-field col s6">
                     <input asp-for="ApplicantId" type="number" class="validate">
-                    <label asp-for="ApplicantId">Applicant Id</label>
+                    <label asp-for="ApplicantId">@Localizer["ApplicantId"]</label>
                     <span class="helper-text" asp-validation-for="ApplicantId" data-error="some data is in bad format" data-success=""></span>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s6">
                     <input asp-for="PatentLicenseActivityId" type="number" class="validate">
-                    <label asp-for="PatentLicenseActivityId">Patent License Activity Id</label>
+                    <label asp-for="PatentLicenseActivityId">@Localizer["PatentLicenseActivityId"]</label>
                     <span asp-validation-for="PatentLicenseActivityId" data-error="" data-success=""></span>
                 </div>
             </div>
             <div class="row">
-                <input type="submit" value="Create" class="waves-effect btn-small  amber accent-2"/>
-                <a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
+                <input type="submit" value="@Localizer["Create"]" class="waves-effect btn-small  amber accent-2"/>
+                <a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
             </div>
         </form>
     </div>
 </div>
-
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

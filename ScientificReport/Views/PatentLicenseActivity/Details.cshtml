@@ -1,42 +1,44 @@
+@using Microsoft.AspNetCore.Mvc.Localization
 @model ScientificReport.DAL.Entities.PatentLicenseActivity
+@inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = "Details";
+	ViewData["Title"] = Localizer["Details"];
 }
 
-<h3>Details</h3>
+<h3>@Localizer["Details"]</h3>
 
 <div>
-    <h5>PatentLicenseActivity</h5>
-    <hr />
-    <dl class="row">
-        <dt class = "col s2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col s10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col s2">
-            @Html.DisplayNameFor(model => model.Number)
-        </dt>
-        <dd class = "col s10">
-            @Html.DisplayFor(model => model.Number)
-        </dd>
-        <dt class = "col s2">
-            @Html.DisplayNameFor(model => model.DateTime)
-        </dt>
-        <dd class = "col s10">
-            @Html.DisplayFor(model => model.DateTime)
-        </dd>
-        <dt class = "col s2">
-            @Html.DisplayNameFor(model => model.Type)
-        </dt>
-        <dd class = "col s10">
-            @Html.DisplayFor(model => model.Type)
-        </dd>
-    </dl>
+	<h5>@Localizer["Patent License Activity"]</h5>
+	<hr />
+	<dl class="row">
+		<dt class = "col s2">
+			@Localizer[Html.DisplayNameFor(model => model.Name)]
+		</dt>
+		<dd class = "col s10">
+			@Html.DisplayFor(model => model.Name)
+		</dd>
+		<dt class = "col s2">
+			@Localizer[Html.DisplayNameFor(model => model.Number)]
+		</dt>
+		<dd class = "col s10">
+			@Html.DisplayFor(model => model.Number)
+		</dd>
+		<dt class = "col s2">
+			@Localizer[Html.DisplayNameFor(model => model.DateTime)]
+		</dt>
+		<dd class = "col s10">
+			@Html.DisplayFor(model => model.DateTime)
+		</dd>
+		<dt class = "col s2">
+			@Localizer[Html.DisplayNameFor(model => model.Type)]
+		</dt>
+		<dd class = "col s10">
+			@Html.DisplayFor(model => model.Type)
+		</dd>
+	</dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id" class="waves-effect btn-small waves-light">Edit</a>
-    <a asp-action="Index" class="btn-small blue darken-3">Back to List</a>
+	<a asp-action="Edit" asp-route-id="@Model.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
+	<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Back to List"]</a>
 </div>

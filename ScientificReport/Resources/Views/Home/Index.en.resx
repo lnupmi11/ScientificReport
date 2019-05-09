@@ -17,35 +17,7 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-
-
-    <data name="Welcome" xml:space="preserve">
-		<value>Welcome</value>
-	</data>
-	
-	
-	<data name="Create New" xml:space="preserve">
-		<value>Create New</value>
-	</data>
-	<data name="Details" xml:space="preserve">
-		<value>Details</value>
-	</data>
-	<data name="Edit" xml:space="preserve">
-		<value>Edit</value>
-	</data>
-	<data name="Delete" xml:space="preserve">
-		<value>Delete</value>
-	</data>
-	<data name="Save" xml:space="preserve">
-		<value>Save</value>
-	</data>
-	<data name="Create" xml:space="preserve">
-		<value>Create</value>
-	</data>
-	<data name="Cancel" xml:space="preserve">
-		<value>Cancel</value>
-	</data>
-	<data name="Back to List" xml:space="preserve">
-		<value>Back to List</value>
+    <data name="Home Page" xml:space="preserve">
+		<value>Home Page</value>
 	</data>
 </root>

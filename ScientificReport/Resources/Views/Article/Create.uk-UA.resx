@@ -17,8 +17,6 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-
-
     <data name="Article" xml:space="preserve">
 		<value>Стаття</value>
 	</data>
@@ -33,14 +31,7 @@
 	</data>
 	<data name="PublishingYear" xml:space="preserve">
 		<value>Рік видання</value>
-	</data>
-	
-	
-	
-	
-	
-	
-	
+	</data>	
 	<data name="Create New" xml:space="preserve">
 		<value>Створити нове</value>
 	</data>
@@ -65,5 +56,4 @@
 	<data name="Create" xml:space="preserve">
 		<value>Створити</value>
 	</data>
-
 </root>

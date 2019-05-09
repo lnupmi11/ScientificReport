@@ -17,8 +17,6 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-
-
     <data name="Departments" xml:space="preserve">
 		<value>Departments</value>
 	</data>
@@ -31,9 +29,6 @@
 	<data name="Scientific works total" xml:space="preserve">
 		<value>Scientific works total</value>
 	</data>
-	
-	
-	
 	<data name="Create New" xml:space="preserve">
 		<value>Create New</value>
 	</data>
@@ -58,5 +53,4 @@
 	<data name="Back to List" xml:space="preserve">
 		<value>Back to List</value>
 	</data>
-
 </root>

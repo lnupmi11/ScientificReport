@@ -1,18 +1,20 @@
+@using Microsoft.AspNetCore.Mvc.Localization
 @model ScientificReport.DAL.Entities.Grant
+@inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = "Details";
+	ViewData["Title"] = Localizer["Details"];
 }
 
-<h3>Details</h3>
+<h3>@Localizer["Details"]</h3>
 
 <div>
-    <h5>Grant</h5>
-    <hr />
-    <dl class="row">
-    </dl>
+	<h5>@Localizer["Grant"]</h5>
+	<hr />
+	<dl class="row">
+	</dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id" class="waves-effect btn-small waves-light">Edit</a>
-    <a asp-action="Index" class="btn-small blue darken-3">Back to List</a>
+	<a asp-action="Edit" asp-route-id="@Model.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
+	<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Back to List"]</a>
 </div>

@@ -17,36 +17,7 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-
-
-    <data name="Welcome" xml:space="preserve">
-		<value>Вітаємо</value>
+    <data name="Home Page" xml:space="preserve">
+		<value>Домашня Сторінка</value>
 	</data>
-	
-	
-	<data name="Create New" xml:space="preserve">
-		<value>Створити нове</value>
-	</data>
-	<data name="Details" xml:space="preserve">
-		<value>Деталі</value>
-	</data>
-	<data name="Edit" xml:space="preserve">
-		<value>Редагувати</value>
-	</data>
-	<data name="Delete" xml:space="preserve">
-		<value>Видалити</value>
-	</data>
-	<data name="Back to List" xml:space="preserve">
-		<value>Повернутися до списку</value>
-	</data>
-	<data name="Save" xml:space="preserve">
-		<value>Зберегти</value>
-	</data>
-	<data name="Cancel" xml:space="preserve">
-		<value>Скасувати</value>
-	</data>
-	<data name="Create" xml:space="preserve">
-		<value>Створити</value>
-	</data>
-
 </root>

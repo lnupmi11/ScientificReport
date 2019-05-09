@@ -1,7 +1,9 @@
+@using Microsoft.AspNetCore.Mvc.Localization
 @model ScientificReport.DTO.Models.Department.DepartmentEditModel
+@inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = "Edit";
+	ViewData["Title"] = Localizer["Edit"];
 	Layout = "_Layout";
 }
 
@@ -22,7 +24,7 @@
 	.hidden { display: none; }
 </style>
 
-<h3>Edit department</h3>
+<h3>@Localizer["Edit department"]</h3>
 <div class="row">
 <div class="col s12">
 	<div asp-validation-summary="All" class="validate"></div>
@@ -30,24 +32,23 @@
 		<div class="row">
 			<div class="input-field col s6">
 				<input asp-for="Title" type="text" class="validate">
-				<label asp-for="Title">Topic</label>
+				<label asp-for="Title">@Localizer["Title"]</label>
 				<span class="helper-text" asp-validation-for="Title" data-error="some data is in bad format" data-success=""></span>
 			</div>
 		</div>
 		
 		<div class="row">
 			<div class="input-field col s4">			
-				<label asp-for="SelectedHeadId" class="myLabel"></label>
+				<label asp-for="SelectedHeadId" class="myLabel">@Localizer["Selected Head Id"]</label>
 				@Html.DropDownListFor(x => Model.SelectedHeadId, new SelectList(Model.UserSelection, "Value", "Text"), new {@class = "col s12"})
 				@Html.ValidationMessageFor(x => x.SelectedHeadId, "", new {@class = "validate"})
 				<br/>
 				
 			</div>
-			
 		</div>
 		<div class="row">
 		<div class="col s6">
-			<label>Staff:</label>
+			<label>@Localizer["Staff"]:</label>
 			<div class="authors-list">
 				@if (Model.UserSelection != null && Model.Staff != null)
 				{
@@ -74,7 +75,7 @@
 			</div>
 		</div>
 		<div class="col s6">
-			<label>Scientific works:</label>
+			<label>@Localizer["Scientific works"]:</label>
 			<div class="authors-list">
 				@if (Model.ScientificWorkItems != null && Model.ScientificWorks != null)
 				{
@@ -95,13 +96,12 @@
 		</div>
 		</div>
 		<div class="row myButtons">
-			<input type="submit" value="Edit" class="waves-effect btn-small  amber accent-2"/>
-			<a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
+			<input type="submit" value="@Localizer["Edit"]" class="waves-effect btn-small  amber accent-2"/>
+			<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
 		</div>
 	</form>
 </div>
 </div>
-
 
 @section Scripts {
 	<script>

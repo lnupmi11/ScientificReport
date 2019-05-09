@@ -1,15 +1,14 @@
-@using System.Linq
+@using Microsoft.AspNetCore.Mvc.Localization
 @model ScientificReport.DTO.Models.Department.DepartmentCreateModel
+@inject IViewLocalizer Localizer
 
 @{
-	ViewBag.Title = "Create department";
+	ViewBag.Title = Localizer["Create"];
 	Layout = "_Layout";
 }
 
-
-
-<h3>Create department</h3>
-<h5>Create new department. Department will be created only if it does not exist.</h5>
+<h3>@Localizer["Create department"]</h3>
+<h5>@Localizer["Department will be created only if it does not exist"].</h5>
 <hr/>
 <div class="row">
 	<div class="col s12">
@@ -18,12 +17,12 @@
 			<div class="row">
 				<div class="input-field col s6">
 					<input asp-for="Title" type="text" class="validate">
-					<label asp-for="Title">Applicant Id</label>
+					<label asp-for="Title">@Localizer["Title"]</label>
 					<span class="helper-text" asp-validation-for="Title" data-error="some data is in bad format" data-success=""></span>
 				</div>
 			</div>
 			<div class="row">
-				<label asp-for="SelectedHeadId"></label>
+				<label asp-for="SelectedHeadId">@Localizer["Selected Head Id"]</label>
 				<div class="col s10">
 					@Html.DropDownListFor(x => Model.SelectedHeadId, new SelectList(Model.UserSelection, "Value", "Text"), new {@class = "col s6 push-s6"})
 					@Html.ValidationMessageFor(x => x.SelectedHeadId, "", new {@class = "validate"})
@@ -32,13 +31,12 @@
 			</div>
 
 			<div class="row myButtons">
-				<input type="submit" value="Create" class="waves-effect btn-small  amber accent-2"/>
-				<a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
+				<input type="submit" value="@Localizer["Create"]" class="waves-effect btn-small  amber accent-2"/>
+				<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
 			</div>
 		</form>
 	</div>
 </div>
-
 
 @section Scripts { 
 	<script type="text/javascript">

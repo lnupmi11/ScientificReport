@@ -17,7 +17,6 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-
     <data name="PostgraduateGuidance" xml:space="preserve">
 		<value>Наукове керівництво аспірантами</value>
 	</data>
@@ -36,5 +35,4 @@
 	<data name="Back to List" xml:space="preserve">
 		<value>Повернутися до списку</value>
 	</data>
-
 </root>

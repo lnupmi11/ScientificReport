@@ -3,54 +3,54 @@
 @inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = "Details";
+	ViewData["Title"] = Localizer["Details"];
 }
 <style>
-    .input-field, .row {
-        margin-bottom: 0px !important;
-        margin-top: 0 !important;
-    }
+	.input-field, .row {
+		margin-bottom: 0px !important;
+		margin-top: 0 !important;
+	}
 </style>
 
 <h3>@Localizer["Details"]</h3>
 
 <div>
-    <h5>PostgraduateDissertationGuidance</h5>
-    <hr />
-    <dl class="row">
-        <dt class = "col s2">
-            @Localizer[Html.DisplayNameFor(model => model.PostgraduateName)]
-        </dt>
-        <dd class = "col s10">
-            @Html.DisplayFor(model => model.PostgraduateName)
-        </dd>
-        <dt class = "col s2">
-            @Localizer[Html.DisplayNameFor(model => model.Dissertation)]
-        </dt>
-        <dd class = "col s10">
-            @Html.DisplayFor(model => model.Dissertation)
-        </dd>
-        <dt class = "col s2">
-            @Localizer[Html.DisplayNameFor(model => model.Speciality)]
-        </dt>
-        <dd class = "col s10">
-            @Html.DisplayFor(model => model.Speciality)
-        </dd>
-        <dt class = "col s2">
-            @Localizer[Html.DisplayNameFor(model => model.DateDegreeGained)]
-        </dt>
-        <dd class = "col s10">
-            @Html.DisplayFor(model => model.DateDegreeGained)
-        </dd>
-        <dt class = "col s2">
-            @Localizer[Html.DisplayNameFor(model => model.GraduationYear)]
-        </dt>
-        <dd class = "col s10">
-            @Html.DisplayFor(model => model.GraduationYear)
-        </dd>
-    </dl>
+	<h5>@Localizer["Postgraduate Dissertation Guidance"]</h5>
+	<hr />
+	<dl class="row">
+		<dt class = "col s2">
+			@Localizer[Html.DisplayNameFor(model => model.PostgraduateName)]
+		</dt>
+		<dd class = "col s10">
+			@Html.DisplayFor(model => model.PostgraduateName)
+		</dd>
+		<dt class = "col s2">
+			@Localizer[Html.DisplayNameFor(model => model.Dissertation)]
+		</dt>
+		<dd class = "col s10">
+			@Html.DisplayFor(model => model.Dissertation)
+		</dd>
+		<dt class = "col s2">
+			@Localizer[Html.DisplayNameFor(model => model.Speciality)]
+		</dt>
+		<dd class = "col s10">
+			@Html.DisplayFor(model => model.Speciality)
+		</dd>
+		<dt class = "col s2">
+			@Localizer[Html.DisplayNameFor(model => model.DateDegreeGained)]
+		</dt>
+		<dd class = "col s10">
+			@Html.DisplayFor(model => model.DateDegreeGained)
+		</dd>
+		<dt class = "col s2">
+			@Localizer[Html.DisplayNameFor(model => model.GraduationYear)]
+		</dt>
+		<dd class = "col s10">
+			@Html.DisplayFor(model => model.GraduationYear)
+		</dd>
+	</dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
-    <a asp-action="Index" class="btn-small blue darken-3">@Localizer["Back to List"]</a>
+	<a asp-action="Edit" asp-route-id="@Model.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
+	<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Back to List"]</a>
 </div>

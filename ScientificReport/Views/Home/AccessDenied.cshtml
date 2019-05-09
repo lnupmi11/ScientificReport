@@ -1,8 +1,11 @@
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
 @{
-    ViewData["Title"] = "Access denied";
+    ViewData["Title"] = Localizer["Access denied"];
 }
 
 <header>
     <h2 class="text-danger">@ViewData["Title"]</h2>
-    <p class="text-danger">Can not load this page due to user permissions.</p>
+    <p class="text-danger">@Localizer["Unable to load this page because of the lack of user permissions"].</p>
 </header>

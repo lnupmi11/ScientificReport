@@ -17,8 +17,6 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-
-
     <data name="Authors Patent License Activities" xml:space="preserve">
 		<value>Patent License Activities (Authors)</value>
 	</data>
@@ -28,11 +26,6 @@
 	<data name="PatentLicenseActivityId" xml:space="preserve">
 		<value>Patent License Activity Id</value>
 	</data>
-	
-	
-	
-	
-	
 	<data name="Create New" xml:space="preserve">
 		<value>Create New</value>
 	</data>
@@ -57,5 +50,4 @@
 	<data name="Back to List" xml:space="preserve">
 		<value>Back to List</value>
 	</data>
-
 </root>
