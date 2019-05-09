@@ -17,9 +17,6 @@
 	<data name="Postgraduate Dissertation Guidance" xml:space="preserve">
 		<value>Postgraduate Dissertation Guidance</value>
 	</data>
-	<data name="Create New" xml:space="preserve">
-		<value>Create New</value>
-	</data>
 	<data name="PostgraduateName" xml:space="preserve">
 		<value>PostgraduateName</value>
 	</data>
@@ -35,6 +32,9 @@
 	<data name="GraduationYear" xml:space="preserve">
 		<value>GraduationYear</value>
 	</data>
+	<data name="Create New" xml:space="preserve">
+		<value>Create New</value>
+	</data>
 	<data name="Details" xml:space="preserve">
 		<value>Details</value>
 	</data>
@@ -46,6 +46,9 @@
 	</data>
 	<data name="Save" xml:space="preserve">
 		<value>Save</value>
+	</data>
+	<data name="Create" xml:space="preserve">
+		<value>Create</value>
 	</data>
 	<data name="Cancel" xml:space="preserve">
 		<value>Cancel</value>

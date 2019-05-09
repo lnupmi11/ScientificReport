@@ -17,9 +17,6 @@
 		<data name="Postgraduate Dissertation Guidance" xml:space="preserve">
 		<value>Наукове консультування при написанні дисертацій</value>
 	</data>
-	<data name="Create New" xml:space="preserve">
-		<value>Створити нове</value>
-	</data>
 	<data name="PostgraduateName" xml:space="preserve">
 		<value>Ім'я дисертанта</value>
 	</data>
@@ -35,6 +32,9 @@
 	<data name="GraduationYear" xml:space="preserve">
 		<value>Рік закінчення аспірантури, докторантури</value>
 	</data>
+	<data name="Create New" xml:space="preserve">
+		<value>Створити нове</value>
+	</data>
 	<data name="Details" xml:space="preserve">
 		<value>Деталі</value>
 	</data>
@@ -46,6 +46,15 @@
 	</data>
 	<data name="Back to List" xml:space="preserve">
 		<value>Повернутися до списку</value>
+	</data>
+	<data name="Save" xml:space="preserve">
+		<value>Зберегти</value>
+	</data>
+	<data name="Cancel" xml:space="preserve">
+		<value>Скасувати</value>
+	</data>
+	<data name="Create" xml:space="preserve">
+		<value>Створити</value>
 	</data>
 
 </root>
