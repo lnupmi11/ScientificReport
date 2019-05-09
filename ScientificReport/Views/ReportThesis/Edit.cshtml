@@ -1,7 +1,9 @@
+@using Microsoft.AspNetCore.Mvc.Localization
 @model ScientificReport.DTO.Models.ReportThesis.ReportThesisEdit
+@inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = "Edit";
+	ViewData["Title"] = Localizer["Edit"];
 }
 <style type="text/css">
 	.authors-list {
@@ -11,25 +13,24 @@
 	.text-green { color: rgb(0, 179, 0); }
 	.text-red { color: rgb(177, 0, 0); }
 	.hidden { display: none; }
+	.cursor-pointer { cursor: pointer; }
 </style>
 
-
-<h4>ReportThesis</h4>
+<h4>@Localizer["ReportThesis"]</h4>
 <hr/>
 <div class="row">
 	<div class="col s12">
 		<form asp-action="Edit">
 			<div asp-validation-summary="ModelOnly" class="validate"></div>
 			<input type="hidden" asp-for="ReportThesis.Id"/>
-          
 			<div class="row">
 				<div class="input-field col s7">
 					<input asp-for="ReportThesis.Thesis" type="text" class="validate">
-					<label asp-for="ReportThesis.Thesis"></label>
+					<label asp-for="ReportThesis.Thesis">@Localizer["Thesis"]</label>
 					<span class="helper-text" asp-validation-for="ReportThesis.Thesis" data-error="" data-success=""></span>
 				</div>
 				<div class="col s6">
-					<h4>Authors:</h4>
+					<h4>@Localizer["Authors"]:</h4>
 					<div class="authors-list">
 						@if (Model.Users != null)
 						{
@@ -49,18 +50,14 @@
 					</div>
 				</div>
 			</div>
-			
-			
 			<div class="row">
 				<input type="submit" value="Save" class="waves-effect btn-small  amber accent-2"/>
-				<a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
+				<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
 			</div>
 		</form>
 	</div>
 	
 </div>
-
-
 
 <script>
 	const toggleAuthor = (endpoint, tagName) => (tag, id, authorId) => {

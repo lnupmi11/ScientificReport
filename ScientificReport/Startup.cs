@@ -1,13 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using ScientificReport.BLL.Interfaces;
 using ScientificReport.BLL.Services;
 using ScientificReport.DAL.DbContext;
@@ -92,8 +97,30 @@ namespace ScientificReport
 				options.AccessDeniedPath = "/Home/AccessDenied";
 				options.SlidingExpiration = true;
 			});
+			
+			services.AddLocalization(opts => { opts.ResourcesPath = "Resources"; });
+			services.Configure<RequestLocalizationOptions>(
+				opts =>
+				{
+					var supportedCultures = new List<CultureInfo>
+					{
+						new CultureInfo("uk-UA"),
+						new CultureInfo("en")
+					};
 
-			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+					opts.DefaultRequestCulture = new RequestCulture("en");
+					// Formatting numbers, dates, etc.
+					opts.SupportedCultures = supportedCultures;
+					// UI strings that we have localized.
+					opts.SupportedUICultures = supportedCultures;
+				});
+
+			services.AddMvc()
+				.SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+				.AddViewLocalization(
+					LanguageViewLocationExpanderFormat.Suffix,
+					opts => { opts.ResourcesPath = "Resources"; })
+				.AddDataAnnotationsLocalization();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -115,6 +142,9 @@ namespace ScientificReport
 			
 			app.UseAuthentication();
 
+			var options = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
+			app.UseRequestLocalization(options.Value);
+			
 			app.UseMvc(routes =>
 			{
 				routes.MapRoute(
