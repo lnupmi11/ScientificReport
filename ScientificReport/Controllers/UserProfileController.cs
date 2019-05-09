@@ -11,7 +11,7 @@ using ScientificReport.DTO.Models.UserProfile;
 
 namespace ScientificReport.Controllers
 {
-	[Authorize(Roles = UserProfileRole.Administrator)]
+//	[Authorize(Roles = UserProfileRole.Administrator)]
 	public class UserProfileController : Controller
 	{
 		private readonly UserManager<UserProfile> _userManager;

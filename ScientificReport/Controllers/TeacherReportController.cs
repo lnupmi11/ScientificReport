@@ -7,6 +7,7 @@ using ScientificReport.DTO.Models.TeacherReport;
 
 namespace ScientificReport.Controllers
 {
+//	[Authorize(Roles = UserProfileRole.Teacher)]
 	public class TeacherReportController : Controller
 	{
 		private readonly ITeacherReportService _teacherReportService;

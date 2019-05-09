@@ -6,6 +6,7 @@ using ScientificReport.DAL.Entities;
 
 namespace ScientificReport.Controllers
 {
+//	[Authorize(Roles = UserProfileRole.Teacher)]
 	public class MembershipController : Controller
 	{
 		private readonly IMembershipService _membershipService;

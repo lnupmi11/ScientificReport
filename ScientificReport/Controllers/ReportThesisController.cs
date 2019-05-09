@@ -14,6 +14,7 @@ using ScientificReport.DTO.Models.ScientificWorks;
 
 namespace ScientificReport.Controllers
 {
+//	[Authorize(Roles = UserProfileRole.Teacher)]
 	public class ReportThesisController : Controller
 	{
 		private readonly IReportThesisService _reportThesisService;
