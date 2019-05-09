@@ -82,18 +82,24 @@
 		color: white;
 		font-size: 20px;
 	}
+	.oneMoreStyle {
+		position: relative;
+		bottom: 2px;
+	}
 </style>
 @if (requestCulture != null)
 {
-	<form id="selectLanguage" asp-controller="Home" class="form-inline"
+	<form id="selectLanguage" asp-controller="Home" class="form-inline oneMoreStyle"
 	      asp-action="SetLanguage" asp-route-returnUrl="@Context.Request.Path"
 	      method="post" role="form">
-		<label for="selectLanguage">@Localizer["Language"]:</label>
 		<input type="hidden" name="culture" value="@cultureItems[0].Value"/>
 		<button type="submit" class="waves-effect btn-small  amber accent-2">@Localizer[cultureItems[0].Text]</button>
+	</form>
+	<form  id="selectLanguage" asp-controller="Home" class="form-inline"
+	       asp-action="SetLanguage" asp-route-returnUrl="@Context.Request.Path"
+	       method="post" role="form">
+		<label for="selectLanguage">@Localizer["Language"]:</label>
 		<input type="hidden" name="culture" value="@cultureItems[1].Value"/>
 		<button type="submit" class="waves-effect btn-small  amber accent-2">@Localizer[cultureItems[1].Text]</button>
-
-
 	</form>
 }
