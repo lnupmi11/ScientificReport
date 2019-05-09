@@ -26,17 +26,19 @@
 				</div>
 			
 				<div class="input-field col s4">
-					<input asp-for="MiddleName" type="text" class="validate">
-					<label asp-for="MiddleName"></label>
-					<span class="helper-text" asp-validation-for="MiddleName" data-error="" data-success=""></span>
-				</div>
-			
-				<div class="input-field col s4">
 					<input asp-for="LastName" type="text" class="validate">
 					<label asp-for="LastName"></label>
 					<span class="helper-text" asp-validation-for="LastName" data-error="" data-success=""></span>
 				</div>
+				
+				<div class="input-field col s4">
+					<input asp-for="MiddleName" type="text" class="validate">
+					<label asp-for="MiddleName"></label>
+					<span class="helper-text" asp-validation-for="MiddleName" data-error="" data-success=""></span>
+				</div>
+			</div>
 			
+			<div class="row">
 				<div class="input-field col s8">
 					<input asp-for="PhoneNumber" type="text" class="validate">
 					<label asp-for="PhoneNumber"></label>
