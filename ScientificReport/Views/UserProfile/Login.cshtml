@@ -8,9 +8,11 @@
 }
 
 <style>
+
 	input[type="submit"] {
 		color: white !important;
 	}
+	
 </style>
 <h1>@Localizer["Log In"]</h1>
 <div asp-validation-summary="All" class="text-danger validation-summary-valid"></div>
@@ -39,7 +41,7 @@
 		</label>
 	</div>
 	
-	<div class="row">
+	<div class="row myButtons">
 		<input type="submit" value="@Localizer["Log In"]" class="waves-effect btn-small  waves-light"/>
 		<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
 	</div>

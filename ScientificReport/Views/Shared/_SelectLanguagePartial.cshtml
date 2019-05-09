@@ -9,22 +9,91 @@
 @{
 	var requestCulture = Context.Features.Get<IRequestCultureFeature>();
 	var cultureItems = LocOptions.Value.SupportedUICultures
-		.Select(c => new SelectListItem { Value = c.Name, Text = c.DisplayName })
+		.Select(c => new SelectListItem {Value = c.Name, Text = c.DisplayName})
 		.ToList();
 }
 
+<style>
+	/* form { */
+	/* 	-webkit-flex: 1 0 auto; */
+	/* 	-ms-flex: 1 0 auto; */
+	/* 	-o-flex: 1 0 auto; */
+	/* 	flex: 1 0 auto; */
+	/* 	display: flex; */
+	/* 	flex-direction: column; */
+	/* } */
+	/* Style the form - display items horizontally */
+	.form-inline {
+		display: flex;
+		float: right;
+		position: relative;
+		bottom: 6px;
+		-moz-flex-flow: row wrap;
+		-ms-flex-flow: row wrap;
+		-o-flex-flow: row wrap;
+		-webkit-flex-flow: row wrap;
+		flex-flow: row wrap;
+		-ms-align-items: center;
+		-o-align-items: center;
+		-webkit-align-items: center;
+		align-items: center;
+		
+	}
+
+	/* Add some margins for each label */
+
+	.form-inline label { margin: 5px 10px 5px 0; }
+
+	/* Style the input fields */
+
+	.form-inline input {
+		vertical-align: middle;
+		margin: 5px 10px 5px 0;
+		padding: 10px;
+		background-color: #fff;
+	}
+
+	/* Style the submit button */
+
+	.form-inline button {
+		/* padding: 10px 20px !important; */
+		/* padding-bottom: 20px; */
+		margin-left: 6px;
+		margin-right: 6px;
+		color: black !important;
+	}
+
+
+	/* Add responsiveness - display the form controls vertically instead of horizontally on screens that are less than 800px wide */
+
+	@@media (max-width: 800px) {
+		.form-inline input { margin: 10px 0; }
+
+		.form-inline {
+			flex-direction: column;
+			-ms-align-items: stretch;
+			-o-align-items: stretch;
+			-webkit-align-items: stretch;
+			align-items: stretch;
+		}
+	}
+	
+	label {
+		color: white;
+		font-size: 20px;
+	}
+</style>
 @if (requestCulture != null)
 {
-	<div>
-		<p style="display: inline">@Localizer["Language"]:</p>
-		@foreach (var culture in cultureItems)
-		{
-			<form id="selectLanguage" asp-controller="Home" style="display: inline"
-			      asp-action="SetLanguage" asp-route-returnUrl="@Context.Request.Path"
-			      method="post" class="form-horizontal" role="form">
-				<input type="hidden" name="culture" value="@culture.Value"/>
-				<button type="submit" class="btn btn-default btn-xs">@Localizer[culture.Text]</button>
-			</form>
-		}
-	</div>	
+	<form id="selectLanguage" asp-controller="Home" class="form-inline"
+	      asp-action="SetLanguage" asp-route-returnUrl="@Context.Request.Path"
+	      method="post" role="form">
+		<label for="selectLanguage">@Localizer["Language"]:</label>
+		<input type="hidden" name="culture" value="@cultureItems[0].Value"/>
+		<button type="submit" class="waves-effect btn-small  amber accent-2">@Localizer[cultureItems[0].Text]</button>
+		<input type="hidden" name="culture" value="@cultureItems[1].Value"/>
+		<button type="submit" class="waves-effect btn-small  amber accent-2">@Localizer[cultureItems[1].Text]</button>
+
+
+	</form>
 }

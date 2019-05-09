@@ -6,6 +6,12 @@
 }
 
 <style type="text/css">
+	.myLabel {
+		/* margin-bottom: 10px; */
+		position: relative !important;
+		left: 0px !important;
+		font-size: 12.5px !important;
+	}
 	.roles-list {
 		overflow-y: scroll;
 		height: 400px;
@@ -16,73 +22,86 @@
 	.hidden { display: none; }
 </style>
 
-<div class="bg-primary m-1 p-1 text-white"><h4>Edit department</h4></div>
-<div asp-validation-summary="All" class="text-danger"></div>
-<form asp-action="Edit" method="post">
-	<div class="form-group">
-		<label asp-for="Title"></label>
-		<input asp-for="Title" class="form-control"/>
-	</div>
-	<div class="form-group">
-		<label asp-for="SelectedHeadId"></label>
-		<div class="col-md-5">
-			@Html.DropDownListFor(x => Model.SelectedHeadId, new SelectList(Model.UserSelection, "Value", "Text"), new { @class = "form-control"})
-			@Html.ValidationMessageFor(x => x.SelectedHeadId, "", new { @class = "text-danger" })
+<h3>Edit department</h3>
+<div class="row">
+<div class="col s12">
+	<div asp-validation-summary="All" class="validate"></div>
+	<form asp-action="Edit" method="post">
+		<div class="row">
+			<div class="input-field col s6">
+				<input asp-for="Title" type="text" class="validate">
+				<label asp-for="Title">Topic</label>
+				<span class="helper-text" asp-validation-for="Title" data-error="some data is in bad format" data-success=""></span>
+			</div>
 		</div>
-	</div>
-	<div class="col-md-4">
-		<label>Staff:</label>
-		<div class="authors-list">
-			@if (Model.UserSelection != null && Model.Staff != null)
-			{
-				foreach (var user in Model.UserSelection)
+		
+		<div class="row">
+			<div class="input-field col s4">			
+				<label asp-for="SelectedHeadId" class="myLabel"></label>
+				@Html.DropDownListFor(x => Model.SelectedHeadId, new SelectList(Model.UserSelection, "Value", "Text"), new {@class = "col s12"})
+				@Html.ValidationMessageFor(x => x.SelectedHeadId, "", new {@class = "validate"})
+				<br/>
+				
+			</div>
+			
+		</div>
+		<div class="row">
+		<div class="col s6">
+			<label>Staff:</label>
+			<div class="authors-list">
+				@if (Model.UserSelection != null && Model.Staff != null)
 				{
-					if (user != null)
+					foreach (var user in Model.UserSelection)
 					{
-						var contains = Model.Staff.Any(s => s.Id.ToString().Equals(user.Value));
-						<p>
-							@if (!Model.Head.Id.ToString().Equals(user.Value))
-							{
-								<i class="add-user fas fa-plus-circle fa-lg cursor-pointer text-green @(contains ? "hidden" : "")" onclick="addUserToStaff(this, '@user.Value', '@Model.DepartmentId')"></i>
-								<i class="remove-user fas fa-minus-circle fa-lg cursor-pointer text-red @(contains ? "" : "hidden")" onclick="removeUserFromStaff(this, '@user.Value', '@Model.DepartmentId')"></i>
-							}
-							else
-							{
-								<i class="remove-user fas fa-minus-circle fa-lg" title="Can not remove head of department"></i>	
-							}
-							@user.Text
-						</p>
+						if (user != null)
+						{
+							var contains = Model.Staff.Any(s => s.Id.ToString().Equals(user.Value));
+							<p>
+								@if (!Model.Head.Id.ToString().Equals(user.Value))
+								{
+									<i class="add-user fas fa-plus-circle fa-lg cursor-pointer text-green @(contains ? "hidden" : "")" onclick="addUserToStaff(this, '@user.Value', '@Model.DepartmentId')"></i>
+									<i class="remove-user fas fa-minus-circle fa-lg cursor-pointer text-red @(contains ? "" : "hidden")" onclick="removeUserFromStaff(this, '@user.Value', '@Model.DepartmentId')"></i>
+								}
+								else
+								{
+									<i class="remove-user fas fa-minus-circle fa-lg" title="Can not remove head of department"></i>
+								}
+								@user.Text
+							</p>
+						}
 					}
 				}
-			}
+			</div>
 		</div>
-	</div>
-	<div class="col-md-4">
-		<label>Scientific works:</label>
-		<div class="authors-list">
-			@if (Model.ScientificWorkItems != null && Model.ScientificWorks != null)
-			{
-				foreach (var scientificWork in Model.ScientificWorkItems)
+		<div class="col s6">
+			<label>Scientific works:</label>
+			<div class="authors-list">
+				@if (Model.ScientificWorkItems != null && Model.ScientificWorks != null)
 				{
-					if (scientificWork != null)
+					foreach (var scientificWork in Model.ScientificWorkItems)
 					{
-						var contains = Model.ScientificWorks.Any(sw => sw.Id.ToString().Equals(scientificWork.Value));
-						<p>
-							<i class="add-scientific-work fas fa-plus-circle fa-lg cursor-pointer text-green @(contains ? "hidden" : "")" onclick="addScientificWork(this, '@scientificWork.Value', '@Model.DepartmentId')"></i>
-							<i class="remove-scientific-work fas fa-minus-circle fa-lg cursor-pointer text-red @(contains ? "" : "hidden")" onclick="removeScientificWork(this, '@scientificWork.Value', '@Model.DepartmentId')"></i>
-							@scientificWork.Text
-						</p>
+						if (scientificWork != null)
+						{
+							var contains = Model.ScientificWorks.Any(sw => sw.Id.ToString().Equals(scientificWork.Value));
+							<p>
+								<i class="add-scientific-work fas fa-plus-circle fa-lg cursor-pointer text-green @(contains ? "hidden" : "")" onclick="addScientificWork(this, '@scientificWork.Value', '@Model.DepartmentId')"></i>
+								<i class="remove-scientific-work fas fa-minus-circle fa-lg cursor-pointer text-red @(contains ? "" : "hidden")" onclick="removeScientificWork(this, '@scientificWork.Value', '@Model.DepartmentId')"></i>
+								@scientificWork.Text
+							</p>
+						}
 					}
 				}
-			}
+			</div>
 		</div>
-	</div>
-	<button type="submit" class="btn btn-primary">Save</button>
-	<a asp-action="Index" class="btn btn-secondary">Cancel</a>
-</form>
-<div>
-	<a asp-action="Index">Back to List</a>
+		</div>
+		<div class="row myButtons">
+			<input type="submit" value="Edit" class="waves-effect btn-small  amber accent-2"/>
+			<a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
+		</div>
+	</form>
 </div>
+</div>
+
 
 @section Scripts {
 	<script>
@@ -114,6 +133,11 @@
 		};
 		const addScientificWork = toggle('remove-scientific-work', 'AddScientificWork', scientificWorkBody);
 		const removeScientificWork = toggle('add-scientific-work', 'RemoveScientificWork', scientificWorkBody);
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('select').formSelect();
+		});
 	</script>
 	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

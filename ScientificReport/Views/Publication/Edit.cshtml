@@ -6,9 +6,9 @@
 	ViewData["Title"] = "Edit";
 }
 
-<h1>@Localizer["Edit"]</h1>
+<h3>@Localizer["Edit"]</h3>
 
-<h4>@Localizer["Publication"]</h4>
+<h5>@Localizer["Publication"]</h5>
 <hr/>
 <div class="row">
 	<div class="col s12">
@@ -69,18 +69,7 @@
 					<span class="helper-text" asp-validation-for="PublishingYear" data-error="" data-success=""></span>
 				</div>
 			</div>
-			<div class="row">
-				<label class="col s7">
-					<input type="checkbox" class="filled-in" asp-for="IsPrintCanceled"/>
-					<span>@Localizer[Html.DisplayNameFor(model => model.IsPrintCanceled)]</span>
-				</label>
-			</div>
-			<div class="row">
-				<label class="col s7">
-					<input type="checkbox" class="filled-in" asp-for="IsRecommendedToPrint"/>
-					<span>@Localizer[Html.DisplayNameFor(model => model.IsRecommendedToPrint)]</span>
-				</label>
-			</div>
+
 			<div class="row">
 				<div class="input-field col s7">
 					<input asp-for="PagesAmount" type="number" class="validate">
@@ -91,18 +80,29 @@
 			<div class="row">
 				<div class="input-field col s6">
 					<input asp-for="CreatedAt" type="date" class="validate">
-					<label asp-for="CreatedAt">Password</label>
+					<label asp-for="CreatedAt"></label>
 					<span asp-validation-for="CreatedAt" data-error="" data-success=""></span>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s6">
 					<input asp-for="LastEditAt" type="date" class="validate">
-					<label asp-for="LastEditAt">Password</label>
+					<label asp-for="LastEditAt"></label>
 					<span asp-validation-for="LastEditAt" data-error="" data-success=""></span>
 				</div>
 			</div>
-			<div class="row">
+						<div class="row">
+				<label class="col s7">
+					<input type="checkbox" class="filled-in" asp-for="IsPrintCanceled"/>
+					<span>@Localizer[Html.DisplayNameFor(model => model.IsPrintCanceled)]</span>
+				</label>
+		
+				<label class="col s7">
+					<input type="checkbox" class="filled-in" asp-for="IsRecommendedToPrint"/>
+					<span>@Localizer[Html.DisplayNameFor(model => model.IsRecommendedToPrint)]</span>
+				</label>
+			</div>
+			<div class="row myButtons">
 				<input type="submit" value="@Localizer["Save"]" class="waves-effect btn-small  amber accent-2"/>
 				<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
 			</div>

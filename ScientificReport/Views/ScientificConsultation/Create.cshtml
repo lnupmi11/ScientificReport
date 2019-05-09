@@ -6,9 +6,9 @@
     ViewData["Title"] = Localizer["Create"];
 }
 
-<h1>@Localizer["Create"]</h1>
+<h3>@Localizer["Create"]</h3>
 
-<h4>@Localizer["ScientificConsultation"]</h4>
+<h5>@Localizer["ScientificConsultation"]</h5>
 <hr />
 <div class="row">
     <div class="col s12">
@@ -28,8 +28,10 @@
                     <span class="helper-text" asp-validation-for="DissertationTitle" data-error="" data-success=""></span>
                 </div>
             </div>
-            <div class="row">
-                <input type="submit" value="@Localizer["Create"]" class="waves-effect btn-small  amber accent-2"/>
+            <div class="row myButtons">
+                <input
+                 type="submit" value="@Localizer["Create"]" 
+                 class="waves-effect btn-small  amber accent-2"/>
                 <a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
             </div>
         </form>

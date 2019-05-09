@@ -5,12 +5,13 @@
 @{
     ViewData["Title"] = Localizer["Edit"];
 }
+
 <style type="text/css">
     .authors-list {
         overflow-y: scroll;
         height: 100px;
     }
-
+ 
     .text-green { color: rgb(0, 179, 0); }
 
     .text-red { color: rgb(177, 0, 0); }
@@ -18,7 +19,7 @@
     .hidden { display: none; }
 </style>
 
-<h4>@Localizer["ScientificWork"]</h4>
+<h5>@Localizer["ScientificWork"]</h5>
 <hr/>
 <div class="row">
     <div class="col s12">
@@ -76,7 +77,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row myButtons">
                 <input type="submit" value="@Localizer["Create"]" class="waves-effect btn-small  amber accent-2"/>
                 <a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
             </div>
