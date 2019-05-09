@@ -1,12 +1,9 @@
 var a00090 =
 [
-    [ "PostgraduateDissertationGuidanceService", "a00090.html#a0704cab3354522bb03ef5d34598d5a58", null ],
-    [ "CreateItem", "a00090.html#ab43e26841685e9a8a8587bcb3aca5f56", null ],
-    [ "DeleteById", "a00090.html#a003e15733def65d16e513a4b67b27fd7", null ],
-    [ "Exists", "a00090.html#a0cd4a02174c9e500673695d8e6ea9309", null ],
-    [ "Get", "a00090.html#abba92bb22c6b06c5da0f665fa5603ba4", null ],
-    [ "GetAll", "a00090.html#a745a0be150394724a2ee68a17eee379d", null ],
-    [ "GetAllWhere", "a00090.html#a412c3a9c5ebd0ef24e8fa72d2b9b1416", null ],
-    [ "GetById", "a00090.html#a493c8060034278c57cc91c2b42fae42f", null ],
-    [ "UpdateItem", "a00090.html#af53bce4fa4bad730fd9bfe56fcf039f4", null ]
+    [ "AllTest", "a00090.html#aad76281ce768dddbdfbe100de27122ab", null ],
+    [ "AllWhereTest", "a00090.html#aebac1eca10ab3e22cc4ae0b02916e127", null ],
+    [ "CreateTest", "a00090.html#a104de91eaa42994a7743a00608c53f86", null ],
+    [ "DeleteTest", "a00090.html#ae1e6d5db3eeb06800dad0f91cac316cf", null ],
+    [ "GetByIdTest", "a00090.html#a97367c3edaa24dc81b212dea70e2fbb4", null ],
+    [ "UpdateTest", "a00090.html#a9d6eab32b2987dab3544b5d08e75f401", null ]
 ];

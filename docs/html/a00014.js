@@ -1,7 +1,7 @@
 var a00014 =
 [
-    [ "Coauthor", "a00014.html#adf5b5d09c497676dc9a1e22060fb5538", null ],
-    [ "Id", "a00014.html#adbf75cb6deab63ac61f22db8e6d06fc8", null ],
-    [ "PatentLicenseActivity", "a00014.html#a420234f08a231c0c121e33d993286360", null ],
-    [ "PatentLicenseActivityId", "a00014.html#afe4d5537e0270f0b3541308c5391b7c8", null ]
+    [ "CoApplicant", "a00014.html#a7d807e465139158f5020863e693febbf", null ],
+    [ "Id", "a00014.html#aa2a3d0c78fcc7c261a78aaa9a8dad2eb", null ],
+    [ "PatentLicenseActivity", "a00014.html#aeb621d1b2d9226d29329f219dd0b51b7", null ],
+    [ "PatentLicenseActivityId", "a00014.html#a8c9c8f154b6f927782d3ac948fc19e06", null ]
 ];

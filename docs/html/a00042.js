@@ -1,12 +1,12 @@
 var a00042 =
 [
-    [ "GrantRepository", "a00042.html#aa651795759d65a89cb46de0c88aa7a78", null ],
-    [ "All", "a00042.html#a8ad6fd8449847705b285bdeda8a3a4f6", null ],
-    [ "AllWhere", "a00042.html#aaccfbdf5c601fbb7e2c87e490772e094", null ],
-    [ "Create", "a00042.html#af3cf42cfafe8387dce56aac3d018cdb0", null ],
-    [ "Delete", "a00042.html#aa296a0816b1978bf53ea8e8aa5416507", null ],
-    [ "Get", "a00042.html#a313e6b78cf340762a86f2f252100505e", null ],
-    [ "Get", "a00042.html#aefc488c647294c9977aa6575297bb5a5", null ],
-    [ "GetQuery", "a00042.html#acd2a1bf7a880e73e9809606f07376b8b", null ],
-    [ "Update", "a00042.html#ac7fe66ab2fa0e3f5cdadf78bd4348fe0", null ]
+    [ "GrantController", "a00042.html#a0d165df2dfcee9cd69079eff658a1baf", null ],
+    [ "Create", "a00042.html#a20007cf1c8b9220db1b893441e9ecd10", null ],
+    [ "Create", "a00042.html#a872817593fd76ee39d06c3f8237e70cb", null ],
+    [ "Delete", "a00042.html#a743aa8598020cd54a4909d55b4816149", null ],
+    [ "DeleteConfirmed", "a00042.html#a5102d5321f1e8d09b5dbb318ee72d9f8", null ],
+    [ "Details", "a00042.html#a1c87214d38727b219608b8b959c7955a", null ],
+    [ "Edit", "a00042.html#a8c6a5f40de5db9636cf48677e63456c9", null ],
+    [ "Edit", "a00042.html#a325fdc7aacd51c61395a3f483da59add", null ],
+    [ "Index", "a00042.html#a866eacfd017b465f6541b85620890571", null ]
 ];

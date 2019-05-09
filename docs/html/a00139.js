@@ -1,12 +1,14 @@
 var a00139 =
 [
-    [ "ScientificWorkRepository", "a00139.html#a497a11912f102fcf683a012bb8ff0d60", null ],
-    [ "All", "a00139.html#a4db7373fbc129f3513e793138386fc7b", null ],
-    [ "AllWhere", "a00139.html#a878ef7ee7490ea3fd3bdcc86dc5a89e2", null ],
-    [ "Create", "a00139.html#aec89dcb6cab9a3c2eebc258bae6bb23e", null ],
-    [ "Delete", "a00139.html#a87d4ae75c1475190756ccaaf28349d34", null ],
-    [ "Get", "a00139.html#ae265f3e5f72714bee750a420adf64a52", null ],
-    [ "Get", "a00139.html#a96f5d2a02b1f88019914434b981f54f6", null ],
-    [ "GetQuery", "a00139.html#af80e9238cdaea2ccd1d50f8b7ddae92c", null ],
-    [ "Update", "a00139.html#a701d88396dd35c6547696e6af002dbc5", null ]
+    [ "ScientificWorkController", "a00139.html#a6b2820e98813d5e11c07b8c154131c8f", null ],
+    [ "AddAuthor", "a00139.html#a71fa6d15933924ecdeff87eeec4de7f7", null ],
+    [ "Create", "a00139.html#a6f0d3e30f7fe1da3b839b1e37431fa28", null ],
+    [ "Create", "a00139.html#a6f339bf02af981c9b77871de8483d7ec", null ],
+    [ "Delete", "a00139.html#a6cb186af0c903b8efcb2f5f818d8a308", null ],
+    [ "DeleteAuthor", "a00139.html#a096b1a3d2f5073b679577474e192287b", null ],
+    [ "DeleteConfirmed", "a00139.html#a46d0a64f1bc83d1ca1ed8c8c6cee393f", null ],
+    [ "Details", "a00139.html#abe09e781b55cebcd436991546295535a", null ],
+    [ "Edit", "a00139.html#ab053f61e772332e278284c8a7e4eb55b", null ],
+    [ "Edit", "a00139.html#a0a7fe6ecc4a4236b16a9737ee1571541", null ],
+    [ "Index", "a00139.html#ae0cec3b02cf8ca05efe687ca7f207900", null ]
 ];

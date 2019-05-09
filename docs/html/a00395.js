@@ -1,4 +1,6 @@
 var a00395 =
 [
-    [ "TeacherReportCreateViewModel", "a00150.html", "a00150" ]
+    [ "ReportThesisAuthorRequest", "a00109.html", "a00109" ],
+    [ "ReportThesisDetails", "a00111.html", "a00111" ],
+    [ "ReportThesisEdit", "a00112.html", "a00112" ]
 ];

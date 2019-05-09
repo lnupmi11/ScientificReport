@@ -1,6 +1,8 @@
 var a00170 =
 [
-    [ "Id", "a00170.html#aba6a4de243b57aebe596410aa8cafd5d", null ],
-    [ "ReportThesis", "a00170.html#a3c9bac7405683b31b0bc6a61010caee8", null ],
-    [ "UserProfile", "a00170.html#a663c6da79e0d4ee5172aa92097588653", null ]
+    [ "Id", "a00170.html#a1ff0ebd054672535a612558fb07ba786", null ],
+    [ "Publication", "a00170.html#a078e4ecfa24d141c6a9f3db2c8d6b29a", null ],
+    [ "PublicationId", "a00170.html#a4b517d67d822ba5ea5fb0cbc750393c4", null ],
+    [ "UserProfile", "a00170.html#ac19a349311f82cb61da9c46621e662fb", null ],
+    [ "UserProfileId", "a00170.html#a82eba90e34f017c93c1bb642e40e3f2d", null ]
 ];

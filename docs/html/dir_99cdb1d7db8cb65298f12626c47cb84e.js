@@ -6,7 +6,7 @@ var dir_99cdb1d7db8cb65298f12626c47cb84e =
     [ "ScientificWorks", "dir_e5e2cd2e225f71fa85792eda7c996d3f.html", "dir_e5e2cd2e225f71fa85792eda7c996d3f" ],
     [ "TeacherReport", "dir_fe2315f70b5ec5d6151e7fe7ac7dd377.html", "dir_fe2315f70b5ec5d6151e7fe7ac7dd377" ],
     [ "UserProfile", "dir_9c36cc6f40a5cdd0088fde5811d22019.html", "dir_9c36cc6f40a5cdd0088fde5811d22019" ],
-    [ "ErrorViewModel.cs", "a00275.html", [
-      [ "ErrorViewModel", "a00036.html", "a00036" ]
+    [ "ErrorViewModel.cs", "a00276.html", [
+      [ "ErrorViewModel", "a00037.html", "a00037" ]
     ] ]
 ];

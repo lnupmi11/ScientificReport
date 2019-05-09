@@ -1,9 +1,9 @@
 var a00164 =
 [
-    [ "UserProfileRole", "a00164.html#a9699311710d43a5af5de6623914a1b3c", null ],
-    [ "Administrator", "a00164.html#ad30d0fc50493dfa9453fa7651e1bf88c", null ],
-    [ "Any", "a00164.html#ae99407f17e76c3009eb2f1c3772cfb43", null ],
-    [ "HeadOfDepartment", "a00164.html#ad6a18be97146be4cdcb150df239e35ae", null ],
-    [ "HeadOfDepartmentOrAdmin", "a00164.html#a4f3e774d1843ff13195312057b15a34a", null ],
-    [ "Teacher", "a00164.html#ab5dbd2035d47221619c9d9836fffcac4", null ]
+    [ "AllTest", "a00164.html#a44ac0cba3d4d25663893da4f9cb8d34d", null ],
+    [ "AllWhereTest", "a00164.html#af204cd10414f8c94e9ca13f167dfbb60", null ],
+    [ "CreateTest", "a00164.html#a607fe1f55a9099d5ab9d4d4d4221bb25", null ],
+    [ "DeleteTest", "a00164.html#a70745e34b81c75011493d0d746f9c484", null ],
+    [ "GetByIdTest", "a00164.html#a7d11c8c8dcc5ad939f30461c5ebfc256", null ],
+    [ "UpdateTest", "a00164.html#a9363c310693aa5e574d481903f690dca", null ]
 ];

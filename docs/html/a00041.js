@@ -1,12 +1,5 @@
 var a00041 =
 [
-    [ "GrantController", "a00041.html#a0d165df2dfcee9cd69079eff658a1baf", null ],
-    [ "Create", "a00041.html#a20007cf1c8b9220db1b893441e9ecd10", null ],
-    [ "Create", "a00041.html#a872817593fd76ee39d06c3f8237e70cb", null ],
-    [ "Delete", "a00041.html#a743aa8598020cd54a4909d55b4816149", null ],
-    [ "DeleteConfirmed", "a00041.html#a5102d5321f1e8d09b5dbb318ee72d9f8", null ],
-    [ "Details", "a00041.html#a1c87214d38727b219608b8b959c7955a", null ],
-    [ "Edit", "a00041.html#a8c6a5f40de5db9636cf48677e63456c9", null ],
-    [ "Edit", "a00041.html#a325fdc7aacd51c61395a3f483da59add", null ],
-    [ "Index", "a00041.html#a866eacfd017b465f6541b85620890571", null ]
+    [ "Id", "a00041.html#ab0a08ab4af244e554195f95581130664", null ],
+    [ "UserProfilesGrants", "a00041.html#a98ccefa7f82dbf6a0e466d16b7be30e8", null ]
 ];

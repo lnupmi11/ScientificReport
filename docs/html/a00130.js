@@ -1,12 +1,12 @@
 var a00130 =
 [
-    [ "ScientificInternshipRepository", "a00130.html#ab12a4c8cdafae6b5384f589e55138848", null ],
-    [ "All", "a00130.html#a831125ba9f8b91cefeab7fdd8ecb8550", null ],
-    [ "AllWhere", "a00130.html#a81878baec308259d671046913e6742f9", null ],
-    [ "Create", "a00130.html#a82692c5517f6d5fa5bd86f95578b7900", null ],
-    [ "Delete", "a00130.html#a04001dfc6ec10b0ff728d62645594448", null ],
-    [ "Get", "a00130.html#af6ae4809bbd830ae67fbbc061a97341c", null ],
-    [ "Get", "a00130.html#ae9c02f5ec537e892045db787c41fe592", null ],
-    [ "GetQuery", "a00130.html#a52ef362858c073f36813f425fa81398f", null ],
-    [ "Update", "a00130.html#abcc5aa0759cbfdc5370b065477721a26", null ]
+    [ "ScientificInternshipController", "a00130.html#a3d65e6f140431164997819939c074d25", null ],
+    [ "Create", "a00130.html#afa569454aa9edc7452da3512effec672", null ],
+    [ "Create", "a00130.html#a3af57818daf44c1e0b8bbdde57ed13c5", null ],
+    [ "Delete", "a00130.html#acc2e7f537c8b0b5ecdbb66665d5e94fa", null ],
+    [ "DeleteConfirmed", "a00130.html#a01016025f606e784683ffda4f35dd7ee", null ],
+    [ "Details", "a00130.html#a376057d7720c50352474c9d101f73ca6", null ],
+    [ "Edit", "a00130.html#a22622aad71090b1ead593a5c8a66f8b1", null ],
+    [ "Edit", "a00130.html#ae562d172d72f84c0d626621aaf798787", null ],
+    [ "Index", "a00130.html#a60f6969fa87af15b0c520b4b28427440", null ]
 ];

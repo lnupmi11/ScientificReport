@@ -1,12 +1,12 @@
 var a00076 =
 [
-    [ "OppositionRepository", "a00076.html#a73be336a2c0d4f64f4ffbe3fed1ac04e", null ],
-    [ "All", "a00076.html#a22543ef65ac0b0f9293e21c716db47f4", null ],
-    [ "AllWhere", "a00076.html#ad6a167250d08b47b1ffc24a70bb6d0d1", null ],
-    [ "Create", "a00076.html#af2ed6842572f96324a4c294d48a6408f", null ],
-    [ "Delete", "a00076.html#a07aeee4f2b6203869052b1dfd24b5bf9", null ],
-    [ "Get", "a00076.html#a1a57611bfb9e36692076fd1e5cb0551d", null ],
-    [ "Get", "a00076.html#a7965dc25750e325118db1cfb635395dc", null ],
-    [ "GetQuery", "a00076.html#ab6734d5ed064b59cf56cd7017575e8a9", null ],
-    [ "Update", "a00076.html#ac10b898061c9057b51926cb3ced54483", null ]
+    [ "OppositionController", "a00076.html#a25bd7c148b5a6e6fb32a7ffcd364304d", null ],
+    [ "Create", "a00076.html#ad0dab5a26a26f835f50757af8a90479e", null ],
+    [ "Create", "a00076.html#afc69f06116db88e9f4ace81a81dfe04d", null ],
+    [ "Delete", "a00076.html#a86ba850a42610b8adc2e7d226fb5bb69", null ],
+    [ "DeleteConfirmed", "a00076.html#a40b3829d2b07734f372752abfa4b15e3", null ],
+    [ "Details", "a00076.html#ae18d062fff4019d1ce494ecb1590727b", null ],
+    [ "Edit", "a00076.html#aa5a090ea2d656037a8c398105b742d33", null ],
+    [ "Edit", "a00076.html#a891d33473ad25d7eafc304f6bdd842bf", null ],
+    [ "Index", "a00076.html#ab6d8d2a615ae6f35f316b52adfe7b16f", null ]
 ];

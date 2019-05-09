@@ -1,12 +1,5 @@
 var a00038 =
 [
-    [ "FacultyReportRepository", "a00038.html#a0015f228d0b773eb16531c114c70c705", null ],
-    [ "All", "a00038.html#aa1c30f0a854db13e9f0d4dbca1a3f133", null ],
-    [ "AllWhere", "a00038.html#af737eff3ae276a1018a2ca82cb77a380", null ],
-    [ "Create", "a00038.html#ab3d354aeb9a973da3e2db1f3dd673c51", null ],
-    [ "Delete", "a00038.html#aac18f57b9c85f93f4105013365464f53", null ],
-    [ "Get", "a00038.html#aad69398357c17437e68f15fb7ae2c6bf", null ],
-    [ "Get", "a00038.html#af07433f135244bb1e5b72c6cedc530e8", null ],
-    [ "GetQuery", "a00038.html#a9c74a3bc691e24a6a607ad0bf4eb71a0", null ],
-    [ "Update", "a00038.html#aada56bf25c99decd1a220ed59b7fb008", null ]
+    [ "Administrator", "a00038.html#a4078aaba812ae6b862c7a391e9f08967", null ],
+    [ "DepartmentReports", "a00038.html#a74288ce4863a4a94618a675bb6ac1d56", null ]
 ];

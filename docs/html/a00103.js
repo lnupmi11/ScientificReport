@@ -1,13 +1,9 @@
 var a00103 =
 [
-    [ "PublicationService", "a00103.html#a3016c0bcf0893f3699196ae88b5c7228", null ],
-    [ "CreateItem", "a00103.html#ac0d119553faaf8cb1884ebca77923660", null ],
-    [ "DeleteById", "a00103.html#abf2228f9f105f55ad8aeb9e463b3c81a", null ],
-    [ "Get", "a00103.html#abd903cf30bd5c1a30ae45d3db1f49c41", null ],
-    [ "GetAll", "a00103.html#a2dccd69383c9e8f7131e8c08b5c0ca0a", null ],
-    [ "GetAllWhere", "a00103.html#a595b43a7f4b9609be0341290303898e3", null ],
-    [ "GetById", "a00103.html#a8ef002c406fa9ecb0ce5ea26a2821daf", null ],
-    [ "GetPublicationAuthors", "a00103.html#a44c5433cf3da8d5e8bcfe9110383a4e4", null ],
-    [ "PublicationExists", "a00103.html#a443e8a6041b604ce36548bc886424ff5", null ],
-    [ "UpdateItem", "a00103.html#a6d4975667f56ea3e7e288d0d88fe2017", null ]
+    [ "AllTest", "a00103.html#a6707df9b204c624bb20b82c494ef650c", null ],
+    [ "AllWhereTest", "a00103.html#aa61aaec2f63d55212257dc8ee5a13b09", null ],
+    [ "CreateTest", "a00103.html#aedab4ee67d2fc4e8317c49833b0ac93a", null ],
+    [ "DeleteTest", "a00103.html#a67805eecfcb913ccdc3b3462f5964a72", null ],
+    [ "GetByIdTest", "a00103.html#a60cfe6bcd140a1cb50bc5d69baf2e092", null ],
+    [ "UpdateTest", "a00103.html#ad9f97259b6d4a04709fe1bc9723e543a", null ]
 ];

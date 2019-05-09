@@ -1,11 +1,12 @@
 var a00051 =
 [
-    [ "CreateItem", "a00051.html#ab43160e2ce766ab1102529224db9412f", null ],
-    [ "DeleteById", "a00051.html#a8ab8fa623757c306452b566d8a25926e", null ],
-    [ "Exists", "a00051.html#a720a8be0ca72b1f3b0af66846b45dc31", null ],
-    [ "Get", "a00051.html#a277330083f1f76a494e5d53b5fa51a0a", null ],
-    [ "GetAll", "a00051.html#af9ea822fe18ff08aaf65639f82d0dad2", null ],
-    [ "GetAllWhere", "a00051.html#aacf1686dca6b957baad0b19d2bd82a1c", null ],
-    [ "GetById", "a00051.html#ab4120c7cca6d4a9773832c5050c22640", null ],
-    [ "UpdateItem", "a00051.html#a3253f06a17da878cd20b36ac1a2ddaa1", null ]
+    [ "CreateItem", "a00051.html#a43e329c3123b7c8741949f4789f653f0", null ],
+    [ "DeleteById", "a00051.html#ae52635af00af3701521c9059b77893e9", null ],
+    [ "Exists", "a00051.html#ab85fe24eaf05a005013be62a95dd6284", null ],
+    [ "Get", "a00051.html#a2c763dbd83ea9f902f894d5c0cd997a5", null ],
+    [ "GetAll", "a00051.html#a891321320ac9cb8e37f53b8e45f5972a", null ],
+    [ "GetAllWhere", "a00051.html#af5804580dae258e91fbc79972c251b69", null ],
+    [ "GetById", "a00051.html#abf2b116ede548247a35588f34ba73555", null ],
+    [ "GetUsers", "a00051.html#a762e67efec033272180a12a771f30ddc", null ],
+    [ "UpdateItem", "a00051.html#a7f26599fb73f40b1520c3bf2ae3648c0", null ]
 ];

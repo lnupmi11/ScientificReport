@@ -1,12 +1,12 @@
 var a00101 =
 [
-    [ "PublicationRepository", "a00101.html#adb942460169fcd71c6dc75a65adf0718", null ],
-    [ "All", "a00101.html#a130bb2632565a43e8f05301675bc7e15", null ],
-    [ "AllWhere", "a00101.html#ae941ec8b19bc220c717029d81b5215af", null ],
-    [ "Create", "a00101.html#adcdd7d5da13733af6321128b2739274d", null ],
-    [ "Delete", "a00101.html#a3071242b6afa96b38a3b039060de3d8a", null ],
-    [ "Get", "a00101.html#aaae3f36c354fbb0fe1d0bbcd6d22521c", null ],
-    [ "Get", "a00101.html#a03b9fd356b4208b5cebb4a5f1c55924d", null ],
-    [ "GetQuery", "a00101.html#a49a828bde8626ce9032ee8c1fb65b653", null ],
-    [ "Update", "a00101.html#a7a2272697af326fb6f78881ab83cc9b6", null ]
+    [ "PublicationController", "a00101.html#a8590910fb0acd0eb7402f712ac4d0618", null ],
+    [ "Create", "a00101.html#a3c552db007a71bf093b2fb54ff559855", null ],
+    [ "Create", "a00101.html#a8b7a3c0d2c9499b1f9911b8c11acb1ee", null ],
+    [ "Delete", "a00101.html#a493e0ef40ba7f2ca04d515235b031283", null ],
+    [ "DeleteConfirmed", "a00101.html#a17403a0196b17b33571069611b7e85fc", null ],
+    [ "Details", "a00101.html#a53d2522a1a51ae58e9dcb20a2d498218", null ],
+    [ "Edit", "a00101.html#a772ee0eecf38aaba095cd52bfe7f3dd0", null ],
+    [ "Edit", "a00101.html#ab511f6297265c026a5454ab185b4c62c", null ],
+    [ "Index", "a00101.html#a3e1b161c1b28d1a48890fbd3e5b2e943", null ]
 ];

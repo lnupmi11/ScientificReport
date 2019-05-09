@@ -1,9 +1,12 @@
 var a00089 =
 [
-    [ "AllTest", "a00089.html#aad76281ce768dddbdfbe100de27122ab", null ],
-    [ "AllWhereTest", "a00089.html#aebac1eca10ab3e22cc4ae0b02916e127", null ],
-    [ "CreateTest", "a00089.html#a104de91eaa42994a7743a00608c53f86", null ],
-    [ "DeleteTest", "a00089.html#ae1e6d5db3eeb06800dad0f91cac316cf", null ],
-    [ "GetByIdTest", "a00089.html#a97367c3edaa24dc81b212dea70e2fbb4", null ],
-    [ "UpdateTest", "a00089.html#a9d6eab32b2987dab3544b5d08e75f401", null ]
+    [ "PostgraduateDissertationGuidanceRepository", "a00089.html#a86883ce1e46b517b0d912d838cf915c5", null ],
+    [ "All", "a00089.html#a0a91e0de868b1476808779f3157826b2", null ],
+    [ "AllWhere", "a00089.html#ae19f61493fdd3cd61dec02ceca2547af", null ],
+    [ "Create", "a00089.html#a030bcc65cf774f6e568d34304740591f", null ],
+    [ "Delete", "a00089.html#a16a31a1dab6f123e0b63fc3be14fc344", null ],
+    [ "Get", "a00089.html#affceaa0ebb5614e1ad8d357f3089ed7b", null ],
+    [ "Get", "a00089.html#a3feb60c7382c3df6fc172cb090f11af7", null ],
+    [ "GetQuery", "a00089.html#a7f0fd416679729f5a151c42321a489d0", null ],
+    [ "Update", "a00089.html#ae1c06a80ebb97db374ee5a14fa9ede44", null ]
 ];
