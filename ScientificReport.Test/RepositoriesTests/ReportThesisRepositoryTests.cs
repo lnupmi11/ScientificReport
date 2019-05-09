@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
 using Moq;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
@@ -11,102 +10,77 @@ namespace ScientificReport.Test.RepositoriesTests
 {
 	public class ReportThesisRepositoryTests
 	{
-		private static IEnumerable<ReportThesis> GetTestData()
+		private static readonly IEnumerable<ReportThesis> TestReportTheses = new[]
 		{
-			return new[]
-			{
-				TestData.ReportThesis1,
-				TestData.ReportThesis2,
-				TestData.ReportThesis3
-			};
-		}
+			TestData.ReportThesis1,
+			TestData.ReportThesis2,
+			TestData.ReportThesis3
+		};
 
 		private static Mock<ScientificReportDbContext> GetMockContext()
-        {
-        	var mockContext = new Mock<ScientificReportDbContext>();
-        	mockContext.Setup(item => item.ReportTheses).Returns(
-        		MockProvider.GetMockSet(GetTestData()).Object
-        	);
-        	return mockContext;
-        }
+		{
+			var mockContext = new Mock<ScientificReportDbContext>();
+			mockContext.Setup(item => item.ReportTheses).Returns(
+				MockProvider.GetMockSet(TestReportTheses).Object
+			);
+			return mockContext;
+		}
 
 		[Fact]
 		public void AllTest()
 		{
-			var repository = new Mock<ReportThesisRepository>(GetMockContext().Object);
-
-			repository.Setup(a => a.All());
-			repository.Object.All();
-			repository.Verify(a => a.All());
+			var repository = new ReportThesisRepository(GetMockContext().Object);
+			var actual = repository.All();
+			Assert.Equal(TestReportTheses.Count(), actual.Count());
 		}
 
 		[Fact]
 		public void AllWhereTest()
 		{
-			var repository = new ReportThesisRepository(GetMockContext().Object);
-
-			var actual = repository.AllWhere(x => x.Id.Equals(TestData.ReportThesis1.Id));
+			var mockContext = GetMockContext();
+			var repository = new ReportThesisRepository(mockContext.Object);
+			var actual = repository.AllWhere(a => a.Id == mockContext.Object.ReportTheses.First().Id);
 			Assert.Single(actual);
 		}
 
 		[Fact]
 		public void GetByIdTest()
 		{
-			var repository = new Mock<ReportThesisRepository>(GetMockContext().Object);
-
-			var reportThesis = GetTestData().First();
-			repository.Object.Create(reportThesis);
-
-			repository.Setup(item => item.Get(reportThesis.Id));
-			repository.Object.Get(reportThesis.Id);
-			repository.Verify(item => item.Get(reportThesis.Id));
+			var mockContext = GetMockContext();
+			var repository = new ReportThesisRepository(mockContext.Object);
+			var expected = mockContext.Object.ReportTheses.First();
+			var actual = repository.Get(expected.Id);
+			Assert.NotNull(actual);
 		}
 
 		[Fact]
 		public void CreateTest()
 		{
-			var repository = new Mock<ReportThesisRepository>(GetMockContext().Object);
-
-			var reportThesis = GetTestData().First();
-			repository.Setup(it => it.Create(reportThesis));
-			repository.Object.Create(reportThesis);
-			repository.Verify(it => it.Create(reportThesis), Times.Once);
+			var mockContext = GetMockContext();
+			var repository = new ReportThesisRepository(mockContext.Object);
+			Assert.Equal(TestReportTheses.Count(), mockContext.Object.ReportTheses.Count());
+			repository.Create(TestData.ReportThesis1);
+			Assert.Equal(TestReportTheses.Count(), repository.All().Count());
 		}
 
 		[Fact]
 		public void UpdateTest()
 		{
-			var mockDbSet = new Mock<DbSet<ReportThesis>>();
-			var mockContext = new Mock<ScientificReportDbContext>();
-
-			mockContext.Setup(item => item.ReportTheses).Returns(mockDbSet.Object);
-
-			var repository = new Mock<ReportThesisRepository>(mockContext.Object);
-
-			var reportThesis = GetTestData().First();
-
-			repository.Object.Create(reportThesis);
-
-			repository.Setup(a => a.Update(reportThesis));
-			repository.Object.Update(reportThesis);
-			repository.Verify(a => a.Update(reportThesis));
+			var mockContext = GetMockContext();
+			var repository = new ReportThesisRepository(mockContext.Object);
+			var item = mockContext.Object.ReportTheses.First();
+			repository.Update(item);
+			Assert.NotNull(repository.Get(item.Id));
 		}
 
 		[Fact]
 		public void DeleteTest()
 		{
-			var mockDbSet = new Mock<DbSet<ReportThesis>>();
-			var mockContext = new Mock<ScientificReportDbContext>();
-
-			mockContext.Setup(item => item.ReportTheses).Returns(mockDbSet.Object);
-
-			var repository = new Mock<ReportThesisRepository>(mockContext.Object);
-
-			var reportThesis = GetTestData().First();
-
-			repository.Setup(x => x.Delete(reportThesis.Id));
-			repository.Object.Delete(reportThesis.Id);
-			repository.Verify(i => i.Delete(reportThesis.Id));
+			var mockContext = GetMockContext();
+			var repository = new ReportThesisRepository(mockContext.Object);
+			var item = mockContext.Object.ReportTheses.First();
+			repository.Delete(item.Id);
+			Assert.Null(mockContext.Object.ReportTheses.Find(item.Id));
 		}
 	}
 }

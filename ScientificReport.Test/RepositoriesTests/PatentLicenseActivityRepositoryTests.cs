@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
 using Moq;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
@@ -11,102 +10,77 @@ namespace ScientificReport.Test.RepositoriesTests
 {
 	public class PatentLicenseActivityRepositoryTests
 	{
-		private static IEnumerable<PatentLicenseActivity> GetTestData()
+		private static readonly IEnumerable<PatentLicenseActivity> TestPatentLicenseActivities = new[]
 		{
-			return new[]
-			{
-				TestData.PatentLicenseActivity1,
-				TestData.PatentLicenseActivity2,
-				TestData.PatentLicenseActivity3
-			};
-		}
+			TestData.PatentLicenseActivity1,
+			TestData.PatentLicenseActivity2,
+			TestData.PatentLicenseActivity3
+		};
 
 		private static Mock<ScientificReportDbContext> GetMockContext()
-        {
-        	var mockContext = new Mock<ScientificReportDbContext>();
-        	mockContext.Setup(item => item.PatentLicenseActivities).Returns(
-        		MockProvider.GetMockSet(GetTestData()).Object
-        	);
-        	return mockContext;
-        }
+		{
+			var mockContext = new Mock<ScientificReportDbContext>();
+			mockContext.Setup(item => item.PatentLicenseActivities).Returns(
+				MockProvider.GetMockSet(TestPatentLicenseActivities).Object
+			);
+			return mockContext;
+		}
 
 		[Fact]
 		public void AllTest()
 		{
-			var repository = new Mock<PatentLicenseActivityRepository>(GetMockContext().Object);
-
-			repository.Setup(a => a.All());
-			repository.Object.All();
-			repository.Verify(a => a.All());
+			var repository = new PatentLicenseActivityRepository(GetMockContext().Object);
+			var actual = repository.All();
+			Assert.Equal(TestPatentLicenseActivities.Count(), actual.Count());
 		}
 
 		[Fact]
 		public void AllWhereTest()
 		{
-			var repository = new PatentLicenseActivityRepository(GetMockContext().Object);
-
-			var actual = repository.AllWhere(x => x.Id.Equals(TestData.PatentLicenseActivity1.Id));
+			var mockContext = GetMockContext();
+			var repository = new PatentLicenseActivityRepository(mockContext.Object);
+			var actual = repository.AllWhere(a => a.Id == mockContext.Object.PatentLicenseActivities.First().Id);
 			Assert.Single(actual);
 		}
 
 		[Fact]
 		public void GetByIdTest()
 		{
-			var repository = new Mock<PatentLicenseActivityRepository>(GetMockContext().Object);
-
-			var patentLicenseActivity = GetTestData().First();
-			repository.Object.Create(patentLicenseActivity);
-
-			repository.Setup(item => item.Get(patentLicenseActivity.Id));
-			repository.Object.Get(patentLicenseActivity.Id);
-			repository.Verify(item => item.Get(patentLicenseActivity.Id));
+			var mockContext = GetMockContext();
+			var repository = new PatentLicenseActivityRepository(mockContext.Object);
+			var expected = mockContext.Object.PatentLicenseActivities.First();
+			var actual = repository.Get(expected.Id);
+			Assert.NotNull(actual);
 		}
 
 		[Fact]
 		public void CreateTest()
 		{
-			var repository = new Mock<PatentLicenseActivityRepository>(GetMockContext().Object);
-
-			var patentLicenseActivity = GetTestData().First();
-			repository.Setup(it => it.Create(patentLicenseActivity));
-			repository.Object.Create(patentLicenseActivity);
-			repository.Verify(it => it.Create(patentLicenseActivity), Times.Once);
+			var mockContext = GetMockContext();
+			var repository = new PatentLicenseActivityRepository(mockContext.Object);
+			Assert.Equal(TestPatentLicenseActivities.Count(), mockContext.Object.PatentLicenseActivities.Count());
+			repository.Create(TestData.PatentLicenseActivity1);
+			Assert.Equal(TestPatentLicenseActivities.Count(), repository.All().Count());
 		}
 
 		[Fact]
 		public void UpdateTest()
 		{
-			var mockDbSet = new Mock<DbSet<PatentLicenseActivity>>();
-			var mockContext = new Mock<ScientificReportDbContext>();
-
-			mockContext.Setup(item => item.PatentLicenseActivities).Returns(mockDbSet.Object);
-
-			var repository = new Mock<PatentLicenseActivityRepository>(mockContext.Object);
-
-			var patentLicenseActivity = GetTestData().First();
-
-			repository.Object.Create(patentLicenseActivity);
-
-			repository.Setup(a => a.Update(patentLicenseActivity));
-			repository.Object.Update(patentLicenseActivity);
-			repository.Verify(a => a.Update(patentLicenseActivity));
+			var mockContext = GetMockContext();
+			var repository = new PatentLicenseActivityRepository(mockContext.Object);
+			var item = mockContext.Object.PatentLicenseActivities.First();
+			repository.Update(item);
+			Assert.NotNull(repository.Get(item.Id));
 		}
 
 		[Fact]
 		public void DeleteTest()
 		{
-			var mockDbSet = new Mock<DbSet<PatentLicenseActivity>>();
-			var mockContext = new Mock<ScientificReportDbContext>();
-
-			mockContext.Setup(item => item.PatentLicenseActivities).Returns(mockDbSet.Object);
-
-			var repository = new Mock<PatentLicenseActivityRepository>(mockContext.Object);
-
-			var patentLicenseActivity = GetTestData().First();
-
-			repository.Setup(x => x.Delete(patentLicenseActivity.Id));
-			repository.Object.Delete(patentLicenseActivity.Id);
-			repository.Verify(i => i.Delete(patentLicenseActivity.Id));
+			var mockContext = GetMockContext();
+			var repository = new PatentLicenseActivityRepository(mockContext.Object);
+			var item = mockContext.Object.PatentLicenseActivities.First();
+			repository.Delete(item.Id);
+			Assert.Null(mockContext.Object.PatentLicenseActivities.Find(item.Id));
 		}
 	}
 }
