@@ -73,12 +73,12 @@ namespace ScientificReport
 				options.Password.RequiredUniqueChars = 0;
 
 				// Lockout settings.
-				options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+				options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromDays(1);
 				options.Lockout.MaxFailedAccessAttempts = 5;
 				options.Lockout.AllowedForNewUsers = true;
 
 				// User settings.
-				options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz0123456789-._";
+				options.User.AllowedUserNameCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._";
 				options.User.RequireUniqueEmail = true;
 			});
 
@@ -87,7 +87,7 @@ namespace ScientificReport
 			{
 				// Cookie settings
 				options.Cookie.HttpOnly = true;
-				options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+				options.ExpireTimeSpan = TimeSpan.FromDays(1);
 				options.LoginPath = "/UserProfile/Login";
 				options.AccessDeniedPath = "/Home/AccessDenied";
 				options.SlidingExpiration = true;
