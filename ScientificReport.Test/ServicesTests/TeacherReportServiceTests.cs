@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
@@ -12,23 +11,21 @@ namespace ScientificReport.Test.ServicesTests
 {
 	public class TeacherReportServiceTests
 	{
-		private readonly Mock<ScientificReportDbContext> _mockContext = GetMockContext();
+		private readonly Mock<DbSet<TeacherReport>> _mockDbSet = MockProvider.GetMockSet(GetTestData().AsQueryable());
 
 		private static IEnumerable<TeacherReport> GetTestData()
 		{
 			return new[]
 			{
 				TestData.TeacherReport1,
-				TestData.TeacherReport2,
-				TestData.TeacherReport3
+				TestData.TeacherReport2
 			};
 		}
 
-		private static Mock<ScientificReportDbContext> GetMockContext()
+		private Mock<ScientificReportDbContext> GetMockContext()
 		{
-			var list = GetTestData().AsQueryable();
 			var mockContext = new Mock<ScientificReportDbContext>();
-			mockContext.Setup(item => item.TeacherReports).Returns(MockProvider.GetMockSet(list).Object);
+			mockContext.Setup(item => item.TeacherReports).Returns(_mockDbSet.Object);
 			return mockContext;
 		}
 
@@ -39,7 +36,6 @@ namespace ScientificReport.Test.ServicesTests
 
 			var mockContext = new Mock<ScientificReportDbContext>();
 			mockContext.Setup(item => item.TeacherReports).Returns(MockProvider.GetMockSet(list).Object);
-
 			var service = new TeacherReportService(mockContext.Object);
 
 			var actual = service.GetAll();
@@ -50,7 +46,7 @@ namespace ScientificReport.Test.ServicesTests
 		[Fact]
 		public void GetAllWhereTest()
 		{
-			var service = new TeacherReportService(_mockContext.Object);
+			var service = new TeacherReportService(GetMockContext().Object);
 			var actual = service.GetAllWhere(u => u.Id.Equals(TestData.TeacherReport1.Id));
 			Assert.Single(actual);
 		}
@@ -59,80 +55,72 @@ namespace ScientificReport.Test.ServicesTests
 		public void GetByIdTest()
 		{
 			var expected = GetTestData().First();
+			var service = new TeacherReportService(GetMockContext().Object);
 
-			var service = new Mock<TeacherReportService>(_mockContext.Object);
+			var actual = service.GetById(expected.Id);
 
-			service.Object.CreateItem(expected);
-
-			service.Setup(item => item.GetById(expected.Id));
-			service.Object.GetById(expected.Id);
-			service.Verify(item => item.GetById(expected.Id));
+			Assert.NotNull(actual);
+			Assert.Equal(expected.Id, actual.Id);
 		}
 
 		[Fact]
 		public void CreateItemTest()
 		{
-			var service = new Mock<TeacherReportService>(_mockContext.Object);
+			var service = new TeacherReportService(GetMockContext().Object);
 
-			var expectedTeacherReport = TestData.TeacherReport1;
+			var expected = TestData.TeacherReport3;
+			service.CreateItem(expected);
 
-			service.Setup(it => it.CreateItem(expectedTeacherReport));
-			service.Object.CreateItem(expectedTeacherReport);
-			service.Verify(it => it.CreateItem(expectedTeacherReport), Times.Once);
+			_mockDbSet.Verify(m => m.Add(It.IsAny<TeacherReport>()), Times.Once);
 		}
 
 		[Fact]
 		public void UpdateItemTest()
 		{
-			var mockDbSet = new Mock<DbSet<TeacherReport>>();
-			var mockContext = new Mock<ScientificReportDbContext>();
+			var service = new TeacherReportService(GetMockContext().Object);
 
-			mockContext.Setup(item => item.TeacherReports).Returns(mockDbSet.Object);
+			var expected = GetTestData().First();
+			expected.Teacher = TestData.TeacherReport3.Teacher;
+			service.UpdateItem(expected);
 
-			var service = new TeacherReportService(mockContext.Object);
-
-			var teacherReport = GetTestData().First();
-
-			service.CreateItem(teacherReport);
-			service.UpdateItem(teacherReport);
-
-			mockDbSet.Verify(m => m.Update(It.IsAny<TeacherReport>()), Times.Once());
+			_mockDbSet.Verify(m => m.Update(expected), Times.Once);
 		}
 
 		[Fact]
 		public void DeleteItemTest()
 		{
-			var service = new Mock<TeacherReportService>(_mockContext.Object);
+			var mockContext = GetMockContext();
+			var service = new TeacherReportService(mockContext.Object);
 
-			var teacherReport = GetTestData().First();
+			var item = mockContext.Object.TeacherReports.First();
 
-			service.Setup(x => x.DeleteById(teacherReport.Id));
-			service.Object.DeleteById(teacherReport.Id);
-			service.Verify(i => i.DeleteById(teacherReport.Id));
+			Assert.True(service.Exists(item.Id));
+
+			service.DeleteById(item.Id);
+
+			Assert.False(service.Exists(item.Id));
 		}
 
 		[Fact]
 		public void ExistsTest()
 		{
-			var service = new Mock<TeacherReportService>(_mockContext.Object);
+			var service = new TeacherReportService(GetMockContext().Object);
 
-			var teacherReport = GetTestData().First();
-			service.Object.CreateItem(teacherReport);
+			var item = GetTestData().First();
+			var exists = service.Exists(item.Id);
 
-			service.Setup(a => a.Exists(teacherReport.Id));
-			service.Object.Exists(teacherReport.Id);
-			service.Verify(a => a.Exists(teacherReport.Id));
+			Assert.True(exists);
 		}
 
 		[Fact]
 		public void DoesNotExistTest()
 		{
-			var service = new Mock<TeacherReportService>(_mockContext.Object);
+			var service = new TeacherReportService(GetMockContext().Object);
 
-			var guid = Guid.NewGuid();
-			service.Setup(a => a.Exists(guid));
-			service.Object.Exists(guid);
-			service.Verify(a => a.Exists(guid));
+			var item = TestData.TeacherReport3;
+			var exists = service.Exists(item.Id);
+
+			Assert.False(exists);
 		}
 	}
 }
