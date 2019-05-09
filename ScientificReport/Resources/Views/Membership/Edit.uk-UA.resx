@@ -15,6 +15,30 @@
 	</resheader>
 	
 	
+	<data name="Membership" xml:space="preserve">
+		<value>Членство</value>
+	</data>
+	<data name="MemberOf" xml:space="preserve">
+		<value>Членство</value>
+	</data>
+	<data name="MembershipInfo" xml:space="preserve">
+		<value>Інфoрмація</value>
+	</data>
+	
+	
+	<data name="Choose your option" xml:space="preserve">
+		<value>Оберіть варіант</value>
+	</data>
+	<data name="Scientific council" xml:space="preserve">
+		<value>Вчена рада</value>
+	</data>
+	<data name="Expert council" xml:space="preserve">
+		<value>експертна рада</value>
+	</data>
+	<data name="Scientific journal editorial board" xml:space="preserve">
+		<value>Редколегія наукового журналу</value>
+	</data>
+	
 	<data name="Create New" xml:space="preserve">
 		<value>Створити нове</value>
 	</data>

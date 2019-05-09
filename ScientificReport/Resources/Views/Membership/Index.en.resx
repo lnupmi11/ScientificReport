@@ -15,6 +15,17 @@
 	</resheader>
 	
 	
+	<data name="Membership" xml:space="preserve">
+		<value>Membership</value>
+	</data>
+	<data name="MemberOf" xml:space="preserve">
+		<value>Member of</value>
+	</data>
+	<data name="MembershipInfo" xml:space="preserve">
+		<value>Membership info</value>
+	</data>
+	
+	
 	<data name="Create New" xml:space="preserve">
 		<value>Create New</value>
 	</data>

@@ -15,6 +15,17 @@
 	</resheader>
 	
 	
+	<data name="Membership" xml:space="preserve">
+		<value>Членство</value>
+	</data>
+	<data name="MemberOf" xml:space="preserve">
+		<value>Членство</value>
+	</data>
+	<data name="MembershipInfo" xml:space="preserve">
+		<value>Інфoрмація</value>
+	</data>
+	
+	
 	<data name="Create New" xml:space="preserve">
 		<value>Створити нове</value>
 	</data>
