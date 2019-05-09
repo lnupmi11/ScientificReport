@@ -2,8 +2,8 @@ var searchData=
 [
   ['candidatename',['CandidateName',['../a00122.html#aa38c1f52c83c87393ea0107659668f3e',1,'ScientificReport::DAL::Entities::ScientificConsultation']]],
   ['category',['Category',['../a00136.html#a008cd1d80b801d882dbc7d6d9bf3ead4',1,'ScientificReport::DAL::Entities::ScientificWork']]],
-  ['class_5fname',['class_name',['../a00354.html#ae189b95ac5c77476b503b8f62d03a08a',1,'generate']]],
-  ['class_5ftype',['class_type',['../a00354.html#a0f009854e362be008dc3fde93ca45697',1,'generate']]],
+  ['class_5fname',['class_name',['../a00355.html#ae189b95ac5c77476b503b8f62d03a08a',1,'generate']]],
+  ['class_5ftype',['class_type',['../a00355.html#a0f009854e362be008dc3fde93ca45697',1,'generate']]],
   ['coapplicant',['CoApplicant',['../a00013.html#a7d807e465139158f5020863e693febbf',1,'ScientificReport::DAL::Entities::CoApplicantsPatentLicenseActivities']]],
   ['coapplicantspatentlicenseactivities',['CoApplicantsPatentLicenseActivities',['../a00013.html',1,'ScientificReport::DAL::Entities']]],
   ['coapplicantspatentlicenseactivities',['CoApplicantsPatentLicenseActivities',['../a00080.html#ab73c612fda452b1ab66f94b245610e5b',1,'ScientificReport::DAL::Entities::PatentLicenseActivity']]],

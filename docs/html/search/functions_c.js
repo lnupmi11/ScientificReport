@@ -13,7 +13,7 @@ var searchData=
   ['reportthesiscontroller',['ReportThesisController',['../a00109.html#a872198c20ad8838063611569ea8c6cae',1,'ScientificReport::Controllers::ReportThesisController']]],
   ['reportthesisrepository',['ReportThesisRepository',['../a00112.html#af88a92b8eb26aa2ad54ca123dc7de7d3',1,'ScientificReport::DAL::Repositories::ReportThesisRepository']]],
   ['reportthesisservice',['ReportThesisService',['../a00114.html#aa94f1948a33dea6198a046afaf7ccf02',1,'ScientificReport::BLL::Services::ReportThesisService']]],
-  ['repository',['repository',['../a00354.html#a33da6b1f7597419eff8b2d730a058273',1,'generate']]],
+  ['repository',['repository',['../a00355.html#a33da6b1f7597419eff8b2d730a058273',1,'generate']]],
   ['reviewcontroller',['ReviewController',['../a00117.html#aa5cc95c3b8f863650d1b2875a6a8fc62',1,'ScientificReport::Controllers::ReviewController']]],
   ['reviewrepository',['ReviewRepository',['../a00118.html#add9026b0c333df3b7d77efbc81881eda',1,'ScientificReport::DAL::Repositories::ReviewRepository']]],
   ['reviewservice',['ReviewService',['../a00120.html#a3ebc9d58291036a3acfb935605c48039',1,'ScientificReport::BLL::Services::ReviewService']]]

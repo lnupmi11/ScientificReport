@@ -13,7 +13,7 @@ var searchData=
   ['scientificinternshipservice_2ecs',['ScientificInternshipService.cs',['../a00207.html',1,'']]],
   ['scientificinternshipservicetests_2ecs',['ScientificInternshipServiceTests.cs',['../a00321.html',1,'']]],
   ['scientificreportdbcontext_2ecs',['ScientificReportDbContext.cs',['../a00211.html',1,'']]],
-  ['scientificreportdbcontextmodelsnapshot_2ecs',['ScientificReportDbContextModelSnapshot.cs',['../a00349.html',1,'']]],
+  ['scientificreportdbcontextmodelsnapshot_2ecs',['ScientificReportDbContextModelSnapshot.cs',['../a00350.html',1,'']]],
   ['scientificwork_2ecs',['ScientificWork.cs',['../a00235.html',1,'']]],
   ['scientificworkauthorrequest_2ecs',['ScientificWorkAuthorRequest.cs',['../a00279.html',1,'']]],
   ['scientificworkcontroller_2ecs',['ScientificWorkController.cs',['../a00343.html',1,'']]],
@@ -23,7 +23,7 @@ var searchData=
   ['scientificworksedit_2ecs',['ScientificWorksEdit.cs',['../a00281.html',1,'']]],
   ['scientificworkservice_2ecs',['ScientificWorkService.cs',['../a00208.html',1,'']]],
   ['scientificworkservicetests_2ecs',['ScientificWorkServiceTests.cs',['../a00322.html',1,'']]],
-  ['seeddata_2ecs',['SeedData.cs',['../a00350.html',1,'']]],
+  ['seeddata_2ecs',['SeedData.cs',['../a00351.html',1,'']]],
   ['selectitem_2ecs',['SelectItem.cs',['../a00274.html',1,'']]],
-  ['startup_2ecs',['Startup.cs',['../a00352.html',1,'']]]
+  ['startup_2ecs',['Startup.cs',['../a00353.html',1,'']]]
 ];

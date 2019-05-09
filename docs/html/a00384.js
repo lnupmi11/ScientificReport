@@ -1,11 +1,8 @@
 var a00384 =
 [
-    [ "UserProfile", "a00159.html", "a00159" ],
-    [ "UserProfilesArticles", "a00165.html", "a00165" ],
-    [ "UserProfilesGrants", "a00168.html", "a00168" ],
-    [ "UserProfilesPublications", "a00169.html", "a00169" ],
-    [ "UserProfilesReportThesis", "a00170.html", "a00170" ],
-    [ "UserProfilesReviews", "a00171.html", "a00171" ],
-    [ "UserProfilesScientificInternships", "a00172.html", "a00172" ],
-    [ "UserProfilesScientificWorks", "a00173.html", "a00173" ]
+    [ "DepartmentReport", "a00027.html", "a00027" ],
+    [ "FacultyReport", "a00037.html", "a00037" ],
+    [ "Report", "a00106.html", "a00106" ],
+    [ "TeacherReport", "a00148.html", "a00148" ],
+    [ "TeacherReportsScientificWorks", "a00155.html", "a00155" ]
 ];

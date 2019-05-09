@@ -1,4 +1,4 @@
-<map id="ScientificReport.DAL.Entities.Reports.FacultyReport" name="ScientificReport.DAL.Entities.Reports.FacultyReport">
+<map id="ScientificReport.DAL.Entities.Reports.DepartmentReport" name="ScientificReport.DAL.Entities.Reports.DepartmentReport">
 <area shape="rect" id="node2" href="$a00106.html" title="{Report\n|+ Id\l+ Created\l+ Edited\l|}" alt="" coords="64,145,152,252"/>
 <area shape="rect" id="node3" href="$a00064.html" title="{ITrackable\n|+ Created\l+ Edited\l|}" alt="" coords="64,5,152,97"/>
 </map>

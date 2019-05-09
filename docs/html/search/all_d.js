@@ -20,5 +20,5 @@ var searchData=
   ['oppositionservicetests_2ecs',['OppositionServiceTests.cs',['../a00313.html',1,'']]],
   ['other',['Other',['../a00099.html#a65e148316b30800fc153d00a8cd9a2efa6311ae17c1ee52b36e68aaf4ad066387',1,'ScientificReport::DAL::Entities::Publication']]],
   ['otherpublishingofukraine',['OtherPublishingOfUkraine',['../a00005.html#a8e26b6fb867c0004b66cd52537f086fea185f4a5d1a7b5db5c293591aa7c0e7a5',1,'ScientificReport::DAL::Entities::Article']]],
-  ['output_5ftext',['output_text',['../a00354.html#ab3a8822732dec2cc60a0bea8289fbb30',1,'generate']]]
+  ['output_5ftext',['output_text',['../a00355.html#ab3a8822732dec2cc60a0bea8289fbb30',1,'generate']]]
 ];

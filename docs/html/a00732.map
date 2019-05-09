@@ -1,2 +1,2 @@
-<map id="ScientificReport.DTO.Models.Department.DepartmentUpdateScientificWorksRequest" name="ScientificReport.DTO.Models.Department.DepartmentUpdateScientificWorksRequest">
+<map id="ScientificReport.DTO.Models.Department.DepartmentEditModel" name="ScientificReport.DTO.Models.Department.DepartmentEditModel">
 </map>
