@@ -3,8 +3,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.Extensions.DependencyInjection;
 using ScientificReport.BLL.Services;
 using ScientificReport.DAL.DbContext;
@@ -26,7 +24,7 @@ namespace ScientificReport.Models
 		/// <summary>
 		/// Initializes the basic data, the entrypoint for all seeds
 		/// </summary>
-		public static async Task Initialize(IServiceProvider serviceProvider, ScientificReportDbContext context)
+		public static void Initialize(IServiceProvider serviceProvider, ScientificReportDbContext context)
 		{
 			var env = serviceProvider.GetService<IHostingEnvironment>();
 
@@ -35,8 +33,8 @@ namespace ScientificReport.Models
 
 			var logger = serviceProvider.GetRequiredService<ILogger<SeedData>>();
 
-			await SeedUserRoles(serviceProvider.GetRequiredService<RoleManager<UserProfileRole>>(), logger);
-			await SeedUserProfile(context);
+			SeedUserRoles(serviceProvider.GetRequiredService<RoleManager<UserProfileRole>>(), logger).Wait();
+			SeedUserProfile(context, serviceProvider).Wait();
 			SeedTeacherReports(context);
 			SeedScientificWorks(context);
 			SeedConference(context);
@@ -55,46 +53,85 @@ namespace ScientificReport.Models
 			context.SaveChanges();
 		}
 
-		private static async Task SeedUserProfile(ScientificReportDbContext context)
+		private static async Task SeedUserProfile(ScientificReportDbContext context, IServiceProvider serviceProvider)
 		{
 			if (context.UserProfiles.Any()) return;
 
-			var service = new UserProfileService(context);
-			
-			service.CreateItem(new UserProfile
+			var users = new[]
 			{
-				Id = Guid.NewGuid(),
-				Email = "orest@gmail.com",
-				Position = "Some position1",
-				LastName = "Hopiak",
-				UserName = "orest",
-				BirthYear = 1999,
-				FirstName = "Orest",
-				IsApproved = true,
-				MiddleName = "DevOps",
-				PhoneNumber = "+380000000001",
-				PasswordHash = "AQAAAAEAACcQAAAAEBO5Hc1EKb+esiKTjXGFwjq54R8bh5NlhXIztb0fhj+YjJJYhzA4IFo6QDk3agpXhQ=="
-			});
-
-			var user2 = new UserProfile
-			{
-				Id = Guid.NewGuid(),
-				Email = "orest@gmail.com",
-				Position = "Teacher",
-				LastName = "Lisovskiy",
-				UserName = "yura",
-				BirthYear = 1999,
-				FirstName = "Yura",
-				IsApproved = true,
-				MiddleName = "Coder",
-				PhoneNumber = "+380000000001",
-				PasswordHash = "AQAAAAEAACcQAAAAEBO5Hc1EKb+esiKTjXGFwjq54R8bh5NlhXIztb0fhj+YjJJYhzA4IFo6QDk3agpXhQ=="
+				new UserProfile
+				{
+					Email = "orest@gmail.com",
+					Position = "Teacher",
+					LastName = "Гопяк",
+					UserName = "orest",
+					BirthYear = 1999,
+					FirstName = "Орест",
+					IsApproved = true,
+					MiddleName = "Романович",
+					PhoneNumber = "+380000000001",
+					AcademicStatus = "Бакалавр",
+					ScientificDegree = "Бакалавр",
+					YearDegreeGained = 2020,
+					GraduationYear = 2020
+				},
+				new UserProfile
+				{
+					Email = "yura@gmail.com",
+					Position = "Teacher",
+					LastName = "Лісовський",
+					UserName = "yura",
+					BirthYear = 1999,
+					FirstName = "Юрій",
+					IsApproved = true,
+					MiddleName = "Юрійович",
+					PhoneNumber = "+380000000002",
+					AcademicStatus = "Бакалавр",
+					ScientificDegree = "Бакалавр",
+					YearDegreeGained = 2020,
+					GraduationYear = 2020
+				},
+				new UserProfile
+				{
+					Email = "olena@gmail.com",
+					Position = "Teacher",
+					LastName = "Шипка",
+					UserName = "olena",
+					BirthYear = 1999,
+					FirstName = "Олена",
+					IsApproved = true,
+					MiddleName = "Романівна",
+					PhoneNumber = "+380000000003",
+					AcademicStatus = "Бакалавр",
+					ScientificDegree = "Бакалавр",
+					YearDegreeGained = 2020,
+					GraduationYear = 2020
+				},
+				new UserProfile
+				{
+					Email = "roman@gmail.com",
+					Position = "Teacher",
+					LastName = "Кордюк",
+					UserName = "roman",
+					BirthYear = 1999,
+					FirstName = "Роман",
+					IsApproved = true,
+					MiddleName = "Ігорович",
+					PhoneNumber = "+380000000004",
+					AcademicStatus = "Бакалавр",
+					ScientificDegree = "Бакалавр",
+					YearDegreeGained = 2020,
+					GraduationYear = 2020
+				}
 			};
-			
-			service.CreateItem(user2);
-
-			var role = await context.Roles.FindAsync("Administrator");
-			
+			var userManager = serviceProvider.GetRequiredService<UserManager<UserProfile>>();
+			var userService = new UserProfileService(context);
+			foreach (var user in users)
+			{
+				await userManager.CreateAsync(user, "qwerty");
+				var usr = userService.Get(u => u.UserName == user.UserName);
+				await userManager.AddToRolesAsync(usr, new[] {UserProfileRole.Teacher, UserProfileRole.Administrator});
+			}
 		}
 
 		private static void SeedTeacherReports(ScientificReportDbContext context)
