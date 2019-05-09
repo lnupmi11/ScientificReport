@@ -15,6 +15,22 @@
 	</resheader>
 	
 	
+	<data name="Departments" xml:space="preserve">
+		<value>Departments</value>
+	</data>
+	<data name="Title" xml:space="preserve">
+		<value>Title</value>
+	</data>
+	<data name="Staff number" xml:space="preserve">
+		<value>Staff number</value>
+	</data>
+	<data name="Scientific works total" xml:space="preserve">
+		<value>Scientific works total</value>
+	</data>
+	
+	
+	
+	
 	<data name="Create New" xml:space="preserve">
 		<value>Create New</value>
 	</data>
