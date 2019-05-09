@@ -10,6 +10,7 @@ using ScientificReport.DAL.Entities;
 
 namespace ScientificReport.Controllers
 {
+//	[Authorize(Roles = UserProfileRole.Teacher)]
     public class ScientificInternshipController : Controller
     {
         private readonly ScientificReportDbContext _context;
