@@ -25,7 +25,7 @@ namespace ScientificReport
 				{
 					var context = serviceProvider.GetRequiredService<ScientificReportDbContext>();
 					context.Database.Migrate();
-					SeedData.Initialize(serviceProvider, context).Wait();
+					SeedData.Initialize(serviceProvider, context);
 				}
 				catch (Exception ex)
 				{
