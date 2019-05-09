@@ -8,7 +8,7 @@ using ScientificReport.DAL.Interfaces;
 
 namespace ScientificReport.DAL.Repositories
 {
-	public class DepartmentRepository: IRepository<Department>
+	public class DepartmentRepository : IRepository<Department>
 	{
 		private readonly ScientificReportDbContext _context;
 		

@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
 using Moq;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
@@ -11,102 +10,77 @@ namespace ScientificReport.Test.RepositoriesTests
 {
 	public class ReviewRepositoryTests
 	{
-		private static IEnumerable<Review> GetTestData()
+		private static readonly IEnumerable<Review> TestReviews = new[]
 		{
-			return new[]
-			{
-				TestData.Review1,
-				TestData.Review2,
-				TestData.Review3
-			};
-		}
+			TestData.Review1,
+			TestData.Review2,
+			TestData.Review3
+		};
 
 		private static Mock<ScientificReportDbContext> GetMockContext()
-        {
-        	var mockContext = new Mock<ScientificReportDbContext>();
-        	mockContext.Setup(item => item.Reviews).Returns(
-        		MockProvider.GetMockSet(GetTestData()).Object
-        	);
-        	return mockContext;
-        }
+		{
+			var mockContext = new Mock<ScientificReportDbContext>();
+			mockContext.Setup(item => item.Reviews).Returns(
+				MockProvider.GetMockSet(TestReviews).Object
+			);
+			return mockContext;
+		}
 
 		[Fact]
 		public void AllTest()
 		{
-			var repository = new Mock<ReviewRepository>(GetMockContext().Object);
-
-			repository.Setup(a => a.All());
-			repository.Object.All();
-			repository.Verify(a => a.All());
+			var repository = new ReviewRepository(GetMockContext().Object);
+			var actual = repository.All();
+			Assert.Equal(TestReviews.Count(), actual.Count());
 		}
 
 		[Fact]
 		public void AllWhereTest()
 		{
-			var repository = new ReviewRepository(GetMockContext().Object);
-
-			var actual = repository.AllWhere(x => x.Id.Equals(TestData.Review1.Id));
+			var mockContext = GetMockContext();
+			var repository = new ReviewRepository(mockContext.Object);
+			var actual = repository.AllWhere(a => a.Id == mockContext.Object.Reviews.First().Id);
 			Assert.Single(actual);
 		}
 
 		[Fact]
 		public void GetByIdTest()
 		{
-			var repository = new Mock<ReviewRepository>(GetMockContext().Object);
-
-			var review = GetTestData().First();
-			repository.Object.Create(review);
-
-			repository.Setup(item => item.Get(review.Id));
-			repository.Object.Get(review.Id);
-			repository.Verify(item => item.Get(review.Id));
+			var mockContext = GetMockContext();
+			var repository = new ReviewRepository(mockContext.Object);
+			var expected = mockContext.Object.Reviews.First();
+			var actual = repository.Get(expected.Id);
+			Assert.NotNull(actual);
 		}
 
 		[Fact]
 		public void CreateTest()
 		{
-			var repository = new Mock<ReviewRepository>(GetMockContext().Object);
-
-			var review = GetTestData().First();
-			repository.Setup(it => it.Create(review));
-			repository.Object.Create(review);
-			repository.Verify(it => it.Create(review), Times.Once);
+			var mockContext = GetMockContext();
+			var repository = new ReviewRepository(mockContext.Object);
+			Assert.Equal(TestReviews.Count(), mockContext.Object.Reviews.Count());
+			repository.Create(TestData.Review1);
+			Assert.Equal(TestReviews.Count(), repository.All().Count());
 		}
 
 		[Fact]
 		public void UpdateTest()
 		{
-			var mockDbSet = new Mock<DbSet<Review>>();
-			var mockContext = new Mock<ScientificReportDbContext>();
-
-			mockContext.Setup(item => item.Reviews).Returns(mockDbSet.Object);
-
-			var repository = new Mock<ReviewRepository>(mockContext.Object);
-
-			var review = GetTestData().First();
-
-			repository.Object.Create(review);
-
-			repository.Setup(a => a.Update(review));
-			repository.Object.Update(review);
-			repository.Verify(a => a.Update(review));
+			var mockContext = GetMockContext();
+			var repository = new ReviewRepository(mockContext.Object);
+			var item = mockContext.Object.Reviews.First();
+			repository.Update(item);
+			Assert.NotNull(repository.Get(item.Id));
 		}
 
 		[Fact]
 		public void DeleteTest()
 		{
-			var mockDbSet = new Mock<DbSet<Review>>();
-			var mockContext = new Mock<ScientificReportDbContext>();
-
-			mockContext.Setup(item => item.Reviews).Returns(mockDbSet.Object);
-
-			var repository = new Mock<ReviewRepository>(mockContext.Object);
-
-			var review = GetTestData().First();
-
-			repository.Setup(x => x.Delete(review.Id));
-			repository.Object.Delete(review.Id);
-			repository.Verify(i => i.Delete(review.Id));
+			var mockContext = GetMockContext();
+			var repository = new ReviewRepository(mockContext.Object);
+			var item = mockContext.Object.Reviews.First();
+			repository.Delete(item.Id);
+			Assert.Null(mockContext.Object.Reviews.Find(item.Id));
 		}
 	}
 }

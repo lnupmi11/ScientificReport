@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
 using Moq;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
@@ -11,102 +10,77 @@ namespace ScientificReport.Test.RepositoriesTests
 {
 	public class GrantRepositoryTests
 	{
-		private static IEnumerable<Grant> GetTestData()
+		private static readonly IEnumerable<Grant> TestGrants = new[]
 		{
-			return new[]
-			{
-				TestData.Grant1,
-				TestData.Grant2,
-				TestData.Grant3
-			};
-		}
+			TestData.Grant1,
+			TestData.Grant2,
+			TestData.Grant3
+		};
 
 		private static Mock<ScientificReportDbContext> GetMockContext()
-        {
-        	var mockContext = new Mock<ScientificReportDbContext>();
-        	mockContext.Setup(item => item.Grants).Returns(
-        		MockProvider.GetMockSet(GetTestData()).Object
-        	);
-        	return mockContext;
-        }
+		{
+			var mockContext = new Mock<ScientificReportDbContext>();
+			mockContext.Setup(item => item.Grants).Returns(
+				MockProvider.GetMockSet(TestGrants).Object
+			);
+			return mockContext;
+		}
 
 		[Fact]
 		public void AllTest()
 		{
-			var repository = new Mock<GrantRepository>(GetMockContext().Object);
-
-			repository.Setup(a => a.All());
-			repository.Object.All();
-			repository.Verify(a => a.All());
+			var repository = new GrantRepository(GetMockContext().Object);
+			var actual = repository.All();
+			Assert.Equal(TestGrants.Count(), actual.Count());
 		}
 
 		[Fact]
 		public void AllWhereTest()
 		{
-			var repository = new GrantRepository(GetMockContext().Object);
-
-			var actual = repository.AllWhere(x => x.Id.Equals(TestData.Grant1.Id));
+			var mockContext = GetMockContext();
+			var repository = new GrantRepository(mockContext.Object);
+			var actual = repository.AllWhere(a => a.Id == mockContext.Object.Grants.First().Id);
 			Assert.Single(actual);
 		}
 
 		[Fact]
 		public void GetByIdTest()
 		{
-			var repository = new Mock<GrantRepository>(GetMockContext().Object);
-
-			var grant = GetTestData().First();
-			repository.Object.Create(grant);
-
-			repository.Setup(item => item.Get(grant.Id));
-			repository.Object.Get(grant.Id);
-			repository.Verify(item => item.Get(grant.Id));
+			var mockContext = GetMockContext();
+			var repository = new GrantRepository(mockContext.Object);
+			var expected = mockContext.Object.Grants.First();
+			var actual = repository.Get(expected.Id);
+			Assert.NotNull(actual);
 		}
 
 		[Fact]
 		public void CreateTest()
 		{
-			var repository = new Mock<GrantRepository>(GetMockContext().Object);
-
-			var grant = GetTestData().First();
-			repository.Setup(it => it.Create(grant));
-			repository.Object.Create(grant);
-			repository.Verify(it => it.Create(grant), Times.Once);
+			var mockContext = GetMockContext();
+			var repository = new GrantRepository(mockContext.Object);
+			Assert.Equal(TestGrants.Count(), mockContext.Object.Grants.Count());
+			repository.Create(TestData.Grant1);
+			Assert.Equal(TestGrants.Count(), repository.All().Count());
 		}
 
 		[Fact]
 		public void UpdateTest()
 		{
-			var mockDbSet = new Mock<DbSet<Grant>>();
-			var mockContext = new Mock<ScientificReportDbContext>();
-
-			mockContext.Setup(item => item.Grants).Returns(mockDbSet.Object);
-
-			var repository = new Mock<GrantRepository>(mockContext.Object);
-
-			var grant = GetTestData().First();
-
-			repository.Object.Create(grant);
-
-			repository.Setup(a => a.Update(grant));
-			repository.Object.Update(grant);
-			repository.Verify(a => a.Update(grant));
+			var mockContext = GetMockContext();
+			var repository = new GrantRepository(mockContext.Object);
+			var item = mockContext.Object.Grants.First();
+			repository.Update(item);
+			Assert.NotNull(repository.Get(item.Id));
 		}
 
 		[Fact]
 		public void DeleteTest()
 		{
-			var mockDbSet = new Mock<DbSet<Grant>>();
-			var mockContext = new Mock<ScientificReportDbContext>();
-
-			mockContext.Setup(item => item.Grants).Returns(mockDbSet.Object);
-
-			var repository = new Mock<GrantRepository>(mockContext.Object);
-
-			var grant = GetTestData().First();
-
-			repository.Setup(x => x.Delete(grant.Id));
-			repository.Object.Delete(grant.Id);
-			repository.Verify(i => i.Delete(grant.Id));
+			var mockContext = GetMockContext();
+			var repository = new GrantRepository(mockContext.Object);
+			var item = mockContext.Object.Grants.First();
+			repository.Delete(item.Id);
+			Assert.Null(mockContext.Object.Grants.Find(item.Id));
 		}
 	}
 }
