@@ -1,12 +1,14 @@
 @model ScientificReport.DAL.Entities.Publication
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 
 @{
 	ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1>@Localizer["Edit"]</h1>
 
-<h4>Publication</h4>
+<h4>@Localizer["Publication"]</h4>
 <hr/>
 <div class="row">
 	<div class="col s12">
@@ -16,31 +18,31 @@
 			<div class="row">
 				<div class="input-field col s7">
 					<select asp-for="Type" class="col s12 push-s2">
-						<option value="" disabled selected>Choose your option</option>
-						<option value="Monograph">Monograph</option>
-						<option value="TextBook">TextBook</option>
-						<option value="HandBook">HandBook</option>
-						<option value="Dictionary">Dictionary</option>
-						<option value="Translation">Translation</option>
-						<option value="Comment">Comment</option>
-						<option value="BibliographicIndex">Bibliographic Index</option>
-						<option value="Other">Other</option>
+						<option value="" disabled selected>@Localizer["Choose your option"]</option>
+						<option value="Monograph">@Localizer["Monograph"]</option>
+						<option value="TextBook">@Localizer["TextBook"]</option>
+						<option value="HandBook">@Localizer["HandBook"]</option>
+						<option value="Dictionary">@Localizer["Dictionary"]</option>
+						<option value="Translation">@Localizer["Translation"]</option>
+						<option value="Comment">@Localizer["Comment"]</option>
+						<option value="BibliographicIndex">@Localizer["Bibliographic Index"]</option>
+						<option value="Other">@Localizer["Other"]</option>
 					</select>
-					<label asp-for="Type">Type</label>
+					<label asp-for="Type">@Localizer["Type"]</label>
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="input-field col s7">
 					<input asp-for="Title" type="text" class="validate">
-					<label asp-for="Title"></label>
+					<label asp-for="Title">@Localizer["Title"]</label>
 					<span class="helper-text" asp-validation-for="Title" data-error="" data-success=""></span>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s7">
 					<input asp-for="Specification" type="text" class="validate"/>
-					<label asp-for="Specification"></label>
+					<label asp-for="Specification">@Localizer["Specification"]</label>
 					<span class="helper-text" asp-validation-for="Specification"
 					      data-length="400" data-error="" data-success="">
 					</span>
@@ -49,40 +51,40 @@
 			<div class="row">
 				<div class="input-field col s7">
 					<input asp-for="PublishingPlace" type="text" class="validate">
-					<label asp-for="PublishingPlace"></label>
+					<label asp-for="PublishingPlace">@Localizer["PublishingPlace"]</label>
 					<span class="helper-text" asp-validation-for="PublishingPlace" data-error="" data-success=""></span>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s7">
 					<input asp-for="PublishingHouseName" type="text" class="validate">
-					<label asp-for="PublishingHouseName"></label>
+					<label asp-for="PublishingHouseName">@Localizer["PublishingHouseName"]</label>
 					<span class="helper-text" asp-validation-for="PublishingHouseName" data-error="" data-success=""></span>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s7">
 					<input asp-for="PublishingYear" type="number" class="validate">
-					<label asp-for="PublishingYear"></label>
+					<label asp-for="PublishingYear">@Localizer["PublishingYear"]</label>
 					<span class="helper-text" asp-validation-for="PublishingYear" data-error="" data-success=""></span>
 				</div>
 			</div>
 			<div class="row">
 				<label class="col s7">
 					<input type="checkbox" class="filled-in" asp-for="IsPrintCanceled"/>
-					<span>@Html.DisplayNameFor(model => model.IsPrintCanceled)</span>
+					<span>@Localizer[Html.DisplayNameFor(model => model.IsPrintCanceled)]</span>
 				</label>
 			</div>
 			<div class="row">
 				<label class="col s7">
 					<input type="checkbox" class="filled-in" asp-for="IsRecommendedToPrint"/>
-					<span>@Html.DisplayNameFor(model => model.IsRecommendedToPrint)</span>
+					<span>@Localizer[Html.DisplayNameFor(model => model.IsRecommendedToPrint)]</span>
 				</label>
 			</div>
 			<div class="row">
 				<div class="input-field col s7">
 					<input asp-for="PagesAmount" type="number" class="validate">
-					<label asp-for="PagesAmount"></label>
+					<label asp-for="PagesAmount">@Localizer["PagesAmount"]</label>
 					<span class="helper-text" asp-validation-for="PagesAmount" data-error="" data-success=""></span>
 				</div>
 			</div>
@@ -101,8 +103,8 @@
 				</div>
 			</div>
 			<div class="row">
-				<input type="submit" value="Save" class="waves-effect btn-small  amber accent-2"/>
-				<a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
+				<input type="submit" value="@Localizer["Save"]" class="waves-effect btn-small  amber accent-2"/>
+				<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
 			</div>
 		</form>
 	</div>
