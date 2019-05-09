@@ -1,23 +1,25 @@
+@using Microsoft.AspNetCore.Mvc.Localization
 @model ScientificReport.DTO.Models.ReportThesis.ReportThesisDetails
+@inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = "Details";
+	ViewData["Title"] = Localizer["Details"];
 }
 
-<h3>Details</h3>
+<h3>@Localizer["Details"]</h3>
 
 <div>
-	<h4>ReportThesis</h4>
+	<h4>@Localizer["ReportThesis"]</h4>
 	<hr/>
 	<dl class="row">
-		<dt class="co s2">
-			@Html.DisplayNameFor(model => model.ReportThesis.Thesis)
+		<dt class="col s2">
+			@Localizer[Html.DisplayNameFor(model => model.ReportThesis.Thesis)]
 		</dt>
-		<dd class="co s10">
+		<dd class="col s10">
 			@Html.DisplayFor(model => model.ReportThesis.Thesis)
 		</dd>
-		<dt class="co s2">
-			@Html.DisplayNameFor(model => model.ReportThesis.Conference)
+		<dt class="col s2">
+			@Localizer[Html.DisplayNameFor(model => model.ReportThesis.Conference)]
 		</dt>
 		@if (Model.ReportThesis.Conference != null)
 		{
@@ -30,10 +32,10 @@
 		}
 		else
 		{
-			<dd class="col s10">There isn't any conferences exist</dd>
+			<dd class="col s10">@Localizer["There isn't any conferences exist"]</dd>
 		}
 		<dt class="col s2">
-			Authors
+			@Localizer["Authors"]
 		</dt>
 		@if (Model.Authors != null)
 		{
@@ -57,6 +59,6 @@
 
 </div>
 <div>
-	<a asp-action="Edit" asp-route-id="@Model.ReportThesis.Id" class="waves-effect btn-small waves-light">Edit</a>
-	<a asp-action="Index" class="btn-small blue darken-3">Back to List</a>
+	<a asp-action="Edit" asp-route-id="@Model.ReportThesis.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
+	<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Back to List"]</a>
 </div>

@@ -1,7 +1,9 @@
+@using Microsoft.AspNetCore.Mvc.Localization
 @model ScientificReport.DTO.Models.UserProfile.LoginModel
+@inject IViewLocalizer Localizer
 
 @{
-	ViewBag.Title = "Log In";
+	ViewBag.Title = Localizer["Log In"];
 	Layout = "_Layout";
 }
 
@@ -12,37 +14,35 @@
 	}
 	
 </style>
-
-<h1>Log in</h1>
+<h1>@Localizer["Log In"]</h1>
 <div asp-validation-summary="All" class="text-danger validation-summary-valid"></div>
-<h4>Use a local account to log in.</h4>
+<h4>@Localizer["Use a local account to log in."]</h4>
 <hr/>
 <form asp-action="Login" method="post">
 	<div asp-validation-summary="ModelOnly" class="validate"></div>
 	<div class="row">
 		<div class="input-field col s6">
 			<input asp-for="UserName" type="text" class="validate">
-			<label asp-for="UserName"></label>
+			<label asp-for="UserName">@Localizer["UserName"]</label>
 			<span class="helper-text" asp-validation-for="UserName" data-error="" data-success=""></span>
 		</div>
 	</div>
 	<div class="row">
 		<div class="input-field col s6">
 			<input asp-for="Password" type="password" class="validate">
-			<label asp-for="Password"></label>
+			<label asp-for="Password">@Localizer["Password"]</label>
 			<span class="helper-text" asp-validation-for="Password" data-error="" data-success=""></span>
 		</div>
 	</div>
 	<div class="row">
 		<label class="col s7">
 			<input type="checkbox" class="filled-in" asp-for="RememberMe"/>
-			<span>@Html.DisplayNameFor(model => model.RememberMe)</span>
+			<span>@Localizer[Html.DisplayNameFor(model => model.RememberMe)]</span>
 		</label>
 	</div>
 	
 	<div class="row myButtons">
-		<input type="submit" value="Log In" class="waves-effect btn-small  waves-light"/>
-		<a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
+		<input type="submit" value="@Localizer["Log In"]" class="waves-effect btn-small  waves-light"/>
+		<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
 	</div>
-	
 </form>

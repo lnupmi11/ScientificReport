@@ -1,19 +1,21 @@
+@using Microsoft.AspNetCore.Mvc.Localization
 @model IEnumerable<ScientificReport.DAL.Entities.Review>
+@inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = Localizer["Index"];
 }
 
-<h3>Review</h3>
+<h3>@Localizer["Review"]</h3>
 
 <p>
-    <a asp-action="Create" class="waves-effect btn-small green darken-3">Create New</a>
+    <a asp-action="Create" class="waves-effect btn-small green darken-3">@Localizer["Create"]</a>
 </p>
 <table class="responsive-table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.DateOfReview)
+                @Localizer[Html.DisplayNameFor(model => model.DateOfReview)]
             </th>
             <th></th>
         </tr>
@@ -25,10 +27,10 @@
                 @Html.DisplayFor(modelItem => item.DateOfReview)
             </td>
             <td>
-                <a asp-action="Details" asp-route-id="@item.Id" class="btn-small blue darken-3">Details</a>
-                <a asp-action="Edit" asp-route-id="@item.Id" class="waves-effect btn-small waves-light">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn-small blue darken-3">@Localizer["Details"]</a>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
                 <form asp-action="Delete" asp-route-id="@item.Id" method="post" style="display: inline;">
-                    <button type="submit" class="waves-effect btn-small deep-orange darken-3">Delete</button>
+                    <button type="submit" class="waves-effect btn-small deep-orange darken-3">@Localizer["Delete"]</button>
                 </form>
             </td>
         </tr>

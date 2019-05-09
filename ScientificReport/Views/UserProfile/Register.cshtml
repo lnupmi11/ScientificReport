@@ -1,7 +1,9 @@
+@using Microsoft.AspNetCore.Mvc.Localization
 @model ScientificReport.DTO.Models.UserProfile.RegisterModel
+@inject IViewLocalizer Localizer
 
 @{
-	ViewBag.Title = "Register";
+	ViewBag.Title = Localizer["Register"];
 	Layout = "_Layout";
 }
 
@@ -10,8 +12,8 @@
 	input[type="submit"] { color: white !important; }
 </style>
 
-<h3>Register</h3>
-<h5>Create a new account.</h5>
+<h3>@Localizer["Register"]</h3>
+<h5>@Localizer["Create a new account"].</h5>
 <hr style="margin-bottom: 20px"/>
 
 <div class="row">
@@ -21,19 +23,20 @@
 			<div class="row">
 				<div class="input-field col s4">
 					<input asp-for="FirstName" type="text" class="validate">
-					<label asp-for="FirstName"></label>
+					<label asp-for="FirstName">@Localizer["FirstName"]</label>
 					<span class="helper-text" asp-validation-for="FirstName" data-error="" data-success=""></span>
 				</div>
+
 			
 				<div class="input-field col s4">
 					<input asp-for="LastName" type="text" class="validate">
-					<label asp-for="LastName"></label>
+					<label asp-for="LastName">@Localizer["LastName"]</label>
 					<span class="helper-text" asp-validation-for="LastName" data-error="" data-success=""></span>
 				</div>
 				
 				<div class="input-field col s4">
 					<input asp-for="MiddleName" type="text" class="validate">
-					<label asp-for="MiddleName"></label>
+					<label asp-for="MiddleName">@Localizer["MiddleName"]</label>
 					<span class="helper-text" asp-validation-for="MiddleName" data-error="" data-success=""></span>
 				</div>
 			</div>
@@ -41,80 +44,80 @@
 			<div class="row">
 				<div class="input-field col s8">
 					<input asp-for="PhoneNumber" type="text" class="validate">
-					<label asp-for="PhoneNumber"></label>
+					<label asp-for="PhoneNumber">@Localizer["PhoneNumber"]</label>
 					<span class="helper-text" asp-validation-for="PhoneNumber" data-error="" data-success=""></span>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s4">
 					<input asp-for="BirthYear" type="number" class="validate">
-					<label asp-for="BirthYear"></label>
+					<label asp-for="BirthYear">@Localizer["BirthYear"]</label>
 					<span class="helper-text" asp-validation-for="BirthYear" data-error="" data-success=""></span>
 				</div>
 		
 				<div class="input-field col s4">
 					<input asp-for="GraduationYear" type="number" class="validate">
-					<label asp-for="GraduationYear"></label>
+					<label asp-for="GraduationYear">@Localizer["GraduationYear"]</label>
 					<span class="helper-text" asp-validation-for="GraduationYear" data-error="" data-success=""></span>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s8">
 					<input asp-for="ScientificDegree" type="text" class="validate">
-					<label asp-for="ScientificDegree"></label>
+					<label asp-for="ScientificDegree">@Localizer["ScientificDegree"]</label>
 					<span class="helper-text" asp-validation-for="ScientificDegree" data-error="" data-success=""></span>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s4">
 					<input asp-for="YearDegreeAssigned" type="number" class="validate">
-					<label asp-for="YearDegreeAssigned"></label>
+					<label asp-for="YearDegreeAssigned">@Localizer["YearDegreeAssigned"]</label>
 					<span class="helper-text" asp-validation-for="YearDegreeAssigned" data-error="" data-success=""></span>
 				</div>
 			
 				<div class="input-field col s4">
 					<input asp-for="YearDegreeGained" type="number" class="validate">
-					<label asp-for="YearDegreeGained"></label>
+					<label asp-for="YearDegreeGained">@Localizer["YearDegreeGained"]</label>
 					<span class="helper-text" asp-validation-for="YearDegreeGained" data-error="" data-success=""></span>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s8">
 					<input asp-for="AcademicStatus" type="text" class="validate">
-					<label asp-for="AcademicStatus"></label>
+					<label asp-for="AcademicStatus">@Localizer["AcademicStatus"]</label>
 					<span class="helper-text" asp-validation-for="AcademicStatus" data-error="" data-success=""></span>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s4">
 					<input asp-for="UserName" type="text" class="validate">
-					<label asp-for="UserName"></label>
+					<label asp-for="UserName">@Localizer["UserName"]</label>
 					<span class="helper-text" asp-validation-for="UserName" data-error="" data-success=""></span>
 				</div>
 			
 				<div class="input-field col s4">
 					<input asp-for="Email" type="email" class="validate">
-					<label asp-for="Email"></label>
+					<label asp-for="Email">@Localizer["Email"]</label>
 					<span class="helper-text" asp-validation-for="Email" data-error="" data-success=""></span>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s4">
 					<input asp-for="Password" type="password" class="validate">
-					<label asp-for="Password"></label>
+					<label asp-for="Password">@Localizer["Password"]</label>
 					<span class="helper-text" asp-validation-for="Password" data-error="" data-success=""></span>
 				</div>
 		
 				<div class="input-field col s4">
 					<input asp-for="PasswordRepeat" type="password" class="validate">
-					<label asp-for="PasswordRepeat"></label>
+					<label asp-for="PasswordRepeat">@Localizer["PasswordRepeat"]</label>
 					<span class="helper-text" asp-validation-for="PasswordRepeat" data-error="" data-success=""></span>
 				</div>
 			</div>
 
 			<div class="row">
-				<input type="submit" value="Register" class="waves-effect btn-small  waves-light"/>
-				<a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
+				<input type="submit" value="@Localizer["Register"]" class="waves-effect btn-small  waves-light"/>
+				<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
 			</div>
 		</form>
 	</div>

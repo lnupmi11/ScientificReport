@@ -1,28 +1,30 @@
+@using Microsoft.AspNetCore.Mvc.Localization
 @model IEnumerable<ScientificReport.DAL.Entities.ScientificInternship>
+@inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = Localizer["Index"];
 }
 
-<h3>Scientific Internship</h3>
+<h3>@Localizer["ScientificInternship"]</h3>
 
 <p>
-    <a asp-action="Create" class="waves-effect btn-small green darken-3">Create New</a>
+    <a asp-action="Create" class="waves-effect btn-small green darken-3">@Localizer["Create"]</a>
 </p>
 <table class="responsive-table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.PlaceOfInternship)
+                @Localizer[Html.DisplayNameFor(model => model.PlaceOfInternship)]
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Started)
+                @Localizer[Html.DisplayNameFor(model => model.Started)]
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Ended)
+                @Localizer[Html.DisplayNameFor(model => model.Ended)]
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Contents)
+                @Localizer[Html.DisplayNameFor(model => model.Contents)]
             </th>
             <th></th>
         </tr>
@@ -43,10 +45,10 @@
                 @Html.DisplayFor(modelItem => item.Contents)
             </td>
             <td>
-                <a asp-action="Details" asp-route-id="@item.Id" class="btn-small blue darken-3">Details</a>
-                <a asp-action="Edit" asp-route-id="@item.Id" class="waves-effect btn-small waves-light">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn-small blue darken-3">@Localizer["Details"]</a>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
                 <form asp-action="Delete" asp-route-id="@item.Id" method="post" style="display: inline;">
-                    <button type="submit" class="waves-effect btn-small deep-orange darken-3">Delete</button>
+                    <button type="submit" class="waves-effect btn-small deep-orange darken-3">@Localizer["Delete"]</button>
                 </form>
             </td>
         </tr>

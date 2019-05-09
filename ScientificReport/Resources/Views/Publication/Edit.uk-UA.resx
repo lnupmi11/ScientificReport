@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../resx_schema.xsd">
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>1.3</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+			PublicKeyToken=b77a5c561934e089
+		</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+			PublicKeyToken=b77a5c561934e089
+		</value>
+	</resheader>
+	
+	
+	<data name="Edit" xml:space="preserve">
+		<value>Редагування</value>
+	</data>
+	<data name="Publication" xml:space="preserve">
+		<value>Публікація</value>
+	</data>
+	<data name="Choose your option" xml:space="preserve">
+		<value>Оберіть варіант</value>
+	</data>
+	<data name="Monograph" xml:space="preserve">
+		<value>Монографія</value>
+	</data>
+	<data name="TextBook" xml:space="preserve">
+		<value>Підручник</value>
+	</data>
+	<data name="HandBook" xml:space="preserve">
+		<value>Навчальний посібник</value>
+	</data>
+	<data name="Dictionary" xml:space="preserve">
+		<value>Словник</value>
+	</data>
+	<data name="Translation" xml:space="preserve">
+		<value>Переклад</value>
+	</data>
+	<data name="Comment" xml:space="preserve">
+		<value>Науковий коментар</value>
+	</data>
+	<data name="Bibliographic Index" xml:space="preserve">
+		<value>Бібліографічний покажчик</value>
+	</data>
+	<data name="Other" xml:space="preserve">
+		<value>Інше</value>
+	</data>
+	<data name="Type" xml:space="preserve">
+		<value>Тип</value>
+	</data>
+	<data name="Title" xml:space="preserve">
+		<value>Назва</value>
+	</data>
+	<data name="Specification" xml:space="preserve">
+		<value>Уточнення</value>
+	</data>
+	<data name="PublishingPlace" xml:space="preserve">
+		<value>Місто видання</value>
+	</data>
+	<data name="PublishingHouseName" xml:space="preserve">
+		<value>Видавничий дім</value>
+	</data>
+	<data name="PublishingYear" xml:space="preserve">
+		<value>Рік видання</value>
+	</data>
+	<data name="IsPrintCanceled" xml:space="preserve">
+		<value>Вийшов з друку</value>
+	</data>
+	<data name="IsRecommendedToPrint" xml:space="preserve">
+		<value>Рекомендовано до друку</value>
+	</data>
+	<data name="PagesAmount" xml:space="preserve">
+		<value>Кількість сторінок</value>
+	</data>
+	<data name="Save" xml:space="preserve">
+		<value>Зберегти</value>
+	</data>
+	<data name="Cancel" xml:space="preserve">
+		<value>Скасувати</value>
+	</data>
+</root>

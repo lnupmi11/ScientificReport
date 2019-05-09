@@ -1,9 +1,12 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title>@ViewData["Title"] - ScientificReport</title>
+	<title>@ViewData["Title"] - @Localizer["ScientificReport"]</title>
 	<!--Import Google Icon Font-->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -89,49 +92,49 @@
 <header>
 	<ul id="dropdown1" style="color: black;" class="dropdown-content">
 		<li style="font-size: 5px; -o-justify-content: center; -webkit-justify-content: center; justify-content: center">
-			<a asp-area="" asp-controller="ApplicantsPatentLicenseActivities" asp-action="Index">Applicants Patent License Activities</a>
+			<a asp-area="" asp-controller="ApplicantsPatentLicenseActivities" asp-action="Index">@Localizer["Applicants Patent License Activities"]</a>
 		</li>
 		<li>
-			<a asp-area="" asp-controller="Article" asp-action="Index">Article</a>
+			<a asp-area="" asp-controller="Article" asp-action="Index">@Localizer["Article"]</a>
 		</li>
 		<li>
-			<a asp-area="" asp-controller="AuthorsPatentLicenseActivities" asp-action="Index">Authors Patent License Activities</a>
+			<a asp-area="" asp-controller="AuthorsPatentLicenseActivities" asp-action="Index">@Localizer["Authors Patent License Activities"]</a>
 		</li>
 		<li>
-			<a asp-area="" asp-controller="Conference" asp-action="Index">Conference</a>
+			<a asp-area="" asp-controller="Conference" asp-action="Index">@Localizer["Conferences"]</a>
 		</li>
 		<li>
-			<a asp-area="" asp-controller="Grant" asp-action="Index">Grant</a>
+			<a asp-area="" asp-controller="Grant" asp-action="Index">@Localizer["Grants"]</a>
 		</li>
 		<li>
-			<a asp-area="" asp-controller="Membership" asp-action="Index">Membership</a>
+			<a asp-area="" asp-controller="Membership" asp-action="Index">@Localizer["Memberships"]</a>
 		</li>
 		<li>
-			<a asp-area="" asp-controller="Opposition" asp-action="Index">Opposition</a>
+			<a asp-area="" asp-controller="Opposition" asp-action="Index">@Localizer["Oppositions"]</a>
 		</li>
 		<li>
-			<a asp-area="" asp-controller="PatentLicenseActivity" asp-action="Index">Patent License Activity</a>
+			<a asp-area="" asp-controller="PatentLicenseActivity" asp-action="Index">@Localizer["Patent License Activities"]</a>
 		</li>
 		<li>
-			<a asp-area="" asp-controller="PostgraduateDissertationGuidance" asp-action="Index">Postgraduate Dissertation Guidance</a>
+			<a asp-area="" asp-controller="PostgraduateDissertationGuidance" asp-action="Index">@Localizer["Postgraduate Dissertation Guidance"]</a>
 		</li>
 		<li>
-			<a asp-area="" asp-controller="PostgraduateGuidance" asp-action="Index">Postgraduate Guidance</a>
+			<a asp-area="" asp-controller="PostgraduateGuidance" asp-action="Index">@Localizer["Postgraduate Guidance"]</a>
 		</li>
 		<li>
-			<a asp-area="" asp-controller="Publication" asp-action="Index">Publication</a>
+			<a asp-area="" asp-controller="Publication" asp-action="Index">@Localizer["Publications"]</a>
 		</li>
 		<li>
-			<a asp-area="" asp-controller="ReportThesis" asp-action="Index">Report Thesis</a>
+			<a asp-area="" asp-controller="ReportThesis" asp-action="Index">@Localizer["Report Theses"]</a>
 		</li>
 		<li>
-			<a asp-area="" asp-controller="Review" asp-action="Index">Review</a>
+			<a asp-area="" asp-controller="Review" asp-action="Index">@Localizer["Reviews"]</a>
 		</li>
 		<li>
-			<a asp-area="" asp-controller="ScientificConsultation" asp-action="Index">Scientific Consultation</a>
+			<a asp-area="" asp-controller="ScientificConsultation" asp-action="Index">@Localizer["Scientific Consultations"]</a>
 		</li>
 		<li>
-			<a asp-area="" asp-controller="ScientificInternship" asp-action="Index">Scientific Internship</a>
+			<a asp-area="" asp-controller="ScientificInternship" asp-action="Index">@Localizer["Scientific Internship"]</a>
 		</li>
 
 	</ul>
@@ -143,19 +146,21 @@
 			</a>
 			<ul class="left hide-on-med-and-down">
 				<li>
-					<a asp-area="" asp-controller="TeacherReport" asp-action="Index">Teacher Reports</a>
+					<a asp-area="" asp-controller="TeacherReport" asp-action="Index">@Localizer["Teacher Reports"]</a>
 				</li>
 				<li>
-					<a asp-area="" asp-controller="ScientificWork" asp-action="Index">Scientific Works</a>
+					<a asp-area="" asp-controller="ScientificWork" asp-action="Index">@Localizer["Scientific Works"]</a>
 				</li>
 				<li>
-					<a asp-area="" asp-controller="UserProfile" asp-action="Index">User Profiles</a>
+					<a asp-area="" asp-controller="UserProfile" asp-action="Index">@Localizer["Users"]</a>
 				</li>
 				<li>
-					<a asp-area="" asp-controller="Department" asp-action="Index">Departments</a>
+					<a asp-area="" asp-controller="Department" asp-action="Index">@Localizer["Departments"]</a>
 				</li>
 				<li>
-					<a class="dropdown-trigger" data-target="dropdown1">Available pages<i class="material-icons right">arrow_drop_down</i></a>
+					<a class="dropdown-trigger" data-target="dropdown1">
+						@Localizer["Available pages"]<i class="material-icons right">arrow_drop_down</i>
+					</a>
 				</li>
 			</ul>
 		</div>
@@ -168,13 +173,16 @@
 		@RenderBody()
 	</main>
 </div>
+<footer class="blue darken-1" style="height: 70px;">
 
-
-<footer class="blue darken-1" style="height: 50px;">
-
-	<div class="container">
-		<span style="color: white;">&copy; 2019 - ScientificReport -</span>
-		<a asp-area="" asp-controller="Home" asp-action="Privacy" style="text-decoration: none; color: darkblue;">Privacy</a>
+	<div class="row">
+		<div class="col s12">
+			<div class="col s6">
+				<span style="color: white;">&copy; 2019 - @Localizer["ScientificReport"] - </span>
+				<a asp-area="" asp-controller="Home" asp-action="Privacy" style="text-decoration: none; color: aquamarine;">@Localizer["Privacy"]</a>
+			</div>
+			<span >@await Html.PartialAsync("_SelectLanguagePartial")</span>
+		</div>
 	</div>
 
 </footer>
