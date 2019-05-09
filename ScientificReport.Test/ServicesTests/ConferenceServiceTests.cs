@@ -104,9 +104,10 @@ namespace ScientificReport.Test.ServicesTests
 		[Fact]
 		public void ExistsTest()
 		{
-			var service = new ConferenceService(GetMockContext().Object);
+			var mockContext = GetMockContext();
+			var service = new ConferenceService(mockContext.Object);
 
-			var item = GetTestData().First();
+			var item = mockContext.Object.Conferences.First();
 			var exists = service.Exists(item.Id);
 
 			Assert.True(exists);
@@ -126,24 +127,30 @@ namespace ScientificReport.Test.ServicesTests
 		[Fact]
 		public void GetReportThesesTest()
 		{
-			var service = new Mock<ConferenceService>(GetMockContext().Object);
+			var mockContext = GetMockContext();
+			var service = new Mock<ConferenceService>(mockContext.Object);
 
-			var conference = TestData.Conference1;
+			var conference = mockContext.Object.Conferences.First();
 
-			service.Setup(it => it.GetReportTheses(conference.Id));
-			service.Object.GetReportTheses(conference.Id);
+			var actual = service.Object.GetReportTheses(conference.Id);
+			
+			Assert.NotNull(actual);
+			
 			service.Verify(it => it.GetReportTheses(conference.Id), Times.Once);
 		}
-		
+
 		[Fact]
 		public void GetParticipatorsTest()
 		{
-			var service = new Mock<ConferenceService>(GetMockContext().Object);
+			var mockContext = GetMockContext();
+			var service = new Mock<ConferenceService>(mockContext.Object);
 
-			var conference = TestData.Conference1;
+			var conference = mockContext.Object.Conferences.First();
 
-			service.Setup(it => it.GetParticipators(conference.Id));
-			service.Object.GetParticipators(conference.Id);
+			var actual = service.Object.GetParticipators(conference.Id);
+			
+			Assert.NotNull(actual);
+			
 			service.Verify(it => it.GetParticipators(conference.Id), Times.Once);
 		}
 	}

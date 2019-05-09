@@ -5,15 +5,18 @@ using Moq;
 using ScientificReport.BLL.Services;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Entities.UserProfile;
 using Xunit;
 
 namespace ScientificReport.Test.ServicesTests
 {
 	public class DepartmentServiceTests
 	{
-		private readonly Mock<DbSet<Department>> _mockDbSet = MockProvider.GetMockSet(GetTestData().AsQueryable());
+		private readonly Mock<DbSet<Department>> _mockDbSetDepartments = MockProvider.GetMockSet(GetTestDepartments().AsQueryable());
+		private readonly Mock<DbSet<ScientificWork>> _mockDbSetScientificWorks = MockProvider.GetMockSet(GetTestScientificWorks().AsQueryable());
+		private readonly Mock<DbSet<UserProfile>> _mockDbSetUserProfiles = MockProvider.GetMockSet(GetTestUserProfiles().AsQueryable());
 
-		private static IEnumerable<Department> GetTestData()
+		private static IEnumerable<Department> GetTestDepartments()
 		{
 			return new[]
 			{
@@ -21,18 +24,39 @@ namespace ScientificReport.Test.ServicesTests
 				TestData.Department2
 			};
 		}
+		
+		private static IEnumerable<ScientificWork> GetTestScientificWorks()
+		{
+			return new[]
+			{
+				TestData.ScientificWork1,
+				TestData.ScientificWork2
+			};
+		}
+		
+		private static IEnumerable<UserProfile> GetTestUserProfiles()
+		{
+			return new[]
+			{
+				TestData.User1,
+				TestData.User2,
+				TestData.User3
+			};
+		}
 
 		private Mock<ScientificReportDbContext> GetMockContext()
 		{
 			var mockContext = new Mock<ScientificReportDbContext>();
-			mockContext.Setup(item => item.Departments).Returns(_mockDbSet.Object);
+			mockContext.Setup(item => item.Departments).Returns(_mockDbSetDepartments.Object);
+			mockContext.Setup(item => item.ScientificWorks).Returns(_mockDbSetScientificWorks.Object);
+			mockContext.Setup(item => item.UserProfiles).Returns(_mockDbSetUserProfiles.Object);
 			return mockContext;
 		}
 
 		[Fact]
 		public void GetAllTest()
 		{
-			var list = GetTestData().AsQueryable();
+			var list = GetTestDepartments().AsQueryable();
 
 			var mockContext = new Mock<ScientificReportDbContext>();
 			mockContext.Setup(item => item.Departments).Returns(MockProvider.GetMockSet(list).Object);
@@ -54,7 +78,7 @@ namespace ScientificReport.Test.ServicesTests
 		[Fact]
 		public void GetByIdTest()
 		{
-			var expected = GetTestData().First();
+			var expected = GetTestDepartments().First();
 			var service = new DepartmentService(GetMockContext().Object);
 
 			var actual = service.GetById(expected.Id);
@@ -71,7 +95,7 @@ namespace ScientificReport.Test.ServicesTests
 			var expected = TestData.Department3;
 			service.CreateItem(expected);
 
-			_mockDbSet.Verify(m => m.Add(It.IsAny<Department>()), Times.Once);
+			_mockDbSetDepartments.Verify(m => m.Add(It.IsAny<Department>()), Times.Once);
 		}
 
 		[Fact]
@@ -79,11 +103,11 @@ namespace ScientificReport.Test.ServicesTests
 		{
 			var service = new DepartmentService(GetMockContext().Object);
 
-			var expected = GetTestData().First();
+			var expected = GetTestDepartments().First();
 			expected.Title = TestData.Department3.Title;
 			service.UpdateItem(expected);
 
-			_mockDbSet.Verify(m => m.Update(expected), Times.Once);
+			_mockDbSetDepartments.Verify(m => m.Update(expected), Times.Once);
 		}
 
 		[Fact]
@@ -106,7 +130,7 @@ namespace ScientificReport.Test.ServicesTests
 		{
 			var service = new DepartmentService(GetMockContext().Object);
 
-			var item = GetTestData().First();
+			var item = GetTestDepartments().First();
 			var exists = service.Exists(item.Id);
 
 			Assert.True(exists);
@@ -126,63 +150,78 @@ namespace ScientificReport.Test.ServicesTests
 		[Fact]
 		public void AddScientificWorkTest()
 		{
-			var service = new Mock<DepartmentService>(GetMockContext().Object);
+			var mockContext = GetMockContext();
+			var service = new DepartmentService(GetMockContext().Object);
 
-			var department = TestData.Department1;
+			var department = mockContext.Object.Departments.First();
+			Assert.Equal(0, department.ScientificWorks.Count);
 
-			service.Setup(it => it.AddScientificWork(department.Id, TestData.ScientificWork2));
-			service.Object.AddScientificWork(department.Id, TestData.ScientificWork2);
-			service.Verify(it => it.AddScientificWork(department.Id, TestData.ScientificWork2), Times.Once);
+			var sw = mockContext.Object.ScientificWorks.Last();
+			service.AddScientificWork(department.Id, sw);
+			
+			department = _mockDbSetDepartments.Object.First();
+			Assert.Equal(1, department.ScientificWorks.Count);
 		}
 
 		[Fact]
 		public void RemoveScientificWorkTest()
 		{
-			var service = new Mock<DepartmentService>(GetMockContext().Object);
+			var mockContext = GetMockContext();
+			var service = new DepartmentService(mockContext.Object);
 
-			var department = TestData.Department1;
-
-			service.Setup(it => it.RemoveScientificWork(department.Id, TestData.ScientificWork1));
-			service.Object.RemoveScientificWork(department.Id, TestData.ScientificWork1);
-			service.Verify(it => it.RemoveScientificWork(department.Id, TestData.ScientificWork1), Times.Once);
+			var department = mockContext.Object.Departments.First();
+			Assert.Equal(1, department.ScientificWorks.Count);
+			
+			var sw = mockContext.Object.ScientificWorks.First();
+			service.RemoveScientificWork(department.Id, sw);
+			
+			department = mockContext.Object.Departments.First();
+			Assert.Equal(0, department.ScientificWorks.Count);
 		}
-		
+
 		[Fact]
 		public void AddUserTest()
 		{
-			var service = new Mock<DepartmentService>(GetMockContext().Object);
+			var mockContext = GetMockContext();
+			var service = new DepartmentService(mockContext.Object);
 
-			var department = TestData.Department1;
+			var department = mockContext.Object.Departments.First();
 
-			service.Setup(it => it.AddUser(department.Id, TestData.User3));
-			service.Object.AddUser(department.Id, TestData.User3);
-			service.Verify(it => it.AddUser(department.Id, TestData.User3), Times.Once);
+			service.AddUser(department.Id, TestData.User3);
+			
+			department = mockContext.Object.Departments.First();
+			
+			Assert.Equal(3, department.Staff.Count);
 		}
 
 		[Fact]
 		public void RemoveUserTest()
 		{
-			var service = new Mock<DepartmentService>(GetMockContext().Object);
+			var mockContext = GetMockContext();
+			var service = new DepartmentService(mockContext.Object);
 
-			var department = TestData.Department1;
+			var department = mockContext.Object.Departments.First();
+			Assert.Equal(3, department.Staff.Count);
 
-			service.Setup(it => it.RemoveUser(department.Id, TestData.User1));
-			service.Object.RemoveUser(department.Id, TestData.User1);
-			service.Verify(it => it.RemoveUser(department.Id, TestData.User1), Times.Once);
+			var user1 = mockContext.Object.UserProfiles.First();
+			
+			service.RemoveUser(department.Id, user1);
+			department = mockContext.Object.Departments.First();
+			
+			Assert.Equal(2, department.Staff.Count);
 		}
 
 		[Fact]
 		public void UserIsHiredTest()
 		{
-			var service = new Mock<DepartmentService>(GetMockContext().Object);
+			var mockContext = GetMockContext();
+			var service = new DepartmentService(mockContext.Object);
 
-			service.Setup(it => it.UserIsHired(TestData.User1));
-			service.Object.UserIsHired(TestData.User1);
-			service.Verify(it => it.UserIsHired(TestData.User1), Times.Once);
+			var actual = service.UserIsHired(TestData.User3);
+			Assert.True(actual);
 			
-			service.Setup(it => it.UserIsHired(TestData.User2));
-			service.Object.UserIsHired(TestData.User2);
-			service.Verify(it => it.UserIsHired(TestData.User2), Times.Once);
+			actual = service.UserIsHired(TestData.User2);
+			Assert.False(actual);
 		}
 	}
 }

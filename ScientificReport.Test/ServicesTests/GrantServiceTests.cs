@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
@@ -12,23 +11,21 @@ namespace ScientificReport.Test.ServicesTests
 {
 	public class GrantServiceTests
 	{
-		private readonly Mock<ScientificReportDbContext> _mockContext = GetMockContext();
+		private readonly Mock<DbSet<Grant>> _mockDbSet = MockProvider.GetMockSet(GetTestData().AsQueryable());
 
 		private static IEnumerable<Grant> GetTestData()
 		{
 			return new[]
 			{
 				TestData.Grant1,
-				TestData.Grant2,
-				TestData.Grant3
+				TestData.Grant2
 			};
 		}
 
-		private static Mock<ScientificReportDbContext> GetMockContext()
+		private Mock<ScientificReportDbContext> GetMockContext()
 		{
-			var list = GetTestData().AsQueryable();
 			var mockContext = new Mock<ScientificReportDbContext>();
-			mockContext.Setup(item => item.Grants).Returns(MockProvider.GetMockSet(list).Object);
+			mockContext.Setup(item => item.Grants).Returns(_mockDbSet.Object);
 			return mockContext;
 		}
 
@@ -39,7 +36,6 @@ namespace ScientificReport.Test.ServicesTests
 
 			var mockContext = new Mock<ScientificReportDbContext>();
 			mockContext.Setup(item => item.Grants).Returns(MockProvider.GetMockSet(list).Object);
-
 			var service = new GrantService(mockContext.Object);
 
 			var actual = service.GetAll();
@@ -50,7 +46,7 @@ namespace ScientificReport.Test.ServicesTests
 		[Fact]
 		public void GetAllWhereTest()
 		{
-			var service = new GrantService(_mockContext.Object);
+			var service = new GrantService(GetMockContext().Object);
 			var actual = service.GetAllWhere(u => u.Id.Equals(TestData.Grant1.Id));
 			Assert.Single(actual);
 		}
@@ -59,90 +55,71 @@ namespace ScientificReport.Test.ServicesTests
 		public void GetByIdTest()
 		{
 			var expected = GetTestData().First();
+			var service = new GrantService(GetMockContext().Object);
 
-			var service = new Mock<GrantService>(_mockContext.Object);
+			var actual = service.GetById(expected.Id);
 
-			service.Object.CreateItem(expected);
-
-			service.Setup(item => item.GetById(expected.Id));
-			service.Object.GetById(expected.Id);
-			service.Verify(item => item.GetById(expected.Id));
+			Assert.NotNull(actual);
+			Assert.Equal(expected.Id, actual.Id);
 		}
 
 		[Fact]
 		public void CreateItemTest()
 		{
-			var service = new Mock<GrantService>(_mockContext.Object);
+			var service = new GrantService(GetMockContext().Object);
 
-			var expectedGrant = TestData.Grant1;
+			var expected = TestData.Grant3;
+			service.CreateItem(expected);
 
-			service.Setup(it => it.CreateItem(expectedGrant));
-			service.Object.CreateItem(expectedGrant);
-			service.Verify(it => it.CreateItem(expectedGrant), Times.Once);
+			_mockDbSet.Verify(m => m.Add(It.IsAny<Grant>()), Times.Once);
 		}
 
 		[Fact]
 		public void UpdateItemTest()
 		{
-			var mockDbSet = new Mock<DbSet<Grant>>();
-			var mockContext = new Mock<ScientificReportDbContext>();
+			var service = new GrantService(GetMockContext().Object);
 
-			mockContext.Setup(item => item.Grants).Returns(mockDbSet.Object);
+			var expected = GetTestData().First();
+			service.UpdateItem(expected);
 
-			var service = new GrantService(mockContext.Object);
-
-			var grant = GetTestData().First();
-
-			service.CreateItem(grant);
-			service.UpdateItem(grant);
-
-			mockDbSet.Verify(m => m.Update(It.IsAny<Grant>()), Times.Once());
+			_mockDbSet.Verify(m => m.Update(expected), Times.Once);
 		}
 
 		[Fact]
 		public void DeleteItemTest()
 		{
-			var service = new Mock<GrantService>(_mockContext.Object);
+			var mockContext = GetMockContext();
+			var service = new GrantService(mockContext.Object);
 
-			var grant = GetTestData().First();
+			var item = mockContext.Object.Grants.First();
 
-			service.Setup(x => x.DeleteById(grant.Id));
-			service.Object.DeleteById(grant.Id);
-			service.Verify(i => i.DeleteById(grant.Id));
+			Assert.True(service.Exists(item.Id));
+
+			service.DeleteById(item.Id);
+
+			Assert.False(service.Exists(item.Id));
 		}
 
 		[Fact]
 		public void ExistsTest()
 		{
-			var service = new Mock<GrantService>(_mockContext.Object);
+			var service = new GrantService(GetMockContext().Object);
 
-			var grant = GetTestData().First();
-			service.Object.CreateItem(grant);
+			var item = GetTestData().First();
+			var exists = service.Exists(item.Id);
 
-			service.Setup(a => a.Exists(grant.Id));
-			service.Object.Exists(grant.Id);
-			service.Verify(a => a.Exists(grant.Id));
+			Assert.True(exists);
 		}
 
 		[Fact]
 		public void DoesNotExistTest()
 		{
-			var service = new Mock<GrantService>(_mockContext.Object);
+			var service = new GrantService(GetMockContext().Object);
 
-			var guid = Guid.NewGuid();
-			service.Setup(a => a.Exists(guid));
-			service.Object.Exists(guid);
-			service.Verify(a => a.Exists(guid));
-		}
-		
-		[Fact]
-		public void GetUsersTest()
-		{
-			var service = new Mock<GrantService>(_mockContext.Object);
+			var item = TestData.Grant3;
+			var exists = service.Exists(item.Id);
 
-			service.Setup(item => item.GetUsers(TestData.Grant1.Id));
-			service.Object.GetUsers(TestData.Grant1.Id);
-			service.Verify(item => item.GetUsers(TestData.Grant1.Id));
+			Assert.False(exists);
 		}
 	}
 }

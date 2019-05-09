@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
@@ -127,20 +126,17 @@ namespace ScientificReport.Test.ServicesTests
 		[Fact]
 		public void GetAuthorsTest()
 		{
-			var list = GetTestData().AsQueryable();
+			var service = new Mock<ArticleService>(GetMockContext().Object);
 
-			var mockContext = new Mock<ScientificReportDbContext>();
-			mockContext.Setup(item => item.Articles).Returns(MockProvider.GetMockSet(list).Object);
+			var article = _mockDbSet.Object.FirstOrDefault();
+			
+			Assert.NotNull(article);
 
-			var article = GetTestData().First();
-
-			var service = new Mock<ArticleService>(mockContext.Object);
-
-			service.Object.CreateItem(article);
-
-			service.Setup(item => item.GetAuthors(article.Id));
-			service.Object.GetAuthors(article.Id);
-			service.Verify(item => item.GetAuthors(article.Id));
+			var actual = service.Object.GetAuthors(article.Id);
+			
+			Assert.NotNull(actual);
+			
+			service.Verify(m => m.GetAuthors(article.Id), Times.Once);
 		}
 	}
 }

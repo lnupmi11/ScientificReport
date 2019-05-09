@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
@@ -12,23 +11,21 @@ namespace ScientificReport.Test.ServicesTests
 {
 	public class OppositionServiceTests
 	{
-		private readonly Mock<ScientificReportDbContext> _mockContext = GetMockContext();
+		private readonly Mock<DbSet<Opposition>> _mockDbSet = MockProvider.GetMockSet(GetTestData().AsQueryable());
 
 		private static IEnumerable<Opposition> GetTestData()
 		{
 			return new[]
 			{
 				TestData.Opposition1,
-				TestData.Opposition2,
-				TestData.Opposition3
+				TestData.Opposition2
 			};
 		}
 
-		private static Mock<ScientificReportDbContext> GetMockContext()
+		private Mock<ScientificReportDbContext> GetMockContext()
 		{
-			var list = GetTestData().AsQueryable();
 			var mockContext = new Mock<ScientificReportDbContext>();
-			mockContext.Setup(item => item.Oppositions).Returns(MockProvider.GetMockSet(list).Object);
+			mockContext.Setup(item => item.Oppositions).Returns(_mockDbSet.Object);
 			return mockContext;
 		}
 
@@ -39,7 +36,6 @@ namespace ScientificReport.Test.ServicesTests
 
 			var mockContext = new Mock<ScientificReportDbContext>();
 			mockContext.Setup(item => item.Oppositions).Returns(MockProvider.GetMockSet(list).Object);
-
 			var service = new OppositionService(mockContext.Object);
 
 			var actual = service.GetAll();
@@ -50,7 +46,7 @@ namespace ScientificReport.Test.ServicesTests
 		[Fact]
 		public void GetAllWhereTest()
 		{
-			var service = new OppositionService(_mockContext.Object);
+			var service = new OppositionService(GetMockContext().Object);
 			var actual = service.GetAllWhere(u => u.Id.Equals(TestData.Opposition1.Id));
 			Assert.Single(actual);
 		}
@@ -59,80 +55,72 @@ namespace ScientificReport.Test.ServicesTests
 		public void GetByIdTest()
 		{
 			var expected = GetTestData().First();
+			var service = new OppositionService(GetMockContext().Object);
 
-			var service = new Mock<OppositionService>(_mockContext.Object);
+			var actual = service.GetById(expected.Id);
 
-			service.Object.CreateItem(expected);
-
-			service.Setup(item => item.GetById(expected.Id));
-			service.Object.GetById(expected.Id);
-			service.Verify(item => item.GetById(expected.Id));
+			Assert.NotNull(actual);
+			Assert.Equal(expected.Id, actual.Id);
 		}
 
 		[Fact]
 		public void CreateItemTest()
 		{
-			var service = new Mock<OppositionService>(_mockContext.Object);
+			var service = new OppositionService(GetMockContext().Object);
 
-			var expectedOpposition = TestData.Opposition1;
+			var expected = TestData.Opposition3;
+			service.CreateItem(expected);
 
-			service.Setup(it => it.CreateItem(expectedOpposition));
-			service.Object.CreateItem(expectedOpposition);
-			service.Verify(it => it.CreateItem(expectedOpposition), Times.Once);
+			_mockDbSet.Verify(m => m.Add(It.IsAny<Opposition>()), Times.Once);
 		}
 
 		[Fact]
 		public void UpdateItemTest()
 		{
-			var mockDbSet = new Mock<DbSet<Opposition>>();
-			var mockContext = new Mock<ScientificReportDbContext>();
+			var service = new OppositionService(GetMockContext().Object);
 
-			mockContext.Setup(item => item.Oppositions).Returns(mockDbSet.Object);
+			var expected = GetTestData().First();
+			expected.About = TestData.Opposition3.About;
+			service.UpdateItem(expected);
 
-			var service = new OppositionService(mockContext.Object);
-
-			var opposition = GetTestData().First();
-
-			service.CreateItem(opposition);
-			service.UpdateItem(opposition);
-
-			mockDbSet.Verify(m => m.Update(It.IsAny<Opposition>()), Times.Once());
+			_mockDbSet.Verify(m => m.Update(expected), Times.Once);
 		}
 
 		[Fact]
 		public void DeleteItemTest()
 		{
-			var service = new Mock<OppositionService>(_mockContext.Object);
+			var mockContext = GetMockContext();
+			var service = new OppositionService(mockContext.Object);
 
-			var opposition = GetTestData().First();
+			var item = mockContext.Object.Oppositions.First();
 
-			service.Setup(x => x.DeleteById(opposition.Id));
-			service.Object.DeleteById(opposition.Id);
-			service.Verify(i => i.DeleteById(opposition.Id));
+			Assert.True(service.Exists(item.Id));
+
+			service.DeleteById(item.Id);
+
+			Assert.False(service.Exists(item.Id));
 		}
 
 		[Fact]
 		public void ExistsTest()
 		{
-			var service = new Mock<OppositionService>(_mockContext.Object);
+			var service = new OppositionService(GetMockContext().Object);
 
-			var opposition = GetTestData().First();
-			service.Object.CreateItem(opposition);
+			var item = GetTestData().First();
+			var exists = service.Exists(item.Id);
 
-			service.Setup(a => a.Exists(opposition.Id));
-			service.Object.Exists(opposition.Id);
-			service.Verify(a => a.Exists(opposition.Id));
+			Assert.True(exists);
 		}
 
 		[Fact]
 		public void DoesNotExistTest()
 		{
-			var service = new Mock<OppositionService>(_mockContext.Object);
+			var service = new OppositionService(GetMockContext().Object);
 
-			var guid = Guid.NewGuid();
-			service.Setup(a => a.Exists(guid));
-			service.Object.Exists(guid);
-			service.Verify(a => a.Exists(guid));
+			var item = TestData.Opposition3;
+			var exists = service.Exists(item.Id);
+
+			Assert.False(exists);
 		}
 	}
 }

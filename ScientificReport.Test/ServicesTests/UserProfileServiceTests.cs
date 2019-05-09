@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
@@ -12,23 +11,21 @@ namespace ScientificReport.Test.ServicesTests
 {
 	public class UserProfileServiceTests
 	{
-		private readonly Mock<ScientificReportDbContext> _mockContext = GetMockContext();
+		private readonly Mock<DbSet<UserProfile>> _mockDbSet = MockProvider.GetMockSet(GetTestData().AsQueryable());
 
 		private static IEnumerable<UserProfile> GetTestData()
 		{
 			return new[]
 			{
 				TestData.User1,
-				TestData.User2,
-				TestData.User3
+				TestData.User2
 			};
 		}
 
-		private static Mock<ScientificReportDbContext> GetMockContext()
+		private Mock<ScientificReportDbContext> GetMockContext()
 		{
-			var list = GetTestData().AsQueryable();
 			var mockContext = new Mock<ScientificReportDbContext>();
-			mockContext.Setup(item => item.UserProfiles).Returns(MockProvider.GetMockSet(list).Object);
+			mockContext.Setup(item => item.UserProfiles).Returns(_mockDbSet.Object);
 			return mockContext;
 		}
 
@@ -39,7 +36,6 @@ namespace ScientificReport.Test.ServicesTests
 
 			var mockContext = new Mock<ScientificReportDbContext>();
 			mockContext.Setup(item => item.UserProfiles).Returns(MockProvider.GetMockSet(list).Object);
-
 			var service = new UserProfileService(mockContext.Object);
 
 			var actual = service.GetAll();
@@ -50,7 +46,7 @@ namespace ScientificReport.Test.ServicesTests
 		[Fact]
 		public void GetAllWhereTest()
 		{
-			var service = new UserProfileService(_mockContext.Object);
+			var service = new UserProfileService(GetMockContext().Object);
 			var actual = service.GetAllWhere(u => u.Id.Equals(TestData.User1.Id));
 			Assert.Single(actual);
 		}
@@ -59,80 +55,72 @@ namespace ScientificReport.Test.ServicesTests
 		public void GetByIdTest()
 		{
 			var expected = GetTestData().First();
+			var service = new UserProfileService(GetMockContext().Object);
 
-			var service = new Mock<UserProfileService>(_mockContext.Object);
+			var actual = service.GetById(expected.Id);
 
-			service.Object.CreateItem(expected);
-
-			service.Setup(item => item.GetById(expected.Id));
-			service.Object.GetById(expected.Id);
-			service.Verify(item => item.GetById(expected.Id));
+			Assert.NotNull(actual);
+			Assert.Equal(expected.Id, actual.Id);
 		}
 
 		[Fact]
 		public void CreateItemTest()
 		{
-			var service = new Mock<UserProfileService>(_mockContext.Object);
+			var service = new UserProfileService(GetMockContext().Object);
 
-			var expectedUserProfile = TestData.User1;
+			var expected = TestData.User3;
+			service.CreateItem(expected);
 
-			service.Setup(it => it.CreateItem(expectedUserProfile));
-			service.Object.CreateItem(expectedUserProfile);
-			service.Verify(it => it.CreateItem(expectedUserProfile), Times.Once);
+			_mockDbSet.Verify(m => m.Add(It.IsAny<UserProfile>()), Times.Once);
 		}
 
 		[Fact]
 		public void UpdateItemTest()
 		{
-			var mockDbSet = new Mock<DbSet<UserProfile>>();
-			var mockContext = new Mock<ScientificReportDbContext>();
+			var service = new UserProfileService(GetMockContext().Object);
 
-			mockContext.Setup(item => item.UserProfiles).Returns(mockDbSet.Object);
+			var expected = GetTestData().First();
+			expected.Position = TestData.User3.Position;
+			service.UpdateItem(expected);
 
-			var service = new UserProfileService(mockContext.Object);
-
-			var userProfile = GetTestData().First();
-
-			service.CreateItem(userProfile);
-			service.UpdateItem(userProfile);
-
-			mockDbSet.Verify(m => m.Update(It.IsAny<UserProfile>()), Times.Once());
+			_mockDbSet.Verify(m => m.Update(expected), Times.Once);
 		}
 
 		[Fact]
 		public void DeleteItemTest()
 		{
-			var service = new Mock<UserProfileService>(_mockContext.Object);
+			var mockContext = GetMockContext();
+			var service = new UserProfileService(mockContext.Object);
 
-			var userProfile = GetTestData().First();
+			var item = mockContext.Object.UserProfiles.First();
 
-			service.Setup(x => x.DeleteById(userProfile.Id));
-			service.Object.DeleteById(userProfile.Id);
-			service.Verify(i => i.DeleteById(userProfile.Id));
+			Assert.True(service.UserExists(item.Id));
+
+			service.DeleteById(item.Id);
+
+			Assert.False(service.UserExists(item.Id));
 		}
 
 		[Fact]
 		public void ExistsTest()
 		{
-			var service = new Mock<UserProfileService>(_mockContext.Object);
+			var service = new UserProfileService(GetMockContext().Object);
 
-			var userProfile = GetTestData().First();
-			service.Object.CreateItem(userProfile);
+			var item = GetTestData().First();
+			var exists = service.UserExists(item.Id);
 
-			service.Setup(a => a.UserExists(userProfile.Id));
-			service.Object.UserExists(userProfile.Id);
-			service.Verify(a => a.UserExists(userProfile.Id));
+			Assert.True(exists);
 		}
 
 		[Fact]
 		public void DoesNotExistTest()
 		{
-			var service = new Mock<UserProfileService>(_mockContext.Object);
+			var service = new UserProfileService(GetMockContext().Object);
 
-			var guid = Guid.NewGuid();
-			service.Setup(a => a.UserExists(guid));
-			service.Object.UserExists(guid);
-			service.Verify(a => a.UserExists(guid));
+			var item = TestData.User3;
+			var exists = service.UserExists(item.Id);
+
+			Assert.False(exists);
 		}
 	}
 }

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
@@ -12,23 +11,21 @@ namespace ScientificReport.Test.ServicesTests
 {
 	public class ScientificInternshipServiceTests
 	{
-		private readonly Mock<ScientificReportDbContext> _mockContext = GetMockContext();
+		private readonly Mock<DbSet<ScientificInternship>> _mockDbSet = MockProvider.GetMockSet(GetTestData().AsQueryable());
 
 		private static IEnumerable<ScientificInternship> GetTestData()
 		{
 			return new[]
 			{
 				TestData.ScientificInternship1,
-				TestData.ScientificInternship2,
-				TestData.ScientificInternship3
+				TestData.ScientificInternship2
 			};
 		}
 
-		private static Mock<ScientificReportDbContext> GetMockContext()
+		private Mock<ScientificReportDbContext> GetMockContext()
 		{
-			var list = GetTestData().AsQueryable();
 			var mockContext = new Mock<ScientificReportDbContext>();
-			mockContext.Setup(item => item.ScientificInternships).Returns(MockProvider.GetMockSet(list).Object);
+			mockContext.Setup(item => item.ScientificInternships).Returns(_mockDbSet.Object);
 			return mockContext;
 		}
 
@@ -39,7 +36,6 @@ namespace ScientificReport.Test.ServicesTests
 
 			var mockContext = new Mock<ScientificReportDbContext>();
 			mockContext.Setup(item => item.ScientificInternships).Returns(MockProvider.GetMockSet(list).Object);
-
 			var service = new ScientificInternshipService(mockContext.Object);
 
 			var actual = service.GetAll();
@@ -50,7 +46,7 @@ namespace ScientificReport.Test.ServicesTests
 		[Fact]
 		public void GetAllWhereTest()
 		{
-			var service = new ScientificInternshipService(_mockContext.Object);
+			var service = new ScientificInternshipService(GetMockContext().Object);
 			var actual = service.GetAllWhere(u => u.Id.Equals(TestData.ScientificInternship1.Id));
 			Assert.Single(actual);
 		}
@@ -59,80 +55,72 @@ namespace ScientificReport.Test.ServicesTests
 		public void GetByIdTest()
 		{
 			var expected = GetTestData().First();
+			var service = new ScientificInternshipService(GetMockContext().Object);
 
-			var service = new Mock<ScientificInternshipService>(_mockContext.Object);
+			var actual = service.GetById(expected.Id);
 
-			service.Object.CreateItem(expected);
-
-			service.Setup(item => item.GetById(expected.Id));
-			service.Object.GetById(expected.Id);
-			service.Verify(item => item.GetById(expected.Id));
+			Assert.NotNull(actual);
+			Assert.Equal(expected.Id, actual.Id);
 		}
 
 		[Fact]
 		public void CreateItemTest()
 		{
-			var service = new Mock<ScientificInternshipService>(_mockContext.Object);
+			var service = new ScientificInternshipService(GetMockContext().Object);
 
-			var expectedScientificInternship = TestData.ScientificInternship1;
+			var expected = TestData.ScientificInternship3;
+			service.CreateItem(expected);
 
-			service.Setup(it => it.CreateItem(expectedScientificInternship));
-			service.Object.CreateItem(expectedScientificInternship);
-			service.Verify(it => it.CreateItem(expectedScientificInternship), Times.Once);
+			_mockDbSet.Verify(m => m.Add(It.IsAny<ScientificInternship>()), Times.Once);
 		}
 
 		[Fact]
 		public void UpdateItemTest()
 		{
-			var mockDbSet = new Mock<DbSet<ScientificInternship>>();
-			var mockContext = new Mock<ScientificReportDbContext>();
+			var service = new ScientificInternshipService(GetMockContext().Object);
 
-			mockContext.Setup(item => item.ScientificInternships).Returns(mockDbSet.Object);
+			var expected = GetTestData().First();
+			expected.Contents = TestData.ScientificInternship3.Contents;
+			service.UpdateItem(expected);
 
-			var service = new ScientificInternshipService(mockContext.Object);
-
-			var scientificInternship = GetTestData().First();
-
-			service.CreateItem(scientificInternship);
-			service.UpdateItem(scientificInternship);
-
-			mockDbSet.Verify(m => m.Update(It.IsAny<ScientificInternship>()), Times.Once());
+			_mockDbSet.Verify(m => m.Update(expected), Times.Once);
 		}
 
 		[Fact]
 		public void DeleteItemTest()
 		{
-			var service = new Mock<ScientificInternshipService>(_mockContext.Object);
+			var mockContext = GetMockContext();
+			var service = new ScientificInternshipService(mockContext.Object);
 
-			var scientificInternship = GetTestData().First();
+			var item = mockContext.Object.ScientificInternships.First();
 
-			service.Setup(x => x.DeleteById(scientificInternship.Id));
-			service.Object.DeleteById(scientificInternship.Id);
-			service.Verify(i => i.DeleteById(scientificInternship.Id));
+			Assert.True(service.Exists(item.Id));
+
+			service.DeleteById(item.Id);
+
+			Assert.False(service.Exists(item.Id));
 		}
 
 		[Fact]
 		public void ExistsTest()
 		{
-			var service = new Mock<ScientificInternshipService>(_mockContext.Object);
+			var service = new ScientificInternshipService(GetMockContext().Object);
 
-			var scientificInternship = GetTestData().First();
-			service.Object.CreateItem(scientificInternship);
+			var item = GetTestData().First();
+			var exists = service.Exists(item.Id);
 
-			service.Setup(a => a.Exists(scientificInternship.Id));
-			service.Object.Exists(scientificInternship.Id);
-			service.Verify(a => a.Exists(scientificInternship.Id));
+			Assert.True(exists);
 		}
 
 		[Fact]
 		public void DoesNotExistTest()
 		{
-			var service = new Mock<ScientificInternshipService>(_mockContext.Object);
+			var service = new ScientificInternshipService(GetMockContext().Object);
 
-			var guid = Guid.NewGuid();
-			service.Setup(a => a.Exists(guid));
-			service.Object.Exists(guid);
-			service.Verify(a => a.Exists(guid));
+			var item = TestData.ScientificInternship3;
+			var exists = service.Exists(item.Id);
+
+			Assert.False(exists);
 		}
 		
 		[Fact]
@@ -140,7 +128,7 @@ namespace ScientificReport.Test.ServicesTests
 		{
 			var scientificInternship = GetTestData().First();
 
-			var service = new Mock<ScientificInternshipService>(_mockContext.Object);
+			var service = new Mock<ScientificInternshipService>(GetMockContext().Object);
 
 			service.Setup(item => item.GetUsers(scientificInternship.Id));
 			service.Object.GetUsers(scientificInternship.Id);
