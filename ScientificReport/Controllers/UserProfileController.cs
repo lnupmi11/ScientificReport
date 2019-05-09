@@ -339,6 +339,50 @@ namespace ScientificReport.Controllers
 			return Redirect("/");
 		}
 
+		[HttpGet]
+		[Authorize(Roles = UserProfileRole.Any)]
+		public IActionResult ChangePassword()
+		{
+			var currentUser = _userManager.GetUserAsync(HttpContext.User);
+			if (currentUser == null)
+			{
+				return NotFound();
+			}
+
+			return View(new ChangePasswordModel
+			{
+				Id = currentUser.Result.Id
+			});
+		}
+
+		[HttpPost]
+		[Authorize(Roles = UserProfileRole.Any)]
+		public async Task<IActionResult> ChangePassword(ChangePasswordModel model)
+		{
+			if (model.Id == null)
+			{
+				return NotFound();
+			}
+
+			var user = _userProfileService.GetById(model.Id.Value);
+			if (user == null)
+			{
+				return NotFound();
+			}
+
+			var error = await _userProfileService.ChangePassword(
+				user, model.OldPassword, model.NewPassword, model.NewPasswordRepeat, _userManager
+			);
+
+			if (error == null)
+			{
+				return Redirect("/");
+			}
+			
+			ModelState.AddModelError(string.Empty, error);
+			return View(model);
+		}
+
 		private void AddErrorsFromResult(IdentityResult result)
 		{
 			foreach (var error in result.Errors)
