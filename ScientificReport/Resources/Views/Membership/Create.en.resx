@@ -17,8 +17,6 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-
-
     <data name="Membership" xml:space="preserve">
 		<value>Membership</value>
 	</data>
@@ -28,8 +26,6 @@
 	<data name="MembershipInfo" xml:space="preserve">
 		<value>Membership info</value>
 	</data>
-	
-	
 	<data name="Choose your option" xml:space="preserve">
 		<value>Choose your option</value>
 	</data>
@@ -42,7 +38,6 @@
 	<data name="Scientific journal editorial board" xml:space="preserve">
 		<value>Scientific journal editorial board</value>
 	</data>
-	
 	<data name="Create New" xml:space="preserve">
 		<value>Create New</value>
 	</data>
@@ -67,5 +62,4 @@
 	<data name="Back to List" xml:space="preserve">
 		<value>Back to List</value>
 	</data>
-
 </root>

@@ -2,9 +2,8 @@
 @using Microsoft.AspNetCore.Mvc.Localization
 @inject IViewLocalizer Localizer
 
-
 @{
-    ViewData["Title"] = "Create";
+	ViewData["Title"] = Localizer["Create"];
 }
 
 <h3>@Localizer["Create"]</h3>
@@ -12,9 +11,9 @@
 <h5>@Localizer["Publication"]</h5>
 <hr />
 <div class="row">
-    <div class="col s12">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="validate"></div>
+	<div class="col s12">
+		<form asp-action="Create">
+			<div asp-validation-summary="ModelOnly" class="validate"></div>
 			<div class="row">
 				<div class="input-field col s7">
 					<select asp-for="Type" class="col s12 push-s2">
@@ -44,7 +43,7 @@
 					<input asp-for="Specification" type="text" class="validate"/>
 					<label asp-for="Specification">@Localizer["Specification"]</label>
 					<span class="helper-text" asp-validation-for="Specification" 
-					      data-length="400" data-error="" data-success=""></span>
+						  data-length="400" data-error="" data-success=""></span>
 				</div>
 			</div>
 			<div class="row">
@@ -68,27 +67,27 @@
 					<span class="helper-text" asp-validation-for="PublishingYear" data-error="" data-success=""></span>
 				</div>
 			</div>
-	        <div class="row">
-		        <div class="input-field col s7">
-			        <input asp-for="PagesAmount" type="number" class="validate">
-			        <label asp-for="PagesAmount"></label>
-			        <span class="helper-text" asp-validation-for="PagesAmount" data-error="" data-success=""></span>
-		        </div>
-	        </div>
-	        <div class="row">
-		        <div class="input-field col s6">
-			        <input asp-for="CreatedAt" type="date" class="validate">
-			        <label asp-for="CreatedAt"></label>
-			        <span asp-validation-for="CreatedAt" data-error="" data-success=""></span>
-		        </div>
-	        </div>
-	        <div class="row">
-		        <div class="input-field col s6">
-			        <input asp-for="LastEditAt" type="date" class="validate">
-			        <label asp-for="LastEditAt"></label>
-			        <span asp-validation-for="LastEditAt" data-error="" data-success=""></span>
-		        </div>
-	        </div>
+			<div class="row">
+				<div class="input-field col s7">
+					<input asp-for="PagesAmount" type="number" class="validate">
+					<label asp-for="PagesAmount">@Localizer["PagesAmount"]</label>
+					<span class="helper-text" asp-validation-for="PagesAmount" data-error="" data-success=""></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s6">
+					<input asp-for="CreatedAt" type="date" class="validate">
+					<label asp-for="CreatedAt"></label>
+					<span asp-validation-for="CreatedAt" data-error="" data-success=""></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s6">
+					<input asp-for="LastEditAt" type="date" class="validate">
+					<label asp-for="LastEditAt"></label>
+					<span asp-validation-for="LastEditAt" data-error="" data-success=""></span>
+				</div>
+			</div>
 			<div class="row">
 				<label class="col s3">
 					<input type="checkbox" class="filled-in" asp-for="IsPrintCanceled"/>
@@ -104,10 +103,9 @@
 				<input type="submit" value="@Localizer["Create"]" class="waves-effect btn-small  amber accent-2"/>
 				<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
 			</div>
-        </form>
-    </div>
+		</form>
+	</div>
 </div>
-
 
 @section Scripts {
 	<script type="text/javascript">
@@ -115,5 +113,5 @@
 			$('select').formSelect();
 		});
 	</script>
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

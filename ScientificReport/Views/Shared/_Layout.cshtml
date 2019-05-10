@@ -1,4 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using ScientificReport.Controllers.Utils
 @inject IViewLocalizer Localizer
 
 <!DOCTYPE html>
@@ -136,7 +137,6 @@
 		<li>
 			<a asp-area="" asp-controller="ScientificInternship" asp-action="Index">@Localizer["Scientific Internship"]</a>
 		</li>
-
 	</ul>
 	<nav>
 		<div class="nav-wrapper light-blue darken-4">
@@ -144,25 +144,27 @@
 			<a class="left" asp-area="" asp-controller="Home" asp-action="Index">
 				<img class="mylogo" src="~/css/mathlogo.png" alt="Main"/>
 			</a>
-			<ul class="left hide-on-med-and-down">
-				<li>
-					<a asp-area="" asp-controller="TeacherReport" asp-action="Index">@Localizer["Teacher Reports"]</a>
-				</li>
-				<li>
-					<a asp-area="" asp-controller="ScientificWork" asp-action="Index">@Localizer["Scientific Works"]</a>
-				</li>
-				<li>
-					<a asp-area="" asp-controller="UserProfile" asp-action="Index">@Localizer["Users"]</a>
-				</li>
-				<li>
-					<a asp-area="" asp-controller="Department" asp-action="Index">@Localizer["Departments"]</a>
-				</li>
-				<li>
-					<a class="dropdown-trigger" data-target="dropdown1">
-						@Localizer["Available pages"]<i class="material-icons right">arrow_drop_down</i>
-					</a>
-				</li>
-			</ul>
+			@if (User.Identity.IsAuthenticated) {
+				<ul class="left hide-on-med-and-down">
+					<li>
+						<a asp-area="" asp-controller="TeacherReport" asp-action="Index">@Localizer["Teacher Reports"]</a>
+					</li>
+					<li>
+						<a asp-area="" asp-controller="ScientificWork" asp-action="Index">@Localizer["Scientific Works"]</a>
+					</li>
+					<li>
+						<a asp-area="" asp-controller="UserProfile" asp-action="Index">@Localizer["Users"]</a>
+					</li>
+					<li>
+						<a asp-area="" asp-controller="Department" asp-action="Index">@Localizer["Departments"]</a>
+					</li>
+					<li>
+						<a class="dropdown-trigger" data-target="dropdown1">
+							@Localizer["Available pages"]<i class="material-icons right">arrow_drop_down</i>
+						</a>
+					</li>
+				</ul>	
+			}
 		</div>
 	</nav>
 </header>

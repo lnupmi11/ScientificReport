@@ -3,7 +3,7 @@
 @inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = "Edit";
+	ViewData["Title"] = Localizer["Edit"];
 }
 
 <h3>@Localizer["Edit"]</h3>
@@ -44,7 +44,7 @@
 					<input asp-for="Specification" type="text" class="validate"/>
 					<label asp-for="Specification">@Localizer["Specification"]</label>
 					<span class="helper-text" asp-validation-for="Specification"
-					      data-length="400" data-error="" data-success="">
+						  data-length="400" data-error="" data-success="">
 					</span>
 				</div>
 			</div>
@@ -109,7 +109,6 @@
 		</form>
 	</div>
 </div>
-
 
 @section Scripts {
 	<script type="text/javascript">

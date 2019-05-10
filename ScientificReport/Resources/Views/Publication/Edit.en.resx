@@ -17,7 +17,6 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-
     <data name="Edit" xml:space="preserve">
 		<value>Edit</value>
 	</data>
@@ -84,5 +83,4 @@
 	<data name="Cancel" xml:space="preserve">
 		<value>Cancel</value>
 	</data>
-
 </root>

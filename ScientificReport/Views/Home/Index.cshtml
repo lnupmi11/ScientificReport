@@ -1,7 +1,8 @@
-﻿@{
-	ViewData["Title"] = "Home Page";
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@{
+	ViewData["Title"] = Localizer["Home Page"];
 }
 
 <link rel="stylesheet" href="~/css/imageOfLnu.css"/>
-
-

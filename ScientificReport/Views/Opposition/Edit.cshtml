@@ -1,12 +1,14 @@
+@using Microsoft.AspNetCore.Mvc.Localization
 @model ScientificReport.DAL.Entities.Opposition
+@inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = Localizer["Edit"];
 }
 
-<h3>Edit</h3>
+<h3>@Localizer["Edit"]</h3>
 
-<h5>Opposition</h5>
+<h5>@Localizer["Opposition"]</h5>
 <hr />
 <div class="row">
     <div class="col s12">
@@ -16,7 +18,7 @@
             <div class="row">
                 <div class="input-field col s6">
                     <textarea asp-for="About" class="materialize-textarea"></textarea>
-                    <label asp-for="About"></label>
+                    <label asp-for="About">@Localizer["About"]</label>
                     <span class="helper-text" asp-validation-for="About" 
                           data-length="400" data-error="" data-success=""></span>
                 </div>
@@ -24,20 +26,19 @@
             <div class="row">
                 <div class="input-field col s6">
                     <input asp-for="DateOfOpposition" type="date" class="validate"/>
-                    <label asp-for="DateOfOpposition"></label>
+                    <label asp-for="DateOfOpposition">@Localizer["DateOfOpposition"]</label>
                     <span class="helper-text" asp-validation-for="DateOfOpposition" 
                           data-length="400" data-error="" data-success=""></span>
                 </div>
             </div>
 	
             <div class="row myButtons">
-                <input type="submit" value="Save" class="waves-effect btn-small  amber accent-2"/>
-                <a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
+                <input type="submit" value="@Localizer["Save"]" class="waves-effect btn-small  amber accent-2"/>
+                <a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
             </div>
         </form>
     </div>
 </div>
-
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

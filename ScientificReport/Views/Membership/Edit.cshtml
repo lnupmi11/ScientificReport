@@ -1,8 +1,9 @@
+@using Microsoft.AspNetCore.Mvc.Localization
 @model ScientificReport.DAL.Entities.Membership
-
+@inject IViewLocalizer Localizer
 
 <div>
-	<h3>Edit membership</h3>
+	<h3>@Localizer["Edit membership"]</h3>
 </div>
 <div class="row">
 	<div class="col s12">
@@ -11,28 +12,28 @@
 			<div class="row">
 				<div class="input-field col s7">
 					<select asp-for="MemberOf" class="col s7 push-s2">
-						<option value="" disabled selected>Член: </option>
-						<option value="ScientificCouncil">Вчена рада</option>
-						<option value="ExpertCouncil">Експертна рада</option>
-						<option value="EditorialBoard">Редколегія наукового журналу</option>
+						<option value="" disabled selected>@Localizer["Member"]: </option>
+						<option value="ScientificCouncil">@Localizer["Scientific Council"]</option>
+						<option value="ExpertCouncil">@Localizer["Expert Council"]</option>
+						<option value="EditorialBoard">@Localizer["Editorial Board"]</option>
 					</select>
-					<label asp-for="MemberOf"></label>
+					<label asp-for="MemberOf">@Localizer["MemberOf"]</label>
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="input-field col s7">
 					<textarea asp-for="MembershipInfo" class="materialize-textarea"></textarea>
-					<label asp-for="MembershipInfo"></label>
+					<label asp-for="MembershipInfo">@Localizer["MembershipInfo"]</label>
 					<span class="helper-text" asp-validation-for="MembershipInfo"
-					      data-length="400" data-error="" data-success="">
+						  data-length="400" data-error="" data-success="">
 					</span>
 				</div>
 			</div>
 
 			<div class="row myButtons">
-				<input type="submit" value="Save" class="waves-effect btn-small  amber accent-2"/>
-				<a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
+				<input type="submit" value="@Localizer["Save"]" class="waves-effect btn-small  amber accent-2"/>
+				<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
 			</div>
 		</form>
 	</div>

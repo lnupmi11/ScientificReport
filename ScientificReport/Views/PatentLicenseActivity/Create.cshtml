@@ -1,12 +1,14 @@
+@using Microsoft.AspNetCore.Mvc.Localization
 @model ScientificReport.DAL.Entities.PatentLicenseActivity
+@inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = Localizer["Create"];
 }
 
-<h3>Create</h3>
+<h3>@Localizer["Create"]</h3>
 
-<h5>PatentLicenseActivity</h5>
+<h5>@Localizer["Patent License Activity"]</h5>
 <hr />
 <div class="row">
     <div class="col s12">
@@ -15,7 +17,7 @@
             <div class="row">
                 <div class="input-field col s6">
                     <input asp-for="Name" type="text" class="validate">
-                    <label asp-for="Name"></label>
+                    <label asp-for="Name">@Localizer["Name"]</label>
                     <span class="helper-text" asp-validation-for="Name" 
                           data-error="" data-success=""></span>
                 </div>
@@ -23,7 +25,7 @@
             <div class="row">
                 <div class="input-field col s6">
                     <input asp-for="Number" type="number" class="validate">
-                    <label asp-for="Number"></label>
+                    <label asp-for="Number">@Localizer["Number"]</label>
                     <span class="helper-text" asp-validation-for="Name" 
                            data-error="" data-success=""></span>
                 </div>
@@ -31,7 +33,7 @@
             <div class="row">
                 <div class="input-field col s6">
                     <input asp-for="DateTime" type="date" class="validate"/>
-                    <label asp-for="DateTime"></label>
+                    <label asp-for="DateTime">@Localizer["DateTime"]</label>
                     <span class="helper-text" asp-validation-for="DateTime" 
                            data-error="" data-success=""></span>
                 </div>
@@ -40,22 +42,21 @@
             <div class="row">
                 <div class="input-field col s6">
                     <select asp-for="Type" class="col s12 push-s2">
-                        <option value="" disabled selected>Choose your option</option>
-                        <option value="Patent">Patent</option>
-                        <option value="Application">Application</option>
+                        <option value="" disabled selected>@Localizer["Choose your option"]</option>
+                        <option value="Patent">@Localizer["Patent"]</option>
+                        <option value="Application">@Localizer["Application"]</option>
                     </select>
-                    <label asp-for="Type">Type</label>
+                    <label asp-for="Type">@Localizer["Type"]</label>
                 </div>
             </div>
 	
             <div class="row myButtons">
-                <input type="submit" value="Create" class="waves-effect btn-small  amber accent-2"/>
-                <a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
+                <input type="submit" value="@Localizer["Create"]" class="waves-effect btn-small  amber accent-2"/>
+                <a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
             </div>
         </form>
     </div>
 </div>
-
 
 @section Scripts {
     <script type="text/javascript">

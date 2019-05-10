@@ -17,7 +17,6 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-
     <data name="Postgraduate Guidance" xml:space="preserve">
 		<value>Postgraduate Guidance</value>
 	</data>
@@ -39,5 +38,4 @@
 	<data name="Delete" xml:space="preserve">
 		<value>Delete</value>
 	</data>
-
 </root>

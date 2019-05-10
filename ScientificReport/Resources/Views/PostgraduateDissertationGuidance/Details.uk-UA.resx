@@ -17,7 +17,6 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-
     <data name="Postgraduate Dissertation Guidance" xml:space="preserve">
 		<value>Наукове консультування при написанні дисертацій</value>
 	</data>
@@ -60,5 +59,4 @@
 	<data name="Create" xml:space="preserve">
 		<value>Створити</value>
 	</data>
-
 </root>

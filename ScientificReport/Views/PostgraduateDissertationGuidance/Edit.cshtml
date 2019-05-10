@@ -3,7 +3,7 @@
 @inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = "Edit";
+	ViewData["Title"] = Localizer["Edit"];
 }
 
 <h3>@Localizer["Edit"]</h3>
@@ -20,7 +20,7 @@
 					<input asp-for="PostgraduateName" type="text" class="validate">
 					<label asp-for="PostgraduateName">@Localizer["PostgraduateName"]</label>
 					<span class="helper-text" asp-validation-for="PostgraduateName"
-					      data-error="" data-success="">
+						  data-error="" data-success="">
 					</span>
 				</div>
 			</div>
@@ -29,7 +29,7 @@
 					<input asp-for="Dissertation" type="text" class="validate">
 					<label asp-for="Dissertation">@Localizer["PostgraduateName"]</label>
 					<span class="helper-text" asp-validation-for="Dissertation"
-					      data-error="" data-success="">
+						  data-error="" data-success="">
 					</span>
 				</div>
 			</div>
@@ -38,7 +38,7 @@
 					<input asp-for="Speciality" type="text" class="validate"/>
 					<label asp-for="Speciality">@Localizer["PostgraduateName"]</label>
 					<span class="helper-text" asp-validation-for="Speciality"
-					      data-error="" data-success="">
+						  data-error="" data-success="">
 					</span>
 				</div>
 			</div>
@@ -47,7 +47,7 @@
 					<input asp-for="DateDegreeGained" type="date" class="validate"/>
 					<label asp-for="DateDegreeGained">@Localizer["PostgraduateName"]</label>
 					<span class="helper-text" asp-validation-for="DateDegreeGained"
-					      data-error="" data-success="">
+						  data-error="" data-success="">
 					</span>
 				</div>
 			</div>
@@ -56,7 +56,7 @@
 					<input asp-for="GraduationYear" type="number" class="validate"/>
 					<label asp-for="GraduationYear">@Localizer["PostgraduateName"]</label>
 					<span class="helper-text" asp-validation-for="GraduationYear"
-					      data-error="" data-success="">
+						  data-error="" data-success="">
 					</span>
 				</div>
 			</div>
@@ -67,7 +67,6 @@
 		</form>
 	</div>
 </div>
-
 
 @section Scripts {
 	@{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }

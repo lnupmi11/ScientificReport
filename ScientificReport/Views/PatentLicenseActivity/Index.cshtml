@@ -1,55 +1,57 @@
+@using Microsoft.AspNetCore.Mvc.Localization
 @model IEnumerable<ScientificReport.DAL.Entities.PatentLicenseActivity>
+@inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = "Index";
+	ViewData["Title"] = Localizer["Index"];
 }
 
-<h3>Patent Licence Activity</h3>
+<h3>@Localizer["Patent Licence Activity"]</h3>
 
 <p>
-    <a asp-action="Create" class="waves-effect btn-small green darken-3">Create New</a>
+	<a asp-action="Create" class="waves-effect btn-small green darken-3">@Localizer["Create New"]</a>
 </p>
 <table class="responsive-table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Number)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DateTime)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Type)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
+	<thead>
+		<tr>
+			<th>
+				@Localizer[Html.DisplayNameFor(model => model.Name)]
+			</th>
+			<th>
+				@Localizer[Html.DisplayNameFor(model => model.Number)]
+			</th>
+			<th>
+				@Localizer[Html.DisplayNameFor(model => model.DateTime)]
+			</th>
+			<th>
+				@Localizer[Html.DisplayNameFor(model => model.Type)]
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
 @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Number)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Type)
-            </td>
-            <td>
-                <a asp-action="Details" asp-route-id="@item.Id" class="btn-small blue darken-3">Details</a>
-                <a asp-action="Edit" asp-route-id="@item.Id" class="waves-effect btn-small waves-light">Edit</a>
-                <form asp-action="Delete" asp-route-id="@item.Id" method="post" style="display: inline;">
-                    <button type="submit" class="waves-effect btn-small deep-orange darken-3">Delete</button>
-                </form>
-            </td>
-        </tr>
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.Name)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Number)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.DateTime)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Type)
+			</td>
+			<td>
+				<a asp-action="Details" asp-route-id="@item.Id" class="btn-small blue darken-3">@Localizer["Details"]</a>
+				<a asp-action="Edit" asp-route-id="@item.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
+				<form asp-action="Delete" asp-route-id="@item.Id" method="post" style="display: inline;">
+					<button type="submit" class="waves-effect btn-small deep-orange darken-3">@Localizer["Delete"]</button>
+				</form>
+			</td>
+		</tr>
 }
-    </tbody>
+	</tbody>
 </table>

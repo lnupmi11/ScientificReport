@@ -1,90 +1,92 @@
+@using Microsoft.AspNetCore.Mvc.Localization
 @model ScientificReport.DAL.Entities.Article
+@inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = Localizer["Details"];
 }
 
-<h3>Details</h3>
+<h3>@Localizer["Details"]</h3>
 
 <div>
-    <h5>Article</h5>
+    <h5>@Localizer["Article"]</h5>
     <hr />
     <div class="row">
         <div class = "col s2">
-            @Html.DisplayNameFor(model => model.Type)
+            @Localizer[Html.DisplayNameFor(model => model.Type)]
         </div>
         <div class = "col s10">
             @Html.DisplayFor(model => model.Type)
         </div>
         <div class = "col s2">
-            @Html.DisplayNameFor(model => model.Title)
+            @Localizer[Html.DisplayNameFor(model => model.Title)]
         </div>
         <div class = "col s10">
             @Html.DisplayFor(model => model.Title)
         </div>
         <div class = "col s2">
-            @Html.DisplayNameFor(model => model.LiabilityInfo)
+            @Localizer[Html.DisplayNameFor(model => model.LiabilityInfo)]
         </div>
         <div class = "col s10">
             @Html.DisplayFor(model => model.LiabilityInfo)
         </div>
         <div class = "col s2">
-            @Html.DisplayNameFor(model => model.DocumentInfo)
+            @Localizer[Html.DisplayNameFor(model => model.DocumentInfo)]
         </div>
         <div class = "col s10">
             @Html.DisplayFor(model => model.DocumentInfo)
         </div>
         <div class = "col s2">
-            @Html.DisplayNameFor(model => model.PublishingPlace)
+            @Localizer[Html.DisplayNameFor(model => model.PublishingPlace)]
         </div>
         <div class = "col s10">
             @Html.DisplayFor(model => model.PublishingPlace)
         </div>
         <div class = "col s2">
-            @Html.DisplayNameFor(model => model.PublishingHouseName)
+            @Localizer[Html.DisplayNameFor(model => model.PublishingHouseName)]
         </div>
         <div class = "col s10">
             @Html.DisplayFor(model => model.PublishingHouseName)
         </div>
         <div class = "col s2">
-            @Html.DisplayNameFor(model => model.PublishingYear)
+            @Localizer[Html.DisplayNameFor(model => model.PublishingYear)]
         </div>
         <div class = "col s10">
             @Html.DisplayFor(model => model.PublishingYear)
         </div>
         <div class = "col s2">
-            @Html.DisplayNameFor(model => model.IsPeriodical)
+            @Localizer[Html.DisplayNameFor(model => model.IsPeriodical)]
         </div>
         <div class = "col s10">
-            <span>@(Model.IsPeriodical ? "Yes" : "No")</span>
+            <span>@Localizer[(Model.IsPeriodical ? "Yes" : "No")]</span>
         </div>
         <div class = "col s2">
-            @Html.DisplayNameFor(model => model.Number)
+            @Localizer[Html.DisplayNameFor(model => model.Number)]
         </div>
         <div class = "col s10">
             @Html.DisplayFor(model => model.Number)
         </div>
         <div class = "col s2">
-            @Html.DisplayNameFor(model => model.PagesAmount)
+            @Localizer[Html.DisplayNameFor(model => model.PagesAmount)]
         </div>
         <div class = "col s10">
             @Html.DisplayFor(model => model.PagesAmount)
         </div>
         <div class = "col s2">
-            @Html.DisplayNameFor(model => model.IsPrintCanceled)
+            @Localizer[Html.DisplayNameFor(model => model.IsPrintCanceled)]
         </div>
         <div class = "col s10">
-            <span>@(Model.IsPrintCanceled ? "Yes" : "No")</span>
+            <span>@Localizer[(Model.IsPrintCanceled ? "Yes" : "No")]</span>
         </div>
         <div class = "col s2">
-            @Html.DisplayNameFor(model => model.IsRecommendedToPrint)
+            @Localizer[Html.DisplayNameFor(model => model.IsRecommendedToPrint)]
         </div>
         <div class = "col s10">
-            <span>@(Model.IsRecommendedToPrint ? "Yes" : "No")</span>
+            <span>@Localizer[(Model.IsRecommendedToPrint ? "Yes" : "No")]</span>
         </div>
     </div>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id" class="waves-effect btn-small waves-light">Edit</a>
-    <a asp-action="Index" class="btn-small blue darken-3">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
+    <a asp-action="Index" class="btn-small blue darken-3">@Localizer["Back to List"]</a>
 </div>
