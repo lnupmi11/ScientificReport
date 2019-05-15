@@ -20,13 +20,13 @@
     <data name="ScientificReport" xml:space="preserve">
 		<value>Scientific Report</value>
 	</data>
-    <data name="Applicants Patent License Activities" xml:space="preserve">
+    <data name="ApplicantsPatentLicenseActivities" xml:space="preserve">
 		<value>Applicants Patent License Activities</value>
 	</data>
     <data name="Article" xml:space="preserve">
 		<value>Article</value>
 	</data>
-    <data name="Authors Patent License Activities" xml:space="preserve">
+    <data name="AuthorsPatentLicenseActivities" xml:space="preserve">
 		<value>Authors Patent License Activities</value>
 	</data>
     <data name="Conferences" xml:space="preserve">
@@ -41,35 +41,41 @@
     <data name="Oppositions" xml:space="preserve">
 		<value>Oppositions</value>
 	</data>
-    <data name="Patent License Activities" xml:space="preserve">
+    <data name="PatentLicenseActivities" xml:space="preserve">
 		<value>Patent License Activities</value>
 	</data>
-    <data name="Postgraduate Dissertation Guidance" xml:space="preserve">
+    <data name="PostgraduateDissertationGuidance" xml:space="preserve">
 		<value>Postgraduate Dissertation Guidance</value>
 	</data>
-	<data name="Postgraduate Guidance" xml:space="preserve">
+	<data name="PostgraduateGuidance" xml:space="preserve">
 		<value>Postgraduate Guidance</value>
 	</data>
 	<data name="Publications" xml:space="preserve">
 		<value>Publications</value>
 	</data>
-	<data name="Report Theses" xml:space="preserve">
+	<data name="ReportTheses" xml:space="preserve">
 		<value>Report Theses</value>
 	</data>
 	<data name="Reviews" xml:space="preserve">
 		<value>Reviews</value>
 	</data>
-	<data name="Scientific Consultations" xml:space="preserve">
+	<data name="ScientificConsultations" xml:space="preserve">
 		<value>Scientific Consultations</value>
 	</data>
-	<data name="Teacher Reports" xml:space="preserve">
+	<data name="ScientificInternship" xml:space="preserve">
+		<value>Scientific Internship</value>
+	</data>
+	<data name="TeacherReports" xml:space="preserve">
 		<value>Teacher Reports</value>
 	</data>
-	<data name="Scientific Works" xml:space="preserve">
+	<data name="ScientificWorks" xml:space="preserve">
 		<value>Scientific Works</value>
 	</data>
 	<data name="Users" xml:space="preserve">
 		<value>Users</value>
+	</data>
+	<data name="Workers" xml:space="preserve">
+		<value>Workers</value>
 	</data>
 	<data name="Departments" xml:space="preserve">
 		<value>Departments</value>
@@ -77,13 +83,9 @@
 	<data name="Department" xml:space="preserve">
 		<value>Department</value>
 	</data>
-	<data name="Available pages" xml:space="preserve">
-		<value>Available pages</value>
+	<data name="OtherReportData" xml:space="preserve">
+		<value>Other Report Data</value>
 	</data>
-	<data name="Privacy" xml:space="preserve">
-		<value>Privacy</value>
-	</data>
-	
 	<data name="Reports" xml:space="preserve">
 		<value>Reports</value>
 	</data>
@@ -96,5 +98,4 @@
 	<data name="FacultyReport" xml:space="preserve">
 		<value>Faculty Report</value>
 	</data>
-	
 </root>

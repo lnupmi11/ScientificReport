@@ -23,6 +23,18 @@
 	<data name="Users" xml:space="preserve">
 		<value>Users</value>
 	</data>
+	<data name="Workers" xml:space="preserve">
+		<value>Workers</value>
+	</data>
+	<data name="IsApproved" xml:space="preserve">
+		<value>Is Approved</value>
+	</data>
+	<data name="Yes" xml:space="preserve">
+		<value>Yes</value>
+	</data>
+	<data name="No" xml:space="preserve">
+		<value>No</value>
+	</data>
 	<data name="FirstName" xml:space="preserve">
 		<value>First Name</value>
 	</data>

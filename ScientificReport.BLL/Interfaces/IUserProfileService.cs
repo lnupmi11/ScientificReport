@@ -25,6 +25,7 @@ namespace ScientificReport.BLL.Interfaces
 		Task<IdentityResult> RemoveFromRoleAsync(UserProfile user, string roleName, UserManager<UserProfile> userManager);
 		Task<bool> IsInRoleAsync(UserProfile user, string roleName, UserManager<UserProfile> userManager);
 		Task<string> ChangePassword(UserProfile user, string oldPassword, string newPassword, string newPasswordRepeat, UserManager<UserProfile> userManager);
+		Task<bool> IsTeacherOnlyAsync(UserProfile user, UserManager<UserProfile> userManager);
 		ICollection<Publication> GetUserPublications(Guid id);
 		ICollection<Grant> GetUserGrants(Guid id);
 		ICollection<ScientificWork> GetUserScientificWorks(Guid id);

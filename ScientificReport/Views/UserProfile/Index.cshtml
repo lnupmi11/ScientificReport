@@ -6,15 +6,23 @@
 @inject UserManager<UserProfile> UserManager;
 @inject IViewLocalizer Localizer
 
-@{
-	ViewData["Title"] = Localizer["Index"];
+@if (PageHelpers.IsHeadOfDepartment(User))
+{
+	ViewData["Title"] = Localizer["Workers"];
+	<h3>@Localizer["Workers"]</h3>	
 }
-
-<h3>@Localizer["Users"]</h3>
+else
+{
+	ViewData["Title"] = Localizer["Users"];
+	<h3>@Localizer["Users"]</h3>
+}
 
 <table class="table">
 	<thead>
 	<tr>
+		<th>
+			@Localizer[Html.DisplayNameFor(model => model.IsApproved)]
+		</th>
 		<th>
 			@Localizer[Html.DisplayNameFor(model => model.LastName)]
 		</th>
@@ -35,6 +43,9 @@
 	{
 		<tr>
 			<td>
+				@Localizer[item.IsApproved ? "Yes" : "No"]
+			</td>
+			<td>
 				@Html.DisplayFor(modelItem => item.LastName)
 			</td>
 			<td>
@@ -49,10 +60,10 @@
 			<td>
 				<a asp-action="Details" asp-route-id="@item.Id" class="btn-small blue darken-3">@Localizer["Details"]</a>
 				<a asp-action="Edit" asp-route-id="@item.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
-				@if (item.Id != new Guid(UserManager.GetUserId(User)))
+				@if (User.Identity.Name != item.UserName)
 				{
 					<form asp-action="SetActive" asp-route-id="@item.Id" asp-route-isActive="@(!item.IsActive)" method="post" style="display: inline;">
-						<button type="submit" class="waves-effect btn-small deep-orange darken-3">@Localizer[(item.IsActive ? "Deactivate" : "Activate")]</button>
+						<button type="submit" class="waves-effect btn-small yellow darken-3">@Localizer[(item.IsActive ? "Deactivate" : "Activate")]</button>
 					</form>
 					if (PageHelpers.IsAdmin(User))
 					{

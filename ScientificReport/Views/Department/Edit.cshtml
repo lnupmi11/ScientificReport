@@ -3,7 +3,7 @@
 @inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = Localizer["Edit"];
+	ViewData["Title"] = Localizer["EditDepartment"];
 	Layout = "_Layout";
 }
 
@@ -24,7 +24,7 @@
 	.hidden { display: none; }
 </style>
 
-<h3>@Localizer["Edit department"]</h3>
+<h4>@Localizer["EditDepartment"]</h4>
 <div class="row">
 <div class="col s12">
 	<div asp-validation-summary="All" class="validate"></div>
@@ -36,19 +36,17 @@
 				<span class="helper-text" asp-validation-for="Title" data-error="some data is in bad format" data-success=""></span>
 			</div>
 		</div>
-		
 		<div class="row">
-			<div class="input-field col s4">			
-				<label asp-for="SelectedHeadId" class="myLabel">@Localizer["Selected Head Id"]</label>
+			<div class="input-field col s4">
+				<label asp-for="SelectedHeadId" class="myLabel">@Localizer["Head"]</label>
 				@Html.DropDownListFor(x => Model.SelectedHeadId, new SelectList(Model.UserSelection, "Value", "Text"), new {@class = "col s12"})
-				@Html.ValidationMessageFor(x => x.SelectedHeadId, "", new {@class = "validate"})
+				@Html.ValidationMessageFor(x => x.SelectedHeadId, "", new {@class = "validate", @required = "required"})
 				<br/>
-				
 			</div>
 		</div>
 		<div class="row">
 		<div class="col s6">
-			<label>@Localizer["Staff"]:</label>
+			<label class="myLabel">@Localizer["Staff"]:</label>
 			<div class="authors-list">
 				@if (Model.UserSelection != null && Model.Staff != null)
 				{
@@ -75,7 +73,7 @@
 			</div>
 		</div>
 		<div class="col s6">
-			<label>@Localizer["Scientific works"]:</label>
+			<label class="myLabel">@Localizer["ScientificWorks"]:</label>
 			<div class="authors-list">
 				@if (Model.ScientificWorkItems != null && Model.ScientificWorks != null)
 				{
@@ -96,7 +94,7 @@
 		</div>
 		</div>
 		<div class="row myButtons">
-			<input type="submit" value="@Localizer["Edit"]" class="waves-effect btn-small  amber accent-2"/>
+			<input type="submit" value="@Localizer["Save"]" class="waves-effect btn-small  amber accent-2"/>
 			<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
 		</div>
 	</form>

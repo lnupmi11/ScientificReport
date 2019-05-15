@@ -94,16 +94,16 @@
 <header>
 	<ul id="dropdown1" style="color: black;" class="dropdown-content">
 		<li style="font-size: 5px; -o-justify-content: center; -webkit-justify-content: center; justify-content: center">
-			<a asp-area="" asp-controller="ReportThesis" asp-action="Index">@Localizer["Report Theses"]</a>
+			<a asp-area="" asp-controller="ReportThesis" asp-action="Index">@Localizer["ReportTheses"]</a>
 		</li>
 		<li>
-			<a asp-area="" asp-controller="PatentLicenseActivity" asp-action="Index">@Localizer["Patent License Activities"]</a>
+			<a asp-area="" asp-controller="PatentLicenseActivity" asp-action="Index">@Localizer["PatentLicenseActivities"]</a>
 		</li>
 		<li>
-			<a asp-area="" asp-controller="ApplicantsPatentLicenseActivities" asp-action="Index">@Localizer["Applicants Patent License Activities"]</a>
+			<a asp-area="" asp-controller="ApplicantsPatentLicenseActivities" asp-action="Index">@Localizer["ApplicantsPatentLicenseActivities"]</a>
 		</li>
 		<li>
-			<a asp-area="" asp-controller="AuthorsPatentLicenseActivities" asp-action="Index">@Localizer["Authors Patent License Activities"]</a>
+			<a asp-area="" asp-controller="AuthorsPatentLicenseActivities" asp-action="Index">@Localizer["AuthorsPatentLicenseActivities"]</a>
 		</li>
 		<li>
 			<a asp-area="" asp-controller="Grant" asp-action="Index">@Localizer["Grants"]</a>
@@ -115,19 +115,19 @@
 			<a asp-area="" asp-controller="Opposition" asp-action="Index">@Localizer["Oppositions"]</a>
 		</li>
 		<li>
-			<a asp-area="" asp-controller="PostgraduateDissertationGuidance" asp-action="Index">@Localizer["Postgraduate Dissertation Guidance"]</a>
+			<a asp-area="" asp-controller="PostgraduateDissertationGuidance" asp-action="Index">@Localizer["PostgraduateDissertationGuidance"]</a>
 		</li>
 		<li>
-			<a asp-area="" asp-controller="PostgraduateGuidance" asp-action="Index">@Localizer["Postgraduate Guidance"]</a>
+			<a asp-area="" asp-controller="PostgraduateGuidance" asp-action="Index">@Localizer["PostgraduateGuidance"]</a>
 		</li>
 		<li>
 			<a asp-area="" asp-controller="Review" asp-action="Index">@Localizer["Reviews"]</a>
 		</li>
 		<li>
-			<a asp-area="" asp-controller="ScientificConsultation" asp-action="Index">@Localizer["Scientific Consultations"]</a>
+			<a asp-area="" asp-controller="ScientificConsultation" asp-action="Index">@Localizer["ScientificConsultations"]</a>
 		</li>
 		<li>
-			<a asp-area="" asp-controller="ScientificInternship" asp-action="Index">@Localizer["Scientific Internship"]</a>
+			<a asp-area="" asp-controller="ScientificInternship" asp-action="Index">@Localizer["ScientificInternship"]</a>
 		</li>
 	</ul>
 	@if (PageHelpers.IsAdminOrHead(User))
@@ -171,19 +171,22 @@
 					}
 					@if (PageHelpers.IsAdminOrHead(User))
 					{
-						<li>
-							<a asp-area="" asp-controller="UserProfile" asp-action="Index">@Localizer["Users"]</a>
-						</li>
 						if (PageHelpers.IsHeadOfDepartment(User))
 						{
 							<li>
 								<a asp-area="" asp-controller="Department" asp-action="Index">@Localizer["Department"]</a>
+							</li>
+							<li>
+								<a asp-area="" asp-controller="UserProfile" asp-action="Index">@Localizer["Workers"]</a>
 							</li>
 						}
 						else
 						{
 							<li>
 								<a asp-area="" asp-controller="Department" asp-action="Index">@Localizer["Departments"]</a>
+							</li>
+							<li>
+								<a asp-area="" asp-controller="UserProfile" asp-action="Index">@Localizer["Users"]</a>
 							</li>
 						}
 					} else
@@ -199,14 +202,14 @@
 						<a asp-area="" asp-controller="Article" asp-action="Index">@Localizer["Article"]</a>
 					</li>
 					<li>
-						<a asp-area="" asp-controller="ScientificWork" asp-action="Index">@Localizer["Scientific Works"]</a>
+						<a asp-area="" asp-controller="ScientificWork" asp-action="Index">@Localizer["ScientificWorks"]</a>
 					</li>
 					<li>
 						<a asp-area="" asp-controller="Conference" asp-action="Index">@Localizer["Conferences"]</a>
 					</li>
 					<li>
 						<a class="dropdown-trigger" data-target="dropdown1">
-							@Localizer["Available pages"]<i class="material-icons right">arrow_drop_down</i>
+							@Localizer["OtherReportData"]<i class="material-icons right">arrow_drop_down</i>
 						</a>
 					</li>
 				</ul>	

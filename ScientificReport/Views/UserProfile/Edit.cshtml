@@ -90,7 +90,7 @@
 									{
 										var contains = Model.UserRoles.Contains(role.Name);
 										<p>
-											@if (role.Name != UserProfileRole.Teacher && role.Name != UserProfileRole.HeadOfDepartment)
+											@if (role.Name != UserProfileRole.Teacher && role.Name != UserProfileRole.HeadOfDepartment && Model.UserName != User.Identity.Name)
 											{
 												<i class="add-role fas fa-plus-circle fa-lg cursor-pointer text-green @(contains ? "hidden" : "")" onclick="addUserToAdministration(this, '@role.Name', '@Model.UserId')"></i>
 												<i class="remove-role fas fa-minus-circle fa-lg cursor-pointer text-red @(contains ? "" : "hidden")" onclick="removeUserFromAdministration(this, '@role.Name', '@Model.UserId')"></i>

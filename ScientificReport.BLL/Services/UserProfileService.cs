@@ -9,6 +9,7 @@ using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Entities.UserProfile;
 using ScientificReport.DAL.Repositories;
+using ScientificReport.DAL.Roles;
 
 namespace ScientificReport.BLL.Services
 {
@@ -144,6 +145,14 @@ namespace ScientificReport.BLL.Services
 			}
 
 			return result;
+		}
+
+		public virtual async Task<bool>IsTeacherOnlyAsync(UserProfile user, UserManager<UserProfile> userManager)
+		{
+			var isTeacher = await userManager.IsInRoleAsync(user, UserProfileRole.Teacher);
+			var isHead = await userManager.IsInRoleAsync(user, UserProfileRole.HeadOfDepartment);
+			var isAdmin = await userManager.IsInRoleAsync(user, UserProfileRole.Administrator);
+			return isTeacher && !(isHead || isAdmin);
 		}
 
 		public virtual ICollection<Publication> GetUserPublications(Guid id)

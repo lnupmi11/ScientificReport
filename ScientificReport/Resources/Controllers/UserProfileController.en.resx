@@ -26,6 +26,9 @@
 	<data name="HeadOfDepartment" xml:space="preserve">
 		<value>Head</value>
 	</data>
+	<data name="Administrator" xml:space="preserve">
+		<value>Administrator</value>
+	</data>
     <data name="AccountNotApproved" xml:space="preserve">
 		<value>Account is not approved yet</value>
 	</data>

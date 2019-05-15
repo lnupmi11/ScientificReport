@@ -7,8 +7,17 @@
 	Layout = "_Layout";
 }
 
-<h3>@Localizer["Create department"]</h3>
-<h5>@Localizer["Department will be created only if it does not exist"].</h5>
+<style type="text/css">
+	.selected-head-id-label {
+		/* margin-bottom: 10px; */
+		position: relative !important;
+		left: 0px !important;
+		font-size: 12.5px !important;
+	}
+</style>
+
+<h3>@Localizer["CreateDepartment"]</h3>
+<h5>@Localizer["CreateDepartmentInfo"].</h5>
 <hr/>
 <div class="row">
 	<div class="col s12">
@@ -22,14 +31,12 @@
 				</div>
 			</div>
 			<div class="row">
-				<label asp-for="SelectedHeadId">@Localizer["Selected Head Id"]</label>
-				<div class="col s10">
+				<div class="input-field col s10">
+					<label asp-for="SelectedHeadId" class="selected-head-id-label">@Localizer["Head"]</label>
 					@Html.DropDownListFor(x => Model.SelectedHeadId, new SelectList(Model.UserSelection, "Value", "Text"), new {@class = "col s6 push-s6"})
 					@Html.ValidationMessageFor(x => x.SelectedHeadId, "", new {@class = "validate"})
-
 				</div>
 			</div>
-
 			<div class="row myButtons">
 				<input type="submit" value="@Localizer["Create"]" class="waves-effect btn-small  amber accent-2"/>
 				<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>

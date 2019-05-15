@@ -26,6 +26,9 @@
 	<data name="HeadOfDepartment" xml:space="preserve">
 		<value>Завідувач</value>
 	</data>
+	<data name="Administrator" xml:space="preserve">
+		<value>Адміністратор</value>
+	</data>
     <data name="AccountNotApproved" xml:space="preserve">
 		<value>Ваш обліковий запис ще не підтвердили</value>
 	</data>

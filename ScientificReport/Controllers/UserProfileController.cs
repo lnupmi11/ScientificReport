@@ -63,7 +63,7 @@ namespace ScientificReport.Controllers
 
 		// GET: UserProfile/Details/{id}
 		[HttpGet]
-		public IActionResult Details(Guid? id)
+		public async Task<IActionResult> Details(Guid? id)
 		{
 			if (id == null)
 			{
@@ -77,11 +77,20 @@ namespace ScientificReport.Controllers
 			}
 
 			var department = _departmentService.Get(d => d.Staff.Contains(userProfile));
-			
+
+			var fullPositionTitle = "";
+			if (await _userManager.IsInRoleAsync(userProfile, UserProfileRole.Administrator))
+			{
+				fullPositionTitle = _localizer["Administrator"] + ", ";
+			}
+			fullPositionTitle += _localizer[userProfile.Position] + (department != null
+            					                    ? " " + _localizer["ofDepartment"] + " \"" + department.Title + "\""
+            					                    : "");
+
 			var detailsModel = new UserDetailsModel
 			{
 				User = userProfile,
-				FullPositionTitle = _localizer[userProfile.Position] + (department != null ? " " + _localizer["ofDepartment"] + " \"" + department.Title + "\"" : "")
+				FullPositionTitle = fullPositionTitle
 			};
 
 			if (!PageHelpers.IsAdmin(User))
@@ -254,12 +263,22 @@ namespace ScientificReport.Controllers
 				var user = _userProfileService.GetById(id.Value);
 				if (await _userProfileService.IsInRoleAsync(user, request.RoleName, _userManager))
 				{
-					await _userProfileService.RemoveFromRoleAsync(user, request.RoleName, _userManager);
-					if (request.RoleName == UserProfileRole.HeadOfDepartment)
+					if (user.UserName != User.Identity.Name)
 					{
-						user.Position = UserProfileRole.Teacher;
-						_userProfileService.UpdateItem(user);
+						await _userProfileService.RemoveFromRoleAsync(user, request.RoleName, _userManager);
+						if (request.RoleName == UserProfileRole.HeadOfDepartment)
+						{
+							_userProfileService.UpdateItem(user);
+						}	
 					}
+					else
+					{
+						return Json(ApiResponse.Fail);
+					}
+				}
+				else
+				{
+					return Json(ApiResponse.Fail);
 				}
 			}
 			
