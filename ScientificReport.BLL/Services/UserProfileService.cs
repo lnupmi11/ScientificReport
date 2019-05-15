@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using ScientificReport.BLL.Interfaces;
@@ -28,6 +29,11 @@ namespace ScientificReport.BLL.Services
 		public virtual IEnumerable<UserProfile> GetAllWhere(Func<UserProfile, bool> predicate)
 		{
 			return _userProfileRepository.AllWhere(predicate);
+		}
+
+		public virtual UserProfile Get(ClaimsPrincipal claimsPrincipal)
+		{
+			return _userProfileRepository.Get(u => u.UserName == claimsPrincipal.Identity.Name);
 		}
 
 		public virtual UserProfile GetById(Guid id)

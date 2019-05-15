@@ -85,13 +85,13 @@
 		<value>Конфіденційність</value>
 	</data>
 	<data name="Reports" xml:space="preserve">
-		<value>Звіти</value>
+		<value>Звітність</value>
 	</data>
 	<data name="TeacherReport" xml:space="preserve">
-		<value>Викладацький звіт</value>
+		<value>Індивідуальний звіт</value>
 	</data>
 	<data name="DepartmentReport" xml:space="preserve">
-		<value>Звіт кафедри</value>
+		<value>Кафедральний звіт</value>
 	</data>
 	<data name="FacultyReport" xml:space="preserve">
 		<value>Звіт факультету</value>

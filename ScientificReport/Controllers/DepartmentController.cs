@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using ScientificReport.BLL.Interfaces;
@@ -13,7 +14,7 @@ using ScientificReport.DTO.Models.Department;
 
 namespace ScientificReport.Controllers
 {
-//	[Authorize(Roles = UserProfileRole.Administrator)]
+	[Authorize(Roles = UserProfileRole.Any)]
 	public class DepartmentController : Controller
 	{
 		private readonly UserManager<UserProfile> _userManager;
@@ -35,7 +36,21 @@ namespace ScientificReport.Controllers
 		[HttpGet]
 		public IActionResult Index()
 		{
-			return View(_departmentService.GetAll());
+			if (PageHelpers.IsAdmin(User))
+			{
+				return View(_departmentService.GetAll());
+			}
+
+			var department = _departmentService.Get(
+				d => d.Staff.Contains(_userProfileService.Get(User))
+			);
+
+			if (department == null)
+			{
+				return NotFound();
+			}
+
+			return RedirectToAction("Details", new { id = department.Id });
 		}
 
 		// GET: Department/Details/{id}
@@ -53,11 +68,17 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
+			if (!PageHelpers.IsAdmin(User) && !department.Staff.Contains(_userProfileService.Get(User)))
+			{
+				return Forbid();
+			}
+
 			return View(department);
 		}
 
 		// GET: Department/Create
 		[HttpGet]
+		[Authorize(Roles = UserProfileRole.Administrator)]
 		public IActionResult Create()
 		{
 			var allUsers = _userProfileService.GetAll();
@@ -75,6 +96,7 @@ namespace ScientificReport.Controllers
 
 		// POST: Department/Create
 		[HttpPost]
+		[Authorize(Roles = UserProfileRole.Administrator)]
 		public async Task<IActionResult> Create(DepartmentCreateModel model)
 		{
 			if (!ModelState.IsValid)
@@ -110,7 +132,7 @@ namespace ScientificReport.Controllers
 
 		// GET: Department/Edit/{id}
 		[HttpGet]
-//		[Authorize(Roles = UserProfileRole.HeadOfDepartmentOrAdmin)]
+		[Authorize(Roles = UserProfileRole.HeadOfDepartmentOrAdmin)]
 		public IActionResult Edit(Guid? id)
 		{
 			if (id == null)
@@ -151,7 +173,7 @@ namespace ScientificReport.Controllers
 
 		// POST: Department/Edit/{id}
 		[HttpPost]
-//		[Authorize(Roles = UserProfileRole.HeadOfDepartmentOrAdmin)]
+		[Authorize(Roles = UserProfileRole.HeadOfDepartmentOrAdmin)]
 		public async Task<IActionResult> Edit(Guid? id, [Bind("Title,SelectedHeadId")] DepartmentEditModel model)
 		{
 			if (!ModelState.IsValid)
@@ -196,6 +218,7 @@ namespace ScientificReport.Controllers
 
 		// POST: Department/AddUserToStaff/{departmentId}
 		[HttpPost]
+		[Authorize(Roles = UserProfileRole.HeadOfDepartmentOrAdmin)]
 		public IActionResult AddUserToStaff(Guid? id, [FromBody] DepartmentUpdateStaffRequest request)
 		{
 			if (id == null)
@@ -220,6 +243,7 @@ namespace ScientificReport.Controllers
 
 		// POST: Department/RemoveUserFromStaff/{departmentId}
 		[HttpPost]
+		[Authorize(Roles = UserProfileRole.HeadOfDepartmentOrAdmin)]
 		public IActionResult RemoveUserFromStaff(Guid? id, [FromBody] DepartmentUpdateStaffRequest request)
 		{
 			if (id == null)
@@ -245,6 +269,7 @@ namespace ScientificReport.Controllers
 
 		// POST: Department/AddScientificWork/{departmentId}
 		[HttpPost]
+		[Authorize(Roles = UserProfileRole.HeadOfDepartment)]
 		public IActionResult AddScientificWork(Guid? id, [FromBody] DepartmentUpdateScientificWorksRequest request)
 		{
 			if (id == null)
@@ -280,6 +305,7 @@ namespace ScientificReport.Controllers
 
 		// POST: Department/RemoveScientificWork/{departmentId}
 		[HttpPost]
+		[Authorize(Roles = UserProfileRole.HeadOfDepartment)]
 		public IActionResult RemoveScientificWork(Guid? id, [FromBody] DepartmentUpdateScientificWorksRequest request)
 		{
 			if (id == null)
@@ -313,6 +339,7 @@ namespace ScientificReport.Controllers
 
 		// POST: Department/Delete/{id}
 		[HttpPost]
+		[Authorize(Roles = UserProfileRole.Administrator)]
 		public IActionResult Delete(Guid? id)
 		{
 			if (id == null || !_departmentService.Exists(id.Value))

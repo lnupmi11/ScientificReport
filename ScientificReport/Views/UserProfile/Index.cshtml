@@ -16,13 +16,13 @@
 	<thead>
 	<tr>
 		<th>
+			@Localizer[Html.DisplayNameFor(model => model.LastName)]
+		</th>
+		<th>
 			@Localizer[Html.DisplayNameFor(model => model.FirstName)]
 		</th>
 		<th>
 			@Localizer[Html.DisplayNameFor(model => model.MiddleName)]
-		</th>
-		<th>
-			@Localizer[Html.DisplayNameFor(model => model.LastName)]
 		</th>
 		<th>
 			@Localizer[Html.DisplayNameFor(model => model.Email)]
@@ -35,13 +35,13 @@
 	{
 		<tr>
 			<td>
+				@Html.DisplayFor(modelItem => item.LastName)
+			</td>
+			<td>
 				@Html.DisplayFor(modelItem => item.FirstName)
 			</td>
 			<td>
 				@Html.DisplayFor(modelItem => item.MiddleName)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.LastName)
 			</td>
 			<th>
 				@Html.DisplayFor(modelItem => item.Email)
@@ -54,12 +54,12 @@
 					<form asp-action="SetActive" asp-route-id="@item.Id" asp-route-isActive="@(!item.IsActive)" method="post" style="display: inline;">
 						<button type="submit" class="waves-effect btn-small deep-orange darken-3">@Localizer[(item.IsActive ? "Deactivate" : "Activate")]</button>
 					</form>
-				}
-				@if (PageHelpers.IsAdmin(User))
-				{
-					<form asp-action="Delete" asp-route-id="@item.Id" method="post" style="display: inline;">
-						<button type="submit" class="waves-effect btn-small deep-orange darken-3">@Localizer["Delete"]</button>
-					</form>
+					if (PageHelpers.IsAdmin(User))
+					{
+						<form asp-action="Delete" asp-route-id="@item.Id" method="post" style="display: inline;">
+							<button type="submit" class="waves-effect btn-small deep-orange darken-3">@Localizer["Delete"]</button>
+						</form>
+					}
 				}
 			</td>
 		</tr>

@@ -57,7 +57,7 @@
 			border-radius: 50%;
 		}
 
-		#dropdown1 {
+		#dropdown1, #reports-dropdown {
 			position: absolute;
 			top: -48px;
 			height: auto;
@@ -174,9 +174,18 @@
 						<li>
 							<a asp-area="" asp-controller="UserProfile" asp-action="Index">@Localizer["Users"]</a>
 						</li>
-						<li>
-							<a asp-area="" asp-controller="Department" asp-action="Index">@Localizer["Departments"]</a>
-						</li>
+						if (PageHelpers.IsHeadOfDepartment(User))
+						{
+							<li>
+								<a asp-area="" asp-controller="Department" asp-action="Index">@Localizer["Department"]</a>
+							</li>
+						}
+						else
+						{
+							<li>
+								<a asp-area="" asp-controller="Department" asp-action="Index">@Localizer["Departments"]</a>
+							</li>
+						}
 					} else
 					{
 						<li>

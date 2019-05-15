@@ -21,7 +21,7 @@
 		<value>Редагувати</value>
 	</data>
 	<data name="Edit user" xml:space="preserve">
-		<value>Редагувати користувача</value>
+		<value>Редагувати профіль</value>
 	</data>
 	<data name="FirstName" xml:space="preserve">
 		<value>Ім'я</value>
@@ -45,7 +45,7 @@
 		<value>Науковий ступінь</value>
 	</data>
 	<data name="YearDegreeAssigned" xml:space="preserve">
-		<value>Рік присвоєння наукового ступеня</value>
+		<value>Рік присвоєння вченого звання</value>
 	</data>
 	<data name="Teacher" xml:space="preserve">
 		<value>Викладач</value>

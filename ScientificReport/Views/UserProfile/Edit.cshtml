@@ -65,19 +65,11 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="input-field col s12">
+				<div class="input-field col s6">
 					<input asp-for="ScientificDegree" type="text" class="validate">
 					<label asp-for="ScientificDegree">@Localizer["ScientificDegree"]</label>
 					<span class="helper-text" asp-validation-for="ScientificDegree" data-error="" data-success=""></span>
 				</div>
-			</div>
-			<div class="row">
-				<div class="input-field col s6">
-					<input asp-for="YearDegreeAssigned" type="number" class="validate">
-					<label asp-for="YearDegreeAssigned">@Localizer["YearDegreeAssigned"]</label>
-					<span class="helper-text" asp-validation-for="YearDegreeAssigned" data-error="" data-success=""></span>
-				</div>
-
 				<div class="input-field col s6">
 					<input asp-for="YearDegreeGained" type="number" class="validate">
 					<label asp-for="YearDegreeGained">@Localizer["YearDegreeGained"]</label>
@@ -117,10 +109,15 @@
 				</div>
 			}
 			<div class="row">
-				<div class="input-field col s12">
+				<div class="input-field col s6">
 					<input asp-for="AcademicStatus" type="text" class="validate">
 					<label asp-for="AcademicStatus">@Localizer["AcademicStatus"]</label>
 					<span class="helper-text" asp-validation-for="AcademicStatus" data-error="" data-success=""></span>
+				</div>
+				<div class="input-field col s6">
+					<input asp-for="YearDegreeAssigned" type="number" class="validate">
+					<label asp-for="YearDegreeAssigned">@Localizer["YearDegreeAssigned"]</label>
+					<span class="helper-text" asp-validation-for="YearDegreeAssigned" data-error="" data-success=""></span>
 				</div>
 			</div>
 			<div class="row">

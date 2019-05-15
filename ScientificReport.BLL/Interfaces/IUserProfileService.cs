@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using ScientificReport.DAL.Entities;
@@ -12,6 +13,7 @@ namespace ScientificReport.BLL.Interfaces
 		IEnumerable<UserProfile> GetAll();
 		IEnumerable<UserProfile> GetAllWhere(Func<UserProfile, bool> predicate);
 		UserProfile GetById(Guid id);
+		UserProfile Get(ClaimsPrincipal claimsPrincipal);
 		UserProfile Get(Func<UserProfile, bool> predicate);
 		void CreateItem(UserProfile item);
 		void UpdateItem(UserProfile item);

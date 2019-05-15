@@ -116,7 +116,7 @@ namespace ScientificReport.BLL.Services
 		public virtual bool UserWorksInDepartment(UserProfile headOfDepartment, Guid userId)
 		{
 			var userDepartment = _departmentRepository.Get(d => d.Head.Id == headOfDepartment.Id);
-			return !userDepartment.Staff.Contains(_userProfileRepository.Get(userId));
+			return userDepartment.Staff.Contains(_userProfileRepository.Get(userId));
 		}
 	}
 }

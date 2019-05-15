@@ -54,7 +54,7 @@ namespace ScientificReport.Controllers
 			}
 			else if (PageHelpers.IsHeadOfDepartment(User))
 			{
-				var currentUser = _userProfileService.Get(u => u.UserName == User.Identity.Name);
+				var currentUser = _userProfileService.Get(User);
 				var department = _departmentService.Get(u => u.Head.Id == currentUser.Id);
 				users = department.Staff;
 			}
@@ -86,7 +86,7 @@ namespace ScientificReport.Controllers
 
 			if (!PageHelpers.IsAdmin(User))
 			{
-				var currentUser = _userProfileService.Get(u => u.UserName == User.Identity.Name);
+				var currentUser = _userProfileService.Get(User);
 				if (PageHelpers.IsHeadOfDepartment(User))
 				{
 					if (department == null || !_departmentService.UserWorksInDepartment(currentUser, userProfile.Id))
@@ -94,7 +94,7 @@ namespace ScientificReport.Controllers
 						return Forbid();
 					}
 				}
-				else if (PageHelpers.IsTeacher(User) && currentUser.Id != userProfile.Id)
+				else if (currentUser.Id != userProfile.Id)
 				{
 					return Forbid();
 				}	
@@ -113,7 +113,7 @@ namespace ScientificReport.Controllers
 			var user = _userProfileService.GetById(id.Value);
 			if (user != null)
 			{
-				var currentUser = _userProfileService.Get(u => u.UserName == User.Identity.Name);
+				var currentUser = _userProfileService.Get(User);
 				if (!PageHelpers.IsAdmin(User))
 				{
 					if (PageHelpers.IsHeadOfDepartment(User))
@@ -172,7 +172,7 @@ namespace ScientificReport.Controllers
 			if (_userProfileService.UserExists(id.Value))
 			{
 				var user = _userProfileService.GetById(id.Value);
-				var currentUser = _userProfileService.Get(u => u.UserName == User.Identity.Name);
+				var currentUser = _userProfileService.Get(User);
 				if (PageHelpers.IsAdmin(User) || PageHelpers.IsTeacher(User) && currentUser.Id == user.Id || PageHelpers.IsHeadOfDepartment(User) && _departmentService.UserWorksInDepartment(currentUser, user.Id))
 				{
 					user.FirstName = model.FirstName;
@@ -232,7 +232,7 @@ namespace ScientificReport.Controllers
 				if (!await _userProfileService.IsInRoleAsync(user, request.RoleName, _userManager))
 				{
 					await _userProfileService.AddToRoleAsync(user, request.RoleName, _userManager);
-				}	
+				}
 			}
 
 			return Json(new {Success = userExists});
@@ -284,7 +284,7 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 			
-			var currentUser = _userProfileService.Get(u => u.UserName == User.Identity.Name);
+			var currentUser = _userProfileService.Get(User);
 			if (currentUser.Id != id.Value)
 			{
 				if (!PageHelpers.IsAdmin(User) && PageHelpers.IsHeadOfDepartment(User))
@@ -315,7 +315,7 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 			
-			var currentUser = _userProfileService.Get(u => u.UserName == User.Identity.Name);
+			var currentUser = _userProfileService.Get(User);
 			if (currentUser.Id != id.Value)
 			{
 				if (!PageHelpers.IsAdmin(User) && PageHelpers.IsHeadOfDepartment(User))
