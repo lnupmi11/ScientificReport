@@ -1,17 +1,20 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 using ScientificReport.BLL.Interfaces;
+using ScientificReport.Controllers.Utils;
 using ScientificReport.DAL.Entities.UserProfile;
 using ScientificReport.DAL.Roles;
 using ScientificReport.DTO.Models.UserProfile;
 
 namespace ScientificReport.Controllers
 {
-//	[Authorize(Roles = UserProfileRole.Administrator)]
+	[Authorize(Roles = UserProfileRole.Any)]
 	public class UserProfileController : Controller
 	{
 		private readonly UserManager<UserProfile> _userManager;
@@ -20,13 +23,15 @@ namespace ScientificReport.Controllers
 		
 		private readonly IUserProfileService _userProfileService;
 		private readonly IDepartmentService _departmentService;
+		private readonly IStringLocalizer<UserProfileController> _localizer;
 
 		public UserProfileController(
 			UserManager<UserProfile> usrMgr,
 			SignInManager<UserProfile> signInManager,
 			RoleManager<UserProfileRole> roleManager,
 			IUserProfileService userProfileService,
-			IDepartmentService departmentService
+			IDepartmentService departmentService,
+			IStringLocalizer<UserProfileController> localizer
 		)
 		{
 			_userManager = usrMgr;
@@ -34,13 +39,26 @@ namespace ScientificReport.Controllers
 			_roleManager = roleManager;
 			_userProfileService = userProfileService;
 			_departmentService = departmentService;
+			_localizer = localizer;
 		}
 
 		// GET: UserProfile/Index
 		[HttpGet]
+		[Authorize(Roles = UserProfileRole.HeadOfDepartmentOrAdmin)]
 		public IActionResult Index()
 		{
-			return View(_userProfileService.GetAll());
+			IEnumerable<UserProfile> users = null;
+			if (PageHelpers.IsAdmin(User))
+			{
+				users = _userProfileService.GetAll();
+			}
+			else if (PageHelpers.IsHeadOfDepartment(User))
+			{
+				var currentUser = _userProfileService.Get(u => u.UserName == User.Identity.Name);
+				var department = _departmentService.Get(u => u.Head.Id == currentUser.Id);
+				users = department.Staff;
+			}
+			return View(users);
 		}
 
 		// GET: UserProfile/Details/{id}
@@ -63,8 +81,24 @@ namespace ScientificReport.Controllers
 			var detailsModel = new UserDetailsModel
 			{
 				User = userProfile,
-				DepartmentName = department != null ? "кафедри " + department.Title : ""
+				FullPositionTitle = _localizer[userProfile.Position] + (department != null ? " " + _localizer["ofDepartment"] + " \"" + department.Title + "\"" : "")
 			};
+
+			if (!PageHelpers.IsAdmin(User))
+			{
+				var currentUser = _userProfileService.Get(u => u.UserName == User.Identity.Name);
+				if (PageHelpers.IsHeadOfDepartment(User))
+				{
+					if (department == null || !_departmentService.UserWorksInDepartment(currentUser, userProfile.Id))
+					{
+						return Forbid();
+					}
+				}
+				else if (PageHelpers.IsTeacher(User) && currentUser.Id != userProfile.Id)
+				{
+					return Forbid();
+				}	
+			}
 
 			return View(detailsModel);
 		}
@@ -79,6 +113,22 @@ namespace ScientificReport.Controllers
 			var user = _userProfileService.GetById(id.Value);
 			if (user != null)
 			{
+				var currentUser = _userProfileService.Get(u => u.UserName == User.Identity.Name);
+				if (!PageHelpers.IsAdmin(User))
+				{
+					if (PageHelpers.IsHeadOfDepartment(User))
+					{
+						if (!_departmentService.UserWorksInDepartment(currentUser, user.Id))
+						{
+							return Forbid();
+						}
+					}
+					else if (PageHelpers.IsTeacher(User) && currentUser.Id != user.Id)
+					{
+						return Forbid();
+					}
+				}
+
 				return View(new UserProfileEditModel
 				{
 					UserId = user.Id,
@@ -93,13 +143,15 @@ namespace ScientificReport.Controllers
 					YearDegreeAssigned = user.YearDegreeAssigned,
 					PhoneNumber = user.PhoneNumber,
 					IsApproved = user.IsApproved,
+					IsActive = user.IsActive,
 					UserName = user.UserName,
 					Email = user.Email,
+					IsSelfEditing = currentUser.Id == user.Id,
 					AllRoles = _roleManager.Roles.ToList(),
 					UserRoles = await _userManager.GetRolesAsync(user)
 				});
 			}
-
+			
 			return RedirectToAction("Index");
 		}
 
@@ -120,33 +172,46 @@ namespace ScientificReport.Controllers
 			if (_userProfileService.UserExists(id.Value))
 			{
 				var user = _userProfileService.GetById(id.Value);
-
-				user.FirstName = model.FirstName;
-				user.MiddleName = model.MiddleName;
-				user.LastName = model.LastName;
-				user.BirthYear = model.BirthYear;
-				user.GraduationYear = model.GraduationYear;
-				user.ScientificDegree = model.ScientificDegree;
-				user.YearDegreeGained = model.YearDegreeGained;
-				user.AcademicStatus = model.AcademicStatus;
-				user.YearDegreeAssigned = model.YearDegreeAssigned;
-				user.PhoneNumber = model.PhoneNumber;
-				user.IsApproved = model.IsApproved;
-				user.UserName = model.UserName;
-				user.Email = model.Email;
+				var currentUser = _userProfileService.Get(u => u.UserName == User.Identity.Name);
+				if (PageHelpers.IsAdmin(User) || PageHelpers.IsTeacher(User) && currentUser.Id == user.Id || PageHelpers.IsHeadOfDepartment(User) && _departmentService.UserWorksInDepartment(currentUser, user.Id))
+				{
+					user.FirstName = model.FirstName;
+					user.MiddleName = model.MiddleName;
+					user.LastName = model.LastName;
+					user.BirthYear = model.BirthYear;
+					user.GraduationYear = model.GraduationYear;
+					user.ScientificDegree = model.ScientificDegree;
+					user.YearDegreeGained = model.YearDegreeGained;
+					user.AcademicStatus = model.AcademicStatus;
+					user.YearDegreeAssigned = model.YearDegreeAssigned;
+					user.PhoneNumber = model.PhoneNumber;
+					if (PageHelpers.IsAdminOrHead(User) && currentUser.Id != id.Value)
+					{
+						user.IsApproved = model.IsApproved;
+						user.IsActive = model.IsActive;
+					}
+					
+					user.UserName = model.UserName;
+					user.Email = model.Email;
 				
-				_userProfileService.UpdateItem(user);
+					_userProfileService.UpdateItem(user);
+				}
+				else
+				{
+					return Forbid();
+				}
 			}
 			else
 			{
 				return NotFound();
 			}
-			
-			return RedirectToAction("Index");
+
+			return PageHelpers.IsAdminOrHead(User) ? RedirectToAction("Index") : RedirectToAction("Details", "UserProfile", new { id = id.Value});
 		}
 
 		// POST: UserProfile/AddUserToAdministration/{userId}
 		[HttpPost]
+		[Authorize(Roles = UserProfileRole.Administrator)]
 		public async Task<IActionResult> AddUserToAdministration(Guid? id, [FromBody] UserProfileUpdateRolesRequest request)
 		{
 			if (id == null)
@@ -175,6 +240,7 @@ namespace ScientificReport.Controllers
 		
 		// POST: UserProfile/RemoveUserFromAdministration/{userId}
 		[HttpPost]
+		[Authorize(Roles = UserProfileRole.Administrator)]
 		public async Task<IActionResult> RemoveUserFromAdministration(Guid? id, [FromBody] UserProfileUpdateRolesRequest request)
 		{
 			if (id == null)
@@ -191,7 +257,7 @@ namespace ScientificReport.Controllers
 					await _userProfileService.RemoveFromRoleAsync(user, request.RoleName, _userManager);
 					if (request.RoleName == UserProfileRole.HeadOfDepartment)
 					{
-						user.Position = "Викладач";
+						user.Position = UserProfileRole.Teacher;
 						_userProfileService.UpdateItem(user);
 					}
 				}
@@ -205,6 +271,7 @@ namespace ScientificReport.Controllers
 
 		// POST: UserProfile/Delete/{id}
 		[HttpPost]
+		[Authorize(Roles = UserProfileRole.Administrator)]
 		public IActionResult Delete(Guid? id)
 		{
 			if (id == null)
@@ -217,7 +284,51 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 			
-			_userProfileService.DeleteById(id.Value);
+			var currentUser = _userProfileService.Get(u => u.UserName == User.Identity.Name);
+			if (currentUser.Id != id.Value)
+			{
+				if (!PageHelpers.IsAdmin(User) && PageHelpers.IsHeadOfDepartment(User))
+				{
+					if (!_departmentService.UserWorksInDepartment(currentUser, id.Value))
+					{
+						return Forbid();
+					}
+				}
+				
+				_userProfileService.DeleteById(id.Value);	 
+			}
+			return RedirectToAction("Index");
+		}
+		
+		// POST: UserProfile/SetActive/{id}?active={true/false}
+		[HttpPost]
+		[Authorize(Roles = UserProfileRole.HeadOfDepartmentOrAdmin)]
+		public IActionResult SetActive(Guid? id, bool isActive)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
+			
+			if (!_userProfileService.UserExists(id.Value))
+			{
+				return NotFound();
+			}
+			
+			var currentUser = _userProfileService.Get(u => u.UserName == User.Identity.Name);
+			if (currentUser.Id != id.Value)
+			{
+				if (!PageHelpers.IsAdmin(User) && PageHelpers.IsHeadOfDepartment(User))
+				{
+					if (!_departmentService.UserWorksInDepartment(currentUser, id.Value))
+					{
+						return Forbid();
+					}
+				}
+				
+				_userProfileService.SetActiveById(id.Value, isActive);	 
+			}
+			
 			return RedirectToAction("Index");
 		}
 
@@ -238,7 +349,7 @@ namespace ScientificReport.Controllers
 
 			if (_userProfileService.Get(usr => usr.UserName == model.UserName) != null)
 			{
-				ModelState.AddModelError(string.Empty, "User already exists");
+				ModelState.AddModelError(string.Empty, _localizer["UserAlreadyExists"]);
 				return BadRequest();
 			}
 			
@@ -254,8 +365,9 @@ namespace ScientificReport.Controllers
 				ScientificDegree = model.ScientificDegree,
 				YearDegreeGained = model.YearDegreeGained,
 				YearDegreeAssigned = model.YearDegreeAssigned,
-				Position = "Викладач",
+				Position = UserProfileRole.Teacher,
 				IsApproved = false,
+				IsActive = false,
 				PhoneNumber = model.PhoneNumber
 			};
 			if (model.Password.Equals(model.PasswordRepeat))
@@ -279,7 +391,7 @@ namespace ScientificReport.Controllers
 			}
 			else
 			{
-				ModelState.AddModelError(string.Empty, "Password confirmation failed");
+				ModelState.AddModelError(string.Empty, _localizer["PasswordConfirmationFailed"]);
 			}
 			
 			return View(model);
@@ -309,7 +421,13 @@ namespace ScientificReport.Controllers
 				var user = _userProfileService.Get(usr => usr.UserName == model.UserName);
 				if (user != null)
 				{
-					if (user.IsApproved)
+					if (!user.IsApproved)
+					{
+						ModelState.AddModelError(string.Empty, _localizer["AccountNotApproved"]);
+						return View(model);	
+					}
+					
+					if (user.IsActive)
 					{
 						var result = await _signInManager.PasswordSignInAsync(
 							user.UserName, model.Password, model.RememberMe, false
@@ -319,14 +437,10 @@ namespace ScientificReport.Controllers
 							return Redirect(model.ReturnUrl);
 						}	
 					}
-					else
-					{
-						ModelState.AddModelError(string.Empty, "Account is not approved yet");
-						return View(model);
-					}
 				}
 			}
-			ModelState.AddModelError(string.Empty, "Invalid login or password");
+
+			ModelState.AddModelError(string.Empty, _localizer["IncorrectLoginOrPassword"]);
 			return View(model);
 		}
 

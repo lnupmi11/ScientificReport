@@ -26,7 +26,10 @@
 	<data name="Log In" xml:space="preserve">
 		<value>Вхід</value>
 	</data>
-	<data name="Change password" xml:space="preserve">
+	<data name="ChangePassword" xml:space="preserve">
 		<value>Змінити пароль</value>
+	</data>
+	<data name="Profile" xml:space="preserve">
+		<value>Профіль</value>
 	</data>
 </root>

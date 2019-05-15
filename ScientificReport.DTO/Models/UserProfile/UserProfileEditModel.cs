@@ -45,7 +45,12 @@ namespace ScientificReport.DTO.Models.UserProfile
 		[Required]
 		public bool IsApproved { get; set; }
 		
+		[Required]
+		public bool IsActive { get; set; }
+		
 		public Guid UserId { get; set; }
+		
+		public bool IsSelfEditing { get; set; }
 		
 		public IEnumerable<DAL.Roles.UserProfileRole> AllRoles { get; set; }
 		

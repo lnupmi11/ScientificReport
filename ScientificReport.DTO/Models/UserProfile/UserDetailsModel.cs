@@ -4,6 +4,6 @@ namespace ScientificReport.DTO.Models.UserProfile
 	{
 		public DAL.Entities.UserProfile.UserProfile User { get; set; }
 		
-		public string DepartmentName { get; set; }
+		public string FullPositionTitle { get; set; }
 	}
 }

@@ -28,6 +28,8 @@ namespace ScientificReport.DAL.Entities.UserProfile
 		
 		public bool IsApproved { get; set; }
 		
+		public bool IsActive { get; set; }
+		
 		public virtual ICollection<UserProfilesPublications> UserProfilesPublications { get; set; }
 		
 		public virtual ICollection<UserProfilesGrants> UserProfilesGrants { get; set; }

@@ -20,5 +20,6 @@ namespace ScientificReport.BLL.Interfaces
 		void AddUser(Guid id, UserProfile user);
 		void RemoveUser(Guid id, UserProfile user);
 		bool UserIsHired(UserProfile user);
+		bool UserWorksInDepartment(UserProfile headOfDepartment, Guid userId);
 	}
 }

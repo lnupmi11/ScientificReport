@@ -74,10 +74,27 @@
 	<data name="Departments" xml:space="preserve">
 		<value>Departments</value>
 	</data>
+	<data name="Department" xml:space="preserve">
+		<value>Department</value>
+	</data>
 	<data name="Available pages" xml:space="preserve">
 		<value>Available pages</value>
 	</data>
 	<data name="Privacy" xml:space="preserve">
 		<value>Privacy</value>
 	</data>
+	
+	<data name="Reports" xml:space="preserve">
+		<value>Reports</value>
+	</data>
+	<data name="TeacherReport" xml:space="preserve">
+		<value>Teacher Report</value>
+	</data>
+	<data name="DepartmentReport" xml:space="preserve">
+		<value>Department Report</value>
+	</data>
+	<data name="FacultyReport" xml:space="preserve">
+		<value>Faculty Report</value>
+	</data>
+	
 </root>

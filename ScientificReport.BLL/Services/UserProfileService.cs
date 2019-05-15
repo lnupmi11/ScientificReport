@@ -61,6 +61,13 @@ namespace ScientificReport.BLL.Services
 			_userProfileRepository.Delete(id);
 		}
 
+		public virtual void SetActiveById(Guid id, bool isActive)
+		{
+			var user = _userProfileRepository.Get(id);
+			user.IsActive = isActive;
+			_userProfileRepository.Update(user);
+		}
+
 		public virtual void SetApproved(Guid id, bool isApproved)
 		{
 			var user = _userProfileRepository.Get(id);

@@ -12,10 +12,12 @@ namespace ScientificReport.BLL.Services
 	public class DepartmentService : IDepartmentService
 	{
 		private readonly DepartmentRepository _departmentRepository;
+		private readonly UserProfileRepository _userProfileRepository;
 		
 		public DepartmentService(ScientificReportDbContext context)
 		{
 			_departmentRepository = new DepartmentRepository(context);
+			_userProfileRepository = new UserProfileRepository(context);
 		}
 
 		public virtual IEnumerable<Department> GetAll()
@@ -109,6 +111,12 @@ namespace ScientificReport.BLL.Services
 		public virtual bool UserIsHired(UserProfile user)
 		{
 			return _departmentRepository.All().Any(d => d.Staff.Contains(user));
+		}
+
+		public virtual bool UserWorksInDepartment(UserProfile headOfDepartment, Guid userId)
+		{
+			var userDepartment = _departmentRepository.Get(d => d.Head.Id == headOfDepartment.Id);
+			return !userDepartment.Staff.Contains(_userProfileRepository.Get(userId));
 		}
 	}
 }

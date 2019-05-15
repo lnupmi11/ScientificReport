@@ -16,6 +16,7 @@ namespace ScientificReport.BLL.Interfaces
 		void CreateItem(UserProfile item);
 		void UpdateItem(UserProfile item);
 		void DeleteById(Guid id);
+		void SetActiveById(Guid id, bool isActive);
 		void SetApproved(Guid id, bool isApproved);
 		bool UserExists(Guid id);
 		Task<IdentityResult> AddToRoleAsync(UserProfile user, string roleName, UserManager<UserProfile> userManager);

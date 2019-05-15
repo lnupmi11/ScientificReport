@@ -75,10 +75,25 @@
 	<data name="Departments" xml:space="preserve">
 		<value>Кафедри</value>
 	</data>
+	<data name="Department" xml:space="preserve">
+		<value>Кафедра</value>
+	</data>
 	<data name="Available pages" xml:space="preserve">
 		<value>Доступні сторінки</value>
 	</data>
 	<data name="Privacy" xml:space="preserve">
 		<value>Конфіденційність</value>
+	</data>
+	<data name="Reports" xml:space="preserve">
+		<value>Звіти</value>
+	</data>
+	<data name="TeacherReport" xml:space="preserve">
+		<value>Викладацький звіт</value>
+	</data>
+	<data name="DepartmentReport" xml:space="preserve">
+		<value>Звіт кафедри</value>
+	</data>
+	<data name="FacultyReport" xml:space="preserve">
+		<value>Звіт факультету</value>
 	</data>
 </root>

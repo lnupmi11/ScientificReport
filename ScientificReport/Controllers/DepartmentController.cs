@@ -75,7 +75,7 @@ namespace ScientificReport.Controllers
 
 		// POST: Department/Create
 		[HttpPost]
-		public IActionResult Create(DepartmentCreateModel model)
+		public async Task<IActionResult> Create(DepartmentCreateModel model)
 		{
 			if (!ModelState.IsValid)
 			{
@@ -96,6 +96,9 @@ namespace ScientificReport.Controllers
 					Head = head,
 					Staff = new List<UserProfile> {head}
 				});
+				head.Position = "HeadOfDepartment";
+				_userProfileService.UpdateItem(head);
+				await _userProfileService.AddToRoleAsync(head, UserProfileRole.HeadOfDepartment, _userManager);
 			}
 			else
 			{
@@ -139,8 +142,7 @@ namespace ScientificReport.Controllers
 					Staff = department.Staff,
 					ScientificWorkItems = availableScientificWorks,
 					ScientificWorks = department.ScientificWorks,
-					// TODO: uncomment User.IsInRole... after 'login' is fixed
-					IsEditingByHead = true // User.IsInRole(UserProfileRole.Administrator)
+					IsEditingByHead = department.Head.Id == _userProfileService.Get(u => u.UserName == User.Identity.Name).Id
 				});
 			}
 
@@ -175,14 +177,14 @@ namespace ScientificReport.Controllers
 			if (newHead != null && departments.All(d => !d.Staff.Contains(newHead)))
 			{
 				var oldHead = department.Head;
-				oldHead.Position = "Викладач";
+				oldHead.Position = "Teacher";
 				_userProfileService.UpdateItem(oldHead);
 				await _userProfileService.RemoveFromRoleAsync(oldHead, UserProfileRole.HeadOfDepartment,
 					_userManager);
 
 				department.Head = newHead;
 
-				newHead.Position = "Завідувач";
+				newHead.Position = "HeadOfDepartment";
 				_userProfileService.UpdateItem(newHead);
 				await _userProfileService.AddToRoleAsync(newHead, UserProfileRole.HeadOfDepartment, _userManager);
 			}

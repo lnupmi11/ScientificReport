@@ -71,6 +71,9 @@
 	<data name="IsApproved" xml:space="preserve">
 		<value>Схвалений</value>
 	</data>
+	<data name="IsActive" xml:space="preserve">
+		<value>Активний</value>
+	</data>
 	<data name="Save" xml:space="preserve">
 		<value>Зберегти</value>
 	</data>
@@ -79,5 +82,8 @@
 	</data>
 	<data name="Back to List" xml:space="preserve">
 		<value>Повернутися до списку</value>
+	</data>
+	<data name="Roles" xml:space="preserve">
+		<value>Ролі</value>
 	</data>
 </root>

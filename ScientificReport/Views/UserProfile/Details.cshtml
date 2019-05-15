@@ -1,4 +1,5 @@
 @using Microsoft.AspNetCore.Mvc.Localization
+@using ScientificReport.Controllers.Utils
 @model ScientificReport.DTO.Models.UserProfile.UserDetailsModel
 @inject IViewLocalizer Localizer
 
@@ -84,7 +85,7 @@
 			@Localizer[Html.DisplayNameFor(model => model.User.Position)]
 		</div>
 		<div class="col s8">
-			@Html.DisplayFor(model => model.User.Position) @Html.DisplayFor(model => model.DepartmentName)
+			@Html.DisplayFor(model => model.FullPositionTitle)
 		</div>
 		<div class="col s4">
 			@Localizer[Html.DisplayNameFor(model => model.User.IsApproved)]
@@ -92,9 +93,21 @@
 		<div class="col s8">
 			<span>@(Model.User.IsApproved ? Localizer["Yes"] : Localizer["No"])</span>
 		</div>
+		@if (PageHelpers.IsAdminOrHead(User))
+		{
+			<div class="col s4">
+				@Localizer[Html.DisplayNameFor(model => model.User.IsActive)]
+			</div>
+			<div class="col s8">
+				<span>@(Model.User.IsActive ? Localizer["Yes"] : Localizer["No"])</span>
+			</div>
+		}
 	</div>
 </div>
 <div>
 	<a asp-action="Edit" asp-route-id="@Model.User.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
-	<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Back to List"]</a>
+	@if (PageHelpers.IsAdminOrHead(User))
+	{
+		<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Back to List"]</a>
+	}
 </div>

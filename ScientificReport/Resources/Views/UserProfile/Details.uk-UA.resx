@@ -62,6 +62,9 @@
 	<data name="IsApproved" xml:space="preserve">
 		<value>Схвалений</value>
 	</data>
+	<data name="IsActive" xml:space="preserve">
+		<value>Активний</value>
+	</data>
 	<data name="Yes" xml:space="preserve">
 		<value>Так</value>
 	</data>

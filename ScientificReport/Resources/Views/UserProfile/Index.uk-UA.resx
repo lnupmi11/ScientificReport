@@ -44,4 +44,10 @@
 	<data name="Delete" xml:space="preserve">
 		<value>Видалити</value>
 	</data>
+	<data name="Activate" xml:space="preserve">
+		<value>Активувати</value>
+	</data>
+	<data name="Deactivate" xml:space="preserve">
+		<value>Деактивувати</value>
+	</data>
 </root>
