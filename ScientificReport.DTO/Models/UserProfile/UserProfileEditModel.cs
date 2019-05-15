@@ -21,31 +21,23 @@ namespace ScientificReport.DTO.Models.UserProfile
 		[Required]
 		public string Email { get; set; }
 		
-		[Required]
 		public int BirthYear { get; set; }
 
-		[Required]
 		public int GraduationYear { get; set; }
 		
-		[Required]
 		public string ScientificDegree { get; set; }
 		
-		[Required]
 		public int YearDegreeGained { get; set; }
 		
-		[Required]
 		public string AcademicStatus { get; set; }
 		
-		[Required]
 		public int YearDegreeAssigned { get; set; }
 		
 		[Required]
 		public string PhoneNumber { get; set; }
 		
-		[Required]
 		public bool IsApproved { get; set; }
 		
-		[Required]
 		public bool IsActive { get; set; }
 		
 		public Guid UserId { get; set; }
@@ -55,5 +47,7 @@ namespace ScientificReport.DTO.Models.UserProfile
 		public IEnumerable<DAL.Roles.UserProfileRole> AllRoles { get; set; }
 		
 		public IEnumerable<string> UserRoles { get; set; }
+		
+		public bool IsHeadOfDepartment { get; set; }
 	}
 }

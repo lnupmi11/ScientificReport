@@ -96,7 +96,7 @@ namespace ScientificReport.Controllers
 			
 			return View(new DepartmentCreateModel
 			{
-				UserSelection = availableUsers.Select(user => new SelectItem(user.FullName, user.Id.ToString()))
+				UserSelection = availableUsers
 			});
 		}
 
@@ -150,7 +150,7 @@ namespace ScientificReport.Controllers
 		// GET: Department/Edit/{id}
 		[HttpGet]
 		[Authorize(Roles = UserProfileRole.HeadOfDepartmentOrAdmin)]
-		public async Task<IActionResult> Edit(Guid? id)
+		public IActionResult Edit(Guid? id)
 		{
 			if (id == null)
 			{
@@ -173,19 +173,18 @@ namespace ScientificReport.Controllers
 
 			var availableUsers = allUsers.Where(user => departments.All(d => !d.Staff.Contains(user)));
 
-			var availableScientificWorks = _scientificWorkService
-				.GetAllWhere(sw => departments.All(d => !d.ScientificWorks.Contains(sw)))
-				.Select(scientificWork => new SelectItem(scientificWork.Title, scientificWork.Id.ToString()));
+			var availableScientificWorks = _scientificWorkService.GetAllWhere(sw => departments.All(d => !d.ScientificWorks.Contains(sw)));
 
 			return View(new DepartmentEditModel
 			{
+				Department = department,
 				DepartmentId = department.Id,
 				Title = department.Title,
-				UserSelection = availableUsers.Select(user => new SelectItem(user.FullName, user.Id.ToString(), user.Id.Equals(department.Head.Id))),
+				UserSelection = availableUsers,
 				Head = department.Head,
 				SelectedHeadId = department.Head.Id,
 				Staff = department.Staff,
-				ScientificWorkItems = availableScientificWorks,
+				AvailableScientificWork = availableScientificWorks,
 				ScientificWorks = department.ScientificWorks,
 				IsEditingByHead = department.Head.Id == _userProfileService.Get(u => u.UserName == User.Identity.Name).Id
 			});
@@ -233,6 +232,12 @@ namespace ScientificReport.Controllers
 				newHead.Position = "HeadOfDepartment";
 				_userProfileService.UpdateItem(newHead);
 				await _userProfileService.AddToRoleAsync(newHead, UserProfileRole.HeadOfDepartment, _userManager);
+
+				if (!department.Staff.Contains(newHead))
+				{
+					department.Staff.Add(newHead);
+					_departmentService.UpdateItem(department);
+				}
 			}
 
 			_departmentService.UpdateItem(department);

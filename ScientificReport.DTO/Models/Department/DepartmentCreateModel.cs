@@ -13,6 +13,6 @@ namespace ScientificReport.DTO.Models.Department
 		[Display(Name = "Head of Department")]
 		public Guid SelectedHeadId { get; set; }
 		
-		public IEnumerable<SelectItem> UserSelection { get; set; }
+		public IEnumerable<DAL.Entities.UserProfile.UserProfile> UserSelection { get; set; }
 	}
 }

@@ -105,7 +105,10 @@
 	</div>
 </div>
 <div>
-	<a asp-action="Edit" asp-route-id="@Model.User.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
+	@if (PageHelpers.IsAdminOrHead(User) || Model.User.UserName == User.Identity.Name)
+	{
+		<a asp-action="Edit" asp-route-id="@Model.User.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>	
+	}
 	@if (PageHelpers.IsAdminOrHead(User))
 	{
 		<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Back to List"]</a>

@@ -1,4 +1,5 @@
 @using Microsoft.AspNetCore.Mvc.Localization
+@using ScientificReport.DTO.Models.Department
 @model ScientificReport.DTO.Models.Department.DepartmentCreateModel
 @inject IViewLocalizer Localizer
 
@@ -33,12 +34,15 @@
 			<div class="row">
 				<div class="input-field col s10">
 					<label asp-for="SelectedHeadId" class="selected-head-id-label">@Localizer["Head"]</label>
-					@Html.DropDownListFor(x => Model.SelectedHeadId, new SelectList(Model.UserSelection, "Value", "Text"), new {@class = "col s6 push-s6"})
-					@Html.ValidationMessageFor(x => x.SelectedHeadId, "", new {@class = "validate"})
+					@{
+						var departmentSelection = Model.UserSelection.Select(d => new SelectItem(d.FullName, d.Id.ToString()));
+					}
+					@Html.DropDownListFor(x => Model.SelectedHeadId, new SelectList(departmentSelection, "Value", "Text"))
+					@Html.ValidationMessageFor(x => x.SelectedHeadId, "", new {@class = "validate", @required = "required"})
 				</div>
 			</div>
 			<div class="row myButtons">
-				<input type="submit" value="@Localizer["Create"]" class="waves-effect btn-small  amber accent-2"/>
+				<input type="submit" value="@Localizer["Create"]" class="waves-effect btn-small amber accent-2"/>
 				<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
 			</div>
 		</form>

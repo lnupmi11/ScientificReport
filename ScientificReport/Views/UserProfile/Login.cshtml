@@ -3,7 +3,7 @@
 @inject IViewLocalizer Localizer
 
 @{
-	ViewBag.Title = Localizer["Log In"];
+	ViewBag.Title = Localizer["LogIn"];
 	Layout = "_Layout";
 }
 
@@ -14,12 +14,10 @@
 	}
 	
 </style>
-<h1>@Localizer["Log In"]</h1>
+<h1>@Localizer["LogIn"]</h1>
 <div asp-validation-summary="All" class="text-danger validation-summary-valid"></div>
-<h4>@Localizer["Use a local account to log in."]</h4>
 <hr/>
 <form asp-action="Login" method="post">
-	<div asp-validation-summary="ModelOnly" class="validate"></div>
 	<div class="row">
 		<div class="input-field col s6">
 			<input asp-for="UserName" type="text" class="validate">
@@ -40,9 +38,8 @@
 			<span>@Localizer[Html.DisplayNameFor(model => model.RememberMe)]</span>
 		</label>
 	</div>
-	
 	<div class="row myButtons">
-		<input type="submit" value="@Localizer["Log In"]" class="waves-effect btn-small  waves-light"/>
+		<input type="submit" value="@Localizer["LogIn"]" class="waves-effect btn-small  waves-light"/>
 		<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
 	</div>
 </form>

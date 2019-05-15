@@ -17,11 +17,8 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="Log In" xml:space="preserve">
+    <data name="LogIn" xml:space="preserve">
 		<value>Log In</value>
-	</data>
-    <data name="Use a local account to log in." xml:space="preserve">
-		<value>Use a local account to log in.</value>
 	</data>
     <data name="UserName" xml:space="preserve">
 		<value>User Name</value>

@@ -1,4 +1,5 @@
 @using Microsoft.AspNetCore.Mvc.Localization
+@using ScientificReport.DTO.Models.Department
 @model ScientificReport.DTO.Models.Department.DepartmentEditModel
 @inject IViewLocalizer Localizer
 
@@ -39,7 +40,10 @@
 		<div class="row">
 			<div class="input-field col s4">
 				<label asp-for="SelectedHeadId" class="myLabel">@Localizer["Head"]</label>
-				@Html.DropDownListFor(x => Model.SelectedHeadId, new SelectList(Model.UserSelection, "Value", "Text"), new {@class = "col s12"})
+				@{
+					var userSelection = Model.UserSelection.Select(user => new SelectItem(user.FullName, user.Id.ToString(), user.Id.Equals(Model.Department.Head.Id)));
+				}
+				@Html.DropDownListFor(x => Model.SelectedHeadId, new SelectList(userSelection, "Value", "Text"), new {@class = "col s12"})
 				@Html.ValidationMessageFor(x => x.SelectedHeadId, "", new {@class = "validate", @required = "required"})
 				<br/>
 			</div>
@@ -50,24 +54,22 @@
 			<div class="authors-list">
 				@if (Model.UserSelection != null && Model.Staff != null)
 				{
-					foreach (var user in Model.UserSelection)
+					var selection = Model.UserSelection.Select(user => new SelectItem(user.FullName, user.Id.ToString(), user.Id.Equals(Model.Department.Head.Id)));
+					foreach (var user in selection)
 					{
-						if (user != null)
-						{
-							var contains = Model.Staff.Any(s => s.Id.ToString().Equals(user.Value));
-							<p>
-								@if (!Model.Head.Id.ToString().Equals(user.Value))
-								{
-									<i class="add-user fas fa-plus-circle fa-lg cursor-pointer text-green @(contains ? "hidden" : "")" onclick="addUserToStaff(this, '@user.Value', '@Model.DepartmentId')"></i>
-									<i class="remove-user fas fa-minus-circle fa-lg cursor-pointer text-red @(contains ? "" : "hidden")" onclick="removeUserFromStaff(this, '@user.Value', '@Model.DepartmentId')"></i>
-								}
-								else
-								{
-									<i class="remove-user fas fa-minus-circle fa-lg" title="Can not remove head of department"></i>
-								}
-								@user.Text
-							</p>
-						}
+						var contains = Model.Staff.Any(s => s.Id.ToString().Equals(user.Value));
+						<p>
+							@if (!Model.Head.Id.ToString().Equals(user.Value))
+							{
+								<i class="add-user fas fa-plus-circle fa-lg cursor-pointer text-green @(contains ? "hidden" : "")" onclick="addUserToStaff(this, '@user.Value', '@Model.DepartmentId')"></i>
+								<i class="remove-user fas fa-minus-circle fa-lg cursor-pointer text-red @(contains ? "" : "hidden")" onclick="removeUserFromStaff(this, '@user.Value', '@Model.DepartmentId')"></i>
+							}
+							else
+							{
+								<i class="remove-user fas fa-minus-circle fa-lg" title="Can not remove head of department"></i>
+							}
+							@user.Text
+						</p>
 					}
 				}
 			</div>
@@ -75,11 +77,12 @@
 		<div class="col s6">
 			<label class="myLabel">@Localizer["ScientificWorks"]:</label>
 			<div class="authors-list">
-				@if (Model.ScientificWorkItems != null && Model.ScientificWorks != null)
+				@if (Model.AvailableScientificWork != null)
 				{
-					foreach (var scientificWork in Model.ScientificWorkItems)
+					var scientificWorkItems = Model.AvailableScientificWork.Select(scientificWork => new SelectItem(scientificWork.Title, scientificWork.Id.ToString()));
+					if (Model.ScientificWorks != null)
 					{
-						if (scientificWork != null)
+						foreach (var scientificWork in scientificWorkItems)
 						{
 							var contains = Model.ScientificWorks.Any(sw => sw.Id.ToString().Equals(scientificWork.Value));
 							<p>
