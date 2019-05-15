@@ -15,6 +15,11 @@ namespace ScientificReport.Controllers.Utils
 			return user.IsInRole(UserProfileRole.HeadOfDepartment);
 		}
 		
+		public static bool IsAdminOrHead(ClaimsPrincipal user)
+		{
+			return IsAdmin(user) || IsHeadOfDepartment(user);
+		}
+
 		public static bool IsTeacher(ClaimsPrincipal user)
 		{
 			return user.IsInRole(UserProfileRole.Teacher);

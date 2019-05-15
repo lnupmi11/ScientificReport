@@ -17,6 +17,9 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
+	<data name="CreateNewAccount" xml:space="preserve">
+		<value>Створення нового облікового запису</value>
+	</data>
     <data name="Register" xml:space="preserve">
 		<value>Реєстрація</value>
 	</data>
@@ -61,6 +64,9 @@
 	</data>
 	<data name="PasswordRepeat" xml:space="preserve">
 		<value>Повторіть пароль</value>
+	</data>
+	<data name="ExpectedDepartment" xml:space="preserve">
+		<value>Виберіть кафедру, на якій плануєте працювати</value>
 	</data>
 	<data name="Cancel" xml:space="preserve">
 		<value>Відмінити</value>

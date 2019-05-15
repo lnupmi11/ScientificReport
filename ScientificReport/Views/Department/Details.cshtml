@@ -1,9 +1,10 @@
 @using Microsoft.AspNetCore.Mvc.Localization
+@using ScientificReport.Controllers.Utils
 @model ScientificReport.DAL.Entities.Department
 @inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = Localizer["Details"];
+	ViewData["Title"] = Localizer["Department"];
 }
 
 <h3>@Localizer["Details"]</h3>
@@ -50,12 +51,12 @@
 				}
 				else
 				{
-					<p>@Localizer["No staff"]</p>
+					<p>@Localizer["NoStaff"]</p>
 				}
 			}
 		</dd>
 		<dt class="col s2">
-			@Localizer["Scientific works"]
+			@Localizer["ScientificWorks"]
 		</dt>
 		<dd class="col s10">
 			@if (Model.ScientificWorks != null)
@@ -78,13 +79,19 @@
 				}
 				else
 				{
-					<p>@Localizer["No scientific works"]</p>
+					<p>@Localizer["NoScientificWorks"]</p>
 				}
 			}
 		</dd>
 	</dl>
 </div>
 <div>
-	<a asp-action="Edit" asp-route-id="@Model.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
-	<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Back to List"]</a>
+	@if (PageHelpers.IsAdminOrHead(User))
+	{
+		<a asp-action="Edit" asp-route-id="@Model.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>	
+	}
+	@if (PageHelpers.IsAdmin(User))
+	{
+		<a asp-action="Index" class="btn-small blue darken-3">@Localizer["BackToList"]</a>
+	}
 </div>

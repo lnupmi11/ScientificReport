@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 
@@ -34,21 +36,9 @@ namespace ScientificReport.DTO.Models.UserProfile
 		public string PhoneNumber { get; set; }
 		
 		[Required]
-		public int BirthYear { get; set; }
-
-		[Required]
-		public int GraduationYear { get; set; }
+		[Display(Name = "ExpectedDepartment")]
+		public Guid SelectedDepartmentId { get; set; }
 		
-		[Required]
-		public string ScientificDegree { get; set; }
-		
-		[Required]
-		public int YearDegreeGained { get; set; }
-		
-		[Required]
-		public string AcademicStatus { get; set; }
-		
-		[Required]
-		public int YearDegreeAssigned { get; set; }
+		public IEnumerable<DAL.Entities.Department> Departments { get; set; }
 	}
 }

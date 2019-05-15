@@ -28,14 +28,41 @@
 @* 	} *@
 @* </ul> *@
 
+<style>
+	#user-dropdown {
+		position: absolute;
+		top: -48px;
+		height: auto;
+	}
+
+	.dropdown-content li { min-height: 32px; }
+
+	.dropdown-content li > a {
+		font-size: 15px;
+		color: black;
+		padding: 5px 9px;
+		cursor: pointer;
+	}
+</style>
+
+<ul id="user-dropdown" style="color: black;" class="dropdown-content">
+	<li style="font-size: 5px; -o-justify-content: center; -webkit-justify-content: center; justify-content: center">
+		<a asp-area="" asp-controller="UserProfile" asp-route-id="@UserManager.GetUserId(User)" asp-action="Details">@Localizer["Profile"]</a>
+	</li>
+	<li>
+		<a asp-area="" asp-controller="UserProfile" asp-action="ChangePassword">@Localizer["ChangePassword"]</a>
+	</li>
+	<li>
+		<a asp-area="" asp-controller="UserProfile" asp-action="Logout">@Localizer["Log out"]</a>
+	</li>
+</ul>
 <ul class="right hide-on-med-and-down">
 	@if (User.Identity.IsAuthenticated)
 	{
 		<li>
-			<a asp-area="" asp-controller="UserProfile" asp-action="ChangePassword">@Localizer["Change password"]</a>
-		</li>
-		<li>
-			<a asp-area="" asp-controller="UserProfile" asp-action="Logout">@Localizer["Log out"]</a>
+			<a class="dropdown-trigger" data-target="user-dropdown">
+				<i class="material-icons left">account_circle</i>@User.Identity.Name<i class="material-icons right">arrow_drop_down</i>
+			</a>
 		</li>
 	}
 	else
@@ -48,3 +75,7 @@
 		</li>
 	}
 </ul>
+
+@section Scripts {
+	<script> $(".dropdown-trigger").dropdown(); </script>
+}

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using ScientificReport.BLL.Interfaces;
@@ -8,6 +9,7 @@ using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Entities.UserProfile;
 using ScientificReport.DAL.Repositories;
+using ScientificReport.DAL.Roles;
 
 namespace ScientificReport.BLL.Services
 {
@@ -28,6 +30,11 @@ namespace ScientificReport.BLL.Services
 		public virtual IEnumerable<UserProfile> GetAllWhere(Func<UserProfile, bool> predicate)
 		{
 			return _userProfileRepository.AllWhere(predicate);
+		}
+
+		public virtual UserProfile Get(ClaimsPrincipal claimsPrincipal)
+		{
+			return _userProfileRepository.Get(u => u.UserName == claimsPrincipal.Identity.Name);
 		}
 
 		public virtual UserProfile GetById(Guid id)
@@ -59,6 +66,13 @@ namespace ScientificReport.BLL.Services
 		public virtual void DeleteById(Guid id)
 		{
 			_userProfileRepository.Delete(id);
+		}
+
+		public virtual void SetActiveById(Guid id, bool isActive)
+		{
+			var user = _userProfileRepository.Get(id);
+			user.IsActive = isActive;
+			_userProfileRepository.Update(user);
 		}
 
 		public virtual void SetApproved(Guid id, bool isApproved)
@@ -131,6 +145,14 @@ namespace ScientificReport.BLL.Services
 			}
 
 			return result;
+		}
+
+		public virtual async Task<bool>IsTeacherOnlyAsync(UserProfile user, UserManager<UserProfile> userManager)
+		{
+			var isTeacher = await userManager.IsInRoleAsync(user, UserProfileRole.Teacher);
+			var isHead = await userManager.IsInRoleAsync(user, UserProfileRole.HeadOfDepartment);
+			var isAdmin = await userManager.IsInRoleAsync(user, UserProfileRole.Administrator);
+			return isTeacher && !(isHead || isAdmin);
 		}
 
 		public virtual ICollection<Publication> GetUserPublications(Guid id)

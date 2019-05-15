@@ -1,4 +1,5 @@
 @using Microsoft.AspNetCore.Mvc.Localization
+@using ScientificReport.Controllers.Utils
 @using ScientificReport.DAL.Roles
 @model ScientificReport.DTO.Models.UserProfile.UserProfileEditModel
 @inject IViewLocalizer Localizer
@@ -7,7 +8,6 @@
 	ViewData["Title"] = Localizer["Edit"];
 	Layout = "_Layout";
 }
-
 
 <style type="text/css">
 	.roles-list {
@@ -29,9 +29,17 @@
 </div>
 <div class="row">
 	<div class="col s12">
+		@{
+			var isAdminOrHead = PageHelpers.IsAdminOrHead(User);
+		}
 		<form asp-action="Edit" method="post">
 			<div asp-validation-summary="ModelOnly" class="validate"></div>
 			<div class="row">
+				<div class="input-field col s4">
+					<input asp-for="LastName" type="text" class="validate">
+					<label asp-for="LastName">@Localizer["LastName"]</label>
+					<span class="helper-text" asp-validation-for="LastName" data-error="" data-success=""></span>
+				</div>
 				<div class="input-field col s4">
 					<input asp-for="FirstName" type="text" class="validate">
 					<label asp-for="FirstName">@Localizer["FirstName"]</label>
@@ -43,86 +51,73 @@
 					<label asp-for="MiddleName">@Localizer["MiddleName"]</label>
 					<span class="helper-text" asp-validation-for="MiddleName" data-error="" data-success=""></span>
 				</div>
-
-				<div class="input-field col s4">
-					<input asp-for="LastName" type="text" class="validate">
-					<label asp-for="LastName">@Localizer["LastName"]</label>
-					<span class="helper-text" asp-validation-for="LastName" data-error="" data-success=""></span>
-				</div>
-
-				<div class="input-field col s8">
-					<input asp-for="PhoneNumber" type="text" class="validate">
-					<label asp-for="PhoneNumber">@Localizer["PhoneNumber"]</label>
-					<span class="helper-text" asp-validation-for="PhoneNumber" data-error="" data-success=""></span>
-				</div>
 			</div>
 			<div class="row">
-				<div class="input-field col s4">
+				<div class="input-field col s6">
 					<input asp-for="BirthYear" type="number" class="validate">
 					<label asp-for="BirthYear">@Localizer["BirthYear"]</label>
 					<span class="helper-text" asp-validation-for="BirthYear" data-error="" data-success=""></span>
 				</div>
-
-				<div class="input-field col s4">
+				<div class="input-field col s6">
 					<input asp-for="GraduationYear" type="number" class="validate">
 					<label asp-for="GraduationYear">@Localizer["GraduationYear"]</label>
 					<span class="helper-text" asp-validation-for="GraduationYear" data-error="" data-success=""></span>
 				</div>
 			</div>
 			<div class="row">
-				<div class="input-field col s8">
+				<div class="input-field col s6">
 					<input asp-for="ScientificDegree" type="text" class="validate">
 					<label asp-for="ScientificDegree">@Localizer["ScientificDegree"]</label>
 					<span class="helper-text" asp-validation-for="ScientificDegree" data-error="" data-success=""></span>
 				</div>
-			</div>
-			<div class="row">
-				<div class="input-field col s4">
-					<input asp-for="YearDegreeAssigned" type="number" class="validate">
-					<label asp-for="YearDegreeAssigned">@Localizer["YearDegreeAssigned"]</label>
-					<span class="helper-text" asp-validation-for="YearDegreeAssigned" data-error="" data-success=""></span>
-				</div>
-
-				<div class="input-field col s4">
+				<div class="input-field col s6">
 					<input asp-for="YearDegreeGained" type="number" class="validate">
 					<label asp-for="YearDegreeGained">@Localizer["YearDegreeGained"]</label>
 					<span class="helper-text" asp-validation-for="YearDegreeGained" data-error="" data-success=""></span>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col s8">
-					<label>@Localizer["Roles"]:</label>
-					<div class="authors-list">
-						@if (Model.AllRoles != null && Model.UserRoles != null)
-						{
-							foreach (var role in Model.AllRoles)
+			@if (PageHelpers.IsAdmin(User))
+			{
+				<div class="row">
+					<div class="col s8">
+						<label>@Localizer["Roles"]:</label>
+						<div class="authors-list">
+							@if (Model.AllRoles != null && Model.UserRoles != null)
 							{
-								if (role != null)
+								foreach (var role in Model.AllRoles)
 								{
-									var contains = Model.UserRoles.Contains(role.Name);
-									<p>
-										@if (role.Name != UserProfileRole.Teacher && role.Name != UserProfileRole.HeadOfDepartment)
-										{
-											<i class="add-role fas fa-plus-circle fa-lg cursor-pointer text-green @(contains ? "hidden" : "")" onclick="addUserToAdministration(this, '@role.Name', '@Model.UserId')"></i>
-											<i class="remove-role fas fa-minus-circle fa-lg cursor-pointer text-red @(contains ? "" : "hidden")" onclick="removeUserFromAdministration(this, '@role.Name', '@Model.UserId')"></i>
-										}
-										else
-										{
-											<i class="fas fa-@(contains ? "minus" : "plus")-circle fa-lg" title="Unable to @(contains ? "remove" : "add") role"></i>
-										}
-										@role.Name
-									</p>
+									if (role != null)
+									{
+										var contains = Model.UserRoles.Contains(role.Name);
+										<p>
+											@if (role.Name != UserProfileRole.Teacher && role.Name != UserProfileRole.HeadOfDepartment && Model.UserName != User.Identity.Name && !Model.IsHeadOfDepartment)
+											{
+												<i class="add-role fas fa-plus-circle fa-lg cursor-pointer text-green @(contains ? "hidden" : "")" onclick="addUserToAdministration(this, '@role.Name', '@Model.UserId')"></i>
+												<i class="remove-role fas fa-minus-circle fa-lg cursor-pointer text-red @(contains ? "" : "hidden")" onclick="removeUserFromAdministration(this, '@role.Name', '@Model.UserId')"></i>
+											}
+											else
+											{
+												<i class="fas fa-@(contains ? "minus" : "plus")-circle fa-lg" title="Unable to @(contains ? "remove" : "add") role"></i>
+											}
+											@role.Name
+										</p>
+									}
 								}
 							}
-						}
+						</div>
 					</div>
 				</div>
-			</div>
+			}
 			<div class="row">
-				<div class="input-field col s8">
+				<div class="input-field col s6">
 					<input asp-for="AcademicStatus" type="text" class="validate">
 					<label asp-for="AcademicStatus">@Localizer["AcademicStatus"]</label>
 					<span class="helper-text" asp-validation-for="AcademicStatus" data-error="" data-success=""></span>
+				</div>
+				<div class="input-field col s6">
+					<input asp-for="YearDegreeAssigned" type="number" class="validate">
+					<label asp-for="YearDegreeAssigned">@Localizer["YearDegreeAssigned"]</label>
+					<span class="helper-text" asp-validation-for="YearDegreeAssigned" data-error="" data-success=""></span>
 				</div>
 			</div>
 			<div class="row">
@@ -131,20 +126,38 @@
 					<label asp-for="UserName">@Localizer["UserName"]</label>
 					<span class="helper-text" asp-validation-for="UserName" data-error="" data-success=""></span>
 				</div>
-
 				<div class="input-field col s4">
 					<input asp-for="Email" type="email" class="validate">
 					<label asp-for="Email">@Localizer["Email"]</label>
 					<span class="helper-text" asp-validation-for="Email" data-error="" data-success=""></span>
 				</div>
-				<label class="col s4">
-					<input type="checkbox" class="filled-in" asp-for="IsApproved"/>
-					<span>@Localizer[Html.DisplayNameFor(model => model.IsApproved)]</span>
-				</label>
+				<div class="input-field col s4">
+					<input asp-for="PhoneNumber" type="text" class="validate">
+					<label asp-for="PhoneNumber">@Localizer["PhoneNumber"]</label>
+					<span class="helper-text" asp-validation-for="PhoneNumber" data-error="" data-success=""></span>
+				</div>
+				@if (PageHelpers.IsAdminOrHead(User) && !Model.IsSelfEditing)
+				{
+					<label class="col s4">
+						<input type="checkbox" class="filled-in" asp-for="IsApproved"/>
+						<span>@Localizer[Html.DisplayNameFor(model => model.IsApproved)]</span>
+					</label>
+					<label class="col s4">
+						<input type="checkbox" class="filled-in" asp-for="IsActive"/>
+						<span>@Localizer[Html.DisplayNameFor(model => model.IsActive)]</span>
+					</label>
+				}
 			</div>
 			<div class="row">
 				<input type="submit" value="@Localizer["Save"]" class="waves-effect btn-small  waves-light"/>
-				<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
+				@if (PageHelpers.IsAdminOrHead(User))
+				{
+					<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
+				}
+				else
+				{
+					<a asp-controller="UserProfile" asp-route-id="@Model.UserId" asp-action="Details" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
+				}
 			</div>
 		</form>
 	</div>

@@ -54,13 +54,16 @@
 		<value>Вчене звання</value>
 	</data>
 	<data name="YearDegreeAssigned" xml:space="preserve">
-		<value>Рік присвоєння наукового ступеня</value>
+		<value>Рік присвоєння вченого звання</value>
 	</data>
 	<data name="Position" xml:space="preserve">
 		<value>Посада</value>
 	</data>
 	<data name="IsApproved" xml:space="preserve">
 		<value>Схвалений</value>
+	</data>
+	<data name="IsActive" xml:space="preserve">
+		<value>Активний</value>
 	</data>
 	<data name="Yes" xml:space="preserve">
 		<value>Так</value>
