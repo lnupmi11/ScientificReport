@@ -13,5 +13,6 @@ var a00033 =
     [ "RemoveScientificWork", "a00033.html#a4788a523484071d62400e5b87063151e", null ],
     [ "RemoveUser", "a00033.html#aaa6dd80a361c8f13f0dc57c972c38202", null ],
     [ "UpdateItem", "a00033.html#abe357a8ec581c60e10e54f26bb1ba268", null ],
-    [ "UserIsHired", "a00033.html#ae9e7309a313751a3bc91f34bce3abb87", null ]
+    [ "UserIsHired", "a00033.html#ae9e7309a313751a3bc91f34bce3abb87", null ],
+    [ "UserWorksInDepartment", "a00033.html#a31eba63d09949df83575c46eef9137da", null ]
 ];

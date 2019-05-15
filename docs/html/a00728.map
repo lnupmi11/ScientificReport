@@ -1,2 +1,3 @@
-<map id="ScientificReport.DAL.Roles.UserProfileRole" name="ScientificReport.DAL.Roles.UserProfileRole">
+<map id="ScientificReport.DAL.Repositories.UserProfilesScientificWorksRepository" name="ScientificReport.DAL.Repositories.UserProfilesScientificWorksRepository">
+<area shape="rect" id="node2" href="$a00059.html" title="{IRepository\&lt; UserProfiles\lScientificWorks \&gt;\n||}" alt="" coords="43,5,226,97"/>
 </map>

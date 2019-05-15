@@ -13,7 +13,9 @@ var searchData=
   ['scientificworkrepository',['ScientificWorkRepository',['../a00140.html#a497a11912f102fcf683a012bb8ff0d60',1,'ScientificReport::DAL::Repositories::ScientificWorkRepository']]],
   ['scientificworkservice',['ScientificWorkService',['../a00144.html#a064bc661ede7b8ab08f726090668e1e9',1,'ScientificReport::BLL::Services::ScientificWorkService']]],
   ['selectitem',['SelectItem',['../a00147.html#a0f1ab8b402c83f39d51e4d80c73da603',1,'ScientificReport.DTO.Models.Department.SelectItem.SelectItem(string text, string value, bool selected)'],['../a00147.html#aeb3da5cc4917fd74ff7ffe07fcccaab1',1,'ScientificReport.DTO.Models.Department.SelectItem.SelectItem(string text, string value)']]],
-  ['setapproved',['SetApproved',['../a00066.html#a6532e515c9443f5b0f5d263262757fa6',1,'ScientificReport.BLL.Interfaces.IUserProfileService.SetApproved()'],['../a00167.html#a3eb2ae8e9abdefee0d63366446d99b17',1,'ScientificReport.BLL.Services.UserProfileService.SetApproved()']]],
+  ['setactive',['SetActive',['../a00162.html#a240da825f9c1258563ff0241ecf3eb99',1,'ScientificReport::Controllers::UserProfileController']]],
+  ['setactivebyid',['SetActiveById',['../a00066.html#a39133b67d3bf5e10b6b45845d629365e',1,'ScientificReport.BLL.Interfaces.IUserProfileService.SetActiveById()'],['../a00168.html#ace65264fb4d78964395f7ca00e9d227c',1,'ScientificReport.BLL.Services.UserProfileService.SetActiveById()']]],
+  ['setapproved',['SetApproved',['../a00066.html#a6532e515c9443f5b0f5d263262757fa6',1,'ScientificReport.BLL.Interfaces.IUserProfileService.SetApproved()'],['../a00168.html#a3eb2ae8e9abdefee0d63366446d99b17',1,'ScientificReport.BLL.Services.UserProfileService.SetApproved()']]],
   ['setlanguage',['SetLanguage',['../a00047.html#aa75b5dd975e7272c5630a996aebe09f8',1,'ScientificReport::Controllers::HomeController']]],
   ['startup',['Startup',['../a00148.html#a63d2f00d6a6c75ca48d391012d8ae7e0',1,'ScientificReport::Startup']]]
 ];

@@ -1,9 +1,8 @@
 var a00401 =
 [
-    [ "ChangePasswordModel", "a00013.html", "a00013" ],
-    [ "LoginModel", "a00067.html", "a00067" ],
-    [ "RegisterModel", "a00106.html", "a00106" ],
-    [ "UserDetailsModel", "a00159.html", "a00159" ],
-    [ "UserProfileEditModel", "a00162.html", "a00162" ],
-    [ "UserProfileUpdateRolesRequest", "a00176.html", "a00176" ]
+    [ "DepartmentCreateModel", "a00026.html", "a00026" ],
+    [ "DepartmentEditModel", "a00027.html", "a00027" ],
+    [ "DepartmentUpdateScientificWorksRequest", "a00035.html", "a00035" ],
+    [ "DepartmentUpdateStaffRequest", "a00036.html", "a00036" ],
+    [ "SelectItem", "a00147.html", "a00147" ]
 ];

@@ -7,6 +7,7 @@ var a00160 =
     [ "BirthYear", "a00160.html#a95c2278a4c6dd316f200d7296e3ef98f", null ],
     [ "FirstName", "a00160.html#a53b7699c09c9727ab340e03c5c6bfc11", null ],
     [ "GraduationYear", "a00160.html#ab723e77ab131b030c07e7bb3bef3e854", null ],
+    [ "IsActive", "a00160.html#a88e7533373c5a57485e1c80a29dd46c1", null ],
     [ "IsApproved", "a00160.html#a1924934dbcc6ca99c316a669e31cd436", null ],
     [ "LastName", "a00160.html#ab2f1c56009ae48cec8bc427e24c0400b", null ],
     [ "MiddleName", "a00160.html#a5db8c28a0893682b9b52e0b870f34514", null ],

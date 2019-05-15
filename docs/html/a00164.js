@@ -1,9 +1,12 @@
 var a00164 =
 [
-    [ "AllTest", "a00164.html#a44ac0cba3d4d25663893da4f9cb8d34d", null ],
-    [ "AllWhereTest", "a00164.html#af204cd10414f8c94e9ca13f167dfbb60", null ],
-    [ "CreateTest", "a00164.html#a607fe1f55a9099d5ab9d4d4d4221bb25", null ],
-    [ "DeleteTest", "a00164.html#a70745e34b81c75011493d0d746f9c484", null ],
-    [ "GetByIdTest", "a00164.html#a7d11c8c8dcc5ad939f30461c5ebfc256", null ],
-    [ "UpdateTest", "a00164.html#a9363c310693aa5e574d481903f690dca", null ]
+    [ "UserProfileRepository", "a00164.html#aa1624bb8f6d5e73fc550fcc64217c65a", null ],
+    [ "All", "a00164.html#af324ce4a712791ee67be778a08aa9122", null ],
+    [ "AllWhere", "a00164.html#a002fbfa1b07916e3c971e632aaeb96c0", null ],
+    [ "Create", "a00164.html#a9d147af9cd5670d4deda448a4c44a578", null ],
+    [ "Delete", "a00164.html#ae1a66428933ddf3844f399e0fad0f561", null ],
+    [ "Get", "a00164.html#a0228a08b7c70493eb74ef50738bfe702", null ],
+    [ "Get", "a00164.html#ac13fcb1e8fd5168757690d71ee23a085", null ],
+    [ "GetQuery", "a00164.html#af742c15cf688e7d3e2f499293eccc863", null ],
+    [ "Update", "a00164.html#adf4968a931bbe8c0905600948da71264", null ]
 ];

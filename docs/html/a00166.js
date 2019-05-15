@@ -1,8 +1,9 @@
 var a00166 =
 [
-    [ "Article", "a00166.html#a4188b8dd3fba4a546c2b69b9db337ab2", null ],
-    [ "ArticleId", "a00166.html#a860be3b1e9f678f0865189982b3a27f4", null ],
-    [ "Author", "a00166.html#a44e6b9b9e652c702cfd481177d6ba95c", null ],
-    [ "AuthorId", "a00166.html#a95a28a431a4c1b7c93307b1071efd7f2", null ],
-    [ "Id", "a00166.html#a92f811f435b60cdd2dea1d1296a3fa8b", null ]
+    [ "UserProfileRole", "a00166.html#a9699311710d43a5af5de6623914a1b3c", null ],
+    [ "Administrator", "a00166.html#ad30d0fc50493dfa9453fa7651e1bf88c", null ],
+    [ "Any", "a00166.html#ae99407f17e76c3009eb2f1c3772cfb43", null ],
+    [ "HeadOfDepartment", "a00166.html#ad6a18be97146be4cdcb150df239e35ae", null ],
+    [ "HeadOfDepartmentOrAdmin", "a00166.html#a4f3e774d1843ff13195312057b15a34a", null ],
+    [ "Teacher", "a00166.html#ab5dbd2035d47221619c9d9836fffcac4", null ]
 ];

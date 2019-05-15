@@ -4,6 +4,7 @@ var a00066 =
     [ "ChangePassword", "a00066.html#af1a86466a68a305294b31d0cac9995ca", null ],
     [ "CreateItem", "a00066.html#aeaf6379158a81215b8c3eee7aa6ee7cd", null ],
     [ "DeleteById", "a00066.html#a1f34a1b4502e3c4dc873b5446f9b0910", null ],
+    [ "Get", "a00066.html#adc89b2a8a577d3e5a2b66f22fd3a0fdf", null ],
     [ "Get", "a00066.html#a6722fb55fe283081294ae27e7bdaa2aa", null ],
     [ "GetAll", "a00066.html#a6b076a2b111466e58c56d1e79e1d5881", null ],
     [ "GetAllWhere", "a00066.html#a959fc0f3fc9f459d9c64c2f9976d905e", null ],
@@ -18,7 +19,9 @@ var a00066 =
     [ "GetUserScientificInternships", "a00066.html#a8664f21bb7903b7c8883507af53300a9", null ],
     [ "GetUserScientificWorks", "a00066.html#a3df0eeed84fd52e1ae559e941639ead9", null ],
     [ "IsInRoleAsync", "a00066.html#ad8c5670a60fbdcbb715fed00c82f3f89", null ],
+    [ "IsTeacherOnlyAsync", "a00066.html#a9c7936ebafa87eba4dec53f9d4a4255e", null ],
     [ "RemoveFromRoleAsync", "a00066.html#a6aed503329eedc47ebdb1ad714206212", null ],
+    [ "SetActiveById", "a00066.html#a39133b67d3bf5e10b6b45845d629365e", null ],
     [ "SetApproved", "a00066.html#a6532e515c9443f5b0f5d263262757fa6", null ],
     [ "UpdateItem", "a00066.html#a69b78d3a2b226fd81cecdaa3a3fc11a3", null ],
     [ "UserExists", "a00066.html#a7bce9c593e027b4de98c073e91c854e6", null ]
