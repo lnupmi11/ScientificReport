@@ -60,8 +60,4 @@
 	  <_ContentIncludedByDefault Remove="Views\ScientificWork\Index.cshtml" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Migrations" />
-	</ItemGroup>
-
 </Project>

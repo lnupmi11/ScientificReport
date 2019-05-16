@@ -1,5 +1,10 @@
 @model ScientificReport.DAL.Entities.Publication
 @using Microsoft.AspNetCore.Mvc.Localization
+@using ScientificReport.BLL.Interfaces
+@using ScientificReport.Controllers.Utils
+@using ScientificReport.DAL.Entities
+
+@inject IDepartmentService DepartmentService
 @inject IViewLocalizer Localizer
 
 @{
@@ -16,7 +21,37 @@
 			@Localizer[Html.DisplayNameFor(model => model.Type)]
 		</dt>
 		<dd class="col s10">
-			@Html.DisplayFor(model => model.Type)
+			@{
+				string type;
+				switch (Model.Type)
+				{
+					case Publication.Types.Monograph:
+						type = "Monograph";
+						break;
+					case Publication.Types.TextBook:
+						type = "TextBook";
+						break;
+					case Publication.Types.HandBook:
+						type = "HandBook";
+						break;
+					case Publication.Types.Dictionary:
+						type = "Dictionary";
+						break;
+					case Publication.Types.Translation:
+						type = "Translation";
+						break;
+					case Publication.Types.Comment:
+						type = "Comment";
+						break;
+					case Publication.Types.BibliographicIndex:
+						type = "BibliographicIndex";
+						break;
+					default:
+						type = "Other";
+						break;
+				}
+			}
+			@Localizer[type]
 		</dd>
 		<dt class="col s2">
 			@Localizer[Html.DisplayNameFor(model => model.Title)]
@@ -55,32 +90,43 @@
 			@Html.DisplayFor(model => model.PagesAmount)
 		</dd>
 		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.IsPrintCanceled)]
+			@Localizer[Html.DisplayNameFor(model => model.PrintStatus)]
 		</dt>
 		<dd class="col s10">
-			<span>@Localizer[(Model.IsPrintCanceled ? "Yes" : "No")]</span>
-		</dd>
-		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.IsRecommendedToPrint)]
-		</dt>
-		<dd class="col s10">
-			<span>@Localizer[(Model.IsRecommendedToPrint ? "Yes" : "No")]</span>
-		</dd>
-		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.CreatedAt)]
-		</dt>
-		<dd class="col s10">
-			@Html.DisplayFor(model => model.CreatedAt)
-		</dd>
-		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.LastEditAt)]
-		</dt>
-		<dd class="col s10">
-			@Html.DisplayFor(model => model.LastEditAt)
+			@{
+				string status;
+				switch (Model.PrintStatus)
+				{
+					case Publication.PrintStatuses.Any:
+						status = "Any";
+						break;
+					case Publication.PrintStatuses.IsPrintCanceled:
+						status = "IsPrintCanceled";
+						break;
+					case Publication.PrintStatuses.IsRecommendedToPrint:
+						status = "IsRecommendedToPrint";
+						break;
+					default:
+						status = "Any";
+						break;
+				}
+			}
+			@Localizer[status]
 		</dd>
 	</dl>
 </div>
 <div>
-	<a asp-action="Edit" asp-route-id="@Model.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
-	<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Back to List"]</a>
+	@{
+		var department = DepartmentService.Get(d => d.Staff.Any(s => s.UserName == User.Identity.Name));
+		var isHeadOfDepartment = false;
+		if (department != null)
+		{
+			isHeadOfDepartment = Model.UserProfilesPublications.Any(p => department.Staff.Contains(p.UserProfile));	
+		}
+	}
+	@if ((PageHelpers.IsAdmin(User) || isHeadOfDepartment || Model.UserProfilesPublications.Any(p => p.UserProfile.UserName == User.Identity.Name)) && Model.PublishingYear == DateTime.Now.Year)
+	{
+		<a asp-action="Edit" asp-route-id="@Model.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
+	}
+	<a asp-action="Index" class="btn-small blue darken-3">@Localizer["BackToList"]</a>
 </div>

@@ -36,7 +36,7 @@
 		<value>Місто видання</value>
 	</data>
 	<data name="PublishingHouseName" xml:space="preserve">
-		<value>Видавничий дім</value>
+		<value>Видавництво</value>
 	</data>
 	<data name="PublishingYear" xml:space="preserve">
 		<value>Рік видання</value>
@@ -53,7 +53,37 @@
 	<data name="Edit" xml:space="preserve">
 		<value>Редагувати</value>
 	</data>
-	<data name="Back to List" xml:space="preserve">
+	<data name="BackToList" xml:space="preserve">
 		<value>Повернутися до списку</value>
+	</data>
+	<data name="PrintStatus" xml:space="preserve">
+		<value>Статус видання</value>
+	</data>
+	<data name="Monograph" xml:space="preserve">
+		<value>Монографія</value>
+	</data>
+	<data name="TextBook" xml:space="preserve">
+		<value>Підручник</value>
+	</data>
+	<data name="HandBook" xml:space="preserve">
+		<value>Навчальний посібник</value>
+	</data>
+	<data name="Dictionary" xml:space="preserve">
+		<value>Словник</value>
+	</data>
+	<data name="Translation" xml:space="preserve">
+		<value>Переклад</value>
+	</data>
+	<data name="Comment" xml:space="preserve">
+		<value>Науковий коментар</value>
+	</data>
+	<data name="BibliographicIndex" xml:space="preserve">
+		<value>Бібліографічний покажчик</value>
+	</data>
+	<data name="Other" xml:space="preserve">
+		<value>Інше</value>
+	</data>
+	<data name="Any" xml:space="preserve">
+		<value>Відсутній</value>
 	</data>
 </root>

@@ -59,7 +59,37 @@
 	<data name="Edit" xml:space="preserve">
 		<value>Edit</value>
 	</data>
-	<data name="Back to List" xml:space="preserve">
-		<value>Back to List</value>
+	<data name="BackToList" xml:space="preserve">
+		<value>BackToList</value>
+	</data>
+	<data name="PrintStatus" xml:space="preserve">
+		<value>Print Status</value>
+	</data>
+	<data name="Monograph" xml:space="preserve">
+		<value>Monograph</value>
+	</data>
+	<data name="TextBook" xml:space="preserve">
+		<value>Textbook</value>
+	</data>
+	<data name="HandBook" xml:space="preserve">
+		<value>Handbook</value>
+	</data>
+	<data name="Dictionary" xml:space="preserve">
+		<value>Dictionary</value>
+	</data>
+	<data name="Translation" xml:space="preserve">
+		<value>Translation</value>
+	</data>
+	<data name="Comment" xml:space="preserve">
+		<value>Comment</value>
+	</data>
+	<data name="BibliographicIndex" xml:space="preserve">
+		<value>Bibliographic index</value>
+	</data>
+	<data name="Other" xml:space="preserve">
+		<value>Other</value>
+	</data>
+	<data name="Any" xml:space="preserve">
+		<value>Any</value>
 	</data>
 </root>

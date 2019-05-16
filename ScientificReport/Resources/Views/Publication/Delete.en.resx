@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../resx_schema.xsd">
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
+    </resheader>
+    <data name="Delete" xml:space="preserve">
+		<value>Delete</value>
+	</data>
+	<data name="DeleteConfirmationQuestion" xml:space="preserve">
+		<value>Are you sure you want to delete this publication?</value>
+	</data>
+	<data name="DeletePublication" xml:space="preserve">
+		<value>Delete Publication</value>
+	</data>
+    <data name="Publication" xml:space="preserve">
+		<value>Publication</value>
+	</data>
+    <data name="Type" xml:space="preserve">
+		<value>Type</value>
+	</data>
+    <data name="Title" xml:space="preserve">
+		<value>Title</value>
+	</data>
+    <data name="Specification" xml:space="preserve">
+		<value>Specification</value>
+	</data>
+    <data name="PublishingPlace" xml:space="preserve">
+		<value>Publishing place</value>
+	</data>
+    <data name="PublishingHouseName" xml:space="preserve">
+		<value>Publishing house</value>
+	</data>
+    <data name="PublishingYear" xml:space="preserve">
+		<value>Publishing year</value>
+	</data>
+    <data name="IsPrintCanceled" xml:space="preserve">
+		<value>Is print canceled</value>
+	</data>
+    <data name="IsRecommendedToPrint" xml:space="preserve">
+		<value>Is recommended to print</value>
+	</data>
+    <data name="PagesAmount" xml:space="preserve">
+		<value>Amount of pages</value>
+	</data>
+    <data name="BackToList" xml:space="preserve">
+		<value>Back to List</value>
+	</data>
+</root>

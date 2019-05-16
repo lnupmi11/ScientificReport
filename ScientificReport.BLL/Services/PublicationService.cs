@@ -38,19 +38,13 @@ namespace ScientificReport.BLL.Services
 			return _publicationRepository.Get(predicate);
 		}
 
-		public virtual void CreateItem(UserProfile user, Publication item)
+		public virtual void CreateItem(Publication item)
 		{
-			item.CreatedBy = user;
-			item.LastEditBy = user;
-			item.CreatedAt = DateTime.Now;
-			item.LastEditAt = DateTime.Now;
 			_publicationRepository.Create(item);
 		}
 
-		public virtual void UpdateItem(UserProfile user, Publication item)
+		public virtual void UpdateItem(Publication item)
 		{
-			item.LastEditBy = user;
-			item.LastEditAt = DateTime.Now;
 			_publicationRepository.Update(item);
 		}
 
@@ -74,6 +68,30 @@ namespace ScientificReport.BLL.Services
 			}
 
 			return result;
+		}
+
+		public virtual void AddAuthor(Publication publication, UserProfile user)
+		{
+			publication.UserProfilesPublications.Add(new UserProfilesPublications
+			{
+				Publication = publication,
+				UserProfile = user,
+				PublicationId = publication.Id,
+				UserProfileId = user.Id
+			});
+			_publicationRepository.Update(publication);
+		}
+
+		public virtual IEnumerable<Publication> GetUserPublications(UserProfile user)
+		{
+			var allPublications = _publicationRepository.All().ToList();
+
+			return allPublications.Where(t => t.UserProfilesPublications.Any(u => u.UserProfile.Id == user.Id)).ToList();
+		}
+		
+		public virtual IEnumerable<Publication> GetUserPublicationsByYear(UserProfile user, int year)
+		{
+			return GetUserPublications(user).Where(p => p.PublishingYear == year).ToList();
 		}
 	}
 }

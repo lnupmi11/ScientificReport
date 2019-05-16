@@ -23,7 +23,10 @@
 	<data name="Publication" xml:space="preserve">
 		<value>Publication</value>
 	</data>
-	<data name="Choose your option" xml:space="preserve">
+	<data name="CreatePublication" xml:space="preserve">
+		<value>Create Publication</value>
+	</data>
+	<data name="ChooseYourOption" xml:space="preserve">
 		<value>Choose your option</value>
 	</data>
 	<data name="Monograph" xml:space="preserve">
@@ -44,7 +47,7 @@
 	<data name="Comment" xml:space="preserve">
 		<value>Comment</value>
 	</data>
-	<data name="Bibliographic Index" xml:space="preserve">
+	<data name="BibliographicIndex" xml:space="preserve">
 		<value>Bibliographic index</value>
 	</data>
 	<data name="Other" xml:space="preserve">
@@ -68,6 +71,9 @@
 	<data name="PublishingYear" xml:space="preserve">
 		<value>Publishing year</value>
 	</data>
+	<data name="Any" xml:space="preserve">
+		<value>-- Absent --</value>
+	</data>
 	<data name="IsPrintCanceled" xml:space="preserve">
 		<value>Is print canceled</value>
 	</data>
@@ -76,6 +82,9 @@
 	</data>
 	<data name="PagesAmount" xml:space="preserve">
 		<value>Amount of pages</value>
+	</data>
+	<data name="PrintStatus" xml:space="preserve">
+		<value>Publishing Status</value>
 	</data>
 	<data name="Cancel" xml:space="preserve">
 		<value>Cancel</value>

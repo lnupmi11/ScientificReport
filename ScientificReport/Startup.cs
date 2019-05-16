@@ -66,6 +66,7 @@ namespace ScientificReport
 			services.AddTransient<IReviewService, ReviewService>();
 			services.AddTransient<IScientificConsultationService, ScientificConsultationService>();
 			services.AddTransient<IScientificInternshipService, ScientificInternshipService>();
+			services.AddTransient<IPublicationService, PublicationService>();
 
 			services.Configure<IdentityOptions>(options =>
 			{

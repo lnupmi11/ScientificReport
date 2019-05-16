@@ -23,8 +23,12 @@ namespace ScientificReport.Controllers
 		private readonly IUserProfileService _userProfileService;
 		private readonly IScientificWorkService _scientificWorkService;
 
-		public DepartmentController(IDepartmentService departmentService, IUserProfileService userProfileService,
-			IScientificWorkService scientificWorkService, UserManager<UserProfile> userManager)
+		public DepartmentController(
+			IDepartmentService departmentService,
+			IUserProfileService userProfileService,
+			IScientificWorkService scientificWorkService,
+			UserManager<UserProfile> userManager
+		)
 		{
 			_userManager = userManager;
 			_departmentService = departmentService;

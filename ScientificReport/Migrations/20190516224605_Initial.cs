@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ScientificReport.Migrations
 {
-    public partial class UpdateOfReportThesisModel : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -255,6 +255,7 @@ namespace ScientificReport.Migrations
                     YearDegreeAssigned = table.Column<int>(nullable: false),
                     Position = table.Column<string>(nullable: true),
                     IsApproved = table.Column<bool>(nullable: false),
+                    IsActive = table.Column<bool>(nullable: false),
                     DepartmentId = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
@@ -471,29 +472,12 @@ namespace ScientificReport.Migrations
                     PublishingHouseName = table.Column<string>(nullable: true),
                     PublishingYear = table.Column<int>(nullable: false),
                     PagesAmount = table.Column<int>(nullable: false),
-                    IsPrintCanceled = table.Column<bool>(nullable: false),
-                    IsRecommendedToPrint = table.Column<bool>(nullable: false),
-                    CreatedAt = table.Column<DateTime>(nullable: false),
-                    CreatedById = table.Column<Guid>(nullable: true),
-                    LastEditAt = table.Column<DateTime>(nullable: false),
-                    LastEditById = table.Column<Guid>(nullable: true),
+                    PrintStatus = table.Column<int>(nullable: false),
                     TeacherReportId = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Publications", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Publications_AspNetUsers_CreatedById",
-                        column: x => x.CreatedById,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Publications_AspNetUsers_LastEditById",
-                        column: x => x.LastEditById,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Publications_TeacherReports_TeacherReportId",
                         column: x => x.TeacherReportId,
@@ -704,26 +688,24 @@ namespace ScientificReport.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    UserProfileId = table.Column<string>(nullable: true),
-                    UserProfileId1 = table.Column<Guid>(nullable: true),
-                    PublicationId = table.Column<int>(nullable: false),
-                    PublicationId1 = table.Column<Guid>(nullable: true)
+                    UserProfileId = table.Column<Guid>(nullable: false),
+                    PublicationId = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_UserProfilesPublications", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_UserProfilesPublications_Publications_PublicationId1",
-                        column: x => x.PublicationId1,
+                        name: "FK_UserProfilesPublications_Publications_PublicationId",
+                        column: x => x.PublicationId,
                         principalTable: "Publications",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_UserProfilesPublications_AspNetUsers_UserProfileId1",
-                        column: x => x.UserProfileId1,
+                        name: "FK_UserProfilesPublications_AspNetUsers_UserProfileId",
+                        column: x => x.UserProfileId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -998,16 +980,6 @@ namespace ScientificReport.Migrations
                 column: "TeacherReportId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Publications_CreatedById",
-                table: "Publications",
-                column: "CreatedById");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Publications_LastEditById",
-                table: "Publications",
-                column: "LastEditById");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Publications_TeacherReportId",
                 table: "Publications",
                 column: "TeacherReportId");
@@ -1098,14 +1070,14 @@ namespace ScientificReport.Migrations
                 column: "UserProfileId1");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserProfilesPublications_PublicationId1",
+                name: "IX_UserProfilesPublications_PublicationId",
                 table: "UserProfilesPublications",
-                column: "PublicationId1");
+                column: "PublicationId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserProfilesPublications_UserProfileId1",
+                name: "IX_UserProfilesPublications_UserProfileId",
                 table: "UserProfilesPublications",
-                column: "UserProfileId1");
+                column: "UserProfileId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserProfilesReportTheses_ReportThesisId",

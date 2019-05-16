@@ -1,4 +1,4 @@
-@model ScientificReport.DAL.Entities.Publication
+@model ScientificReport.DTO.Models.Publication.PublicationCreateModel
 @using Microsoft.AspNetCore.Mvc.Localization
 @inject IViewLocalizer Localizer
 
@@ -77,31 +77,20 @@
 					<span class="helper-text" asp-validation-for="PagesAmount" data-error="" data-success=""></span>
 				</div>
 			</div>
-			<div class="row">
-				<div class="input-field col s6">
-					<input asp-for="CreatedAt" type="date" class="validate">
-					<label asp-for="CreatedAt"></label>
-					<span asp-validation-for="CreatedAt" data-error="" data-success=""></span>
-				</div>
-			</div>
-			<div class="row">
-				<div class="input-field col s6">
-					<input asp-for="LastEditAt" type="date" class="validate">
-					<label asp-for="LastEditAt"></label>
-					<span asp-validation-for="LastEditAt" data-error="" data-success=""></span>
-				</div>
-			</div>
-						<div class="row">
-				<label class="col s7">
-					<input type="checkbox" class="filled-in" asp-for="IsPrintCanceled"/>
-					<span>@Localizer[Html.DisplayNameFor(model => model.IsPrintCanceled)]</span>
-				</label>
-		
-				<label class="col s7">
-					<input type="checkbox" class="filled-in" asp-for="IsRecommendedToPrint"/>
-					<span>@Localizer[Html.DisplayNameFor(model => model.IsRecommendedToPrint)]</span>
-				</label>
-			</div>
+			@if (Model.PrintStatusOptions != null)
+			{
+				<div class="row">
+					<div class="input-field col s7">
+						<select asp-for="PrintStatus" class="col s12 push-s2">
+							@foreach (var option in Model.PrintStatusOptions)
+							{
+								<option value="@option" @(option==Model.PrintStatus.ToString() ? "selected" : "")>@Localizer[option]</option>
+							}
+						</select>
+						<label asp-for="PrintStatus">@Localizer["PrintStatus"]</label>
+					</div>
+				</div>	
+			}
 			<div class="row myButtons">
 				<input type="submit" value="@Localizer["Save"]" class="waves-effect btn-small  amber accent-2"/>
 				<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>

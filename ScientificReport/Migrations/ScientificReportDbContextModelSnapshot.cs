@@ -376,19 +376,9 @@ namespace ScientificReport.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime>("CreatedAt");
-
-                    b.Property<Guid?>("CreatedById");
-
-                    b.Property<bool>("IsPrintCanceled");
-
-                    b.Property<bool>("IsRecommendedToPrint");
-
-                    b.Property<DateTime>("LastEditAt");
-
-                    b.Property<Guid?>("LastEditById");
-
                     b.Property<int>("PagesAmount");
+
+                    b.Property<int>("PrintStatus");
 
                     b.Property<string>("PublishingHouseName");
 
@@ -405,10 +395,6 @@ namespace ScientificReport.Migrations
                     b.Property<int>("Type");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CreatedById");
-
-                    b.HasIndex("LastEditById");
 
                     b.HasIndex("TeacherReportId");
 
@@ -732,19 +718,15 @@ namespace ScientificReport.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("PublicationId");
+                    b.Property<Guid>("PublicationId");
 
-                    b.Property<Guid?>("PublicationId1");
-
-                    b.Property<string>("UserProfileId");
-
-                    b.Property<Guid?>("UserProfileId1");
+                    b.Property<Guid>("UserProfileId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PublicationId1");
+                    b.HasIndex("PublicationId");
 
-                    b.HasIndex("UserProfileId1");
+                    b.HasIndex("UserProfileId");
 
                     b.ToTable("UserProfilesPublications");
                 });
@@ -1003,14 +985,6 @@ namespace ScientificReport.Migrations
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.Publication", b =>
                 {
-                    b.HasOne("ScientificReport.DAL.Entities.UserProfile.UserProfile", "CreatedBy")
-                        .WithMany()
-                        .HasForeignKey("CreatedById");
-
-                    b.HasOne("ScientificReport.DAL.Entities.UserProfile.UserProfile", "LastEditBy")
-                        .WithMany()
-                        .HasForeignKey("LastEditById");
-
                     b.HasOne("ScientificReport.DAL.Entities.Reports.TeacherReport")
                         .WithMany("Publications")
                         .HasForeignKey("TeacherReportId");
@@ -1140,11 +1114,13 @@ namespace ScientificReport.Migrations
                 {
                     b.HasOne("ScientificReport.DAL.Entities.Publication", "Publication")
                         .WithMany("UserProfilesPublications")
-                        .HasForeignKey("PublicationId1");
+                        .HasForeignKey("PublicationId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("ScientificReport.DAL.Entities.UserProfile.UserProfile", "UserProfile")
                         .WithMany("UserProfilesPublications")
-                        .HasForeignKey("UserProfileId1");
+                        .HasForeignKey("UserProfileId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.UserProfile.UserProfilesReportThesis", b =>

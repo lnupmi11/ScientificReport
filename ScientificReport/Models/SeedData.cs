@@ -200,9 +200,7 @@ namespace ScientificReport.Models
 			var author = context.UserProfiles.First();
 
 
-			publicationsService.CreateItem(author,
-				new Publication
-				{
+			publicationsService.CreateItem(new Publication {
 					Type = Publication.Types.Monograph,
 					Title = "my first publication",
 					PublishingPlace = "my first publishing place",
@@ -210,16 +208,11 @@ namespace ScientificReport.Models
 					PublishingHouseName = "new oreo",
 					PublishingYear = 1999,
 					PagesAmount = 200,
-					IsPrintCanceled = true,
-					IsRecommendedToPrint = false,
-					CreatedAt = DateTime.Today,
-					LastEditAt = DateTime.Now
+					PrintStatus = Publication.PrintStatuses.IsPrintCanceled
 				}
 			);
 
-			publicationsService.CreateItem(author,
-				new Publication
-				{
+			publicationsService.CreateItem(new Publication {
 					Type = Publication.Types.TextBook,
 					Title = "my second publication",
 					PublishingPlace = "my second publishing place",
@@ -227,16 +220,11 @@ namespace ScientificReport.Models
 					PublishingHouseName = "new oreo",
 					PublishingYear = 2999,
 					PagesAmount = 300,
-					IsPrintCanceled = false,
-					IsRecommendedToPrint = true,
-					CreatedAt = DateTime.Today,
-					LastEditAt = DateTime.Now
+					PrintStatus = Publication.PrintStatuses.IsRecommendedToPrint
 				}
 			);
 			
-			publicationsService.CreateItem(author,
-				new Publication
-				{
+			publicationsService.CreateItem(new Publication {
 					Type = Publication.Types.Comment,
 					Title = "My comment",
 					PublishingPlace = "Dnipro",
@@ -244,15 +232,10 @@ namespace ScientificReport.Models
 					PublishingHouseName = "first publish house name",
 					PublishingYear = 2015,
 					PagesAmount = 300,
-					IsPrintCanceled = false,
-					IsRecommendedToPrint = true,
-					CreatedAt = DateTime.Today,
-					LastEditAt = DateTime.Now
+					PrintStatus = Publication.PrintStatuses.IsRecommendedToPrint
 				}
 			);
-			publicationsService.CreateItem(author,
-				new Publication
-				{
+			publicationsService.CreateItem(new Publication {
 					Type = Publication.Types.HandBook,
 					Title = "My HandBook",
 					PublishingPlace = "Lviv",
@@ -260,15 +243,10 @@ namespace ScientificReport.Models
 					PublishingHouseName = "n-th publish name",
 					PublishingYear = 2016,
 					PagesAmount = 1500,
-					IsPrintCanceled = false,
-					IsRecommendedToPrint = true,
-					CreatedAt = DateTime.Today,
-					LastEditAt = DateTime.Now
+					PrintStatus = Publication.PrintStatuses.IsRecommendedToPrint
 				}
 			);
-			publicationsService.CreateItem(author,
-				new Publication
-				{
+			publicationsService.CreateItem(new Publication {
 					Type = Publication.Types.BibliographicIndex,
 					Title = "My BibliographicIndex",
 					PublishingPlace = "Ukraine",
@@ -276,10 +254,7 @@ namespace ScientificReport.Models
 					PublishingHouseName = "church",
 					PublishingYear = 1,
 					PagesAmount = 2000,
-					IsPrintCanceled = false,
-					IsRecommendedToPrint = true,
-					CreatedAt = DateTime.Today,
-					LastEditAt = DateTime.Now
+					PrintStatus = Publication.PrintStatuses.IsRecommendedToPrint
 				}
 			);
 			

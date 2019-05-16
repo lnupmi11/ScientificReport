@@ -20,7 +20,10 @@
     <data name="Publication" xml:space="preserve">
 		<value>Публікація</value>
 	</data>
-	<data name="Choose your option" xml:space="preserve">
+	<data name="CreatePublication" xml:space="preserve">
+		<value>Створити публікацію</value>
+	</data>
+	<data name="ChooseYourOption" xml:space="preserve">
 		<value>Оберіть варіант</value>
 	</data>
 	<data name="Monograph" xml:space="preserve">
@@ -41,7 +44,7 @@
 	<data name="Comment" xml:space="preserve">
 		<value>Науковий коментар</value>
 	</data>
-	<data name="Bibliographic Index" xml:space="preserve">
+	<data name="BibliographicIndex" xml:space="preserve">
 		<value>Бібліографічний покажчик</value>
 	</data>
 	<data name="Other" xml:space="preserve">
@@ -60,19 +63,25 @@
 		<value>Місто видання</value>
 	</data>
 	<data name="PublishingHouseName" xml:space="preserve">
-		<value>Видавничий дім</value>
+		<value>Видавництво</value>
 	</data>
 	<data name="PublishingYear" xml:space="preserve">
 		<value>Рік видання</value>
 	</data>
+	<data name="Any" xml:space="preserve">
+		<value>-- Відсутній --</value>
+	</data>
 	<data name="IsPrintCanceled" xml:space="preserve">
-		<value>Вийшов з друку</value>
+		<value>Вийшло з друку</value>
 	</data>
 	<data name="IsRecommendedToPrint" xml:space="preserve">
 		<value>Рекомендовано до друку</value>
 	</data>
 	<data name="PagesAmount" xml:space="preserve">
 		<value>Кількість сторінок</value>
+	</data>
+	<data name="PrintStatus" xml:space="preserve">
+		<value>Статус видання</value>
 	</data>
 	<data name="Create" xml:space="preserve">
 		<value>Створити</value>

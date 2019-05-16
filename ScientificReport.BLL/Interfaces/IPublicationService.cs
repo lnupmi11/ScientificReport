@@ -11,10 +11,13 @@ namespace ScientificReport.BLL.Interfaces
 		IEnumerable<Publication> GetAllWhere(Func<Publication, bool> predicate);
 		Publication GetById(Guid id);
 		Publication Get(Func<Publication, bool> predicate);
-		void CreateItem(UserProfile user, Publication item);
-		void UpdateItem(UserProfile user, Publication item);
+		void CreateItem(Publication item);
+		void UpdateItem(Publication item);
 		void DeleteById(Guid id);
 		bool PublicationExists(Guid id);
 		ICollection<UserProfile> GetPublicationAuthors(Guid id);
+		void AddAuthor(Publication publication, UserProfile user);
+		IEnumerable<Publication> GetUserPublications(UserProfile user);
+		IEnumerable<Publication> GetUserPublicationsByYear(UserProfile user, int year);
 	}
 }

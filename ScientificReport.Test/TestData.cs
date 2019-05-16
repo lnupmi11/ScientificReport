@@ -82,9 +82,8 @@ namespace ScientificReport.Test
 			PagesAmount = 10,
 			PublishingYear = 2007,
 			PublishingPlace = "Publishing Place 1",
-			IsPrintCanceled = false,
 			PublishingHouseName = "Publishing House Name 1",
-			IsRecommendedToPrint = true
+			PrintStatus = Publication.PrintStatuses.IsRecommendedToPrint
 		};
 		public static readonly Publication Publication2 = new Publication
 		{
@@ -95,9 +94,8 @@ namespace ScientificReport.Test
 			PagesAmount = 20,
 			PublishingYear = 2014,
 			PublishingPlace = "Publishing Place 2",
-			IsPrintCanceled = true,
 			PublishingHouseName = "Publishing House Name 2",
-			IsRecommendedToPrint = false
+			PrintStatus = Publication.PrintStatuses.IsPrintCanceled
 		};
 		public static readonly Publication Publication3 = new Publication
 		{
@@ -108,9 +106,8 @@ namespace ScientificReport.Test
 			PagesAmount = 30,
 			PublishingYear = 2007,
 			PublishingPlace = "Publishing Place 3",
-			IsPrintCanceled = false,
 			PublishingHouseName = "Publishing House Name 3",
-			IsRecommendedToPrint = false
+			PrintStatus = Publication.PrintStatuses.Any
 		};
 
 		public static readonly Department Department1 = new Department
@@ -748,7 +745,19 @@ namespace ScientificReport.Test
 
 		public static Publication RandPublication()
 		{
-			var randBool = RandBool();
+			Publication.PrintStatuses printStatus;
+			switch (Rand.Next(2))
+			{
+				case 1:
+					printStatus = Publication.PrintStatuses.IsPrintCanceled;
+					break;
+				case 2:
+					printStatus = Publication.PrintStatuses.IsRecommendedToPrint;
+					break;
+				default:
+					printStatus = Publication.PrintStatuses.Any;
+					break;
+			}
 			return new Publication
 			{
 				Id = Guid.NewGuid(),
@@ -758,9 +767,8 @@ namespace ScientificReport.Test
 				PagesAmount = Rand.Next(3, 100),
 				PublishingYear = Rand.Next(1990, 2018),
 				PublishingPlace = RandText(4),
-				IsPrintCanceled = randBool,
 				PublishingHouseName = RandText(4),
-				IsRecommendedToPrint = !randBool
+				PrintStatus = printStatus
 			};
 		}
 	}

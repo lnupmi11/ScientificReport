@@ -11,7 +11,17 @@ namespace ScientificReport.DAL.Entities
 		{
 			Monograph, TextBook, HandBook, Dictionary, Translation, Comment, BibliographicIndex, Other
 		}
+
+		public enum PrintStatuses
+		{
+			IsPrintCanceled, IsRecommendedToPrint, Any
+		}
 		
+		public enum PublicationSetType
+		{
+			Personal, Department, Faculty
+		}
+
 		[Key]
 		public Guid Id { get; set; }
 		
@@ -29,18 +39,8 @@ namespace ScientificReport.DAL.Entities
 		
 		public int PagesAmount { get; set; }
 		
-		public bool IsPrintCanceled { get; set; }
-		
-		public bool IsRecommendedToPrint { get; set; }
-		
+		public PrintStatuses PrintStatus { get; set; }
+
 		public virtual ICollection<UserProfilesPublications> UserProfilesPublications { get; set; }
-		
-		public DateTime CreatedAt { get; set; }
-		
-		public virtual UserProfile.UserProfile CreatedBy { get; set; }
-		
-		public DateTime LastEditAt { get; set; }
-		
-		public virtual UserProfile.UserProfile LastEditBy { get; set; }
 	}
 }

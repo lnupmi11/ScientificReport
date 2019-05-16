@@ -1,39 +1,105 @@
-@model IEnumerable<ScientificReport.DAL.Entities.Publication>
+@model ScientificReport.DTO.Models.Publication.PublicationIndexModel
 @using Microsoft.AspNetCore.Mvc.Localization
+@using ScientificReport.BLL.Interfaces
+@using ScientificReport.Controllers.Utils
+@using ScientificReport.DAL.Entities
+
+@inject IDepartmentService DepartmentService
 @inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = Localizer["Index"];
+	ViewData["Title"] = Localizer["Publications"];
 }
 
-<h3>@Localizer["Publication"]</h3>
+<h3>@Localizer["Publications"]</h3>
 
 <p>
-	<a asp-action="Create" class="waves-effect btn-small green darken-3">@Localizer["CreateNew"]</a>
+	<a asp-action="Create" class="waves-effect btn-small green darken-3">@Localizer["Create"]</a>
 </p>
+<div class="row">
+	<div class="col s12">
+		<form asp-action="Index" method="get">
+			<div class="row">
+				<div class="input-field col s4">
+					<select asp-for="PrintStatus" class="col s12 push-s2">
+						@foreach (var option in Model.PrintStatusOptions)
+						{
+							var selected = option == "Any" && Model.PrintStatus == null || Model.PrintStatus != null && Model.PrintStatus.Value.ToString() == option ? "selected" : "";
+							<option value="@option" @selected>@Localizer[option]</option>
+						}
+					</select>
+					<label asp-for="PrintStatus">@Localizer["PrintStatus"]</label>
+				</div>
+				<div class="input-field col s2">
+					<input asp-for="YearFromFilter" type="number" class="validate" />
+					<label asp-for="YearFromFilter">@Localizer["YearFromFilter"]</label>
+				</div>
+				<div class="input-field col s2">
+					<input asp-for="YearToFilter" type="number" class="validate" />
+					<label asp-for="YearToFilter">@Localizer["YearToFilter"]</label>
+				</div>
+				<div class="input-field col s2">
+					<select asp-for="PublicationSetType" class="col s12 push-s2">
+						@foreach (var option in Model.PublicationSetTypeOptions)
+						{
+							var selected = option == "Individual" && Model.PublicationSetType == null || Model.PublicationSetType != null && Model.PublicationSetType.Value.ToString() == option ? "selected" : "";
+							<option value="@option" @selected>@Localizer[option]</option>
+						}
+					</select>
+					<label asp-for="PrintStatus">@Localizer["PublicationSet"]</label>
+				</div>
+				<div class="col s1">
+					<button type="submit" class="waves-effect btn-small waves-light">@Localizer["Filter"]</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
 <table class="responsive-table">
 	<thead>
 	<tr>
-		<th>
-			@Localizer[Html.DisplayNameFor(model => model.Type)]
-		</th>
-		<th>
-			@Localizer[Html.DisplayNameFor(model => model.Title)]
-		</th>
-		<th>
-			@Localizer[Html.DisplayNameFor(model => model.PublishingHouseName)]
-		</th>
-		<th>
-			@Localizer[Html.DisplayNameFor(model => model.PublishingYear)]
-		</th>
+		<th>@Localizer["Type"]</th>
+		<th>@Localizer["Title"]</th>
+		<th>@Localizer["PublishingHouseName"]</th>
+		<th>@Localizer["PublishingYear"]</th>
 		<th></th>
 	</tr>
 	</thead>
 	<tbody>
-	@foreach (var item in Model) {
+	@foreach (var item in Model.Publications) {
 		<tr>
 			<td>
-				@Html.DisplayFor(modelItem => item.Type)
+				@{
+					string type;
+					switch (item.Type)
+					{
+						case Publication.Types.Monograph:
+							type = "Monograph";
+							break;
+						case Publication.Types.TextBook:
+							type = "TextBook";
+							break;
+						case Publication.Types.HandBook:
+							type = "HandBook";
+							break;
+						case Publication.Types.Dictionary:
+							type = "Dictionary";
+							break;
+						case Publication.Types.Translation:
+							type = "Translation";
+							break;
+						case Publication.Types.Comment:
+							type = "Comment";
+							break;
+						case Publication.Types.BibliographicIndex:
+							type = "BibliographicIndex";
+							break;
+						default:
+							type = "Other";
+							break;
+					}
+				}
+				@Localizer[type]
 			</td>
 			<td>
 				@Html.DisplayFor(modelItem => item.Title)
@@ -46,12 +112,34 @@
 			</td>
 			<td>
 				<a asp-action="Details" asp-route-id="@item.Id" class="btn-small blue darken-3">@Localizer["Details"]</a>
-				<a asp-action="Edit" asp-route-id="@item.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
-				<form asp-action="Delete" asp-route-id="@item.Id" method="post" style="display: inline;">
-					<button type="submit" class="waves-effect btn-small deep-orange darken-3">@Localizer["Delete"]</button>
-				</form>
+				@{
+					var department = DepartmentService.Get(d => d.Staff.Any(s => s.UserName == User.Identity.Name));
+					var isHeadOfDepartment = false;
+					if (department != null)
+					{
+						isHeadOfDepartment = item.UserProfilesPublications.Any(p => department.Staff.Contains(p.UserProfile));	
+					}
+				}
+				@if ((PageHelpers.IsAdmin(User) || isHeadOfDepartment || item.UserProfilesPublications.Any(p => p.UserProfile.UserName == User.Identity.Name)) && item.PublishingYear == DateTime.Now.Year)
+				{
+					<a asp-action="Edit" asp-route-id="@item.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>	
+				}
+				@if (PageHelpers.IsAdmin(User) && item.PublishingYear == DateTime.Now.Year)
+				{
+					<form asp-action="Delete" asp-route-id="@item.Id" method="get" style="display: inline;">
+						<button type="submit" class="waves-effect btn-small deep-orange darken-3">@Localizer["Delete"]</button>
+					</form>	
+				}
 			</td>
 		</tr>
 	}
 	</tbody>
 </table>
+
+@section Scripts {
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('select').formSelect();
+		});
+	</script>
+}

@@ -76,38 +76,6 @@
 					<span class="helper-text" asp-validation-for="YearDegreeGained" data-error="" data-success=""></span>
 				</div>
 			</div>
-			@if (PageHelpers.IsAdmin(User))
-			{
-				<div class="row">
-					<div class="col s8">
-						<label>@Localizer["Roles"]:</label>
-						<div class="authors-list">
-							@if (Model.AllRoles != null && Model.UserRoles != null)
-							{
-								foreach (var role in Model.AllRoles)
-								{
-									if (role != null)
-									{
-										var contains = Model.UserRoles.Contains(role.Name);
-										<p>
-											@if (role.Name != UserProfileRole.Teacher && role.Name != UserProfileRole.HeadOfDepartment && Model.UserName != User.Identity.Name && !Model.IsHeadOfDepartment)
-											{
-												<i class="add-role fas fa-plus-circle fa-lg cursor-pointer text-green @(contains ? "hidden" : "")" onclick="addUserToAdministration(this, '@role.Name', '@Model.UserId')"></i>
-												<i class="remove-role fas fa-minus-circle fa-lg cursor-pointer text-red @(contains ? "" : "hidden")" onclick="removeUserFromAdministration(this, '@role.Name', '@Model.UserId')"></i>
-											}
-											else
-											{
-												<i class="fas fa-@(contains ? "minus" : "plus")-circle fa-lg" title="Unable to @(contains ? "remove" : "add") role"></i>
-											}
-											@role.Name
-										</p>
-									}
-								}
-							}
-						</div>
-					</div>
-				</div>
-			}
 			<div class="row">
 				<div class="input-field col s6">
 					<input asp-for="AcademicStatus" type="text" class="validate">
@@ -148,6 +116,38 @@
 					</label>
 				}
 			</div>
+			@if (PageHelpers.IsAdmin(User))
+			{
+				<div class="row">
+					<div class="col s8">
+						<label>@Localizer["Roles"]:</label>
+						<div class="authors-list">
+							@if (Model.AllRoles != null && Model.UserRoles != null)
+							{
+								foreach (var role in Model.AllRoles)
+								{
+									if (role != null)
+									{
+										var contains = Model.UserRoles.Contains(role.Name);
+										<p>
+											@if (role.Name != UserProfileRole.Teacher && role.Name != UserProfileRole.HeadOfDepartment && Model.UserName != User.Identity.Name && !Model.IsHeadOfDepartment)
+											{
+												<i class="add-role fas fa-plus-circle fa-lg cursor-pointer text-green @(contains ? "hidden" : "")" onclick="addUserToAdministration(this, '@role.Name', '@Model.UserId')"></i>
+												<i class="remove-role fas fa-minus-circle fa-lg cursor-pointer text-red @(contains ? "" : "hidden")" onclick="removeUserFromAdministration(this, '@role.Name', '@Model.UserId')"></i>
+											}
+											else
+											{
+												<i class="fas fa-@(contains ? "minus" : "plus")-circle fa-lg" title="Unable to @(contains ? "remove" : "add") role"></i>
+											}
+											@role.Name
+										</p>
+									}
+								}
+							}
+						</div>
+					</div>
+				</div>
+			}
 			<div class="row">
 				<input type="submit" value="@Localizer["Save"]" class="waves-effect btn-small  waves-light"/>
 				@if (PageHelpers.IsAdminOrHead(User))
