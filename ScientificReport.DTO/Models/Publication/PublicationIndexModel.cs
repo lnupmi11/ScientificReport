@@ -12,6 +12,8 @@ namespace ScientificReport.DTO.Models.Publication
 		
 		public DAL.Entities.Publication.PublicationSetType? PublicationSetType { get; set; }
 		
+		public DAL.Entities.Publication.SortByOptions? SortBy { get; set; }
+		
 		public IEnumerable<ScientificReport.DAL.Entities.Publication> Publications { get; set; }
 		
 		public IEnumerable<string> PrintStatusOptions { get; set; }

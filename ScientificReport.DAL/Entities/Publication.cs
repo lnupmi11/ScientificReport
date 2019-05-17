@@ -21,6 +21,11 @@ namespace ScientificReport.DAL.Entities
 		{
 			Personal, Department, Faculty
 		}
+		
+		public enum SortByOptions
+		{
+			Type, Title, PublishingHouse, PublishingYear
+		}
 
 		[Key]
 		public Guid Id { get; set; }

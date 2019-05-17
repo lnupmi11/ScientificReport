@@ -45,20 +45,54 @@ namespace ScientificReport.Controllers
 		// GET: UserProfile/Index
 		[HttpGet]
 		[Authorize(Roles = UserProfileRole.HeadOfDepartmentOrAdmin)]
-		public IActionResult Index()
+		public IActionResult Index(UserProfileIndexModel filters)
 		{
-			IEnumerable<UserProfile> users = null;
+			IEnumerable<UserProfile> users;
 			if (PageHelpers.IsAdmin(User))
 			{
-				users = _userProfileService.GetAll();
+				if (filters.DepartmentId != null)
+				{
+					var department = _departmentService.GetById(filters.DepartmentId.Value);
+					users = department != null ? department.Staff : _userProfileService.GetAll();
+				}
+				else
+				{
+					users = _userProfileService.GetAll();	
+				}
 			}
-			else if (PageHelpers.IsHeadOfDepartment(User))
+			else
 			{
 				var currentUser = _userProfileService.Get(User);
 				var department = _departmentService.Get(u => u.Head.Id == currentUser.Id);
 				users = department.Staff;
 			}
-			return View(users);
+
+			if (filters.IsApproved != null)
+			{
+				switch (filters.IsApproved.Value)
+				{
+					case UserProfileIndexModel.IsApprovedOption.All:
+						break;
+					case UserProfileIndexModel.IsApprovedOption.Yes:
+						users = users.Where(u => u.IsApproved);
+						break;
+					case UserProfileIndexModel.IsApprovedOption.No:
+						users = users.Where(u => !u.IsApproved);
+						break;
+				}
+			}
+
+			if (filters.FirstName != null)
+			{
+				users = users.Where(u => u.FirstName.ToLower().Contains(filters.FirstName.Trim().ToLower()));
+			}
+
+			if (filters.LastName != null)
+			{
+				users = users.Where(u => u.LastName.ToLower().Contains(filters.LastName.Trim().ToLower()));
+			}
+
+			return View(new UserProfileIndexModel(users, _departmentService.GetAll()));
 		}
 
 		// GET: UserProfile/Details/{id}

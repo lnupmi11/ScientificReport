@@ -12,7 +12,6 @@ using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Options;
 using ScientificReport.BLL.Interfaces;
 using ScientificReport.BLL.Services;
@@ -110,7 +109,7 @@ namespace ScientificReport
 						new CultureInfo("en")
 					};
 
-					opts.DefaultRequestCulture = new RequestCulture("en");
+					opts.DefaultRequestCulture = new RequestCulture("uk-UA", "uk-UA");
 					// Formatting numbers, dates, etc.
 					opts.SupportedCultures = supportedCultures;
 					// UI strings that we have localized.
@@ -120,7 +119,7 @@ namespace ScientificReport
 			services.AddMvc()
 				.SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
 				.AddViewLocalization(
-					LanguageViewLocationExpanderFormat.Suffix,
+					LanguageViewLocationExpanderFormat.SubFolder,
 					opts => { opts.ResourcesPath = "Resources"; })
 				.AddDataAnnotationsLocalization();
 		}

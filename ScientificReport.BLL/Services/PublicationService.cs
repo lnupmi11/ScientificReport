@@ -88,10 +88,29 @@ namespace ScientificReport.BLL.Services
 
 			return allPublications.Where(t => t.UserProfilesPublications.Any(u => u.UserProfile.Id == user.Id)).ToList();
 		}
-		
-		public virtual IEnumerable<Publication> GetUserPublicationsByYear(UserProfile user, int year)
+
+		public virtual IEnumerable<Publication> SortPublicationsBy(Publication.SortByOptions option)
 		{
-			return GetUserPublications(user).Where(p => p.PublishingYear == year).ToList();
+			var publications = GetAll();
+			switch (option)
+			{
+				case Publication.SortByOptions.Type:
+					publications = publications.OrderBy(p => p.Type);
+					break;
+				case Publication.SortByOptions.Title:
+					publications = publications.OrderBy(p => p.Title);
+					break;
+				case Publication.SortByOptions.PublishingHouse:
+					publications = publications.OrderBy(p => p.PublishingHouseName);
+					break;
+				case Publication.SortByOptions.PublishingYear:
+					publications = publications.OrderByDescending(p => p.PublishingYear);
+					break;
+				default:
+					return new List<Publication>();
+			}
+
+			return publications;
 		}
 	}
 }

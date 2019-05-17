@@ -11,7 +11,7 @@
 	ViewData["Title"] = Localizer["Publications"];
 }
 
-<h3>@Localizer["Publications"]</h3>
+<h4>@Localizer["Publications"]</h4>
 
 <p>
 	<a asp-action="Create" class="waves-effect btn-small green darken-3">@Localizer["Create"]</a>
@@ -58,10 +58,18 @@
 <table class="responsive-table">
 	<thead>
 	<tr>
-		<th>@Localizer["Type"]</th>
-		<th>@Localizer["Title"]</th>
-		<th>@Localizer["PublishingHouseName"]</th>
-		<th>@Localizer["PublishingYear"]</th>
+		<th>
+			<a asp-action="Index" asp-route-SortBy="Type">@Localizer["Type"]</a>
+		</th>
+		<th>
+			<a asp-action="Index" asp-route-SortBy="Title">@Localizer["Title"]</a>
+		</th>
+		<th>
+			<a asp-action="Index" asp-route-SortBy="PublishingHouse">@Localizer["PublishingHouseName"]</a>
+		</th>
+		<th>
+			<a asp-action="Index" asp-route-SortBy="PublishingYear">@Localizer["PublishingYear"]</a>
+		</th>
 		<th></th>
 	</tr>
 	</thead>

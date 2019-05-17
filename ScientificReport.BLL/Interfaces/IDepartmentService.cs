@@ -21,5 +21,6 @@ namespace ScientificReport.BLL.Interfaces
 		void RemoveUser(Guid id, UserProfile user);
 		bool UserIsHired(UserProfile user);
 		bool UserWorksInDepartment(UserProfile headOfDepartment, Guid userId);
+		IEnumerable<Department> SortDepartmentsBy(Department.SortByOption option);
 	}
 }

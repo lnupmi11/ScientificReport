@@ -18,6 +18,6 @@ namespace ScientificReport.BLL.Interfaces
 		ICollection<UserProfile> GetPublicationAuthors(Guid id);
 		void AddAuthor(Publication publication, UserProfile user);
 		IEnumerable<Publication> GetUserPublications(UserProfile user);
-		IEnumerable<Publication> GetUserPublicationsByYear(UserProfile user, int year);
+		IEnumerable<Publication> SortPublicationsBy(Publication.SortByOptions option);
 	}
 }

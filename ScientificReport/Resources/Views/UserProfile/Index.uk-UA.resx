@@ -62,4 +62,16 @@
 	<data name="Deactivate" xml:space="preserve">
 		<value>Деактивувати</value>
 	</data>
+	<data name="Any" xml:space="preserve">
+		<value>Будь-який</value>
+	</data>
+	<data name="Department" xml:space="preserve">
+		<value>Кафедра</value>
+	</data>
+	<data name="Filter" xml:space="preserve">
+		<value>Фільтрувати</value>
+	</data>
+	<data name="All" xml:space="preserve">
+		<value>Всі</value>
+	</data>
 </root>

@@ -27,7 +27,7 @@
 		<value>Кількість працівників</value>
 	</data>
 	<data name="Scientific works total" xml:space="preserve">
-		<value>Загальна кількість публікацій кафедри</value>
+		<value>Загальна кількість наукових робіт</value>
 	</data>
 	<data name="Details" xml:space="preserve">
 		<value>Деталі</value>
@@ -40,5 +40,11 @@
 	</data>
 	<data name="Create" xml:space="preserve">
 		<value>Створити</value>
+	</data>
+	<data name="TitleFilter" xml:space="preserve">
+		<value>Назва або її частина</value>
+	</data>
+	<data name="Filter" xml:space="preserve">
+		<value>Фільтрувати</value>
 	</data>
 </root>

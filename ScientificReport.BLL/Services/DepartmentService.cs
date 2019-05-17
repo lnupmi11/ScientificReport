@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using ScientificReport.BLL.Interfaces;
@@ -117,6 +118,27 @@ namespace ScientificReport.BLL.Services
 		{
 			var userDepartment = _departmentRepository.Get(d => d.Head.Id == headOfDepartment.Id);
 			return userDepartment.Staff.Contains(_userProfileRepository.Get(userId));
+		}
+
+		public virtual IEnumerable<Department> SortDepartmentsBy(Department.SortByOption option)
+		{
+			var departments = GetAll();
+			switch (option)
+			{
+				case Department.SortByOption.Title:
+					departments = departments.OrderByDescending(d => d.Title);
+					break;
+				case Department.SortByOption.StaffCount:
+					departments = departments.OrderByDescending(d => d.Staff.Count);
+					break;
+				case Department.SortByOption.TotalScientificWorksCount:
+					departments = departments.OrderByDescending(d => d.ScientificWorks.Count);
+					break;
+				default:
+					return new List<Department>();
+			}
+
+			return departments;
 		}
 	}
 }

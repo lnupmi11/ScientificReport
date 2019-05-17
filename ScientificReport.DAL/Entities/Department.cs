@@ -6,6 +6,11 @@ namespace ScientificReport.DAL.Entities
 {
 	public class Department
 	{
+		public enum SortByOption
+		{
+			Title, StaffCount, TotalScientificWorksCount
+		}
+		
 		[Key]
 		public Guid Id { get; set; }
 		

@@ -37,76 +37,83 @@ namespace ScientificReport.Controllers
 		// GET: /Publication
 		public IActionResult Index(PublicationIndexModel filters)
 		{
-			var yearFrom = -1;
-			if (filters.YearFromFilter != null)
-			{
-				yearFrom = filters.YearFromFilter.Value;
-			}
-			
-			var yearTo = -1;
-			if (filters.YearToFilter != null)
-			{
-				yearTo = filters.YearToFilter.Value;
-			}
-
-			var user = _userProfileService.Get(User);
-			
-			if (filters.PublicationSetType == null)
-			{
-				if (PageHelpers.IsAdmin(User))
-				{
-					filters.PublicationSetType = Publication.PublicationSetType.Faculty;	
-				}
-				else if (PageHelpers.IsHeadOfDepartment(User))
-				{
-					filters.PublicationSetType = Publication.PublicationSetType.Department;	
-				}
-				else
-				{
-					filters.PublicationSetType = Publication.PublicationSetType.Personal;	
-				}
-			}
-
 			IEnumerable<Publication> publications;
-			switch (filters.PublicationSetType.Value)
+			if (filters.SortBy != null)
 			{
-				case Publication.PublicationSetType.Department:
-					var department = _departmentService.Get(u => u.Staff.Contains(user));
-					if (department != null)
+				publications = _publicationService.SortPublicationsBy(filters.SortBy.Value);
+			}
+			else
+			{
+				var yearFrom = -1;
+				if (filters.YearFromFilter != null)
+				{
+					yearFrom = filters.YearFromFilter.Value;
+				}
+			
+				var yearTo = -1;
+				if (filters.YearToFilter != null)
+				{
+					yearTo = filters.YearToFilter.Value;
+				}
+
+				var user = _userProfileService.Get(User);
+			
+				if (filters.PublicationSetType == null)
+				{
+					if (PageHelpers.IsAdmin(User))
 					{
-						publications = _publicationService.GetAllWhere(p =>
-							p.UserProfilesPublications.Any(up => department.Staff.Contains(up.UserProfile)));	
+						filters.PublicationSetType = Publication.PublicationSetType.Faculty;	
+					}
+					else if (PageHelpers.IsHeadOfDepartment(User))
+					{
+						filters.PublicationSetType = Publication.PublicationSetType.Department;	
 					}
 					else
 					{
+						filters.PublicationSetType = Publication.PublicationSetType.Personal;	
+					}
+				}
+				
+				switch (filters.PublicationSetType.Value)
+				{
+					case Publication.PublicationSetType.Department:
+						var department = _departmentService.Get(u => u.Staff.Contains(user));
+						if (department != null)
+						{
+							publications = _publicationService.GetAllWhere(p =>
+								p.UserProfilesPublications.Any(up => department.Staff.Contains(up.UserProfile)));	
+						}
+						else
+						{
+							publications = _publicationService.GetAllWhere(p =>
+								p.UserProfilesPublications.Any(upp => upp.UserProfile.Id == user.Id));
+						}
+						break;
+					case Publication.PublicationSetType.Faculty:
+						publications = _publicationService.GetAll();
+						break;
+					default:
 						publications = _publicationService.GetAllWhere(p =>
 							p.UserProfilesPublications.Any(upp => upp.UserProfile.Id == user.Id));
-					}
-					break;
-				case Publication.PublicationSetType.Faculty:
-					publications = _publicationService.GetAll();
-					break;
-				default:
-					publications = _publicationService.GetAllWhere(p =>
-						p.UserProfilesPublications.Any(upp => upp.UserProfile.Id == user.Id));
-					break;
+						break;
+				}
+
+				if (yearFrom != -1)
+				{	
+					publications = publications.Where(p => p.PublishingYear >= yearFrom);
+				}
+			
+				if (yearTo != -1)
+				{
+					publications = publications.Where(p => p.PublishingYear <= yearTo);
+				}
+
+				if (filters.PrintStatus != null && filters.PrintStatus != Publication.PrintStatuses.Any)
+				{
+					publications = publications.Where(p => p.PrintStatus == filters.PrintStatus.Value);
+				}
 			}
 
-			if (yearFrom != -1)
-			{	
-				publications = publications.Where(p => p.PublishingYear >= yearFrom);
-			}
-			
-			if (yearTo != -1)
-			{
-				publications = publications.Where(p => p.PublishingYear <= yearTo);
-			}
-
-			if (filters.PrintStatus != null && filters.PrintStatus != Publication.PrintStatuses.Any)
-			{
-				publications = publications.Where(p => p.PrintStatus == filters.PrintStatus.Value);
-			}
-			
 			return View(new PublicationIndexModel(publications));
 		}
 

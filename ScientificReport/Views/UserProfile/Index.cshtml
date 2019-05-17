@@ -2,7 +2,7 @@
 @using Microsoft.AspNetCore.Mvc.Localization
 @using ScientificReport.Controllers.Utils
 @using ScientificReport.DAL.Entities.UserProfile
-@model IEnumerable<ScientificReport.DAL.Entities.UserProfile.UserProfile>
+@model ScientificReport.DTO.Models.UserProfile.UserProfileIndexModel
 @inject UserManager<UserProfile> UserManager;
 @inject IViewLocalizer Localizer
 
@@ -14,32 +14,85 @@
 else
 {
 	ViewData["Title"] = Localizer["Users"];
-	<h3>@Localizer["Users"]</h3>
+	<h4>@Localizer["Users"]</h4>
 }
-
+<div class="row">
+	<div class="col s12">
+		<form asp-action="Index" method="get">
+			<div class="row">
+				<div class="input-field col s2">
+					<select asp-for="IsApproved" class="col s12 push-s2">
+						@foreach (var option in Model.IsApprovedOptions)
+						{
+							var selected = option == "All" && Model.IsApproved == null || Model.IsApproved != null && Model.IsApproved.Value.ToString() == option ? "selected" : "";
+							<option value="@option" @selected>@Localizer[option]</option>
+						}
+					</select>
+					<label asp-for="IsApproved">@Localizer["IsApproved"]</label>
+				</div>
+				@{
+					var colWidth = PageHelpers.IsAdmin(User) ? "3" : "5";
+				}
+				<div class="input-field col s@(colWidth)">
+					<input asp-for="FirstName" class="validate" />
+					<label asp-for="FirstName">@Localizer["FirstName"]</label>
+				</div>
+				<div class="input-field col s@(colWidth)">
+					<input asp-for="LastName" class="validate" />
+					<label asp-for="LastName">@Localizer["LastName"]</label>
+				</div>
+				@if (PageHelpers.IsAdmin(User))
+				{
+					<div class="input-field col s3">
+						<select asp-for="DepartmentId" class="col s12 push-s2">
+							@if (Model.DepartmentId == null)
+							{
+								<option selected>@Localizer["Any"]</option>	
+							}
+							else
+							{
+								<option>@Localizer["Any"]</option>
+							}
+							
+							@foreach (var department in Model.Departments)
+							{
+								var selected = Model.DepartmentId != null && Model.DepartmentId.Value == department.Id ? "selected" : "";
+								<option value="@department.Id" @selected>@department.Title</option>
+							}
+						</select>
+						<label asp-for="DepartmentId">@Localizer["Department"]</label>
+					</div>	
+				}
+				<div class="col s1">
+					<button type="submit" class="waves-effect btn-small waves-light">@Localizer["Filter"]</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
 <table class="table">
 	<thead>
 	<tr>
 		<th>
-			@Localizer[Html.DisplayNameFor(model => model.IsApproved)]
+			@Localizer["IsApproved"]
 		</th>
 		<th>
-			@Localizer[Html.DisplayNameFor(model => model.LastName)]
+			@Localizer["LastName"]
 		</th>
 		<th>
-			@Localizer[Html.DisplayNameFor(model => model.FirstName)]
+			@Localizer["FirstName"]
 		</th>
 		<th>
-			@Localizer[Html.DisplayNameFor(model => model.MiddleName)]
+			@Localizer["MiddleName"]
 		</th>
 		<th>
-			@Localizer[Html.DisplayNameFor(model => model.Email)]
+			@Localizer["Email"]
 		</th>
 		<th></th>
 	</tr>
 	</thead>
 	<tbody>
-	@foreach (var item in Model)
+	@foreach (var item in Model.UserProfiles)
 	{
 		<tr>
 			<td>
@@ -77,3 +130,11 @@ else
 	}
 	</tbody>
 </table>
+
+@section Scripts {
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('select').formSelect();
+		});
+	</script>
+}
