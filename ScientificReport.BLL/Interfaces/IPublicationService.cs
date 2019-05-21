@@ -19,6 +19,7 @@ namespace ScientificReport.BLL.Interfaces
 		bool PublicationExists(Guid id);
 		ICollection<UserProfile> GetPublicationAuthors(Guid id);
 		void AddAuthor(Publication publication, UserProfile user);
+		void RemoveAuthor(Publication publication, UserProfile user);
 		IEnumerable<Publication> GetUserPublications(UserProfile user);
 		IEnumerable<Publication> SortPublicationsBy(Publication.SortByOptions option, int page, int count);
 	}

@@ -1,4 +1,4 @@
-@model ScientificReport.DAL.Entities.Publication
+@model ScientificReport.DTO.Models.Publication.PublicationDetailsModel
 @using Microsoft.AspNetCore.Mvc.Localization
 @using ScientificReport.BLL.Interfaces
 @using ScientificReport.Controllers.Utils
@@ -18,12 +18,12 @@
 	<hr/>
 	<dl class="row">
 		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.Type)]
+			@Localizer[Html.DisplayNameFor(model => model.Publication.Type)]
 		</dt>
 		<dd class="col s10">
 			@{
 				string type;
-				switch (Model.Type)
+				switch (Model.Publication.Type)
 				{
 					case Publication.Types.Monograph:
 						type = "Monograph";
@@ -54,48 +54,48 @@
 			@Localizer[type]
 		</dd>
 		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.Title)]
+			@Localizer[Html.DisplayNameFor(model => model.Publication.Title)]
 		</dt>
 		<dd class="col s10">
-			@Html.DisplayFor(model => model.Title)
+			@Html.DisplayFor(model => model.Publication.Title)
 		</dd>
 		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.Specification)]
+			@Localizer[Html.DisplayNameFor(model => model.Publication.Specification)]
 		</dt>
 		<dd class="col s10">
-			@Html.DisplayFor(model => model.Specification)
+			@Html.DisplayFor(model => model.Publication.Specification)
 		</dd>
 		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.PublishingPlace)]
+			@Localizer[Html.DisplayNameFor(model => model.Publication.PublishingPlace)]
 		</dt>
 		<dd class="col s10">
-			@Html.DisplayFor(model => model.PublishingPlace)
+			@Html.DisplayFor(model => model.Publication.PublishingPlace)
 		</dd>
 		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.PublishingHouseName)]
+			@Localizer[Html.DisplayNameFor(model => model.Publication.PublishingHouseName)]
 		</dt>
 		<dd class="col s10">
-			@Html.DisplayFor(model => model.PublishingHouseName)
+			@Html.DisplayFor(model => model.Publication.PublishingHouseName)
 		</dd>
 		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.PublishingYear)]
+			@Localizer[Html.DisplayNameFor(model => model.Publication.PublishingYear)]
 		</dt>
 		<dd class="col s10">
-			@Html.DisplayFor(model => model.PublishingYear)
+			@Html.DisplayFor(model => model.Publication.PublishingYear)
 		</dd>
 		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.PagesAmount)]
+			@Localizer[Html.DisplayNameFor(model => model.Publication.PagesAmount)]
 		</dt>
 		<dd class="col s10">
-			@Html.DisplayFor(model => model.PagesAmount)
+			@Html.DisplayFor(model => model.Publication.PagesAmount)
 		</dd>
 		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.PrintStatus)]
+			@Localizer[Html.DisplayNameFor(model => model.Publication.PrintStatus)]
 		</dt>
 		<dd class="col s10">
 			@{
 				string status;
-				switch (Model.PrintStatus)
+				switch (Model.Publication.PrintStatus)
 				{
 					case Publication.PrintStatuses.Any:
 						status = "Any";
@@ -113,6 +113,20 @@
 			}
 			@Localizer[status]
 		</dd>
+		@if (Model.Authors != null && Model.Authors.Any())
+		{
+			<dt class="col s2">
+				@Localizer["Authors"]
+			</dt>
+			<dd class="col s10">
+				<ul>
+					@foreach (var author in Model.Authors)
+					{
+						<li>@author</li>
+					}
+				</ul>
+			</dd>	
+		}
 	</dl>
 </div>
 <div>
@@ -121,12 +135,12 @@
 		var isHeadOfDepartment = false;
 		if (department != null)
 		{
-			isHeadOfDepartment = Model.UserProfilesPublications.Any(p => department.Staff.Contains(p.UserProfile));	
+			isHeadOfDepartment = Model.Publication.UserProfilesPublications.Any(p => department.Staff.Contains(p.UserProfile));	
 		}
 	}
-	@if ((PageHelpers.IsAdmin(User) || isHeadOfDepartment || Model.UserProfilesPublications.Any(p => p.UserProfile.UserName == User.Identity.Name)) && Model.PublishingYear == DateTime.Now.Year)
+	@if ((PageHelpers.IsAdmin(User) || isHeadOfDepartment || Model.Publication.UserProfilesPublications.Any(p => p.UserProfile.UserName == User.Identity.Name)) && Model.Publication.PublishingYear == DateTime.Now.Year)
 	{
-		<a asp-action="Edit" asp-route-id="@Model.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
+		<a asp-action="Edit" asp-route-id="@Model.Publication.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
 	}
 	<a asp-action="Index" class="btn-small blue darken-3">@Localizer["BackToList"]</a>
 </div>

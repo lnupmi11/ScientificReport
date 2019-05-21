@@ -91,6 +91,12 @@ namespace ScientificReport.BLL.Services
 			});
 			_publicationRepository.Update(publication);
 		}
+		
+		public virtual void RemoveAuthor(Publication publication, UserProfile user)
+		{
+			publication.UserProfilesPublications.Remove(publication.UserProfilesPublications.First(up => up.UserProfile.Id == user.Id));
+			_publicationRepository.Update(publication);
+		}
 
 		public virtual IEnumerable<Publication> GetUserPublications(UserProfile user)
 		{

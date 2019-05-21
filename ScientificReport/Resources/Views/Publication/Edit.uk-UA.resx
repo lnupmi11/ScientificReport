@@ -63,7 +63,7 @@
 		<value>Місто видання</value>
 	</data>
 	<data name="PublishingHouseName" xml:space="preserve">
-		<value>Видавничий дім</value>
+		<value>Видавництво</value>
 	</data>
 	<data name="PublishingYear" xml:space="preserve">
 		<value>Рік видання</value>
@@ -82,5 +82,11 @@
 	</data>
 	<data name="Cancel" xml:space="preserve">
 		<value>Скасувати</value>
+	</data>
+	<data name="PrintStatus" xml:space="preserve">
+		<value>Статус друку</value>
+	</data>
+	<data name="Authors" xml:space="preserve">
+		<value>Автори</value>
 	</data>
 </root>

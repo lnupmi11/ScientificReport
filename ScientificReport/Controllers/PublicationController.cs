@@ -2,7 +2,6 @@ using System;
 using System.Linq;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Localization;
 using ScientificReport.BLL.Interfaces;
 using ScientificReport.Controllers.Utils;
@@ -131,7 +130,11 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
-			return View(publication);
+			var model = new PublicationDetailsModel
+			{
+				Publication = publication, Authors = _publicationService.GetPublicationAuthors(id.Value)
+			};
+			return View(model);
 		}
 
 		// GET: /Publication/Create
@@ -197,46 +200,136 @@ namespace ScientificReport.Controllers
 				return Forbid();
 			}
 
-			return View(new PublicationCreateModel(publication));
+			var editModel = new PublicationEditModel(publication)
+			{
+				Authors = _publicationService.GetPublicationAuthors(publication.Id),
+				Users = _userProfileService.GetAll()
+			};
+
+			return View(editModel);
 		}
 
 		// POST: /Publication/Edit/{id}
-		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		// TODO: fix this action
-		public IActionResult Edit(Guid id, [Bind("Id,Type,Title,Specification,PublishingPlace,PublishingHouseName,PublishingYear,PagesAmount,IsPrintCanceled,IsRecommendedToPrint,CreatedAt,LastEditAt")] Publication publication)
+		public IActionResult Edit(Guid id, PublicationEditModel model)
 		{
-			if (id != publication.Id)
+			if (id != model.Id)
+			{
+				return NotFound();
+			}
+			
+			if (!_publicationService.PublicationExists(id))
 			{
 				return NotFound();
 			}
 
+			var publication = _publicationService.GetById(id);
 			if (ModelState.IsValid)
 			{
-				try
-				{
-			//		_context.Update(publication);
-			//		await _context.SaveChangesAsync();
-				}
-				catch (DbUpdateConcurrencyException)
-				{
-					if (_publicationService.PublicationExists(publication.Id))
-					{
-						return NotFound();
-					}
-					else
-					{
-						throw;
-					}
-				}
-				return RedirectToAction(nameof(Index));
+				publication.Type = model.Type;
+				publication.Title = model.Title;
+				publication.Specification = model.Specification;
+				publication.PublishingPlace = model.PublishingPlace;
+				publication.PublishingHouseName = model.PublishingHouseName;
+				publication.PublishingYear = model.PublishingYear;
+				publication.PagesAmount = model.PagesAmount;
+				publication.PrintStatus = model.PrintStatus;
+				_publicationService.UpdateItem(publication);
+				return RedirectToAction("Index");
 			}
-			return View(new PublicationCreateModel(publication));
+			
+			var editModel = new PublicationEditModel(publication)
+			{
+				Authors = _publicationService.GetPublicationAuthors(publication.Id),
+				Users = _userProfileService.GetAll()
+			};
+			return View(editModel);
 		}
 
-		// GET: Publication/Delete/5
+		// POST: Department/AddUserToStaff/{departmentId}
+		[HttpPost]
+		[Authorize(Roles = UserProfileRole.HeadOfDepartmentOrAdmin)]
+		public IActionResult AddUserToAuthors(Guid? id, [FromBody] PublicationUpdateAuthorsRequest request)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
+			
+			var user = _userProfileService.GetById(request.UserId);
+			if (user == null)
+			{
+				return Json(ApiResponse.Fail);
+			}
+			
+			var department = _departmentService.Get(d => d.Head.Id == user.Id);
+			if (department == null)
+			{
+				return Json(ApiResponse.Fail);
+			}
+			
+			if (!IsValidCurrentUser(department))
+			{
+				return Json(ApiResponse.Fail);
+			}
+
+			var publication = _publicationService.GetById(id.Value);
+			if (publication == null)
+			{
+				return NotFound();
+			}
+			
+			if (!_publicationService.GetPublicationAuthors(publication.Id).Contains(user))
+			{
+				_publicationService.AddAuthor(publication, user);
+			}
+
+			return Json(ApiResponse.Ok);
+		}
+
+		// POST: Department/RemoveUserFromStaff/{departmentId}
+		[HttpPost]
+		[Authorize(Roles = UserProfileRole.HeadOfDepartmentOrAdmin)]
+		public IActionResult RemoveUserFromAuthors(Guid? id, [FromBody] PublicationUpdateAuthorsRequest request)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
+			
+			var user = _userProfileService.GetById(request.UserId);
+			if (user == null)
+			{
+				return Json(ApiResponse.Fail);
+			}
+			
+			var department = _departmentService.Get(d => d.Head.Id == user.Id);
+			if (department == null)
+			{
+				return Json(ApiResponse.Fail);
+			}
+			
+			if (!IsValidCurrentUser(department))
+			{
+				return Json(ApiResponse.Fail);
+			}
+
+			var publication = _publicationService.GetById(id.Value);
+			if (publication == null)
+			{
+				return NotFound();
+			}
+			
+			if (_publicationService.GetPublicationAuthors(publication.Id).Contains(user))
+			{
+				_publicationService.RemoveAuthor(publication, user);
+			}
+
+			return Json(ApiResponse.Ok);
+		}
+		
+		// GET: Publication/Delete/{id}
 		public IActionResult Delete(Guid? id)
 		{
 			if (id == null)
@@ -258,7 +351,7 @@ namespace ScientificReport.Controllers
 			return View(publication);
 		}
 
-		// POST: Publication/Delete/5
+		// POST: Publication/Delete/{id}
 		[HttpPost, ActionName("Delete")]
 		[ValidateAntiForgeryToken]
 		public IActionResult DeleteConfirmed(Guid id)
@@ -276,6 +369,17 @@ namespace ScientificReport.Controllers
 			
 			_publicationService.DeleteById(id);
 			return RedirectToAction(nameof(Index));
+		}
+		
+		private bool IsValidCurrentUser(Department department)
+		{
+			var currentUser = _userProfileService.Get(User);
+			if (!PageHelpers.IsAdmin(User))
+			{
+				return currentUser.Id == department.Head.Id;	
+			}
+
+			return true;
 		}
 	}
 }
