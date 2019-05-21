@@ -74,4 +74,10 @@
 	<data name="All" xml:space="preserve">
 		<value>Всі</value>
 	</data>
+	<data name="Previous" xml:space="preserve">
+		<value>Попередня</value>
+	</data>
+	<data name="Next" xml:space="preserve">
+		<value>Наступна</value>
+	</data>
 </root>

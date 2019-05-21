@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace ScientificReport.DTO.Models.Department
 {
-	public class DepartmentIndexModel
+	public class DepartmentIndexModel : PageModel
 	{
 		public string TitleFilter { get; set; }
 		

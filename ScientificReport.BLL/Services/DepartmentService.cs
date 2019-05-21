@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using ScientificReport.BLL.Interfaces;
@@ -14,6 +13,16 @@ namespace ScientificReport.BLL.Services
 	{
 		private readonly DepartmentRepository _departmentRepository;
 		private readonly UserProfileRepository _userProfileRepository;
+
+		public virtual int GetCount()
+		{
+			return _departmentRepository.All().Count();
+		}
+
+		public virtual IEnumerable<Department> GetPage(int page, int count)
+		{
+			return _departmentRepository.All().Skip((page - 1) * count).Take(count).ToList();
+		}
 		
 		public DepartmentService(ScientificReportDbContext context)
 		{
@@ -120,9 +129,9 @@ namespace ScientificReport.BLL.Services
 			return userDepartment.Staff.Contains(_userProfileRepository.Get(userId));
 		}
 
-		public virtual IEnumerable<Department> SortDepartmentsBy(Department.SortByOption option)
+		public virtual IEnumerable<Department> SortDepartmentsBy(Department.SortByOption option, int page, int count)
 		{
-			var departments = GetAll();
+			var departments = GetPage(page, count);
 			switch (option)
 			{
 				case Department.SortByOption.Title:

@@ -27,6 +27,16 @@ namespace ScientificReport.BLL.Services
 		{
 			return _publicationRepository.AllWhere(predicate);
 		}
+		
+		public virtual IEnumerable<Publication> GetPage(int page, int count)
+		{
+			return _publicationRepository.All().Skip((page - 1) * count).Take(count).ToList();
+		}
+		
+		public virtual int GetCount()
+		{
+			return _publicationRepository.All().Count();
+		}
 
 		public virtual Publication GetById(Guid id)
 		{
@@ -89,9 +99,9 @@ namespace ScientificReport.BLL.Services
 			return allPublications.Where(t => t.UserProfilesPublications.Any(u => u.UserProfile.Id == user.Id)).ToList();
 		}
 
-		public virtual IEnumerable<Publication> SortPublicationsBy(Publication.SortByOptions option)
+		public virtual IEnumerable<Publication> SortPublicationsBy(Publication.SortByOptions option, int page, int count)
 		{
-			var publications = GetAll();
+			var publications = GetPage(page, count);
 			switch (option)
 			{
 				case Publication.SortByOptions.Type:

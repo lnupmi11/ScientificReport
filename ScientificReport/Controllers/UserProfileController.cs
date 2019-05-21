@@ -45,31 +45,33 @@ namespace ScientificReport.Controllers
 		// GET: UserProfile/Index
 		[HttpGet]
 		[Authorize(Roles = UserProfileRole.HeadOfDepartmentOrAdmin)]
-		public IActionResult Index(UserProfileIndexModel filters)
+		public IActionResult Index(UserProfileIndexModel model)
 		{
 			IEnumerable<UserProfile> users;
 			if (PageHelpers.IsAdmin(User))
 			{
-				if (filters.DepartmentId != null)
+				if (model.DepartmentId != null)
 				{
-					var department = _departmentService.GetById(filters.DepartmentId.Value);
-					users = department != null ? department.Staff : _userProfileService.GetAll();
+					var department = _departmentService.GetById(model.DepartmentId.Value);
+					users = department != null
+						? _userProfileService.GetPage(department.Staff, model.CurrentPage, model.PageSize)
+						: _userProfileService.GetPage(model.CurrentPage, model.PageSize);
 				}
 				else
 				{
-					users = _userProfileService.GetAll();	
+					users = _userProfileService.GetPage(model.CurrentPage, model.PageSize);
 				}
 			}
 			else
 			{
 				var currentUser = _userProfileService.Get(User);
 				var department = _departmentService.Get(u => u.Head.Id == currentUser.Id);
-				users = department.Staff;
+				users = _userProfileService.GetPage(department.Staff, model.CurrentPage, model.PageSize);
 			}
 
-			if (filters.IsApproved != null)
+			if (model.IsApproved != null)
 			{
-				switch (filters.IsApproved.Value)
+				switch (model.IsApproved.Value)
 				{
 					case UserProfileIndexModel.IsApprovedOption.All:
 						break;
@@ -82,17 +84,20 @@ namespace ScientificReport.Controllers
 				}
 			}
 
-			if (filters.FirstName != null)
+			if (model.FirstName != null)
 			{
-				users = users.Where(u => u.FirstName.ToLower().Contains(filters.FirstName.Trim().ToLower()));
+				users = users.Where(u => u.FirstName.ToLower().Contains(model.FirstName.Trim().ToLower()));
 			}
 
-			if (filters.LastName != null)
+			if (model.LastName != null)
 			{
-				users = users.Where(u => u.LastName.ToLower().Contains(filters.LastName.Trim().ToLower()));
+				users = users.Where(u => u.LastName.ToLower().Contains(model.LastName.Trim().ToLower()));
 			}
 
-			return View(new UserProfileIndexModel(users, _departmentService.GetAll()));
+			model.UserProfiles = users;
+			model.Departments = _departmentService.GetAll();
+			model.Count = _userProfileService.GetCount();
+			return View(model);
 		}
 
 		// GET: UserProfile/Details/{id}

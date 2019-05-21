@@ -38,25 +38,27 @@ namespace ScientificReport.Controllers
 
 		// GET: Department/Index
 		[HttpGet]
-		public IActionResult Index(DepartmentIndexModel parameters)
+		public IActionResult Index(DepartmentIndexModel model)
 		{
 			if (PageHelpers.IsAdmin(User))
 			{
 				IEnumerable<Department> departments;
-				if (parameters.TitleFilter != null)
+				if (model.TitleFilter != null)
 				{
-					departments = _departmentService.GetAll().Where(d => d.Title.ToLower().Contains(parameters.TitleFilter.Trim().ToLower()));
+					departments = _departmentService.GetPage(model.CurrentPage, model.PageSize).Where(d => d.Title.ToLower().Contains(model.TitleFilter.Trim().ToLower()));
 				}
-				else if (parameters.SortBy != null)
+				else if (model.SortBy != null)
 				{
-					departments = _departmentService.SortDepartmentsBy(parameters.SortBy.Value);
+					departments = _departmentService.SortDepartmentsBy(model.SortBy.Value, model.CurrentPage, model.PageSize);
 				}
 				else
 				{
-					departments = _departmentService.GetAll();
+					departments = _departmentService.GetPage(model.CurrentPage, model.PageSize);
 				}
-				
-				return View(new DepartmentIndexModel(departments));
+
+				model.Departments = departments;
+				model.Count = _departmentService.GetCount();
+				return View(model);
 			}
 
 			var department = _departmentService.Get(

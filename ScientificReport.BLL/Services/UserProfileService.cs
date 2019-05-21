@@ -21,6 +21,11 @@ namespace ScientificReport.BLL.Services
 		{
 			_userProfileRepository = new UserProfileRepository(context);
 		}
+		
+		public virtual int GetCount()
+		{
+			return _userProfileRepository.All().Count();
+		}
 
 		public virtual IEnumerable<UserProfile> GetAll()
 		{
@@ -30,6 +35,16 @@ namespace ScientificReport.BLL.Services
 		public virtual IEnumerable<UserProfile> GetAllWhere(Func<UserProfile, bool> predicate)
 		{
 			return _userProfileRepository.AllWhere(predicate);
+		}
+
+		public virtual IEnumerable<UserProfile> GetPage(int page, int count)
+		{
+			return _userProfileRepository.All().Skip((page - 1) * count).Take(count).ToList();
+		}
+
+		public virtual IEnumerable<UserProfile> GetPage(IEnumerable<UserProfile> userProfiles, int page, int count)
+		{
+			return userProfiles.Skip((page - 1) * count).Take(count).ToList();
 		}
 
 		public virtual UserProfile Get(ClaimsPrincipal claimsPrincipal)

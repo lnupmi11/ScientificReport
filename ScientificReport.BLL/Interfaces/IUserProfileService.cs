@@ -10,8 +10,11 @@ namespace ScientificReport.BLL.Interfaces
 {
 	public interface IUserProfileService
 	{
+		int GetCount();
 		IEnumerable<UserProfile> GetAll();
 		IEnumerable<UserProfile> GetAllWhere(Func<UserProfile, bool> predicate);
+		IEnumerable<UserProfile> GetPage(int page, int count);
+		IEnumerable<UserProfile> GetPage(IEnumerable<UserProfile> userProfiles, int page, int count);
 		UserProfile GetById(Guid id);
 		UserProfile Get(ClaimsPrincipal claimsPrincipal);
 		UserProfile Get(Func<UserProfile, bool> predicate);
