@@ -17,6 +17,9 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
+	<data name="Articles" xml:space="preserve">
+		<value>Articles</value>
+	</data>
     <data name="Article" xml:space="preserve">
 		<value>Article</value>
 	</data>
@@ -31,9 +34,6 @@
 	</data>
 	<data name="PublishingYear" xml:space="preserve">
 		<value>Publishing year</value>
-	</data>
-	<data name="Create New" xml:space="preserve">
-		<value>Create New</value>
 	</data>
 	<data name="Details" xml:space="preserve">
 		<value>Details</value>
@@ -55,5 +55,38 @@
 	</data>
 	<data name="Back to List" xml:space="preserve">
 		<value>Back to List</value>
+	</data>
+	<data name="ImpactFactor" xml:space="preserve">
+		<value>Impact Factor</value>
+	</data>
+	<data name="IncludedInWebOfScienceScopusOthers" xml:space="preserve">
+		<value>Included In Web Of Science Scopus Others</value>
+	</data>
+	<data name="ForeignPublishing" xml:space="preserve">
+		<value>Foreign Publishing</value>
+	</data>
+	<data name="ProfessionalPublishingOfUkraine" xml:space="preserve">
+		<value>Professional Publishing Of Ukraine</value>
+	</data>
+	<data name="OtherPublishingOfUkraine" xml:space="preserve">
+		<value>Other Publishing Of Ukraine</value>
+	</data>
+	<data name="ReportThesis" xml:space="preserve">
+		<value>Report Thesis</value>
+	</data>
+	<data name="InternationalReportThesis" xml:space="preserve">
+		<value>International Report Thesis</value>
+	</data>
+	<data name="DomesticReportThesis" xml:space="preserve">
+		<value>Domestic Report Thesis</value>
+	</data>
+	<data name="ForeignReportThesisWithResearchResults" xml:space="preserve">
+		<value>Foreign Report Thesis With Research Results</value>
+	</data>
+	<data name="Previous" xml:space="preserve">
+		<value>Previous</value>
+	</data>
+	<data name="Next" xml:space="preserve">
+		<value>Next</value>
 	</data>
 </root>

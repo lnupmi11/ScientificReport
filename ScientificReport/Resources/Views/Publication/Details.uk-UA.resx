@@ -86,4 +86,7 @@
 	<data name="Any" xml:space="preserve">
 		<value>Відсутній</value>
 	</data>
+	<data name="Authors" xml:space="preserve">
+		<value>Автори</value>
+	</data>
 </root>

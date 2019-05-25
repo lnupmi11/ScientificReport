@@ -1,12 +1,12 @@
 @using Microsoft.AspNetCore.Mvc.Localization
-@model IEnumerable<ScientificReport.DAL.Entities.ScientificWork>
+@model ScientificReport.DTO.Models.ScientificWorks.ScientificWorkIndexModel
 @inject IViewLocalizer Localizer
 
 @{
     ViewData["Title"] = Localizer["Index"];
 }
 
-<h3>@Localizer["Scientific Work"]</h3>
+<h3>@Localizer["ScientificWorks"]</h3>
 
 <p>
     <button type="button" class="waves-effect btn-small green darken-3" 
@@ -16,22 +16,22 @@
     <thead>
         <tr>
             <th>
-                @Localizer[Html.DisplayNameFor(model => model.Cypher)]
+                @Localizer["Cypher"]
             </th>
             <th>
-                @Localizer[Html.DisplayNameFor(model => model.Category)]
+                @Localizer["Category"]
             </th>
             <th>
-                @Localizer[Html.DisplayNameFor(model => model.Title)]
+                @Localizer["Title"]
             </th>
             <th>
-                @Localizer[Html.DisplayNameFor(model => model.Contents)]
+                @Localizer["Contents"]
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.ScientificWorks) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Cypher)
@@ -56,3 +56,26 @@
 }
     </tbody>
 </table>
+<ul class="pagination">
+    @if (Model.ShowPrevious)
+    {
+        <li class="page-item">
+            <a asp-action="Index" asp-route-currentpage="@(Model.CurrentPage - 1)" class="page-link">@Localizer["Previous"]</a>
+        </li>
+    }
+    @if (Model.TotalPages > 1)
+    {
+        for (var i = 1; i <= Model.TotalPages; i++)
+        {
+            <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                <a asp-action="Index" asp-route-currentpage="@i" class="page-link">@i</a>
+            </li>
+        }	
+    }
+    @if (Model.ShowNext)
+    {
+        <li class="page-item">
+            <a asp-action="Index" asp-route-currentpage="@(Model.CurrentPage + 1)" class="page-link">@Localizer["Next"]</a>
+        </li>
+    }
+</ul>

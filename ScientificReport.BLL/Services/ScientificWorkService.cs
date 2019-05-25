@@ -29,6 +29,16 @@ namespace ScientificReport.BLL.Services
 		{
 			return _scientificWorkRepository.AllWhere(predicate);
 		}
+		
+		public virtual IEnumerable<ScientificWork> GetPage(int page, int count)
+		{
+			return _scientificWorkRepository.All().Skip((page - 1) * count).Take(count).ToList();
+		}
+		
+		public virtual int GetCount()
+		{
+			return _scientificWorkRepository.All().Count();
+		}
 
 		public virtual ScientificWork GetById(Guid id)
 		{

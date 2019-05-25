@@ -92,4 +92,7 @@
 	<data name="Any" xml:space="preserve">
 		<value>Any</value>
 	</data>
+	<data name="Authors" xml:space="preserve">
+		<value>Authors</value>
+	</data>
 </root>

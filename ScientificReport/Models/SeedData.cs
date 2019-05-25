@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
@@ -35,6 +36,7 @@ namespace ScientificReport.Models
 
 			SeedUserRoles(serviceProvider.GetRequiredService<RoleManager<UserProfileRole>>(), logger).Wait();
 			SeedUserProfile(context, serviceProvider).Wait();
+			SeedDepartments(context).Wait();
 			SeedTeacherReports(context);
 			SeedScientificWorks(context);
 			SeedConference(context);
@@ -133,9 +135,39 @@ namespace ScientificReport.Models
 			foreach (var user in users)
 			{
 				await userManager.CreateAsync(user, "qwerty");
-				var usr = userService.Get(u => u.UserName == user.UserName);
-				await userManager.AddToRolesAsync(usr, new[] {UserProfileRole.Teacher, UserProfileRole.Administrator});
+				if (user.UserName != "olena")
+				{
+					var usr = userService.Get(u => u.UserName == user.UserName);
+					await userManager.AddToRolesAsync(usr, new[] {UserProfileRole.Teacher, UserProfileRole.Administrator});
+				}
 			}
+		}
+		
+		private static async Task SeedDepartments(ScientificReportDbContext context)
+		{
+			if (context.Departments.Any()) return;
+
+			var departments = new[]
+			{
+				new Department
+				{
+					Head = context.UserProfiles.First(u => u.UserName == "olena"),
+					Staff = new List<UserProfile>
+					{
+						context.UserProfiles.First(u => u.UserName == "olena"),
+						context.UserProfiles.First(u => u.UserName == "yura"),
+						context.UserProfiles.First(u => u.UserName == "roman"),
+						context.UserProfiles.First(u => u.UserName == "orest"),
+					},
+					Title = "Програмування"
+				}
+			};
+			foreach (var department in departments)
+			{
+				context.Departments.Add(department);
+			}
+
+			await context.SaveChangesAsync();
 		}
 
 		private static void SeedTeacherReports(ScientificReportDbContext context)
@@ -177,7 +209,7 @@ namespace ScientificReport.Models
 				new Article
 				{
 					Title = "my first Article",
-					Type = (int)Article.Types.ImpactFactor,
+					Type = Article.Types.ImpactFactor,
 					PublishingPlace = "LNU",
 					PublishingHouseName = "Lnu oreo",
 					PublishingYear = 2019,
@@ -188,19 +220,29 @@ namespace ScientificReport.Models
 					DocumentInfo = "doc txt"
 				}
 			);
+			
+			articleService.AddAuthor(
+				articleService.Get(a => a.Title == "my first Article"),
+				context.Users.First(u => u.UserName == "olena")
+			);
 		}
 
 		private static void SeedPublications(ScientificReportDbContext context)
 		{
-			if (context.Publications.Any()) return;
+			if (context.Publications.Any())
+			{
+				return;
+			}
 
 			var publicationsService = new PublicationService(context);
-			
-			if(context.UserProfiles.First() == null) return;
-			var author = context.UserProfiles.First();
 
+			if (context.UserProfiles.First() == null)
+			{
+				return;
+			}
 
-			publicationsService.CreateItem(new Publication {
+			publicationsService.CreateItem(new Publication
+				{
 					Type = Publication.Types.Monograph,
 					Title = "my first publication",
 					PublishingPlace = "my first publishing place",
@@ -212,19 +254,21 @@ namespace ScientificReport.Models
 				}
 			);
 
-			publicationsService.CreateItem(new Publication {
+			publicationsService.CreateItem(new Publication
+				{
 					Type = Publication.Types.TextBook,
 					Title = "my second publication",
 					PublishingPlace = "my second publishing place",
 					Specification = "some second specification",
 					PublishingHouseName = "new oreo",
-					PublishingYear = 2999,
+					PublishingYear = 2019,
 					PagesAmount = 300,
 					PrintStatus = Publication.PrintStatuses.IsRecommendedToPrint
 				}
 			);
-			
-			publicationsService.CreateItem(new Publication {
+
+			publicationsService.CreateItem(new Publication
+				{
 					Type = Publication.Types.Comment,
 					Title = "My comment",
 					PublishingPlace = "Dnipro",
@@ -235,7 +279,8 @@ namespace ScientificReport.Models
 					PrintStatus = Publication.PrintStatuses.IsRecommendedToPrint
 				}
 			);
-			publicationsService.CreateItem(new Publication {
+			publicationsService.CreateItem(new Publication
+				{
 					Type = Publication.Types.HandBook,
 					Title = "My HandBook",
 					PublishingPlace = "Lviv",
@@ -246,7 +291,8 @@ namespace ScientificReport.Models
 					PrintStatus = Publication.PrintStatuses.IsRecommendedToPrint
 				}
 			);
-			publicationsService.CreateItem(new Publication {
+			publicationsService.CreateItem(new Publication
+				{
 					Type = Publication.Types.BibliographicIndex,
 					Title = "My BibliographicIndex",
 					PublishingPlace = "Ukraine",
@@ -257,7 +303,7 @@ namespace ScientificReport.Models
 					PrintStatus = Publication.PrintStatuses.IsRecommendedToPrint
 				}
 			);
-			
+
 		}
 
 		private static void SeedDepartment(ScientificReportDbContext context)

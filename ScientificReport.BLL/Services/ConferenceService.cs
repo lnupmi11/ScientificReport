@@ -29,6 +29,16 @@ namespace ScientificReport.BLL.Services
 		{
 			return GetAll().Where(predicate);
 		}
+		
+		public virtual IEnumerable<Conference> GetPage(int page, int count)
+		{
+			return _conferenceRepository.All().Skip((page - 1) * count).Take(count).ToList();
+		}
+		
+		public virtual int GetCount()
+		{
+			return _conferenceRepository.All().Count();
+		}
 
 		public virtual Conference GetById(Guid id)
 		{

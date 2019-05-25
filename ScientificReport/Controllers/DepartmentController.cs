@@ -42,21 +42,7 @@ namespace ScientificReport.Controllers
 		{
 			if (PageHelpers.IsAdmin(User))
 			{
-				IEnumerable<Department> departments;
-				if (model.TitleFilter != null)
-				{
-					departments = _departmentService.GetPage(model.CurrentPage, model.PageSize).Where(d => d.Title.ToLower().Contains(model.TitleFilter.Trim().ToLower()));
-				}
-				else if (model.SortBy != null)
-				{
-					departments = _departmentService.SortDepartmentsBy(model.SortBy.Value, model.CurrentPage, model.PageSize);
-				}
-				else
-				{
-					departments = _departmentService.GetPage(model.CurrentPage, model.PageSize);
-				}
-
-				model.Departments = departments;
+				model.Departments = _departmentService.Filter(model);
 				model.Count = _departmentService.GetCount();
 				return View(model);
 			}

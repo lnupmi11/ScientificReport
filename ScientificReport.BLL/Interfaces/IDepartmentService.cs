@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Entities.UserProfile;
+using ScientificReport.DTO.Models.Department;
 
 namespace ScientificReport.BLL.Interfaces
 {
@@ -10,6 +11,7 @@ namespace ScientificReport.BLL.Interfaces
 		int GetCount();
 		IEnumerable<Department> GetPage(int page, int count);
 		IEnumerable<Department> GetAll();
+		IEnumerable<Department> Filter(DepartmentIndexModel model);
 		IEnumerable<Department> GetAllWhere(Func<Department, bool> predicate);
 		Department GetById(Guid id);
 		Department Get(Func<Department, bool> predicate);

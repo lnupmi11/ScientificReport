@@ -20,8 +20,8 @@
     <data name="Index" xml:space="preserve">
 		<value>Index</value>
 	</data>
-	<data name="Scientific Work" xml:space="preserve">
-		<value>Scientific Work</value>
+	<data name="ScientificWorks" xml:space="preserve">
+		<value>Scientific Works</value>
 	</data>
 	<data name="Create" xml:space="preserve">
 		<value>Create</value>
@@ -46,5 +46,11 @@
 	</data>
 	<data name="Delete" xml:space="preserve">
 		<value>Delete</value>
+	</data>
+	<data name="Previous" xml:space="preserve">
+		<value>Previous</value>
+	</data>
+	<data name="Next" xml:space="preserve">
+		<value>Next</value>
 	</data>
 </root>

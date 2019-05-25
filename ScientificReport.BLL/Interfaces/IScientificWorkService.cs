@@ -9,6 +9,8 @@ namespace ScientificReport.BLL.Interfaces
 	{
 			IEnumerable<ScientificWork> GetAll();
 			IEnumerable<ScientificWork> GetAllWhere(Func<ScientificWork, bool> predicate);
+			IEnumerable<ScientificWork> GetPage(int page, int count);
+			int GetCount();
 			ScientificWork GetById(Guid id);
 			ScientificWork Get(Func<ScientificWork, bool> predicate);
 			void CreateItem(ScientificWork item);

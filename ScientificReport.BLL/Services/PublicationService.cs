@@ -1,21 +1,27 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using ScientificReport.BLL.Interfaces;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Entities.UserProfile;
 using ScientificReport.DAL.Repositories;
+using ScientificReport.DTO.Models.Publication;
 
 namespace ScientificReport.BLL.Services
 {
 	public class PublicationService : IPublicationService
 	{
 		private readonly PublicationRepository _publicationRepository;
+		private readonly UserProfileRepository _userProfileRepository;
+		private readonly DepartmentRepository _departmentRepository;
 		
 		public PublicationService(ScientificReportDbContext context)
 		{
 			_publicationRepository = new PublicationRepository(context);
+			_userProfileRepository = new UserProfileRepository(context);
+			_departmentRepository = new DepartmentRepository(context);
 		}
 		
 		public virtual IEnumerable<Publication> GetAll()
@@ -26,6 +32,87 @@ namespace ScientificReport.BLL.Services
 		public virtual IEnumerable<Publication> GetAllWhere(Func<Publication, bool> predicate)
 		{
 			return _publicationRepository.AllWhere(predicate);
+		}
+		
+		public virtual IEnumerable<Publication> Filter(PublicationIndexModel model, ClaimsPrincipal userPrincipal, bool userIsAdmin, bool userIsHead)
+		{
+			var publications = GetPage(model.CurrentPage, model.PageSize);
+			if (model.SortBy != null)
+			{
+				publications = SortPublicationsBy(model.SortBy.Value, model.CurrentPage, model.PageSize);
+			}
+			else
+			{
+				var yearFrom = -1;
+				if (model.YearFromFilter != null)
+				{
+					yearFrom = model.YearFromFilter.Value;
+				}
+			
+				var yearTo = -1;
+				if (model.YearToFilter != null)
+				{
+					yearTo = model.YearToFilter.Value;
+				}
+
+				var user = _userProfileRepository.Get(u => u.UserName == userPrincipal.Identity.Name);
+			
+				if (model.PublicationSetType == null)
+				{
+					if (userIsAdmin)
+					{
+						model.PublicationSetType = Publication.PublicationSetType.Faculty;	
+					}
+					else if (userIsHead)
+					{
+						model.PublicationSetType = Publication.PublicationSetType.Department;	
+					}
+					else
+					{
+						model.PublicationSetType = Publication.PublicationSetType.Personal;	
+					}
+				}
+				
+				switch (model.PublicationSetType.Value)
+				{
+					case Publication.PublicationSetType.Department:
+						var department = _departmentRepository.Get(u => u.Staff.Contains(user));
+						if (department != null)
+						{
+							publications = publications.Where(p =>
+								p.UserProfilesPublications.Any(up => department.Staff.Contains(up.UserProfile)));	
+						}
+						else
+						{
+							publications = publications.Where(p =>
+								p.UserProfilesPublications.Any(upp => upp.UserProfile.Id == user.Id));
+						}
+						break;
+					case Publication.PublicationSetType.Faculty:
+						break;
+					default:
+						publications = publications.Where(p =>
+							p.UserProfilesPublications.Any(upp => upp.UserProfile.Id == user.Id));
+						break;
+				}
+
+				if (yearFrom != -1)
+				{	
+					publications = publications.Where(p => p.PublishingYear >= yearFrom);
+				}
+			
+				if (yearTo != -1)
+				{
+					publications = publications.Where(p => p.PublishingYear <= yearTo);
+				}
+
+				if (model.PrintStatus != null && model.PrintStatus != Publication.PrintStatuses.Any)
+				{
+					publications = publications.Where(p => p.PrintStatus == model.PrintStatus.Value);
+				}
+			}
+
+			return publications;
 		}
 		
 		public virtual IEnumerable<Publication> GetPage(int page, int count)

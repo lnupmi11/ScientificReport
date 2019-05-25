@@ -17,8 +17,8 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="Conference" xml:space="preserve">
-		<value>Конференція</value>
+    <data name="Conferences" xml:space="preserve">
+		<value>Конференції</value>
 	</data>
 	<data name="Topic" xml:space="preserve">
 		<value>Тема</value>
@@ -49,5 +49,11 @@
 	</data>
 	<data name="Create" xml:space="preserve">
 		<value>Створити</value>
+	</data>
+	<data name="Previous" xml:space="preserve">
+		<value>Попередня</value>
+	</data>
+	<data name="Next" xml:space="preserve">
+		<value>Наступна</value>
 	</data>
 </root>

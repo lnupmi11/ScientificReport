@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Entities.UserProfile;
+using ScientificReport.DTO.Models.UserProfile;
 
 namespace ScientificReport.BLL.Interfaces
 {
@@ -12,6 +13,7 @@ namespace ScientificReport.BLL.Interfaces
 	{
 		int GetCount();
 		IEnumerable<UserProfile> GetAll();
+		IEnumerable<UserProfile> Filter(UserProfileIndexModel model, ClaimsPrincipal userPrincipal, bool userIsAdmin);
 		IEnumerable<UserProfile> GetAllWhere(Func<UserProfile, bool> predicate);
 		IEnumerable<UserProfile> GetPage(int page, int count);
 		IEnumerable<UserProfile> GetPage(IEnumerable<UserProfile> userProfiles, int page, int count);

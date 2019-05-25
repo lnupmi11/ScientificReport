@@ -6,6 +6,7 @@ using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Entities.UserProfile;
 using ScientificReport.DAL.Repositories;
+using ScientificReport.DTO.Models.Department;
 
 namespace ScientificReport.BLL.Services
 {
@@ -14,6 +15,12 @@ namespace ScientificReport.BLL.Services
 		private readonly DepartmentRepository _departmentRepository;
 		private readonly UserProfileRepository _userProfileRepository;
 
+		public DepartmentService(ScientificReportDbContext context)
+		{
+			_departmentRepository = new DepartmentRepository(context);
+			_userProfileRepository = new UserProfileRepository(context);
+		}
+		
 		public virtual int GetCount()
 		{
 			return _departmentRepository.All().Count();
@@ -23,16 +30,29 @@ namespace ScientificReport.BLL.Services
 		{
 			return _departmentRepository.All().Skip((page - 1) * count).Take(count).ToList();
 		}
-		
-		public DepartmentService(ScientificReportDbContext context)
-		{
-			_departmentRepository = new DepartmentRepository(context);
-			_userProfileRepository = new UserProfileRepository(context);
-		}
 
 		public virtual IEnumerable<Department> GetAll()
 		{
 			return _departmentRepository.All();
+		}
+
+		public virtual IEnumerable<Department> Filter(DepartmentIndexModel model)
+		{
+			IEnumerable<Department> departments;
+			if (model.TitleFilter != null)
+			{
+				departments = GetPage(model.CurrentPage, model.PageSize).Where(d => d.Title.ToLower().Contains(model.TitleFilter.Trim().ToLower()));
+			}
+			else if (model.SortBy != null)
+			{
+				departments = SortDepartmentsBy(model.SortBy.Value, model.CurrentPage, model.PageSize);
+			}
+			else
+			{
+				departments = GetPage(model.CurrentPage, model.PageSize);
+			}
+
+			return departments;
 		}
 
 		public virtual IEnumerable<Department> GetAllWhere(Func<Department, bool> predicate)

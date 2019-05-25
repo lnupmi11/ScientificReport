@@ -20,6 +20,12 @@
     <data name="Article" xml:space="preserve">
 		<value>Стаття</value>
 	</data>
+	<data name="ArticleEditing" xml:space="preserve">
+		<value>Редагування статті</value>
+	</data>
+	<data name="Edit" xml:space="preserve">
+		<value>Редагувати</value>
+	</data>
 	<data name="Type" xml:space="preserve">
 		<value>Тип</value>
 	</data>
@@ -27,22 +33,10 @@
 		<value>Назва</value>
 	</data>
 	<data name="PublishingHouseName" xml:space="preserve">
-		<value>Видавничий дім</value>
+		<value>Видавництво</value>
 	</data>
 	<data name="PublishingYear" xml:space="preserve">
 		<value>Рік видання</value>
-	</data>
-	<data name="Create New" xml:space="preserve">
-		<value>Створити нове</value>
-	</data>
-	<data name="Details" xml:space="preserve">
-		<value>Деталі</value>
-	</data>
-	<data name="Edit" xml:space="preserve">
-		<value>Редагувати</value>
-	</data>
-	<data name="Delete" xml:space="preserve">
-		<value>Видалити</value>
 	</data>
 	<data name="Back to List" xml:space="preserve">
 		<value>Повернутися до списку</value>
@@ -55,5 +49,53 @@
 	</data>
 	<data name="Create" xml:space="preserve">
 		<value>Створити</value>
+	</data>
+	<data name="ChooseOption" xml:space="preserve">
+		<value>Виберіть опцію</value>
+	</data>
+	<data name="ImpactFactor" xml:space="preserve">
+		<value>Імпакт фактор</value>
+	</data>
+	<data name="IncludedInWebOfScienceScopusOthers" xml:space="preserve">
+		<value>Включене у видання Web Of Science Scopus та інші</value>
+	</data>
+	<data name="ForeignPublishing" xml:space="preserve">
+		<value>Іноземне видання</value>
+	</data>
+	<data name="ProfessionalPublishingOfUkraine" xml:space="preserve">
+		<value>Професійне видання в Україні</value>
+	</data>
+	<data name="OtherPublishingOfUkraine" xml:space="preserve">
+		<value>Інше видання в Україні</value>
+	</data>
+	<data name="ReportThesis" xml:space="preserve">
+		<value>Теза доповіді</value>
+	</data>
+	<data name="InternationalReportThesis" xml:space="preserve">
+		<value>Теза доповіді у міжнародному виданні</value>
+	</data>
+	<data name="DomesticReportThesis" xml:space="preserve">
+		<value>Теза доповіді у відчизняному виданні</value>
+	</data>
+	<data name="ForeignReportThesisWithResearchResults" xml:space="preserve">
+		<value>Теза доповіді у закордонному виданні з результатами досліджень</value>
+	</data>
+	<data name="LiabilityInfo" xml:space="preserve">
+		<value>Інформація про відповідальність</value>
+	</data>
+	<data name="DocumentInfo" xml:space="preserve">
+		<value>Інформація про документ</value>
+	</data>
+	<data name="PublishingPlace" xml:space="preserve">
+		<value>Місце видання</value>
+	</data>
+	<data name="Number" xml:space="preserve">
+		<value>Номер</value>
+	</data>
+	<data name="PagesAmount" xml:space="preserve">
+		<value>Кількість сторінок</value>
+	</data>
+	<data name="Authors" xml:space="preserve">
+		<value>Автори</value>
 	</data>
 </root>

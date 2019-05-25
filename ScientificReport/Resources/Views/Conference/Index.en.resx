@@ -17,8 +17,8 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="Conference" xml:space="preserve">
-		<value>Conference</value>
+    <data name="Conferences" xml:space="preserve">
+		<value>Conferences</value>
 	</data>
 	<data name="Topic" xml:space="preserve">
 		<value>Topic</value>
@@ -49,5 +49,11 @@
 	</data>
 	<data name="Back to List" xml:space="preserve">
 		<value>Back to List</value>
+	</data>
+	<data name="Previous" xml:space="preserve">
+		<value>Previous</value>
+	</data>
+	<data name="Next" xml:space="preserve">
+		<value>Next</value>
 	</data>
 </root>

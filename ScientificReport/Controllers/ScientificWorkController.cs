@@ -11,25 +11,30 @@ using ScientificReport.DTO.Models.ScientificWorks;
 
 namespace ScientificReport.Controllers
 {
-//	[Authorize(Roles = UserProfileRole.Teacher)]
+	[Authorize(Roles = UserProfileRole.Teacher)]
 	public class ScientificWorkController : Controller
 	{
 		private readonly IScientificWorkService _scientificWorkService;
 		private readonly IUserProfileService _userProfileService;
 
-		public ScientificWorkController(IScientificWorkService scientificWorkService, IUserProfileService userProfileService)
+		public ScientificWorkController(
+			IScientificWorkService scientificWorkService,
+			IUserProfileService userProfileService
+		)
 		{
 			_scientificWorkService = scientificWorkService;
 			_userProfileService = userProfileService;
 		}
 
 		// GET: ScientificWork
-		public IActionResult Index()
+		public IActionResult Index(ScientificWorkIndexModel model)
 		{
-			return View(_scientificWorkService.GetAll());
+			model.ScientificWorks = _scientificWorkService.GetPage(model.CurrentPage, model.PageSize);
+			model.Count = _scientificWorkService.GetCount();
+			return View(model);
 		}
 
-		// GET: ScientificWork/Details/5
+		// GET: ScientificWork/Details/{id}
 		public IActionResult Details(Guid? id)
 		{
 			if (id == null)
@@ -53,10 +58,7 @@ namespace ScientificReport.Controllers
 		}
 
 		// GET: ScientificWork/Create
-		public IActionResult Create()
-		{
-			return View();
-		}
+		public IActionResult Create() => View();
 
 		// POST: ScientificWork/Create
 		[HttpPost]
@@ -64,13 +66,16 @@ namespace ScientificReport.Controllers
 		public IActionResult Create([Bind("Id,Cypher,Category,Title,Contents")]
 			ScientificWork scientificWork)
 		{
-			if (!ModelState.IsValid) return View(scientificWork);
+			if (!ModelState.IsValid)
+			{
+				return View(scientificWork);
+			}
 
 			_scientificWorkService.CreateItem(scientificWork);
 			return RedirectToAction(nameof(Index));
 		}
 
-		// GET: ScientificWork/Edit/5
+		// GET: ScientificWork/Edit/{id}
 		public IActionResult Edit(Guid? id)
 		{
 			if (id == null)
@@ -83,7 +88,6 @@ namespace ScientificReport.Controllers
 			{
 				return NotFound();
 			}
-
 			
 			var scientificWorksEdit = new ScientificWorksEdit
 			{
@@ -95,7 +99,7 @@ namespace ScientificReport.Controllers
 			return View(scientificWorksEdit);
 		}
 
-		// POST: ScientificWork/Edit/5
+		// POST: ScientificWork/Edit/{id}
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public IActionResult Edit(Guid id, ScientificWorksEdit scientificWorksEdit)
@@ -128,7 +132,7 @@ namespace ScientificReport.Controllers
 			return RedirectToAction(nameof(Index));
 		}
 
-		// GET: ScientificWork/Delete/5
+		// GET: ScientificWork/Delete/{id}
 		public IActionResult Delete(Guid? id)
 		{
 			if (id == null)
@@ -145,7 +149,7 @@ namespace ScientificReport.Controllers
 			return View(scientificWork);
 		}
 
-		// POST: ScientificWork/Delete/5
+		// POST: ScientificWork/Delete/{id}
 		[HttpPost, ActionName("Delete")]
 		[ValidateAntiForgeryToken]
 		public IActionResult DeleteConfirmed(Guid id)
@@ -154,17 +158,18 @@ namespace ScientificReport.Controllers
 			return RedirectToAction(nameof(Index));
 		}
 		
-		// POST: ScientificWork/AddAuthor/5
+		// POST: ScientificWork/AddAuthor/{id}
 		[HttpPost]
-//		[ValidateAntiForgeryToken]
+		[ValidateAntiForgeryToken]
 		public IActionResult AddAuthor(Guid id, [FromBody] ScientificWorkAuthorRequest request)
 		{
 			_scientificWorkService.AddAuthor(id, request.AuthorId);
 			return Json(ApiResponse.Ok);
 		}
-		// POST: ScientificWork/DeleteAuthor/5
+		
+		// POST: ScientificWork/DeleteAuthor/{id}
 		[HttpPost]
-//		[ValidateAntiForgeryToken]
+		[ValidateAntiForgeryToken]
 		public IActionResult DeleteAuthor(Guid id, [FromBody] ScientificWorkAuthorRequest request)
 		{
 			_scientificWorkService.RemoveAuthor(id, request.AuthorId);

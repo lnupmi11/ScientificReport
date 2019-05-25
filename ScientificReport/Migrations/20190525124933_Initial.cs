@@ -70,20 +70,18 @@ namespace ScientificReport.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    AuthorId = table.Column<string>(nullable: true),
-                    AuthorId1 = table.Column<Guid>(nullable: true),
-                    ArticleId = table.Column<int>(nullable: false),
-                    ArticleId1 = table.Column<Guid>(nullable: true)
+                    AuthorId = table.Column<Guid>(nullable: false),
+                    ArticleId = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_UserProfilesArticles", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_UserProfilesArticles_Articles_ArticleId1",
-                        column: x => x.ArticleId1,
+                        name: "FK_UserProfilesArticles_Articles_ArticleId",
+                        column: x => x.ArticleId,
                         principalTable: "Articles",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -1050,14 +1048,14 @@ namespace ScientificReport.Migrations
                 column: "TeacherReportId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserProfilesArticles_ArticleId1",
+                name: "IX_UserProfilesArticles_ArticleId",
                 table: "UserProfilesArticles",
-                column: "ArticleId1");
+                column: "ArticleId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserProfilesArticles_AuthorId1",
+                name: "IX_UserProfilesArticles_AuthorId",
                 table: "UserProfilesArticles",
-                column: "AuthorId1");
+                column: "AuthorId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserProfilesGrants_GrantId1",
@@ -1120,12 +1118,12 @@ namespace ScientificReport.Migrations
                 column: "UserProfileId");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_UserProfilesArticles_AspNetUsers_AuthorId1",
+                name: "FK_UserProfilesArticles_AspNetUsers_AuthorId",
                 table: "UserProfilesArticles",
-                column: "AuthorId1",
+                column: "AuthorId",
                 principalTable: "AspNetUsers",
                 principalColumn: "Id",
-                onDelete: ReferentialAction.Restrict);
+                onDelete: ReferentialAction.Cascade);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_AspNetUserRoles_AspNetUsers_UserId",

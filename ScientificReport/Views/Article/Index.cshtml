@@ -1,74 +1,75 @@
+@model ScientificReport.DTO.Models.Article.ArticleIndexModel
+
 @using Microsoft.AspNetCore.Mvc.Localization
+@using ScientificReport.BLL.Interfaces
+@using ScientificReport.Controllers.Utils
 @using ScientificReport.DAL.Entities
-@model IEnumerable<ScientificReport.DAL.Entities.Article>
+
+@inject IDepartmentService DepartmentService
 @inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = Localizer["Index"];
+	ViewData["Title"] = Localizer["Articles"];
 }
 
-<h3>@Localizer["Article"]</h3>
+<h3>@Localizer["Articles"]</h3>
 
 <p>
-	<a asp-action="Create" class="waves-effect btn-small green darken-3">@Localizer["Create New"]</a>
+	<a asp-action="Create" class="waves-effect btn-small green darken-3">@Localizer["Create"]</a>
 </p>
 <table class="responsive-table">
 	<thead>
 	<tr>
 		<th>
-			@Localizer[Html.DisplayNameFor(model => model.Type)]
+			@Localizer["Type"]
 		</th>
 		<th>
-			@Localizer[Html.DisplayNameFor(model => model.Title)]
+			@Localizer["Title"]
 		</th>
 		<th>
-			@Localizer[Html.DisplayNameFor(model => model.PublishingHouseName)]
+			@Localizer["PublishingHouseName"]
 		</th>
 		<th>
-			@Localizer[Html.DisplayNameFor(model => model.PublishingYear)]
+			@Localizer["PublishingYear"]
 		</th>
 		<th></th>
 	</tr>
 	</thead>
 	<tbody>
-	@foreach (var item in Model) {
+	@foreach (var item in Model.Articles) {
 		<tr>
 			<td>
-				@if (item.Type == Article.Types.ImpactFactor)
+				@switch (item.Type)
 				{
-					<span>@Localizer["Impact Factor"]</span>
-				}
-				else if(item.Type == Article.Types.InternationalReportThesis)
-				{
-					<span>@Localizer["International Report Thesis"]</span>
-				}
-				else if(item.Type == Article.Types.ReportThesis)
-				{
-					<span>@Localizer["Report Thesis"]</span>
-				}
-				else if(item.Type == Article.Types.DomesticReportThesis)
-				{
-					<span>@Localizer["Domestic Report Thesis"]</span>
-				}
-				else if(item.Type == Article.Types.InternationalReportThesis)
-				{
-					<span>@Localizer["International Report Thesis"]</span>
-				}
-				else if(item.Type == Article.Types.OtherPublishingOfUkraine)
-				{    
-					<span>@Localizer["Other Publishing Of Ukraine"]</span>
-				}
-				else if(item.Type == Article.Types.ProfessionalPublishingOfUkraine)
-				{
-					<span>@Localizer["Professional Publishing Of Ukraine"]</span>
-				}
-				else if(item.Type == Article.Types.ForeignReportThesisWithResearchResults)
-				{
-					<span>@Localizer["Foreign Report Thesis With Research Results"]</span>
-				}
-				else if(item.Type == Article.Types.IncludedInWebOfScienceScopusOthers)
-				{
-					<span>@Localizer["Included In Web Of Science Scopus Others"]</span>
+					case Article.Types.ImpactFactor:
+						<span>@Localizer["ImpactFactor"]</span>
+						break;
+					case Article.Types.IncludedInWebOfScienceScopusOthers:
+						<span>@Localizer["IncludedInWebOfScienceScopusOthers"]</span>
+						break;
+					case Article.Types.ForeignPublishing:
+						<span>@Localizer["ForeignPublishing"]</span>
+						break;
+					case Article.Types.ProfessionalPublishingOfUkraine:
+						<span>@Localizer["ProfessionalPublishingOfUkraine"]</span>
+						break;
+					case Article.Types.OtherPublishingOfUkraine:
+						<span>@Localizer["OtherPublishingOfUkraine"]</span>
+						break;
+					case Article.Types.ReportThesis:
+						<span>@Localizer["ReportThesis"]</span>
+						break;
+					case Article.Types.InternationalReportThesis:
+						<span>@Localizer["InternationalReportThesis"]</span>
+						break;
+					case Article.Types.DomesticReportThesis:
+						<span>@Localizer["DomesticReportThesis"]</span>
+						break;
+					case Article.Types.ForeignReportThesisWithResearchResults:
+						<span>@Localizer["ForeignReportThesisWithResearchResults"]</span>
+						break;
+					default:
+						throw new ArgumentOutOfRangeException();
 				}
 			</td>
 			<td>
@@ -82,12 +83,49 @@
 			</td>
 			<td>
 				<a asp-action="Details" asp-route-id="@item.Id" class="btn-small blue darken-3">@Localizer["Details"]</a>
-				<a asp-action="Edit" asp-route-id="@item.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
-				<form asp-action="Delete" asp-route-id="@item.Id" method="post" style="display: inline;">
-					<button type="submit" class="waves-effect btn-small deep-orange darken-3">@Localizer["Delete"]</button>
-				</form>
+				@{
+					var department = DepartmentService.Get(d => d.Staff.Any(s => s.UserName == User.Identity.Name));
+					var isHeadOfDepartment = false;
+					if (department != null)
+					{
+						isHeadOfDepartment = item.UserProfilesArticles.Any(p => department.Staff.Contains(p.Author));
+					}
+				}
+				@if ((PageHelpers.IsAdmin(User) || isHeadOfDepartment || item.UserProfilesArticles.Any(p => p.Author.UserName == User.Identity.Name)) && item.PublishingYear == DateTime.Now.Year)
+				{
+					<a asp-action="Edit" asp-route-id="@item.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>	
+				}
+				@if (PageHelpers.IsAdmin(User) && item.PublishingYear == DateTime.Now.Year)
+				{
+					<form asp-action="Delete" asp-route-id="@item.Id" method="get" style="display: inline;">
+						<button type="submit" class="waves-effect btn-small deep-orange darken-3">@Localizer["Delete"]</button>
+					</form>	
+				}
 			</td>
 		</tr>
 	}
 	</tbody>
 </table>
+<ul class="pagination">
+	@if (Model.ShowPrevious)
+	{
+		<li class="page-item">
+			<a asp-action="Index" asp-route-currentpage="@(Model.CurrentPage - 1)" class="page-link">@Localizer["Previous"]</a>
+		</li>
+	}
+	@if (Model.TotalPages > 1)
+	{
+		for (var i = 1; i <= Model.TotalPages; i++)
+		{
+			<li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+				<a asp-action="Index" asp-route-currentpage="@i" class="page-link">@i</a>
+			</li>
+		}	
+	}
+	@if (Model.ShowNext)
+	{
+		<li class="page-item">
+			<a asp-action="Index" asp-route-currentpage="@(Model.CurrentPage + 1)" class="page-link">@Localizer["Next"]</a>
+		</li>
+	}
+</ul>

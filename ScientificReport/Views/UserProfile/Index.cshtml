@@ -34,12 +34,12 @@ else
 					var colWidth = PageHelpers.IsAdmin(User) ? "3" : "5";
 				}
 				<div class="input-field col s@(colWidth)">
-					<input asp-for="FirstName" class="validate" />
-					<label asp-for="FirstName">@Localizer["FirstName"]</label>
-				</div>
-				<div class="input-field col s@(colWidth)">
 					<input asp-for="LastName" class="validate" />
 					<label asp-for="LastName">@Localizer["LastName"]</label>
+				</div>
+				<div class="input-field col s@(colWidth)">
+					<input asp-for="FirstName" class="validate" />
+					<label asp-for="FirstName">@Localizer["FirstName"]</label>
 				</div>
 				@if (PageHelpers.IsAdmin(User))
 				{

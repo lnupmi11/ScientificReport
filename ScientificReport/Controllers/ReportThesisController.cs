@@ -1,20 +1,17 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ScientificReport.BLL.Interfaces;
 using ScientificReport.Controllers.Utils;
-using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Roles;
 using ScientificReport.DTO.Models.ReportThesis;
-using ScientificReport.DTO.Models.ScientificWorks;
 
 namespace ScientificReport.Controllers
 {
-//	[Authorize(Roles = UserProfileRole.Teacher)]
+	[Authorize(Roles = UserProfileRole.Any)]
 	public class ReportThesisController : Controller
 	{
 		private readonly IReportThesisService _reportThesisService;
@@ -27,9 +24,11 @@ namespace ScientificReport.Controllers
 		}
 
 		// GET: ReportThesis
-		public IActionResult Index()
+		public IActionResult Index(ReportThesisIndexModel model)
 		{
-			return View(_reportThesisService.GetAll());
+			model.ReportTheses = _reportThesisService.GetPage(model.CurrentPage, model.PageSize);
+			model.Count = _reportThesisService.GetCount();
+			return View(model);
 		}
 
 		// GET: ReportThesis/Details/5

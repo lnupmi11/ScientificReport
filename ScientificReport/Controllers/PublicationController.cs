@@ -35,83 +35,9 @@ namespace ScientificReport.Controllers
 		// GET: /Publication
 		public IActionResult Index(PublicationIndexModel model)
 		{
-			var publications = _publicationService.GetPage(model.CurrentPage, model.PageSize);
-			if (model.SortBy != null)
-			{
-				publications = _publicationService.SortPublicationsBy(model.SortBy.Value, model.CurrentPage, model.PageSize);
-			}
-			else
-			{
-				var yearFrom = -1;
-				if (model.YearFromFilter != null)
-				{
-					yearFrom = model.YearFromFilter.Value;
-				}
-			
-				var yearTo = -1;
-				if (model.YearToFilter != null)
-				{
-					yearTo = model.YearToFilter.Value;
-				}
-
-				var user = _userProfileService.Get(User);
-			
-				if (model.PublicationSetType == null)
-				{
-					if (PageHelpers.IsAdmin(User))
-					{
-						model.PublicationSetType = Publication.PublicationSetType.Faculty;	
-					}
-					else if (PageHelpers.IsHeadOfDepartment(User))
-					{
-						model.PublicationSetType = Publication.PublicationSetType.Department;	
-					}
-					else
-					{
-						model.PublicationSetType = Publication.PublicationSetType.Personal;	
-					}
-				}
-				
-				switch (model.PublicationSetType.Value)
-				{
-					case Publication.PublicationSetType.Department:
-						var department = _departmentService.Get(u => u.Staff.Contains(user));
-						if (department != null)
-						{
-							publications = publications.Where(p =>
-								p.UserProfilesPublications.Any(up => department.Staff.Contains(up.UserProfile)));	
-						}
-						else
-						{
-							publications = publications.Where(p =>
-								p.UserProfilesPublications.Any(upp => upp.UserProfile.Id == user.Id));
-						}
-						break;
-					case Publication.PublicationSetType.Faculty:
-						break;
-					default:
-						publications = publications.Where(p =>
-							p.UserProfilesPublications.Any(upp => upp.UserProfile.Id == user.Id));
-						break;
-				}
-
-				if (yearFrom != -1)
-				{	
-					publications = publications.Where(p => p.PublishingYear >= yearFrom);
-				}
-			
-				if (yearTo != -1)
-				{
-					publications = publications.Where(p => p.PublishingYear <= yearTo);
-				}
-
-				if (model.PrintStatus != null && model.PrintStatus != Publication.PrintStatuses.Any)
-				{
-					publications = publications.Where(p => p.PrintStatus == model.PrintStatus.Value);
-				}
-			}
-
-			model.Publications = publications;
+			model.Publications = _publicationService.Filter(
+				model, User, PageHelpers.IsAdmin(User), PageHelpers.IsHeadOfDepartment(User)
+			);
 			model.Count = _publicationService.GetCount();
 			return View(model);
 		}
@@ -190,12 +116,7 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
-			var user = _userProfileService.Get(User);
-			var department = _departmentService.Get(d => d.Staff.Contains(user));
-			var isHeadOfDepartment = publication.UserProfilesPublications.Any(p => department.Staff.Contains(p.UserProfile));
-			if (!(PageHelpers.IsAdmin(User) || isHeadOfDepartment ||
-			    publication.UserProfilesPublications.Any(p => p.UserProfile.UserName == User.Identity.Name) &&
-			    publication.PublishingYear == DateTime.Now.Year))
+			if (!AllowUserToEditPublication(publication))
 			{
 				return Forbid();
 			}
@@ -263,21 +184,15 @@ namespace ScientificReport.Controllers
 				return Json(ApiResponse.Fail);
 			}
 			
-			var department = _departmentService.Get(d => d.Head.Id == user.Id);
-			if (department == null)
-			{
-				return Json(ApiResponse.Fail);
-			}
-			
-			if (!IsValidCurrentUser(department))
-			{
-				return Json(ApiResponse.Fail);
-			}
-
 			var publication = _publicationService.GetById(id.Value);
 			if (publication == null)
 			{
 				return NotFound();
+			}
+			
+			if (!AllowUserToEditPublication(publication))
+			{
+				return Json(ApiResponse.Fail);
 			}
 			
 			if (!_publicationService.GetPublicationAuthors(publication.Id).Contains(user))
@@ -304,21 +219,15 @@ namespace ScientificReport.Controllers
 				return Json(ApiResponse.Fail);
 			}
 			
-			var department = _departmentService.Get(d => d.Head.Id == user.Id);
-			if (department == null)
-			{
-				return Json(ApiResponse.Fail);
-			}
-			
-			if (!IsValidCurrentUser(department))
-			{
-				return Json(ApiResponse.Fail);
-			}
-
 			var publication = _publicationService.GetById(id.Value);
 			if (publication == null)
 			{
 				return NotFound();
+			}
+			
+			if (!AllowUserToEditPublication(publication))
+			{
+				return Json(ApiResponse.Fail);
 			}
 			
 			if (_publicationService.GetPublicationAuthors(publication.Id).Contains(user))
@@ -371,15 +280,14 @@ namespace ScientificReport.Controllers
 			return RedirectToAction(nameof(Index));
 		}
 		
-		private bool IsValidCurrentUser(Department department)
+		private bool AllowUserToEditPublication(Publication publication)
 		{
-			var currentUser = _userProfileService.Get(User);
-			if (!PageHelpers.IsAdmin(User))
-			{
-				return currentUser.Id == department.Head.Id;	
-			}
-
-			return true;
+			var user = _userProfileService.Get(User);
+			var department = _departmentService.Get(d => d.Staff.Contains(user));
+			var isHeadOfDepartment = publication.UserProfilesPublications.Any(p => department.Staff.Contains(p.UserProfile));
+			return PageHelpers.IsAdmin(User) || isHeadOfDepartment ||
+			       publication.UserProfilesPublications.Any(p => p.UserProfile.UserName == User.Identity.Name) &&
+			       publication.PublishingYear == DateTime.Now.Year;
 		}
 	}
 }

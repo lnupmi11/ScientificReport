@@ -674,19 +674,15 @@ namespace ScientificReport.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("ArticleId");
+                    b.Property<Guid>("ArticleId");
 
-                    b.Property<Guid?>("ArticleId1");
-
-                    b.Property<string>("AuthorId");
-
-                    b.Property<Guid?>("AuthorId1");
+                    b.Property<Guid>("AuthorId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ArticleId1");
+                    b.HasIndex("ArticleId");
 
-                    b.HasIndex("AuthorId1");
+                    b.HasIndex("AuthorId");
 
                     b.ToTable("UserProfilesArticles");
                 });
@@ -1092,11 +1088,13 @@ namespace ScientificReport.Migrations
                 {
                     b.HasOne("ScientificReport.DAL.Entities.Article", "Article")
                         .WithMany("UserProfilesArticles")
-                        .HasForeignKey("ArticleId1");
+                        .HasForeignKey("ArticleId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("ScientificReport.DAL.Entities.UserProfile.UserProfile", "Author")
                         .WithMany("UserProfilesArticles")
-                        .HasForeignKey("AuthorId1");
+                        .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.UserProfile.UserProfilesGrants", b =>

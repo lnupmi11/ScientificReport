@@ -29,6 +29,16 @@ namespace ScientificReport.BLL.Services
 		{
 			return GetAll().Where(predicate);
 		}
+		
+		public virtual IEnumerable<ReportThesis> GetPage(int page, int count)
+		{
+			return _reportThesisRepository.All().Skip((page - 1) * count).Take(count).ToList();
+		}
+		
+		public virtual int GetCount()
+		{
+			return _reportThesisRepository.All().Count();
+		}
 
 		public virtual ReportThesis GetById(Guid id)
 		{

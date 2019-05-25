@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
@@ -47,54 +46,7 @@ namespace ScientificReport.Controllers
 		[Authorize(Roles = UserProfileRole.HeadOfDepartmentOrAdmin)]
 		public IActionResult Index(UserProfileIndexModel model)
 		{
-			IEnumerable<UserProfile> users;
-			if (PageHelpers.IsAdmin(User))
-			{
-				if (model.DepartmentId != null)
-				{
-					var department = _departmentService.GetById(model.DepartmentId.Value);
-					users = department != null
-						? _userProfileService.GetPage(department.Staff, model.CurrentPage, model.PageSize)
-						: _userProfileService.GetPage(model.CurrentPage, model.PageSize);
-				}
-				else
-				{
-					users = _userProfileService.GetPage(model.CurrentPage, model.PageSize);
-				}
-			}
-			else
-			{
-				var currentUser = _userProfileService.Get(User);
-				var department = _departmentService.Get(u => u.Head.Id == currentUser.Id);
-				users = _userProfileService.GetPage(department.Staff, model.CurrentPage, model.PageSize);
-			}
-
-			if (model.IsApproved != null)
-			{
-				switch (model.IsApproved.Value)
-				{
-					case UserProfileIndexModel.IsApprovedOption.All:
-						break;
-					case UserProfileIndexModel.IsApprovedOption.Yes:
-						users = users.Where(u => u.IsApproved);
-						break;
-					case UserProfileIndexModel.IsApprovedOption.No:
-						users = users.Where(u => !u.IsApproved);
-						break;
-				}
-			}
-
-			if (model.FirstName != null)
-			{
-				users = users.Where(u => u.FirstName.ToLower().Contains(model.FirstName.Trim().ToLower()));
-			}
-
-			if (model.LastName != null)
-			{
-				users = users.Where(u => u.LastName.ToLower().Contains(model.LastName.Trim().ToLower()));
-			}
-
-			model.UserProfiles = users;
+			model.UserProfiles = _userProfileService.Filter(model, User, PageHelpers.IsAdmin(User));
 			model.Departments = _departmentService.GetAll();
 			model.Count = _userProfileService.GetCount();
 			return View(model);

@@ -56,4 +56,7 @@
 	<data name="Create" xml:space="preserve">
 		<value>Створити</value>
 	</data>
+	<data name="Authors" xml:space="preserve">
+		<value>Автори</value>
+	</data>
 </root>

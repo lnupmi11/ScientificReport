@@ -1,18 +1,15 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ScientificReport.BLL.Interfaces;
-using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Roles;
 using ScientificReport.DTO.Models.Conference;
 
 namespace ScientificReport.Controllers
 {
-//	[Authorize(Roles = UserProfileRole.Teacher)]
+	[Authorize(Roles = UserProfileRole.Any)]
 	public class ConferenceController : Controller
 	{
 		private readonly IConferenceService _conferenceService;
@@ -23,9 +20,11 @@ namespace ScientificReport.Controllers
 		}
 
 		// GET: Conference
-		public IActionResult Index()
+		public IActionResult Index(ConferenceIndexModel model)
 		{
-			return View(_conferenceService.GetAll());
+			model.Conferences = _conferenceService.GetPage(model.CurrentPage, model.PageSize);
+			model.Count = _conferenceService.GetCount();
+			return View(model);
 		}
 
 		// GET: Conference/Details/5
@@ -147,11 +146,6 @@ namespace ScientificReport.Controllers
 		{
 			_conferenceService.DeleteById(id);
 			return RedirectToAction(nameof(Index));
-		}
-
-		private bool ConferenceExists(Guid id)
-		{
-			return _conferenceService.Exists(id);
 		}
 	}
 }

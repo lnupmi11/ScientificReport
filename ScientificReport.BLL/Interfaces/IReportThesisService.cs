@@ -9,10 +9,12 @@ namespace ScientificReport.BLL.Interfaces
 	{
 		IEnumerable<ReportThesis> GetAll();
 		IEnumerable<ReportThesis> GetAllWhere(Func<ReportThesis, bool> predicate);
+		IEnumerable<ReportThesis> GetPage(int page, int count);
+		int GetCount();
 		ReportThesis GetById(Guid id);
 		ReportThesis Get(Func<ReportThesis, bool> predicate);
-		void CreateItem(ReportThesis reportthesis);
-		void UpdateItem(ReportThesis reportthesis);
+		void CreateItem(ReportThesis reportThesis);
+		void UpdateItem(ReportThesis reportThesis);
 		void DeleteById(Guid id);
 		bool Exists(Guid id);
 		IEnumerable<UserProfile> GetAuthors(Guid id);
