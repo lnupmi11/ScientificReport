@@ -1,39 +1,39 @@
 using System;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using ScientificReport.DAL.DbContext;
-using ScientificReport.DAL.Entities;
+using ScientificReport.BLL.Interfaces;
+using ScientificReport.DAL.Roles;
+using ScientificReport.DTO.Models.ScientificConsultation;
 
 namespace ScientificReport.Controllers
 {
-//  [Authorize(Roles = UserProfileRole.Teacher)]
+	[Authorize(Roles = UserProfileRole.Any)]
 	public class ScientificConsultationController : Controller
 	{
-		private readonly ScientificReportDbContext _context;
+		private readonly IScientificConsultationService _scientificConsultationService;
 
-		public ScientificConsultationController(ScientificReportDbContext context)
+		public ScientificConsultationController(IScientificConsultationService scientificConsultationService)
 		{
-			_context = context;
+			_scientificConsultationService = scientificConsultationService;
 		}
 
 		// GET: ScientificConsultation
-		public async Task<IActionResult> Index()
+		public IActionResult Index(ScientificConsultationIndexModel model)
 		{
-			return View(await _context.ScientificConsultations.ToListAsync());
+			model.ScientificConsultations = _scientificConsultationService.GetPage(model.CurrentPage, model.PageSize);
+			model.Count = _scientificConsultationService.GetCount();
+			return View(model);
 		}
 
-		// GET: ScientificConsultation/Details/5
-		public async Task<IActionResult> Details(Guid? id)
+		// GET: ScientificConsultation/Details/{id}
+		public IActionResult Details(Guid? id)
 		{
 			if (id == null)
 			{
 				return NotFound();
 			}
 
-			var scientificConsultation = await _context.ScientificConsultations
-				.FirstOrDefaultAsync(m => m.Id == id);
+			var scientificConsultation = _scientificConsultationService.GetById(id.Value);
 			if (scientificConsultation == null)
 			{
 				return NotFound();
@@ -43,111 +43,86 @@ namespace ScientificReport.Controllers
 		}
 
 		// GET: ScientificConsultation/Create
-		public IActionResult Create()
-		{
-			return View();
-		}
+		public IActionResult Create() => View();
 
 		// POST: ScientificConsultation/Create
-		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Create([Bind("Id,CandidateName,DissertationTitle")] ScientificConsultation scientificConsultation)
+		public IActionResult Create(ScientificConsultationModel model)
 		{
-			if (ModelState.IsValid)
+			if (!ModelState.IsValid)
 			{
-				scientificConsultation.Id = Guid.NewGuid();
-				_context.Add(scientificConsultation);
-				await _context.SaveChangesAsync();
-				return RedirectToAction(nameof(Index));
+				return View(model);
 			}
-			return View(scientificConsultation);
-		}
-
-		// GET: ScientificConsultation/Edit/5
-		public async Task<IActionResult> Edit(Guid? id)
-		{
-			if (id == null)
-			{
-				return NotFound();
-			}
-
-			var scientificConsultation = await _context.ScientificConsultations.FindAsync(id);
-			if (scientificConsultation == null)
-			{
-				return NotFound();
-			}
-			return View(scientificConsultation);
-		}
-
-		// POST: ScientificConsultation/Edit/5
-		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Edit(Guid id, [Bind("Id,CandidateName,DissertationTitle")] ScientificConsultation scientificConsultation)
-		{
-			if (id != scientificConsultation.Id)
-			{
-				return NotFound();
-			}
-
-			if (ModelState.IsValid)
-			{
-				try
-				{
-					_context.Update(scientificConsultation);
-					await _context.SaveChangesAsync();
-				}
-				catch (DbUpdateConcurrencyException)
-				{
-					if (!ScientificConsultationExists(scientificConsultation.Id))
-					{
-						return NotFound();
-					}
-					else
-					{
-						throw;
-					}
-				}
-				return RedirectToAction(nameof(Index));
-			}
-			return View(scientificConsultation);
-		}
-
-		// GET: ScientificConsultation/Delete/5
-		public async Task<IActionResult> Delete(Guid? id)
-		{
-			if (id == null)
-			{
-				return NotFound();
-			}
-
-			var scientificConsultation = await _context.ScientificConsultations
-				.FirstOrDefaultAsync(m => m.Id == id);
-			if (scientificConsultation == null)
-			{
-				return NotFound();
-			}
-
-			return View(scientificConsultation);
-		}
-
-		// POST: ScientificConsultation/Delete/5
-		[HttpPost, ActionName("Delete")]
-		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> DeleteConfirmed(Guid id)
-		{
-			var scientificConsultation = await _context.ScientificConsultations.FindAsync(id);
-			_context.ScientificConsultations.Remove(scientificConsultation);
-			await _context.SaveChangesAsync();
+			_scientificConsultationService.CreateItem(model);
 			return RedirectToAction(nameof(Index));
 		}
 
-		private bool ScientificConsultationExists(Guid id)
+		// GET: ScientificConsultation/Edit/{id}
+		public IActionResult Edit(Guid? id)
 		{
-			return _context.ScientificConsultations.Any(e => e.Id == id);
+			if (id == null)
+			{
+				return NotFound();
+			}
+
+			var scientificConsultation = _scientificConsultationService.GetById(id.Value);
+			if (scientificConsultation == null)
+			{
+				return NotFound();
+			}
+
+			return View(new ScientificConsultationEditModel(scientificConsultation));
+		}
+
+		// POST: ScientificConsultation/Edit/{id}
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public IActionResult Edit(Guid id, ScientificConsultationEditModel model)
+		{
+			if (id != model.Id || !_scientificConsultationService.Exists(id))
+			{
+				return NotFound();
+			}
+
+			if (!ModelState.IsValid)
+			{
+				return View(model);
+			}
+
+			_scientificConsultationService.UpdateItem(model);
+			return RedirectToAction(nameof(Index));
+		}
+
+		// GET: ScientificConsultation/Delete/{id}
+		public IActionResult Delete(Guid? id)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
+
+			var scientificConsultation = _scientificConsultationService.GetById(id.Value);
+			if (scientificConsultation == null)
+			{
+				return NotFound();
+			}
+
+			return View(scientificConsultation);
+		}
+
+		// POST: ScientificConsultation/Delete/{id}
+		[HttpPost, ActionName("Delete")]
+		[ValidateAntiForgeryToken]
+		public IActionResult DeleteConfirmed(Guid id)
+		{
+			if (!_scientificConsultationService.Exists(id))
+			{
+				return NotFound();
+			}
+
+			_scientificConsultationService.DeleteById(id);
+			return RedirectToAction(nameof(Index));
 		}
 	}
 }

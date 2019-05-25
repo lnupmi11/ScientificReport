@@ -6,6 +6,7 @@ using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Entities.UserProfile;
 using ScientificReport.DAL.Repositories;
+using ScientificReport.DTO.Models.ScientificInternship;
 
 namespace ScientificReport.BLL.Services
 {
@@ -28,6 +29,16 @@ namespace ScientificReport.BLL.Services
 			return GetAll().Where(predicate);
 		}
 
+		public virtual IEnumerable<ScientificInternship> GetPage(int page, int count)
+		{
+			return _scientificInternshipRepository.All().Skip((page - 1) * count).Take(count).ToList();
+		}
+
+		public virtual int GetCount()
+		{
+			return _scientificInternshipRepository.All().Count();
+		}
+
 		public virtual ScientificInternship GetById(Guid id)
 		{
 			return _scientificInternshipRepository.Get(id);
@@ -38,13 +49,29 @@ namespace ScientificReport.BLL.Services
 			return _scientificInternshipRepository.Get(predicate);
 		}
 
-		public virtual void CreateItem(ScientificInternship scientificInternship)
+		public virtual void CreateItem(ScientificInternshipModel model)
 		{
-			_scientificInternshipRepository.Create(scientificInternship);
+			_scientificInternshipRepository.Create(new ScientificInternship
+			{
+				PlaceOfInternship = model.PlaceOfInternship,
+				Contents = model.Contents,
+				Started = model.Started,
+				Ended = model.Ended
+			});
 		}
 
-		public virtual void UpdateItem(ScientificInternship scientificInternship)
+		public virtual void UpdateItem(ScientificInternshipEditModel model)
 		{
+			var scientificInternship = GetById(model.Id);
+			if (scientificInternship == null)
+			{
+				return;
+			}
+
+			scientificInternship.PlaceOfInternship = model.PlaceOfInternship;
+			scientificInternship.Contents = model.Contents;
+			scientificInternship.Started = model.Started;
+			scientificInternship.Ended = model.Ended;
 			_scientificInternshipRepository.Update(scientificInternship);
 		}
 

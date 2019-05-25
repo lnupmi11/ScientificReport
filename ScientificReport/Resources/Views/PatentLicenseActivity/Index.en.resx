@@ -53,4 +53,10 @@
 	<data name="Back to List" xml:space="preserve">
 		<value>Back to List</value>
 	</data>
+	<data name="Previous" xml:space="preserve">
+		<value>Previous</value>
+	</data>
+	<data name="Next" xml:space="preserve">
+		<value>Next</value>
+	</data>
 </root>

@@ -1,41 +1,39 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using ScientificReport.DAL.DbContext;
-using ScientificReport.DAL.Entities;
+using ScientificReport.BLL.Interfaces;
+using ScientificReport.DAL.Roles;
+using ScientificReport.DTO.Models.Grant;
 
 namespace ScientificReport.Controllers
 {
-//	[Authorize(Roles = UserProfileRole.Teacher)]
+	[Authorize(Roles = UserProfileRole.Any)]
 	public class GrantController : Controller
 	{
-		private readonly ScientificReportDbContext _context;
+		private readonly IGrantService _grantService;
 
-		public GrantController(ScientificReportDbContext context)
+		public GrantController(IGrantService grantService)
 		{
-			_context = context;
+			_grantService = grantService;
 		}
 
 		// GET: Grant
-		public async Task<IActionResult> Index()
+		public IActionResult Index(GrantIndexModel model)
 		{
-			return View(await _context.Grants.ToListAsync());
+			model.Grants = _grantService.GetPage(model.CurrentPage, model.PageSize);
+			model.Count = _grantService.GetCount();
+			return View(model);
 		}
 
-		// GET: Grant/Details/5
-		public async Task<IActionResult> Details(Guid? id)
+		// GET: Grant/Details/{id}
+		public IActionResult Details(Guid? id)
 		{
 			if (id == null)
 			{
 				return NotFound();
 			}
 
-			var grant = await _context.Grants
-				.FirstOrDefaultAsync(m => m.Id == id);
+			var grant = _grantService.GetById(id.Value);
 			if (grant == null)
 			{
 				return NotFound();
@@ -45,111 +43,86 @@ namespace ScientificReport.Controllers
 		}
 
 		// GET: Grant/Create
-		public IActionResult Create()
-		{
-			return View();
-		}
+		public IActionResult Create() => View();
 
 		// POST: Grant/Create
-		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Create([Bind("Id")] Grant grant)
+		public IActionResult Create(GrantModel model)
 		{
-			if (ModelState.IsValid)
+			if (!ModelState.IsValid)
 			{
-				grant.Id = Guid.NewGuid();
-				_context.Add(grant);
-				await _context.SaveChangesAsync();
-				return RedirectToAction(nameof(Index));
+				return View(model);
 			}
-			return View(grant);
-		}
-
-		// GET: Grant/Edit/5
-		public async Task<IActionResult> Edit(Guid? id)
-		{
-			if (id == null)
-			{
-				return NotFound();
-			}
-
-			var grant = await _context.Grants.FindAsync(id);
-			if (grant == null)
-			{
-				return NotFound();
-			}
-			return View(grant);
-		}
-
-		// POST: Grant/Edit/5
-		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Edit(Guid id, [Bind("Id")] Grant grant)
-		{
-			if (id != grant.Id)
-			{
-				return NotFound();
-			}
-
-			if (ModelState.IsValid)
-			{
-				try
-				{
-					_context.Update(grant);
-					await _context.SaveChangesAsync();
-				}
-				catch (DbUpdateConcurrencyException)
-				{
-					if (!GrantExists(grant.Id))
-					{
-						return NotFound();
-					}
-					else
-					{
-						throw;
-					}
-				}
-				return RedirectToAction(nameof(Index));
-			}
-			return View(grant);
-		}
-
-		// GET: Grant/Delete/5
-		public async Task<IActionResult> Delete(Guid? id)
-		{
-			if (id == null)
-			{
-				return NotFound();
-			}
-
-			var grant = await _context.Grants
-				.FirstOrDefaultAsync(m => m.Id == id);
-			if (grant == null)
-			{
-				return NotFound();
-			}
-
-			return View(grant);
-		}
-
-		// POST: Grant/Delete/5
-		[HttpPost, ActionName("Delete")]
-		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> DeleteConfirmed(Guid id)
-		{
-			var grant = await _context.Grants.FindAsync(id);
-			_context.Grants.Remove(grant);
-			await _context.SaveChangesAsync();
+			_grantService.CreateItem(model);
 			return RedirectToAction(nameof(Index));
 		}
 
-		private bool GrantExists(Guid id)
+		// GET: Grant/Edit/{id}
+		public IActionResult Edit(Guid? id)
 		{
-			return _context.Grants.Any(e => e.Id == id);
+			if (id == null)
+			{
+				return NotFound();
+			}
+
+			var grant = _grantService.GetById(id.Value);
+			if (grant == null)
+			{
+				return NotFound();
+			}
+
+			return View(new GrantEditModel(grant));
+		}
+
+		// POST: Grant/Edit/{id}
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public IActionResult Edit(Guid id, GrantEditModel model)
+		{
+			if (id != model.Id || !_grantService.Exists(id))
+			{
+				return NotFound();
+			}
+
+			if (!ModelState.IsValid)
+			{
+				return View(model);
+			}
+
+			_grantService.UpdateItem(model);
+			return RedirectToAction(nameof(Index));
+		}
+
+		// GET: Grant/Delete/{id}
+		public IActionResult Delete(Guid? id)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
+
+			var grant = _grantService.GetById(id.Value);
+			if (grant == null)
+			{
+				return NotFound();
+			}
+
+			return View(grant);
+		}
+
+		// POST: Grant/Delete/{id}
+		[HttpPost, ActionName("Delete")]
+		[ValidateAntiForgeryToken]
+		public IActionResult DeleteConfirmed(Guid id)
+		{
+			if (!_grantService.Exists(id))
+			{
+				return NotFound();
+			}
+
+			_grantService.DeleteById(id);
+			return RedirectToAction(nameof(Index));
 		}
 	}
 }

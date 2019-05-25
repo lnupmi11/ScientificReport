@@ -5,6 +5,7 @@ using Moq;
 using ScientificReport.BLL.Services;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
+using ScientificReport.DTO.Models.Review;
 using Xunit;
 
 namespace ScientificReport.Test.ServicesTests
@@ -69,7 +70,7 @@ namespace ScientificReport.Test.ServicesTests
 			var service = new ReviewService(GetMockContext().Object);
 
 			var expected = TestData.Review3;
-			service.CreateItem(expected);
+			service.CreateItem(new ReviewModel(expected));
 
 			_mockDbSet.Verify(m => m.Add(It.IsAny<Review>()), Times.Once);
 		}
@@ -81,7 +82,7 @@ namespace ScientificReport.Test.ServicesTests
 
 			var expected = GetTestData().First();
 			expected.DateOfReview = TestData.Review3.DateOfReview;
-			service.UpdateItem(expected);
+			service.UpdateItem(new ReviewEditModel(expected));
 
 			_mockDbSet.Verify(m => m.Update(expected), Times.Once);
 		}

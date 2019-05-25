@@ -5,6 +5,7 @@ using ScientificReport.BLL.Interfaces;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Repositories;
+using ScientificReport.DTO.Models.PostgraduateDissertationGuidance;
 
 namespace ScientificReport.BLL.Services
 {
@@ -27,6 +28,16 @@ namespace ScientificReport.BLL.Services
 			return GetAll().Where(predicate);
 		}
 
+		public virtual IEnumerable<PostgraduateDissertationGuidance> GetPage(int page, int count)
+		{
+			return _postgraduateDissertationGuidanceRepository.All().Skip((page - 1) * count).Take(count).ToList();
+		}
+
+		public virtual int GetCount()
+		{
+			return _postgraduateDissertationGuidanceRepository.All().Count();
+		}
+
 		public virtual PostgraduateDissertationGuidance GetById(Guid id)
 		{
 			return _postgraduateDissertationGuidanceRepository.Get(id);
@@ -37,13 +48,33 @@ namespace ScientificReport.BLL.Services
 			return _postgraduateDissertationGuidanceRepository.Get(predicate);
 		}
 
-		public virtual void CreateItem(PostgraduateDissertationGuidance postgraduateDissertationGuidance)
+		public virtual void CreateItem(PostgraduateDissertationGuidanceModel model)
 		{
-			_postgraduateDissertationGuidanceRepository.Create(postgraduateDissertationGuidance);
+			_postgraduateDissertationGuidanceRepository.Create(new PostgraduateDissertationGuidance
+			{
+				Guide = model.Guide,
+				Speciality = model.Speciality,
+				Dissertation = model.Dissertation,
+				GraduationYear = model.GraduationYear,
+				PostgraduateName = model.PostgraduateName,
+				DateDegreeGained = model.DateDegreeGained
+			});
 		}
 
-		public virtual void UpdateItem(PostgraduateDissertationGuidance postgraduateDissertationGuidance)
+		public virtual void UpdateItem(PostgraduateDissertationGuidanceEditModel model)
 		{
+			var postgraduateDissertationGuidance = GetById(model.Id);
+			if (postgraduateDissertationGuidance == null)
+			{
+				return;
+			}
+
+			postgraduateDissertationGuidance.Guide = model.Guide;
+			postgraduateDissertationGuidance.Speciality = model.Speciality;
+			postgraduateDissertationGuidance.Dissertation = model.Dissertation;
+			postgraduateDissertationGuidance.GraduationYear = model.GraduationYear;
+			postgraduateDissertationGuidance.PostgraduateName = model.PostgraduateName;
+			postgraduateDissertationGuidance.DateDegreeGained = model.DateDegreeGained;
 			_postgraduateDissertationGuidanceRepository.Update(postgraduateDissertationGuidance);
 		}
 

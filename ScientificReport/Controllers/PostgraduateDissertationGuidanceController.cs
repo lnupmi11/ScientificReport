@@ -1,41 +1,39 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using ScientificReport.DAL.DbContext;
-using ScientificReport.DAL.Entities;
+using ScientificReport.BLL.Interfaces;
+using ScientificReport.DAL.Roles;
+using ScientificReport.DTO.Models.PostgraduateDissertationGuidance;
 
 namespace ScientificReport.Controllers
 {
-//	[Authorize(Roles = UserProfileRole.Teacher)]
+	[Authorize(Roles = UserProfileRole.Any)]
 	public class PostgraduateDissertationGuidanceController : Controller
 	{
-		private readonly ScientificReportDbContext _context;
+		private readonly IPostgraduateDissertationGuidanceService _postgraduateDissertationGuidanceService;
 
-		public PostgraduateDissertationGuidanceController(ScientificReportDbContext context)
+		public PostgraduateDissertationGuidanceController(IPostgraduateDissertationGuidanceService postgraduateDissertationGuidanceService)
 		{
-			_context = context;
+			_postgraduateDissertationGuidanceService = postgraduateDissertationGuidanceService;
 		}
 
 		// GET: PostgraduateDissertationGuidance
-		public async Task<IActionResult> Index()
+		public IActionResult Index(PostgraduateDissertationGuidanceIndexModel model)
 		{
-			return View(await _context.PostgraduateDissertationGuidances.ToListAsync());
+			model.PostgraduateDissertationGuidances = _postgraduateDissertationGuidanceService.GetPage(model.CurrentPage, model.PageSize);
+			model.Count = _postgraduateDissertationGuidanceService.GetCount();
+			return View(model);
 		}
 
-		// GET: PostgraduateDissertationGuidance/Details/5
-		public async Task<IActionResult> Details(Guid? id)
+		// GET: PostgraduateDissertationGuidance/Details/{id}
+		public IActionResult Details(Guid? id)
 		{
 			if (id == null)
 			{
 				return NotFound();
 			}
 
-			var postgraduateDissertationGuidance = await _context.PostgraduateDissertationGuidances
-				.FirstOrDefaultAsync(m => m.Id == id);
+			var postgraduateDissertationGuidance = _postgraduateDissertationGuidanceService.GetById(id.Value);
 			if (postgraduateDissertationGuidance == null)
 			{
 				return NotFound();
@@ -45,111 +43,86 @@ namespace ScientificReport.Controllers
 		}
 
 		// GET: PostgraduateDissertationGuidance/Create
-		public IActionResult Create()
-		{
-			return View();
-		}
+		public IActionResult Create() => View();
 
 		// POST: PostgraduateDissertationGuidance/Create
-		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Create([Bind("Id,PostgraduateName,Dissertation,Speciality,DateDegreeGained,GraduationYear")] PostgraduateDissertationGuidance postgraduateDissertationGuidance)
+		public IActionResult Create(PostgraduateDissertationGuidanceModel model)
 		{
-			if (ModelState.IsValid)
+			if (!ModelState.IsValid)
 			{
-				postgraduateDissertationGuidance.Id = Guid.NewGuid();
-				_context.Add(postgraduateDissertationGuidance);
-				await _context.SaveChangesAsync();
-				return RedirectToAction(nameof(Index));
+				return View(model);
 			}
-			return View(postgraduateDissertationGuidance);
-		}
-
-		// GET: PostgraduateDissertationGuidance/Edit/5
-		public async Task<IActionResult> Edit(Guid? id)
-		{
-			if (id == null)
-			{
-				return NotFound();
-			}
-
-			var postgraduateDissertationGuidance = await _context.PostgraduateDissertationGuidances.FindAsync(id);
-			if (postgraduateDissertationGuidance == null)
-			{
-				return NotFound();
-			}
-			return View(postgraduateDissertationGuidance);
-		}
-
-		// POST: PostgraduateDissertationGuidance/Edit/5
-		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Edit(Guid id, [Bind("Id,PostgraduateName,Dissertation,Speciality,DateDegreeGained,GraduationYear")] PostgraduateDissertationGuidance postgraduateDissertationGuidance)
-		{
-			if (id != postgraduateDissertationGuidance.Id)
-			{
-				return NotFound();
-			}
-
-			if (ModelState.IsValid)
-			{
-				try
-				{
-					_context.Update(postgraduateDissertationGuidance);
-					await _context.SaveChangesAsync();
-				}
-				catch (DbUpdateConcurrencyException)
-				{
-					if (!PostgraduateDissertationGuidanceExists(postgraduateDissertationGuidance.Id))
-					{
-						return NotFound();
-					}
-					else
-					{
-						throw;
-					}
-				}
-				return RedirectToAction(nameof(Index));
-			}
-			return View(postgraduateDissertationGuidance);
-		}
-
-		// GET: PostgraduateDissertationGuidance/Delete/5
-		public async Task<IActionResult> Delete(Guid? id)
-		{
-			if (id == null)
-			{
-				return NotFound();
-			}
-
-			var postgraduateDissertationGuidance = await _context.PostgraduateDissertationGuidances
-				.FirstOrDefaultAsync(m => m.Id == id);
-			if (postgraduateDissertationGuidance == null)
-			{
-				return NotFound();
-			}
-
-			return View(postgraduateDissertationGuidance);
-		}
-
-		// POST: PostgraduateDissertationGuidance/Delete/5
-		[HttpPost, ActionName("Delete")]
-		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> DeleteConfirmed(Guid id)
-		{
-			var postgraduateDissertationGuidance = await _context.PostgraduateDissertationGuidances.FindAsync(id);
-			_context.PostgraduateDissertationGuidances.Remove(postgraduateDissertationGuidance);
-			await _context.SaveChangesAsync();
+			_postgraduateDissertationGuidanceService.CreateItem(model);
 			return RedirectToAction(nameof(Index));
 		}
 
-		private bool PostgraduateDissertationGuidanceExists(Guid id)
+		// GET: PostgraduateDissertationGuidance/Edit/{id}
+		public IActionResult Edit(Guid? id)
 		{
-			return _context.PostgraduateDissertationGuidances.Any(e => e.Id == id);
+			if (id == null)
+			{
+				return NotFound();
+			}
+
+			var postgraduateDissertationGuidance = _postgraduateDissertationGuidanceService.GetById(id.Value);
+			if (postgraduateDissertationGuidance == null)
+			{
+				return NotFound();
+			}
+
+			return View(new PostgraduateDissertationGuidanceEditModel(postgraduateDissertationGuidance));
+		}
+
+		// POST: PostgraduateDissertationGuidance/Edit/{id}
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public IActionResult Edit(Guid id, PostgraduateDissertationGuidanceEditModel model)
+		{
+			if (id != model.Id || !_postgraduateDissertationGuidanceService.Exists(id))
+			{
+				return NotFound();
+			}
+
+			if (!ModelState.IsValid)
+			{
+				return View(model);
+			}
+
+			_postgraduateDissertationGuidanceService.UpdateItem(model);
+			return RedirectToAction(nameof(Index));
+		}
+
+		// GET: PostgraduateDissertationGuidance/Delete/{id}
+		public IActionResult Delete(Guid? id)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
+
+			var postgraduateDissertationGuidance = _postgraduateDissertationGuidanceService.GetById(id.Value);
+			if (postgraduateDissertationGuidance == null)
+			{
+				return NotFound();
+			}
+
+			return View(postgraduateDissertationGuidance);
+		}
+
+		// POST: PostgraduateDissertationGuidance/Delete/{id}
+		[HttpPost, ActionName("Delete")]
+		[ValidateAntiForgeryToken]
+		public IActionResult DeleteConfirmed(Guid id)
+		{
+			if (!_postgraduateDissertationGuidanceService.Exists(id))
+			{
+				return NotFound();
+			}
+
+			_postgraduateDissertationGuidanceService.DeleteById(id);
+			return RedirectToAction(nameof(Index));
 		}
 	}
 }

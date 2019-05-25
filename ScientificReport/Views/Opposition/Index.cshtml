@@ -1,5 +1,5 @@
 @using Microsoft.AspNetCore.Mvc.Localization
-@model IEnumerable<ScientificReport.DAL.Entities.Opposition>
+@model ScientificReport.DTO.Models.Opposition.OppositionIndexModel
 @inject IViewLocalizer Localizer
 
 @{
@@ -15,16 +15,16 @@
 	<thead>
 		<tr>
 			<th>
-				@Localizer[Html.DisplayNameFor(model => model.About)]
+				@Localizer["About"]
 			</th>
 			<th>
-				@Localizer[Html.DisplayNameFor(model => model.DateOfOpposition)]
+				@Localizer["DateOfOpposition"]
 			</th>
 			<th></th>
 		</tr>
 	</thead>
 	<tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.Oppositions) {
 		<tr>
 			<td>
 				@Html.DisplayFor(modelItem => item.About)
@@ -43,3 +43,26 @@
 }
 	</tbody>
 </table>
+<ul class="pagination">
+    @if (Model.ShowPrevious)
+    {
+        <li class="page-item">
+            <a asp-action="Index" asp-route-currentpage="@(Model.CurrentPage - 1)" class="page-link">@Localizer["Previous"]</a>
+        </li>
+    }
+    @if (Model.TotalPages > 1)
+    {
+        for (var i = 1; i <= Model.TotalPages; i++)
+        {
+            <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                <a asp-action="Index" asp-route-currentpage="@i" class="page-link">@i</a>
+            </li>
+        }
+    }
+    @if (Model.ShowNext)
+    {
+        <li class="page-item">
+            <a asp-action="Index" asp-route-currentpage="@(Model.CurrentPage + 1)" class="page-link">@Localizer["Next"]</a>
+        </li>
+    }
+</ul>

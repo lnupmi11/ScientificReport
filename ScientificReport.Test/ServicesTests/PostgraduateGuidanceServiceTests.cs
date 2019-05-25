@@ -5,6 +5,7 @@ using Moq;
 using ScientificReport.BLL.Services;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
+using ScientificReport.DTO.Models.PostgraduateGuidance;
 using Xunit;
 
 namespace ScientificReport.Test.ServicesTests
@@ -69,7 +70,7 @@ namespace ScientificReport.Test.ServicesTests
 			var service = new PostgraduateGuidanceService(GetMockContext().Object);
 
 			var expected = TestData.PostgraduateGuidance3;
-			service.CreateItem(expected);
+			service.CreateItem(new PostgraduateGuidanceModel(expected));
 
 			_mockDbSet.Verify(m => m.Add(It.IsAny<PostgraduateGuidance>()), Times.Once);
 		}
@@ -81,7 +82,7 @@ namespace ScientificReport.Test.ServicesTests
 
 			var expected = GetTestData().First();
 			expected.PostgraduateInfo = TestData.PostgraduateGuidance3.PostgraduateInfo;
-			service.UpdateItem(expected);
+			service.UpdateItem(new PostgraduateGuidanceEditModel(expected));
 
 			_mockDbSet.Verify(m => m.Update(expected), Times.Once);
 		}

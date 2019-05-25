@@ -1,4 +1,4 @@
-@model IEnumerable<ScientificReport.DAL.Entities.PostgraduateDissertationGuidance>
+@model ScientificReport.DTO.Models.PostgraduateDissertationGuidance.PostgraduateDissertationGuidanceIndexModel
 @using Microsoft.AspNetCore.Mvc.Localization
 @inject IViewLocalizer Localizer
 
@@ -15,25 +15,25 @@
 	<thead>
 		<tr>
 			<th>
-				@Localizer[Html.DisplayNameFor(model => model.PostgraduateName)]
+				@Localizer["PostgraduateName"]
 			</th>
 			<th>
-				@Localizer[Html.DisplayNameFor(model => model.Dissertation)]
+				@Localizer["Dissertation"]
 			</th>
 			<th>
-				@Localizer[Html.DisplayNameFor(model => model.Speciality)]
+				@Localizer["Speciality"]
 			</th>
 			<th>
-				@Localizer[Html.DisplayNameFor(model => model.DateDegreeGained)]
+				@Localizer["DateDegreeGained"]
 			</th>
 			<th>
-				@Localizer[Html.DisplayNameFor(model => model.GraduationYear)]
+				@Localizer["GraduationYear"]
 			</th>
 			<th></th>
 		</tr>
 	</thead>
 	<tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.PostgraduateDissertationGuidances) {
 		<tr>
 			<td>
 				@Html.DisplayFor(modelItem => item.PostgraduateName)
@@ -61,3 +61,26 @@
 }
 	</tbody>
 </table>
+<ul class="pagination">
+    @if (Model.ShowPrevious)
+    {
+        <li class="page-item">
+            <a asp-action="Index" asp-route-currentpage="@(Model.CurrentPage - 1)" class="page-link">@Localizer["Previous"]</a>
+        </li>
+    }
+    @if (Model.TotalPages > 1)
+    {
+        for (var i = 1; i <= Model.TotalPages; i++)
+        {
+            <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                <a asp-action="Index" asp-route-currentpage="@i" class="page-link">@i</a>
+            </li>
+        }
+    }
+    @if (Model.ShowNext)
+    {
+        <li class="page-item">
+            <a asp-action="Index" asp-route-currentpage="@(Model.CurrentPage + 1)" class="page-link">@Localizer["Next"]</a>
+        </li>
+    }
+</ul>

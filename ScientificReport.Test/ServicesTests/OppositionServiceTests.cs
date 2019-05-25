@@ -5,6 +5,7 @@ using Moq;
 using ScientificReport.BLL.Services;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
+using ScientificReport.DTO.Models.Opposition;
 using Xunit;
 
 namespace ScientificReport.Test.ServicesTests
@@ -69,7 +70,7 @@ namespace ScientificReport.Test.ServicesTests
 			var service = new OppositionService(GetMockContext().Object);
 
 			var expected = TestData.Opposition3;
-			service.CreateItem(expected);
+			service.CreateItem(new OppositionModel(expected));
 
 			_mockDbSet.Verify(m => m.Add(It.IsAny<Opposition>()), Times.Once);
 		}
@@ -81,7 +82,7 @@ namespace ScientificReport.Test.ServicesTests
 
 			var expected = GetTestData().First();
 			expected.About = TestData.Opposition3.About;
-			service.UpdateItem(expected);
+			service.UpdateItem(new OppositionEditModel(expected));
 
 			_mockDbSet.Verify(m => m.Update(expected), Times.Once);
 		}

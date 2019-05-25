@@ -1,41 +1,39 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using ScientificReport.DAL.DbContext;
-using ScientificReport.DAL.Entities;
+using ScientificReport.BLL.Interfaces;
+using ScientificReport.DAL.Roles;
+using ScientificReport.DTO.Models.Review;
 
 namespace ScientificReport.Controllers
 {
-//  [Authorize(Roles = UserProfileRole.Teacher)]
+	[Authorize(Roles = UserProfileRole.Any)]
 	public class ReviewController : Controller
 	{
-		private readonly ScientificReportDbContext _context;
+		private readonly IReviewService _reviewService;
 
-		public ReviewController(ScientificReportDbContext context)
+		public ReviewController(IReviewService reviewService)
 		{
-			_context = context;
+			_reviewService = reviewService;
 		}
 
 		// GET: Review
-		public async Task<IActionResult> Index()
+		public IActionResult Index(ReviewIndexModel model)
 		{
-			return View(await _context.Reviews.ToListAsync());
+			model.Reviews = _reviewService.GetPage(model.CurrentPage, model.PageSize);
+			model.Count = _reviewService.GetCount();
+			return View(model);
 		}
 
-		// GET: Review/Details/5
-		public async Task<IActionResult> Details(Guid? id)
+		// GET: Review/Details/{id}
+		public IActionResult Details(Guid? id)
 		{
 			if (id == null)
 			{
 				return NotFound();
 			}
 
-			var review = await _context.Reviews
-				.FirstOrDefaultAsync(m => m.Id == id);
+			var review = _reviewService.GetById(id.Value);
 			if (review == null)
 			{
 				return NotFound();
@@ -45,111 +43,86 @@ namespace ScientificReport.Controllers
 		}
 
 		// GET: Review/Create
-		public IActionResult Create()
-		{
-			return View();
-		}
+		public IActionResult Create() => View();
 
 		// POST: Review/Create
-		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Create([Bind("Id,DateOfReview")] Review review)
+		public IActionResult Create(ReviewModel model)
 		{
-			if (ModelState.IsValid)
+			if (!ModelState.IsValid)
 			{
-				review.Id = Guid.NewGuid();
-				_context.Add(review);
-				await _context.SaveChangesAsync();
-				return RedirectToAction(nameof(Index));
+				return View(model);
 			}
-			return View(review);
-		}
-
-		// GET: Review/Edit/5
-		public async Task<IActionResult> Edit(Guid? id)
-		{
-			if (id == null)
-			{
-				return NotFound();
-			}
-
-			var review = await _context.Reviews.FindAsync(id);
-			if (review == null)
-			{
-				return NotFound();
-			}
-			return View(review);
-		}
-
-		// POST: Review/Edit/5
-		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Edit(Guid id, [Bind("Id,DateOfReview")] Review review)
-		{
-			if (id != review.Id)
-			{
-				return NotFound();
-			}
-
-			if (ModelState.IsValid)
-			{
-				try
-				{
-					_context.Update(review);
-					await _context.SaveChangesAsync();
-				}
-				catch (DbUpdateConcurrencyException)
-				{
-					if (!ReviewExists(review.Id))
-					{
-						return NotFound();
-					}
-					else
-					{
-						throw;
-					}
-				}
-				return RedirectToAction(nameof(Index));
-			}
-			return View(review);
-		}
-
-		// GET: Review/Delete/5
-		public async Task<IActionResult> Delete(Guid? id)
-		{
-			if (id == null)
-			{
-				return NotFound();
-			}
-
-			var review = await _context.Reviews
-				.FirstOrDefaultAsync(m => m.Id == id);
-			if (review == null)
-			{
-				return NotFound();
-			}
-
-			return View(review);
-		}
-
-		// POST: Review/Delete/5
-		[HttpPost, ActionName("Delete")]
-		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> DeleteConfirmed(Guid id)
-		{
-			var review = await _context.Reviews.FindAsync(id);
-			_context.Reviews.Remove(review);
-			await _context.SaveChangesAsync();
+			_reviewService.CreateItem(model);
 			return RedirectToAction(nameof(Index));
 		}
 
-		private bool ReviewExists(Guid id)
+		// GET: Review/Edit/{id}
+		public IActionResult Edit(Guid? id)
 		{
-			return _context.Reviews.Any(e => e.Id == id);
+			if (id == null)
+			{
+				return NotFound();
+			}
+
+			var review = _reviewService.GetById(id.Value);
+			if (review == null)
+			{
+				return NotFound();
+			}
+
+			return View(new ReviewEditModel(review));
+		}
+
+		// POST: Review/Edit/{id}
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public IActionResult Edit(Guid id, ReviewEditModel model)
+		{
+			if (id != model.Id || !_reviewService.Exists(id))
+			{
+				return NotFound();
+			}
+
+			if (!ModelState.IsValid)
+			{
+				return View(model);
+			}
+
+			_reviewService.UpdateItem(model);
+			return RedirectToAction(nameof(Index));
+		}
+
+		// GET: Review/Delete/{id}
+		public IActionResult Delete(Guid? id)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
+
+			var review = _reviewService.GetById(id.Value);
+			if (review == null)
+			{
+				return NotFound();
+			}
+
+			return View(review);
+		}
+
+		// POST: Review/Delete/{id}
+		[HttpPost, ActionName("Delete")]
+		[ValidateAntiForgeryToken]
+		public IActionResult DeleteConfirmed(Guid id)
+		{
+			if (!_reviewService.Exists(id))
+			{
+				return NotFound();
+			}
+
+			_reviewService.DeleteById(id);
+			return RedirectToAction(nameof(Index));
 		}
 	}
 }
