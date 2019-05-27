@@ -3,7 +3,7 @@
 @inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = Localizer["Edit"];
+    ViewData["Title"] = Localizer["Edit scientific work"];
 }
 
 <style type="text/css">
@@ -11,15 +11,12 @@
         overflow-y: scroll;
         height: 100px;
     }
- 
     .text-green { color: rgb(0, 179, 0); }
-
     .text-red { color: rgb(177, 0, 0); }
-
     .hidden { display: none; }
 </style>
 
-<h5>@Localizer["ScientificWork"]</h5>
+<h5>@ViewData["Title"]</h5>
 <hr/>
 <div class="row">
     <div class="col s12">
@@ -78,8 +75,8 @@
                 </div>
             </div>
             <div class="row myButtons">
-                <input type="submit" value="@Localizer["Create"]" class="waves-effect btn-small  amber accent-2"/>
-                <a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
+                <button type="submit" class="waves-effect btn-small accent-2">@Localizer["Save"]</button>
+                <a asp-action="Index" class="waves-effect btn-small blue darken-3">@Localizer["Cancel"]</a>
             </div>
         </form>
     </div>

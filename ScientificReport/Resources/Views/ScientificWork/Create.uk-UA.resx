@@ -17,10 +17,13 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
+	<data name="Create scientific work" xml:space="preserve">
+		<value>Створити наукову роботу</value>
+	</data>
     <data name="Create" xml:space="preserve">
 		<value>Створити</value>
 	</data>
-	<data name="ScientificWork" xml:space="preserve">
+	<data name="Scientific work" xml:space="preserve">
 		<value>Наукова робота</value>
 	</data>
 	<data name="Cypher" xml:space="preserve">

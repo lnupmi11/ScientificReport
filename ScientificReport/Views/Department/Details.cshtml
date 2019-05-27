@@ -4,21 +4,14 @@
 @inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = Localizer["Department"];
+	ViewData["Title"] = Localizer["Details of department"];
 }
 
-<h4>@Localizer["Details"]</h4>
-
 <div>
-	<h5>@Localizer["Department"]</h5>
+	<h5>@ViewData["Title"]</h5>
+	<h4>@Model.Title</h4>
 	<hr />
 	<dl class="row">
-		<dt class = "col s2">
-			@Localizer[Html.DisplayNameFor(model => model.Title)]
-		</dt>
-		<dd class="col s10">
-			@Html.DisplayFor(model => model.Title)
-		</dd>
 		<dt class = "col s2">
 			@Localizer[Html.DisplayNameFor(model => model.Head)]
 		</dt>
@@ -51,12 +44,12 @@
 				}
 				else
 				{
-					<p>@Localizer["NoStaff"]</p>
+					<p>@Localizer["No staff"]</p>
 				}
 			}
 		</dd>
 		<dt class="col s2">
-			@Localizer["ScientificWorks"]
+			@Localizer["Scientific works"]
 		</dt>
 		<dd class="col s10">
 			@if (Model.ScientificWorks != null)
@@ -79,19 +72,19 @@
 				}
 				else
 				{
-					<p>@Localizer["NoScientificWorks"]</p>
+					<p>@Localizer["No scientific works"]</p>
 				}
 			}
 		</dd>
 	</dl>
 </div>
-<div>
+<div style="margin-top: 20px">
 	@if (PageHelpers.IsAdminOrHead(User))
 	{
 		<a asp-action="Edit" asp-route-id="@Model.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>	
 	}
 	@if (PageHelpers.IsAdmin(User))
 	{
-		<a asp-action="Index" class="btn-small blue darken-3">@Localizer["BackToList"]</a>
+		<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Back to list"]</a>
 	}
 </div>

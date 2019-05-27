@@ -17,37 +17,31 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
+	<data name="Details of membership" xml:space="preserve">
+		<value>Деталі членства</value>
+	</data>
     <data name="Membership" xml:space="preserve">
 		<value>Членство</value>
 	</data>
-	<data name="MemberOf" xml:space="preserve">
+	<data name="Member of" xml:space="preserve">
 		<value>Членство</value>
 	</data>
-	<data name="MembershipInfo" xml:space="preserve">
+	<data name="Membership info" xml:space="preserve">
 		<value>Інфoрмація</value>
-	</data>
-	<data name="Create New" xml:space="preserve">
-		<value>Створити нове</value>
-	</data>
-	<data name="Details" xml:space="preserve">
-		<value>Деталі</value>
 	</data>
 	<data name="Edit" xml:space="preserve">
 		<value>Редагувати</value>
 	</data>
-	<data name="Delete" xml:space="preserve">
-		<value>Видалити</value>
-	</data>
-	<data name="Back to List" xml:space="preserve">
+	<data name="Back to list" xml:space="preserve">
 		<value>Повернутися до списку</value>
 	</data>
-	<data name="Save" xml:space="preserve">
-		<value>Зберегти</value>
+	<data name="ScientificCouncil" xml:space="preserve">
+		<value>Вчена рада</value>
 	</data>
-	<data name="Cancel" xml:space="preserve">
-		<value>Скасувати</value>
+	<data name="ExpertCouncil" xml:space="preserve">
+		<value>експертна рада</value>
 	</data>
-	<data name="Create" xml:space="preserve">
-		<value>Створити</value>
+	<data name="EditorialBoard" xml:space="preserve">
+		<value>Редколегія наукового журналу</value>
 	</data>
 </root>

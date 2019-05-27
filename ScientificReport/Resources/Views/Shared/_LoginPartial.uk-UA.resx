@@ -23,10 +23,10 @@
 	<data name="Register" xml:space="preserve">
 		<value>Реєстрація</value>
 	</data>
-	<data name="Log In" xml:space="preserve">
+	<data name="Log in" xml:space="preserve">
 		<value>Вхід</value>
 	</data>
-	<data name="ChangePassword" xml:space="preserve">
+	<data name="Change password" xml:space="preserve">
 		<value>Змінити пароль</value>
 	</data>
 	<data name="Profile" xml:space="preserve">

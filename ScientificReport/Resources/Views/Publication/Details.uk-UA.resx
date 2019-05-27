@@ -17,6 +17,9 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
+	<data name="Details of publication" xml:space="preserve">
+		<value>Деталі публікації</value>
+	</data>
     <data name="Details" xml:space="preserve">
 		<value>Деталі</value>
 	</data>
@@ -32,40 +35,40 @@
 	<data name="Specification" xml:space="preserve">
 		<value>Уточнення</value>
 	</data>
-	<data name="PublishingPlace" xml:space="preserve">
+	<data name="Publishing place" xml:space="preserve">
 		<value>Місто видання</value>
 	</data>
-	<data name="PublishingHouseName" xml:space="preserve">
+	<data name="Publishing house name" xml:space="preserve">
 		<value>Видавництво</value>
 	</data>
-	<data name="PublishingYear" xml:space="preserve">
+	<data name="Publishing year" xml:space="preserve">
 		<value>Рік видання</value>
 	</data>
-	<data name="IsPrintCanceled" xml:space="preserve">
+	<data name="Is print canceled" xml:space="preserve">
 		<value>Вийшов з друку</value>
 	</data>
-	<data name="IsRecommendedToPrint" xml:space="preserve">
+	<data name="Is recommended to print" xml:space="preserve">
 		<value>Рекомендовано до друку</value>
 	</data>
-	<data name="PagesAmount" xml:space="preserve">
+	<data name="Pages amount" xml:space="preserve">
 		<value>Кількість сторінок</value>
 	</data>
 	<data name="Edit" xml:space="preserve">
 		<value>Редагувати</value>
 	</data>
-	<data name="BackToList" xml:space="preserve">
+	<data name="Back to list" xml:space="preserve">
 		<value>Повернутися до списку</value>
 	</data>
-	<data name="PrintStatus" xml:space="preserve">
+	<data name="Publishing status" xml:space="preserve">
 		<value>Статус видання</value>
 	</data>
 	<data name="Monograph" xml:space="preserve">
 		<value>Монографія</value>
 	</data>
-	<data name="TextBook" xml:space="preserve">
+	<data name="Textbook" xml:space="preserve">
 		<value>Підручник</value>
 	</data>
-	<data name="HandBook" xml:space="preserve">
+	<data name="Handbook" xml:space="preserve">
 		<value>Навчальний посібник</value>
 	</data>
 	<data name="Dictionary" xml:space="preserve">
@@ -77,7 +80,7 @@
 	<data name="Comment" xml:space="preserve">
 		<value>Науковий коментар</value>
 	</data>
-	<data name="BibliographicIndex" xml:space="preserve">
+	<data name="Bibliographic index" xml:space="preserve">
 		<value>Бібліографічний покажчик</value>
 	</data>
 	<data name="Other" xml:space="preserve">

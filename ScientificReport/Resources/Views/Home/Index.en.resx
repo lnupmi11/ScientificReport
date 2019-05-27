@@ -17,7 +17,7 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="Home Page" xml:space="preserve">
-		<value>Home Page</value>
+    <data name="Home" xml:space="preserve">
+		<value>Home</value>
 	</data>
 </root>

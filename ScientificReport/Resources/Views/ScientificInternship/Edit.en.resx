@@ -17,11 +17,17 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="ScientificInternship" xml:space="preserve">
-		<value>Scientific Internship</value>
+	<data name="Edit scientific internship" xml:space="preserve">
+		<value>Edit scientific internship</value>
 	</data>
-	<data name="PlaceOfInternship" xml:space="preserve">
-		<value>Place of Internship</value>
+    <data name="Scientific internship" xml:space="preserve">
+		<value>Scientific internship</value>
+	</data>
+	<data name="Edit" xml:space="preserve">
+		<value>Edit</value>
+	</data>
+	<data name="Place of internship" xml:space="preserve">
+		<value>Place of internship</value>
 	</data>
 	<data name="Started" xml:space="preserve">
 		<value>Started</value>
@@ -34,9 +40,6 @@
 	</data>
 	<data name="Create" xml:space="preserve">
 		<value>Create</value>
-	</data>
-	<data name="Edit" xml:space="preserve">
-		<value>Edit</value>
 	</data>
 	<data name="Cancel" xml:space="preserve">
 		<value>Cancel</value>

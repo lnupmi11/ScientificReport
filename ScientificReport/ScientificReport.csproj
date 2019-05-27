@@ -58,6 +58,16 @@
 	  <_ContentIncludedByDefault Remove="Views\ScientificWork\Details.cshtml" />
 	  <_ContentIncludedByDefault Remove="Views\ScientificWork\Edit.cshtml" />
 	  <_ContentIncludedByDefault Remove="Views\ScientificWork\Index.cshtml" />
+	  <_ContentIncludedByDefault Remove="Views\ApplicantsPatentLicenseActivities\Create.cshtml" />
+	  <_ContentIncludedByDefault Remove="Views\ApplicantsPatentLicenseActivities\Delete.cshtml" />
+	  <_ContentIncludedByDefault Remove="Views\ApplicantsPatentLicenseActivities\Details.cshtml" />
+	  <_ContentIncludedByDefault Remove="Views\ApplicantsPatentLicenseActivities\Edit.cshtml" />
+	  <_ContentIncludedByDefault Remove="Views\ApplicantsPatentLicenseActivities\Index.cshtml" />
+	  <_ContentIncludedByDefault Remove="Views\AuthorsPatentLicenseActivities\Create.cshtml" />
+	  <_ContentIncludedByDefault Remove="Views\AuthorsPatentLicenseActivities\Delete.cshtml" />
+	  <_ContentIncludedByDefault Remove="Views\AuthorsPatentLicenseActivities\Details.cshtml" />
+	  <_ContentIncludedByDefault Remove="Views\AuthorsPatentLicenseActivities\Edit.cshtml" />
+	  <_ContentIncludedByDefault Remove="Views\AuthorsPatentLicenseActivities\Index.cshtml" />
 	</ItemGroup>
 
 </Project>

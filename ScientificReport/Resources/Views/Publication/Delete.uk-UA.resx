@@ -20,10 +20,10 @@
     <data name="Delete" xml:space="preserve">
 		<value>Видалити</value>
 	</data>
-	<data name="DeletePublication" xml:space="preserve">
+	<data name="Delete publication" xml:space="preserve">
 		<value>Видалити публікацію</value>
 	</data>
-	<data name="DeleteConfirmationQuestion" xml:space="preserve">
+	<data name="Are you sure you want to delete this publication?" xml:space="preserve">
 		<value>Ви впевнені, що хочете видалити цю публікацію?</value>
 	</data>
     <data name="Publication" xml:space="preserve">
@@ -38,14 +38,17 @@
     <data name="Specification" xml:space="preserve">
 		<value>Уточнення</value>
 	</data>
-    <data name="PublishingPlace" xml:space="preserve">
+    <data name="Publishing place" xml:space="preserve">
 		<value>Місто видання</value>
 	</data>
-    <data name="PublishingHouseName" xml:space="preserve">
+    <data name="Publishing house name" xml:space="preserve">
 		<value>Видавничий дім</value>
 	</data>
-    <data name="PublishingYear" xml:space="preserve">
+    <data name="Publishing year" xml:space="preserve">
 		<value>Рік видання</value>
+	</data>
+	<data name="Publishing status" xml:space="preserve">
+		<value>Статус видання</value>
 	</data>
     <data name="IsPrintCanceled" xml:space="preserve">
 		<value>Вийшов з друку</value>
@@ -53,10 +56,10 @@
     <data name="IsRecommendedToPrint" xml:space="preserve">
 		<value>Рекомендовано до друку</value>
 	</data>
-    <data name="PagesAmount" xml:space="preserve">
+    <data name="Pages amount" xml:space="preserve">
 		<value>Кількість сторінок</value>
 	</data>
-    <data name="BackToList" xml:space="preserve">
+    <data name="Back to list" xml:space="preserve">
 		<value>Повернутися до списку</value>
 	</data>
 </root>

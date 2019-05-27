@@ -3,7 +3,7 @@
 @inject IViewLocalizer Localizer
 
 @{
-	ViewBag.Title = Localizer["LogIn"];
+	ViewBag.Title = Localizer["Log in"];
 	Layout = "_Layout";
 }
 
@@ -14,14 +14,14 @@
 	}
 	
 </style>
-<h1>@Localizer["LogIn"]</h1>
+<h3>@Localizer["Log in"]</h3>
 <div asp-validation-summary="All" class="text-danger validation-summary-valid"></div>
 <hr/>
 <form asp-action="Login" method="post">
 	<div class="row">
 		<div class="input-field col s6">
 			<input asp-for="UserName" type="text" class="validate">
-			<label asp-for="UserName">@Localizer["UserName"]</label>
+			<label asp-for="UserName">@Localizer["User name"]</label>
 			<span class="helper-text" asp-validation-for="UserName" data-error="" data-success=""></span>
 		</div>
 	</div>
@@ -35,11 +35,11 @@
 	<div class="row">
 		<label class="col s7">
 			<input type="checkbox" class="filled-in" asp-for="RememberMe"/>
-			<span>@Localizer[Html.DisplayNameFor(model => model.RememberMe)]</span>
+			<span>@Localizer["Remember me"]</span>
 		</label>
 	</div>
 	<div class="row myButtons">
-		<input type="submit" value="@Localizer["LogIn"]" class="waves-effect btn-small  waves-light"/>
+		<button type="submit" class="waves-effect btn-small  waves-light">@Localizer["Log in"]</button>
 		<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
 	</div>
 </form>

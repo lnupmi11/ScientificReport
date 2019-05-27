@@ -1,9 +1,9 @@
-@model ScientificReport.DTO.Models.Article.ArticleIndexModel
-
 @using Microsoft.AspNetCore.Mvc.Localization
 @using ScientificReport.BLL.Interfaces
 @using ScientificReport.Controllers.Utils
 @using ScientificReport.DAL.Entities
+
+@model ScientificReport.DTO.Models.Article.ArticleIndexModel
 
 @inject IDepartmentService DepartmentService
 @inject IViewLocalizer Localizer
@@ -12,8 +12,7 @@
 	ViewData["Title"] = Localizer["Articles"];
 }
 
-<h3>@Localizer["Articles"]</h3>
-
+<h4>@ViewData["Title"]</h4>
 <p>
 	<a asp-action="Create" class="waves-effect btn-small green darken-3">@Localizer["Create"]</a>
 </p>
@@ -27,10 +26,10 @@
 			@Localizer["Title"]
 		</th>
 		<th>
-			@Localizer["PublishingHouseName"]
+			@Localizer["Publishing house name"]
 		</th>
 		<th>
-			@Localizer["PublishingYear"]
+			@Localizer["Publishing year"]
 		</th>
 		<th></th>
 	</tr>
@@ -42,31 +41,31 @@
 				@switch (item.Type)
 				{
 					case Article.Types.ImpactFactor:
-						<span>@Localizer["ImpactFactor"]</span>
+						<span>@Localizer["Impact factor"]</span>
 						break;
 					case Article.Types.IncludedInWebOfScienceScopusOthers:
-						<span>@Localizer["IncludedInWebOfScienceScopusOthers"]</span>
+						<span>@Localizer["Included in Web of Science Scopus and others"]</span>
 						break;
 					case Article.Types.ForeignPublishing:
-						<span>@Localizer["ForeignPublishing"]</span>
+						<span>@Localizer["Foreign publishing"]</span>
 						break;
 					case Article.Types.ProfessionalPublishingOfUkraine:
-						<span>@Localizer["ProfessionalPublishingOfUkraine"]</span>
+						<span>@Localizer["Professional publishing of Ukraine"]</span>
 						break;
 					case Article.Types.OtherPublishingOfUkraine:
-						<span>@Localizer["OtherPublishingOfUkraine"]</span>
+						<span>@Localizer["Other publishing of Ukraine"]</span>
 						break;
 					case Article.Types.ReportThesis:
-						<span>@Localizer["ReportThesis"]</span>
+						<span>@Localizer["Report thesis"]</span>
 						break;
 					case Article.Types.InternationalReportThesis:
-						<span>@Localizer["InternationalReportThesis"]</span>
+						<span>@Localizer["International report thesis"]</span>
 						break;
 					case Article.Types.DomesticReportThesis:
-						<span>@Localizer["DomesticReportThesis"]</span>
+						<span>@Localizer["Domestic report thesis"]</span>
 						break;
 					case Article.Types.ForeignReportThesisWithResearchResults:
-						<span>@Localizer["ForeignReportThesisWithResearchResults"]</span>
+						<span>@Localizer["Foreign report thesis with research results"]</span>
 						break;
 					default:
 						throw new ArgumentOutOfRangeException();
@@ -82,7 +81,7 @@
 				@Html.DisplayFor(modelItem => item.PublishingYear)
 			</td>
 			<td>
-				<a asp-action="Details" asp-route-id="@item.Id" class="btn-small blue darken-3">@Localizer["Details"]</a>
+				<a asp-action="Details" asp-route-id="@item.Id" class="waves-effect btn-small blue darken-3">@Localizer["Details"]</a>
 				@{
 					var department = DepartmentService.Get(d => d.Staff.Any(s => s.UserName == User.Identity.Name));
 					var isHeadOfDepartment = false;

@@ -8,16 +8,16 @@
         <value>1.3</value>
     </resheader>
     <resheader name="reader">
-        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=uk-UA,
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
     <resheader name="writer">
-        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=uk-UA,
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="Home Page" xml:space="preserve">
-		<value>Домашня Сторінка</value>
+    <data name="Home" xml:space="preserve">
+		<value>Домашня сторінка</value>
 	</data>
 </root>

@@ -20,8 +20,11 @@
     <data name="Review" xml:space="preserve">
 		<value>Review</value>
 	</data>
-	<data name="DateOfReview" xml:space="preserve">
-		<value>Date of Review</value>
+	<data name="Date of review" xml:space="preserve">
+		<value>Date of review</value>
+	</data>
+	<data name="Edit review" xml:space="preserve">
+		<value>Edit review</value>
 	</data>
 	<data name="Edit" xml:space="preserve">
 		<value>Edit</value>
@@ -29,7 +32,7 @@
 	<data name="Save" xml:space="preserve">
 		<value>Save</value>
 	</data>
-	<data name="Back to List" xml:space="preserve">
-		<value>Back to List</value>
+	<data name="Cancel" xml:space="preserve">
+		<value>Cancel</value>
 	</data>
 </root>

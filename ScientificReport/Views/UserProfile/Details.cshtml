@@ -4,47 +4,27 @@
 @inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = Localizer["Details"];
+	ViewData["Title"] = Model.User.LastName + " " + Model.User.FirstName + " " + Model.User.MiddleName;
 }
 
-<h3>@ViewData["Title"]</h3>
-
+<h5>@ViewData["Title"]</h5>
+<hr/>
 <div>
-	<h5>@Localizer["UserProfile"]</h5>
-	<hr/>
 	<div class="row">
 		<div class="col s4">
-    			@Localizer[Html.DisplayNameFor(model => model.User.LastName)]
-    		</div>
-    		<div class="col s8">
-    			@Html.DisplayFor(model => model.User.LastName)
-    		</div>
-		<div class="col s4">
-			@Localizer[Html.DisplayNameFor(model => model.User.FirstName)]
-		</div>
-		<div class="col s8">
-			@Html.DisplayFor(model => model.User.FirstName)
-		</div>
-		<div class="col s4">
-			@Localizer[Html.DisplayNameFor(model => model.User.MiddleName)]
-		</div>
-		<div class="col s8">
-			@Html.DisplayFor(model => model.User.MiddleName)
-		</div>
-		<div class="col s4">
-			@Localizer[Html.DisplayNameFor(model => model.User.BirthYear)]
+			@Localizer["Birth year"]
 		</div>
 		<div class="col s8">
 			@Html.DisplayFor(model => model.User.BirthYear)
 		</div>
 		<div class="col s4">
-			@Localizer[Html.DisplayNameFor(model => model.User.GraduationYear)]
+			@Localizer["Graduation year"]
 		</div>
 		<div class="col s8">
 			@Html.DisplayFor(model => model.User.GraduationYear)
 		</div>
 		<div class="col s4">
-			@Localizer[Html.DisplayNameFor(model => model.User.ScientificDegree)]
+			@Localizer["Scientific degree"]
 		</div>
 		<div class="col s8">
 			@if (@Model.User.ScientificDegree != null)
@@ -57,13 +37,13 @@
 			}
 		</div>
 		<div class="col s4">
-			@Localizer[Html.DisplayNameFor(model => model.User.YearDegreeGained)]
+			@Localizer["Year degree gained"]
 		</div>
 		<div class="col s8">
 			@Html.DisplayFor(model => model.User.YearDegreeGained)
 		</div>
 		<div class="col s4">
-			@Localizer[Html.DisplayNameFor(model => model.User.AcademicStatus)]
+			@Localizer["Academic status"]
 		</div>
 		<div class="col s8">
 			@if (@Model.User.AcademicStatus != null)
@@ -72,11 +52,11 @@
 			}
 			else
 			{
-				<span>@Localizer["You don't have any Academic status"]</span>
+				<span>@Localizer["You don't have any academic status"]</span>
 			}
 		</div>
 		<div class="col s4">
-			@Localizer[Html.DisplayNameFor(model => model.User.YearDegreeAssigned)]
+			@Localizer["Year degree assigned"]
 		</div>
 		<div class="col s8">
 			@Html.DisplayFor(model => model.User.YearDegreeAssigned)
@@ -88,7 +68,7 @@
 			@Html.DisplayFor(model => model.FullPositionTitle)
 		</div>
 		<div class="col s4">
-			@Localizer[Html.DisplayNameFor(model => model.User.IsApproved)]
+			@Localizer["Is approved"]
 		</div>
 		<div class="col s8">
 			<span>@(Model.User.IsApproved ? Localizer["Yes"] : Localizer["No"])</span>
@@ -96,7 +76,7 @@
 		@if (PageHelpers.IsAdminOrHead(User))
 		{
 			<div class="col s4">
-				@Localizer[Html.DisplayNameFor(model => model.User.IsActive)]
+				@Localizer["Is active"]
 			</div>
 			<div class="col s8">
 				<span>@(Model.User.IsActive ? Localizer["Yes"] : Localizer["No"])</span>
@@ -104,13 +84,13 @@
 		}
 	</div>
 </div>
-<div>
+<div style="margin-top: 20px">
 	@if (PageHelpers.IsAdminOrHead(User) || Model.User.UserName == User.Identity.Name)
 	{
 		<a asp-action="Edit" asp-route-id="@Model.User.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>	
 	}
 	@if (PageHelpers.IsAdminOrHead(User))
 	{
-		<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Back to List"]</a>
+		<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Back to list"]</a>
 	}
 </div>

@@ -17,16 +17,19 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
+	<data name="Add scientific consultation" xml:space="preserve">
+		<value>Додати наукову консультацію</value>
+	</data>
     <data name="Create" xml:space="preserve">
 		<value>Створити</value>
 	</data>
-	<data name="ScientificConsultation" xml:space="preserve">
+	<data name="Scientific consultation" xml:space="preserve">
 		<value>Наукова консультація</value>
 	</data>
-	<data name="CandidateName" xml:space="preserve">
+	<data name="Candidate last, first and middle names" xml:space="preserve">
 		<value>Прізвище, ім'я та по-батькові кандидата</value>
 	</data>
-	<data name="DissertationTitle" xml:space="preserve">
+	<data name="Dissertation title" xml:space="preserve">
 		<value>Назва дисертації</value>
 	</data>
 	<data name="Cancel" xml:space="preserve">

@@ -41,10 +41,16 @@
 	<data name="Create" xml:space="preserve">
 		<value>Створити</value>
 	</data>
-	<data name="TitleFilter" xml:space="preserve">
+	<data name="Title filter" xml:space="preserve">
 		<value>Назва або її частина</value>
 	</data>
 	<data name="Filter" xml:space="preserve">
 		<value>Фільтрувати</value>
+	</data>
+	<data name="Previous" xml:space="preserve">
+		<value>Попередня</value>
+	</data>
+	<data name="Next" xml:space="preserve">
+		<value>Наступна</value>
 	</data>
 </root>

@@ -3,12 +3,10 @@
 @inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = Localizer["Edit"];
+	ViewData["Title"] = Localizer["Edit postgraduate guidance"];
 }
 
-<h3>@Localizer["Edit"]</h3>
-
-<h5>@Localizer["PostgraduateGuidance"]</h5>
+<h5>@ViewData["Title"]</h5>
 <hr />
 <div class="row">
 	<div class="col s12">
@@ -18,7 +16,7 @@
 			<div class="row">
 				<div class="input-field col s6">
 					<input asp-for="PostgraduateName" type="text" class="validate"/>
-					<label asp-for="PostgraduateName">@Localizer["PostgraduateName"]</label>
+					<label asp-for="PostgraduateName">@Localizer["Postgraduate name"]</label>
 					<span class="helper-text" asp-validation-for="PostgraduateName" 
 						  data-error="" data-success=""></span>
 				</div>
@@ -26,15 +24,14 @@
 			<div class="row">
 				<div class="input-field col s6">
 					<textarea asp-for="PostgraduateInfo" class="materialize-textarea"></textarea>
-					<label asp-for="PostgraduateInfo">@Localizer["PostgraduateInfo"]</label>
+					<label asp-for="PostgraduateInfo">@Localizer["Postgraduate info"]</label>
 					<span class="helper-text" asp-validation-for="PostgraduateInfo" 
 						  data-length="400" data-error="" data-success=""></span>
 				</div>
 			</div>
-	
 			<div class="row myButtons">
-				<input type="submit" value="@Localizer["Save"]" class="waves-effect btn-small  amber accent-2"/>
-				<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
+				<button type="submit" class="waves-effect btn-small accent-2">@Localizer["Save"]</button>
+				<a asp-action="Index" class="waves-effect btn-small blue darken-3">@Localizer["Cancel"]</a>
 			</div>
 		</form>
 	</div>

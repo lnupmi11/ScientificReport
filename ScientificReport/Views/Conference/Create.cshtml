@@ -3,12 +3,10 @@
 @inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = Localizer["Create"];
+	ViewData["Title"] = Localizer["Conference's creation"];
 }
 
-<h3>@Localizer["Create"]</h3>
-
-<h5>@Localizer["Conference"]</h5>
+<h5>@Localizer["Create conference"]</h5>
 <hr />
 <div class="row">
 	<div class="col s12">
@@ -29,13 +27,12 @@
 				</div>
 			</div>
 			<div class="row myButtons">
-				<input type="submit" value="@Localizer["Create"]" class="waves-effect btn-small  amber accent-2"/>
-				<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
+				<button type="submit" class="waves-effect btn-small accent-2">@Localizer["Create"]</button>
+				<a asp-action="Index" class="waves-effect btn-small blue darken-3">@Localizer["Cancel"]</a>
 			</div>
 		</form>
 	</div>
 </div>
-
 
 @section Scripts {
 	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

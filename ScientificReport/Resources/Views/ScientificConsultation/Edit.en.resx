@@ -17,17 +17,20 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
+	<data name="Edit scientific consultation" xml:space="preserve">
+		<value>Edit scientific consultation</value>
+	</data>
     <data name="Edit" xml:space="preserve">
 		<value>Edit</value>
 	</data>
-	<data name="ScientificConsultation" xml:space="preserve">
-		<value>Scientific Consultation</value>
+	<data name="Scientific consultation" xml:space="preserve">
+		<value>Scientific consultation</value>
 	</data>
-	<data name="CandidateName" xml:space="preserve">
+	<data name="Candidate last, first and middle names" xml:space="preserve">
 		<value>CandidateName</value>
 	</data>
-	<data name="DissertationTitle" xml:space="preserve">
-		<value>DissertationTitle</value>
+	<data name="Dissertation title" xml:space="preserve">
+		<value>Dissertation title</value>
 	</data>
 	<data name="Save" xml:space="preserve">
 		<value>Save</value>

@@ -20,19 +20,16 @@
 	<data name="Articles" xml:space="preserve">
 		<value>Articles</value>
 	</data>
-    <data name="Article" xml:space="preserve">
-		<value>Article</value>
-	</data>
 	<data name="Type" xml:space="preserve">
 		<value>Type</value>
 	</data>
 	<data name="Title" xml:space="preserve">
 		<value>Title</value>
 	</data>
-	<data name="PublishingHouseName" xml:space="preserve">
-		<value>Publishing house name</value>
+	<data name="Publishing house name" xml:space="preserve">
+		<value>Publishing House Name</value>
 	</data>
-	<data name="PublishingYear" xml:space="preserve">
+	<data name="Publishing year" xml:space="preserve">
 		<value>Publishing year</value>
 	</data>
 	<data name="Details" xml:space="preserve">
@@ -50,38 +47,35 @@
 	<data name="Create" xml:space="preserve">
 		<value>Create</value>
 	</data>
-	<data name="Cancel" xml:space="preserve">
-		<value>Cancel</value>
+	<data name="Back to list" xml:space="preserve">
+		<value>Back to list</value>
 	</data>
-	<data name="Back to List" xml:space="preserve">
-		<value>Back to List</value>
+	<data name="Impact factor" xml:space="preserve">
+		<value>Impact factor</value>
 	</data>
-	<data name="ImpactFactor" xml:space="preserve">
-		<value>Impact Factor</value>
+	<data name="Included in Web of Science Scopus and others" xml:space="preserve">
+		<value>Included In Web Of Science Scopus and others</value>
 	</data>
-	<data name="IncludedInWebOfScienceScopusOthers" xml:space="preserve">
-		<value>Included In Web Of Science Scopus Others</value>
+	<data name="Foreign publishing" xml:space="preserve">
+		<value>Foreign publishing</value>
 	</data>
-	<data name="ForeignPublishing" xml:space="preserve">
-		<value>Foreign Publishing</value>
+	<data name="Professional publishing of Ukraine" xml:space="preserve">
+		<value>Professional publishing of Ukraine</value>
 	</data>
-	<data name="ProfessionalPublishingOfUkraine" xml:space="preserve">
-		<value>Professional Publishing Of Ukraine</value>
+	<data name="Other publishing of Ukraine" xml:space="preserve">
+		<value>Other Publishing of Ukraine</value>
 	</data>
-	<data name="OtherPublishingOfUkraine" xml:space="preserve">
-		<value>Other Publishing Of Ukraine</value>
-	</data>
-	<data name="ReportThesis" xml:space="preserve">
+	<data name="Report thesis" xml:space="preserve">
 		<value>Report Thesis</value>
 	</data>
-	<data name="InternationalReportThesis" xml:space="preserve">
-		<value>International Report Thesis</value>
+	<data name="International report thesis" xml:space="preserve">
+		<value>International report thesis</value>
 	</data>
-	<data name="DomesticReportThesis" xml:space="preserve">
-		<value>Domestic Report Thesis</value>
+	<data name="Domestic report thesis" xml:space="preserve">
+		<value>Domestic report thesis</value>
 	</data>
-	<data name="ForeignReportThesisWithResearchResults" xml:space="preserve">
-		<value>Foreign Report Thesis With Research Results</value>
+	<data name="Foreign report thesis with research results" xml:space="preserve">
+		<value>Foreign report thesis with research results</value>
 	</data>
 	<data name="Previous" xml:space="preserve">
 		<value>Previous</value>

@@ -5,7 +5,7 @@
 @inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = Localizer["ArticleEditing"];
+	ViewData["Title"] = Localizer["Article's editing"];
 }
 <style>
 	.authors-label {
@@ -19,9 +19,7 @@
 	.cursor-pointer { cursor: pointer; }
 	.hidden { display: none; }
 </style>
-<h3>@Localizer["Edit"]</h3>
-
-<h5>@Localizer["Article"]</h5>
+<h4>@Localizer["Edit article"]</h4>
 <hr/>
 <div class="row">
 	<div class="col s12">
@@ -31,16 +29,16 @@
 			<div class="row">
 				<div class="input-field col s7">
 					<select asp-for="Type" class="col s12 push-s2">
-						<option value="" disabled selected>@Localizer["ChooseOption"]</option>
-						<option value="ImpactFactor">@Localizer["ImpactFactor"]</option>
-						<option value="IncludedInWebOfScienceScopusOthers">@Localizer["IncludedInWebOfScienceScopusOthers"]</option>
-						<option value="ForeignPublishing">@Localizer["ForeignPublishing"]</option>
-						<option value="ProfessionalPublishingOfUkraine">@Localizer["ProfessionalPublishingOfUkraine"]</option>
-						<option value="OtherPublishingOfUkraine">@Localizer["OtherPublishingOfUkraine"]</option>
-						<option value="ReportThesis">@Localizer["ReportThesis"]</option>
-						<option value="InternationalReportThesis">@Localizer["InternationalReportThesis"]</option>
-						<option value="DomesticReportThesis">@Localizer["DomesticReportThesis"]</option>
-						<option value="ForeignReportThesisWithResearchResults">@Localizer["ForeignReportThesisWithResearchResults"]</option>
+						<option value="" disabled selected>@Localizer["Choose an option"]</option>
+						<option value="ImpactFactor">@Localizer["Impact factor"]</option>
+						<option value="IncludedInWebOfScienceScopusOthers">@Localizer["Included in Web of Science Scopus and others"]</option>
+						<option value="ForeignPublishing">@Localizer["Foreign publishing"]</option>
+						<option value="ProfessionalPublishingOfUkraine">@Localizer["Professional publishing of Ukraine"]</option>
+						<option value="OtherPublishingOfUkraine">@Localizer["Other publishing of Ukraine"]</option>
+						<option value="ReportThesis">@Localizer["Report thesis"]</option>
+						<option value="InternationalReportThesis">@Localizer["International report thesis"]</option>
+						<option value="DomesticReportThesis">@Localizer["Domestic report thesis"]</option>
+						<option value="ForeignReportThesisWithResearchResults">@Localizer["Foreign report thesis with research results"]</option>
 					</select>
 					<label asp-for="Type">@Localizer["Type"]</label>
 				</div>
@@ -56,39 +54,38 @@
 			<div class="row">
 				<div class="input-field col s7">
 					<textarea asp-for="LiabilityInfo" class="materialize-textarea"></textarea>
-					<label asp-for="LiabilityInfo">@Localizer["LiabilityInfo"]</label>
+					<label asp-for="LiabilityInfo">@Localizer["Liability info"]</label>
 					<span class="helper-text" asp-validation-for="LiabilityInfo" data-error="" data-success=""></span>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s7">
 					<textarea asp-for="DocumentInfo" class="materialize-textarea"></textarea>
-					<label asp-for="DocumentInfo">@Localizer["DocumentInfo"]</label>
+					<label asp-for="DocumentInfo">@Localizer["Document info"]</label>
 					<span class="helper-text" asp-validation-for="DocumentInfo" data-error="" data-success=""></span>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s7">
 					<input asp-for="PublishingPlace" type="text" class="validate">
-					<label asp-for="PublishingPlace">@Localizer["PublishingPlace"]</label>
+					<label asp-for="PublishingPlace">@Localizer["Publishing place"]</label>
 					<span class="helper-text" asp-validation-for="PublishingPlace" data-error="" data-success=""></span>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s7">
 					<input asp-for="PublishingHouseName" type="text" class="validate">
-					<label asp-for="PublishingHouseName">@Localizer["PublishingHouseName"]</label>
+					<label asp-for="PublishingHouseName">@Localizer["Publishing house name"]</label>
 					<span class="helper-text" asp-validation-for="PublishingHouseName" data-error="" data-success=""></span>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s7">
 					<input asp-for="PublishingYear" type="number" class="validate">
-					<label asp-for="PublishingYear">@Localizer["PublishingYear"]</label>
+					<label asp-for="PublishingYear">@Localizer["Publishing year"]</label>
 					<span class="helper-text" asp-validation-for="PublishingYear" data-error="" data-success=""></span>
 				</div>
 			</div>
-		
 			<div class="row">
 				<div class="input-field col s7">
 					<input asp-for="Number" type="number" class="validate">
@@ -99,24 +96,24 @@
 			<div class="row">
 				<div class="input-field col s7">
 					<input asp-for="PagesAmount" type="number" class="validate">
-					<label asp-for="PagesAmount">@Localizer["PagesAmount"]</label>
+					<label asp-for="PagesAmount">@Localizer["Pages amount"]</label>
 					<span class="helper-text" asp-validation-for="PagesAmount" data-error="" data-success=""></span>
 				</div>
 			</div>
 			<div class="row myButtons">
 				<label class="col s2">
 					<input type="checkbox" class="filled-in" asp-for="IsPeriodical"/>
-					<span>@Localizer[Html.DisplayNameFor(model => model.IsPeriodical)]</span>
+					<span>@Localizer["Is periodical"]</span>
 				</label>
 			
 				<label class="col s2">
 					<input type="checkbox" class="filled-in" asp-for="IsPrintCanceled"/>
-					<span>@Localizer[Html.DisplayNameFor(model => model.IsPrintCanceled)]</span>
+					<span>@Localizer["Is print canceled"]</span>
 				</label>
 			
 				<label class="col s2">
 					<input type="checkbox" class="filled-in" asp-for="IsRecommendedToPrint"/>
-					<span>@Localizer[Html.DisplayNameFor(model => model.IsRecommendedToPrint)]</span>
+					<span>@Localizer["Is recommended to print"]</span>
 				</label>
 			</div>
 			@if (PageHelpers.IsAdminOrHead(User))
@@ -143,8 +140,8 @@
 				</div>
 			}
 			<div class="row myButtons">
-				<input type="submit" value="@Localizer["Save"]" class="waves-effect btn-small  amber accent-2"/>
-				<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
+				<button type="submit" class="waves-effect btn-small accent-2">@Localizer["Save"]</button>
+				<a asp-action="Index" class="waves-effect btn-small blue darken-3">@Localizer["Cancel"]</a>
 			</div>
 		</form>
 	</div>

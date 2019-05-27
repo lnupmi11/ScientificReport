@@ -11,8 +11,7 @@
 	ViewData["Title"] = Localizer["Publications"];
 }
 
-<h4>@Localizer["Publications"]</h4>
-
+<h4>@ViewData["Title"]</h4>
 <p>
 	<a asp-action="Create" class="waves-effect btn-small green darken-3">@Localizer["Create"]</a>
 </p>
@@ -28,15 +27,15 @@
 							<option value="@option" @selected>@Localizer[option]</option>
 						}
 					</select>
-					<label asp-for="PrintStatus">@Localizer["PrintStatus"]</label>
+					<label asp-for="PrintStatus">@Localizer["Publishing status"]</label>
 				</div>
 				<div class="input-field col s2">
 					<input asp-for="YearFromFilter" type="number" class="validate" />
-					<label asp-for="YearFromFilter">@Localizer["YearFromFilter"]</label>
+					<label asp-for="YearFromFilter">@Localizer["Year from"]</label>
 				</div>
 				<div class="input-field col s2">
 					<input asp-for="YearToFilter" type="number" class="validate" />
-					<label asp-for="YearToFilter">@Localizer["YearToFilter"]</label>
+					<label asp-for="YearToFilter">@Localizer["Year to"]</label>
 				</div>
 				<div class="input-field col s2">
 					<select asp-for="PublicationSetType" class="col s12 push-s2">
@@ -46,7 +45,7 @@
 							<option value="@option" @selected>@Localizer[option]</option>
 						}
 					</select>
-					<label asp-for="PrintStatus">@Localizer["PublicationSet"]</label>
+					<label asp-for="PrintStatus">@Localizer["Publication set"]</label>
 				</div>
 				<div class="col s1">
 					<button type="submit" class="waves-effect btn-small waves-light">@Localizer["Filter"]</button>
@@ -65,10 +64,10 @@
 			<a asp-action="Index" asp-route-SortBy="Title">@Localizer["Title"]</a>
 		</th>
 		<th>
-			<a asp-action="Index" asp-route-SortBy="PublishingHouse">@Localizer["PublishingHouseName"]</a>
+			<a asp-action="Index" asp-route-SortBy="PublishingHouse">@Localizer["Publishing house name"]</a>
 		</th>
 		<th>
-			<a asp-action="Index" asp-route-SortBy="PublishingYear">@Localizer["PublishingYear"]</a>
+			<a asp-action="Index" asp-route-SortBy="PublishingYear">@Localizer["Publishing year"]</a>
 		</th>
 		<th></th>
 	</tr>
@@ -85,10 +84,10 @@
 							type = "Monograph";
 							break;
 						case Publication.Types.TextBook:
-							type = "TextBook";
+							type = "Textbook";
 							break;
 						case Publication.Types.HandBook:
-							type = "HandBook";
+							type = "Handbook";
 							break;
 						case Publication.Types.Dictionary:
 							type = "Dictionary";
@@ -100,7 +99,7 @@
 							type = "Comment";
 							break;
 						case Publication.Types.BibliographicIndex:
-							type = "BibliographicIndex";
+							type = "Bibliographic index";
 							break;
 						default:
 							type = "Other";
@@ -119,7 +118,7 @@
 				@Html.DisplayFor(modelItem => item.PublishingYear)
 			</td>
 			<td>
-				<a asp-action="Details" asp-route-id="@item.Id" class="btn-small blue darken-3">@Localizer["Details"]</a>
+				<a asp-action="Details" asp-route-id="@item.Id" class="waves-effect btn-small blue darken-3">@Localizer["Details"]</a>
 				@{
 					var department = DepartmentService.Get(d => d.Staff.Any(s => s.UserName == User.Identity.Name));
 					var isHeadOfDepartment = false;

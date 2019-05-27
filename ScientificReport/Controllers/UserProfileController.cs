@@ -75,7 +75,7 @@ namespace ScientificReport.Controllers
 				fullPositionTitle = _localizer["Administrator"] + ", ";
 			}
 			fullPositionTitle += _localizer[userProfile.Position] + (department != null
-            					                    ? " " + _localizer["ofDepartment"] + " \"" + department.Title + "\""
+            					                    ? " " + _localizer["of department"] + " \"" + department.Title + "\""
             					                    : "");
 
 			var detailsModel = new UserDetailsModel
@@ -381,12 +381,13 @@ namespace ScientificReport.Controllers
 		public async Task<IActionResult> Register(RegisterModel model) {
 			if (!ModelState.IsValid)
 			{
+				model.Departments = _departmentService.GetAll();
 				return View(model);
 			}
 
 			if (_userProfileService.Get(usr => usr.UserName == model.UserName) != null)
 			{
-				ModelState.AddModelError(string.Empty, _localizer["UserAlreadyExists"]);
+				ModelState.AddModelError(string.Empty, _localizer["User already exists"]);
 				return BadRequest();
 			}
 			
@@ -428,9 +429,10 @@ namespace ScientificReport.Controllers
 			}
 			else
 			{
-				ModelState.AddModelError(string.Empty, _localizer["PasswordConfirmationFailed"]);
+				ModelState.AddModelError(string.Empty, _localizer["Password confirmation failed"]);
 			}
 			
+			model.Departments = _departmentService.GetAll();
 			return View(model);
 		}
 
@@ -460,7 +462,7 @@ namespace ScientificReport.Controllers
 				{
 					if (!user.IsApproved)
 					{
-						ModelState.AddModelError(string.Empty, _localizer["AccountNotApproved"]);
+						ModelState.AddModelError(string.Empty, _localizer["Account is not approved yet"]);
 						return View(model);	
 					}
 					
@@ -477,7 +479,7 @@ namespace ScientificReport.Controllers
 				}
 			}
 
-			ModelState.AddModelError(string.Empty, _localizer["IncorrectLoginOrPassword"]);
+			ModelState.AddModelError(string.Empty, _localizer["Incorrect login or password"]);
 			return View(model);
 		}
 
@@ -519,6 +521,11 @@ namespace ScientificReport.Controllers
 			if (user == null)
 			{
 				return NotFound();
+			}
+
+			if (!ModelState.IsValid)
+			{
+				return View(model);
 			}
 
 			var error = await _userProfileService.ChangePassword(

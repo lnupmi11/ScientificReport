@@ -17,11 +17,11 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="Article" xml:space="preserve">
-		<value>Article</value>
+    <data name="Edit article" xml:space="preserve">
+		<value>Edit article</value>
 	</data>
-	<data name="ArticleEditing" xml:space="preserve">
-		<value>Article editing</value>
+	<data name="Article editing" xml:space="preserve">
+		<value>Article Editing</value>
 	</data>
 	<data name="Edit" xml:space="preserve">
 		<value>Edit</value>
@@ -32,10 +32,10 @@
 	<data name="Title" xml:space="preserve">
 		<value>Title</value>
 	</data>
-	<data name="PublishingHouseName" xml:space="preserve">
+	<data name="Publishing house name" xml:space="preserve">
 		<value>Publishing house name</value>
 	</data>
-	<data name="PublishingYear" xml:space="preserve">
+	<data name="Publishing year" xml:space="preserve">
 		<value>Publishing year</value>
 	</data>
 	<data name="Save" xml:space="preserve">
@@ -47,55 +47,64 @@
 	<data name="Cancel" xml:space="preserve">
 		<value>Cancel</value>
 	</data>
-	<data name="Back to List" xml:space="preserve">
-		<value>Back to List</value>
+	<data name="Back to list" xml:space="preserve">
+		<value>Back to list</value>
 	</data>
-	<data name="ChooseOption" xml:space="preserve">
-		<value>Choose Option</value>
+	<data name="Choose an option" xml:space="preserve">
+		<value>Choose an option</value>
 	</data>
-	<data name="ImpactFactor" xml:space="preserve">
-		<value>Impact Factor</value>
+	<data name="Impact factor" xml:space="preserve">
+		<value>Impact factor</value>
 	</data>
-	<data name="IncludedInWebOfScienceScopusOthers" xml:space="preserve">
-		<value>Included In Web Of Science Scopus Others</value>
+	<data name="Included in Web of Science Scopus and others" xml:space="preserve">
+		<value>Included in Web of Science Scopus and others</value>
 	</data>
-	<data name="ForeignPublishing" xml:space="preserve">
-		<value>Foreign Publishing</value>
+	<data name="Foreign publishing" xml:space="preserve">
+		<value>Foreign publishing</value>
 	</data>
-	<data name="ProfessionalPublishingOfUkraine" xml:space="preserve">
-		<value>Professional Publishing Of Ukraine</value>
+	<data name="Professional publishing of Ukraine" xml:space="preserve">
+		<value>Professional publishing of Ukraine</value>
 	</data>
-	<data name="OtherPublishingOfUkraine" xml:space="preserve">
-		<value>Other Publishing Of Ukraine</value>
+	<data name="Other publishing of Ukraine" xml:space="preserve">
+		<value>Other publishing of Ukraine</value>
 	</data>
-	<data name="ReportThesis" xml:space="preserve">
-		<value>Report Thesis</value>
+	<data name="Report thesis" xml:space="preserve">
+		<value>Report thesis</value>
 	</data>
-	<data name="InternationalReportThesis" xml:space="preserve">
-		<value>International Report Thesis</value>
+	<data name="International report thesis" xml:space="preserve">
+		<value>International report thesis</value>
 	</data>
-	<data name="DomesticReportThesis" xml:space="preserve">
-		<value>Domestic Report Thesis</value>
+	<data name="Domestic report thesis" xml:space="preserve">
+		<value>Domestic report thesis</value>
 	</data>
-	<data name="ForeignReportThesisWithResearchResults" xml:space="preserve">
-		<value>Foreign Report Thesis With Research Results</value>
+	<data name="Foreign report thesis with research results" xml:space="preserve">
+		<value>Foreign report thesis with research results</value>
 	</data>
-	<data name="LiabilityInfo" xml:space="preserve">
-		<value>Liability Info</value>
+	<data name="Liability info" xml:space="preserve">
+		<value>Liability info</value>
 	</data>
-	<data name="DocumentInfo" xml:space="preserve">
-		<value>Document Info</value>
+	<data name="Document Info" xml:space="preserve">
+		<value>Document info</value>
 	</data>
-	<data name="PublishingPlace" xml:space="preserve">
-		<value>Publishing Place</value>
+	<data name="Publishing place" xml:space="preserve">
+		<value>Publishing place</value>
 	</data>
 	<data name="Number" xml:space="preserve">
 		<value>Number</value>
 	</data>
-	<data name="PagesAmount" xml:space="preserve">
-		<value>Pages Amount</value>
+	<data name="Pages amount" xml:space="preserve">
+		<value>Pages amount</value>
 	</data>
 	<data name="Authors" xml:space="preserve">
 		<value>Authors</value>
+	</data>
+	<data name="Is periodical" xml:space="preserve">
+		<value>Is periodical</value>
+	</data>
+	<data name="Is print canceled" xml:space="preserve">
+		<value>Is print canceled</value>
+	</data>
+	<data name="Is recommended to print" xml:space="preserve">
+		<value>Is recommended to print</value>
 	</data>
 </root>

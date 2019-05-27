@@ -17,10 +17,7 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="Index" xml:space="preserve">
-		<value>Головна</value>
-	</data>
-	<data name="ScientificWorks" xml:space="preserve">
+	<data name="Scientific works" xml:space="preserve">
 		<value>Наукові роботи</value>
 	</data>
 	<data name="Create" xml:space="preserve">

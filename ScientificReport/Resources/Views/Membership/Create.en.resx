@@ -17,13 +17,16 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
+	<data name="Add membership" xml:space="preserve">
+		<value>Add membership</value>
+	</data>
     <data name="Membership" xml:space="preserve">
 		<value>Membership</value>
 	</data>
-	<data name="MemberOf" xml:space="preserve">
+	<data name="Member of" xml:space="preserve">
 		<value>Member of</value>
 	</data>
-	<data name="MembershipInfo" xml:space="preserve">
+	<data name="Membership info" xml:space="preserve">
 		<value>Membership info</value>
 	</data>
 	<data name="Choose your option" xml:space="preserve">
@@ -38,28 +41,10 @@
 	<data name="Scientific journal editorial board" xml:space="preserve">
 		<value>Scientific journal editorial board</value>
 	</data>
-	<data name="Create New" xml:space="preserve">
-		<value>Create New</value>
-	</data>
-	<data name="Details" xml:space="preserve">
-		<value>Details</value>
-	</data>
-	<data name="Edit" xml:space="preserve">
-		<value>Edit</value>
-	</data>
-	<data name="Delete" xml:space="preserve">
-		<value>Delete</value>
-	</data>
-	<data name="Save" xml:space="preserve">
-		<value>Save</value>
-	</data>
 	<data name="Create" xml:space="preserve">
 		<value>Create</value>
 	</data>
 	<data name="Cancel" xml:space="preserve">
 		<value>Cancel</value>
-	</data>
-	<data name="Back to List" xml:space="preserve">
-		<value>Back to List</value>
 	</data>
 </root>

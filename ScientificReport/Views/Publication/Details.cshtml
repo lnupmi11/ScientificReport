@@ -8,13 +8,11 @@
 @inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = Localizer["Details"];
+	ViewData["Title"] = Localizer["Details of publication"];
 }
 
-<h3>@Localizer["Details"]</h3>
-
 <div>
-	<h4>@Localizer["Publication"]</h4>
+	<h5>@ViewData["Title"]</h5>
 	<hr/>
 	<dl class="row">
 		<dt class="col s2">
@@ -29,10 +27,10 @@
 						type = "Monograph";
 						break;
 					case Publication.Types.TextBook:
-						type = "TextBook";
+						type = "Textbook";
 						break;
 					case Publication.Types.HandBook:
-						type = "HandBook";
+						type = "Handbook";
 						break;
 					case Publication.Types.Dictionary:
 						type = "Dictionary";
@@ -44,7 +42,7 @@
 						type = "Comment";
 						break;
 					case Publication.Types.BibliographicIndex:
-						type = "BibliographicIndex";
+						type = "Bibliographic index";
 						break;
 					default:
 						type = "Other";
@@ -66,31 +64,31 @@
 			@Html.DisplayFor(model => model.Publication.Specification)
 		</dd>
 		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.Publication.PublishingPlace)]
+			@Localizer["Publishing place"]
 		</dt>
 		<dd class="col s10">
 			@Html.DisplayFor(model => model.Publication.PublishingPlace)
 		</dd>
 		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.Publication.PublishingHouseName)]
+			@Localizer["Publishing house name"]
 		</dt>
 		<dd class="col s10">
 			@Html.DisplayFor(model => model.Publication.PublishingHouseName)
 		</dd>
 		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.Publication.PublishingYear)]
+			@Localizer["Publishing year"]
 		</dt>
 		<dd class="col s10">
 			@Html.DisplayFor(model => model.Publication.PublishingYear)
 		</dd>
 		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.Publication.PagesAmount)]
+			@Localizer["Pages amount"]
 		</dt>
 		<dd class="col s10">
 			@Html.DisplayFor(model => model.Publication.PagesAmount)
 		</dd>
 		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.Publication.PrintStatus)]
+			@Localizer["Publishing status"]
 		</dt>
 		<dd class="col s10">
 			@{
@@ -101,10 +99,10 @@
 						status = "Any";
 						break;
 					case Publication.PrintStatuses.IsPrintCanceled:
-						status = "IsPrintCanceled";
+						status = "Is print canceled";
 						break;
 					case Publication.PrintStatuses.IsRecommendedToPrint:
-						status = "IsRecommendedToPrint";
+						status = "Is recommended to print";
 						break;
 					default:
 						status = "Any";
@@ -129,7 +127,7 @@
 		}
 	</dl>
 </div>
-<div>
+<div style="margin-top: 20px">
 	@{
 		var department = DepartmentService.Get(d => d.Staff.Any(s => s.UserName == User.Identity.Name));
 		var isHeadOfDepartment = false;
@@ -142,5 +140,5 @@
 	{
 		<a asp-action="Edit" asp-route-id="@Model.Publication.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
 	}
-	<a asp-action="Index" class="btn-small blue darken-3">@Localizer["BackToList"]</a>
+	<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Back to list"]</a>
 </div>

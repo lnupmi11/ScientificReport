@@ -4,12 +4,12 @@
 @inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = Localizer["DeletePublication"];
+	ViewData["Title"] = Localizer["Delete publication"];
 }
 
-<h1>@Localizer["DeletePublication"]</h1>
+<h1>@Localizer["Delete publication"]</h1>
 
-<h3>@Localizer["DeleteConfirmationQuestion"]</h3>
+<h3>@Localizer["Are you sure you want to delete this publication?"]</h3>
 <div>
 	<h4>@Localizer["Publication"]</h4>
 	<hr />
@@ -33,31 +33,31 @@
 			@Html.DisplayFor(model => model.Specification)
 		</dd>
 		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.PublishingPlace)]
+			@Localizer["Publishing place"]
 		</dt>
 		<dd class="col s10">
 			@Html.DisplayFor(model => model.PublishingPlace)
 		</dd>
 		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.PublishingHouseName)]
+			@Localizer["Publishing house name"]
 		</dt>
 		<dd class="col s10">
 			@Html.DisplayFor(model => model.PublishingHouseName)
 		</dd>
 		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.PublishingYear)]
+			@Localizer["Publishing year"]
 		</dt>
 		<dd class="col s10">
 			@Html.DisplayFor(model => model.PublishingYear)
 		</dd>
 		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.PagesAmount)]
+			@Localizer["Pages amount"]
 		</dt>
 		<dd class="col s10">
 			@Html.DisplayFor(model => model.PagesAmount)
 		</dd>
 		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.PrintStatus)]
+			@Localizer["Publishing Status"]
 		</dt>
 		<dd class="col s10">
 			@Html.DisplayFor(model => model.PrintStatus)
@@ -67,5 +67,5 @@
 		<input type="hidden" asp-for="Id" />
 		<button type="submit" class="waves-effect btn-small waves-light">@Localizer["Delete"]</button>
 	</form>
-	<a asp-action="Index" class="btn-small blue darken-3">@Localizer["BackToList"]</a>
+	<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Back to list"]</a>
 </div>

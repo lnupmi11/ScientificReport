@@ -3,13 +3,11 @@
 @inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = Localizer["Details"];
+	ViewData["Title"] = Localizer["Details of report thesis"];
 }
 
-<h3>@Localizer["Details"]</h3>
-
 <div>
-	<h4>@Localizer["ReportThesis"]</h4>
+	<h5>@ViewData["Title"]</h5>
 	<hr/>
 	<dl class="row">
 		<dt class="col s2">
@@ -58,7 +56,7 @@
 	</dl>
 
 </div>
-<div>
+<div style="margin-top: 20px">
 	<a asp-action="Edit" asp-route-id="@Model.ReportThesis.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
-	<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Back to List"]</a>
+	<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Back to list"]</a>
 </div>

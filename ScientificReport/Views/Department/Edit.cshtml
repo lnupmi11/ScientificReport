@@ -4,7 +4,7 @@
 @inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = Localizer["EditDepartment"];
+	ViewData["Title"] = Localizer["Edit department"];
 	Layout = "_Layout";
 }
 
@@ -12,7 +12,7 @@
 	.myLabel {
 		/* margin-bottom: 10px; */
 		position: relative !important;
-		left: 0px !important;
+		left: 0 !important;
 		font-size: 12.5px !important;
 	}
 	.roles-list {
@@ -25,7 +25,7 @@
 	.hidden { display: none; }
 </style>
 
-<h4>@Localizer["EditDepartment"]</h4>
+<h4>@Localizer["Edit department"]</h4>
 <div class="row">
 <div class="col s12">
 	<div asp-validation-summary="All" class="validate"></div>
@@ -75,7 +75,7 @@
 				</div>
 			</div>
 			<div class="col s6">
-				<label class="myLabel">@Localizer["ScientificWorks"]:</label>
+				<label class="myLabel">@Localizer["Scientific works"]:</label>
 				<div class="authors-list">
 					@if (Model.AvailableScientificWork != null)
 					{
@@ -97,8 +97,8 @@
 			</div>
 		</div>
 		<div class="row myButtons">
-			<input type="submit" value="@Localizer["Save"]" class="waves-effect btn-small  amber accent-2"/>
-			<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
+			<button type="submit" class="waves-effect btn-small accent-2">@Localizer["Save"]</button>
+			<a asp-action="Index" class="waves-effect btn-small blue darken-3">@Localizer["Cancel"]</a>
 		</div>
 	</form>
 </div>

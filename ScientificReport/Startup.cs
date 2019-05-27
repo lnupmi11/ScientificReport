@@ -109,13 +109,13 @@ namespace ScientificReport
 						new CultureInfo("en")
 					};
 
-					opts.DefaultRequestCulture = new RequestCulture("uk-UA", "uk-UA");
+					opts.DefaultRequestCulture = new RequestCulture("en");
 					// Formatting numbers, dates, etc.
 					opts.SupportedCultures = supportedCultures;
 					// UI strings that we have localized.
 					opts.SupportedUICultures = supportedCultures;
 				});
-
+		
 			services.AddMvc()
 				.SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
 				.AddViewLocalization(

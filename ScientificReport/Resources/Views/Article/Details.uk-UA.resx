@@ -26,25 +26,19 @@
 	<data name="Title" xml:space="preserve">
 		<value>Назва</value>
 	</data>
-	<data name="PublishingHouseName" xml:space="preserve">
-		<value>Видавничий дім</value>
+	<data name="Publishing house name" xml:space="preserve">
+		<value>Видавництво</value>
 	</data>
-	<data name="PublishingYear" xml:space="preserve">
+	<data name="Publishing year" xml:space="preserve">
 		<value>Рік видання</value>
 	</data>
-	<data name="Create New" xml:space="preserve">
-		<value>Створити нове</value>
-	</data>
-	<data name="Details" xml:space="preserve">
-		<value>Деталі</value>
+	<data name="Article details" xml:space="preserve">
+		<value>Деталі статті</value>
 	</data>
 	<data name="Edit" xml:space="preserve">
 		<value>Редагувати</value>
 	</data>
-	<data name="Delete" xml:space="preserve">
-		<value>Видалити</value>
-	</data>
-	<data name="Back to List" xml:space="preserve">
+	<data name="Back to list" xml:space="preserve">
 		<value>Повернутися до списку</value>
 	</data>
 	<data name="Save" xml:space="preserve">
@@ -58,5 +52,29 @@
 	</data>
 	<data name="Authors" xml:space="preserve">
 		<value>Автори</value>
+	</data>
+	<data name="Liability info" xml:space="preserve">
+		<value>Інформація про відповідальність</value>
+	</data>
+	<data name="Document info" xml:space="preserve">
+		<value>Інформація про документ</value>
+	</data>
+	<data name="Publishing place" xml:space="preserve">
+		<value>Місце видання</value>
+	</data>
+	<data name="Number" xml:space="preserve">
+		<value>Номер</value>
+	</data>
+	<data name="Is periodical" xml:space="preserve">
+		<value>Періодичне видання</value>
+	</data>
+	<data name="Is print canceled" xml:space="preserve">
+		<value>Вилучено з друку</value>
+	</data>
+	<data name="Is recommended to print" xml:space="preserve">
+		<value>Рекомендовано до друку</value>
+	</data>
+	<data name="Pages amount" xml:space="preserve">
+		<value>Кількість сторінок</value>
 	</data>
 </root>

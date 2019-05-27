@@ -9,13 +9,13 @@
 @if (PageHelpers.IsHeadOfDepartment(User))
 {
 	ViewData["Title"] = Localizer["Workers"];
-	<h3>@Localizer["Workers"]</h3>	
 }
 else
 {
 	ViewData["Title"] = Localizer["Users"];
-	<h4>@Localizer["Users"]</h4>
 }
+
+<h4>@ViewData["Title"]</h4>
 <div class="row">
 	<div class="col s12">
 		<form asp-action="Index" method="get">
@@ -28,18 +28,18 @@ else
 							<option value="@option" @selected>@Localizer[option]</option>
 						}
 					</select>
-					<label asp-for="IsApproved">@Localizer["IsApproved"]</label>
+					<label asp-for="IsApproved">@Localizer["Is approved"]</label>
 				</div>
 				@{
 					var colWidth = PageHelpers.IsAdmin(User) ? "3" : "5";
 				}
 				<div class="input-field col s@(colWidth)">
 					<input asp-for="LastName" class="validate" />
-					<label asp-for="LastName">@Localizer["LastName"]</label>
+					<label asp-for="LastName">@Localizer["Last name"]</label>
 				</div>
 				<div class="input-field col s@(colWidth)">
 					<input asp-for="FirstName" class="validate" />
-					<label asp-for="FirstName">@Localizer["FirstName"]</label>
+					<label asp-for="FirstName">@Localizer["First name"]</label>
 				</div>
 				@if (PageHelpers.IsAdmin(User))
 				{
@@ -74,16 +74,16 @@ else
 	<thead>
 	<tr>
 		<th>
-			@Localizer["IsApproved"]
+			@Localizer["Is approved"]
 		</th>
 		<th>
-			@Localizer["LastName"]
+			@Localizer["Last name"]
 		</th>
 		<th>
-			@Localizer["FirstName"]
+			@Localizer["First name"]
 		</th>
 		<th>
-			@Localizer["MiddleName"]
+			@Localizer["Middle name"]
 		</th>
 		<th>
 			@Localizer["Email"]
@@ -111,7 +111,7 @@ else
 				@Html.DisplayFor(modelItem => item.Email)
 			</th>
 			<td>
-				<a asp-action="Details" asp-route-id="@item.Id" class="btn-small blue darken-3">@Localizer["Details"]</a>
+				<a asp-action="Details" asp-route-id="@item.Id" class="waves-effect btn-small blue darken-3">@Localizer["Details"]</a>
 				<a asp-action="Edit" asp-route-id="@item.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
 				@if (User.Identity.Name != item.UserName)
 				{

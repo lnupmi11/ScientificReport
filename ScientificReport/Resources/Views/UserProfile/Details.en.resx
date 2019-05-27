@@ -17,53 +17,56 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="UserProfile" xml:space="preserve">
-		<value>User Profile</value>
+	<data name="Details of user" xml:space="preserve">
+		<value>Details of user</value>
+	</data>
+    <data name="User" xml:space="preserve">
+		<value>User</value>
 	</data>
     <data name="Details" xml:space="preserve">
 		<value>Details</value>
 	</data>
-    <data name="FirstName" xml:space="preserve">
-		<value>First Name</value>
+    <data name="First name" xml:space="preserve">
+		<value>First name</value>
 	</data>
-    <data name="MiddleName" xml:space="preserve">
-		<value>Middle Name</value>
+    <data name="Middle name" xml:space="preserve">
+		<value>Middle name</value>
 	</data>
-    <data name="LastName" xml:space="preserve">
-		<value>Last Name</value>
+    <data name="Last name" xml:space="preserve">
+		<value>Last name</value>
 	</data>
-    <data name="BirthYear" xml:space="preserve">
-		<value>Birth Year</value>
+    <data name="Birth year" xml:space="preserve">
+		<value>Birth year</value>
 	</data>
-    <data name="GraduationYear" xml:space="preserve">
-		<value>Graduation Year</value>
+    <data name="Graduation year" xml:space="preserve">
+		<value>Graduation year</value>
 	</data>
-    <data name="ScientificDegree" xml:space="preserve">
-		<value>Scientific Degree</value>
+    <data name="Scientific degree" xml:space="preserve">
+		<value>Scientific degree</value>
 	</data>
-	<data name="You don't have any Academic status" xml:space="preserve">
-		<value>You don't have any Academic status</value>
+	<data name="You don't have any academic status" xml:space="preserve">
+		<value>You don't have any academic status</value>
 	</data>
 	<data name="You don't have any scientific degree" xml:space="preserve">
-		<value>You don't have any Academic status</value>
+		<value>You don't have any scientific degree</value>
 	</data>
-    <data name="YearDegreeGained" xml:space="preserve">
-		<value>Year Degree Gained</value>
+    <data name="Year degree gained" xml:space="preserve">
+		<value>Year degree gained</value>
 	</data>
-    <data name="AcademicStatus" xml:space="preserve">
-		<value>Academic Status</value>
+    <data name="Academic status" xml:space="preserve">
+		<value>Academic status</value>
 	</data>
-    <data name="YearDegreeAssigned" xml:space="preserve">
-		<value>Year Degree Assigned</value>
+    <data name="Year degree assigned" xml:space="preserve">
+		<value>Year degree assigned</value>
 	</data>
     <data name="Position" xml:space="preserve">
 		<value>Position</value>
 	</data>
-    <data name="IsApproved" xml:space="preserve">
-		<value>Is Approved</value>
+    <data name="Is approved" xml:space="preserve">
+		<value>Is approved</value>
 	</data>
-	<data name="IsActive" xml:space="preserve">
-		<value>Is Active</value>
+	<data name="Is active" xml:space="preserve">
+		<value>Is active</value>
 	</data>
 	<data name="Yes" xml:space="preserve">
 		<value>Yes</value>
@@ -74,7 +77,7 @@
     <data name="Edit" xml:space="preserve">
 		<value>Edit</value>
 	</data>
-    <data name="Back to List" xml:space="preserve">
-		<value>Back to List</value>
+    <data name="Back to list" xml:space="preserve">
+		<value>Back to list</value>
 	</data>
 </root>

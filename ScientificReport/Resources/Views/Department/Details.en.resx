@@ -17,6 +17,9 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
+	<data name="Details of department" xml:space="preserve">
+		<value>Details of department</value>
+	</data>
 	<data name="Details" xml:space="preserve">
 		<value>Details</value>
 	</data>
@@ -32,19 +35,19 @@
 	<data name="Staff" xml:space="preserve">
 		<value>Staff</value>
 	</data>
-	<data name="NoStaff" xml:space="preserve">
-		<value>No Staff</value>
+	<data name="No staff" xml:space="preserve">
+		<value>No staff</value>
 	</data>
-	<data name="ScientificWorks" xml:space="preserve">
-		<value>Scientific Works</value>
+	<data name="Scientific works" xml:space="preserve">
+		<value>Scientific works</value>
 	</data>
-	<data name="NoScientificWorks" xml:space="preserve">
-		<value>No Scientific Works</value>
+	<data name="No scientific works" xml:space="preserve">
+		<value>No scientific works</value>
 	</data>
 	<data name="Edit" xml:space="preserve">
 		<value>Edit</value>
 	</data>
-	<data name="BackToList" xml:space="preserve">
-		<value>Back to List</value>
+	<data name="Back to list" xml:space="preserve">
+		<value>Back to list</value>
 	</data>
 </root>

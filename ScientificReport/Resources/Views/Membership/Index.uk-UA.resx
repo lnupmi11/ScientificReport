@@ -20,14 +20,14 @@
     <data name="Membership" xml:space="preserve">
 		<value>Членство</value>
 	</data>
-	<data name="MemberOf" xml:space="preserve">
+	<data name="Member of" xml:space="preserve">
 		<value>Членство</value>
 	</data>
-	<data name="MembershipInfo" xml:space="preserve">
+	<data name="Membership info" xml:space="preserve">
 		<value>Інфoрмація</value>
 	</data>
-	<data name="Create New" xml:space="preserve">
-		<value>Створити нове</value>
+	<data name="Create" xml:space="preserve">
+		<value>Створити</value>
 	</data>
 	<data name="Details" xml:space="preserve">
 		<value>Деталі</value>
@@ -38,22 +38,19 @@
 	<data name="Delete" xml:space="preserve">
 		<value>Видалити</value>
 	</data>
-	<data name="Back to List" xml:space="preserve">
-		<value>Повернутися до списку</value>
-	</data>
-	<data name="Save" xml:space="preserve">
-		<value>Зберегти</value>
-	</data>
-	<data name="Cancel" xml:space="preserve">
-		<value>Скасувати</value>
-	</data>
-	<data name="Create" xml:space="preserve">
-		<value>Створити</value>
-	</data>
 	<data name="Previous" xml:space="preserve">
 		<value>Попередня</value>
 	</data>
 	<data name="Next" xml:space="preserve">
 		<value>Наступна</value>
+	</data>
+	<data name="ScientificCouncil" xml:space="preserve">
+		<value>Вчена рада</value>
+	</data>
+	<data name="ExpertCouncil" xml:space="preserve">
+		<value>експертна рада</value>
+	</data>
+	<data name="EditorialBoard" xml:space="preserve">
+		<value>Редколегія наукового журналу</value>
 	</data>
 </root>

@@ -3,11 +3,10 @@
 @inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = Localizer["Index"];
+	ViewData["Title"] = Localizer["Reviews"];
 }
 
-<h3>@Localizer["Review"]</h3>
-
+<h4>@ViewData["Title"]</h4>
 <p>
 	<a asp-action="Create" class="waves-effect btn-small green darken-3">@Localizer["Create"]</a>
 </p>
@@ -15,7 +14,7 @@
 	<thead>
 		<tr>
 			<th>
-				@Localizer["DateOfReview"]
+				@Localizer["Date of review"]
 			</th>
 			<th>
 				@Localizer["Work"]
@@ -36,7 +35,7 @@
 				}
 			</td>
 			<td>
-				<a asp-action="Details" asp-route-id="@item.Id" class="btn-small blue darken-3">@Localizer["Details"]</a>
+				<a asp-action="Details" asp-route-id="@item.Id" class="waves-effect btn-small blue darken-3">@Localizer["Details"]</a>
 				<a asp-action="Edit" asp-route-id="@item.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
 				<form asp-action="Delete" asp-route-id="@item.Id" method="post" style="display: inline;">
 					<button type="submit" class="waves-effect btn-small deep-orange darken-3">@Localizer["Delete"]</button>

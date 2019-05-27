@@ -26,7 +26,7 @@
 	<data name="Any" xml:space="preserve">
 		<value>Будь-які</value>
 	</data>
-	<data name="PrintStatus" xml:space="preserve">
+	<data name="Publishing status" xml:space="preserve">
 		<value>Статус видання</value>
 	</data>
 	<data name="IsRecommendedToPrint" xml:space="preserve">
@@ -35,10 +35,10 @@
 	<data name="IsPrintCanceled" xml:space="preserve">
 		<value>Вийшли з друку</value>
 	</data>
-	<data name="YearFromFilter" xml:space="preserve">
+	<data name="Year from" xml:space="preserve">
 		<value>Від (рік)</value>
 	</data>
-	<data name="YearToFilter" xml:space="preserve">
+	<data name="Year to" xml:space="preserve">
 		<value>До (рік)</value>
 	</data>
 	<data name="Personal" xml:space="preserve">
@@ -53,7 +53,7 @@
 	<data name="Filter" xml:space="preserve">
 		<value>Фільтрувати</value>
 	</data>
-	<data name="PublicationSet" xml:space="preserve">
+	<data name="Publication set" xml:space="preserve">
 		<value>Множина публікацій</value>
 	</data>
 	<data name="Type" xml:space="preserve">
@@ -62,10 +62,10 @@
 	<data name="Title" xml:space="preserve">
 		<value>Назва</value>
 	</data>
-	<data name="PublishingHouseName" xml:space="preserve">
+	<data name="Publishing house name" xml:space="preserve">
 		<value>Місце видання</value>
 	</data>
-	<data name="PublishingYear" xml:space="preserve">
+	<data name="Publishing year" xml:space="preserve">
 		<value>Рік видання</value>
 	</data>
 	<data name="Details" xml:space="preserve">
@@ -80,10 +80,10 @@
 	<data name="Monograph" xml:space="preserve">
 		<value>Монографія</value>
 	</data>
-	<data name="TextBook" xml:space="preserve">
+	<data name="Textbook" xml:space="preserve">
 		<value>Підручник</value>
 	</data>
-	<data name="HandBook" xml:space="preserve">
+	<data name="Handbook" xml:space="preserve">
 		<value>Навчальний посібник</value>
 	</data>
 	<data name="Dictionary" xml:space="preserve">
@@ -95,7 +95,7 @@
 	<data name="Comment" xml:space="preserve">
 		<value>Науковий коментар</value>
 	</data>
-	<data name="BibliographicIndex" xml:space="preserve">
+	<data name="Bibliographic index" xml:space="preserve">
 		<value>Бібліографічний покажчик</value>
 	</data>
 	<data name="Other" xml:space="preserve">

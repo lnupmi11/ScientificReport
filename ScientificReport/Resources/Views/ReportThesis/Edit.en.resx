@@ -17,11 +17,14 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
+	<data name="Edit report thesis" xml:space="preserve">
+		<value>Edit</value>
+	</data>
     <data name="Edit" xml:space="preserve">
 		<value>Edit</value>
 	</data>
-	<data name="ReportThesis" xml:space="preserve">
-		<value>ReportThesis</value>
+	<data name="Report thesis" xml:space="preserve">
+		<value>Report thesis</value>
 	</data>
 	<data name="Thesis" xml:space="preserve">
 		<value>Thesis</value>

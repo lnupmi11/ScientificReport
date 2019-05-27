@@ -82,13 +82,13 @@ namespace ScientificReport.Controllers
 
 			if (model.PublishingYear < 1900)
 			{
-				ModelState.AddModelError("", _localizer["InvalidPublishingYear"]);
+				ModelState.AddModelError("", _localizer["Publishing year is incorrect"]);
 				return View(model);
 			}
 
 			if (model.PagesAmount <= 0)
 			{
-				ModelState.AddModelError("", _localizer["InvalidPagesAmount"]);
+				ModelState.AddModelError("", _localizer["Pages amount must be greater than 0"]);
 				return View(model); 
 			}
 

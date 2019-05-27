@@ -26,20 +26,20 @@
 	<data name="Any" xml:space="preserve">
 		<value>Any</value>
 	</data>
-	<data name="PrintStatus" xml:space="preserve">
-		<value>Publication Status</value>
+	<data name="Publishing status" xml:space="preserve">
+		<value>Publishing Status</value>
 	</data>
 	<data name="IsRecommendedToPrint" xml:space="preserve">
-		<value>Is Recommended to Print</value>
+		<value>Is recommended to print</value>
 	</data>
 	<data name="IsPrintCanceled" xml:space="preserve">
-		<value>Is Canceled to Print</value>
+		<value>Is canceled to print</value>
 	</data>
-	<data name="YearFromFilter" xml:space="preserve">
-		<value>Year From</value>
+	<data name="Year from" xml:space="preserve">
+		<value>Year from</value>
 	</data>
-	<data name="YearToFilter" xml:space="preserve">
-		<value>Year To</value>
+	<data name="Year to" xml:space="preserve">
+		<value>Year to</value>
 	</data>
 	<data name="Personal" xml:space="preserve">
 		<value>Personal</value>
@@ -53,8 +53,8 @@
 	<data name="Filter" xml:space="preserve">
 		<value>Filter</value>
 	</data>
-	<data name="PublicationSet" xml:space="preserve">
-		<value>Publication Set</value>
+	<data name="Publication set" xml:space="preserve">
+		<value>Publication set</value>
 	</data>
 	<data name="Type" xml:space="preserve">
 		<value>Type</value>
@@ -62,10 +62,10 @@
 	<data name="Title" xml:space="preserve">
 		<value>Title</value>
 	</data>
-	<data name="PublishingHouseName" xml:space="preserve">
+	<data name="Publishing house name" xml:space="preserve">
 		<value>Publishing house name</value>
 	</data>
-	<data name="PublishingYear" xml:space="preserve">
+	<data name="Publishing year" xml:space="preserve">
 		<value>Publishing year</value>
 	</data>
 	<data name="Details" xml:space="preserve">
@@ -80,10 +80,10 @@
 	<data name="Monograph" xml:space="preserve">
 		<value>Monograph</value>
 	</data>
-	<data name="TextBook" xml:space="preserve">
+	<data name="Textbook" xml:space="preserve">
 		<value>Textbook</value>
 	</data>
-	<data name="HandBook" xml:space="preserve">
+	<data name="Handbook" xml:space="preserve">
 		<value>Handbook</value>
 	</data>
 	<data name="Dictionary" xml:space="preserve">
@@ -95,7 +95,7 @@
 	<data name="Comment" xml:space="preserve">
 		<value>Comment</value>
 	</data>
-	<data name="BibliographicIndex" xml:space="preserve">
+	<data name="Bibliographic index" xml:space="preserve">
 		<value>Bibliographic index</value>
 	</data>
 	<data name="Other" xml:space="preserve">

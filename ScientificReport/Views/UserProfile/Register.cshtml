@@ -14,15 +14,13 @@
 	.myLabel {
 		/* margin-bottom: 10px; */
 		position: relative !important;
-		left: 0px !important;
+		left: 0 !important;
 		font-size: 12.5px !important;
 	}
 </style>
 
-<h3>@Localizer["Register"]</h3>
-<h5>@Localizer["CreateNewAccount"].</h5>
+<h5>@Localizer["Create a new account"]</h5>
 <hr style="margin-bottom: 20px"/>
-
 <div class="row">
 	<div class="col s12">
 		<form asp-action="Register" method="post">
@@ -30,24 +28,24 @@
 			<div class="row">
 				<div class="input-field col s4">
 					<input asp-for="LastName" type="text" class="validate">
-					<label asp-for="LastName">@Localizer["LastName"]</label>
+					<label asp-for="LastName">@Localizer["Last name"]</label>
 					<span class="helper-text" asp-validation-for="LastName" data-error="" data-success=""></span>
 				</div>
 				<div class="input-field col s4">
 					<input asp-for="FirstName" type="text" class="validate">
-					<label asp-for="FirstName">@Localizer["FirstName"]</label>
+					<label asp-for="FirstName">@Localizer["First name"]</label>
 					<span class="helper-text" asp-validation-for="FirstName" data-error="" data-success=""></span>
 				</div>
 				<div class="input-field col s4">
 					<input asp-for="MiddleName" type="text" class="validate">
-					<label asp-for="MiddleName">@Localizer["MiddleName"]</label>
+					<label asp-for="MiddleName">@Localizer["Middle name"]</label>
 					<span class="helper-text" asp-validation-for="MiddleName" data-error="" data-success=""></span>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s4">
 					<input asp-for="UserName" type="text" class="validate">
-					<label asp-for="UserName">@Localizer["UserName"]</label>
+					<label asp-for="UserName">@Localizer["User name"]</label>
 					<span class="helper-text" asp-validation-for="UserName" data-error="" data-success=""></span>
 				</div>
 				<div class="input-field col s4">
@@ -57,7 +55,7 @@
 				</div>
 				<div class="input-field col s4">
 					<input asp-for="PhoneNumber" type="text" class="validate">
-					<label asp-for="PhoneNumber">@Localizer["PhoneNumber"]</label>
+					<label asp-for="PhoneNumber">@Localizer["Phone number"]</label>
 					<span class="helper-text" asp-validation-for="PhoneNumber" data-error="" data-success=""></span>
 				</div>
 			</div>
@@ -69,13 +67,13 @@
 				</div>
 				<div class="input-field col s6">
 					<input asp-for="PasswordRepeat" type="password" class="validate">
-					<label asp-for="PasswordRepeat">@Localizer["PasswordRepeat"]</label>
+					<label asp-for="PasswordRepeat">@Localizer["Repeat password"]</label>
 					<span class="helper-text" asp-validation-for="PasswordRepeat" data-error="" data-success=""></span>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s12">
-					<label asp-for="SelectedDepartmentId" class="myLabel">@Localizer["ExpectedDepartment"]</label>
+					<label asp-for="SelectedDepartmentId" class="myLabel">@Localizer["Choose a department where you expect to work"]</label>
 					@{
 						var departmentSelection = Model.Departments.Select(d => new SelectItem(d.Title, d.Id.ToString()));
 					}
@@ -85,8 +83,8 @@
 				</div>
 			</div>
 			<div class="row">
-				<input type="submit" value="@Localizer["Register"]" class="waves-effect btn-small waves-light"/>
-				<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
+				<button type="submit" class="waves-effect btn-small accent-2">@Localizer["Register"]</button>
+				<a asp-action="Index" class="waves-effect btn-small blue darken-3">@Localizer["Cancel"]</a>
 			</div>
 		</form>
 	</div>

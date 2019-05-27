@@ -17,11 +17,8 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="Index" xml:space="preserve">
-		<value>Index</value>
-	</data>
-	<data name="ScientificWorks" xml:space="preserve">
-		<value>Scientific Works</value>
+	<data name="Scientific works" xml:space="preserve">
+		<value>Scientific works</value>
 	</data>
 	<data name="Create" xml:space="preserve">
 		<value>Create</value>
