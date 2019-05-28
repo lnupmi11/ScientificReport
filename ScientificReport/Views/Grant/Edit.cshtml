@@ -1,14 +1,12 @@
 @using Microsoft.AspNetCore.Mvc.Localization
-@model ScientificReport.DAL.Entities.Grant
+@model ScientificReport.DTO.Models.Grant.GrantEditModel
 @inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = Localizer["Edit"];
+	ViewData["Title"] = Localizer["Edit grant"];
 }
 
-<h3>@Localizer["Edit"]</h3>
-
-<h5>@Localizer["Grant"]</h5>
+<h4>@Localizer["Edit grant"]</h4>
 <hr />
 <div class="row">
 	<div class="col s12">
@@ -16,8 +14,8 @@
 			<div asp-validation-summary="ModelOnly" class="validate"></div>
 			<input type="hidden" asp-for="Id" />
 			<div class="row myButtons">
-				<input type="submit" value="@Localizer["Save"]" class="waves-effect btn-small amber accent-2"/>
-				<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
+				<button type="submit" class="waves-effect btn-small accent-2">@Localizer["Save"]</button>
+				<a asp-action="Index" class="waves-effect btn-small blue darken-3">@Localizer["Cancel"]</a>
 			</div>
 		</form>
 	</div>

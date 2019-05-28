@@ -9,6 +9,8 @@ namespace ScientificReport.BLL.Interfaces
 	{
 		IEnumerable<Conference> GetAll();
 		IEnumerable<Conference> GetAllWhere(Func<Conference, bool> predicate);
+		IEnumerable<Conference> GetPage(int page, int count);
+        int GetCount();
 		Conference GetById(Guid id);
 		Conference Get(Func<Conference, bool> predicate);
 		void CreateItem(Conference conference);

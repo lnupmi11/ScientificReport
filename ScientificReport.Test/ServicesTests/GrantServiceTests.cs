@@ -5,6 +5,7 @@ using Moq;
 using ScientificReport.BLL.Services;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
+using ScientificReport.DTO.Models.Grant;
 using Xunit;
 
 namespace ScientificReport.Test.ServicesTests
@@ -69,7 +70,7 @@ namespace ScientificReport.Test.ServicesTests
 			var service = new GrantService(GetMockContext().Object);
 
 			var expected = TestData.Grant3;
-			service.CreateItem(expected);
+			service.CreateItem(new GrantModel(expected));
 
 			_mockDbSet.Verify(m => m.Add(It.IsAny<Grant>()), Times.Once);
 		}
@@ -80,7 +81,7 @@ namespace ScientificReport.Test.ServicesTests
 			var service = new GrantService(GetMockContext().Object);
 
 			var expected = GetTestData().First();
-			service.UpdateItem(expected);
+			service.UpdateItem(new GrantEditModel(expected));
 
 			_mockDbSet.Verify(m => m.Update(expected), Times.Once);
 		}

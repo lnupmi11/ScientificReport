@@ -20,19 +20,22 @@
     <data name="Details" xml:space="preserve">
 		<value>Details</value>
 	</data>
-	<data name="PostgraduateGuidance" xml:space="preserve">
+	<data name="Details of postgraduate guidance" xml:space="preserve">
 		<value>Postgraduate guidance</value>
 	</data>
-	<data name="PostgraduateName" xml:space="preserve">
+	<data name="Postgraduate guidance" xml:space="preserve">
+		<value>Postgraduate guidance</value>
+	</data>
+	<data name="Postgraduate name" xml:space="preserve">
 		<value>Postgraduate name</value>
 	</data>
-	<data name="PostgraduateInfo" xml:space="preserve">
+	<data name="Postgraduate info" xml:space="preserve">
 		<value>Postgraduate info</value>
 	</data>
 	<data name="Edit" xml:space="preserve">
 		<value>Edit</value>
 	</data>
-	<data name="Back to List" xml:space="preserve">
+	<data name="Back to list" xml:space="preserve">
 		<value>Back to list</value>
 	</data>
 </root>

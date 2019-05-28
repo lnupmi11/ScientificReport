@@ -20,11 +20,8 @@
     <data name="Title" xml:space="preserve">
 		<value>Назва</value>
 	</data>
-    <data name="CreateDepartment" xml:space="preserve">
+    <data name="Create Department" xml:space="preserve">
 		<value>Створення кафедри</value>
-	</data>
-    <data name="CreateDepartmentInfo" xml:space="preserve">
-		<value>Кафедра буде створена лише, якщо такої не існує</value>
 	</data>
     <data name="Head" xml:space="preserve">
 		<value>Завідувач</value>

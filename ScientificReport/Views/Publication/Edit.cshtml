@@ -1,14 +1,26 @@
-@model ScientificReport.DAL.Entities.Publication
+@model ScientificReport.DTO.Models.Publication.PublicationEditModel
 @using Microsoft.AspNetCore.Mvc.Localization
+@using ScientificReport.Controllers.Utils
+@using ScientificReport.DTO.Models.Department
 @inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = Localizer["Edit"];
+	ViewData["Title"] = Localizer["Edit publication"];
 }
+<style>
+	.authors-label {
+		/* margin-bottom: 10px; */
+		position: relative !important;
+		left: 0 !important;
+		font-size: 12.5px !important;
+	}
+	.text-green { color: rgb(0, 179, 0); }
+	.text-red { color: rgb(177, 0, 0); }
+	.cursor-pointer { cursor: pointer; }
+	.hidden { display: none; }
+</style>
 
-<h3>@Localizer["Edit"]</h3>
-
-<h5>@Localizer["Publication"]</h5>
+<h5>@ViewData["Title"]</h5>
 <hr/>
 <div class="row">
 	<div class="col s12">
@@ -18,14 +30,14 @@
 			<div class="row">
 				<div class="input-field col s7">
 					<select asp-for="Type" class="col s12 push-s2">
-						<option value="" disabled selected>@Localizer["Choose your option"]</option>
+						<option value="" disabled selected>@Localizer["Choose publication type"]</option>
 						<option value="Monograph">@Localizer["Monograph"]</option>
-						<option value="TextBook">@Localizer["TextBook"]</option>
-						<option value="HandBook">@Localizer["HandBook"]</option>
+						<option value="TextBook">@Localizer["Textbook"]</option>
+						<option value="HandBook">@Localizer["Handbook"]</option>
 						<option value="Dictionary">@Localizer["Dictionary"]</option>
 						<option value="Translation">@Localizer["Translation"]</option>
 						<option value="Comment">@Localizer["Comment"]</option>
-						<option value="BibliographicIndex">@Localizer["Bibliographic Index"]</option>
+						<option value="BibliographicIndex">@Localizer["Bibliographic index"]</option>
 						<option value="Other">@Localizer["Other"]</option>
 					</select>
 					<label asp-for="Type">@Localizer["Type"]</label>
@@ -51,21 +63,21 @@
 			<div class="row">
 				<div class="input-field col s7">
 					<input asp-for="PublishingPlace" type="text" class="validate">
-					<label asp-for="PublishingPlace">@Localizer["PublishingPlace"]</label>
+					<label asp-for="PublishingPlace">@Localizer["Publishing place"]</label>
 					<span class="helper-text" asp-validation-for="PublishingPlace" data-error="" data-success=""></span>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s7">
 					<input asp-for="PublishingHouseName" type="text" class="validate">
-					<label asp-for="PublishingHouseName">@Localizer["PublishingHouseName"]</label>
+					<label asp-for="PublishingHouseName">@Localizer["Publishing house name"]</label>
 					<span class="helper-text" asp-validation-for="PublishingHouseName" data-error="" data-success=""></span>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s7">
 					<input asp-for="PublishingYear" type="number" class="validate">
-					<label asp-for="PublishingYear">@Localizer["PublishingYear"]</label>
+					<label asp-for="PublishingYear">@Localizer["Publishing year"]</label>
 					<span class="helper-text" asp-validation-for="PublishingYear" data-error="" data-success=""></span>
 				</div>
 			</div>
@@ -73,44 +85,80 @@
 			<div class="row">
 				<div class="input-field col s7">
 					<input asp-for="PagesAmount" type="number" class="validate">
-					<label asp-for="PagesAmount">@Localizer["PagesAmount"]</label>
+					<label asp-for="PagesAmount">@Localizer["Pages amount"]</label>
 					<span class="helper-text" asp-validation-for="PagesAmount" data-error="" data-success=""></span>
 				</div>
 			</div>
-			<div class="row">
-				<div class="input-field col s6">
-					<input asp-for="CreatedAt" type="date" class="validate">
-					<label asp-for="CreatedAt"></label>
-					<span asp-validation-for="CreatedAt" data-error="" data-success=""></span>
+			@if (Model.PrintStatusOptions != null)
+			{
+				<div class="row">
+					<div class="input-field col s7">
+						<select asp-for="PrintStatus" class="col s12 push-s2">
+							@foreach (var option in Model.PrintStatusOptions)
+							{
+								<option value="@option" @(option==Model.PrintStatus.ToString() ? "selected" : "")>@Localizer[option]</option>
+							}
+						</select>
+						<label asp-for="PrintStatus">@Localizer["Publishing status"]</label>
+					</div>
+				</div>	
+			}
+			@if (PageHelpers.IsAdminOrHead(User))
+			{
+				<div class="row">
+					<div class="col s6">
+						<label class="authors-label">@Localizer["Authors"]:</label>
+						<div class="authors-list">
+							@if (Model.Users != null)
+							{
+								var selection = Model.Users.Select(user => new SelectItem(user.FullName, user.Id.ToString(), Model.Authors.Contains(user)));
+								foreach (var user in selection)
+								{
+									var contains = Model.Authors.Any(s => s.Id.ToString().Equals(user.Value));
+									<p>
+										<i class="add-user fas fa-plus-circle fa-lg cursor-pointer text-green @(contains ? "hidden" : "")" onclick="addUserToAuthors(this, '@user.Value', '@Model.Id')"></i>
+										<i class="remove-user fas fa-minus-circle fa-lg cursor-pointer text-red @(contains ? "" : "hidden")" onclick="removeUserFromAuthors(this, '@user.Value', '@Model.Id')"></i>
+										@user.Text
+									</p>
+								}
+							}
+						</div>
+					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="input-field col s6">
-					<input asp-for="LastEditAt" type="date" class="validate">
-					<label asp-for="LastEditAt"></label>
-					<span asp-validation-for="LastEditAt" data-error="" data-success=""></span>
-				</div>
-			</div>
-						<div class="row">
-				<label class="col s7">
-					<input type="checkbox" class="filled-in" asp-for="IsPrintCanceled"/>
-					<span>@Localizer[Html.DisplayNameFor(model => model.IsPrintCanceled)]</span>
-				</label>
-		
-				<label class="col s7">
-					<input type="checkbox" class="filled-in" asp-for="IsRecommendedToPrint"/>
-					<span>@Localizer[Html.DisplayNameFor(model => model.IsRecommendedToPrint)]</span>
-				</label>
-			</div>
+			}
 			<div class="row myButtons">
-				<input type="submit" value="@Localizer["Save"]" class="waves-effect btn-small  amber accent-2"/>
-				<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
+				<button type="submit" class="waves-effect btn-small accent-2">@Localizer["Save"]</button>
+				<a asp-action="Index" class="waves-effect btn-small blue darken-3">@Localizer["Cancel"]</a>
 			</div>
 		</form>
 	</div>
 </div>
 
 @section Scripts {
+	<script>
+		const toggle = (tagName, actionName, bodyFn) => (tag, firstParam, secondParam) => {
+			const config = {
+				method: 'POST',
+				body: JSON.stringify(bodyFn(firstParam)),
+				headers: {
+					'Content-Type': 'application/json'
+				}
+			};
+			fetch('/Publication/' + actionName + `/${secondParam}`, config).then(response => {
+				if (response.status !== 200) throw { msg: `Failed to toggle ${tagName}`, response };
+				tag.classList.add('hidden');
+				tag.parentElement.getElementsByClassName(tagName)[0].classList.remove('hidden');
+			}).catch(e => {
+				console.error(e);
+			});
+		}
+
+		let reqAuthorBody = (userId) => {
+			return { UserId: userId };
+		};
+		const addUserToAuthors = toggle('remove-user', 'AddUserToAuthors', reqAuthorBody);
+		const removeUserFromAuthors = toggle('add-user', 'RemoveUserFromAuthors', reqAuthorBody);
+	</script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('select').formSelect();

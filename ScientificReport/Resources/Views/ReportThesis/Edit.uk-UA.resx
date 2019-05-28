@@ -17,10 +17,13 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
+	<data name="Edit report thesis" xml:space="preserve">
+		<value>Редагувати тезу доповіді</value>
+	</data>
     <data name="Edit" xml:space="preserve">
 		<value>Редагувати</value>
 	</data>
-	<data name="ReportThesis" xml:space="preserve">
+	<data name="Report thesis" xml:space="preserve">
 		<value>Теза доповіді</value>
 	</data>
 	<data name="Thesis" xml:space="preserve">

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
@@ -6,6 +5,7 @@ using Moq;
 using ScientificReport.BLL.Services;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
+using ScientificReport.DTO.Models.Membership;
 using Xunit;
 
 namespace ScientificReport.Test.ServicesTests
@@ -70,7 +70,7 @@ namespace ScientificReport.Test.ServicesTests
 			var service = new MembershipService(GetMockContext().Object);
 
 			var expected = TestData.Membership3;
-			service.CreateItem(expected);
+			service.CreateItem(new MembershipModel(expected));
 
 			_mockDbSet.Verify(m => m.Add(It.IsAny<Membership>()), Times.Once);
 		}
@@ -82,7 +82,7 @@ namespace ScientificReport.Test.ServicesTests
 
 			var expected = GetTestData().First();
 			expected.MemberOf = TestData.Membership3.MemberOf;
-			service.UpdateItem(expected);
+			service.UpdateItem(new MembershipEditModel(expected));
 
 			_mockDbSet.Verify(m => m.Update(expected), Times.Once);
 		}

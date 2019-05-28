@@ -23,8 +23,12 @@ namespace ScientificReport.Controllers
 		private readonly IUserProfileService _userProfileService;
 		private readonly IScientificWorkService _scientificWorkService;
 
-		public DepartmentController(IDepartmentService departmentService, IUserProfileService userProfileService,
-			IScientificWorkService scientificWorkService, UserManager<UserProfile> userManager)
+		public DepartmentController(
+			IDepartmentService departmentService,
+			IUserProfileService userProfileService,
+			IScientificWorkService scientificWorkService,
+			UserManager<UserProfile> userManager
+		)
 		{
 			_userManager = userManager;
 			_departmentService = departmentService;
@@ -34,11 +38,13 @@ namespace ScientificReport.Controllers
 
 		// GET: Department/Index
 		[HttpGet]
-		public IActionResult Index()
+		public IActionResult Index(DepartmentIndexModel model)
 		{
 			if (PageHelpers.IsAdmin(User))
 			{
-				return View(_departmentService.GetAll());
+				model.Departments = _departmentService.Filter(model);
+				model.Count = _departmentService.GetCount();
+				return View(model);
 			}
 
 			var department = _departmentService.Get(

@@ -3,13 +3,11 @@
 @inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = Localizer["Edit"];
+    ViewData["Title"] = Localizer["Edit conference"];
 }
 
-<h3>@Localizer["Edit"]</h3>
-
-<h5>@Localizer["Conference"]</h5>
-<hr />
+<h4>@Localizer["Edit conference"]</h4>
+<hr/>
 <div class="row">
     <div class="col s12">
         <form asp-action="Edit">
@@ -29,8 +27,8 @@
                 </div>
             </div>
             <div class="row myButtons">
-                <input type="submit" value="@Localizer["Cancel"]" class="waves-effect btn-small  amber accent-2"/>
-                <a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
+                <button type="submit" class="waves-effect btn-small accent-2">@Localizer["Save"]</button>
+                <a asp-action="Index" class="waves-effect btn-small blue darken-3">@Localizer["Cancel"]</a>
             </div>
         </form>
     </div>

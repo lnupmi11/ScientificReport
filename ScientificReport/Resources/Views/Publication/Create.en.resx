@@ -23,16 +23,19 @@
 	<data name="Publication" xml:space="preserve">
 		<value>Publication</value>
 	</data>
-	<data name="Choose your option" xml:space="preserve">
-		<value>Choose your option</value>
+	<data name="Create publication" xml:space="preserve">
+		<value>Create publication</value>
+	</data>
+	<data name="Choose publication type" xml:space="preserve">
+		<value>Choose publication type</value>
 	</data>
 	<data name="Monograph" xml:space="preserve">
 		<value>Monograph</value>
 	</data>
-	<data name="TextBook" xml:space="preserve">
+	<data name="Textbook" xml:space="preserve">
 		<value>Textbook</value>
 	</data>
-	<data name="HandBook" xml:space="preserve">
+	<data name="Handbook" xml:space="preserve">
 		<value>Handbook</value>
 	</data>
 	<data name="Dictionary" xml:space="preserve">
@@ -44,7 +47,7 @@
 	<data name="Comment" xml:space="preserve">
 		<value>Comment</value>
 	</data>
-	<data name="Bibliographic Index" xml:space="preserve">
+	<data name="Bibliographic index" xml:space="preserve">
 		<value>Bibliographic index</value>
 	</data>
 	<data name="Other" xml:space="preserve">
@@ -59,14 +62,17 @@
 	<data name="Specification" xml:space="preserve">
 		<value>Specification</value>
 	</data>
-	<data name="PublishingPlace" xml:space="preserve">
+	<data name="Publishing place" xml:space="preserve">
 		<value>Publishing place</value>
 	</data>
-	<data name="PublishingHouseName" xml:space="preserve">
+	<data name="Publishing house name" xml:space="preserve">
 		<value>Publishing house</value>
 	</data>
-	<data name="PublishingYear" xml:space="preserve">
+	<data name="Publishing year" xml:space="preserve">
 		<value>Publishing year</value>
+	</data>
+	<data name="Any" xml:space="preserve">
+		<value>-- Absent --</value>
 	</data>
 	<data name="IsPrintCanceled" xml:space="preserve">
 		<value>Is print canceled</value>
@@ -74,8 +80,11 @@
 	<data name="IsRecommendedToPrint" xml:space="preserve">
 		<value>Is recommended to print</value>
 	</data>
-	<data name="PagesAmount" xml:space="preserve">
-		<value>Amount of pages</value>
+	<data name="Pages amount" xml:space="preserve">
+		<value>Pages amount</value>
+	</data>
+	<data name="Publishing status" xml:space="preserve">
+		<value>Publishing status</value>
 	</data>
 	<data name="Cancel" xml:space="preserve">
 		<value>Cancel</value>

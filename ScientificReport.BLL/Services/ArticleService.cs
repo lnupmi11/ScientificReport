@@ -17,6 +17,16 @@ namespace ScientificReport.BLL.Services
 		{
 			_articleRepository = new ArticleRepository(context);
 		}
+		
+		public virtual IEnumerable<Article> GetPage(int page, int count)
+		{
+			return _articleRepository.All().Skip((page - 1) * count).Take(count).ToList();
+		}
+		
+		public virtual int GetCount()
+		{
+			return _articleRepository.All().Count();
+		}
 
 		public virtual IEnumerable<Article> GetAll()
 		{
@@ -58,6 +68,24 @@ namespace ScientificReport.BLL.Services
 			return _articleRepository.Get(id) != null;
 		}
 
+		public virtual void AddAuthor(Article article, UserProfile user)
+		{
+			article.UserProfilesArticles.Add(new UserProfilesArticles
+			{
+				Article = article,
+				Author = user,
+				ArticleId = article.Id,
+				AuthorId = user.Id
+			});
+			_articleRepository.Update(article);
+		}
+		
+		public virtual void RemoveAuthor(Article article, UserProfile user)
+		{
+			article.UserProfilesArticles.Remove(article.UserProfilesArticles.First(up => up.Author.Id == user.Id));
+			_articleRepository.Update(article);
+		}
+		
 		public virtual IEnumerable<UserProfile> GetAuthors(Guid id)
 		{
 			var article = _articleRepository.Get(id);

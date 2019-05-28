@@ -20,10 +20,10 @@
     <data name="Postgraduate Dissertation Guidance" xml:space="preserve">
 		<value>Postgraduate Dissertation Guidance</value>
 	</data>
-	<data name="Create New" xml:space="preserve">
-		<value>Create New</value>
-	</data><data name="PostgraduateName" xml:space="preserve">
-		<value>PostgraduateName</value>
+	<data name="Create" xml:space="preserve">
+		<value>Create</value>
+	</data><data name="Postgraduate name" xml:space="preserve">
+		<value>Postgraduate name</value>
 	</data>
 	<data name="Dissertation" xml:space="preserve">
 		<value>Dissertation</value>
@@ -31,11 +31,11 @@
 	<data name="Speciality" xml:space="preserve">
 		<value>Speciality</value>
 	</data>
-	<data name="DateDegreeGained" xml:space="preserve">
-		<value>DateDegreeGained</value>
+	<data name="Date degree gained" xml:space="preserve">
+		<value>Date degree gained</value>
 	</data>
-	<data name="GraduationYear" xml:space="preserve">
-		<value>GraduationYear</value>
+	<data name="Graduation year" xml:space="preserve">
+		<value>Graduation year</value>
 	</data>
 	<data name="Details" xml:space="preserve">
 		<value>Details</value>
@@ -46,10 +46,10 @@
 	<data name="Delete" xml:space="preserve">
 		<value>Delete</value>
 	</data>
-	<data name="Save" xml:space="preserve">
-		<value>Save</value>
+	<data name="Previous" xml:space="preserve">
+		<value>Previous</value>
 	</data>
-	<data name="Cancel" xml:space="preserve">
-		<value>Cancel</value>
+	<data name="Next" xml:space="preserve">
+		<value>Next</value>
 	</data>
 </root>

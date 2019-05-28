@@ -5,6 +5,7 @@ using Moq;
 using ScientificReport.BLL.Services;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
+using ScientificReport.DTO.Models.PatentLicenseActivity;
 using Xunit;
 
 namespace ScientificReport.Test.ServicesTests
@@ -69,7 +70,7 @@ namespace ScientificReport.Test.ServicesTests
 			var service = new PatentLicenseActivityService(GetMockContext().Object);
 
 			var expected = TestData.PatentLicenseActivity3;
-			service.CreateItem(expected);
+			service.CreateItem(new PatentLicenseActivityModel(expected));
 
 			_mockDbSet.Verify(m => m.Add(It.IsAny<PatentLicenseActivity>()), Times.Once);
 		}
@@ -81,7 +82,7 @@ namespace ScientificReport.Test.ServicesTests
 
 			var expected = GetTestData().First();
 			expected.Name = TestData.PatentLicenseActivity3.Name;
-			service.UpdateItem(expected);
+			service.UpdateItem(new PatentLicenseActivityEditModel(expected));
 
 			_mockDbSet.Verify(m => m.Update(expected), Times.Once);
 		}

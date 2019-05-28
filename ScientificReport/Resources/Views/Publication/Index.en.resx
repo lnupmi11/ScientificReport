@@ -17,11 +17,44 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="CreateNew" xml:space="preserve">
-		<value>Create new</value>
+    <data name="Create" xml:space="preserve">
+		<value>Create</value>
 	</data>
-	<data name="Publication" xml:space="preserve">
-		<value>Publication</value>
+	<data name="Publications" xml:space="preserve">
+		<value>Publications</value>
+	</data>
+	<data name="Any" xml:space="preserve">
+		<value>Any</value>
+	</data>
+	<data name="Publishing status" xml:space="preserve">
+		<value>Publishing Status</value>
+	</data>
+	<data name="IsRecommendedToPrint" xml:space="preserve">
+		<value>Is recommended to print</value>
+	</data>
+	<data name="IsPrintCanceled" xml:space="preserve">
+		<value>Is canceled to print</value>
+	</data>
+	<data name="Year from" xml:space="preserve">
+		<value>Year from</value>
+	</data>
+	<data name="Year to" xml:space="preserve">
+		<value>Year to</value>
+	</data>
+	<data name="Personal" xml:space="preserve">
+		<value>Personal</value>
+	</data>
+	<data name="Department" xml:space="preserve">
+		<value>Department</value>
+	</data>
+	<data name="Faculty" xml:space="preserve">
+		<value>Faculty</value>
+	</data>
+	<data name="Filter" xml:space="preserve">
+		<value>Filter</value>
+	</data>
+	<data name="Publication set" xml:space="preserve">
+		<value>Publication set</value>
 	</data>
 	<data name="Type" xml:space="preserve">
 		<value>Type</value>
@@ -29,10 +62,10 @@
 	<data name="Title" xml:space="preserve">
 		<value>Title</value>
 	</data>
-	<data name="PublishingHouseName" xml:space="preserve">
+	<data name="Publishing house name" xml:space="preserve">
 		<value>Publishing house name</value>
 	</data>
-	<data name="PublishingYear" xml:space="preserve">
+	<data name="Publishing year" xml:space="preserve">
 		<value>Publishing year</value>
 	</data>
 	<data name="Details" xml:space="preserve">
@@ -43,5 +76,35 @@
 	</data>
 	<data name="Delete" xml:space="preserve">
 		<value>Delete</value>
+	</data>
+	<data name="Monograph" xml:space="preserve">
+		<value>Monograph</value>
+	</data>
+	<data name="Textbook" xml:space="preserve">
+		<value>Textbook</value>
+	</data>
+	<data name="Handbook" xml:space="preserve">
+		<value>Handbook</value>
+	</data>
+	<data name="Dictionary" xml:space="preserve">
+		<value>Dictionary</value>
+	</data>
+	<data name="Translation" xml:space="preserve">
+		<value>Translation</value>
+	</data>
+	<data name="Comment" xml:space="preserve">
+		<value>Comment</value>
+	</data>
+	<data name="Bibliographic index" xml:space="preserve">
+		<value>Bibliographic index</value>
+	</data>
+	<data name="Other" xml:space="preserve">
+		<value>Other</value>
+	</data>
+	<data name="Previous" xml:space="preserve">
+		<value>Previous</value>
+	</data>
+	<data name="Next" xml:space="preserve">
+		<value>Next</value>
 	</data>
 </root>

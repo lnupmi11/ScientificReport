@@ -17,17 +17,11 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="ScientificReport" xml:space="preserve">
-		<value>Scientific Report</value>
-	</data>
-    <data name="ApplicantsPatentLicenseActivities" xml:space="preserve">
-		<value>Applicants Patent License Activities</value>
+    <data name="Scientific Reports" xml:space="preserve">
+		<value>Scientific Reports</value>
 	</data>
     <data name="Article" xml:space="preserve">
 		<value>Article</value>
-	</data>
-    <data name="AuthorsPatentLicenseActivities" xml:space="preserve">
-		<value>Authors Patent License Activities</value>
 	</data>
     <data name="Conferences" xml:space="preserve">
 		<value>Conferences</value>
@@ -41,35 +35,35 @@
     <data name="Oppositions" xml:space="preserve">
 		<value>Oppositions</value>
 	</data>
-    <data name="PatentLicenseActivities" xml:space="preserve">
-		<value>Patent License Activities</value>
+    <data name="Patent license activities" xml:space="preserve">
+		<value>Patent license activities</value>
 	</data>
-    <data name="PostgraduateDissertationGuidance" xml:space="preserve">
-		<value>Postgraduate Dissertation Guidance</value>
+    <data name="Postgraduate dissertation guidance" xml:space="preserve">
+		<value>Postgraduate dissertation guidance</value>
 	</data>
-	<data name="PostgraduateGuidance" xml:space="preserve">
-		<value>Postgraduate Guidance</value>
+	<data name="Postgraduate guidance" xml:space="preserve">
+		<value>Postgraduate guidance</value>
 	</data>
 	<data name="Publications" xml:space="preserve">
 		<value>Publications</value>
 	</data>
-	<data name="ReportTheses" xml:space="preserve">
+	<data name="Report theses" xml:space="preserve">
 		<value>Report Theses</value>
 	</data>
 	<data name="Reviews" xml:space="preserve">
 		<value>Reviews</value>
 	</data>
-	<data name="ScientificConsultations" xml:space="preserve">
-		<value>Scientific Consultations</value>
+	<data name="Scientific consultations" xml:space="preserve">
+		<value>Scientific consultations</value>
 	</data>
-	<data name="ScientificInternship" xml:space="preserve">
-		<value>Scientific Internship</value>
+	<data name="Scientific internship" xml:space="preserve">
+		<value>Scientific internship</value>
 	</data>
-	<data name="TeacherReports" xml:space="preserve">
+	<data name="Teacher reports" xml:space="preserve">
 		<value>Teacher Reports</value>
 	</data>
-	<data name="ScientificWorks" xml:space="preserve">
-		<value>Scientific Works</value>
+	<data name="Scientific works" xml:space="preserve">
+		<value>Scientific works</value>
 	</data>
 	<data name="Users" xml:space="preserve">
 		<value>Users</value>
@@ -83,19 +77,22 @@
 	<data name="Department" xml:space="preserve">
 		<value>Department</value>
 	</data>
-	<data name="OtherReportData" xml:space="preserve">
-		<value>Other Report Data</value>
+	<data name="Other report data" xml:space="preserve">
+		<value>Other report data</value>
 	</data>
 	<data name="Reports" xml:space="preserve">
 		<value>Reports</value>
 	</data>
-	<data name="TeacherReport" xml:space="preserve">
-		<value>Teacher Report</value>
+	<data name="Teacher report" xml:space="preserve">
+		<value>Teacher report</value>
 	</data>
-	<data name="DepartmentReport" xml:space="preserve">
-		<value>Department Report</value>
+	<data name="Department report" xml:space="preserve">
+		<value>Department report</value>
 	</data>
-	<data name="FacultyReport" xml:space="preserve">
-		<value>Faculty Report</value>
+	<data name="Faculty report" xml:space="preserve">
+		<value>Faculty report</value>
+	</data>
+	<data name="Faculty of Applied Mathematics and Informatics. All rights reserved." xml:space="preserve">
+		<value>Faculty of Applied Mathematics and Informatics. All rights reserved.</value>
 	</data>
 </root>

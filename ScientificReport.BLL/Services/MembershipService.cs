@@ -5,6 +5,7 @@ using ScientificReport.BLL.Interfaces;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Repositories;
+using ScientificReport.DTO.Models.Membership;
 
 namespace ScientificReport.BLL.Services
 {
@@ -27,6 +28,16 @@ namespace ScientificReport.BLL.Services
 			return GetAll().Where(predicate);
 		}
 
+		public virtual IEnumerable<Membership> GetPage(int page, int count)
+		{
+			return _membershipRepository.All().Skip((page - 1) * count).Take(count).ToList();
+		}
+
+		public virtual int GetCount()
+		{
+			return _membershipRepository.All().Count();
+		}
+
 		public virtual Membership GetById(Guid id)
 		{
 			return _membershipRepository.Get(id);
@@ -37,13 +48,25 @@ namespace ScientificReport.BLL.Services
 			return _membershipRepository.Get(predicate);
 		}
 
-		public virtual void CreateItem(Membership membership)
+		public virtual void CreateItem(MembershipModel model)
 		{
-			_membershipRepository.Create(membership);
+			_membershipRepository.Create(new Membership
+			{
+				MemberOf = model.MemberOf,
+				MembershipInfo = model.MembershipInfo
+			});
 		}
 
-		public virtual void UpdateItem(Membership membership)
+		public virtual void UpdateItem(MembershipEditModel model)
 		{
+			var membership = GetById(model.Id);
+			if (membership == null)
+			{
+				return;
+			}
+			
+			membership.MemberOf = model.MemberOf;
+			membership.MembershipInfo = model.MembershipInfo;
 			_membershipRepository.Update(membership);
 		}
 

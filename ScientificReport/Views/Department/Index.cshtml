@@ -1,28 +1,45 @@
 @using Microsoft.AspNetCore.Mvc.Localization
-@model IEnumerable<ScientificReport.DAL.Entities.Department>
+@model ScientificReport.DTO.Models.Department.DepartmentIndexModel
 @inject IViewLocalizer Localizer
 
 @{
 	ViewData["Title"] = Localizer["Departments"];
 }
 
-<h3>@Localizer["Departments"]</h3>
-
+<h4>@ViewData["Title"]</h4>
 <button type="button" class="waves-effect btn-small green darken-3" onclick="location.href = '@Url.Action("Create", "Department")'">@Localizer["Create"]</button>
-
+<div class="row">
+	<div class="col s12">
+		<form asp-action="Index" method="get">
+			<div class="row">
+				<div class="input-field col s11">
+					<input asp-for="TitleFilter" class="validate" />
+					<label asp-for="TitleFilter">@Localizer["Title filter"]</label>
+				</div>
+				<div class="col s1">
+					<button type="submit" class="waves-effect btn-small waves-light">@Localizer["Filter"]</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
 <table class="responsive-table">
 	<thead>
 	<tr>
 		<th>
-			@Localizer[Html.DisplayNameFor(model => model.Title)]
+			<a asp-action="Index" asp-route-SortBy="Title">@Localizer["Title"]</a>
 		</th>
-		<th>@Localizer["Staff number"]</th>
-		<th>@Localizer["Scientific works total"]</th>
+		<th>
+			<a asp-action="Index" asp-route-SortBy="StaffCount">@Localizer["Staff number"]</a>
+		</th>
+		<th>
+			<a asp-action="Index" asp-route-SortBy="TotalScientificWorksCount">@Localizer["Scientific works total"]</a>
+		</th>
 		<th></th>
 	</tr>
 	</thead>
 	<tbody>
-	@foreach (var item in Model)
+	@foreach (var item in Model.Departments)
 	{
 		<tr>
 			<td>
@@ -35,7 +52,7 @@
 				@Html.DisplayFor(modelItem => item.ScientificWorks.Count)
 			</td>
 			<td>
-				<a asp-action="Details" asp-route-id="@item.Id" class="btn-small blue darken-3">@Localizer["Details"]</a>
+				<a asp-action="Details" asp-route-id="@item.Id" class="waves-effect btn-small blue darken-3">@Localizer["Details"]</a>
 				<a asp-action="Edit" asp-route-id="@item.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
 				@if (item.Staff.Count == 1)
 				{
@@ -48,3 +65,26 @@
 	}
 	</tbody>
 </table>
+<ul class="pagination">
+	@if (Model.ShowPrevious)
+	{
+		<li class="page-item">
+			<a asp-action="Index" asp-route-currentpage="@(Model.CurrentPage - 1)" class="page-link">@Localizer["Previous"]</a>
+		</li>
+	}
+	@if (Model.TotalPages > 1)
+	{
+		for (var i = 1; i <= Model.TotalPages; i++)
+		{
+			<li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+				<a asp-action="Index" asp-route-currentpage="@i" class="page-link">@i</a>
+			</li>
+		}	
+	}
+	@if (Model.ShowNext)
+	{
+		<li class="page-item">
+			<a asp-action="Index" asp-route-currentpage="@(Model.CurrentPage + 1)" class="page-link">@Localizer["Next"]</a>
+		</li>
+	}
+</ul>

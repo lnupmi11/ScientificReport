@@ -1,41 +1,39 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using ScientificReport.DAL.DbContext;
-using ScientificReport.DAL.Entities;
+using ScientificReport.BLL.Interfaces;
+using ScientificReport.DAL.Roles;
+using ScientificReport.DTO.Models.Opposition;
 
 namespace ScientificReport.Controllers
 {
-//	[Authorize(Roles = UserProfileRole.Teacher)]
+	[Authorize(Roles = UserProfileRole.Any)]
 	public class OppositionController : Controller
 	{
-		private readonly ScientificReportDbContext _context;
+		private readonly IOppositionService _oppositionService;
 
-		public OppositionController(ScientificReportDbContext context)
+		public OppositionController(IOppositionService oppositionService)
 		{
-			_context = context;
+			_oppositionService = oppositionService;
 		}
 
 		// GET: Opposition
-		public async Task<IActionResult> Index()
+		public IActionResult Index(OppositionIndexModel model)
 		{
-			return View(await _context.Oppositions.ToListAsync());
+			model.Oppositions = _oppositionService.GetPage(model.CurrentPage, model.PageSize);
+			model.Count = _oppositionService.GetCount();
+			return View(model);
 		}
 
-		// GET: Opposition/Details/5
-		public async Task<IActionResult> Details(Guid? id)
+		// GET: Opposition/Details/{id}
+		public IActionResult Details(Guid? id)
 		{
 			if (id == null)
 			{
 				return NotFound();
 			}
 
-			var opposition = await _context.Oppositions
-				.FirstOrDefaultAsync(m => m.Id == id);
+			var opposition = _oppositionService.GetById(id.Value);
 			if (opposition == null)
 			{
 				return NotFound();
@@ -51,105 +49,83 @@ namespace ScientificReport.Controllers
 		}
 
 		// POST: Opposition/Create
-		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Create([Bind("Id,About,DateOfOpposition")] Opposition opposition)
+		public IActionResult Create(OppositionModel model)
 		{
-			if (ModelState.IsValid)
+			if (!ModelState.IsValid)
 			{
-				opposition.Id = Guid.NewGuid();
-				_context.Add(opposition);
-				await _context.SaveChangesAsync();
-				return RedirectToAction(nameof(Index));
+				return View(model);
 			}
-			return View(opposition);
-		}
-
-		// GET: Opposition/Edit/5
-		public async Task<IActionResult> Edit(Guid? id)
-		{
-			if (id == null)
-			{
-				return NotFound();
-			}
-
-			var opposition = await _context.Oppositions.FindAsync(id);
-			if (opposition == null)
-			{
-				return NotFound();
-			}
-			return View(opposition);
-		}
-
-		// POST: Opposition/Edit/5
-		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Edit(Guid id, [Bind("Id,About,DateOfOpposition")] Opposition opposition)
-		{
-			if (id != opposition.Id)
-			{
-				return NotFound();
-			}
-
-			if (ModelState.IsValid)
-			{
-				try
-				{
-					_context.Update(opposition);
-					await _context.SaveChangesAsync();
-				}
-				catch (DbUpdateConcurrencyException)
-				{
-					if (!OppositionExists(opposition.Id))
-					{
-						return NotFound();
-					}
-					else
-					{
-						throw;
-					}
-				}
-				return RedirectToAction(nameof(Index));
-			}
-			return View(opposition);
-		}
-
-		// GET: Opposition/Delete/5
-		public async Task<IActionResult> Delete(Guid? id)
-		{
-			if (id == null)
-			{
-				return NotFound();
-			}
-
-			var opposition = await _context.Oppositions
-				.FirstOrDefaultAsync(m => m.Id == id);
-			if (opposition == null)
-			{
-				return NotFound();
-			}
-
-			return View(opposition);
-		}
-
-		// POST: Opposition/Delete/5
-		[HttpPost, ActionName("Delete")]
-		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> DeleteConfirmed(Guid id)
-		{
-			var opposition = await _context.Oppositions.FindAsync(id);
-			_context.Oppositions.Remove(opposition);
-			await _context.SaveChangesAsync();
+			_oppositionService.CreateItem(model);
 			return RedirectToAction(nameof(Index));
 		}
 
-		private bool OppositionExists(Guid id)
+		// GET: Opposition/Edit/{id}
+		public IActionResult Edit(Guid? id)
 		{
-			return _context.Oppositions.Any(e => e.Id == id);
+			if (id == null)
+			{
+				return NotFound();
+			}
+
+			var opposition = _oppositionService.GetById(id.Value);
+			if (opposition == null)
+			{
+				return NotFound();
+			}
+
+			return View(new OppositionEditModel(opposition));
+		}
+
+		// POST: Opposition/Edit/{id}
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public IActionResult Edit(Guid id, OppositionEditModel model)
+		{
+			if (id != model.Id || !_oppositionService.Exists(id))
+			{
+				return NotFound();
+			}
+
+			if (!ModelState.IsValid)
+			{
+				return View(model);
+			}
+
+			_oppositionService.UpdateItem(model);
+			return RedirectToAction(nameof(Index));
+		}
+
+		// GET: Opposition/Delete/{id}
+		public IActionResult Delete(Guid? id)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
+
+			var opposition = _oppositionService.GetById(id.Value);
+			if (opposition == null)
+			{
+				return NotFound();
+			}
+
+			return View(opposition);
+		}
+
+		// POST: Opposition/Delete/{id}
+		[HttpPost, ActionName("Delete")]
+		[ValidateAntiForgeryToken]
+		public IActionResult DeleteConfirmed(Guid id)
+		{
+			if (!_oppositionService.Exists(id))
+			{
+				return NotFound();
+			}
+			
+			_oppositionService.DeleteById(id);
+			return RedirectToAction(nameof(Index));
 		}
 	}
 }

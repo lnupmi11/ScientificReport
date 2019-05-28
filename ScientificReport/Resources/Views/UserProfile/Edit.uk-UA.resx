@@ -17,34 +17,31 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="Edit" xml:space="preserve">
-		<value>Редагувати</value>
-	</data>
 	<data name="Edit user" xml:space="preserve">
 		<value>Редагувати профіль</value>
 	</data>
-	<data name="FirstName" xml:space="preserve">
+	<data name="First name" xml:space="preserve">
 		<value>Ім'я</value>
 	</data>
-	<data name="MiddleName" xml:space="preserve">
+	<data name="Middle name" xml:space="preserve">
 		<value>По-батькові</value>
 	</data>
-	<data name="LastName" xml:space="preserve">
+	<data name="Last name" xml:space="preserve">
 		<value>Прізвище</value>
 	</data>
-	<data name="PhoneNumber" xml:space="preserve">
+	<data name="Phone number" xml:space="preserve">
 		<value>Номер телефону</value>
 	</data>
-	<data name="BirthYear" xml:space="preserve">
+	<data name="Birth year" xml:space="preserve">
 		<value>Рік народження</value>
 	</data>
-	<data name="GraduationYear" xml:space="preserve">
+	<data name="Graduation year" xml:space="preserve">
 		<value>Рік закінчення ВНЗ</value>
 	</data>
-	<data name="ScientificDegree" xml:space="preserve">
+	<data name="Scientific degree" xml:space="preserve">
 		<value>Науковий ступінь</value>
 	</data>
-	<data name="YearDegreeAssigned" xml:space="preserve">
+	<data name="Year degree assigned" xml:space="preserve">
 		<value>Рік присвоєння вченого звання</value>
 	</data>
 	<data name="Teacher" xml:space="preserve">
@@ -56,22 +53,22 @@
 	<data name="Administrator" xml:space="preserve">
 		<value>Адміністратор</value>
 	</data>
-	<data name="AcademicStatus" xml:space="preserve">
+	<data name="Academic status" xml:space="preserve">
 		<value>Вчене звання</value>
 	</data>
-	<data name="YearDegreeGained" xml:space="preserve">
+	<data name="Year degree gained" xml:space="preserve">
 		<value>Рік захисту наукового ступеня</value>
 	</data>
-	<data name="UserName" xml:space="preserve">
+	<data name="User name" xml:space="preserve">
 		<value>Ім'я користувача</value>
 	</data>
 	<data name="Email" xml:space="preserve">
 		<value>Електронна адреса</value>
 	</data>
-	<data name="IsApproved" xml:space="preserve">
+	<data name="Is approved" xml:space="preserve">
 		<value>Схвалений</value>
 	</data>
-	<data name="IsActive" xml:space="preserve">
+	<data name="Is active" xml:space="preserve">
 		<value>Активний</value>
 	</data>
 	<data name="Save" xml:space="preserve">
@@ -80,7 +77,7 @@
 	<data name="Cancel" xml:space="preserve">
 		<value>Відмінити</value>
 	</data>
-	<data name="Back to List" xml:space="preserve">
+	<data name="Back to list" xml:space="preserve">
 		<value>Повернутися до списку</value>
 	</data>
 	<data name="Roles" xml:space="preserve">

@@ -6,6 +6,7 @@ using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Entities.UserProfile;
 using ScientificReport.DAL.Repositories;
+using ScientificReport.DTO.Models.Grant;
 
 namespace ScientificReport.BLL.Services
 {
@@ -28,6 +29,16 @@ namespace ScientificReport.BLL.Services
 			return GetAll().Where(predicate);
 		}
 
+		public virtual IEnumerable<Grant> GetPage(int page, int count)
+		{
+			return _grantRepository.All().Skip((page - 1) * count).Take(count).ToList();
+		}
+
+		public virtual int GetCount()
+		{
+			return _grantRepository.All().Count();
+		}
+
 		public virtual Grant GetById(Guid id)
 		{
 			return _grantRepository.Get(id);
@@ -38,13 +49,19 @@ namespace ScientificReport.BLL.Services
 			return _grantRepository.Get(predicate);
 		}
 
-		public virtual void CreateItem(Grant grant)
+		public virtual void CreateItem(GrantModel model)
 		{
-			_grantRepository.Create(grant);
+			_grantRepository.Create(new Grant());
 		}
 
-		public virtual void UpdateItem(Grant grant)
+		public virtual void UpdateItem(GrantEditModel model)
 		{
+			var grant = GetById(model.Id);
+			if (grant == null)
+			{
+				return;
+			}
+			
 			_grantRepository.Update(grant);
 		}
 

@@ -17,16 +17,13 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="Index" xml:space="preserve">
-		<value>Головна</value>
+    <data name="Reviews" xml:space="preserve">
+		<value>Рецензії</value>
 	</data>
 	<data name="Create" xml:space="preserve">
 		<value>Створити</value>
 	</data>
-	<data name="Review" xml:space="preserve">
-		<value>Рецензія</value>
-	</data>
-	<data name="DateOfReview" xml:space="preserve">
+	<data name="Date of review" xml:space="preserve">
 		<value>Дата рецензування</value>
 	</data>
 	<data name="Edit" xml:space="preserve">
@@ -37,5 +34,14 @@
 	</data>
 	<data name="Delete" xml:space="preserve">
 		<value>Видалити</value>
+	</data>
+	<data name="Previous" xml:space="preserve">
+		<value>Попередня</value>
+	</data>
+	<data name="Next" xml:space="preserve">
+		<value>Наступна</value>
+	</data>
+	<data name="Work" xml:space="preserve">
+		<value>Робота</value>
 	</data>
 </root>

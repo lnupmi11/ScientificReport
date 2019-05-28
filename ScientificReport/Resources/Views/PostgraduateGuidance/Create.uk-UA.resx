@@ -20,13 +20,16 @@
     <data name="Create" xml:space="preserve">
 		<value>Створити</value>
 	</data>
-	<data name="PostgraduateGuidance" xml:space="preserve">
+	<data name="Add postgraduate guidance" xml:space="preserve">
+		<value>Додати наукове керівництво аспірантами</value>
+	</data>
+	<data name="Postgraduate guidance" xml:space="preserve">
 		<value>Наукове керівництво аспірантами</value>
 	</data>
-	<data name="PostgraduateName" xml:space="preserve">
+	<data name="Postgraduate name" xml:space="preserve">
 		<value>І'мя аспіранта</value>
 	</data>
-	<data name="PostgraduateInfo" xml:space="preserve">
+	<data name="Postgraduate info" xml:space="preserve">
 		<value>Інформація про аспіранта</value>
 	</data>
 	<data name="Cancel" xml:space="preserve">

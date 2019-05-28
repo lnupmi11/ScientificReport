@@ -20,16 +20,19 @@
     <data name="Publication" xml:space="preserve">
 		<value>Публікація</value>
 	</data>
-	<data name="Choose your option" xml:space="preserve">
-		<value>Оберіть варіант</value>
+	<data name="Create publication" xml:space="preserve">
+		<value>Створити публікацію</value>
+	</data>
+	<data name="Choose publication type" xml:space="preserve">
+		<value>Оберіть тип публікації</value>
 	</data>
 	<data name="Monograph" xml:space="preserve">
 		<value>Монографія</value>
 	</data>
-	<data name="TextBook" xml:space="preserve">
+	<data name="Textbook" xml:space="preserve">
 		<value>Підручник</value>
 	</data>
-	<data name="HandBook" xml:space="preserve">
+	<data name="Handbook" xml:space="preserve">
 		<value>Навчальний посібник</value>
 	</data>
 	<data name="Dictionary" xml:space="preserve">
@@ -41,7 +44,7 @@
 	<data name="Comment" xml:space="preserve">
 		<value>Науковий коментар</value>
 	</data>
-	<data name="Bibliographic Index" xml:space="preserve">
+	<data name="Bibliographic index" xml:space="preserve">
 		<value>Бібліографічний покажчик</value>
 	</data>
 	<data name="Other" xml:space="preserve">
@@ -56,23 +59,29 @@
 	<data name="Specification" xml:space="preserve">
 		<value>Уточнення</value>
 	</data>
-	<data name="PublishingPlace" xml:space="preserve">
+	<data name="Publishing place" xml:space="preserve">
 		<value>Місто видання</value>
 	</data>
-	<data name="PublishingHouseName" xml:space="preserve">
-		<value>Видавничий дім</value>
+	<data name="Publishing house name" xml:space="preserve">
+		<value>Видавництво</value>
 	</data>
-	<data name="PublishingYear" xml:space="preserve">
+	<data name="Publishing year" xml:space="preserve">
 		<value>Рік видання</value>
 	</data>
+	<data name="Any" xml:space="preserve">
+		<value>-- Відсутній --</value>
+	</data>
 	<data name="IsPrintCanceled" xml:space="preserve">
-		<value>Вийшов з друку</value>
+		<value>Вийшло з друку</value>
 	</data>
 	<data name="IsRecommendedToPrint" xml:space="preserve">
 		<value>Рекомендовано до друку</value>
 	</data>
-	<data name="PagesAmount" xml:space="preserve">
+	<data name="Pages amount" xml:space="preserve">
 		<value>Кількість сторінок</value>
+	</data>
+	<data name="Publishing status" xml:space="preserve">
+		<value>Статус видання</value>
 	</data>
 	<data name="Create" xml:space="preserve">
 		<value>Створити</value>

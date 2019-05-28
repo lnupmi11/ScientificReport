@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
@@ -11,6 +12,13 @@ using ScientificReport.DAL.Entities.Reports;
 using Microsoft.Extensions.Logging;
 using ScientificReport.DAL.Entities.UserProfile;
 using ScientificReport.DAL.Roles;
+using ScientificReport.DTO.Models.Membership;
+using ScientificReport.DTO.Models.Opposition;
+using ScientificReport.DTO.Models.PatentLicenseActivity;
+using ScientificReport.DTO.Models.PostgraduateDissertationGuidance;
+using ScientificReport.DTO.Models.PostgraduateGuidance;
+using ScientificReport.DTO.Models.ScientificConsultation;
+using ScientificReport.DTO.Models.ScientificInternship;
 
 namespace ScientificReport.Models
 {
@@ -35,6 +43,7 @@ namespace ScientificReport.Models
 
 			SeedUserRoles(serviceProvider.GetRequiredService<RoleManager<UserProfileRole>>(), logger).Wait();
 			SeedUserProfile(context, serviceProvider).Wait();
+			SeedDepartments(context).Wait();
 			SeedTeacherReports(context);
 			SeedScientificWorks(context);
 			SeedConference(context);
@@ -133,9 +142,39 @@ namespace ScientificReport.Models
 			foreach (var user in users)
 			{
 				await userManager.CreateAsync(user, "qwerty");
-				var usr = userService.Get(u => u.UserName == user.UserName);
-				await userManager.AddToRolesAsync(usr, new[] {UserProfileRole.Teacher, UserProfileRole.Administrator});
+				if (user.UserName != "olena")
+				{
+					var usr = userService.Get(u => u.UserName == user.UserName);
+					await userManager.AddToRolesAsync(usr, new[] {UserProfileRole.Teacher, UserProfileRole.Administrator});
+				}
 			}
+		}
+		
+		private static async Task SeedDepartments(ScientificReportDbContext context)
+		{
+			if (context.Departments.Any()) return;
+
+			var departments = new[]
+			{
+				new Department
+				{
+					Head = context.UserProfiles.First(u => u.UserName == "olena"),
+					Staff = new List<UserProfile>
+					{
+						context.UserProfiles.First(u => u.UserName == "olena"),
+						context.UserProfiles.First(u => u.UserName == "yura"),
+						context.UserProfiles.First(u => u.UserName == "roman"),
+						context.UserProfiles.First(u => u.UserName == "orest"),
+					},
+					Title = "Програмування"
+				}
+			};
+			foreach (var department in departments)
+			{
+				context.Departments.Add(department);
+			}
+
+			await context.SaveChangesAsync();
 		}
 
 		private static void SeedTeacherReports(ScientificReportDbContext context)
@@ -177,7 +216,7 @@ namespace ScientificReport.Models
 				new Article
 				{
 					Title = "my first Article",
-					Type = (int)Article.Types.ImpactFactor,
+					Type = Article.Types.ImpactFactor,
 					PublishingPlace = "LNU",
 					PublishingHouseName = "Lnu oreo",
 					PublishingYear = 2019,
@@ -188,20 +227,28 @@ namespace ScientificReport.Models
 					DocumentInfo = "doc txt"
 				}
 			);
+			
+			articleService.AddAuthor(
+				articleService.Get(a => a.Title == "my first Article"),
+				context.Users.First(u => u.UserName == "olena")
+			);
 		}
 
 		private static void SeedPublications(ScientificReportDbContext context)
 		{
-			if (context.Publications.Any()) return;
+			if (context.Publications.Any())
+			{
+				return;
+			}
 
 			var publicationsService = new PublicationService(context);
-			
-			if(context.UserProfiles.First() == null) return;
-			var author = context.UserProfiles.First();
 
+			if (context.UserProfiles.First() == null)
+			{
+				return;
+			}
 
-			publicationsService.CreateItem(author,
-				new Publication
+			publicationsService.CreateItem(new Publication
 				{
 					Type = Publication.Types.Monograph,
 					Title = "my first publication",
@@ -210,32 +257,24 @@ namespace ScientificReport.Models
 					PublishingHouseName = "new oreo",
 					PublishingYear = 1999,
 					PagesAmount = 200,
-					IsPrintCanceled = true,
-					IsRecommendedToPrint = false,
-					CreatedAt = DateTime.Today,
-					LastEditAt = DateTime.Now
+					PrintStatus = Publication.PrintStatuses.IsPrintCanceled
 				}
 			);
 
-			publicationsService.CreateItem(author,
-				new Publication
+			publicationsService.CreateItem(new Publication
 				{
 					Type = Publication.Types.TextBook,
 					Title = "my second publication",
 					PublishingPlace = "my second publishing place",
 					Specification = "some second specification",
 					PublishingHouseName = "new oreo",
-					PublishingYear = 2999,
+					PublishingYear = 2019,
 					PagesAmount = 300,
-					IsPrintCanceled = false,
-					IsRecommendedToPrint = true,
-					CreatedAt = DateTime.Today,
-					LastEditAt = DateTime.Now
+					PrintStatus = Publication.PrintStatuses.IsRecommendedToPrint
 				}
 			);
-			
-			publicationsService.CreateItem(author,
-				new Publication
+
+			publicationsService.CreateItem(new Publication
 				{
 					Type = Publication.Types.Comment,
 					Title = "My comment",
@@ -244,14 +283,10 @@ namespace ScientificReport.Models
 					PublishingHouseName = "first publish house name",
 					PublishingYear = 2015,
 					PagesAmount = 300,
-					IsPrintCanceled = false,
-					IsRecommendedToPrint = true,
-					CreatedAt = DateTime.Today,
-					LastEditAt = DateTime.Now
+					PrintStatus = Publication.PrintStatuses.IsRecommendedToPrint
 				}
 			);
-			publicationsService.CreateItem(author,
-				new Publication
+			publicationsService.CreateItem(new Publication
 				{
 					Type = Publication.Types.HandBook,
 					Title = "My HandBook",
@@ -260,14 +295,10 @@ namespace ScientificReport.Models
 					PublishingHouseName = "n-th publish name",
 					PublishingYear = 2016,
 					PagesAmount = 1500,
-					IsPrintCanceled = false,
-					IsRecommendedToPrint = true,
-					CreatedAt = DateTime.Today,
-					LastEditAt = DateTime.Now
+					PrintStatus = Publication.PrintStatuses.IsRecommendedToPrint
 				}
 			);
-			publicationsService.CreateItem(author,
-				new Publication
+			publicationsService.CreateItem(new Publication
 				{
 					Type = Publication.Types.BibliographicIndex,
 					Title = "My BibliographicIndex",
@@ -276,13 +307,10 @@ namespace ScientificReport.Models
 					PublishingHouseName = "church",
 					PublishingYear = 1,
 					PagesAmount = 2000,
-					IsPrintCanceled = false,
-					IsRecommendedToPrint = true,
-					CreatedAt = DateTime.Today,
-					LastEditAt = DateTime.Now
+					PrintStatus = Publication.PrintStatuses.IsRecommendedToPrint
 				}
 			);
-			
+
 		}
 
 		private static void SeedDepartment(ScientificReportDbContext context)
@@ -325,15 +353,13 @@ namespace ScientificReport.Models
 
 			var scientificInternshipService = new ScientificInternshipService(context);
 
-			scientificInternshipService.CreateItem(
-				new ScientificInternship
-				{
-					PlaceOfInternship = "America",
-					Started = DateTime.Today,
-					Ended = DateTime.Now,
-					Contents = "Good Job",
-				}
-			);
+			scientificInternshipService.CreateItem(new ScientificInternshipModel(new ScientificInternship
+			{
+				PlaceOfInternship = "America",
+				Started = DateTime.Today,
+				Ended = DateTime.Now,
+				Contents = "Good Job",
+			}));
 		}
 
 		private static void SeedScientificConsultation(ScientificReportDbContext context)
@@ -342,20 +368,16 @@ namespace ScientificReport.Models
 
 			var scientificConsultationsService = new ScientificConsultationService(context);
 
-			scientificConsultationsService.CreateItem(
-				new ScientificConsultation
-				{
-					CandidateName = "Igor",
-					DissertationTitle = "Work in Africa"
-				}
-			);
-			scientificConsultationsService.CreateItem(
-				new ScientificConsultation
-				{
-					CandidateName = "Yura",
-					DissertationTitle = "Work in Canada"
-				}
-			);
+			scientificConsultationsService.CreateItem(new ScientificConsultationModel(new ScientificConsultation
+			{
+				CandidateName = "Igor",
+				DissertationTitle = "Work in Africa"
+			}));
+			scientificConsultationsService.CreateItem(new ScientificConsultationModel(new ScientificConsultation
+			{
+				CandidateName = "Yura",
+				DissertationTitle = "Work in Canada"
+			}));
 		}
 
 		private static void SeedReportThesis(ScientificReportDbContext context)
@@ -392,13 +414,11 @@ namespace ScientificReport.Models
 
 			var postgraduateGuidanceService = new PostgraduateGuidanceService(context);
 
-			postgraduateGuidanceService.CreateItem(
-				new PostgraduateGuidance
-				{
-					PostgraduateName = "Bogdan Ivanovych",
-					PostgraduateInfo = "now is working"
-				}
-			);
+			postgraduateGuidanceService.CreateItem(new PostgraduateGuidanceModel(new PostgraduateGuidance
+			{
+				PostgraduateName = "Bogdan Ivanovych",
+				PostgraduateInfo = "now is working"
+			}));
 		}
 
 		private static void SeedPostgraduateDissertationGuidance(ScientificReportDbContext context)
@@ -407,16 +427,14 @@ namespace ScientificReport.Models
 
 			var postgraduateDissertationGuidanceService = new PostgraduateDissertationGuidanceService(context);
 
-			postgraduateDissertationGuidanceService.CreateItem(
-				new PostgraduateDissertationGuidance
-				{
-					PostgraduateName = "Orest Romanovych",
-					Dissertation = "big",
-					Speciality = "math",
-					DateDegreeGained = DateTime.Today,
-					GraduationYear = 2012
-				}
-			);
+			postgraduateDissertationGuidanceService.CreateItem(new PostgraduateDissertationGuidanceModel(new PostgraduateDissertationGuidance
+			{
+				PostgraduateName = "Orest Romanovych",
+				Dissertation = "big",
+				Speciality = "math",
+				DateDegreeGained = DateTime.Today,
+				GraduationYear = 2012
+			}));
 		}
 
 		private static void SeedPatentLicenseActivity(ScientificReportDbContext context)
@@ -425,25 +443,21 @@ namespace ScientificReport.Models
 
 			var patentLicenseActivityService = new PatentLicenseActivityService(context);
 
-			patentLicenseActivityService.CreateItem(
-				new PatentLicenseActivity
-				{
-					Name = "High",
-					Number = 2,
-					DateTime = DateTime.Now,
-					Type = PatentLicenseActivity.Types.Application	
-				}
-			);
+			patentLicenseActivityService.CreateItem(new PatentLicenseActivityModel(new PatentLicenseActivity
+			{
+				Name = "High",
+				Number = 2,
+				DateTime = DateTime.Now,
+				Type = PatentLicenseActivity.Types.Application	
+			}));
 			
-			patentLicenseActivityService.CreateItem(
-				new PatentLicenseActivity
-				{
-					Name = "Medium",
-					Number = 4,
-					DateTime = DateTime.Today,
-					Type = PatentLicenseActivity.Types.Patent	
-				}
-			);
+			patentLicenseActivityService.CreateItem(new PatentLicenseActivityModel(new PatentLicenseActivity
+			{
+				Name = "Medium",
+				Number = 4,
+				DateTime = DateTime.Today,
+				Type = PatentLicenseActivity.Types.Patent	
+			}));
 		}
 		
 		private static void SeedOpposition(ScientificReportDbContext context)
@@ -453,19 +467,19 @@ namespace ScientificReport.Models
 			var oppositionsService = new OppositionService(context);
 
 			oppositionsService.CreateItem(
-				new Opposition
+				new OppositionModel(new Opposition
 				{
 					About = "Nice opposition",
 					DateOfOpposition = DateTime.Now,
-				}
+				})
 			);
 			
 			oppositionsService.CreateItem(
-				new Opposition
+				new OppositionModel(new Opposition
 				{
 					About = "Bad opposition",
 					DateOfOpposition = DateTime.Today,
-				}
+				})
 			);
 		}
 
@@ -474,28 +488,22 @@ namespace ScientificReport.Models
 			if(context.Memberships.Any()) return;
 			
 			var membershipService = new MembershipService(context);
-			
-			membershipService.CreateItem(
-					new Membership
-					{
-						MemberOf = Membership.MemberOfChoices.ScientificCouncil,
-						MembershipInfo = "good helper"
-					}
-				);
-			membershipService.CreateItem(
-				new Membership
-				{
-					MemberOf = Membership.MemberOfChoices.ExpertCouncil,
-					MembershipInfo = "best helper"
-				}
-			);
-			membershipService.CreateItem(
-				new Membership
-				{
-					MemberOf = Membership.MemberOfChoices.EditorialBoard,
-					MembershipInfo = "normal guy"
-				}
-			);
+
+			membershipService.CreateItem(new MembershipModel(new Membership
+			{
+				MemberOf = Membership.MemberOfChoices.ScientificCouncil,
+				MembershipInfo = "good helper"
+			}));
+			membershipService.CreateItem(new MembershipModel(new Membership
+			{
+				MemberOf = Membership.MemberOfChoices.ExpertCouncil,
+				MembershipInfo = "best helper"
+			}));
+			membershipService.CreateItem(new MembershipModel(new Membership
+			{
+				MemberOf = Membership.MemberOfChoices.EditorialBoard,
+				MembershipInfo = "normal guy"
+			}));
 		}
 
 		private static void SeedScientificWorks(ScientificReportDbContext context)

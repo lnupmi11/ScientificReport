@@ -17,11 +17,8 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="Index" xml:space="preserve">
-		<value>Index</value>
-	</data>
-	<data name="ReportThesis" xml:space="preserve">
-		<value>ReportThesis</value>
+    <data name="Report theses" xml:space="preserve">
+		<value>Report theses</value>
 	</data>
 	<data name="Create" xml:space="preserve">
 		<value>Create</value>
@@ -37,5 +34,11 @@
 	</data>
 	<data name="Delete" xml:space="preserve">
 		<value>Delete</value>
+	</data>
+	<data name="Previous" xml:space="preserve">
+		<value>Previous</value>
+	</data>
+	<data name="Next" xml:space="preserve">
+		<value>Next</value>
 	</data>
 </root>

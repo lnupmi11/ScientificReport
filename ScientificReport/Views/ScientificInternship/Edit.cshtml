@@ -1,14 +1,12 @@
 @using Microsoft.AspNetCore.Mvc.Localization
-@model ScientificReport.DAL.Entities.ScientificInternship
+@model ScientificReport.DTO.Models.ScientificInternship.ScientificInternshipEditModel
 @inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = Localizer["Edit"];
+	ViewData["Title"] = Localizer["Edit scientific internship"];
 }
 
-<h3>@Localizer["Edit"]</h3>
-
-<h5>@Localizer["ScientificInternship"]</h5>
+<h5>@ViewData["Title"]</h5>
 <hr />
 <div class="row">
 	<div class="col s12">
@@ -18,7 +16,7 @@
 			<div class="row">
 				<div class="input-field col s6">
 					<input asp-for="PlaceOfInternship" type="text" class="validate">
-					<label asp-for="PlaceOfInternship">@Localizer["PlaceOfInternship"]</label>
+					<label asp-for="PlaceOfInternship">@Localizer["Place of internship"]</label>
 					<span class="helper-text" asp-validation-for="PlaceOfInternship" data-error="" data-success=""></span>
 				</div>
 			</div>
@@ -45,8 +43,8 @@
 				</div>
 			</div>
 			<div class="row myButtons">
-				<input type="submit" value="@Localizer["Create"]" class="waves-effect btn-small  amber accent-2"/>
-				<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
+				<button type="submit" class="waves-effect btn-small accent-2">@Localizer["Save"]</button>
+				<a asp-action="Index" class="waves-effect btn-small blue darken-3">@Localizer["Cancel"]</a>
 			</div>
 		</form>
 	</div>

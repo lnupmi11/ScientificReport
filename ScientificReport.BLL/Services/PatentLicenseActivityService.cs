@@ -6,6 +6,7 @@ using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Entities.UserProfile;
 using ScientificReport.DAL.Repositories;
+using ScientificReport.DTO.Models.PatentLicenseActivity;
 
 namespace ScientificReport.BLL.Services
 {
@@ -28,6 +29,16 @@ namespace ScientificReport.BLL.Services
 			return GetAll().Where(predicate);
 		}
 
+		public virtual IEnumerable<PatentLicenseActivity> GetPage(int page, int count)
+		{
+			return _patentLicenseActivityRepository.All().Skip((page - 1) * count).Take(count).ToList();
+		}
+
+		public virtual int GetCount()
+		{
+			return _patentLicenseActivityRepository.All().Count();
+		}
+
 		public virtual PatentLicenseActivity GetById(Guid id)
 		{
 			return _patentLicenseActivityRepository.Get(id);
@@ -38,13 +49,29 @@ namespace ScientificReport.BLL.Services
 			return _patentLicenseActivityRepository.Get(predicate);
 		}
 
-		public virtual void CreateItem(PatentLicenseActivity patentLicenseActivity)
+		public virtual void CreateItem(PatentLicenseActivityModel model)
 		{
-			_patentLicenseActivityRepository.Create(patentLicenseActivity);
+			_patentLicenseActivityRepository.Create(new PatentLicenseActivity
+			{
+				Name = model.Name,
+				Type = model.Type,
+				Number = model.Number,
+				DateTime = model.DateTime
+			});
 		}
 
-		public virtual void UpdateItem(PatentLicenseActivity patentLicenseActivity)
+		public virtual void UpdateItem(PatentLicenseActivityEditModel model)
 		{
+			var patentLicenseActivity = GetById(model.Id);
+			if (patentLicenseActivity == null)
+			{
+				return;
+			}
+
+			patentLicenseActivity.Name = model.Name;
+			patentLicenseActivity.Type = model.Type;
+			patentLicenseActivity.Number = model.Number;
+			patentLicenseActivity.DateTime = model.DateTime;
 			_patentLicenseActivityRepository.Update(patentLicenseActivity);
 		}
 

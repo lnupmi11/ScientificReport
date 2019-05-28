@@ -17,11 +17,14 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
+	<data name="Details of report thesis" xml:space="preserve">
+		<value>Details of report thesis</value>
+	</data>
     <data name="Details" xml:space="preserve">
 		<value>Details</value>
 	</data>
-	<data name="ReportThesis" xml:space="preserve">
-		<value>ReportThesis</value>
+	<data name="Report thesis" xml:space="preserve">
+		<value>Report thesis</value>
 	</data>
 	<data name="Thesis" xml:space="preserve">
 		<value>Thesis</value>
@@ -38,7 +41,7 @@
 	<data name="Edit" xml:space="preserve">
 		<value>Edit</value>
 	</data>
-	<data name="Back to List" xml:space="preserve">
-		<value>Back to List</value>
+	<data name="Back to list" xml:space="preserve">
+		<value>Back to list</value>
 	</data>
 </root>

@@ -6,6 +6,7 @@ using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Entities.UserProfile;
 using ScientificReport.DAL.Repositories;
+using ScientificReport.DTO.Models.Review;
 
 namespace ScientificReport.BLL.Services
 {
@@ -28,6 +29,16 @@ namespace ScientificReport.BLL.Services
 			return GetAll().Where(predicate);
 		}
 
+		public virtual IEnumerable<Review> GetPage(int page, int count)
+		{
+			return _reviewRepository.All().Skip((page - 1) * count).Take(count).ToList();
+		}
+
+		public virtual int GetCount()
+		{
+			return _reviewRepository.All().Count();
+		}
+
 		public virtual Review GetById(Guid id)
 		{
 			return _reviewRepository.Get(id);
@@ -38,13 +49,25 @@ namespace ScientificReport.BLL.Services
 			return _reviewRepository.Get(predicate);
 		}
 
-		public virtual void CreateItem(Review review)
+		public virtual void CreateItem(ReviewModel model)
 		{
-			_reviewRepository.Create(review);
+			_reviewRepository.Create(new Review
+			{
+				Work = model.Work,
+				DateOfReview = model.DateOfReview,
+			});
 		}
 
-		public virtual void UpdateItem(Review review)
+		public virtual void UpdateItem(ReviewEditModel model)
 		{
+			var review = GetById(model.Id);
+			if (review == null)
+			{
+				return;
+			}
+
+			review.Work = model.Work;
+			review.DateOfReview = model.DateOfReview;
 			_reviewRepository.Update(review);
 		}
 

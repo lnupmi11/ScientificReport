@@ -17,8 +17,8 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="Conference" xml:space="preserve">
-		<value>Conference</value>
+    <data name="Conferences" xml:space="preserve">
+		<value>Conferences</value>
 	</data>
 	<data name="Topic" xml:space="preserve">
 		<value>Topic</value>
@@ -26,7 +26,7 @@
 	<data name="Date" xml:space="preserve">
 		<value>Date</value>
 	</data>
-	<data name="Create New" xml:space="preserve">
+	<data name="Create" xml:space="preserve">
 		<value>Create New</value>
 	</data>
 	<data name="Details" xml:space="preserve">
@@ -38,16 +38,10 @@
 	<data name="Delete" xml:space="preserve">
 		<value>Delete</value>
 	</data>
-	<data name="Save" xml:space="preserve">
-		<value>Save</value>
+	<data name="Previous" xml:space="preserve">
+		<value>Previous</value>
 	</data>
-	<data name="Create" xml:space="preserve">
-		<value>Create</value>
-	</data>
-	<data name="Cancel" xml:space="preserve">
-		<value>Cancel</value>
-	</data>
-	<data name="Back to List" xml:space="preserve">
-		<value>Back to List</value>
+	<data name="Next" xml:space="preserve">
+		<value>Next</value>
 	</data>
 </root>

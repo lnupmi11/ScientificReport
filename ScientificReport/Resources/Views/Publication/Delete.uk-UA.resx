@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../resx_schema.xsd">
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
+    </resheader>
+    <data name="Delete" xml:space="preserve">
+		<value>Видалити</value>
+	</data>
+	<data name="Delete publication" xml:space="preserve">
+		<value>Видалити публікацію</value>
+	</data>
+	<data name="Are you sure you want to delete this publication?" xml:space="preserve">
+		<value>Ви впевнені, що хочете видалити цю публікацію?</value>
+	</data>
+    <data name="Publication" xml:space="preserve">
+		<value>Публікація</value>
+	</data>
+    <data name="Type" xml:space="preserve">
+		<value>Тип</value>
+	</data>
+    <data name="Title" xml:space="preserve">
+		<value>Назва</value>
+	</data>
+    <data name="Specification" xml:space="preserve">
+		<value>Уточнення</value>
+	</data>
+    <data name="Publishing place" xml:space="preserve">
+		<value>Місто видання</value>
+	</data>
+    <data name="Publishing house name" xml:space="preserve">
+		<value>Видавничий дім</value>
+	</data>
+    <data name="Publishing year" xml:space="preserve">
+		<value>Рік видання</value>
+	</data>
+	<data name="Publishing status" xml:space="preserve">
+		<value>Статус видання</value>
+	</data>
+    <data name="IsPrintCanceled" xml:space="preserve">
+		<value>Вийшов з друку</value>
+	</data>
+    <data name="IsRecommendedToPrint" xml:space="preserve">
+		<value>Рекомендовано до друку</value>
+	</data>
+    <data name="Pages amount" xml:space="preserve">
+		<value>Кількість сторінок</value>
+	</data>
+    <data name="Back to list" xml:space="preserve">
+		<value>Повернутися до списку</value>
+	</data>
+</root>

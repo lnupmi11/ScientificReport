@@ -5,6 +5,7 @@ using ScientificReport.BLL.Interfaces;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Repositories;
+using ScientificReport.DTO.Models.PostgraduateGuidance;
 
 namespace ScientificReport.BLL.Services
 {
@@ -27,6 +28,16 @@ namespace ScientificReport.BLL.Services
 			return GetAll().Where(predicate);
 		}
 
+		public virtual IEnumerable<PostgraduateGuidance> GetPage(int page, int count)
+		{
+			return _postgraduateGuidanceRepository.All().Skip((page - 1) * count).Take(count).ToList();
+		}
+
+		public virtual int GetCount()
+		{
+			return _postgraduateGuidanceRepository.All().Count();
+		}
+
 		public virtual PostgraduateGuidance GetById(Guid id)
 		{
 			return _postgraduateGuidanceRepository.Get(id);
@@ -37,13 +48,27 @@ namespace ScientificReport.BLL.Services
 			return _postgraduateGuidanceRepository.Get(predicate);
 		}
 
-		public virtual void CreateItem(PostgraduateGuidance postgraduateGuidance)
+		public virtual void CreateItem(PostgraduateGuidanceModel model)
 		{
-			_postgraduateGuidanceRepository.Create(postgraduateGuidance);
+			_postgraduateGuidanceRepository.Create(new PostgraduateGuidance
+			{
+				Guide = model.Guide,
+				PostgraduateInfo = model.PostgraduateInfo,
+				PostgraduateName = model.PostgraduateName
+			});
 		}
 
-		public virtual void UpdateItem(PostgraduateGuidance postgraduateGuidance)
+		public virtual void UpdateItem(PostgraduateGuidanceEditModel model)
 		{
+			var postgraduateGuidance = GetById(model.Id);
+			if (postgraduateGuidance == null)
+			{
+				return;
+			}
+
+			postgraduateGuidance.Guide = model.Guide;
+			postgraduateGuidance.PostgraduateInfo = model.PostgraduateInfo;
+			postgraduateGuidance.PostgraduateName = model.PostgraduateName;
 			_postgraduateGuidanceRepository.Update(postgraduateGuidance);
 		}
 

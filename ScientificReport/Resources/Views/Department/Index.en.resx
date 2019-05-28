@@ -41,4 +41,16 @@
 	<data name="Create" xml:space="preserve">
 		<value>Create</value>
 	</data>
+	<data name="Title filter" xml:space="preserve">
+		<value>Title filter</value>
+	</data>
+	<data name="Filter" xml:space="preserve">
+		<value>Filter</value>
+	</data>
+	<data name="Previous" xml:space="preserve">
+		<value>Previous</value>
+	</data>
+	<data name="Next" xml:space="preserve">
+		<value>Next</value>
+	</data>
 </root>

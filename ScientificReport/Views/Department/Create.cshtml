@@ -4,7 +4,7 @@
 @inject IViewLocalizer Localizer
 
 @{
-	ViewBag.Title = Localizer["Create"];
+	ViewBag.Title = Localizer["Create department"];
 	Layout = "_Layout";
 }
 
@@ -12,13 +12,12 @@
 	.selected-head-id-label {
 		/* margin-bottom: 10px; */
 		position: relative !important;
-		left: 0px !important;
+		left: 0 !important;
 		font-size: 12.5px !important;
 	}
 </style>
 
-<h3>@Localizer["CreateDepartment"]</h3>
-<h5>@Localizer["CreateDepartmentInfo"].</h5>
+<h5>@Localizer["Create department"]</h5>
 <hr/>
 <div class="row">
 	<div class="col s12">
@@ -42,8 +41,8 @@
 				</div>
 			</div>
 			<div class="row myButtons">
-				<input type="submit" value="@Localizer["Create"]" class="waves-effect btn-small amber accent-2"/>
-				<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
+				<button type="submit" class="waves-effect btn-small accent-2">@Localizer["Create"]</button>
+				<a asp-action="Index" class="waves-effect btn-small blue darken-3">@Localizer["Cancel"]</a>
 			</div>
 		</form>
 	</div>

@@ -10,16 +10,24 @@ using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Entities.UserProfile;
 using ScientificReport.DAL.Repositories;
 using ScientificReport.DAL.Roles;
+using ScientificReport.DTO.Models.UserProfile;
 
 namespace ScientificReport.BLL.Services
 {
 	public class UserProfileService : IUserProfileService
 	{
 		private readonly UserProfileRepository _userProfileRepository;
+		private readonly DepartmentRepository _departmentRepository;
 
 		public UserProfileService(ScientificReportDbContext context)
 		{
 			_userProfileRepository = new UserProfileRepository(context);
+			_departmentRepository = new DepartmentRepository(context);
+		}
+		
+		public virtual int GetCount()
+		{
+			return _userProfileRepository.All().Count();
 		}
 
 		public virtual IEnumerable<UserProfile> GetAll()
@@ -27,9 +35,71 @@ namespace ScientificReport.BLL.Services
 			return _userProfileRepository.All();
 		}
 
+		public virtual IEnumerable<UserProfile> Filter(UserProfileIndexModel model, ClaimsPrincipal userPrincipal, bool userIsAdmin)
+		{
+			IEnumerable<UserProfile> users;
+			if (userIsAdmin)
+			{
+				if (model.DepartmentId != null)
+				{
+					var department = _departmentRepository.Get(d => d.Id == model.DepartmentId.Value);
+					users = department != null
+						? GetPage(department.Staff, model.CurrentPage, model.PageSize)
+						: GetPage(model.CurrentPage, model.PageSize);
+				}
+				else
+				{
+					users = GetPage(model.CurrentPage, model.PageSize);
+				}
+			}
+			else
+			{
+				var currentUser = Get(userPrincipal);
+				var department = _departmentRepository.Get(u => u.Head.Id == currentUser.Id);
+				users = GetPage(department.Staff, model.CurrentPage, model.PageSize);
+			}
+
+			if (model.IsApproved != null)
+			{
+				switch (model.IsApproved.Value)
+				{
+					case UserProfileIndexModel.IsApprovedOption.All:
+						break;
+					case UserProfileIndexModel.IsApprovedOption.Yes:
+						users = users.Where(u => u.IsApproved);
+						break;
+					case UserProfileIndexModel.IsApprovedOption.No:
+						users = users.Where(u => !u.IsApproved);
+						break;
+				}
+			}
+
+			if (model.FirstName != null)
+			{
+				users = users.Where(u => u.FirstName.ToLower().Contains(model.FirstName.Trim().ToLower()));
+			}
+
+			if (model.LastName != null)
+			{
+				users = users.Where(u => u.LastName.ToLower().Contains(model.LastName.Trim().ToLower()));
+			}
+
+			return users;
+		}
+
 		public virtual IEnumerable<UserProfile> GetAllWhere(Func<UserProfile, bool> predicate)
 		{
 			return _userProfileRepository.AllWhere(predicate);
+		}
+
+		public virtual IEnumerable<UserProfile> GetPage(int page, int count)
+		{
+			return _userProfileRepository.All().Skip((page - 1) * count).Take(count).ToList();
+		}
+
+		public virtual IEnumerable<UserProfile> GetPage(IEnumerable<UserProfile> userProfiles, int page, int count)
+		{
+			return userProfiles.Skip((page - 1) * count).Take(count).ToList();
 		}
 
 		public virtual UserProfile Get(ClaimsPrincipal claimsPrincipal)

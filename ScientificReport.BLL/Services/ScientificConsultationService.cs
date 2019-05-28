@@ -5,6 +5,7 @@ using ScientificReport.BLL.Interfaces;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Repositories;
+using ScientificReport.DTO.Models.ScientificConsultation;
 
 namespace ScientificReport.BLL.Services
 {
@@ -27,6 +28,16 @@ namespace ScientificReport.BLL.Services
 			return GetAll().Where(predicate);
 		}
 
+		public virtual IEnumerable<ScientificConsultation> GetPage(int page, int count)
+		{
+			return _scientificConsultationRepository.All().Skip((page - 1) * count).Take(count).ToList();
+		}
+
+		public virtual int GetCount()
+		{
+			return _scientificConsultationRepository.All().Count();
+		}
+
 		public virtual ScientificConsultation GetById(Guid id)
 		{
 			return _scientificConsultationRepository.Get(id);
@@ -37,13 +48,27 @@ namespace ScientificReport.BLL.Services
 			return _scientificConsultationRepository.Get(predicate);
 		}
 
-		public virtual void CreateItem(ScientificConsultation scientificConsultation)
+		public virtual void CreateItem(ScientificConsultationModel model)
 		{
-			_scientificConsultationRepository.Create(scientificConsultation);
+			_scientificConsultationRepository.Create(new ScientificConsultation
+			{
+				Guide = model.Guide,
+				CandidateName = model.CandidateName,
+				DissertationTitle = model.DissertationTitle
+			});
 		}
 
-		public virtual void UpdateItem(ScientificConsultation scientificConsultation)
+		public virtual void UpdateItem(ScientificConsultationEditModel model)
 		{
+			var scientificConsultation = GetById(model.Id);
+			if (scientificConsultation == null)
+			{
+				return;
+			}
+
+			scientificConsultation.Guide = model.Guide;
+			scientificConsultation.CandidateName = model.CandidateName;
+			scientificConsultation.DissertationTitle = model.DissertationTitle;
 			_scientificConsultationRepository.Update(scientificConsultation);
 		}
 
