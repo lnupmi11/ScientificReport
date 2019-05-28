@@ -1,21 +1,24 @@
 var dir_9c36cc6f40a5cdd0088fde5811d22019 =
 [
-    [ "ChangePasswordModel.cs", "a00285.html", [
-      [ "ChangePasswordModel", "a00013.html", "a00013" ]
+    [ "ChangePasswordModel.cs", "a00369.html", [
+      [ "ChangePasswordModel", "a00017.html", "a00017" ]
     ] ],
-    [ "LoginModel.cs", "a00286.html", [
-      [ "LoginModel", "a00067.html", "a00067" ]
+    [ "LoginModel.cs", "a00370.html", [
+      [ "LoginModel", "a00077.html", "a00077" ]
     ] ],
-    [ "RegisterModel.cs", "a00287.html", [
-      [ "RegisterModel", "a00106.html", "a00106" ]
+    [ "RegisterModel.cs", "a00371.html", [
+      [ "RegisterModel", "a00137.html", "a00137" ]
     ] ],
-    [ "UserDetailsModel.cs", "a00288.html", [
-      [ "UserDetailsModel", "a00159.html", "a00159" ]
+    [ "UserDetailsModel.cs", "a00372.html", [
+      [ "UserDetailsModel", "a00200.html", "a00200" ]
     ] ],
-    [ "UserProfileEditModel.cs", "a00289.html", [
-      [ "UserProfileEditModel", "a00163.html", "a00163" ]
+    [ "UserProfileEditModel.cs", "a00373.html", [
+      [ "UserProfileEditModel", "a00203.html", "a00203" ]
     ] ],
-    [ "UserProfileUpdateRolesRequest.cs", "a00290.html", [
-      [ "UserProfileUpdateRolesRequest", "a00177.html", "a00177" ]
+    [ "UserProfileIndexModel.cs", "a00374.html", [
+      [ "UserProfileIndexModel", "a00204.html", "a00204" ]
+    ] ],
+    [ "UserProfileUpdateRolesRequest.cs", "a00375.html", [
+      [ "UserProfileUpdateRolesRequest", "a00218.html", "a00218" ]
     ] ]
 ];

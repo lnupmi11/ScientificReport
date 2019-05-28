@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>ScientificReport: ScientificReport.DAL.Repositories.MembershipRepository Class Reference</title>
+<title>ScientificReport: ScientificReport.BLL.Interfaces.IReviewService Interface Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -108,287 +108,271 @@ $(document).ready(function(){initNavTree('a00070.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a00685.html">List of all members</a>  </div>
+<a href="a00551.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ScientificReport.DAL.Repositories.MembershipRepository Class Reference</div>  </div>
+<div class="title">ScientificReport.BLL.Interfaces.IReviewService Interface Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Inheritance diagram for ScientificReport.DAL.Repositories.MembershipRepository:</div>
+Inheritance diagram for ScientificReport.BLL.Interfaces.IReviewService:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00686.png" border="0" usemap="#_scientific_report_8_d_a_l_8_repositories_8_membership_repository_inherit__map" alt="Inheritance graph"/></div>
-<map name="_scientific_report_8_d_a_l_8_repositories_8_membership_repository_inherit__map" id="_scientific_report_8_d_a_l_8_repositories_8_membership_repository_inherit__map">
-<area shape="rect" id="node2" href="a00059.html" title="{IRepository\&lt; Membership \&gt;\n||}" alt="" coords="23,5,223,83"/>
+<div class="center"><img src="a00552.png" border="0" usemap="#_scientific_report_8_b_l_l_8_interfaces_8_i_review_service_inherit__map" alt="Inheritance graph"/></div>
+<map name="_scientific_report_8_b_l_l_8_interfaces_8_i_review_service_inherit__map" id="_scientific_report_8_b_l_l_8_interfaces_8_i_review_service_inherit__map">
+<area shape="rect" id="node2" href="a00156.html" title="{ScientificReport.BLL.Services.\lReviewService\n||+ ReviewService()\l+ GetAll()\l+ GetAllWhere()\l+ GetPage()\l+ GetCount()\l+ GetById()\l+ Get()\l+ CreateItem()\l+ UpdateItem()\l+ DeleteById()\l+ Exists()\l+ GetReviewers()\l}" alt="" coords="10,292,219,545"/>
 </map>
 </div>
 <div class="dynheader">
-Collaboration diagram for ScientificReport.DAL.Repositories.MembershipRepository:</div>
+Collaboration diagram for ScientificReport.BLL.Interfaces.IReviewService:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00687.png" border="0" usemap="#_scientific_report_8_d_a_l_8_repositories_8_membership_repository_coll__map" alt="Collaboration graph"/></div>
-<map name="_scientific_report_8_d_a_l_8_repositories_8_membership_repository_coll__map" id="_scientific_report_8_d_a_l_8_repositories_8_membership_repository_coll__map">
-<area shape="rect" id="node2" href="a00059.html" title="{IRepository\&lt; Membership \&gt;\n||}" alt="" coords="23,5,223,83"/>
+<div class="center"><img src="a00553.png" border="0" usemap="#_scientific_report_8_b_l_l_8_interfaces_8_i_review_service_coll__map" alt="Collaboration graph"/></div>
+<map name="_scientific_report_8_b_l_l_8_interfaces_8_i_review_service_coll__map" id="_scientific_report_8_b_l_l_8_interfaces_8_i_review_service_coll__map">
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a05adfe00beb66eb4e4fbce13904c555b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#a05adfe00beb66eb4e4fbce13904c555b">MembershipRepository</a> (<a class="el" href="a00135.html">ScientificReportDbContext</a> context)</td></tr>
-<tr class="separator:a05adfe00beb66eb4e4fbce13904c555b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6eb0f4b99763a98f3537133838d12725"><td class="memItemLeft" align="right" valign="top">virtual IEnumerable&lt; <a class="el" href="a00068.html">Membership</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#a6eb0f4b99763a98f3537133838d12725">All</a> ()</td></tr>
-<tr class="separator:a6eb0f4b99763a98f3537133838d12725"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16f64160d7b2099f23bfc886b21426f2"><td class="memItemLeft" align="right" valign="top">virtual IEnumerable&lt; <a class="el" href="a00068.html">Membership</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#a16f64160d7b2099f23bfc886b21426f2">AllWhere</a> (Func&lt; <a class="el" href="a00068.html">Membership</a>, bool &gt; predicate)</td></tr>
-<tr class="separator:a16f64160d7b2099f23bfc886b21426f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5eeabb4880a36f8188b3a5af1e2dd69"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00068.html">Membership</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#ac5eeabb4880a36f8188b3a5af1e2dd69">Get</a> (Guid id)</td></tr>
-<tr class="separator:ac5eeabb4880a36f8188b3a5af1e2dd69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1273b5d92bf4375a51c61acf5463db41"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00068.html">Membership</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#a1273b5d92bf4375a51c61acf5463db41">Get</a> (Func&lt; <a class="el" href="a00068.html">Membership</a>, bool &gt; predicate)</td></tr>
-<tr class="separator:a1273b5d92bf4375a51c61acf5463db41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a039f4a668425d05e87ddffabd4d02ba4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#a039f4a668425d05e87ddffabd4d02ba4">Create</a> (<a class="el" href="a00068.html">Membership</a> item)</td></tr>
-<tr class="separator:a039f4a668425d05e87ddffabd4d02ba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5afb6eb29f2a9f767327a5a3e65e441b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#a5afb6eb29f2a9f767327a5a3e65e441b">Update</a> (<a class="el" href="a00068.html">Membership</a> item)</td></tr>
-<tr class="separator:a5afb6eb29f2a9f767327a5a3e65e441b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a729ed8119f03bc15b63865674588eff2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#a729ed8119f03bc15b63865674588eff2">Delete</a> (Guid id)</td></tr>
-<tr class="separator:a729ed8119f03bc15b63865674588eff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ec703b023f12a9a7d69b9034be4b4e9"><td class="memItemLeft" align="right" valign="top">virtual IQueryable&lt; <a class="el" href="a00068.html">Membership</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#a9ec703b023f12a9a7d69b9034be4b4e9">GetQuery</a> ()</td></tr>
-<tr class="separator:a9ec703b023f12a9a7d69b9034be4b4e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac69ce0349c45390655d5d0e5339d4258"><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; <a class="el" href="a00149.html">Review</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#ac69ce0349c45390655d5d0e5339d4258">GetAll</a> ()</td></tr>
+<tr class="separator:ac69ce0349c45390655d5d0e5339d4258"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2236e34401964ca29405e47b48486b24"><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; <a class="el" href="a00149.html">Review</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#a2236e34401964ca29405e47b48486b24">GetAllWhere</a> (Func&lt; <a class="el" href="a00149.html">Review</a>, bool &gt; predicate)</td></tr>
+<tr class="separator:a2236e34401964ca29405e47b48486b24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0270d86f8199650808aa9e811aa91f7e"><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; <a class="el" href="a00149.html">Review</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#a0270d86f8199650808aa9e811aa91f7e">GetPage</a> (int page, int count)</td></tr>
+<tr class="separator:a0270d86f8199650808aa9e811aa91f7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac747711c94c0c08357d8fdbf64f17a15"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#ac747711c94c0c08357d8fdbf64f17a15">GetCount</a> ()</td></tr>
+<tr class="separator:ac747711c94c0c08357d8fdbf64f17a15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70dcf5eb16bc4526017ab82d2c0c1ed6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00149.html">Review</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#a70dcf5eb16bc4526017ab82d2c0c1ed6">GetById</a> (Guid id)</td></tr>
+<tr class="separator:a70dcf5eb16bc4526017ab82d2c0c1ed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bd68545e30dcbc363281d5cf2dfc067"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00149.html">Review</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#a6bd68545e30dcbc363281d5cf2dfc067">Get</a> (Func&lt; <a class="el" href="a00149.html">Review</a>, bool &gt; predicate)</td></tr>
+<tr class="separator:a6bd68545e30dcbc363281d5cf2dfc067"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31d2692398a43084432862f6ebd0397e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#a31d2692398a43084432862f6ebd0397e">CreateItem</a> (<a class="el" href="a00153.html">ReviewModel</a> model)</td></tr>
+<tr class="separator:a31d2692398a43084432862f6ebd0397e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30f96094f600fd4be9caee780244c47e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#a30f96094f600fd4be9caee780244c47e">UpdateItem</a> (<a class="el" href="a00151.html">ReviewEditModel</a> model)</td></tr>
+<tr class="separator:a30f96094f600fd4be9caee780244c47e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb67e54f1501a87320db3b0073f4ba05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#abb67e54f1501a87320db3b0073f4ba05">DeleteById</a> (Guid id)</td></tr>
+<tr class="separator:abb67e54f1501a87320db3b0073f4ba05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a467382e756a63b9fcc934bdc736e394e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#a467382e756a63b9fcc934bdc736e394e">Exists</a> (Guid id)</td></tr>
+<tr class="separator:a467382e756a63b9fcc934bdc736e394e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8979c56b2822c16184c3bd115b5141f5"><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; <a class="el" href="a00201.html">UserProfile</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#a8979c56b2822c16184c3bd115b5141f5">GetReviewers</a> (Guid id)</td></tr>
+<tr class="separator:a8979c56b2822c16184c3bd115b5141f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="a00254_source.html#l00010">10</a> of file <a class="el" href="a00254_source.html">MembershipRepository.cs</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a05adfe00beb66eb4e4fbce13904c555b"></a>
+<p>Definition at line <a class="el" href="a00231_source.html#l00009">9</a> of file <a class="el" href="a00231_source.html">IReviewService.cs</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a31d2692398a43084432862f6ebd0397e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">ScientificReport.DAL.Repositories.MembershipRepository.MembershipRepository </td>
+          <td class="memname">void ScientificReport.BLL.Interfaces.IReviewService.CreateItem </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00135.html">ScientificReportDbContext</a>&#160;</td>
-          <td class="paramname"><em>context</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="a00153.html">ReviewModel</a>&#160;</td>
+          <td class="paramname"><em>model</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00254_source.html#l00014">14</a> of file <a class="el" href="a00254_source.html">MembershipRepository.cs</a>.</p>
+<p>Implemented in <a class="el" href="a00156.html#ab83b58e4c8f830c01ad439f58b44f9eb">ScientificReport.BLL.Services.ReviewService</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a6eb0f4b99763a98f3537133838d12725"></a>
+<a class="anchor" id="abb67e54f1501a87320db3b0073f4ba05"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual IEnumerable&lt;<a class="el" href="a00068.html">Membership</a>&gt; ScientificReport.DAL.Repositories.MembershipRepository.All </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00254_source.html#l00019">19</a> of file <a class="el" href="a00254_source.html">MembershipRepository.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a16f64160d7b2099f23bfc886b21426f2"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual IEnumerable&lt;<a class="el" href="a00068.html">Membership</a>&gt; ScientificReport.DAL.Repositories.MembershipRepository.AllWhere </td>
-          <td>(</td>
-          <td class="paramtype">Func&lt; <a class="el" href="a00068.html">Membership</a>, bool &gt;&#160;</td>
-          <td class="paramname"><em>predicate</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00254_source.html#l00024">24</a> of file <a class="el" href="a00254_source.html">MembershipRepository.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a039f4a668425d05e87ddffabd4d02ba4"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void ScientificReport.DAL.Repositories.MembershipRepository.Create </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00068.html">Membership</a>&#160;</td>
-          <td class="paramname"><em>item</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00254_source.html#l00039">39</a> of file <a class="el" href="a00254_source.html">MembershipRepository.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a729ed8119f03bc15b63865674588eff2"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void ScientificReport.DAL.Repositories.MembershipRepository.Delete </td>
+          <td class="memname">void ScientificReport.BLL.Interfaces.IReviewService.DeleteById </td>
           <td>(</td>
           <td class="paramtype">Guid&#160;</td>
           <td class="paramname"><em>id</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00254_source.html#l00054">54</a> of file <a class="el" href="a00254_source.html">MembershipRepository.cs</a>.</p>
+<p>Implemented in <a class="el" href="a00156.html#a3c2a8cb6d90c7c8cabfd53bb9da989c2">ScientificReport.BLL.Services.ReviewService</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ac5eeabb4880a36f8188b3a5af1e2dd69"></a>
+<a class="anchor" id="a467382e756a63b9fcc934bdc736e394e"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="a00068.html">Membership</a> ScientificReport.DAL.Repositories.MembershipRepository.Get </td>
+          <td class="memname">bool ScientificReport.BLL.Interfaces.IReviewService.Exists </td>
           <td>(</td>
           <td class="paramtype">Guid&#160;</td>
           <td class="paramname"><em>id</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00254_source.html#l00029">29</a> of file <a class="el" href="a00254_source.html">MembershipRepository.cs</a>.</p>
+<p>Implemented in <a class="el" href="a00156.html#a3f69b085dabab4611a3ceb4b47455c83">ScientificReport.BLL.Services.ReviewService</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a1273b5d92bf4375a51c61acf5463db41"></a>
+<a class="anchor" id="a6bd68545e30dcbc363281d5cf2dfc067"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="a00068.html">Membership</a> ScientificReport.DAL.Repositories.MembershipRepository.Get </td>
+          <td class="memname"><a class="el" href="a00149.html">Review</a> ScientificReport.BLL.Interfaces.IReviewService.Get </td>
           <td>(</td>
-          <td class="paramtype">Func&lt; <a class="el" href="a00068.html">Membership</a>, bool &gt;&#160;</td>
+          <td class="paramtype">Func&lt; <a class="el" href="a00149.html">Review</a>, bool &gt;&#160;</td>
           <td class="paramname"><em>predicate</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00254_source.html#l00034">34</a> of file <a class="el" href="a00254_source.html">MembershipRepository.cs</a>.</p>
+<p>Implemented in <a class="el" href="a00156.html#adbd1e73a282fe7caab73b71de0e71edc">ScientificReport.BLL.Services.ReviewService</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a9ec703b023f12a9a7d69b9034be4b4e9"></a>
+<a class="anchor" id="ac69ce0349c45390655d5d0e5339d4258"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual IQueryable&lt;<a class="el" href="a00068.html">Membership</a>&gt; ScientificReport.DAL.Repositories.MembershipRepository.GetQuery </td>
+          <td class="memname">IEnumerable&lt;<a class="el" href="a00149.html">Review</a>&gt; ScientificReport.BLL.Interfaces.IReviewService.GetAll </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00254_source.html#l00064">64</a> of file <a class="el" href="a00254_source.html">MembershipRepository.cs</a>.</p>
+<p>Implemented in <a class="el" href="a00156.html#a6d9416d5e19edda47c9e272b5d9a05ad">ScientificReport.BLL.Services.ReviewService</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a5afb6eb29f2a9f767327a5a3e65e441b"></a>
+<a class="anchor" id="a2236e34401964ca29405e47b48486b24"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void ScientificReport.DAL.Repositories.MembershipRepository.Update </td>
+          <td class="memname">IEnumerable&lt;<a class="el" href="a00149.html">Review</a>&gt; ScientificReport.BLL.Interfaces.IReviewService.GetAllWhere </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00068.html">Membership</a>&#160;</td>
-          <td class="paramname"><em>item</em></td><td>)</td>
+          <td class="paramtype">Func&lt; <a class="el" href="a00149.html">Review</a>, bool &gt;&#160;</td>
+          <td class="paramname"><em>predicate</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00254_source.html#l00045">45</a> of file <a class="el" href="a00254_source.html">MembershipRepository.cs</a>.</p>
+<p>Implemented in <a class="el" href="a00156.html#a9f74a804ae39aa8e6d5fd02eafd0bcbd">ScientificReport.BLL.Services.ReviewService</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/travis/build/lnupmi11/ScientificReport/ScientificReport.DAL/Repositories/<a class="el" href="a00254_source.html">MembershipRepository.cs</a></li>
+<a class="anchor" id="a70dcf5eb16bc4526017ab82d2c0c1ed6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00149.html">Review</a> ScientificReport.BLL.Interfaces.IReviewService.GetById </td>
+          <td>(</td>
+          <td class="paramtype">Guid&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="a00156.html#a7fd119e67a7edfb650868c9ae281657e">ScientificReport.BLL.Services.ReviewService</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac747711c94c0c08357d8fdbf64f17a15"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ScientificReport.BLL.Interfaces.IReviewService.GetCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="a00156.html#a8d4c9b648294c958740f0e5eb55bfab8">ScientificReport.BLL.Services.ReviewService</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0270d86f8199650808aa9e811aa91f7e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IEnumerable&lt;<a class="el" href="a00149.html">Review</a>&gt; ScientificReport.BLL.Interfaces.IReviewService.GetPage </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>page</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="a00156.html#a9e024de786ca93c8f4319f747261944b">ScientificReport.BLL.Services.ReviewService</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8979c56b2822c16184c3bd115b5141f5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IEnumerable&lt;<a class="el" href="a00201.html">UserProfile</a>&gt; ScientificReport.BLL.Interfaces.IReviewService.GetReviewers </td>
+          <td>(</td>
+          <td class="paramtype">Guid&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="a00156.html#a739101f24b0e6468276ca9bc5df202d6">ScientificReport.BLL.Services.ReviewService</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a30f96094f600fd4be9caee780244c47e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ScientificReport.BLL.Interfaces.IReviewService.UpdateItem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00151.html">ReviewEditModel</a>&#160;</td>
+          <td class="paramname"><em>model</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="a00156.html#af0aa84d2b698bb4e764d0903b29e1754">ScientificReport.BLL.Services.ReviewService</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this interface was generated from the following file:<ul>
+<li>/home/travis/build/lnupmi11/ScientificReport/ScientificReport.BLL/Interfaces/<a class="el" href="a00231_source.html">IReviewService.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00384.html">ScientificReport</a></li><li class="navelem"><a class="el" href="a00390.html">DAL</a></li><li class="navelem"><a class="el" href="a00396.html">Repositories</a></li><li class="navelem"><a class="el" href="a00070.html">MembershipRepository</a></li>
+    <li class="navelem"><a class="el" href="a00464.html">ScientificReport</a></li><li class="navelem"><a class="el" href="a00465.html">BLL</a></li><li class="navelem"><a class="el" href="a00466.html">Interfaces</a></li><li class="navelem"><a class="el" href="a00070.html">IReviewService</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>

@@ -1,12 +1,14 @@
 var a00070 =
 [
-    [ "MembershipRepository", "a00070.html#a05adfe00beb66eb4e4fbce13904c555b", null ],
-    [ "All", "a00070.html#a6eb0f4b99763a98f3537133838d12725", null ],
-    [ "AllWhere", "a00070.html#a16f64160d7b2099f23bfc886b21426f2", null ],
-    [ "Create", "a00070.html#a039f4a668425d05e87ddffabd4d02ba4", null ],
-    [ "Delete", "a00070.html#a729ed8119f03bc15b63865674588eff2", null ],
-    [ "Get", "a00070.html#ac5eeabb4880a36f8188b3a5af1e2dd69", null ],
-    [ "Get", "a00070.html#a1273b5d92bf4375a51c61acf5463db41", null ],
-    [ "GetQuery", "a00070.html#a9ec703b023f12a9a7d69b9034be4b4e9", null ],
-    [ "Update", "a00070.html#a5afb6eb29f2a9f767327a5a3e65e441b", null ]
+    [ "CreateItem", "a00070.html#a31d2692398a43084432862f6ebd0397e", null ],
+    [ "DeleteById", "a00070.html#abb67e54f1501a87320db3b0073f4ba05", null ],
+    [ "Exists", "a00070.html#a467382e756a63b9fcc934bdc736e394e", null ],
+    [ "Get", "a00070.html#a6bd68545e30dcbc363281d5cf2dfc067", null ],
+    [ "GetAll", "a00070.html#ac69ce0349c45390655d5d0e5339d4258", null ],
+    [ "GetAllWhere", "a00070.html#a2236e34401964ca29405e47b48486b24", null ],
+    [ "GetById", "a00070.html#a70dcf5eb16bc4526017ab82d2c0c1ed6", null ],
+    [ "GetCount", "a00070.html#ac747711c94c0c08357d8fdbf64f17a15", null ],
+    [ "GetPage", "a00070.html#a0270d86f8199650808aa9e811aa91f7e", null ],
+    [ "GetReviewers", "a00070.html#a8979c56b2822c16184c3bd115b5141f5", null ],
+    [ "UpdateItem", "a00070.html#a30f96094f600fd4be9caee780244c47e", null ]
 ];

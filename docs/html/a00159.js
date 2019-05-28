@@ -1,5 +1,12 @@
 var a00159 =
 [
-    [ "FullPositionTitle", "a00159.html#a56123cdd1d34c7a8b81c0415516076d5", null ],
-    [ "User", "a00159.html#af3a38310da28002ac44a6be61a8f630a", null ]
+    [ "ScientificConsultationController", "a00159.html#a41cf2a9fee9b1065ac7dc9c0f334593c", null ],
+    [ "Create", "a00159.html#a6153fd2ec4217ce19347cb930c7a3fa4", null ],
+    [ "Create", "a00159.html#a247e940fb1dab0d596365e88d61b3871", null ],
+    [ "Delete", "a00159.html#a089b1ea5e733e73a21a8b6b209e037fb", null ],
+    [ "DeleteConfirmed", "a00159.html#add0fc8fdb7a64abd32dab754650f0b1d", null ],
+    [ "Details", "a00159.html#aafd2d3d888660fbe61c1cd213a31a4b1", null ],
+    [ "Edit", "a00159.html#a5f9420d56069184d806c0261ea42b6e0", null ],
+    [ "Edit", "a00159.html#a60a26a9487f931db834dac3115ecc31e", null ],
+    [ "Index", "a00159.html#a66fa2dfbf1ec6f48c5bb7092f0c705b6", null ]
 ];

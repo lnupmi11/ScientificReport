@@ -1,13 +1,9 @@
 var a00133 =
 [
-    [ "ScientificInternshipService", "a00133.html#a0366111b500575ba62587b42de32ce5d", null ],
-    [ "CreateItem", "a00133.html#a8b197077163af6bd1b405eb202127d0f", null ],
-    [ "DeleteById", "a00133.html#a9307d476253dd087574e4e460790b558", null ],
-    [ "Exists", "a00133.html#a1a9ef85baa118ee73f8b196ff73eaebe", null ],
-    [ "Get", "a00133.html#a07ffd13c9f6cdcef0daf38f511f377bf", null ],
-    [ "GetAll", "a00133.html#a14a282dda994780edb8fac9afbb41f33", null ],
-    [ "GetAllWhere", "a00133.html#ad851c6640bad71dbaeec3e0dc732b85f", null ],
-    [ "GetById", "a00133.html#ad22fe64eae7b7b1a32ebaa861be8c4f0", null ],
-    [ "GetUsers", "a00133.html#abc85f29378cc83a95aa958e134e6586a", null ],
-    [ "UpdateItem", "a00133.html#a890bb5063fead2a82fc64c16729a60f8", null ]
+    [ "AllTest", "a00133.html#a6707df9b204c624bb20b82c494ef650c", null ],
+    [ "AllWhereTest", "a00133.html#aa61aaec2f63d55212257dc8ee5a13b09", null ],
+    [ "CreateTest", "a00133.html#aedab4ee67d2fc4e8317c49833b0ac93a", null ],
+    [ "DeleteTest", "a00133.html#a67805eecfcb913ccdc3b3462f5964a72", null ],
+    [ "GetByIdTest", "a00133.html#a60cfe6bcd140a1cb50bc5d69baf2e092", null ],
+    [ "UpdateTest", "a00133.html#ad9f97259b6d4a04709fe1bc9723e543a", null ]
 ];

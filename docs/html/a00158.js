@@ -1,6 +1,7 @@
 var a00158 =
 [
-    [ "BuildTargetModel", "a00158.html#a7209dcd8b9bb0bcc2603600e21f8405e", null ],
-    [ "Down", "a00158.html#ad20d8408f8fc7ece837f6f62051dbf0b", null ],
-    [ "Up", "a00158.html#a71ebaa032953c4a8e26cd49f72cacd48", null ]
+    [ "CandidateName", "a00158.html#aa38c1f52c83c87393ea0107659668f3e", null ],
+    [ "DissertationTitle", "a00158.html#a70de78164714b4281c56a07fef00c48d", null ],
+    [ "Guide", "a00158.html#a6ccdd6cb8d9c2ff26eaa3378aa2bba14", null ],
+    [ "Id", "a00158.html#a888b1ee75a41642751927a221543e21e", null ]
 ];

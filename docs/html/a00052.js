@@ -1,11 +1,12 @@
 var a00052 =
 [
-    [ "CreateItem", "a00052.html#ab43160e2ce766ab1102529224db9412f", null ],
-    [ "DeleteById", "a00052.html#a8ab8fa623757c306452b566d8a25926e", null ],
-    [ "Exists", "a00052.html#a720a8be0ca72b1f3b0af66846b45dc31", null ],
-    [ "Get", "a00052.html#a277330083f1f76a494e5d53b5fa51a0a", null ],
-    [ "GetAll", "a00052.html#af9ea822fe18ff08aaf65639f82d0dad2", null ],
-    [ "GetAllWhere", "a00052.html#aacf1686dca6b957baad0b19d2bd82a1c", null ],
-    [ "GetById", "a00052.html#ab4120c7cca6d4a9773832c5050c22640", null ],
-    [ "UpdateItem", "a00052.html#a3253f06a17da878cd20b36ac1a2ddaa1", null ]
+    [ "GrantRepository", "a00052.html#aa651795759d65a89cb46de0c88aa7a78", null ],
+    [ "All", "a00052.html#a8ad6fd8449847705b285bdeda8a3a4f6", null ],
+    [ "AllWhere", "a00052.html#aaccfbdf5c601fbb7e2c87e490772e094", null ],
+    [ "Create", "a00052.html#af3cf42cfafe8387dce56aac3d018cdb0", null ],
+    [ "Delete", "a00052.html#aa296a0816b1978bf53ea8e8aa5416507", null ],
+    [ "Get", "a00052.html#a313e6b78cf340762a86f2f252100505e", null ],
+    [ "Get", "a00052.html#aefc488c647294c9977aa6575297bb5a5", null ],
+    [ "GetQuery", "a00052.html#acd2a1bf7a880e73e9809606f07376b8b", null ],
+    [ "Update", "a00052.html#ac7fe66ab2fa0e3f5cdadf78bd4348fe0", null ]
 ];

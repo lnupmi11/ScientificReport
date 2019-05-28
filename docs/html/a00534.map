@@ -1,2 +1,3 @@
-<map id="ScientificReport.Controllers.ArticleController" name="ScientificReport.Controllers.ArticleController">
+<map id="ScientificReport.BLL.Interfaces.IOppositionService" name="ScientificReport.BLL.Interfaces.IOppositionService">
+<area shape="rect" id="node2" href="$a00095.html" title="{ScientificReport.BLL.Services.\lOppositionService\n||+ OppositionService()\l+ GetAll()\l+ GetAllWhere()\l+ GetPage()\l+ GetCount()\l+ GetById()\l+ Get()\l+ CreateItem()\l+ UpdateItem()\l+ DeleteById()\l+ Exists()\l}" alt="" coords="10,277,219,516"/>
 </map>

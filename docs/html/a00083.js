@@ -1,12 +1,12 @@
 var a00083 =
 [
-    [ "PatentLicenseActivityRepository", "a00083.html#a2354047fd4778c842355043a874a9a27", null ],
-    [ "All", "a00083.html#a3a21289ead0891399565bf7605214799", null ],
-    [ "AllWhere", "a00083.html#a1068921221d842fa773c7c57ebd4e667", null ],
-    [ "Create", "a00083.html#acbdd9ad66c481aa93363c5e87fb2bcd9", null ],
-    [ "Delete", "a00083.html#a3b7abbf084d8efc40d5f494636b3345a", null ],
-    [ "Get", "a00083.html#a5ca23a3a3a9fcd10f11e502cc49ff184", null ],
-    [ "Get", "a00083.html#aef3e0c3edd7b4d2afe9f908cc2fcbdf9", null ],
-    [ "GetQuery", "a00083.html#acf299c2c273cc7eef799b2afdcd7dac9", null ],
-    [ "Update", "a00083.html#a5c769cf9e4d04f8f5d7436c1026dd292", null ]
+    [ "MembershipRepository", "a00083.html#a05adfe00beb66eb4e4fbce13904c555b", null ],
+    [ "All", "a00083.html#a6eb0f4b99763a98f3537133838d12725", null ],
+    [ "AllWhere", "a00083.html#a16f64160d7b2099f23bfc886b21426f2", null ],
+    [ "Create", "a00083.html#a039f4a668425d05e87ddffabd4d02ba4", null ],
+    [ "Delete", "a00083.html#a729ed8119f03bc15b63865674588eff2", null ],
+    [ "Get", "a00083.html#ac5eeabb4880a36f8188b3a5af1e2dd69", null ],
+    [ "Get", "a00083.html#a1273b5d92bf4375a51c61acf5463db41", null ],
+    [ "GetQuery", "a00083.html#a9ec703b023f12a9a7d69b9034be4b4e9", null ],
+    [ "Update", "a00083.html#a5afb6eb29f2a9f767327a5a3e65e441b", null ]
 ];

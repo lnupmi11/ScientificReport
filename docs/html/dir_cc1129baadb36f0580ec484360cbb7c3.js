@@ -1,9 +1,12 @@
 var dir_cc1129baadb36f0580ec484360cbb7c3 =
 [
-    [ "ConferenceDetails.cs", "a00270.html", [
-      [ "ConferenceDetails", "a00018.html", "a00018" ]
+    [ "ConferenceDetails.cs", "a00317.html", [
+      [ "ConferenceDetails", "a00022.html", "a00022" ]
     ] ],
-    [ "ConferenceEdit.cs", "a00271.html", [
-      [ "ConferenceEdit", "a00019.html", "a00019" ]
+    [ "ConferenceEdit.cs", "a00318.html", [
+      [ "ConferenceEdit", "a00023.html", "a00023" ]
+    ] ],
+    [ "ConferenceIndexModel.cs", "a00319.html", [
+      [ "ConferenceIndexModel", "a00024.html", "a00024" ]
     ] ]
 ];

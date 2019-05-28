@@ -1,12 +1,13 @@
 var a00029 =
 [
-    [ "DepartmentReportRepository", "a00029.html#aaf2525d63c7d4a3b02e8636cccaf14c8", null ],
-    [ "All", "a00029.html#aa0ef926dfee862f5341957520076d5b7", null ],
-    [ "AllWhere", "a00029.html#acf168b437ec6259205c9b22f3399a9a6", null ],
-    [ "Create", "a00029.html#a4b735ea36d98a92b300ce8dfdc17db1a", null ],
-    [ "Delete", "a00029.html#a1182222a5ab5ff1991ce8ba4d48593bd", null ],
-    [ "Get", "a00029.html#ae243264f93b0aa0cacad3b0c9fdb5fc4", null ],
-    [ "Get", "a00029.html#a638bfd2404debd11156297f782477869", null ],
-    [ "GetQuery", "a00029.html#aff88b90c7850934a6f0d8783a51265d9", null ],
-    [ "Update", "a00029.html#abc81d3ba0624303655ad778df6eec31f", null ]
+    [ "SortByOption", "a00029.html#a20fbf7eb06f117cb345a3d4aa9463695", [
+      [ "Title", "a00029.html#a20fbf7eb06f117cb345a3d4aa9463695ab78a3223503896721cca1303f776159b", null ],
+      [ "StaffCount", "a00029.html#a20fbf7eb06f117cb345a3d4aa9463695a380a8935b02e68cf55ce21ca9afee328", null ],
+      [ "TotalScientificWorksCount", "a00029.html#a20fbf7eb06f117cb345a3d4aa9463695ad2795b49da64da58dd2c14db2617f200", null ]
+    ] ],
+    [ "Head", "a00029.html#a847608a8ce1484aa78b985b32a13af0b", null ],
+    [ "Id", "a00029.html#af5444313df5aa9cfd5121cda812bce83", null ],
+    [ "ScientificWorks", "a00029.html#a237d5400b41575cbd145921bb2e82ab2", null ],
+    [ "Staff", "a00029.html#a1f8f46b4336eda7426b3453f79317513", null ],
+    [ "Title", "a00029.html#a5a0263e8a9c423ba7a9db384556bc68d", null ]
 ];

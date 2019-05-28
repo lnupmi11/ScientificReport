@@ -1,12 +1,7 @@
 var a00077 =
 [
-    [ "OppositionRepository", "a00077.html#a73be336a2c0d4f64f4ffbe3fed1ac04e", null ],
-    [ "All", "a00077.html#a22543ef65ac0b0f9293e21c716db47f4", null ],
-    [ "AllWhere", "a00077.html#ad6a167250d08b47b1ffc24a70bb6d0d1", null ],
-    [ "Create", "a00077.html#af2ed6842572f96324a4c294d48a6408f", null ],
-    [ "Delete", "a00077.html#a07aeee4f2b6203869052b1dfd24b5bf9", null ],
-    [ "Get", "a00077.html#a1a57611bfb9e36692076fd1e5cb0551d", null ],
-    [ "Get", "a00077.html#a7965dc25750e325118db1cfb635395dc", null ],
-    [ "GetQuery", "a00077.html#ab6734d5ed064b59cf56cd7017575e8a9", null ],
-    [ "Update", "a00077.html#ac10b898061c9057b51926cb3ced54483", null ]
+    [ "Password", "a00077.html#a15c66cc23d5ca44f7ce6dd5d654c0e5d", null ],
+    [ "RememberMe", "a00077.html#a182eb724a147034d85114e0be23e3065", null ],
+    [ "ReturnUrl", "a00077.html#a7d0c3a4680392439f1039d281e2ce992", null ],
+    [ "UserName", "a00077.html#a72308e232e36b7d1a27e14918af8d760", null ]
 ];

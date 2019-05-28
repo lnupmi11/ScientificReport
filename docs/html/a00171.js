@@ -1,8 +1,9 @@
 var a00171 =
 [
-    [ "Id", "a00171.html#a1ff0ebd054672535a612558fb07ba786", null ],
-    [ "Publication", "a00171.html#a078e4ecfa24d141c6a9f3db2c8d6b29a", null ],
-    [ "PublicationId", "a00171.html#a4b517d67d822ba5ea5fb0cbc750393c4", null ],
-    [ "UserProfile", "a00171.html#ac19a349311f82cb61da9c46621e662fb", null ],
-    [ "UserProfileId", "a00171.html#a82eba90e34f017c93c1bb642e40e3f2d", null ]
+    [ "ScientificInternshipModel", "a00171.html#a88befbabca7d0ed13ac425fbcbedc2ce", null ],
+    [ "ScientificInternshipModel", "a00171.html#a8b3e46e7b898713b517b8f38cd577c02", null ],
+    [ "Contents", "a00171.html#a673d4ac316bafcfd4751ae67399efcc5", null ],
+    [ "Ended", "a00171.html#af1bda2c0d40779370b5025ee293e90bc", null ],
+    [ "PlaceOfInternship", "a00171.html#adf08d1a8661a561770b063fb495a3c54", null ],
+    [ "Started", "a00171.html#aad25647f50c6ce61346d6969e185c180", null ]
 ];

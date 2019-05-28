@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['memberofchoices',['MemberOfChoices',['../a00068.html#aace9f24594ca57df8f05d4680ca835ba',1,'ScientificReport::DAL::Entities::Membership']]]
+  ['isapprovedoption',['IsApprovedOption',['../a00204.html#a4083cb58d85f00c2cdb1fe186f1f6673',1,'ScientificReport::DTO::Models::UserProfile::UserProfileIndexModel']]]
 ];

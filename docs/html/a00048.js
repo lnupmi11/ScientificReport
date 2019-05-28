@@ -1,12 +1,12 @@
 var a00048 =
 [
-    [ "CreateItem", "a00048.html#ade6f680a14a577cd6b6d5b489c44a9a5", null ],
-    [ "DeleteById", "a00048.html#a8b61db0d56fc74d2b4fab3321905e43e", null ],
-    [ "Exists", "a00048.html#a42b9c3ae1ca9f9fa986b6c5c86229a3c", null ],
-    [ "Get", "a00048.html#a48a53dabfdce9d2d589d00a22274e1c8", null ],
-    [ "GetAll", "a00048.html#ae913cdea747ef0074669701ee9ef1fd0", null ],
-    [ "GetAllWhere", "a00048.html#a21c97c85c651b4d36ccb0b06cf9eae73", null ],
-    [ "GetAuthors", "a00048.html#a92d1cf8b71f457714755173cb48b4f0c", null ],
-    [ "GetById", "a00048.html#a9e90220796055165946d1185616f2f8a", null ],
-    [ "UpdateItem", "a00048.html#a1fe440b03deb5edb3185011b6f7d40a4", null ]
+    [ "GrantController", "a00048.html#a69f62054abb41ff6967051db1bdd8c11", null ],
+    [ "Create", "a00048.html#a20007cf1c8b9220db1b893441e9ecd10", null ],
+    [ "Create", "a00048.html#a0b61dbfa98f871d31a3b09331c197eba", null ],
+    [ "Delete", "a00048.html#a586b9e3747a2f9a9b9d91fbe4de70d39", null ],
+    [ "DeleteConfirmed", "a00048.html#aa15da48fe3a5685c87271edfb2b3d0fd", null ],
+    [ "Details", "a00048.html#a87c64356888c4b6c38687555277483f4", null ],
+    [ "Edit", "a00048.html#a855208b965fe5b323f5edc88533aa9e2", null ],
+    [ "Edit", "a00048.html#ac7bf1c48ba62248df81d2bf7a66b74cd", null ],
+    [ "Index", "a00048.html#aee6893d8b6c4720de0183f4792ad9bec", null ]
 ];

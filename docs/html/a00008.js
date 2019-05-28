@@ -1,9 +1,9 @@
 var a00008 =
 [
-    [ "AllTest", "a00008.html#a2fb6a581c5026e8a2cb6b15545b007bd", null ],
-    [ "AllWhereTest", "a00008.html#a6e03b4a78c4770713c814f85475d32dd", null ],
-    [ "CreateTest", "a00008.html#a116ade79a601b4c7945c91c812ad0ae1", null ],
-    [ "DeleteTest", "a00008.html#afe2c5e645daf447c200143ee28af3cec", null ],
-    [ "GetByIdTest", "a00008.html#a1fc013346f2815d2f57592622bb5ac63", null ],
-    [ "UpdateTest", "a00008.html#a34ddeed316b66bb745376090836cf01e", null ]
+    [ "ArticleEditModel", "a00008.html#a7b46b17fbc836b62238a97315347307f", null ],
+    [ "ArticleEditModel", "a00008.html#ac8b001b6f511db2a9091e762d8744937", null ],
+    [ "Modify", "a00008.html#abf6f3d7bd3a77b13631e8dc680c41232", null ],
+    [ "Authors", "a00008.html#aa5b40a0bdb871edd7921308aa61289c4", null ],
+    [ "Users", "a00008.html#a1c05a5231fc57f6916a12bec6051a15d", null ],
+    [ "Id", "a00008.html#a547b0c7e0f868394dc6e60039c9fac95", null ]
 ];

@@ -1,14 +1,12 @@
 var a00145 =
 [
-    [ "AddAuthorTest", "a00145.html#af27416124e6a1ce27bc7b79e02d6b253", null ],
-    [ "CreateItemTest", "a00145.html#a269dd0dbcda4c02a151c9e05df102777", null ],
-    [ "DeleteItemTest", "a00145.html#a1ee2210621474b13a3ca49348a378626", null ],
-    [ "DoesNotExistTest", "a00145.html#a9758150e6fadf4af825ccc580d72ef2a", null ],
-    [ "ExistsTest", "a00145.html#a1383fd4e0324b1d3cffe6c058284dc4e", null ],
-    [ "GetAllTest", "a00145.html#a99bf7fa56e42a93bced1c1f6b3c1a7d0", null ],
-    [ "GetAllWhereTest", "a00145.html#a83e940f2c4cca87cedc84deb69964a68", null ],
-    [ "GetAuthorsTest", "a00145.html#a596d569c97f87e84a8fe5f31dc5d52ac", null ],
-    [ "GetByIdTest", "a00145.html#ac5d1f6db94ffb66bd070ad8155013e99", null ],
-    [ "RemoveAuthorTest", "a00145.html#a38a4e2e8bf6ce7de77e15b631332448b", null ],
-    [ "UpdateItemTest", "a00145.html#a91ad8ea67d21d3d1ef93cbf989f4444a", null ]
+    [ "ReportThesisRepository", "a00145.html#af88a92b8eb26aa2ad54ca123dc7de7d3", null ],
+    [ "All", "a00145.html#a74a69648619f642cfcbfc9e501050cfa", null ],
+    [ "AllWhere", "a00145.html#a778be722f6f361956dbfb699b24df7e1", null ],
+    [ "Create", "a00145.html#afb10cfb54cb3c8e08a368f01c8cb06af", null ],
+    [ "Delete", "a00145.html#a03821b7c0f5ed91bf72ebab5168d2165", null ],
+    [ "Get", "a00145.html#a96c58819ee839854e5282e590e85ae41", null ],
+    [ "Get", "a00145.html#a71b4dd6351ab1544db87260ed4f3ff36", null ],
+    [ "GetQuery", "a00145.html#a19af17ed571e5fe4115cf7ba77d3c007", null ],
+    [ "Update", "a00145.html#a432fb84bc7a671f08fe10611fa84be1d", null ]
 ];

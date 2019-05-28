@@ -1,7 +1,5 @@
 var a00075 =
 [
-    [ "About", "a00075.html#a4d483fd011d2fd74594a7191250c1cfa", null ],
-    [ "DateOfOpposition", "a00075.html#a863543f11d31a8fdb0233faee41842df", null ],
-    [ "Id", "a00075.html#a907d44d6cf4bcdad7d6982349a22e88f", null ],
-    [ "Opponent", "a00075.html#addcfea9d24bd88ccb4287afd096ee4ee", null ]
+    [ "Created", "a00075.html#a90c907a8f53be68c402c8657fe22249c", null ],
+    [ "Edited", "a00075.html#adc6f4b9e3157a5289c1963456a0495fd", null ]
 ];

@@ -1,9 +1,12 @@
 var a00021 =
 [
-    [ "AllTest", "a00021.html#ac78ed87be92f2c623973ec28ff73afaa", null ],
-    [ "AllWhereTest", "a00021.html#a6ce73d0aa05513baafc4c6e974bed7d6", null ],
-    [ "CreateTest", "a00021.html#a33c5fc90d5f5dc30e16fa07e876da0ad", null ],
-    [ "DeleteTest", "a00021.html#a31853ed411df65e45a7cc24877e6e427", null ],
-    [ "GetByIdTest", "a00021.html#a61fb4f6473553d409dcffb66805d3e18", null ],
-    [ "UpdateTest", "a00021.html#a8507f62cbc9040c1a47f522661baf060", null ]
+    [ "ConferenceController", "a00021.html#ac931a219d12e5159cb418cdc4f0adf39", null ],
+    [ "Create", "a00021.html#a23e85523334a228e4b886a3cc51e7fa9", null ],
+    [ "Create", "a00021.html#a7e7f8032d63ce756e56700a285fbfe07", null ],
+    [ "Delete", "a00021.html#abd57c72f56b2412f5ca1050a49be90c6", null ],
+    [ "DeleteConfirmed", "a00021.html#a82cacc2c2593e365c30c521ee749c216", null ],
+    [ "Details", "a00021.html#a840836b59860a34072eb1288feb26cb1", null ],
+    [ "Edit", "a00021.html#a5830e2a6ce1eaa92016da70e04229ad8", null ],
+    [ "Edit", "a00021.html#a643929b4e8a5b07eb5d9d78804b1c203", null ],
+    [ "Index", "a00021.html#a2654dfb8f741b38d16b423140e739229", null ]
 ];

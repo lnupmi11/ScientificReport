@@ -1,7 +1,12 @@
 var a00148 =
 [
-    [ "Startup", "a00148.html#a63d2f00d6a6c75ca48d391012d8ae7e0", null ],
-    [ "Configure", "a00148.html#a9e1ea3dabfbbd0cb2c71e0a6bbf79721", null ],
-    [ "ConfigureServices", "a00148.html#a3d34187919055e4358e3352a2ac94b19", null ],
-    [ "Configuration", "a00148.html#a4b147c6827810b2a8997403c5433aa6f", null ]
+    [ "CreateItemTest", "a00148.html#a9584d08ffc18c842795d9a023480439e", null ],
+    [ "DeleteItemTest", "a00148.html#a5e4ade9b7ae6b6c09cd975d3820dc3c7", null ],
+    [ "DoesNotExistTest", "a00148.html#a3fe1c87e832760a5741acc3719050e22", null ],
+    [ "ExistsTest", "a00148.html#af98f111894a94020d9756a8eab270047", null ],
+    [ "GetAllTest", "a00148.html#a515d19b832c637d49495f5b99c8fbdd9", null ],
+    [ "GetAllWhereTest", "a00148.html#a864924d15139650f5ba3d55b2d4fe30e", null ],
+    [ "GetAuthorsTest", "a00148.html#a96363cbf41861463d6a3690e0bb759a4", null ],
+    [ "GetByIdTest", "a00148.html#a0f5d6f4ea912a2abea704cbd0eb18c63", null ],
+    [ "UpdateItemTest", "a00148.html#aef0971a5d88cbf5e7b4329eb37611b53", null ]
 ];

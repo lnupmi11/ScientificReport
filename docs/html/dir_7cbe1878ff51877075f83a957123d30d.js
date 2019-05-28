@@ -1,64 +1,58 @@
 var dir_7cbe1878ff51877075f83a957123d30d =
 [
     [ "Utils", "dir_12593aebc1ae8819c8cd7cf4ee3e6aec.html", "dir_12593aebc1ae8819c8cd7cf4ee3e6aec" ],
-    [ "ApplicantsPatentLicenseActivitiesController.cs", "a00329.html", [
-      [ "ApplicantsPatentLicenseActivitiesController", "a00004.html", "a00004" ]
+    [ "ArticleController.cs", "a00414.html", [
+      [ "ArticleController", "a00005.html", "a00005" ]
     ] ],
-    [ "ArticleController.cs", "a00330.html", [
-      [ "ArticleController", "a00006.html", "a00006" ]
+    [ "ConferenceController.cs", "a00415.html", [
+      [ "ConferenceController", "a00021.html", "a00021" ]
     ] ],
-    [ "AuthorsPatentLicenseActivitiesController.cs", "a00331.html", [
-      [ "AuthorsPatentLicenseActivitiesController", "a00012.html", "a00012" ]
+    [ "DepartmentController.cs", "a00416.html", [
+      [ "DepartmentController", "a00030.html", "a00030" ]
     ] ],
-    [ "ConferenceController.cs", "a00332.html", [
-      [ "ConferenceController", "a00017.html", "a00017" ]
+    [ "GrantController.cs", "a00417.html", [
+      [ "GrantController", "a00048.html", "a00048" ]
     ] ],
-    [ "DepartmentController.cs", "a00333.html", [
-      [ "DepartmentController", "a00025.html", "a00025" ]
+    [ "HomeController.cs", "a00418.html", [
+      [ "HomeController", "a00056.html", "a00056" ]
     ] ],
-    [ "GrantController.cs", "a00334.html", [
-      [ "GrantController", "a00042.html", "a00042" ]
+    [ "MembershipController.cs", "a00419.html", [
+      [ "MembershipController", "a00079.html", "a00079" ]
     ] ],
-    [ "HomeController.cs", "a00335.html", [
-      [ "HomeController", "a00047.html", "a00047" ]
+    [ "OppositionController.cs", "a00420.html", [
+      [ "OppositionController", "a00089.html", "a00089" ]
     ] ],
-    [ "MembershipController.cs", "a00336.html", [
-      [ "MembershipController", "a00069.html", "a00069" ]
+    [ "PatentLicenseActivityController.cs", "a00421.html", [
+      [ "PatentLicenseActivityController", "a00099.html", "a00099" ]
     ] ],
-    [ "OppositionController.cs", "a00337.html", [
-      [ "OppositionController", "a00076.html", "a00076" ]
+    [ "PostgraduateDissertationGuidanceController.cs", "a00422.html", [
+      [ "PostgraduateDissertationGuidanceController", "a00108.html", "a00108" ]
     ] ],
-    [ "PatentLicenseActivityController.cs", "a00338.html", [
-      [ "PatentLicenseActivityController", "a00082.html", "a00082" ]
+    [ "PostgraduateGuidanceController.cs", "a00423.html", [
+      [ "PostgraduateGuidanceController", "a00117.html", "a00117" ]
     ] ],
-    [ "PostgraduateDissertationGuidanceController.cs", "a00339.html", [
-      [ "PostgraduateDissertationGuidanceController", "a00088.html", "a00088" ]
+    [ "PublicationController.cs", "a00424.html", [
+      [ "PublicationController", "a00127.html", "a00127" ]
     ] ],
-    [ "PostgraduateGuidanceController.cs", "a00340.html", [
-      [ "PostgraduateGuidanceController", "a00094.html", "a00094" ]
+    [ "ReportThesisController.cs", "a00425.html", [
+      [ "ReportThesisController", "a00141.html", "a00141" ]
     ] ],
-    [ "PublicationController.cs", "a00341.html", [
-      [ "PublicationController", "a00101.html", "a00101" ]
+    [ "ReviewController.cs", "a00426.html", [
+      [ "ReviewController", "a00150.html", "a00150" ]
     ] ],
-    [ "ReportThesisController.cs", "a00342.html", [
-      [ "ReportThesisController", "a00110.html", "a00110" ]
+    [ "ScientificConsultationController.cs", "a00427.html", [
+      [ "ScientificConsultationController", "a00159.html", "a00159" ]
     ] ],
-    [ "ReviewController.cs", "a00343.html", [
-      [ "ReviewController", "a00118.html", "a00118" ]
+    [ "ScientificInternshipController.cs", "a00428.html", [
+      [ "ScientificInternshipController", "a00168.html", "a00168" ]
     ] ],
-    [ "ScientificConsultationController.cs", "a00344.html", [
-      [ "ScientificConsultationController", "a00124.html", "a00124" ]
+    [ "ScientificWorkController.cs", "a00429.html", [
+      [ "ScientificWorkController", "a00180.html", "a00180" ]
     ] ],
-    [ "ScientificInternshipController.cs", "a00345.html", [
-      [ "ScientificInternshipController", "a00130.html", "a00130" ]
+    [ "TeacherReportController.cs", "a00430.html", [
+      [ "TeacherReportController", "a00192.html", "a00192" ]
     ] ],
-    [ "ScientificWorkController.cs", "a00346.html", [
-      [ "ScientificWorkController", "a00139.html", "a00139" ]
-    ] ],
-    [ "TeacherReportController.cs", "a00347.html", [
-      [ "TeacherReportController", "a00150.html", "a00150" ]
-    ] ],
-    [ "UserProfileController.cs", "a00348.html", [
-      [ "UserProfileController", "a00162.html", "a00162" ]
+    [ "UserProfileController.cs", "a00431.html", [
+      [ "UserProfileController", "a00202.html", "a00202" ]
     ] ]
 ];

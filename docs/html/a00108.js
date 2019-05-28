@@ -1,7 +1,12 @@
 var a00108 =
 [
-    [ "Conference", "a00108.html#a5f66f376a5dccd112f0774a70bf05ccc", null ],
-    [ "Id", "a00108.html#afb97f2248461878aebcaf5c6e0f45ce4", null ],
-    [ "Thesis", "a00108.html#a40326e178f4cb273aaa2616064dd86a5", null ],
-    [ "UserProfilesReportTheses", "a00108.html#ad01291f2a9746b0c078ee9ca6a9561a7", null ]
+    [ "PostgraduateDissertationGuidanceController", "a00108.html#ab43d5815e471fc6e478c9fafccefa923", null ],
+    [ "Create", "a00108.html#a3ea80d72138bbc62580feb5d8f00a017", null ],
+    [ "Create", "a00108.html#a87cc4e401a8a77d5353149a246841db2", null ],
+    [ "Delete", "a00108.html#a4690703c4cff1200f6728de51f7e4021", null ],
+    [ "DeleteConfirmed", "a00108.html#a10c61fc94a90fd2d80e98e6b98f93b01", null ],
+    [ "Details", "a00108.html#ab044a204d2c770c5cf0d5434736655f8", null ],
+    [ "Edit", "a00108.html#ac67279ef87f6f8f1f95c3171bf3956a7", null ],
+    [ "Edit", "a00108.html#a29829dc490f221aec24a0fba3fabc528", null ],
+    [ "Index", "a00108.html#a984552a92ebd7e2526108e4fa92a1a5a", null ]
 ];

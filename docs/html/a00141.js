@@ -1,9 +1,14 @@
 var a00141 =
 [
-    [ "AllTest", "a00141.html#ae41e5bef9925f4f657673db5d57262c7", null ],
-    [ "AllWhereTest", "a00141.html#af33af68077ec102cd1c9dff3810ba681", null ],
-    [ "CreateTest", "a00141.html#adb112258a75a2a8f086a258af5795d5e", null ],
-    [ "DeleteTest", "a00141.html#a84a4c8ff50b94dfedb0cc9c85d8d2d04", null ],
-    [ "GetByIdTest", "a00141.html#a4552590ca60adee982fd666cb2f3e0bb", null ],
-    [ "UpdateTest", "a00141.html#a0d4d28cdecf0c34e3a94395cc0c48034", null ]
+    [ "ReportThesisController", "a00141.html#a872198c20ad8838063611569ea8c6cae", null ],
+    [ "AddAuthor", "a00141.html#aa683e4020188de4129f44a83cbfee9a1", null ],
+    [ "Create", "a00141.html#a7ce610ffa84678ecc40d296d2a11caab", null ],
+    [ "Create", "a00141.html#a299d5b5146cd29ca8d51d2a652d5f12c", null ],
+    [ "Delete", "a00141.html#aa73d7942221dc57e4020ac68e53e35bc", null ],
+    [ "DeleteAuthor", "a00141.html#a1e17ea52390bbb96d5a8462fc2330485", null ],
+    [ "DeleteConfirmed", "a00141.html#a26523b0763d239aa8a5d174ff6759281", null ],
+    [ "Details", "a00141.html#a9ffe15e717ad45968e7126b0ffcc3827", null ],
+    [ "Edit", "a00141.html#ae91fbc65b49b136aad332344c56fe8b3", null ],
+    [ "Edit", "a00141.html#a5e251073f720ff5ec5014a4218cc40bd", null ],
+    [ "Index", "a00141.html#a71013c68c4e7577c7599effb085caeee", null ]
 ];

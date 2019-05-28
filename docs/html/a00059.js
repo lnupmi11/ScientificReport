@@ -1,11 +1,21 @@
 var a00059 =
 [
-    [ "All", "a00059.html#aee3b3f8ee0fcaebcaede76228c6d4922", null ],
-    [ "AllWhere", "a00059.html#a30604bbce446175c06b8164bce1fd27d", null ],
-    [ "Create", "a00059.html#a68531e3455d29e4f4045743eba98264c", null ],
-    [ "Delete", "a00059.html#a0764f85f85a793c920719e8991930d22", null ],
-    [ "Get", "a00059.html#a3946f0455fc1028e3800d812dcd06353", null ],
-    [ "Get", "a00059.html#a9fd532190b749ca64e74a34741eee71f", null ],
-    [ "GetQuery", "a00059.html#a577853a0f32296d005fbd10bac1df62c", null ],
-    [ "Update", "a00059.html#a91cb7c4a8723907d9ea2f5d7f498f411", null ]
+    [ "AddScientificWork", "a00059.html#a4d89ddb94370d21ea76b56570bbe465f", null ],
+    [ "AddUser", "a00059.html#a3386ba2fa225deebfd5c904d935b9eeb", null ],
+    [ "CreateItem", "a00059.html#aa245507ede892dee742fbfea4b7747b8", null ],
+    [ "DeleteById", "a00059.html#a07a61f31577774434ef1c9932afe92dd", null ],
+    [ "Exists", "a00059.html#a56cc165384f033de5a599039a2367ad6", null ],
+    [ "Filter", "a00059.html#af332e2cadb60d9c0e9539a09bbb66a13", null ],
+    [ "Get", "a00059.html#a8a33f541531bb57fe680552e76a4c08f", null ],
+    [ "GetAll", "a00059.html#a3120202f6ff52f5e975062577607e6e5", null ],
+    [ "GetAllWhere", "a00059.html#ab79df98d8b294241c931d5c256d90599", null ],
+    [ "GetById", "a00059.html#abf0398ddfc7a4a43bcc076ba9d4b544d", null ],
+    [ "GetCount", "a00059.html#a14baea394f79d2d15dcabaa87af34ff9", null ],
+    [ "GetPage", "a00059.html#a60c037c1e918a2739aa013eb277642ed", null ],
+    [ "RemoveScientificWork", "a00059.html#a63d02ce4f4f86e1b08dcf3dccf452548", null ],
+    [ "RemoveUser", "a00059.html#a5189807885b6aa2c3d9a770b17f23a4e", null ],
+    [ "SortDepartmentsBy", "a00059.html#a6b947b95e4cdd52f8d1df4790f6eaff3", null ],
+    [ "UpdateItem", "a00059.html#ad9b93d87f5d5fde0e15d5df1e4e6ad1f", null ],
+    [ "UserIsHired", "a00059.html#a61e608924ff7187e22137f6de5934a2c", null ],
+    [ "UserWorksInDepartment", "a00059.html#a154d0eb3e0024e4588868089e1d33771", null ]
 ];

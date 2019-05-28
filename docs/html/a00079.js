@@ -1,12 +1,12 @@
 var a00079 =
 [
-    [ "OppositionService", "a00079.html#a218b538cd4ff3c14fbef0066d67869a6", null ],
-    [ "CreateItem", "a00079.html#a7abff8d192ec30780cded599684684d0", null ],
-    [ "DeleteById", "a00079.html#a7603c08307e18860e6ee1c50baa7be68", null ],
-    [ "Exists", "a00079.html#a48a33aeffbf0d48e1ef0e4fdabe77f07", null ],
-    [ "Get", "a00079.html#adccae469b56eba5135a53ca10a2121c8", null ],
-    [ "GetAll", "a00079.html#a77b15e0bc3d82b84e0f470d09cadefd1", null ],
-    [ "GetAllWhere", "a00079.html#a7325ec9286cfbd12eb9865085a84519e", null ],
-    [ "GetById", "a00079.html#aca3a19049e917aa31727b5b398d9db7a", null ],
-    [ "UpdateItem", "a00079.html#a653a2bbd3caf4adf46c2fd8bec411109", null ]
+    [ "MembershipController", "a00079.html#aff8369ba2215c024104c7f4c3501326f", null ],
+    [ "Create", "a00079.html#a02fc0df2311db12137a8a0c92d1a090d", null ],
+    [ "Create", "a00079.html#ae3ff4b70f8e9d3bbb2970e4706fa23f4", null ],
+    [ "Delete", "a00079.html#ad1c4a70e5821478431d69512ab141dd3", null ],
+    [ "DeleteConfirmed", "a00079.html#ac18fdf04bec9e4d488de6aa4c079c83c", null ],
+    [ "Details", "a00079.html#aff0d6a630d864f73a73627d0131d2aa6", null ],
+    [ "Edit", "a00079.html#ab2f07709962468b166fc10e2c4ca5c8a", null ],
+    [ "Edit", "a00079.html#a8c5948b7bc3ddabd889ac28cdebefaf7", null ],
+    [ "Index", "a00079.html#a161e0d4227a189b6e8b85bd9a8b03d94", null ]
 ];

@@ -1,12 +1,9 @@
 var a00012 =
 [
-    [ "AuthorsPatentLicenseActivitiesController", "a00012.html#af1fa948add837cc18268a43a0900c189", null ],
-    [ "Create", "a00012.html#a5da576965f709e42f8584fce5ee8c16e", null ],
-    [ "Create", "a00012.html#a758398f3d4bfef7844cbdb57b09c1d00", null ],
-    [ "Delete", "a00012.html#a4ba477df7d28c3cfeda053d983331a3d", null ],
-    [ "DeleteConfirmed", "a00012.html#a54104728110323f70375a54a5813aa29", null ],
-    [ "Details", "a00012.html#a52949d2d5ec4fe77c4dcfeb50204c608", null ],
-    [ "Edit", "a00012.html#a5a9c241ae86ca4c7f1acd7ff76e706b4", null ],
-    [ "Edit", "a00012.html#adc0b10453072861c1811f976969e9cc1", null ],
-    [ "Index", "a00012.html#ade7381b5cde7cdec5d6cb8c6b709bca3", null ]
+    [ "AllTest", "a00012.html#a2fb6a581c5026e8a2cb6b15545b007bd", null ],
+    [ "AllWhereTest", "a00012.html#a6e03b4a78c4770713c814f85475d32dd", null ],
+    [ "CreateTest", "a00012.html#a116ade79a601b4c7945c91c812ad0ae1", null ],
+    [ "DeleteTest", "a00012.html#afe2c5e645daf447c200143ee28af3cec", null ],
+    [ "GetByIdTest", "a00012.html#a1fc013346f2815d2f57592622bb5ac63", null ],
+    [ "UpdateTest", "a00012.html#a34ddeed316b66bb745376090836cf01e", null ]
 ];

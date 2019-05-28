@@ -1,9 +1,11 @@
 var a00078 =
 [
-    [ "AllTest", "a00078.html#a520e97c0331e7ff3b017e952a88d90eb", null ],
-    [ "AllWhereTest", "a00078.html#a3638824b56f4e725d738d945bbd96fac", null ],
-    [ "CreateTest", "a00078.html#a4417f0e800d7193e987fee21f7cec3f6", null ],
-    [ "DeleteTest", "a00078.html#a26c466e21352dc4310f74577fb736375", null ],
-    [ "GetByIdTest", "a00078.html#aaf99dc096aa4565088a3573f19874f32", null ],
-    [ "UpdateTest", "a00078.html#aae2c5b48927a9223dec7fae1a2c9fdc8", null ]
+    [ "MemberOfChoices", "a00078.html#aace9f24594ca57df8f05d4680ca835ba", [
+      [ "EditorialBoard", "a00078.html#aace9f24594ca57df8f05d4680ca835baaa49e0a45e75c086f428289d64b469f96", null ],
+      [ "ScientificCouncil", "a00078.html#aace9f24594ca57df8f05d4680ca835baa0d1bf9d3831cac38a4a5f7856ea59396", null ],
+      [ "ExpertCouncil", "a00078.html#aace9f24594ca57df8f05d4680ca835baa709e626e10341618753f60e902891d9c", null ]
+    ] ],
+    [ "Id", "a00078.html#a31d546527be48bdf75bcb080d1b26264", null ],
+    [ "MemberOf", "a00078.html#aedc9aecc9ae9e8ddbbac97026c2ef72e", null ],
+    [ "MembershipInfo", "a00078.html#ae19aabc2ca4bbfa44224e4baa2ee15cc", null ]
 ];

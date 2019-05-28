@@ -1,3 +1,3 @@
-<map id="ScientificReport.BLL.Services.ScientificWorkService" name="ScientificReport.BLL.Services.ScientificWorkService">
-<area shape="rect" id="node2" href="$a00063.html" title="{IScientificWorkService\n||+ GetAll()\l+ GetAllWhere()\l+ GetById()\l+ Get()\l+ CreateItem()\l+ UpdateItem()\l+ DeleteById()\l+ Any()\l+ Exists()\l+ GetAuthors()\l+ AddAuthor()\l+ RemoveAuthor()\l}" alt="" coords="31,5,189,244"/>
+<map id="ScientificReport.BLL.Interfaces.IConferenceService" name="ScientificReport.BLL.Interfaces.IConferenceService">
+<area shape="rect" id="node2" href="$a00027.html" title="{ScientificReport.BLL.Services.\lConferenceService\n||+ ConferenceService()\l+ GetAll()\l+ GetAllWhere()\l+ GetPage()\l+ GetCount()\l+ GetById()\l+ Get()\l+ CreateItem()\l+ UpdateItem()\l+ DeleteById()\l+ Exists()\l+ GetReportTheses()\l+ GetParticipators()\l}" alt="" coords="10,307,219,575"/>
 </map>

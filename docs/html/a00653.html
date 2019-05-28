@@ -88,7 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00171.html','');});
+$(document).ready(function(){initNavTree('a00141.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -107,17 +107,23 @@ $(document).ready(function(){initNavTree('a00171.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">ScientificReport.DAL.Entities.UserProfile.UserProfilesPublications Member List</div>  </div>
+<div class="title">ScientificReport.Controllers.ReportThesisController Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00171.html">ScientificReport.DAL.Entities.UserProfile.UserProfilesPublications</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a00141.html">ScientificReport.Controllers.ReportThesisController</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00171.html#a1ff0ebd054672535a612558fb07ba786">Id</a></td><td class="entry"><a class="el" href="a00171.html">ScientificReport.DAL.Entities.UserProfile.UserProfilesPublications</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00171.html#a078e4ecfa24d141c6a9f3db2c8d6b29a">Publication</a></td><td class="entry"><a class="el" href="a00171.html">ScientificReport.DAL.Entities.UserProfile.UserProfilesPublications</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00171.html#a4b517d67d822ba5ea5fb0cbc750393c4">PublicationId</a></td><td class="entry"><a class="el" href="a00171.html">ScientificReport.DAL.Entities.UserProfile.UserProfilesPublications</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00171.html#ac19a349311f82cb61da9c46621e662fb">UserProfile</a></td><td class="entry"><a class="el" href="a00171.html">ScientificReport.DAL.Entities.UserProfile.UserProfilesPublications</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00171.html#a82eba90e34f017c93c1bb642e40e3f2d">UserProfileId</a></td><td class="entry"><a class="el" href="a00171.html">ScientificReport.DAL.Entities.UserProfile.UserProfilesPublications</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00141.html#aa683e4020188de4129f44a83cbfee9a1">AddAuthor</a>(Guid id, [FromBody] ReportThesisAuthorRequest request)</td><td class="entry"><a class="el" href="a00141.html">ScientificReport.Controllers.ReportThesisController</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00141.html#a7ce610ffa84678ecc40d296d2a11caab">Create</a>()</td><td class="entry"><a class="el" href="a00141.html">ScientificReport.Controllers.ReportThesisController</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00141.html#a299d5b5146cd29ca8d51d2a652d5f12c">Create</a>([Bind(&quot;Id,Thesis&quot;)] ReportThesis reportThesis)</td><td class="entry"><a class="el" href="a00141.html">ScientificReport.Controllers.ReportThesisController</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00141.html#aa73d7942221dc57e4020ac68e53e35bc">Delete</a>(Guid?id)</td><td class="entry"><a class="el" href="a00141.html">ScientificReport.Controllers.ReportThesisController</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00141.html#a1e17ea52390bbb96d5a8462fc2330485">DeleteAuthor</a>(Guid id, [FromBody] ReportThesisAuthorRequest request)</td><td class="entry"><a class="el" href="a00141.html">ScientificReport.Controllers.ReportThesisController</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00141.html#a26523b0763d239aa8a5d174ff6759281">DeleteConfirmed</a>(Guid id)</td><td class="entry"><a class="el" href="a00141.html">ScientificReport.Controllers.ReportThesisController</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00141.html#a9ffe15e717ad45968e7126b0ffcc3827">Details</a>(Guid?id)</td><td class="entry"><a class="el" href="a00141.html">ScientificReport.Controllers.ReportThesisController</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00141.html#ae91fbc65b49b136aad332344c56fe8b3">Edit</a>(Guid?id)</td><td class="entry"><a class="el" href="a00141.html">ScientificReport.Controllers.ReportThesisController</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00141.html#a5e251073f720ff5ec5014a4218cc40bd">Edit</a>(Guid?id, ReportThesisEdit reportThesisEdit)</td><td class="entry"><a class="el" href="a00141.html">ScientificReport.Controllers.ReportThesisController</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00141.html#a71013c68c4e7577c7599effb085caeee">Index</a>(ReportThesisIndexModel model)</td><td class="entry"><a class="el" href="a00141.html">ScientificReport.Controllers.ReportThesisController</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00141.html#a872198c20ad8838063611569ea8c6cae">ReportThesisController</a>(IReportThesisService reportThesisService, IUserProfileService userProfileService)</td><td class="entry"><a class="el" href="a00141.html">ScientificReport.Controllers.ReportThesisController</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

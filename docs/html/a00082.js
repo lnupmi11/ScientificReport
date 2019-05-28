@@ -1,12 +1,7 @@
 var a00082 =
 [
-    [ "PatentLicenseActivityController", "a00082.html#a6055358b52fe58d23354b2318a282fa8", null ],
-    [ "Create", "a00082.html#a442aff52063307c04c84a934ebbb8dc1", null ],
-    [ "Create", "a00082.html#a003a0213058d77c50591a65a049403e1", null ],
-    [ "Delete", "a00082.html#aa5c422bf30166077f5077bcad2c6af65", null ],
-    [ "DeleteConfirmed", "a00082.html#ab0e5d59e58eb0bad8e4a508b3fcc15dc", null ],
-    [ "Details", "a00082.html#ac3f2fd0ff3529327476877dc1d0c3212", null ],
-    [ "Edit", "a00082.html#a9efff3743ee775dc7ad7393a4bbfcb02", null ],
-    [ "Edit", "a00082.html#a78dc9426a72936dadca3283798b4a216", null ],
-    [ "Index", "a00082.html#ab2efd05fa88d0498e11efa2bce517ad3", null ]
+    [ "MembershipModel", "a00082.html#a6d837d48b945617dae135dc932ef7930", null ],
+    [ "MembershipModel", "a00082.html#a84e8b614f32126c59e19e3a63d3cbb0d", null ],
+    [ "MemberOf", "a00082.html#ae53046241ec77f61e090e427b85e0fa4", null ],
+    [ "MembershipInfo", "a00082.html#a4b749b933815ab8a5e23fd27d211940a", null ]
 ];

@@ -1,12 +1,11 @@
 var a00069 =
 [
-    [ "MembershipController", "a00069.html#a0444c4777cf274b06f98985fdf285590", null ],
-    [ "Create", "a00069.html#a02fc0df2311db12137a8a0c92d1a090d", null ],
-    [ "Create", "a00069.html#a7cd43d190224bed84c187351187bfda2", null ],
-    [ "Delete", "a00069.html#ad1c4a70e5821478431d69512ab141dd3", null ],
-    [ "DeleteConfirmed", "a00069.html#ac18fdf04bec9e4d488de6aa4c079c83c", null ],
-    [ "Details", "a00069.html#aff0d6a630d864f73a73627d0131d2aa6", null ],
-    [ "Edit", "a00069.html#ab2f07709962468b166fc10e2c4ca5c8a", null ],
-    [ "Edit", "a00069.html#ad09f6bf03a6e386a7c6258735c5eaed1", null ],
-    [ "Index", "a00069.html#a147cdc8fc6d70aa1af4ed06b9fcb46dd", null ]
+    [ "All", "a00069.html#aee3b3f8ee0fcaebcaede76228c6d4922", null ],
+    [ "AllWhere", "a00069.html#a30604bbce446175c06b8164bce1fd27d", null ],
+    [ "Create", "a00069.html#a68531e3455d29e4f4045743eba98264c", null ],
+    [ "Delete", "a00069.html#a0764f85f85a793c920719e8991930d22", null ],
+    [ "Get", "a00069.html#a3946f0455fc1028e3800d812dcd06353", null ],
+    [ "Get", "a00069.html#a9fd532190b749ca64e74a34741eee71f", null ],
+    [ "GetQuery", "a00069.html#a577853a0f32296d005fbd10bac1df62c", null ],
+    [ "Update", "a00069.html#a91cb7c4a8723907d9ea2f5d7f498f411", null ]
 ];

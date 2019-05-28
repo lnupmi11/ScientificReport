@@ -1,12 +1,13 @@
 var a00131 =
 [
-    [ "ScientificInternshipRepository", "a00131.html#ab12a4c8cdafae6b5384f589e55138848", null ],
-    [ "All", "a00131.html#a831125ba9f8b91cefeab7fdd8ecb8550", null ],
-    [ "AllWhere", "a00131.html#a81878baec308259d671046913e6742f9", null ],
-    [ "Create", "a00131.html#a82692c5517f6d5fa5bd86f95578b7900", null ],
-    [ "Delete", "a00131.html#a04001dfc6ec10b0ff728d62645594448", null ],
-    [ "Get", "a00131.html#af6ae4809bbd830ae67fbbc061a97341c", null ],
-    [ "Get", "a00131.html#ae9c02f5ec537e892045db787c41fe592", null ],
-    [ "GetQuery", "a00131.html#a52ef362858c073f36813f425fa81398f", null ],
-    [ "Update", "a00131.html#abcc5aa0759cbfdc5370b065477721a26", null ]
+    [ "PublicationIndexModel", "a00131.html#a11e4e346fd152db863bc820956022b0b", null ],
+    [ "PublicationIndexModel", "a00131.html#a3f6de41a8853d7eaf752690508f2ebbb", null ],
+    [ "PrintStatus", "a00131.html#a1a073ce08865c1e18004e50a22574d97", null ],
+    [ "PrintStatusOptions", "a00131.html#acf052ee33d65f4f306409568749b4656", null ],
+    [ "Publications", "a00131.html#afbb20b568e9caa79d46724647e0e3543", null ],
+    [ "PublicationSetType", "a00131.html#aaeb969265e72d5d5073f71750bf91048", null ],
+    [ "PublicationSetTypeOptions", "a00131.html#a84c33691e41e8f1df2dfc93d7c5b81e9", null ],
+    [ "SortBy", "a00131.html#a5bace60e42094606033f6a370017aa39", null ],
+    [ "YearFromFilter", "a00131.html#ac79d7765f26f208a047cdcb2764a1acb", null ],
+    [ "YearToFilter", "a00131.html#a1727e87e1ef159c046bf52d54130609a", null ]
 ];

@@ -1,18 +1,21 @@
 var dir_5b9006c79ab7f937855eab708878044c =
 [
-    [ "DepartmentCreateModel.cs", "a00272.html", [
-      [ "DepartmentCreateModel", "a00026.html", "a00026" ]
+    [ "DepartmentCreateModel.cs", "a00320.html", [
+      [ "DepartmentCreateModel", "a00031.html", "a00031" ]
     ] ],
-    [ "DepartmentEditModel.cs", "a00273.html", [
-      [ "DepartmentEditModel", "a00027.html", "a00027" ]
+    [ "DepartmentEditModel.cs", "a00321.html", [
+      [ "DepartmentEditModel", "a00032.html", "a00032" ]
     ] ],
-    [ "DepartmentUpdateScientificWorksRequest.cs", "a00274.html", [
-      [ "DepartmentUpdateScientificWorksRequest", "a00035.html", "a00035" ]
+    [ "DepartmentIndexModel.cs", "a00322.html", [
+      [ "DepartmentIndexModel", "a00033.html", "a00033" ]
     ] ],
-    [ "DepartmentUpdateStaffRequest.cs", "a00275.html", [
-      [ "DepartmentUpdateStaffRequest", "a00036.html", "a00036" ]
+    [ "DepartmentUpdateScientificWorksRequest.cs", "a00323.html", [
+      [ "DepartmentUpdateScientificWorksRequest", "a00041.html", "a00041" ]
     ] ],
-    [ "SelectItem.cs", "a00276.html", [
-      [ "SelectItem", "a00147.html", "a00147" ]
+    [ "DepartmentUpdateStaffRequest.cs", "a00324.html", [
+      [ "DepartmentUpdateStaffRequest", "a00042.html", "a00042" ]
+    ] ],
+    [ "SelectItem.cs", "a00325.html", [
+      [ "SelectItem", "a00189.html", "a00189" ]
     ] ]
 ];

@@ -1,13 +1,16 @@
 var a00027 =
 [
-    [ "AvailableScientificWork", "a00027.html#a973794120234d1c9d867c6e3c670d19a", null ],
-    [ "Department", "a00027.html#aeb0ac0f79419caef36116b3b1f58e64d", null ],
-    [ "DepartmentId", "a00027.html#a244d9f9698eadf2b92ecfa107e930a77", null ],
-    [ "Head", "a00027.html#aae2c551b86221debf24a1cd9cb52e113", null ],
-    [ "IsEditingByHead", "a00027.html#a997c4c234cc5ae1d7b2f45b24cf101f7", null ],
-    [ "ScientificWorks", "a00027.html#a0282172172dc1cbe8b9cde31718a9cc8", null ],
-    [ "SelectedHeadId", "a00027.html#acffb50a53cec065d9b0812e664dee2cb", null ],
-    [ "Staff", "a00027.html#acc6ac35183ee1bcc45320245d8294b9d", null ],
-    [ "Title", "a00027.html#a8243eda31031a3d1993555a319a90d00", null ],
-    [ "UserSelection", "a00027.html#a9234dca692f149da7303930b064c6383", null ]
+    [ "ConferenceService", "a00027.html#adfd9440fd7634ab13c77b149811468d1", null ],
+    [ "CreateItem", "a00027.html#a7d552f87a511e6864dd499f283a15640", null ],
+    [ "DeleteById", "a00027.html#af0fe6ede8736c4b2503b3fd888848f4a", null ],
+    [ "Exists", "a00027.html#af3496d56120cad0dc8424e5210642314", null ],
+    [ "Get", "a00027.html#ace85dba616700aacf6b2ab3193b91935", null ],
+    [ "GetAll", "a00027.html#ae12ad94391b318ff9e7e6bed3dea32ad", null ],
+    [ "GetAllWhere", "a00027.html#aaf1912058f13eaac4758321ab9feff60", null ],
+    [ "GetById", "a00027.html#a5b6ade041a9e31c60b8122162abf8061", null ],
+    [ "GetCount", "a00027.html#a6e8c0d5feb50a9c9fcf40d0ec1ff2815", null ],
+    [ "GetPage", "a00027.html#aa00309d0ed34825ccb5c179979501878", null ],
+    [ "GetParticipators", "a00027.html#a9d65ac6e1f21da0ce863ffb0fff5b459", null ],
+    [ "GetReportTheses", "a00027.html#a3319756de6812bff6c7addc0590baae7", null ],
+    [ "UpdateItem", "a00027.html#a58c0fff6837254d5035bd10d21038cc9", null ]
 ];

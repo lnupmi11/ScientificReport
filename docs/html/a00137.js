@@ -1,9 +1,13 @@
 var a00137 =
 [
-    [ "Category", "a00137.html#a008cd1d80b801d882dbc7d6d9bf3ead4", null ],
-    [ "Contents", "a00137.html#a6628687a1a2af4f00f6762ffbc547999", null ],
-    [ "Cypher", "a00137.html#a5e4a590ea91be92f219cdac586d6966f", null ],
-    [ "Id", "a00137.html#a68344e0013d06d848040eb7386868971", null ],
-    [ "Title", "a00137.html#a27b9b006879be7e23648e18afa115067", null ],
-    [ "UserProfilesScientificWorks", "a00137.html#a8e466cd457756d1683b3352ab33b1adb", null ]
+    [ "Departments", "a00137.html#ab3ffc809dfe240517c849c3199338425", null ],
+    [ "Email", "a00137.html#aec8957225ff7103b72ac292644ba23df", null ],
+    [ "FirstName", "a00137.html#a13d9fcf3d07669f2d5ffddf26291e388", null ],
+    [ "LastName", "a00137.html#a88cc5681703525c6049397e1b65ca1c6", null ],
+    [ "MiddleName", "a00137.html#af6e9a428d5e388268df53f10836de3f0", null ],
+    [ "Password", "a00137.html#a4bfdc25675140b7b8330b6a1354cdd6a", null ],
+    [ "PasswordRepeat", "a00137.html#a886cf08d40fd5b72f34daf10a699548f", null ],
+    [ "PhoneNumber", "a00137.html#a677ab8babccb0b8516d713a71ca1ea04", null ],
+    [ "SelectedDepartmentId", "a00137.html#a379d5f37326b00246dfe78e20191d542", null ],
+    [ "UserName", "a00137.html#af15339676489d284654acd60bab80af5", null ]
 ];

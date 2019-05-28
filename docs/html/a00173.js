@@ -1,8 +1,9 @@
 var a00173 =
 [
-    [ "Id", "a00173.html#a9df4b2af28e3fdcd308e06d56a78ea70", null ],
-    [ "Review", "a00173.html#a8d17449089e6f71ca0156be81edd3288", null ],
-    [ "Reviewer", "a00173.html#afefc8c8fe1ab89d9b7f8312e86ce8316", null ],
-    [ "ReviewerId", "a00173.html#ad1581db04b0c2e25165bb13428f8bcc2", null ],
-    [ "ReviewId", "a00173.html#a55d10e1c927832f8743ff6e6b7044157", null ]
+    [ "AllTest", "a00173.html#a9cdd2a085467a84ac2567616f3c3bc76", null ],
+    [ "AllWhereTest", "a00173.html#abe15f1b056d40847d39d08583348ddf9", null ],
+    [ "CreateTest", "a00173.html#acf54d5e98783f853a58e9e1623ced225", null ],
+    [ "DeleteTest", "a00173.html#ada1190b4034230102104b5de3dc1c3e9", null ],
+    [ "GetByIdTest", "a00173.html#a00a44f0ce06c9467e47bea77a3b0f33d", null ],
+    [ "UpdateTest", "a00173.html#aa8c39b61f5366597b1ba285cd87e10a6", null ]
 ];

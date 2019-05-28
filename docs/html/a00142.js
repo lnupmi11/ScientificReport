@@ -1,5 +1,5 @@
 var a00142 =
 [
-    [ "Authors", "a00142.html#a562dcfd87e0d407b127adfebb2bac2c6", null ],
-    [ "ScientificWork", "a00142.html#ab10f16f4b19f39bb3174f9301366b2b2", null ]
+    [ "Authors", "a00142.html#adc7b74dff6db7ad6afb563977da94bfa", null ],
+    [ "ReportThesis", "a00142.html#a92f0073f749c37791493544c82724108", null ]
 ];

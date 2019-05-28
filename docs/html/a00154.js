@@ -1,13 +1,12 @@
 var a00154 =
 [
-    [ "TeacherReportService", "a00154.html#a51b1bf375374ab13e9e65747d7d0c382", null ],
-    [ "Any", "a00154.html#afc5ff72d8c8c31ce25f5447df752f0f2", null ],
-    [ "CreateItem", "a00154.html#a3e776339b589ffa0b5b30714b86e0b97", null ],
-    [ "DeleteById", "a00154.html#a57ea58f553a3d42274e134fe41a8a40a", null ],
-    [ "Exists", "a00154.html#a782dd0c6610e26ef181f66ce9f23ef47", null ],
-    [ "Get", "a00154.html#a0258f8b08b9fd58e653163bcbba9f7e0", null ],
-    [ "GetAll", "a00154.html#a7686a0db3234780eb65e46c3c6e2e242", null ],
-    [ "GetAllWhere", "a00154.html#a67232616bdf0fb7a72d022509754a8a1", null ],
-    [ "GetById", "a00154.html#a9094c57021d0c7cbd8fdfbff346affcb", null ],
-    [ "UpdateItem", "a00154.html#a01684ed0ab22b91830cf45114dcd36bd", null ]
+    [ "ReviewRepository", "a00154.html#add9026b0c333df3b7d77efbc81881eda", null ],
+    [ "All", "a00154.html#a06eb3bcb9751848570c62ab1319d993e", null ],
+    [ "AllWhere", "a00154.html#aeba88443b6bfefeea6cf9e32bf60b033", null ],
+    [ "Create", "a00154.html#a7753464f983301771e7d90ad46acfc45", null ],
+    [ "Delete", "a00154.html#a215a01f807c5111848951f66073b4ff7", null ],
+    [ "Get", "a00154.html#a36a3908f2e671ed5500684c3a150e653", null ],
+    [ "Get", "a00154.html#a1d2aa0afff6db43c93f42ee4425b5173", null ],
+    [ "GetQuery", "a00154.html#ad864a579e12844afb875c825468068b5", null ],
+    [ "Update", "a00154.html#aa8b3997b177c4ce3a4b357d911e97901", null ]
 ];

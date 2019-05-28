@@ -1,7 +1,12 @@
 var a00117 =
 [
-    [ "DateOfReview", "a00117.html#ad80fb8005af97c2958766cc83896c745", null ],
-    [ "Id", "a00117.html#ae6d0d656501b0a3e9707281730e32763", null ],
-    [ "UserProfilesReviews", "a00117.html#a69299a49ab004799081fb0896d0bdc6f", null ],
-    [ "Work", "a00117.html#af10582fe559f808bb4a60360acd6c6f9", null ]
+    [ "PostgraduateGuidanceController", "a00117.html#adee4818990fd4d1cccb32cc5e5b80db4", null ],
+    [ "Create", "a00117.html#a6b160f1a1dbb78395689911afcd7921d", null ],
+    [ "Create", "a00117.html#aa16dbd128e7f931b9ca998b5d477cd53", null ],
+    [ "Delete", "a00117.html#a9e436054acc21d7e237b5ed2df0ce4f5", null ],
+    [ "DeleteConfirmed", "a00117.html#a3790a5d47387a1a8fdedbe404bd35d9c", null ],
+    [ "Details", "a00117.html#aaa3602801fef3722ab2df94edcf8ed51", null ],
+    [ "Edit", "a00117.html#a4de6d7605346ce16fe82de94b8ae851d", null ],
+    [ "Edit", "a00117.html#a8e3182502105e9f853215f27a1b5c8bd", null ],
+    [ "Index", "a00117.html#a3229ba9d18a296f1c91ef9b5882623ab", null ]
 ];

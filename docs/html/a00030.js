@@ -1,9 +1,15 @@
 var a00030 =
 [
-    [ "AllTest", "a00030.html#af5d48fdef8af984c4a19e43b564fc23d", null ],
-    [ "AllWhereTest", "a00030.html#ad451e2da35f4c7469a5ad3be49198c37", null ],
-    [ "CreateTest", "a00030.html#a1352504b1f52ae555fb2971c955def90", null ],
-    [ "DeleteTest", "a00030.html#a662948181347163edc5945a962055c69", null ],
-    [ "GetByIdTest", "a00030.html#ade3b784d6f0160eaa0699dd7681120f2", null ],
-    [ "UpdateTest", "a00030.html#ab0ca570f686529732713de3f65e79eb1", null ]
+    [ "DepartmentController", "a00030.html#adf89c568e429697e334b0008a4814dee", null ],
+    [ "AddScientificWork", "a00030.html#a9a74bac1debc55ed2c6b972bf1a20e92", null ],
+    [ "AddUserToStaff", "a00030.html#a4ec6766c023f72a8f5d4207360746d94", null ],
+    [ "Create", "a00030.html#a84be50f80673a23d158a278e6ba61040", null ],
+    [ "Create", "a00030.html#a27b217668c48837334cca432df3cc8c5", null ],
+    [ "Delete", "a00030.html#ac26411eccdbbe3023e7d7176466fcfba", null ],
+    [ "Details", "a00030.html#a3ddee6856fdd93bb6895f005763075f4", null ],
+    [ "Edit", "a00030.html#a8a5cfc571346661e1bd3308c0b0ec4e3", null ],
+    [ "Edit", "a00030.html#a0b145e9565ffd32c529a5e63d1596c3e", null ],
+    [ "Index", "a00030.html#aabf8fe05855b0ba81a843634f81858f5", null ],
+    [ "RemoveScientificWork", "a00030.html#a5e37396d1bb29fc08715660e5458da18", null ],
+    [ "RemoveUserFromStaff", "a00030.html#a9eea829c2f7de89b01bab2e7b33fe816", null ]
 ];

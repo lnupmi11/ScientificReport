@@ -1,12 +1,12 @@
 var a00089 =
 [
-    [ "PostgraduateDissertationGuidanceRepository", "a00089.html#a86883ce1e46b517b0d912d838cf915c5", null ],
-    [ "All", "a00089.html#a0a91e0de868b1476808779f3157826b2", null ],
-    [ "AllWhere", "a00089.html#ae19f61493fdd3cd61dec02ceca2547af", null ],
-    [ "Create", "a00089.html#a030bcc65cf774f6e568d34304740591f", null ],
-    [ "Delete", "a00089.html#a16a31a1dab6f123e0b63fc3be14fc344", null ],
-    [ "Get", "a00089.html#affceaa0ebb5614e1ad8d357f3089ed7b", null ],
-    [ "Get", "a00089.html#a3feb60c7382c3df6fc172cb090f11af7", null ],
-    [ "GetQuery", "a00089.html#a7f0fd416679729f5a151c42321a489d0", null ],
-    [ "Update", "a00089.html#ae1c06a80ebb97db374ee5a14fa9ede44", null ]
+    [ "OppositionController", "a00089.html#a388ab3a2d392249e10bba7178ccee362", null ],
+    [ "Create", "a00089.html#ad0dab5a26a26f835f50757af8a90479e", null ],
+    [ "Create", "a00089.html#a6a27e25426914b01c8e3094e2b3d0f69", null ],
+    [ "Delete", "a00089.html#a8602c231eed57ca276c5de86d0b4d8d7", null ],
+    [ "DeleteConfirmed", "a00089.html#a9889f21ce0811e571d46e225a2ff47b1", null ],
+    [ "Details", "a00089.html#a8bb48ab8e871e0baacaef6578c51bcd3", null ],
+    [ "Edit", "a00089.html#a3bb187ea649fd282337525e17dda3348", null ],
+    [ "Edit", "a00089.html#ad299e2d004605415562b9b3a34276568", null ],
+    [ "Index", "a00089.html#a2b8cc653affd4b2fea45029f6d2f04d0", null ]
 ];

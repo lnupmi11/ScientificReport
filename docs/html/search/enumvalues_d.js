@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['textbook',['TextBook',['../a00100.html#a65e148316b30800fc153d00a8cd9a2efaf2a8c55c2916802cf57c892b33b6ec6e',1,'ScientificReport::DAL::Entities::Publication']]],
-  ['translation',['Translation',['../a00100.html#a65e148316b30800fc153d00a8cd9a2efa6dd08874f83507e9c7b23f1a46b7fa7c',1,'ScientificReport::DAL::Entities::Publication']]]
+  ['scientificcouncil',['ScientificCouncil',['../a00078.html#aace9f24594ca57df8f05d4680ca835baa0d1bf9d3831cac38a4a5f7856ea59396',1,'ScientificReport::DAL::Entities::Membership']]],
+  ['staffcount',['StaffCount',['../a00029.html#a20fbf7eb06f117cb345a3d4aa9463695a380a8935b02e68cf55ce21ca9afee328',1,'ScientificReport::DAL::Entities::Department']]]
 ];

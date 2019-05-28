@@ -1,6 +1,6 @@
 var a00143 =
 [
-    [ "Authors", "a00143.html#a0bb4a0065bbaf0bd3af30a80ed0118e9", null ],
-    [ "ScientificWork", "a00143.html#a6153afa60a7bf5930d22a3b729c491a2", null ],
-    [ "Users", "a00143.html#a5b8d6ebc80dc718e4b75ee62841c206d", null ]
+    [ "Authors", "a00143.html#a23eb6378a7be5bebd4dc728583cd0dd0", null ],
+    [ "ReportThesis", "a00143.html#a377d6062ad11e4102c8a6432566fede2", null ],
+    [ "Users", "a00143.html#a59bc519e58aa92a9ab3b5555df1a17b0", null ]
 ];

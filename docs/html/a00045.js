@@ -1,13 +1,12 @@
 var a00045 =
 [
-    [ "GrantService", "a00045.html#a3b0aa97c0e648e2e3449f4701c83f5bb", null ],
-    [ "CreateItem", "a00045.html#ad6187f1efb1fc8b62a909c8e5921d2d6", null ],
-    [ "DeleteById", "a00045.html#a5085dc18b5a4bd0ee36a4a2674f16843", null ],
-    [ "Exists", "a00045.html#aa36f7e3988b50ad5d876af000d90a8cc", null ],
-    [ "Get", "a00045.html#ac5067ac05d696a40a53c06b3cd05bcc9", null ],
-    [ "GetAll", "a00045.html#a27fe0e57924a4d6b9332fdaae64dcd46", null ],
-    [ "GetAllWhere", "a00045.html#ad64ea7a6b0db940ca16d30cde9aede76", null ],
-    [ "GetById", "a00045.html#a2ae7772ae69f8273c4fb0349762102c0", null ],
-    [ "GetUsers", "a00045.html#af4cae412543b0af37a0240ecda43c0fc", null ],
-    [ "UpdateItem", "a00045.html#a0a1e3ec744d03a5475947f2409f39874", null ]
+    [ "FacultyReportRepository", "a00045.html#a0015f228d0b773eb16531c114c70c705", null ],
+    [ "All", "a00045.html#aa1c30f0a854db13e9f0d4dbca1a3f133", null ],
+    [ "AllWhere", "a00045.html#af737eff3ae276a1018a2ca82cb77a380", null ],
+    [ "Create", "a00045.html#ab3d354aeb9a973da3e2db1f3dd673c51", null ],
+    [ "Delete", "a00045.html#aac18f57b9c85f93f4105013365464f53", null ],
+    [ "Get", "a00045.html#aad69398357c17437e68f15fb7ae2c6bf", null ],
+    [ "Get", "a00045.html#af07433f135244bb1e5b72c6cedc530e8", null ],
+    [ "GetQuery", "a00045.html#a9c74a3bc691e24a6a607ad0bf4eb71a0", null ],
+    [ "Update", "a00045.html#aada56bf25c99decd1a220ed59b7fb008", null ]
 ];

@@ -1,3 +1,3 @@
-<map id="ScientificReport.BLL.Services.UserProfileService" name="ScientificReport.BLL.Services.UserProfileService">
-<area shape="rect" id="node2" href="$a00066.html" title="{IUserProfileService\n||+ GetAll()\l+ GetAllWhere()\l+ GetById()\l+ Get()\l+ Get()\l+ CreateItem()\l+ UpdateItem()\l+ DeleteById()\l+ SetActiveById()\l+ SetApproved()\land 15 more...\l}" alt="" coords="39,5,181,229"/>
+<map id="ScientificReport.BLL.Interfaces.IGrantService" name="ScientificReport.BLL.Interfaces.IGrantService">
+<area shape="rect" id="node2" href="$a00054.html" title="{ScientificReport.BLL.Services.\lGrantService\n||+ GrantService()\l+ GetAll()\l+ GetAllWhere()\l+ GetPage()\l+ GetCount()\l+ GetById()\l+ Get()\l+ CreateItem()\l+ UpdateItem()\l+ DeleteById()\l+ Exists()\l+ GetUsers()\l}" alt="" coords="10,292,219,545"/>
 </map>
