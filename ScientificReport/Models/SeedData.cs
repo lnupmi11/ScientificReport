@@ -17,6 +17,7 @@ using ScientificReport.DTO.Models.Opposition;
 using ScientificReport.DTO.Models.PatentLicenseActivity;
 using ScientificReport.DTO.Models.PostgraduateDissertationGuidance;
 using ScientificReport.DTO.Models.PostgraduateGuidance;
+using ScientificReport.DTO.Models.ReportThesis;
 using ScientificReport.DTO.Models.ScientificConsultation;
 using ScientificReport.DTO.Models.ScientificInternship;
 
@@ -393,20 +394,11 @@ namespace ScientificReport.Models
 			var reportThesesService = new ReportThesisService(context);
 			var conference = context.Conferences.First();
 
-			reportThesesService.CreateItem(
-				new ReportThesis
-				{
-					Thesis = "My first thesis",
-					Conference = conference
-				}
-			);
-			reportThesesService.CreateItem(
-				new ReportThesis()
-				{
-					Thesis = "My second thesis",
-					Conference = conference
-				}
-			);
+			reportThesesService.CreateItem(new ReportThesisModel(new ReportThesis
+			{
+				Thesis = "My first thesis",
+				Conference = conference
+			}));
 
 			var reportThesis = reportThesesService.GetAll().First();
 			var author = context.UserProfiles.First();

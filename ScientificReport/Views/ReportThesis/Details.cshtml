@@ -37,20 +37,18 @@
 		</dt>
 		@if (Model.Authors != null)
 		{
-			var authors = "";
-			foreach (var author in Model.Authors)
-			{
-				if (author != null && Model.Authors.Last() != author)
-				{
-					authors += $"{author.FirstName} {author.LastName}, ";
-				}
-				else if (author != null )
-				{
-					authors += $"{author.FirstName} {author.LastName}";
-				}
-			}
 			<dd class="col s10">
-				@authors
+				<ul>
+					@foreach (var author in Model.Authors)
+					{
+						<li>
+							<a asp-controller="UserProfile" asp-action="Details"
+							   asp-route-id="@author.Id">
+								@author.FullName
+							</a>
+						</li>
+					}
+				</ul>
 			</dd>
 		}
 	</dl>

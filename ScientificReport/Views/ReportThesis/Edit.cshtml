@@ -8,7 +8,7 @@
 <style type="text/css">
 	.authors-list {
 		overflow-y: scroll;
-		height: 100px;
+		height: 250px;
 	}
 	.text-green { color: rgb(0, 179, 0); }
 	.text-red { color: rgb(177, 0, 0); }
@@ -22,12 +22,12 @@
 	<div class="col s12">
 		<form asp-action="Edit">
 			<div asp-validation-summary="ModelOnly" class="validate"></div>
-			<input type="hidden" asp-for="ReportThesis.Id"/>
+			<input type="hidden" asp-for="Id"/>
 			<div class="row">
 				<div class="input-field col s7">
-					<input asp-for="ReportThesis.Thesis" type="text" class="validate">
-					<label asp-for="ReportThesis.Thesis">@Localizer["Thesis"]</label>
-					<span class="helper-text" asp-validation-for="ReportThesis.Thesis" data-error="" data-success=""></span>
+					<input asp-for="Thesis" type="text" class="validate">
+					<label asp-for="Thesis">@Localizer["Thesis"]</label>
+					<span class="helper-text" asp-validation-for="Thesis" data-error="" data-success=""></span>
 				</div>
 				<div class="col s6">
 					<h4>@Localizer["Authors"]:</h4>
@@ -40,9 +40,9 @@
 								{
 									var exists = Model.Authors.Any(u => u.Id == user.Id);
 									<p>
-										@user.FirstName @user.LastName
-										<i class="add-user fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addAuthor(this, '@Model.ReportThesis.Id', '@user.Id')"></i>
-										<i class="remove-user fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteAuthor(this, '@Model.ReportThesis.Id', '@user.Id')"></i>
+										@user.FullName
+										<i class="add-user fas fa-plus-circle fa-lg cursor-pointer text-green @(exists ? "hidden" : "")" onclick="addAuthor(this, '@Model.Id', '@user.Id')"></i>
+										<i class="remove-user fas fa-minus-circle fa-lg cursor-pointer text-red @(exists ? "" : "hidden")" onclick="deleteAuthor(this, '@Model.Id', '@user.Id')"></i>
 									</p>
 								}
 							}
