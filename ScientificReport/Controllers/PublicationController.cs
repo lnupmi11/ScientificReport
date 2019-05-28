@@ -168,7 +168,7 @@ namespace ScientificReport.Controllers
 			return View(editModel);
 		}
 
-		// POST: Department/AddUserToStaff/{departmentId}
+		// POST: Publication/AddUserToAuthors/{publicationId}
 		[HttpPost]
 		[Authorize(Roles = UserProfileRole.HeadOfDepartmentOrAdmin)]
 		public IActionResult AddUserToAuthors(Guid? id, [FromBody] PublicationUpdateAuthorsRequest request)
@@ -203,7 +203,7 @@ namespace ScientificReport.Controllers
 			return Json(ApiResponse.Ok);
 		}
 
-		// POST: Department/RemoveUserFromStaff/{departmentId}
+		// POST: Publication/RemoveUserFromAuthors/{publicationId}
 		[HttpPost]
 		[Authorize(Roles = UserProfileRole.HeadOfDepartmentOrAdmin)]
 		public IActionResult RemoveUserFromAuthors(Guid? id, [FromBody] PublicationUpdateAuthorsRequest request)

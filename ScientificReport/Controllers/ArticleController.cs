@@ -31,8 +31,8 @@ namespace ScientificReport.Controllers
 		// GET: Article
 		public IActionResult Index(ArticleIndexModel model)
 		{
-			model.Articles = _articleService.GetPage(model.CurrentPage, model.PageSize);
-			model.Count = _articleService.GetCount();
+			model.Articles = _articleService.GetPageByRole(model.CurrentPage, model.PageSize, User);	
+			model.Count = _articleService.GetCountByRole(User);
 			return View(model);
 		}
 

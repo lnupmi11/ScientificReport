@@ -13,7 +13,9 @@ namespace ScientificReport.DTO.Models.Article
 		
 		public IEnumerable<DAL.Entities.UserProfile.UserProfile> Authors;
 
-		public ArticleEditModel() {}
+		public ArticleEditModel()
+		{
+		}
 		
 		public ArticleEditModel(DAL.Entities.Article article)
 		{
@@ -30,7 +32,7 @@ namespace ScientificReport.DTO.Models.Article
 			PublishingHouseName = article.PublishingHouseName;
 			IsRecommendedToPrint = article.IsRecommendedToPrint;
 		}
-		
+
 		public DAL.Entities.Article Modify(DAL.Entities.Article article)
 		{
 			article.Type = Type;

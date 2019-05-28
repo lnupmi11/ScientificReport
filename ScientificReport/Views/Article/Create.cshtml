@@ -8,7 +8,7 @@
 	ViewData["Title"] = Localizer["Article's creation"];
 }
 
-<h5>@Localizer["Create article"]</h5>
+<h5>@ViewData["Title"]</h5>
 <hr/>
 <div class="row">
 	<div class="col s12">
@@ -102,7 +102,7 @@
 					<span>@Localizer["Is print canceled"]</span>
 				</label>
 			
-				<label class="col s2">
+				<label class="col s3">
 					<input type="checkbox" class="filled-in" asp-for="IsRecommendedToPrint"/>
 					<span>@Localizer["Is recommended to print"]</span>
 				</label>

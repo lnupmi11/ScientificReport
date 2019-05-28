@@ -43,7 +43,7 @@ namespace ScientificReport.Models
 
 			SeedUserRoles(serviceProvider.GetRequiredService<RoleManager<UserProfileRole>>(), logger).Wait();
 			SeedUserProfile(context, serviceProvider).Wait();
-			SeedDepartments(context).Wait();
+			SeedDepartments(context, serviceProvider).Wait();
 			SeedTeacherReports(context);
 			SeedScientificWorks(context);
 			SeedConference(context);
@@ -150,18 +150,19 @@ namespace ScientificReport.Models
 			}
 		}
 		
-		private static async Task SeedDepartments(ScientificReportDbContext context)
+		private static async Task SeedDepartments(ScientificReportDbContext context, IServiceProvider serviceProvider)
 		{
 			if (context.Departments.Any()) return;
 
+			var head = context.UserProfiles.First(u => u.UserName == "olena");
 			var departments = new[]
 			{
 				new Department
 				{
-					Head = context.UserProfiles.First(u => u.UserName == "olena"),
+					Head = head,
 					Staff = new List<UserProfile>
 					{
-						context.UserProfiles.First(u => u.UserName == "olena"),
+						head,
 						context.UserProfiles.First(u => u.UserName == "yura"),
 						context.UserProfiles.First(u => u.UserName == "roman"),
 						context.UserProfiles.First(u => u.UserName == "orest"),
@@ -173,7 +174,12 @@ namespace ScientificReport.Models
 			{
 				context.Departments.Add(department);
 			}
+			
+			var userManager = serviceProvider.GetRequiredService<UserManager<UserProfile>>();
+			await userManager.AddToRolesAsync(head, new[] {UserProfileRole.Teacher, UserProfileRole.HeadOfDepartment});
 
+			head.Position = UserProfileRole.HeadOfDepartment;
+			
 			await context.SaveChangesAsync();
 		}
 

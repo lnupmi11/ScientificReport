@@ -9,20 +9,9 @@ namespace ScientificReport.Controllers
 {
 	public class HomeController : Controller
 	{
-		public IActionResult Index()
-		{
-			return View();
-		}
+		public IActionResult Index() => View();
 
-		public IActionResult Privacy()
-		{
-			return View();
-		}
-
-		public IActionResult AccessDenied()
-		{
-			return View();
-		}
+		public IActionResult AccessDenied() => View();
 
 		public IActionResult SetLanguage(string culture, string returnUrl)
 		{

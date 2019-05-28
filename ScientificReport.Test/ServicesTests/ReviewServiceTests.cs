@@ -123,17 +123,5 @@ namespace ScientificReport.Test.ServicesTests
 
 			Assert.False(exists);
 		}
-		
-		[Fact]
-		public void GetReviewersTest()
-		{
-			var review = GetTestData().First();
-
-			var service = new Mock<ReviewService>(GetMockContext().Object);
-
-			service.Setup(item => item.GetReviewers(review.Id));
-			service.Object.GetReviewers(review.Id);
-			service.Verify(item => item.GetReviewers(review.Id));
-		}
 	}
 }
