@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['scientificconsultation_2ecs',['ScientificConsultation.cs',['../a00276.html',1,'']]],
+  ['scientificconsultation_2ecs',['ScientificConsultation.cs',['../a00277.html',1,'']]],
   ['scientificconsultationcontroller_2ecs',['ScientificConsultationController.cs',['../a00427.html',1,'']]],
   ['scientificconsultationeditmodel_2ecs',['ScientificConsultationEditModel.cs',['../a00358.html',1,'']]],
   ['scientificconsultationindexmodel_2ecs',['ScientificConsultationIndexModel.cs',['../a00359.html',1,'']]],
@@ -9,7 +9,7 @@ var searchData=
   ['scientificconsultationrepositorytests_2ecs',['ScientificConsultationRepositoryTests.cs',['../a00391.html',1,'']]],
   ['scientificconsultationservice_2ecs',['ScientificConsultationService.cs',['../a00249.html',1,'']]],
   ['scientificconsultationservicetests_2ecs',['ScientificConsultationServiceTests.cs',['../a00408.html',1,'']]],
-  ['scientificinternship_2ecs',['ScientificInternship.cs',['../a00277.html',1,'']]],
+  ['scientificinternship_2ecs',['ScientificInternship.cs',['../a00278.html',1,'']]],
   ['scientificinternshipcontroller_2ecs',['ScientificInternshipController.cs',['../a00428.html',1,'']]],
   ['scientificinternshipeditmodel_2ecs',['ScientificInternshipEditModel.cs',['../a00361.html',1,'']]],
   ['scientificinternshipindexmodel_2ecs',['ScientificInternshipIndexModel.cs',['../a00362.html',1,'']]],
@@ -18,9 +18,9 @@ var searchData=
   ['scientificinternshiprepositorytests_2ecs',['ScientificInternshipRepositoryTests.cs',['../a00392.html',1,'']]],
   ['scientificinternshipservice_2ecs',['ScientificInternshipService.cs',['../a00250.html',1,'']]],
   ['scientificinternshipservicetests_2ecs',['ScientificInternshipServiceTests.cs',['../a00409.html',1,'']]],
-  ['scientificreportdbcontext_2ecs',['ScientificReportDbContext.cs',['../a00254.html',1,'']]],
+  ['scientificreportdbcontext_2ecs',['ScientificReportDbContext.cs',['../a00255.html',1,'']]],
   ['scientificreportdbcontextmodelsnapshot_2ecs',['ScientificReportDbContextModelSnapshot.cs',['../a00436.html',1,'']]],
-  ['scientificwork_2ecs',['ScientificWork.cs',['../a00278.html',1,'']]],
+  ['scientificwork_2ecs',['ScientificWork.cs',['../a00279.html',1,'']]],
   ['scientificworkauthorrequest_2ecs',['ScientificWorkAuthorRequest.cs',['../a00364.html',1,'']]],
   ['scientificworkcontroller_2ecs',['ScientificWorkController.cs',['../a00429.html',1,'']]],
   ['scientificworkindexmodel_2ecs',['ScientificWorkIndexModel.cs',['../a00365.html',1,'']]],

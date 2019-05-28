@@ -9,6 +9,5 @@ var a00070 =
     [ "GetById", "a00070.html#a70dcf5eb16bc4526017ab82d2c0c1ed6", null ],
     [ "GetCount", "a00070.html#ac747711c94c0c08357d8fdbf64f17a15", null ],
     [ "GetPage", "a00070.html#a0270d86f8199650808aa9e811aa91f7e", null ],
-    [ "GetReviewers", "a00070.html#a8979c56b2822c16184c3bd115b5141f5", null ],
     [ "UpdateItem", "a00070.html#a30f96094f600fd4be9caee780244c47e", null ]
 ];

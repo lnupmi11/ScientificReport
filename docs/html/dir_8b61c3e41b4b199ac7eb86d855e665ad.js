@@ -55,6 +55,6 @@ var dir_8b61c3e41b4b199ac7eb86d855e665ad =
       [ "TeacherReportRepositoryTests", "a00195.html", "a00195" ]
     ] ],
     [ "UserProfileRepositoryTests.cs", "a00395.html", [
-      [ "UserProfileRepositoryTests", "a00206.html", "a00206" ]
+      [ "UserProfileRepositoryTests", "a00207.html", "a00207" ]
     ] ]
 ];

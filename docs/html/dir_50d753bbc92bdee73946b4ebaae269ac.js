@@ -58,7 +58,7 @@ var dir_50d753bbc92bdee73946b4ebaae269ac =
       [ "TeacherReportsScientificWorksRepository", "a00199.html", "a00199" ]
     ] ],
     [ "UserProfileRepository.cs", "a00308.html", [
-      [ "UserProfileRepository", "a00205.html", "a00205" ]
+      [ "UserProfileRepository", "a00206.html", "a00206" ]
     ] ],
     [ "UserProfilesScientificWorksRepository.cs", "a00309.html", [
       [ "UserProfilesScientificWorksRepository", "a00217.html", "a00217" ]

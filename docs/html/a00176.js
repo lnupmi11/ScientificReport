@@ -30,7 +30,6 @@ var a00176 =
     [ "UserProfilesGrants", "a00176.html#a96fcdb4a917818166fd1bd09f0ca2def", null ],
     [ "UserProfilesPublications", "a00176.html#a4c87d769ab2ad89b0813f596f7d51c3c", null ],
     [ "UserProfilesReportTheses", "a00176.html#a520825cab9d7063fa3330b2c44d5489c", null ],
-    [ "UserProfilesReviews", "a00176.html#ace269ae6199ab9766a3062621544168f", null ],
     [ "UserProfilesScientificInternships", "a00176.html#a1406db6c7a9b17e669f181cf935f09ff", null ],
     [ "UserProfilesScientificWorks", "a00176.html#a59def32608f9a97957c807f17979882f", null ]
 ];

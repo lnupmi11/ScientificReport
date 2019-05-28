@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['teacher',['Teacher',['../a00191.html#af34909fd1c6b19514c2d42c81b5b4fc9',1,'ScientificReport.DAL.Entities.Reports.TeacherReport.Teacher()'],['../a00207.html#ab5dbd2035d47221619c9d9836fffcac4',1,'ScientificReport.DAL.Roles.UserProfileRole.Teacher()']]],
+  ['teacher',['Teacher',['../a00191.html#af34909fd1c6b19514c2d42c81b5b4fc9',1,'ScientificReport.DAL.Entities.Reports.TeacherReport.Teacher()'],['../a00208.html#ab5dbd2035d47221619c9d9836fffcac4',1,'ScientificReport.DAL.Roles.UserProfileRole.Teacher()']]],
   ['teacherreport',['TeacherReport',['../a00191.html',1,'ScientificReport::DAL::Entities::Reports']]],
   ['teacherreport',['TeacherReport',['../a00198.html#adfb4c640509606576dda08f46d67cbcb',1,'ScientificReport::DAL::Entities::Reports::TeacherReportsScientificWorks']]],
-  ['teacherreport_2ecs',['TeacherReport.cs',['../a00272.html',1,'']]],
+  ['teacherreport_2ecs',['TeacherReport.cs',['../a00273.html',1,'']]],
   ['teacherreportcontroller',['TeacherReportController',['../a00192.html',1,'ScientificReport::Controllers']]],
   ['teacherreportcontroller',['TeacherReportController',['../a00192.html#a9ae124cbaf13e5ccf5b7b6a588ae0047',1,'ScientificReport::Controllers::TeacherReportController']]],
   ['teacherreportcontroller_2ecs',['TeacherReportController.cs',['../a00430.html',1,'']]],
@@ -22,7 +22,7 @@ var searchData=
   ['teacherreportservicetests_2ecs',['TeacherReportServiceTests.cs',['../a00411.html',1,'']]],
   ['teacherreportsscientificworks',['TeacherReportsScientificWorks',['../a00198.html',1,'ScientificReport::DAL::Entities::Reports']]],
   ['teacherreportsscientificworks',['TeacherReportsScientificWorks',['../a00176.html#a086c2b7059cd8a67a24de4009f05248c',1,'ScientificReport::DAL::DbContext::ScientificReportDbContext']]],
-  ['teacherreportsscientificworks_2ecs',['TeacherReportsScientificWorks.cs',['../a00273.html',1,'']]],
+  ['teacherreportsscientificworks_2ecs',['TeacherReportsScientificWorks.cs',['../a00274.html',1,'']]],
   ['teacherreportsscientificworksrepository',['TeacherReportsScientificWorksRepository',['../a00199.html',1,'ScientificReport::DAL::Repositories']]],
   ['teacherreportsscientificworksrepository',['TeacherReportsScientificWorksRepository',['../a00199.html#af4fc3a38d3f52d5627272e50e06d12cb',1,'ScientificReport::DAL::Repositories::TeacherReportsScientificWorksRepository']]],
   ['teacherreportsscientificworksrepository_2ecs',['TeacherReportsScientificWorksRepository.cs',['../a00307.html',1,'']]],

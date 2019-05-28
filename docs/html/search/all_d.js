@@ -4,7 +4,7 @@ var searchData=
   ['oldpassword',['OldPassword',['../a00017.html#ab5b909b26e07cac9105b1601b0bd353a',1,'ScientificReport::DTO::Models::UserProfile::ChangePasswordModel']]],
   ['opponent',['Opponent',['../a00088.html#addcfea9d24bd88ccb4287afd096ee4ee',1,'ScientificReport.DAL.Entities.Opposition.Opponent()'],['../a00092.html#ae3cdec8f0d0e708eefdf9bc25784bb8e',1,'ScientificReport.DTO.Models.Opposition.OppositionModel.Opponent()']]],
   ['opposition',['Opposition',['../a00088.html',1,'ScientificReport::DAL::Entities']]],
-  ['opposition_2ecs',['Opposition.cs',['../a00264.html',1,'']]],
+  ['opposition_2ecs',['Opposition.cs',['../a00265.html',1,'']]],
   ['oppositioncontroller',['OppositionController',['../a00089.html',1,'ScientificReport::Controllers']]],
   ['oppositioncontroller',['OppositionController',['../a00089.html#a388ab3a2d392249e10bba7178ccee362',1,'ScientificReport::Controllers::OppositionController']]],
   ['oppositioncontroller_2ecs',['OppositionController.cs',['../a00420.html',1,'']]],

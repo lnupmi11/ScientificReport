@@ -9,8 +9,9 @@ var a00057 =
     [ "GetAllWhere", "a00057.html#a21c97c85c651b4d36ccb0b06cf9eae73", null ],
     [ "GetAuthors", "a00057.html#a92d1cf8b71f457714755173cb48b4f0c", null ],
     [ "GetById", "a00057.html#a9e90220796055165946d1185616f2f8a", null ],
-    [ "GetCount", "a00057.html#a4b3a2cc44b2589f7b38c477dab7f882f", null ],
-    [ "GetPage", "a00057.html#ad2f5f6a07085a2198e6f2f02cbbcd329", null ],
+    [ "GetCountByRole", "a00057.html#afc530a3a286b37f0d802936b764bb646", null ],
+    [ "GetItemsByRole", "a00057.html#ab5223f65f0edee33a600ec5bac251fbd", null ],
+    [ "GetPageByRole", "a00057.html#ab0514df7bb772c2ec66206ffa28ac45a", null ],
     [ "RemoveAuthor", "a00057.html#a82e8977d5bcf608397b27366b3085c19", null ],
     [ "UpdateItem", "a00057.html#a1fe440b03deb5edb3185011b6f7d40a4", null ]
 ];

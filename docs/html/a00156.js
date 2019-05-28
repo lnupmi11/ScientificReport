@@ -10,6 +10,5 @@ var a00156 =
     [ "GetById", "a00156.html#a7fd119e67a7edfb650868c9ae281657e", null ],
     [ "GetCount", "a00156.html#a8d4c9b648294c958740f0e5eb55bfab8", null ],
     [ "GetPage", "a00156.html#a9e024de786ca93c8f4319f747261944b", null ],
-    [ "GetReviewers", "a00156.html#a739101f24b0e6468276ca9bc5df202d6", null ],
     [ "UpdateItem", "a00156.html#af0aa84d2b698bb4e764d0903b29e1754", null ]
 ];

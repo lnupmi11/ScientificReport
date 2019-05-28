@@ -1,4 +1,0 @@
-<map id="ScientificReport.DTO.Models.Article.ArticleModel" name="ScientificReport.DTO.Models.Article.ArticleModel">
-<area shape="rect" id="node2" href="$a00006.html" title="{ScientificReport.DTO.Models.\lArticle.ArticleCreateModel\n||+ ToArticle()\l}" alt="" coords="5,336,208,428"/>
-<area shape="rect" id="node3" href="$a00008.html" title="{ScientificReport.DTO.Models.\lArticle.ArticleEditModel\n|+ Users\l+ Authors\l+ Id\l|+ ArticleEditModel()\l+ ArticleEditModel()\l+ Modify()\l}" alt="" coords="232,307,435,457"/>
-</map>

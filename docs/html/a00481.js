@@ -1,6 +1,9 @@
 var a00481 =
 [
-    [ "ConferenceDetails", "a00022.html", "a00022" ],
-    [ "ConferenceEdit", "a00023.html", "a00023" ],
-    [ "ConferenceIndexModel", "a00024.html", "a00024" ]
+    [ "ArticleCreateModel", "a00006.html", "a00006" ],
+    [ "ArticleDetailsModel", "a00007.html", "a00007" ],
+    [ "ArticleEditModel", "a00008.html", "a00008" ],
+    [ "ArticleIndexModel", "a00009.html", "a00009" ],
+    [ "ArticleModel", "a00010.html", "a00010" ],
+    [ "ArticleUpdateAuthorsRequest", "a00015.html", "a00015" ]
 ];

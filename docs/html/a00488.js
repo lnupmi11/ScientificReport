@@ -1,6 +1,6 @@
 var a00488 =
 [
-    [ "PostgraduateGuidanceEditModel", "a00118.html", "a00118" ],
-    [ "PostgraduateGuidanceIndexModel", "a00119.html", "a00119" ],
-    [ "PostgraduateGuidanceModel", "a00120.html", "a00120" ]
+    [ "PostgraduateDissertationGuidanceEditModel", "a00109.html", "a00109" ],
+    [ "PostgraduateDissertationGuidanceIndexModel", "a00110.html", "a00110" ],
+    [ "PostgraduateDissertationGuidanceModel", "a00111.html", "a00111" ]
 ];

@@ -13,10 +13,10 @@ var dir_9c36cc6f40a5cdd0088fde5811d22019 =
       [ "UserDetailsModel", "a00200.html", "a00200" ]
     ] ],
     [ "UserProfileEditModel.cs", "a00373.html", [
-      [ "UserProfileEditModel", "a00203.html", "a00203" ]
+      [ "UserProfileEditModel", "a00204.html", "a00204" ]
     ] ],
     [ "UserProfileIndexModel.cs", "a00374.html", [
-      [ "UserProfileIndexModel", "a00204.html", "a00204" ]
+      [ "UserProfileIndexModel", "a00205.html", "a00205" ]
     ] ],
     [ "UserProfileUpdateRolesRequest.cs", "a00375.html", [
       [ "UserProfileUpdateRolesRequest", "a00218.html", "a00218" ]

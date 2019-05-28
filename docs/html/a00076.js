@@ -20,6 +20,7 @@ var a00076 =
     [ "GetUserPublications", "a00076.html#a512515857add6bf8b8f749aff3860010", null ],
     [ "GetUserReportTheses", "a00076.html#a2d1953c55cf525e4dde8869174a92422", null ],
     [ "GetUserReviews", "a00076.html#ad45622e9cdbd0410ee300002c8ef103c", null ],
+    [ "GetUserScientificConsultations", "a00076.html#aa95bfd03d17a3c96dfac7847ac34ebab", null ],
     [ "GetUserScientificInternships", "a00076.html#a8664f21bb7903b7c8883507af53300a9", null ],
     [ "GetUserScientificWorks", "a00076.html#a3df0eeed84fd52e1ae559e941639ead9", null ],
     [ "IsInRoleAsync", "a00076.html#ad8c5670a60fbdcbb715fed00c82f3f89", null ],
