@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>ScientificReport: ScientificReport.Controllers.UserProfileController Class Reference</title>
+<title>ScientificReport: ScientificReport.DAL.Entities.UserProfile.UserProfile Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -107,434 +107,544 @@ $(document).ready(function(){initNavTree('a00203.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a00674.html">List of all members</a>  </div>
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#properties">Properties</a> &#124;
+<a href="a00735.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ScientificReport.Controllers.UserProfileController Class Reference</div>  </div>
+<div class="title">ScientificReport.DAL.Entities.UserProfile.UserProfile Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Inheritance diagram for ScientificReport.Controllers.UserProfileController:</div>
+Inheritance diagram for ScientificReport.DAL.Entities.UserProfile.UserProfile:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00675.png" border="0" usemap="#_scientific_report_8_controllers_8_user_profile_controller_inherit__map" alt="Inheritance graph"/></div>
-<map name="_scientific_report_8_controllers_8_user_profile_controller_inherit__map" id="_scientific_report_8_controllers_8_user_profile_controller_inherit__map">
+<div class="center"><img src="a00736.png" border="0" usemap="#_scientific_report_8_d_a_l_8_entities_8_user_profile_8_user_profile_inherit__map" alt="Inheritance graph"/></div>
+<map name="_scientific_report_8_d_a_l_8_entities_8_user_profile_8_user_profile_inherit__map" id="_scientific_report_8_d_a_l_8_entities_8_user_profile_8_user_profile_inherit__map">
 </map>
 </div>
 <div class="dynheader">
-Collaboration diagram for ScientificReport.Controllers.UserProfileController:</div>
+Collaboration diagram for ScientificReport.DAL.Entities.UserProfile.UserProfile:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00676.png" border="0" usemap="#_scientific_report_8_controllers_8_user_profile_controller_coll__map" alt="Collaboration graph"/></div>
-<map name="_scientific_report_8_controllers_8_user_profile_controller_coll__map" id="_scientific_report_8_controllers_8_user_profile_controller_coll__map">
+<div class="center"><img src="a00737.png" border="0" usemap="#_scientific_report_8_d_a_l_8_entities_8_user_profile_8_user_profile_coll__map" alt="Collaboration graph"/></div>
+<map name="_scientific_report_8_d_a_l_8_entities_8_user_profile_8_user_profile_coll__map" id="_scientific_report_8_d_a_l_8_entities_8_user_profile_8_user_profile_coll__map">
 </map>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:ab8a2800e549454ca1e5fde0cd311ae0e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#ab8a2800e549454ca1e5fde0cd311ae0e">UserProfileController</a> (UserManager&lt; <a class="el" href="a00202.html">UserProfile</a> &gt; usrMgr, SignInManager&lt; <a class="el" href="a00202.html">UserProfile</a> &gt; signInManager, RoleManager&lt; <a class="el" href="a00208.html">UserProfileRole</a> &gt; roleManager, <a class="el" href="a00076.html">IUserProfileService</a> userProfileService, <a class="el" href="a00059.html">IDepartmentService</a> departmentService, IStringLocalizer&lt; <a class="el" href="a00203.html">UserProfileController</a> &gt; localizer)</td></tr>
-<tr class="separator:ab8a2800e549454ca1e5fde0cd311ae0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2515db453a727a847ef4f42d182b7b90"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#a2515db453a727a847ef4f42d182b7b90">Index</a> (<a class="el" href="a00205.html">UserProfileIndexModel</a> model)</td></tr>
-<tr class="separator:a2515db453a727a847ef4f42d182b7b90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a292b2515e9e3c085fa910e011d7ffae7"><td class="memItemLeft" align="right" valign="top">async Task&lt; IActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#a292b2515e9e3c085fa910e011d7ffae7">Details</a> (Guid?id)</td></tr>
-<tr class="separator:a292b2515e9e3c085fa910e011d7ffae7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a301fe8b8081fe11b59b4c90a4e76b2b1"><td class="memItemLeft" align="right" valign="top">async Task&lt; IActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#a301fe8b8081fe11b59b4c90a4e76b2b1">Edit</a> (Guid?id)</td></tr>
-<tr class="separator:a301fe8b8081fe11b59b4c90a4e76b2b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae81af6a998d2987865ce274806dcc7f4"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#ae81af6a998d2987865ce274806dcc7f4">Edit</a> (Guid?id, <a class="el" href="a00204.html">UserProfileEditModel</a> model)</td></tr>
-<tr class="separator:ae81af6a998d2987865ce274806dcc7f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb37027360b4e896fd1b885e419367ca"><td class="memItemLeft" align="right" valign="top">async Task&lt; IActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#adb37027360b4e896fd1b885e419367ca">AddUserToAdministration</a> (Guid?id, [FromBody] <a class="el" href="a00218.html">UserProfileUpdateRolesRequest</a> request)</td></tr>
-<tr class="separator:adb37027360b4e896fd1b885e419367ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0f1ba68a83e6c606e48e1b1fdbda5bf"><td class="memItemLeft" align="right" valign="top">async Task&lt; IActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#aa0f1ba68a83e6c606e48e1b1fdbda5bf">RemoveUserFromAdministration</a> (Guid?id, [FromBody] <a class="el" href="a00218.html">UserProfileUpdateRolesRequest</a> request)</td></tr>
-<tr class="separator:aa0f1ba68a83e6c606e48e1b1fdbda5bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48780abfce15ce82c58a1b5710185e83"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#a48780abfce15ce82c58a1b5710185e83">Delete</a> (Guid?id)</td></tr>
-<tr class="separator:a48780abfce15ce82c58a1b5710185e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a240da825f9c1258563ff0241ecf3eb99"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#a240da825f9c1258563ff0241ecf3eb99">SetActive</a> (Guid?id, bool isActive)</td></tr>
-<tr class="separator:a240da825f9c1258563ff0241ecf3eb99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c8b98005ac1254746e00f0066ed462a"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#a6c8b98005ac1254746e00f0066ed462a">Register</a> ()</td></tr>
-<tr class="separator:a6c8b98005ac1254746e00f0066ed462a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81dea7bbcc1fd61c4b0bd09ba613e329"><td class="memItemLeft" align="right" valign="top">async Task&lt; IActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#a81dea7bbcc1fd61c4b0bd09ba613e329">Register</a> (<a class="el" href="a00137.html">RegisterModel</a> model)</td></tr>
-<tr class="separator:a81dea7bbcc1fd61c4b0bd09ba613e329"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada213933d9f48f28cc1cb8b098fade07"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#ada213933d9f48f28cc1cb8b098fade07">Login</a> ()</td></tr>
-<tr class="separator:ada213933d9f48f28cc1cb8b098fade07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8d56f997555dbd409b63f7bdc9f6e58"><td class="memItemLeft" align="right" valign="top">async Task&lt; IActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#ae8d56f997555dbd409b63f7bdc9f6e58">Login</a> (<a class="el" href="a00077.html">LoginModel</a> model)</td></tr>
-<tr class="separator:ae8d56f997555dbd409b63f7bdc9f6e58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65d3fa00161b10075bbcf85098beedb2"><td class="memItemLeft" align="right" valign="top">async Task&lt; IActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#a65d3fa00161b10075bbcf85098beedb2">Logout</a> ()</td></tr>
-<tr class="separator:a65d3fa00161b10075bbcf85098beedb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef7efd84a34bddfb759b547107d2035a"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#aef7efd84a34bddfb759b547107d2035a">ChangePassword</a> ()</td></tr>
-<tr class="separator:aef7efd84a34bddfb759b547107d2035a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f1f9cbd71e4997fbf25868fb42063ba"><td class="memItemLeft" align="right" valign="top">async Task&lt; IActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#a1f1f9cbd71e4997fbf25868fb42063ba">ChangePassword</a> (<a class="el" href="a00017.html">ChangePasswordModel</a> model)</td></tr>
-<tr class="separator:a1f1f9cbd71e4997fbf25868fb42063ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:ac998087addff577dc5e8db36175598c7"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#ac998087addff577dc5e8db36175598c7">FullName</a> =&gt; $&quot;{LastName} {<a class="el" href="a00203.html#a53b7699c09c9727ab340e03c5c6bfc11">FirstName</a>} {<a class="el" href="a00203.html#a5db8c28a0893682b9b52e0b870f34514">MiddleName</a>}&quot;</td></tr>
+<tr class="separator:ac998087addff577dc5e8db36175598c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a53b7699c09c9727ab340e03c5c6bfc11"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#a53b7699c09c9727ab340e03c5c6bfc11">FirstName</a><code> [get, set]</code></td></tr>
+<tr class="separator:a53b7699c09c9727ab340e03c5c6bfc11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5db8c28a0893682b9b52e0b870f34514"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#a5db8c28a0893682b9b52e0b870f34514">MiddleName</a><code> [get, set]</code></td></tr>
+<tr class="separator:a5db8c28a0893682b9b52e0b870f34514"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2f1c56009ae48cec8bc427e24c0400b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#ab2f1c56009ae48cec8bc427e24c0400b">LastName</a><code> [get, set]</code></td></tr>
+<tr class="separator:ab2f1c56009ae48cec8bc427e24c0400b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95c2278a4c6dd316f200d7296e3ef98f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#a95c2278a4c6dd316f200d7296e3ef98f">BirthYear</a><code> [get, set]</code></td></tr>
+<tr class="separator:a95c2278a4c6dd316f200d7296e3ef98f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab723e77ab131b030c07e7bb3bef3e854"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#ab723e77ab131b030c07e7bb3bef3e854">GraduationYear</a><code> [get, set]</code></td></tr>
+<tr class="separator:ab723e77ab131b030c07e7bb3bef3e854"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57e326035c085b9c9f7f60b91f39b6e0"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#a57e326035c085b9c9f7f60b91f39b6e0">ScientificDegree</a><code> [get, set]</code></td></tr>
+<tr class="separator:a57e326035c085b9c9f7f60b91f39b6e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6cfa701a32788c635abe9b88a43c2db"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#ad6cfa701a32788c635abe9b88a43c2db">YearDegreeGained</a><code> [get, set]</code></td></tr>
+<tr class="separator:ad6cfa701a32788c635abe9b88a43c2db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46135a488a910171dc00126e1d1efdcc"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#a46135a488a910171dc00126e1d1efdcc">AcademicStatus</a><code> [get, set]</code></td></tr>
+<tr class="separator:a46135a488a910171dc00126e1d1efdcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25e0e3f06b0d5a23178fd19265d54640"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#a25e0e3f06b0d5a23178fd19265d54640">YearDegreeAssigned</a><code> [get, set]</code></td></tr>
+<tr class="separator:a25e0e3f06b0d5a23178fd19265d54640"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a475c85dab3f8cb18e5cf1fb913ec3705"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#a475c85dab3f8cb18e5cf1fb913ec3705">Position</a><code> [get, set]</code></td></tr>
+<tr class="separator:a475c85dab3f8cb18e5cf1fb913ec3705"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1924934dbcc6ca99c316a669e31cd436"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#a1924934dbcc6ca99c316a669e31cd436">IsApproved</a><code> [get, set]</code></td></tr>
+<tr class="separator:a1924934dbcc6ca99c316a669e31cd436"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88e7533373c5a57485e1c80a29dd46c1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#a88e7533373c5a57485e1c80a29dd46c1">IsActive</a><code> [get, set]</code></td></tr>
+<tr class="separator:a88e7533373c5a57485e1c80a29dd46c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2ba7e87b70cb8550a5581c6b52ccc35"><td class="memItemLeft" align="right" valign="top">virtual ICollection&lt; <a class="el" href="a00214.html">UserProfilesPublications</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#af2ba7e87b70cb8550a5581c6b52ccc35">UserProfilesPublications</a><code> [get, set]</code></td></tr>
+<tr class="separator:af2ba7e87b70cb8550a5581c6b52ccc35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78862515c68f654afff5a2111d3acbc0"><td class="memItemLeft" align="right" valign="top">virtual ICollection&lt; <a class="el" href="a00213.html">UserProfilesGrants</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#a78862515c68f654afff5a2111d3acbc0">UserProfilesGrants</a><code> [get, set]</code></td></tr>
+<tr class="separator:a78862515c68f654afff5a2111d3acbc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96023761621f3c3ddce18c4ca06312f5"><td class="memItemLeft" align="right" valign="top">virtual ICollection&lt; <a class="el" href="a00217.html">UserProfilesScientificWorks</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#a96023761621f3c3ddce18c4ca06312f5">UserProfilesScientificWorks</a><code> [get, set]</code></td></tr>
+<tr class="separator:a96023761621f3c3ddce18c4ca06312f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80da8d86937bba3455b991df0f965cb3"><td class="memItemLeft" align="right" valign="top">virtual ICollection&lt; <a class="el" href="a00210.html">UserProfilesArticles</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#a80da8d86937bba3455b991df0f965cb3">UserProfilesArticles</a><code> [get, set]</code></td></tr>
+<tr class="separator:a80da8d86937bba3455b991df0f965cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f16cfe6f360493e05b6b40672d145ef"><td class="memItemLeft" align="right" valign="top">virtual ICollection&lt; <a class="el" href="a00215.html">UserProfilesReportThesis</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#a6f16cfe6f360493e05b6b40672d145ef">UserProfilesReportTheses</a><code> [get, set]</code></td></tr>
+<tr class="separator:a6f16cfe6f360493e05b6b40672d145ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ee840634482df15751f6970e4fa2f94"><td class="memItemLeft" align="right" valign="top">virtual ICollection&lt; <a class="el" href="a00216.html">UserProfilesScientificInternships</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#a6ee840634482df15751f6970e4fa2f94">UserProfilesScientificInternships</a><code> [get, set]</code></td></tr>
+<tr class="separator:a6ee840634482df15751f6970e4fa2f94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a210f77ea212e1c212f1adeb5a7a2f402"><td class="memItemLeft" align="right" valign="top">virtual ICollection&lt; <a class="el" href="a00016.html">AuthorsPatentLicenseActivities</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#a210f77ea212e1c212f1adeb5a7a2f402">AuthorsPatentLicenseActivities</a><code> [get, set]</code></td></tr>
+<tr class="separator:a210f77ea212e1c212f1adeb5a7a2f402"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8649f9bf67f81d0c9b3a8432d2eafb02"><td class="memItemLeft" align="right" valign="top">virtual ICollection&lt; <a class="el" href="a00003.html">ApplicantsPatentLicenseActivities</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00203.html#a8649f9bf67f81d0c9b3a8432d2eafb02">ApplicantsPatentLicenseActivities</a><code> [get, set]</code></td></tr>
+<tr class="separator:a8649f9bf67f81d0c9b3a8432d2eafb02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="a00431_source.html#l00017">17</a> of file <a class="el" href="a00431_source.html">UserProfileController.cs</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ab8a2800e549454ca1e5fde0cd311ae0e"></a>
+<p>Definition at line <a class="el" href="a00281_source.html#l00007">7</a> of file <a class="el" href="a00281_source.html">UserProfile.cs</a>.</p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="ac998087addff577dc5e8db36175598c7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">ScientificReport.Controllers.UserProfileController.UserProfileController </td>
-          <td>(</td>
-          <td class="paramtype">UserManager&lt; <a class="el" href="a00202.html">UserProfile</a> &gt;&#160;</td>
-          <td class="paramname"><em>usrMgr</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">SignInManager&lt; <a class="el" href="a00202.html">UserProfile</a> &gt;&#160;</td>
-          <td class="paramname"><em>signInManager</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">RoleManager&lt; <a class="el" href="a00208.html">UserProfileRole</a> &gt;&#160;</td>
-          <td class="paramname"><em>roleManager</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00076.html">IUserProfileService</a>&#160;</td>
-          <td class="paramname"><em>userProfileService</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00059.html">IDepartmentService</a>&#160;</td>
-          <td class="paramname"><em>departmentService</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">IStringLocalizer&lt; <a class="el" href="a00203.html">UserProfileController</a> &gt;&#160;</td>
-          <td class="paramname"><em>localizer</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname">string ScientificReport.DAL.Entities.UserProfile.UserProfile.FullName =&gt; $&quot;{LastName} {<a class="el" href="a00203.html#a53b7699c09c9727ab340e03c5c6bfc11">FirstName</a>} {<a class="el" href="a00203.html#a5db8c28a0893682b9b52e0b870f34514">MiddleName</a>}&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00431_source.html#l00027">27</a> of file <a class="el" href="a00431_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00281_source.html#l00049">49</a> of file <a class="el" href="a00281_source.html">UserProfile.cs</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="adb37027360b4e896fd1b885e419367ca"></a>
+<h2 class="groupheader">Property Documentation</h2>
+<a class="anchor" id="a46135a488a910171dc00126e1d1efdcc"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">async Task&lt;IActionResult&gt; ScientificReport.Controllers.UserProfileController.AddUserToAdministration </td>
-          <td>(</td>
-          <td class="paramtype">Guid?&#160;</td>
-          <td class="paramname"><em>id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">[FromBody] <a class="el" href="a00218.html">UserProfileUpdateRolesRequest</a>&#160;</td>
-          <td class="paramname"><em>request</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname">string ScientificReport.DAL.Entities.UserProfile.UserProfile.AcademicStatus</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00431_source.html#l00229">229</a> of file <a class="el" href="a00431_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00281_source.html#l00023">23</a> of file <a class="el" href="a00281_source.html">UserProfile.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aef7efd84a34bddfb759b547107d2035a"></a>
+<a class="anchor" id="a8649f9bf67f81d0c9b3a8432d2eafb02"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">IActionResult ScientificReport.Controllers.UserProfileController.ChangePassword </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">virtual ICollection&lt;<a class="el" href="a00003.html">ApplicantsPatentLicenseActivities</a>&gt; ScientificReport.DAL.Entities.UserProfile.UserProfile.ApplicantsPatentLicenseActivities</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00431_source.html#l00497">497</a> of file <a class="el" href="a00431_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00281_source.html#l00047">47</a> of file <a class="el" href="a00281_source.html">UserProfile.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a1f1f9cbd71e4997fbf25868fb42063ba"></a>
+<a class="anchor" id="a210f77ea212e1c212f1adeb5a7a2f402"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">async Task&lt;IActionResult&gt; ScientificReport.Controllers.UserProfileController.ChangePassword </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00017.html">ChangePasswordModel</a>&#160;</td>
-          <td class="paramname"><em>model</em></td><td>)</td>
-          <td></td>
+          <td class="memname">virtual ICollection&lt;<a class="el" href="a00016.html">AuthorsPatentLicenseActivities</a>&gt; ScientificReport.DAL.Entities.UserProfile.UserProfile.AuthorsPatentLicenseActivities</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00431_source.html#l00513">513</a> of file <a class="el" href="a00431_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00281_source.html#l00045">45</a> of file <a class="el" href="a00281_source.html">UserProfile.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a48780abfce15ce82c58a1b5710185e83"></a>
+<a class="anchor" id="a95c2278a4c6dd316f200d7296e3ef98f"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">IActionResult ScientificReport.Controllers.UserProfileController.Delete </td>
-          <td>(</td>
-          <td class="paramtype">Guid?&#160;</td>
-          <td class="paramname"><em>id</em></td><td>)</td>
-          <td></td>
+          <td class="memname">int ScientificReport.DAL.Entities.UserProfile.UserProfile.BirthYear</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00431_source.html#l00304">304</a> of file <a class="el" href="a00431_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00281_source.html#l00015">15</a> of file <a class="el" href="a00281_source.html">UserProfile.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a292b2515e9e3c085fa910e011d7ffae7"></a>
+<a class="anchor" id="a53b7699c09c9727ab340e03c5c6bfc11"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">async Task&lt;IActionResult&gt; ScientificReport.Controllers.UserProfileController.Details </td>
-          <td>(</td>
-          <td class="paramtype">Guid?&#160;</td>
-          <td class="paramname"><em>id</em></td><td>)</td>
-          <td></td>
+          <td class="memname">string ScientificReport.DAL.Entities.UserProfile.UserProfile.FirstName</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00431_source.html#l00057">57</a> of file <a class="el" href="a00431_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00281_source.html#l00009">9</a> of file <a class="el" href="a00281_source.html">UserProfile.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a301fe8b8081fe11b59b4c90a4e76b2b1"></a>
+<a class="anchor" id="ab723e77ab131b030c07e7bb3bef3e854"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">async Task&lt;IActionResult&gt; ScientificReport.Controllers.UserProfileController.Edit </td>
-          <td>(</td>
-          <td class="paramtype">Guid?&#160;</td>
-          <td class="paramname"><em>id</em></td><td>)</td>
-          <td></td>
+          <td class="memname">int ScientificReport.DAL.Entities.UserProfile.UserProfile.GraduationYear</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00431_source.html#l00104">104</a> of file <a class="el" href="a00431_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00281_source.html#l00017">17</a> of file <a class="el" href="a00281_source.html">UserProfile.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ae81af6a998d2987865ce274806dcc7f4"></a>
+<a class="anchor" id="a88e7533373c5a57485e1c80a29dd46c1"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">IActionResult ScientificReport.Controllers.UserProfileController.Edit </td>
-          <td>(</td>
-          <td class="paramtype">Guid?&#160;</td>
-          <td class="paramname"><em>id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00204.html">UserProfileEditModel</a>&#160;</td>
-          <td class="paramname"><em>model</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname">bool ScientificReport.DAL.Entities.UserProfile.UserProfile.IsActive</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00431_source.html#l00157">157</a> of file <a class="el" href="a00431_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00281_source.html#l00031">31</a> of file <a class="el" href="a00281_source.html">UserProfile.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a2515db453a727a847ef4f42d182b7b90"></a>
+<a class="anchor" id="a1924934dbcc6ca99c316a669e31cd436"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">IActionResult ScientificReport.Controllers.UserProfileController.Index </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00205.html">UserProfileIndexModel</a>&#160;</td>
-          <td class="paramname"><em>model</em></td><td>)</td>
-          <td></td>
+          <td class="memname">bool ScientificReport.DAL.Entities.UserProfile.UserProfile.IsApproved</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00431_source.html#l00047">47</a> of file <a class="el" href="a00431_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00281_source.html#l00029">29</a> of file <a class="el" href="a00281_source.html">UserProfile.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ada213933d9f48f28cc1cb8b098fade07"></a>
+<a class="anchor" id="ab2f1c56009ae48cec8bc427e24c0400b"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">IActionResult ScientificReport.Controllers.UserProfileController.Login </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">string ScientificReport.DAL.Entities.UserProfile.UserProfile.LastName</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00431_source.html#l00442">442</a> of file <a class="el" href="a00431_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00281_source.html#l00013">13</a> of file <a class="el" href="a00281_source.html">UserProfile.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ae8d56f997555dbd409b63f7bdc9f6e58"></a>
+<a class="anchor" id="a5db8c28a0893682b9b52e0b870f34514"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">async Task&lt;IActionResult&gt; ScientificReport.Controllers.UserProfileController.Login </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00077.html">LoginModel</a>&#160;</td>
-          <td class="paramname"><em>model</em></td><td>)</td>
-          <td></td>
+          <td class="memname">string ScientificReport.DAL.Entities.UserProfile.UserProfile.MiddleName</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00431_source.html#l00456">456</a> of file <a class="el" href="a00431_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00281_source.html#l00011">11</a> of file <a class="el" href="a00281_source.html">UserProfile.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a65d3fa00161b10075bbcf85098beedb2"></a>
+<a class="anchor" id="a475c85dab3f8cb18e5cf1fb913ec3705"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">async Task&lt;IActionResult&gt; ScientificReport.Controllers.UserProfileController.Logout </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">string ScientificReport.DAL.Entities.UserProfile.UserProfile.Position</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00431_source.html#l00489">489</a> of file <a class="el" href="a00431_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00281_source.html#l00027">27</a> of file <a class="el" href="a00281_source.html">UserProfile.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a6c8b98005ac1254746e00f0066ed462a"></a>
+<a class="anchor" id="a57e326035c085b9c9f7f60b91f39b6e0"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">IActionResult ScientificReport.Controllers.UserProfileController.Register </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">string ScientificReport.DAL.Entities.UserProfile.UserProfile.ScientificDegree</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00431_source.html#l00367">367</a> of file <a class="el" href="a00431_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00281_source.html#l00019">19</a> of file <a class="el" href="a00281_source.html">UserProfile.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a81dea7bbcc1fd61c4b0bd09ba613e329"></a>
+<a class="anchor" id="a80da8d86937bba3455b991df0f965cb3"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">async Task&lt;IActionResult&gt; ScientificReport.Controllers.UserProfileController.Register </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00137.html">RegisterModel</a>&#160;</td>
-          <td class="paramname"><em>model</em></td><td>)</td>
-          <td></td>
+          <td class="memname">virtual ICollection&lt;<a class="el" href="a00210.html">UserProfilesArticles</a>&gt; ScientificReport.DAL.Entities.UserProfile.UserProfile.UserProfilesArticles</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00431_source.html#l00381">381</a> of file <a class="el" href="a00431_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00281_source.html#l00039">39</a> of file <a class="el" href="a00281_source.html">UserProfile.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aa0f1ba68a83e6c606e48e1b1fdbda5bf"></a>
+<a class="anchor" id="a78862515c68f654afff5a2111d3acbc0"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">async Task&lt;IActionResult&gt; ScientificReport.Controllers.UserProfileController.RemoveUserFromAdministration </td>
-          <td>(</td>
-          <td class="paramtype">Guid?&#160;</td>
-          <td class="paramname"><em>id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">[FromBody] <a class="el" href="a00218.html">UserProfileUpdateRolesRequest</a>&#160;</td>
-          <td class="paramname"><em>request</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname">virtual ICollection&lt;<a class="el" href="a00213.html">UserProfilesGrants</a>&gt; ScientificReport.DAL.Entities.UserProfile.UserProfile.UserProfilesGrants</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00431_source.html#l00263">263</a> of file <a class="el" href="a00431_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00281_source.html#l00035">35</a> of file <a class="el" href="a00281_source.html">UserProfile.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a240da825f9c1258563ff0241ecf3eb99"></a>
+<a class="anchor" id="af2ba7e87b70cb8550a5581c6b52ccc35"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">IActionResult ScientificReport.Controllers.UserProfileController.SetActive </td>
-          <td>(</td>
-          <td class="paramtype">Guid?&#160;</td>
-          <td class="paramname"><em>id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>isActive</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname">virtual ICollection&lt;<a class="el" href="a00214.html">UserProfilesPublications</a>&gt; ScientificReport.DAL.Entities.UserProfile.UserProfile.UserProfilesPublications</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00431_source.html#l00335">335</a> of file <a class="el" href="a00431_source.html">UserProfileController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00281_source.html#l00033">33</a> of file <a class="el" href="a00281_source.html">UserProfile.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6f16cfe6f360493e05b6b40672d145ef"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ICollection&lt;<a class="el" href="a00215.html">UserProfilesReportThesis</a>&gt; ScientificReport.DAL.Entities.UserProfile.UserProfile.UserProfilesReportTheses</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00281_source.html#l00041">41</a> of file <a class="el" href="a00281_source.html">UserProfile.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6ee840634482df15751f6970e4fa2f94"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ICollection&lt;<a class="el" href="a00216.html">UserProfilesScientificInternships</a>&gt; ScientificReport.DAL.Entities.UserProfile.UserProfile.UserProfilesScientificInternships</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00281_source.html#l00043">43</a> of file <a class="el" href="a00281_source.html">UserProfile.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a96023761621f3c3ddce18c4ca06312f5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ICollection&lt;<a class="el" href="a00217.html">UserProfilesScientificWorks</a>&gt; ScientificReport.DAL.Entities.UserProfile.UserProfile.UserProfilesScientificWorks</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00281_source.html#l00037">37</a> of file <a class="el" href="a00281_source.html">UserProfile.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a25e0e3f06b0d5a23178fd19265d54640"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ScientificReport.DAL.Entities.UserProfile.UserProfile.YearDegreeAssigned</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00281_source.html#l00025">25</a> of file <a class="el" href="a00281_source.html">UserProfile.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad6cfa701a32788c635abe9b88a43c2db"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ScientificReport.DAL.Entities.UserProfile.UserProfile.YearDegreeGained</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00281_source.html#l00021">21</a> of file <a class="el" href="a00281_source.html">UserProfile.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/travis/build/lnupmi11/ScientificReport/ScientificReport/Controllers/<a class="el" href="a00431_source.html">UserProfileController.cs</a></li>
+<li>/home/travis/build/lnupmi11/ScientificReport/ScientificReport.DAL/Entities/UserProfile/<a class="el" href="a00281_source.html">UserProfile.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00464.html">ScientificReport</a></li><li class="navelem"><a class="el" href="a00469.html">Controllers</a></li><li class="navelem"><a class="el" href="a00203.html">UserProfileController</a></li>
+    <li class="navelem"><a class="el" href="a00466.html">ScientificReport</a></li><li class="navelem"><a class="el" href="a00473.html">DAL</a></li><li class="navelem"><a class="el" href="a00475.html">Entities</a></li><li class="navelem"><a class="el" href="a00477.html">UserProfile</a></li><li class="navelem"><a class="el" href="a00203.html">UserProfile</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>

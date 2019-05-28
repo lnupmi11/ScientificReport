@@ -1,6 +1,8 @@
 var a00492 =
 [
-    [ "ReviewEditModel", "a00151.html", "a00151" ],
-    [ "ReviewIndexModel", "a00152.html", "a00152" ],
-    [ "ReviewModel", "a00153.html", "a00153" ]
+    [ "PublicationCreateModel", "a00128.html", "a00128" ],
+    [ "PublicationDetailsModel", "a00129.html", "a00129" ],
+    [ "PublicationEditModel", "a00130.html", "a00130" ],
+    [ "PublicationIndexModel", "a00131.html", "a00131" ],
+    [ "PublicationUpdateAuthorsRequest", "a00136.html", "a00136" ]
 ];

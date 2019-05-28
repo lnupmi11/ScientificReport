@@ -1,9 +1,9 @@
 var a00483 =
 [
-    [ "DepartmentCreateModel", "a00031.html", "a00031" ],
-    [ "DepartmentEditModel", "a00032.html", "a00032" ],
-    [ "DepartmentIndexModel", "a00033.html", "a00033" ],
-    [ "DepartmentUpdateScientificWorksRequest", "a00041.html", "a00041" ],
-    [ "DepartmentUpdateStaffRequest", "a00042.html", "a00042" ],
-    [ "SelectItem", "a00189.html", "a00189" ]
+    [ "ArticleCreateModel", "a00006.html", "a00006" ],
+    [ "ArticleDetailsModel", "a00007.html", "a00007" ],
+    [ "ArticleEditModel", "a00008.html", "a00008" ],
+    [ "ArticleIndexModel", "a00009.html", "a00009" ],
+    [ "ArticleModel", "a00010.html", "a00010" ],
+    [ "ArticleUpdateAuthorsRequest", "a00015.html", "a00015" ]
 ];

@@ -7,8 +7,9 @@ var a00058 =
     [ "GetAll", "a00058.html#ab0cf2b7825cf8d067aea04e5e1cf561b", null ],
     [ "GetAllWhere", "a00058.html#ab9d07b1dc452e06bbcf173a1f6011c04", null ],
     [ "GetById", "a00058.html#ace8527a3125798955d12b15e70db5d19", null ],
-    [ "GetCount", "a00058.html#aac7c22e0b3f1324adb7895c1b32a034a", null ],
-    [ "GetPage", "a00058.html#a601af1ac3017490ad61da00ae4312ae8", null ],
+    [ "GetCountByRole", "a00058.html#a2d44ab2ba3a5a59ae0b28e038ea4a275", null ],
+    [ "GetItemsByRole", "a00058.html#ad9f6559df05e8433d1b6d3afc4e29833", null ],
+    [ "GetPageByRole", "a00058.html#a80d197329589a366eb491edf4b833399", null ],
     [ "GetParticipators", "a00058.html#a719b7fffbed673455843b1c3db6cbc75", null ],
     [ "GetReportTheses", "a00058.html#a7b7848d90a19de35108a4669fa3b413f", null ],
     [ "UpdateItem", "a00058.html#a6a00f1d90a7a4299883dea968dd31ce2", null ]

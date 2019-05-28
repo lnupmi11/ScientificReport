@@ -1,20 +1,12 @@
 var a00466 =
 [
-    [ "IArticleService", "a00057.html", "a00057" ],
-    [ "IConferenceService", "a00058.html", "a00058" ],
-    [ "IDepartmentService", "a00059.html", "a00059" ],
-    [ "IGrantService", "a00060.html", "a00060" ],
-    [ "IMembershipService", "a00061.html", "a00061" ],
-    [ "IOppositionService", "a00063.html", "a00063" ],
-    [ "IPatentLicenseActivityService", "a00064.html", "a00064" ],
-    [ "IPostgraduateDissertationGuidanceService", "a00065.html", "a00065" ],
-    [ "IPostgraduateGuidanceService", "a00066.html", "a00066" ],
-    [ "IPublicationService", "a00067.html", "a00067" ],
-    [ "IReportThesisService", "a00068.html", "a00068" ],
-    [ "IReviewService", "a00070.html", "a00070" ],
-    [ "IScientificConsultationService", "a00071.html", "a00071" ],
-    [ "IScientificInternshipService", "a00072.html", "a00072" ],
-    [ "IScientificWorkService", "a00073.html", "a00073" ],
-    [ "ITeacherReportService", "a00074.html", "a00074" ],
-    [ "IUserProfileService", "a00076.html", "a00076" ]
+    [ "BLL", "a00467.html", "a00467" ],
+    [ "Controllers", "a00471.html", "a00471" ],
+    [ "DAL", "a00473.html", "a00473" ],
+    [ "DTO", "a00481.html", "a00481" ],
+    [ "Migrations", "a00500.html", "a00500" ],
+    [ "Models", "a00501.html", "a00501" ],
+    [ "Test", "a00502.html", "a00502" ],
+    [ "Program", "a00125.html", null ],
+    [ "Startup", "a00191.html", "a00191" ]
 ];

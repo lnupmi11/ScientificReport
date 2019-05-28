@@ -1,5 +1,9 @@
 var a00184 =
 [
-    [ "Authors", "a00184.html#a562dcfd87e0d407b127adfebb2bac2c6", null ],
-    [ "ScientificWork", "a00184.html#ab10f16f4b19f39bb3174f9301366b2b2", null ]
+    [ "AllTest", "a00184.html#ae41e5bef9925f4f657673db5d57262c7", null ],
+    [ "AllWhereTest", "a00184.html#af33af68077ec102cd1c9dff3810ba681", null ],
+    [ "CreateTest", "a00184.html#adb112258a75a2a8f086a258af5795d5e", null ],
+    [ "DeleteTest", "a00184.html#a84a4c8ff50b94dfedb0cc9c85d8d2d04", null ],
+    [ "GetByIdTest", "a00184.html#a4552590ca60adee982fd666cb2f3e0bb", null ],
+    [ "UpdateTest", "a00184.html#a0d4d28cdecf0c34e3a94395cc0c48034", null ]
 ];

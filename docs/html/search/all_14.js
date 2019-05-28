@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['work',['Work',['../a00149.html#af10582fe559f808bb4a60360acd6c6f9',1,'ScientificReport.DAL.Entities.Review.Work()'],['../a00153.html#ae255527fbf590b67ce656716d424fb58',1,'ScientificReport.DTO.Models.Review.ReviewModel.Work()']]],
-  ['workid',['WorkId',['../a00153.html#ad4284503aadee1478202ddecb73adef6',1,'ScientificReport::DTO::Models::Review::ReviewModel']]]
+  ['work',['Work',['../a00150.html#af10582fe559f808bb4a60360acd6c6f9',1,'ScientificReport.DAL.Entities.Review.Work()'],['../a00154.html#ae255527fbf590b67ce656716d424fb58',1,'ScientificReport.DTO.Models.Review.ReviewModel.Work()']]],
+  ['workid',['WorkId',['../a00154.html#ad4284503aadee1478202ddecb73adef6',1,'ScientificReport::DTO::Models::Review::ReviewModel']]]
 ];

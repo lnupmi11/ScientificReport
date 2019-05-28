@@ -1,4 +1,4 @@
 var a00470 =
 [
-    [ "ApiResponse", "a00002.html", "a00002" ]
+    [ "UserHelpers", "a00202.html", null ]
 ];

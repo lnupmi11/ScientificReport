@@ -1,6 +1,5 @@
 var a00185 =
 [
-    [ "Authors", "a00185.html#a0bb4a0065bbaf0bd3af30a80ed0118e9", null ],
-    [ "ScientificWork", "a00185.html#a6153afa60a7bf5930d22a3b729c491a2", null ],
-    [ "Users", "a00185.html#a5b8d6ebc80dc718e4b75ee62841c206d", null ]
+    [ "Authors", "a00185.html#a562dcfd87e0d407b127adfebb2bac2c6", null ],
+    [ "ScientificWork", "a00185.html#ab10f16f4b19f39bb3174f9301366b2b2", null ]
 ];

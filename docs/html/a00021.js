@@ -1,6 +1,6 @@
 var a00021 =
 [
-    [ "ConferenceController", "a00021.html#ac931a219d12e5159cb418cdc4f0adf39", null ],
+    [ "ConferenceController", "a00021.html#a8accdb6a6f74697197981e619c22cf36", null ],
     [ "Create", "a00021.html#a23e85523334a228e4b886a3cc51e7fa9", null ],
     [ "Create", "a00021.html#a7e7f8032d63ce756e56700a285fbfe07", null ],
     [ "Delete", "a00021.html#abd57c72f56b2412f5ca1050a49be90c6", null ],

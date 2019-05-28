@@ -1,17 +1,22 @@
 var a00205 =
 [
-    [ "IsApprovedOption", "a00205.html#a4083cb58d85f00c2cdb1fe186f1f6673", [
-      [ "All", "a00205.html#a4083cb58d85f00c2cdb1fe186f1f6673ab1c94ca2fbc3e78fc30069c8d0f01680", null ],
-      [ "Yes", "a00205.html#a4083cb58d85f00c2cdb1fe186f1f6673a93cba07454f06a4a960172bbd6e2a435", null ],
-      [ "No", "a00205.html#a4083cb58d85f00c2cdb1fe186f1f6673abafd7322c6e97d25b6299b5d6fe8920b", null ]
-    ] ],
-    [ "UserProfileIndexModel", "a00205.html#adf40707552113b58769e1bc0b61ae0de", null ],
-    [ "UserProfileIndexModel", "a00205.html#a74fd374e7be6d4771821cff80c363271", null ],
-    [ "DepartmentId", "a00205.html#a76cde0d9e166c85dd03bdd485e39343c", null ],
-    [ "Departments", "a00205.html#a83fc9a63514174398d26fd187447b75f", null ],
-    [ "FirstName", "a00205.html#af025d7d02b56926003a2000ab8f92053", null ],
-    [ "IsApproved", "a00205.html#a7cdeeffed94765fe0de3c8eda64f3cb8", null ],
-    [ "IsApprovedOptions", "a00205.html#a8382af3c9944a61c31ec991a764e682b", null ],
-    [ "LastName", "a00205.html#a29071e34d654d252f92c816d854fa14f", null ],
-    [ "UserProfiles", "a00205.html#a42692e20ddf73657e7f91e9405f4b57d", null ]
+    [ "AcademicStatus", "a00205.html#a8462a6cb9f22991fe21de693c406a8b5", null ],
+    [ "AllRoles", "a00205.html#abf19be2a194faf323f1ec03c0c286a4e", null ],
+    [ "BirthYear", "a00205.html#a817641af472fff027912fedb8f07410c", null ],
+    [ "Email", "a00205.html#a482505418cbc0736957aacfc1399b6f3", null ],
+    [ "FirstName", "a00205.html#a03c8eecdc710040455a09247b208a45a", null ],
+    [ "GraduationYear", "a00205.html#a8c7f79ce8c77468d8882d435f80a143c", null ],
+    [ "IsActive", "a00205.html#adfca84ade7132628a5189419a14a3573", null ],
+    [ "IsApproved", "a00205.html#a9f060935ecee7923b6d08bd947d34596", null ],
+    [ "IsHeadOfDepartment", "a00205.html#ab949fb343259f02acf3d9d221f491098", null ],
+    [ "IsSelfEditing", "a00205.html#a6d2311a3db7a8910a82ffad35af86f32", null ],
+    [ "LastName", "a00205.html#a6b9efd27d840f0e32863529ef50241ee", null ],
+    [ "MiddleName", "a00205.html#a27e4a12dfa72a1866095b13e9af811b8", null ],
+    [ "PhoneNumber", "a00205.html#a61a857ed08f63d395b58a900c9ab0f1e", null ],
+    [ "ScientificDegree", "a00205.html#a97c864ba2967484297e8bdecc9456d19", null ],
+    [ "UserId", "a00205.html#aa6eb00632cbeac2172c7033af90df929", null ],
+    [ "UserName", "a00205.html#a2ce2fe83195920acb3313c2adf3e0333", null ],
+    [ "UserRoles", "a00205.html#aee573adce53a5a2c21285c157009f7b9", null ],
+    [ "YearDegreeAssigned", "a00205.html#a250856d35a842f57e5f5b7628717c337", null ],
+    [ "YearDegreeGained", "a00205.html#a56d3a649c5f505478d089607d97b5ea5", null ]
 ];

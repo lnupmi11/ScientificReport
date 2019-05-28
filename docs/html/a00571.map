@@ -1,3 +1,0 @@
-<map id="ScientificReport.BLL.Services.ArticleService" name="ScientificReport.BLL.Services.ArticleService">
-<area shape="rect" id="node2" href="$a00057.html" title="{IArticleService\n||+ GetItemsByRole()\l+ GetPageByRole()\l+ GetCountByRole()\l+ GetAll()\l+ GetAllWhere()\l+ GetById()\l+ Get()\l+ CreateItem()\l+ UpdateItem()\l+ DeleteById()\l+ Exists()\l+ AddAuthor()\l+ RemoveAuthor()\l+ GetAuthors()\l}" alt="" coords="35,5,185,273"/>
-</map>

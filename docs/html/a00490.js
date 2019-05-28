@@ -1,8 +1,6 @@
 var a00490 =
 [
-    [ "PublicationCreateModel", "a00128.html", "a00128" ],
-    [ "PublicationDetailsModel", "a00129.html", "a00129" ],
-    [ "PublicationEditModel", "a00130.html", "a00130" ],
-    [ "PublicationIndexModel", "a00131.html", "a00131" ],
-    [ "PublicationUpdateAuthorsRequest", "a00136.html", "a00136" ]
+    [ "PostgraduateDissertationGuidanceEditModel", "a00109.html", "a00109" ],
+    [ "PostgraduateDissertationGuidanceIndexModel", "a00110.html", "a00110" ],
+    [ "PostgraduateDissertationGuidanceModel", "a00111.html", "a00111" ]
 ];

@@ -1,5 +1,4 @@
 var a00498 =
 [
-    [ "Initial", "a00062.html", "a00062" ],
-    [ "ScientificReportDbContextModelSnapshot", "a00177.html", "a00177" ]
+    [ "TeacherReportCreateViewModel", "a00194.html", "a00194" ]
 ];

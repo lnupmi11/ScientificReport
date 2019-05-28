@@ -1,7 +1,11 @@
 var a00158 =
 [
-    [ "CandidateName", "a00158.html#aa38c1f52c83c87393ea0107659668f3e", null ],
-    [ "DissertationTitle", "a00158.html#a70de78164714b4281c56a07fef00c48d", null ],
-    [ "Guide", "a00158.html#a6ccdd6cb8d9c2ff26eaa3378aa2bba14", null ],
-    [ "Id", "a00158.html#a888b1ee75a41642751927a221543e21e", null ]
+    [ "CreateItemTest", "a00158.html#a1551bfb2d9c277fd8a18c35273d50ffd", null ],
+    [ "DeleteItemTest", "a00158.html#aec1ed46471d9e848fb1552bbdfa78754", null ],
+    [ "DoesNotExistTest", "a00158.html#a631b1af8e27d8f5053a23d5b2c75f755", null ],
+    [ "ExistsTest", "a00158.html#a41cf1a59770e870510221d818a0dded6", null ],
+    [ "GetAllTest", "a00158.html#aacc7d9395abb0e3e22b934db8b20d32c", null ],
+    [ "GetAllWhereTest", "a00158.html#adf319cb2e76c0d363ee66ce37ad38f1a", null ],
+    [ "GetByIdTest", "a00158.html#a42747e1dc8c8c1bcd57f135a51e1d41f", null ],
+    [ "UpdateItemTest", "a00158.html#ab88fce9d967f407123251b5e29de5841", null ]
 ];

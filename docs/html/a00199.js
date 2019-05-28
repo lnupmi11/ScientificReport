@@ -1,12 +1,6 @@
 var a00199 =
 [
-    [ "TeacherReportsScientificWorksRepository", "a00199.html#af4fc3a38d3f52d5627272e50e06d12cb", null ],
-    [ "All", "a00199.html#adbe715f3a6bf04074b288d4c97156fa8", null ],
-    [ "AllWhere", "a00199.html#a8df156a6775e1a3b5ad857f93c800e22", null ],
-    [ "Create", "a00199.html#aa868e3c24b5333279dcdce75b470564b", null ],
-    [ "Delete", "a00199.html#a0b30f704430bd30ff2af062b55f654c4", null ],
-    [ "Get", "a00199.html#a50933ea8bff43cca8a86b89a3f9073ed", null ],
-    [ "Get", "a00199.html#ab8a923c0bb93d74850b287b17501294d", null ],
-    [ "GetQuery", "a00199.html#a5d69c412599e8dab7c2907d0e6fa079e", null ],
-    [ "Update", "a00199.html#a5bf96021704d267c4f19e97ec402527c", null ]
+    [ "Id", "a00199.html#a0f770b07aeb4e7cb8f8e9356af25bc30", null ],
+    [ "ScientificWork", "a00199.html#a52048d2fc2b1699b9f0329f27abb71d5", null ],
+    [ "TeacherReport", "a00199.html#adfb4c640509606576dda08f46d67cbcb", null ]
 ];

@@ -1,5 +1,5 @@
 <map id="ScientificReport.Program.Main" name="ScientificReport.Program.Main">
-<area shape="rect" id="node2" href="$a00188.html#a6f60cecbbc316d54bbff461f19289918" title="Initializes the basic data, the entrypoint for all seeds " alt="" coords="267,39,440,80"/>
-<area shape="rect" id="node3" href="$a00176.html#a0553f7443f21313b3c1a8aa533effcc4" title="ScientificReport.DAL.DbContext.\lScientificReportDbContext.SaveChanges" alt="" coords="507,5,787,47"/>
-<area shape="rect" id="node4" href="$a00176.html#abe3dd0c1e69753bbc8cc3729368fad53" title="ScientificReport.DAL.DbContext.\lScientificReportDbContext.SaveChangesAsync" alt="" coords="488,71,807,112"/>
+<area shape="rect" id="node2" href="$a00189.html#a6f60cecbbc316d54bbff461f19289918" title="Initializes the basic data, the entrypoint for all seeds " alt="" coords="267,39,440,80"/>
+<area shape="rect" id="node3" href="$a00177.html#a0553f7443f21313b3c1a8aa533effcc4" title="ScientificReport.DAL.DbContext.\lScientificReportDbContext.SaveChanges" alt="" coords="507,5,787,47"/>
+<area shape="rect" id="node4" href="$a00177.html#abe3dd0c1e69753bbc8cc3729368fad53" title="ScientificReport.DAL.DbContext.\lScientificReportDbContext.SaveChangesAsync" alt="" coords="488,71,807,112"/>
 </map>
