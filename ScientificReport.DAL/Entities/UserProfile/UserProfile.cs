@@ -40,8 +40,6 @@ namespace ScientificReport.DAL.Entities.UserProfile
 		
 		public virtual ICollection<UserProfilesReportThesis> UserProfilesReportTheses { get; set; }
 		
-		public virtual ICollection<UserProfilesReviews> UserProfilesReviews { get; set; }
-		
 		public virtual ICollection<UserProfilesScientificInternships> UserProfilesScientificInternships { get; set; }
 		
 		public virtual ICollection<AuthorsPatentLicenseActivities> AuthorsPatentLicenseActivities { get; set; }

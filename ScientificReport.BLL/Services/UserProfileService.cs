@@ -18,11 +18,15 @@ namespace ScientificReport.BLL.Services
 	{
 		private readonly UserProfileRepository _userProfileRepository;
 		private readonly DepartmentRepository _departmentRepository;
+		private readonly ReviewRepository _reviewRepository;
+		private readonly ScientificConsultationRepository _scientificConsultationRepository;
 
 		public UserProfileService(ScientificReportDbContext context)
 		{
 			_userProfileRepository = new UserProfileRepository(context);
 			_departmentRepository = new DepartmentRepository(context);
+			_reviewRepository = new ReviewRepository(context);
+			_scientificConsultationRepository = new ScientificConsultationRepository(context);
 		}
 		
 		public virtual int GetCount()
@@ -300,13 +304,13 @@ namespace ScientificReport.BLL.Services
 		public virtual ICollection<Review> GetUserReviews(Guid id)
 		{
 			var user = _userProfileRepository.Get(id);
-			ICollection<Review> result = null;
+			IEnumerable<Review> result = null;
 			if (user != null)
 			{
-				result = user.UserProfilesReviews.Select(item => item.Review).ToList();
+				result = _reviewRepository.AllWhere(r => r.Reviewer.Id == user.Id);
 			}
 
-			return result;
+			return result?.ToList();
 		}
 
 		public virtual ICollection<PatentLicenseActivity> GetUserPatentLicenseActivitiesAsAuthor(Guid id)
@@ -331,6 +335,18 @@ namespace ScientificReport.BLL.Services
 			}
 
 			return result;
+		}
+
+		public ICollection<ScientificConsultation> GetUserScientificConsultations(Guid id)
+		{
+			var user = _userProfileRepository.Get(id);
+			IEnumerable<ScientificConsultation> result = null;
+			if (user != null)
+			{
+				result = _scientificConsultationRepository.AllWhere(sc => sc.Guide.Id == user.Id);
+			}
+
+			return result?.ToList();
 		}
 	}
 }

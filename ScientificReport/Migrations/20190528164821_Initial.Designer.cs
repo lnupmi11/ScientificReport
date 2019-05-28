@@ -9,7 +9,7 @@ using ScientificReport.DAL.DbContext;
 namespace ScientificReport.Migrations
 {
     [DbContext(typeof(ScientificReportDbContext))]
-    [Migration("20190525124933_Initial")]
+    [Migration("20190528164821_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -510,11 +510,15 @@ namespace ScientificReport.Migrations
 
                     b.Property<DateTime>("DateOfReview");
 
+                    b.Property<Guid?>("ReviewerId");
+
                     b.Property<Guid?>("TeacherReportId");
 
                     b.Property<Guid?>("WorkId");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ReviewerId");
 
                     b.HasIndex("TeacherReportId");
 
@@ -745,28 +749,6 @@ namespace ScientificReport.Migrations
                     b.HasIndex("UserProfileId");
 
                     b.ToTable("UserProfilesReportTheses");
-                });
-
-            modelBuilder.Entity("ScientificReport.DAL.Entities.UserProfile.UserProfilesReviews", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("ReviewId");
-
-                    b.Property<Guid?>("ReviewId1");
-
-                    b.Property<int>("ReviewerId");
-
-                    b.Property<Guid?>("ReviewerId1");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ReviewId1");
-
-                    b.HasIndex("ReviewerId1");
-
-                    b.ToTable("UserProfilesReviews");
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.UserProfile.UserProfilesScientificInternships", b =>
@@ -1041,6 +1023,10 @@ namespace ScientificReport.Migrations
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.Review", b =>
                 {
+                    b.HasOne("ScientificReport.DAL.Entities.UserProfile.UserProfile", "Reviewer")
+                        .WithMany()
+                        .HasForeignKey("ReviewerId");
+
                     b.HasOne("ScientificReport.DAL.Entities.Reports.TeacherReport")
                         .WithMany("Reviews")
                         .HasForeignKey("TeacherReportId");
@@ -1132,17 +1118,6 @@ namespace ScientificReport.Migrations
                     b.HasOne("ScientificReport.DAL.Entities.UserProfile.UserProfile", "UserProfile")
                         .WithMany("UserProfilesReportTheses")
                         .HasForeignKey("UserProfileId");
-                });
-
-            modelBuilder.Entity("ScientificReport.DAL.Entities.UserProfile.UserProfilesReviews", b =>
-                {
-                    b.HasOne("ScientificReport.DAL.Entities.Review", "Review")
-                        .WithMany("UserProfilesReviews")
-                        .HasForeignKey("ReviewId1");
-
-                    b.HasOne("ScientificReport.DAL.Entities.UserProfile.UserProfile", "Reviewer")
-                        .WithMany("UserProfilesReviews")
-                        .HasForeignKey("ReviewerId1");
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.UserProfile.UserProfilesScientificInternships", b =>

@@ -4,7 +4,7 @@
 @inject IViewLocalizer Localizer
 
 @{
-	ViewBag.Title = Localizer["Create department"];
+	ViewData["Title"] = Localizer["Create department"];
 	Layout = "_Layout";
 }
 
@@ -17,7 +17,7 @@
 	}
 </style>
 
-<h5>@Localizer["Create department"]</h5>
+<h5>@ViewData["Title"]</h5>
 <hr/>
 <div class="row">
 	<div class="col s12">

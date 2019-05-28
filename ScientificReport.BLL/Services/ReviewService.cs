@@ -4,7 +4,6 @@ using System.Linq;
 using ScientificReport.BLL.Interfaces;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
-using ScientificReport.DAL.Entities.UserProfile;
 using ScientificReport.DAL.Repositories;
 using ScientificReport.DTO.Models.Review;
 
@@ -79,18 +78,6 @@ namespace ScientificReport.BLL.Services
 		public virtual bool Exists(Guid id)
 		{
 			return _reviewRepository.Get(id) != null;
-		}
-
-		public virtual IEnumerable<UserProfile> GetReviewers(Guid id)
-		{
-			var review = _reviewRepository.Get(id);
-			IEnumerable<UserProfile> reviewers = null;
-			if (review != null)
-			{
-				reviewers = review.UserProfilesReviews.Select(u => u.Reviewer);
-			}
-
-			return reviewers;
 		}
 	}
 }

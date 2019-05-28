@@ -662,11 +662,18 @@ namespace ScientificReport.Migrations
                     Id = table.Column<Guid>(nullable: false),
                     WorkId = table.Column<Guid>(nullable: true),
                     DateOfReview = table.Column<DateTime>(nullable: false),
+                    ReviewerId = table.Column<Guid>(nullable: true),
                     TeacherReportId = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Reviews", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Reviews_AspNetUsers_ReviewerId",
+                        column: x => x.ReviewerId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Reviews_TeacherReports_TeacherReportId",
                         column: x => x.TeacherReportId,
@@ -803,33 +810,6 @@ namespace ScientificReport.Migrations
                     table.ForeignKey(
                         name: "FK_UserProfilesScientificWorks_AspNetUsers_UserProfileId",
                         column: x => x.UserProfileId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "UserProfilesReviews",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(nullable: false),
-                    ReviewerId = table.Column<int>(nullable: false),
-                    ReviewerId1 = table.Column<Guid>(nullable: true),
-                    ReviewId = table.Column<int>(nullable: false),
-                    ReviewId1 = table.Column<Guid>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_UserProfilesReviews", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_UserProfilesReviews_Reviews_ReviewId1",
-                        column: x => x.ReviewId1,
-                        principalTable: "Reviews",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_UserProfilesReviews_AspNetUsers_ReviewerId1",
-                        column: x => x.ReviewerId1,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -993,6 +973,11 @@ namespace ScientificReport.Migrations
                 column: "TeacherReportId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Reviews_ReviewerId",
+                table: "Reviews",
+                column: "ReviewerId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Reviews_TeacherReportId",
                 table: "Reviews",
                 column: "TeacherReportId");
@@ -1086,16 +1071,6 @@ namespace ScientificReport.Migrations
                 name: "IX_UserProfilesReportTheses_UserProfileId",
                 table: "UserProfilesReportTheses",
                 column: "UserProfileId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_UserProfilesReviews_ReviewId1",
-                table: "UserProfilesReviews",
-                column: "ReviewId1");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_UserProfilesReviews_ReviewerId1",
-                table: "UserProfilesReviews",
-                column: "ReviewerId1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserProfilesScientificInternships_ScientificInternshipId1",
@@ -1260,6 +1235,9 @@ namespace ScientificReport.Migrations
                 name: "PostgraduateGuidances");
 
             migrationBuilder.DropTable(
+                name: "Reviews");
+
+            migrationBuilder.DropTable(
                 name: "ScientificConsultations");
 
             migrationBuilder.DropTable(
@@ -1276,9 +1254,6 @@ namespace ScientificReport.Migrations
 
             migrationBuilder.DropTable(
                 name: "UserProfilesReportTheses");
-
-            migrationBuilder.DropTable(
-                name: "UserProfilesReviews");
 
             migrationBuilder.DropTable(
                 name: "UserProfilesScientificInternships");
@@ -1299,10 +1274,10 @@ namespace ScientificReport.Migrations
                 name: "Grants");
 
             migrationBuilder.DropTable(
-                name: "ReportTheses");
+                name: "Publications");
 
             migrationBuilder.DropTable(
-                name: "Reviews");
+                name: "ReportTheses");
 
             migrationBuilder.DropTable(
                 name: "ScientificInternships");
@@ -1312,9 +1287,6 @@ namespace ScientificReport.Migrations
 
             migrationBuilder.DropTable(
                 name: "Conferences");
-
-            migrationBuilder.DropTable(
-                name: "Publications");
 
             migrationBuilder.DropTable(
                 name: "TeacherReports");

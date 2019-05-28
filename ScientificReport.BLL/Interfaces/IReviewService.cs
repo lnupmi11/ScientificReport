@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using ScientificReport.DAL.Entities;
-using ScientificReport.DAL.Entities.UserProfile;
 using ScientificReport.DTO.Models.Review;
 
 namespace ScientificReport.BLL.Interfaces
@@ -18,6 +17,5 @@ namespace ScientificReport.BLL.Interfaces
 		void UpdateItem(ReviewEditModel model);
 		void DeleteById(Guid id);
 		bool Exists(Guid id);
-		IEnumerable<UserProfile> GetReviewers(Guid id);
 	}
 }

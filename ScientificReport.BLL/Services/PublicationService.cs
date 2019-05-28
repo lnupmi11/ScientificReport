@@ -39,6 +39,7 @@ namespace ScientificReport.BLL.Services
 			var publications = GetPage(model.CurrentPage, model.PageSize);
 			if (model.SortBy != null)
 			{
+				model.PublicationSetType = Publication.PublicationSetType.Faculty;
 				publications = SortPublicationsBy(model.SortBy.Value, model.CurrentPage, model.PageSize);
 			}
 			else

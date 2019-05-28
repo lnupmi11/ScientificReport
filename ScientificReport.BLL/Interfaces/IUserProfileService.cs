@@ -40,5 +40,6 @@ namespace ScientificReport.BLL.Interfaces
 		ICollection<Review> GetUserReviews(Guid id);
 		ICollection<PatentLicenseActivity> GetUserPatentLicenseActivitiesAsAuthor(Guid id);
 		ICollection<PatentLicenseActivity> GetUserPatentLicenseActivitiesAsApplicant(Guid id);
+		ICollection<ScientificConsultation> GetUserScientificConsultations(Guid id);
 	}
 }
