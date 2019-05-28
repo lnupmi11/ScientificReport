@@ -20,8 +20,8 @@
     <data name="Scientific Reports" xml:space="preserve">
 		<value>Scientific Reports</value>
 	</data>
-    <data name="Article" xml:space="preserve">
-		<value>Article</value>
+    <data name="Articles" xml:space="preserve">
+		<value>Articles</value>
 	</data>
     <data name="Conferences" xml:space="preserve">
 		<value>Conferences</value>
@@ -48,7 +48,7 @@
 		<value>Publications</value>
 	</data>
 	<data name="Report theses" xml:space="preserve">
-		<value>Report Theses</value>
+		<value>Report theses</value>
 	</data>
 	<data name="Reviews" xml:space="preserve">
 		<value>Reviews</value>

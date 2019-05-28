@@ -1,13 +1,25 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
-using ScientificReport.DAL.Entities;
+using System.ComponentModel.DataAnnotations;
 
 namespace ScientificReport.DTO.Models.ReportThesis
 {
-	public class ReportThesisEdit
+	public class ReportThesisEdit : ReportThesisModel
 	{
-		public DAL.Entities.ReportThesis ReportThesis { get; set; }
+		[Required]
+		public Guid Id { get; set; }
+		
 		public IEnumerable<DAL.Entities.UserProfile.UserProfile> Authors { get; set; }
+		
 		public IEnumerable<DAL.Entities.UserProfile.UserProfile> Users { get; set; }
+
+		public ReportThesisEdit()
+		{
+		}
+		
+		public ReportThesisEdit(DAL.Entities.ReportThesis reportThesis) : base(reportThesis)
+		{
+			Id = reportThesis.Id;
+		}
 	}
 }

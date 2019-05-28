@@ -16,21 +16,24 @@ namespace ScientificReport.Controllers
 	{
 		private readonly IScientificWorkService _scientificWorkService;
 		private readonly IUserProfileService _userProfileService;
+		private readonly IDepartmentService _departmentService;
 
 		public ScientificWorkController(
 			IScientificWorkService scientificWorkService,
-			IUserProfileService userProfileService
+			IUserProfileService userProfileService,
+			IDepartmentService departmentService
 		)
 		{
 			_scientificWorkService = scientificWorkService;
 			_userProfileService = userProfileService;
+			_departmentService = departmentService;
 		}
 
 		// GET: ScientificWork
 		public IActionResult Index(ScientificWorkIndexModel model)
 		{
-			model.ScientificWorks = _scientificWorkService.GetPage(model.CurrentPage, model.PageSize);
-			model.Count = _scientificWorkService.GetCount();
+			model.ScientificWorks = _scientificWorkService.GetPageByRole(model.CurrentPage, model.PageSize, User);
+			model.Count = _scientificWorkService.GetCountByRole(User);
 			return View(model);
 		}
 
@@ -48,6 +51,11 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
+			if (!UserHasPermission(scientificWork))
+			{
+				return Forbid();
+			}
+			
 			var scientificWorksDetails = new ScientificWorksDetails
 			{
 				ScientificWork = scientificWork,
@@ -88,6 +96,11 @@ namespace ScientificReport.Controllers
 			{
 				return NotFound();
 			}
+
+			if (!UserHasPermission(scientificWork))
+			{
+				return Forbid();
+			}
 			
 			var scientificWorksEdit = new ScientificWorksEdit
 			{
@@ -108,6 +121,11 @@ namespace ScientificReport.Controllers
 			if (id != scientificWork.Id)
 			{
 				return NotFound();
+			}
+			
+			if (!UserHasPermission(scientificWork))
+			{
+				return Forbid();
 			}
 
 			if (!ModelState.IsValid)
@@ -145,6 +163,11 @@ namespace ScientificReport.Controllers
 			{
 				return NotFound();
 			}
+			
+			if (!UserHasPermission(scientificWork))
+			{
+				return Forbid();
+			}
 
 			return View(scientificWork);
 		}
@@ -154,6 +177,16 @@ namespace ScientificReport.Controllers
 		[ValidateAntiForgeryToken]
 		public IActionResult DeleteConfirmed(Guid id)
 		{
+			if (!_scientificWorkService.Exists(id))
+			{
+				return NotFound();
+			}
+			
+			if (!UserHasPermission(_scientificWorkService.GetById(id)))
+			{
+				return Forbid();
+			}
+			
 			_scientificWorkService.DeleteById(id);
 			return RedirectToAction(nameof(Index));
 		}
@@ -163,6 +196,16 @@ namespace ScientificReport.Controllers
 		[ValidateAntiForgeryToken]
 		public IActionResult AddAuthor(Guid id, [FromBody] ScientificWorkAuthorRequest request)
 		{
+			if (!_scientificWorkService.Exists(id))
+			{
+				return NotFound();
+			}
+			
+			if (!UserHasPermission(_scientificWorkService.GetById(id)))
+			{
+				return Forbid();
+			}
+			
 			_scientificWorkService.AddAuthor(id, request.AuthorId);
 			return Json(ApiResponse.Ok);
 		}
@@ -172,8 +215,26 @@ namespace ScientificReport.Controllers
 		[ValidateAntiForgeryToken]
 		public IActionResult DeleteAuthor(Guid id, [FromBody] ScientificWorkAuthorRequest request)
 		{
+			if (!_scientificWorkService.Exists(id))
+			{
+				return NotFound();
+			}
+			
+			if (!UserHasPermission(_scientificWorkService.GetById(id)))
+			{
+				return Forbid();
+			}
+			
 			_scientificWorkService.RemoveAuthor(id, request.AuthorId);
 			return Json(ApiResponse.Ok);
+		}
+		
+		private bool UserHasPermission(ScientificWork scientificWork)
+		{
+			var user = _userProfileService.Get(User);
+			var department = _departmentService.Get(d => d.Staff.Contains(user));
+			var isHeadOfDepartment = PageHelpers.IsHeadOfDepartment(User) && scientificWork.UserProfilesScientificWorks.Any(p => department.Staff.Contains(p.UserProfile));
+			return PageHelpers.IsAdmin(User) || isHeadOfDepartment || scientificWork.UserProfilesScientificWorks.Any(p => p.UserProfile.UserName == User.Identity.Name);
 		}
 	}
 }

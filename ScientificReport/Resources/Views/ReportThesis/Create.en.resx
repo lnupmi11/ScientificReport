@@ -32,4 +32,7 @@
 	<data name="Cancel" xml:space="preserve">
 		<value>Cancel</value>
 	</data>
+	<data name="Conference" xml:space="preserve">
+		<value>Conference</value>
+	</data>
 </root>

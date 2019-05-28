@@ -1,9 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Claims;
 using ScientificReport.BLL.Interfaces;
-using ScientificReport.BLL.Utils;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Entities.UserProfile;
@@ -14,45 +12,20 @@ namespace ScientificReport.BLL.Services
 	public class ArticleService : IArticleService
 	{
 		private readonly ArticleRepository _articleRepository;
-		private readonly DepartmentRepository _departmentRepository;
-		private readonly UserProfileRepository _userProfileRepository;
 
 		public ArticleService(ScientificReportDbContext context)
 		{
 			_articleRepository = new ArticleRepository(context);
-			_departmentRepository = new DepartmentRepository(context);
-			_userProfileRepository = new UserProfileRepository(context);
 		}
 
-		public virtual IEnumerable<Article> GetItemsByRole(ClaimsPrincipal userClaims)
+		public virtual IEnumerable<Article> GetPage(int page, int count)
 		{
-			IEnumerable<Article> items;
-			if (UserHelpers.IsAdmin(userClaims))
-			{
-				items = _articleRepository.All();
-			}
-			else if (UserHelpers.IsHeadOfDepartment(userClaims))
-			{
-				var department = _departmentRepository.Get(r => r.Head.UserName == userClaims.Identity.Name);
-				items = _articleRepository.AllWhere(a => a.UserProfilesArticles.Any(u => department.Staff.Contains(u.Author)));
-			}
-			else
-			{
-				var user = _userProfileRepository.Get(u => u.UserName == userClaims.Identity.Name);
-				items = _articleRepository.AllWhere(a => a.UserProfilesArticles.Any(u => u.Author.Id == user.Id));
-			}
-
-			return items;
-		}
-		
-		public virtual IEnumerable<Article> GetPageByRole(int page, int count, ClaimsPrincipal userClaims)
-		{
-			return GetItemsByRole(userClaims).Skip((page - 1) * count).Take(count).ToList();
+			return _articleRepository.All().Skip((page - 1) * count).Take(count).ToList();
 		}
 
-		public virtual int GetCountByRole(ClaimsPrincipal userClaims)
+		public virtual int GetCount()
 		{
-			return GetItemsByRole(userClaims).Count();
+			return _articleRepository.All().Count();
 		}
 
 		public virtual IEnumerable<Article> GetAll()
