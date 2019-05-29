@@ -1,19 +1,17 @@
 var a00204 =
 [
-    [ "UserProfileController", "a00204.html#ab8a2800e549454ca1e5fde0cd311ae0e", null ],
-    [ "AddUserToAdministration", "a00204.html#adb37027360b4e896fd1b885e419367ca", null ],
-    [ "ChangePassword", "a00204.html#aef7efd84a34bddfb759b547107d2035a", null ],
-    [ "ChangePassword", "a00204.html#a1f1f9cbd71e4997fbf25868fb42063ba", null ],
-    [ "Delete", "a00204.html#a48780abfce15ce82c58a1b5710185e83", null ],
-    [ "Details", "a00204.html#a292b2515e9e3c085fa910e011d7ffae7", null ],
-    [ "Edit", "a00204.html#a301fe8b8081fe11b59b4c90a4e76b2b1", null ],
-    [ "Edit", "a00204.html#ae81af6a998d2987865ce274806dcc7f4", null ],
-    [ "Index", "a00204.html#a2515db453a727a847ef4f42d182b7b90", null ],
-    [ "Login", "a00204.html#ada213933d9f48f28cc1cb8b098fade07", null ],
-    [ "Login", "a00204.html#ae8d56f997555dbd409b63f7bdc9f6e58", null ],
-    [ "Logout", "a00204.html#a65d3fa00161b10075bbcf85098beedb2", null ],
-    [ "Register", "a00204.html#a6c8b98005ac1254746e00f0066ed462a", null ],
-    [ "Register", "a00204.html#a81dea7bbcc1fd61c4b0bd09ba613e329", null ],
-    [ "RemoveUserFromAdministration", "a00204.html#aa0f1ba68a83e6c606e48e1b1fdbda5bf", null ],
-    [ "SetActive", "a00204.html#a240da825f9c1258563ff0241ecf3eb99", null ]
+    [ "IsApprovedOption", "a00204.html#a4083cb58d85f00c2cdb1fe186f1f6673", [
+      [ "All", "a00204.html#a4083cb58d85f00c2cdb1fe186f1f6673ab1c94ca2fbc3e78fc30069c8d0f01680", null ],
+      [ "Yes", "a00204.html#a4083cb58d85f00c2cdb1fe186f1f6673a93cba07454f06a4a960172bbd6e2a435", null ],
+      [ "No", "a00204.html#a4083cb58d85f00c2cdb1fe186f1f6673abafd7322c6e97d25b6299b5d6fe8920b", null ]
+    ] ],
+    [ "UserProfileIndexModel", "a00204.html#adf40707552113b58769e1bc0b61ae0de", null ],
+    [ "UserProfileIndexModel", "a00204.html#a74fd374e7be6d4771821cff80c363271", null ],
+    [ "DepartmentId", "a00204.html#a76cde0d9e166c85dd03bdd485e39343c", null ],
+    [ "Departments", "a00204.html#a83fc9a63514174398d26fd187447b75f", null ],
+    [ "FirstName", "a00204.html#af025d7d02b56926003a2000ab8f92053", null ],
+    [ "IsApproved", "a00204.html#a7cdeeffed94765fe0de3c8eda64f3cb8", null ],
+    [ "IsApprovedOptions", "a00204.html#a8382af3c9944a61c31ec991a764e682b", null ],
+    [ "LastName", "a00204.html#a29071e34d654d252f92c816d854fa14f", null ],
+    [ "UserProfiles", "a00204.html#a42692e20ddf73657e7f91e9405f4b57d", null ]
 ];

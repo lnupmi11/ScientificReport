@@ -1,9 +1,6 @@
 var a00196 =
 [
-    [ "AllTest", "a00196.html#aa6af57445f47b73f705e44ad66a8069a", null ],
-    [ "AllWhereTest", "a00196.html#a0431565ed28502d22f1967375b1764fd", null ],
-    [ "CreateTest", "a00196.html#ad4dbf256bac88922bd707936c649d39f", null ],
-    [ "DeleteTest", "a00196.html#a70a9e780dcf87ed93bcddd8086d9a459", null ],
-    [ "GetByIdTest", "a00196.html#ae0797899632efd2dcc98743c53e7224b", null ],
-    [ "UpdateTest", "a00196.html#a27687fbbf564f20229dc3c03854990fe", null ]
+    [ "Id", "a00196.html#a0f770b07aeb4e7cb8f8e9356af25bc30", null ],
+    [ "ScientificWork", "a00196.html#a52048d2fc2b1699b9f0329f27abb71d5", null ],
+    [ "TeacherReport", "a00196.html#adfb4c640509606576dda08f46d67cbcb", null ]
 ];

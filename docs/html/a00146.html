@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>ScientificReport: ScientificReport.DAL.Repositories.ReportThesisRepository Class Reference</title>
+<title>ScientificReport: ScientificReport.BLL.Services.ReportThesisService Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -108,73 +108,115 @@ $(document).ready(function(){initNavTree('a00146.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a00790.html">List of all members</a>  </div>
+<a href="a00597.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ScientificReport.DAL.Repositories.ReportThesisRepository Class Reference</div>  </div>
+<div class="title">ScientificReport.BLL.Services.ReportThesisService Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Inheritance diagram for ScientificReport.DAL.Repositories.ReportThesisRepository:</div>
+Inheritance diagram for ScientificReport.BLL.Services.ReportThesisService:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00791.png" border="0" usemap="#_scientific_report_8_d_a_l_8_repositories_8_report_thesis_repository_inherit__map" alt="Inheritance graph"/></div>
-<map name="_scientific_report_8_d_a_l_8_repositories_8_report_thesis_repository_inherit__map" id="_scientific_report_8_d_a_l_8_repositories_8_report_thesis_repository_inherit__map">
-<area shape="rect" id="node2" href="a00069.html" title="{IRepository\&lt; ReportThesis \&gt;\n||}" alt="" coords="21,5,224,83"/>
+<div class="center"><img src="a00598.png" border="0" usemap="#_scientific_report_8_b_l_l_8_services_8_report_thesis_service_inherit__map" alt="Inheritance graph"/></div>
+<map name="_scientific_report_8_b_l_l_8_services_8_report_thesis_service_inherit__map" id="_scientific_report_8_b_l_l_8_services_8_report_thesis_service_inherit__map">
+<area shape="rect" id="node2" href="a00067.html" title="{IReportThesisService\n||+ GetAll()\l+ GetAllWhere()\l+ GetItemsByRole()\l+ GetPageByRole()\l+ GetCountByRole()\l+ GetById()\l+ Get()\l+ CreateItem()\l+ UpdateItem()\l+ DeleteById()\l+ Exists()\l+ GetAuthors()\l+ AddAuthor()\l+ RemoveAuthor()\l}" alt="" coords="33,5,187,273"/>
 </map>
 </div>
 <div class="dynheader">
-Collaboration diagram for ScientificReport.DAL.Repositories.ReportThesisRepository:</div>
+Collaboration diagram for ScientificReport.BLL.Services.ReportThesisService:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00792.png" border="0" usemap="#_scientific_report_8_d_a_l_8_repositories_8_report_thesis_repository_coll__map" alt="Collaboration graph"/></div>
-<map name="_scientific_report_8_d_a_l_8_repositories_8_report_thesis_repository_coll__map" id="_scientific_report_8_d_a_l_8_repositories_8_report_thesis_repository_coll__map">
-<area shape="rect" id="node2" href="a00069.html" title="{IRepository\&lt; ReportThesis \&gt;\n||}" alt="" coords="21,5,224,83"/>
+<div class="center"><img src="a00599.png" border="0" usemap="#_scientific_report_8_b_l_l_8_services_8_report_thesis_service_coll__map" alt="Collaboration graph"/></div>
+<map name="_scientific_report_8_b_l_l_8_services_8_report_thesis_service_coll__map" id="_scientific_report_8_b_l_l_8_services_8_report_thesis_service_coll__map">
+<area shape="rect" id="node2" href="a00067.html" title="{IReportThesisService\n||+ GetAll()\l+ GetAllWhere()\l+ GetItemsByRole()\l+ GetPageByRole()\l+ GetCountByRole()\l+ GetById()\l+ Get()\l+ CreateItem()\l+ UpdateItem()\l+ DeleteById()\l+ Exists()\l+ GetAuthors()\l+ AddAuthor()\l+ RemoveAuthor()\l}" alt="" coords="33,5,187,273"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af88a92b8eb26aa2ad54ca123dc7de7d3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00146.html#af88a92b8eb26aa2ad54ca123dc7de7d3">ReportThesisRepository</a> (<a class="el" href="a00177.html">ScientificReportDbContext</a> context)</td></tr>
-<tr class="separator:af88a92b8eb26aa2ad54ca123dc7de7d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74a69648619f642cfcbfc9e501050cfa"><td class="memItemLeft" align="right" valign="top">virtual IEnumerable&lt; <a class="el" href="a00139.html">ReportThesis</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00146.html#a74a69648619f642cfcbfc9e501050cfa">All</a> ()</td></tr>
-<tr class="separator:a74a69648619f642cfcbfc9e501050cfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a778be722f6f361956dbfb699b24df7e1"><td class="memItemLeft" align="right" valign="top">virtual IEnumerable&lt; <a class="el" href="a00139.html">ReportThesis</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00146.html#a778be722f6f361956dbfb699b24df7e1">AllWhere</a> (Func&lt; <a class="el" href="a00139.html">ReportThesis</a>, bool &gt; predicate)</td></tr>
-<tr class="separator:a778be722f6f361956dbfb699b24df7e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96c58819ee839854e5282e590e85ae41"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00139.html">ReportThesis</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00146.html#a96c58819ee839854e5282e590e85ae41">Get</a> (Guid id)</td></tr>
-<tr class="separator:a96c58819ee839854e5282e590e85ae41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71b4dd6351ab1544db87260ed4f3ff36"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00139.html">ReportThesis</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00146.html#a71b4dd6351ab1544db87260ed4f3ff36">Get</a> (Func&lt; <a class="el" href="a00139.html">ReportThesis</a>, bool &gt; predicate)</td></tr>
-<tr class="separator:a71b4dd6351ab1544db87260ed4f3ff36"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb10cfb54cb3c8e08a368f01c8cb06af"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00146.html#afb10cfb54cb3c8e08a368f01c8cb06af">Create</a> (<a class="el" href="a00139.html">ReportThesis</a> item)</td></tr>
-<tr class="separator:afb10cfb54cb3c8e08a368f01c8cb06af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a432fb84bc7a671f08fe10611fa84be1d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00146.html#a432fb84bc7a671f08fe10611fa84be1d">Update</a> (<a class="el" href="a00139.html">ReportThesis</a> item)</td></tr>
-<tr class="separator:a432fb84bc7a671f08fe10611fa84be1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03821b7c0f5ed91bf72ebab5168d2165"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00146.html#a03821b7c0f5ed91bf72ebab5168d2165">Delete</a> (Guid id)</td></tr>
-<tr class="separator:a03821b7c0f5ed91bf72ebab5168d2165"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19af17ed571e5fe4115cf7ba77d3c007"><td class="memItemLeft" align="right" valign="top">virtual IQueryable&lt; <a class="el" href="a00139.html">ReportThesis</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00146.html#a19af17ed571e5fe4115cf7ba77d3c007">GetQuery</a> ()</td></tr>
-<tr class="separator:a19af17ed571e5fe4115cf7ba77d3c007"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa94f1948a33dea6198a046afaf7ccf02"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00146.html#aa94f1948a33dea6198a046afaf7ccf02">ReportThesisService</a> (<a class="el" href="a00175.html">ScientificReportDbContext</a> context)</td></tr>
+<tr class="separator:aa94f1948a33dea6198a046afaf7ccf02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88ac2b7fa20e378fb7aa67873fd9743f"><td class="memItemLeft" align="right" valign="top">virtual IEnumerable&lt; <a class="el" href="a00138.html">ReportThesis</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00146.html#a88ac2b7fa20e378fb7aa67873fd9743f">GetAll</a> ()</td></tr>
+<tr class="separator:a88ac2b7fa20e378fb7aa67873fd9743f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28e742de1ddafb1fad8b41ff5147e925"><td class="memItemLeft" align="right" valign="top">virtual IEnumerable&lt; <a class="el" href="a00138.html">ReportThesis</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00146.html#a28e742de1ddafb1fad8b41ff5147e925">GetAllWhere</a> (Func&lt; <a class="el" href="a00138.html">ReportThesis</a>, bool &gt; predicate)</td></tr>
+<tr class="separator:a28e742de1ddafb1fad8b41ff5147e925"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19eba70728d71acdee75ca7c2ce415be"><td class="memItemLeft" align="right" valign="top">virtual IEnumerable&lt; <a class="el" href="a00138.html">ReportThesis</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00146.html#a19eba70728d71acdee75ca7c2ce415be">GetItemsByRole</a> (ClaimsPrincipal userClaims)</td></tr>
+<tr class="separator:a19eba70728d71acdee75ca7c2ce415be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae16d68a6e188e126f36ba58d54be5fdc"><td class="memItemLeft" align="right" valign="top">virtual IEnumerable&lt; <a class="el" href="a00138.html">ReportThesis</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00146.html#ae16d68a6e188e126f36ba58d54be5fdc">GetPageByRole</a> (int page, int count, ClaimsPrincipal userClaims)</td></tr>
+<tr class="separator:ae16d68a6e188e126f36ba58d54be5fdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a702dd4e4f5e57431b4ab536a65a77320"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00146.html#a702dd4e4f5e57431b4ab536a65a77320">GetCountByRole</a> (ClaimsPrincipal userClaims)</td></tr>
+<tr class="separator:a702dd4e4f5e57431b4ab536a65a77320"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f6ca1934b458225d79f894c0c9a3ae0"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00138.html">ReportThesis</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00146.html#a1f6ca1934b458225d79f894c0c9a3ae0">GetById</a> (Guid id)</td></tr>
+<tr class="separator:a1f6ca1934b458225d79f894c0c9a3ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92935789ab571e273e8b5219ece06750"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00138.html">ReportThesis</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00146.html#a92935789ab571e273e8b5219ece06750">Get</a> (Func&lt; <a class="el" href="a00138.html">ReportThesis</a>, bool &gt; predicate)</td></tr>
+<tr class="separator:a92935789ab571e273e8b5219ece06750"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7830ca81443d01f2060eb5c33e25e10"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00146.html#af7830ca81443d01f2060eb5c33e25e10">CreateItem</a> (<a class="el" href="a00143.html">ReportThesisModel</a> model)</td></tr>
+<tr class="separator:af7830ca81443d01f2060eb5c33e25e10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0c4172d268ae22e0c9550a834cb04dd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00146.html#ad0c4172d268ae22e0c9550a834cb04dd">UpdateItem</a> (<a class="el" href="a00141.html">ReportThesisEdit</a> model)</td></tr>
+<tr class="separator:ad0c4172d268ae22e0c9550a834cb04dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82ce58482e170f73ea22bdb77dbf2f4e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00146.html#a82ce58482e170f73ea22bdb77dbf2f4e">DeleteById</a> (Guid id)</td></tr>
+<tr class="separator:a82ce58482e170f73ea22bdb77dbf2f4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fba0fb0b8143e74ae391614aa0b4c41"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00146.html#a8fba0fb0b8143e74ae391614aa0b4c41">Exists</a> (Guid id)</td></tr>
+<tr class="separator:a8fba0fb0b8143e74ae391614aa0b4c41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c1fadc684c02a385efc1257b931857b"><td class="memItemLeft" align="right" valign="top">virtual IEnumerable&lt; <a class="el" href="a00201.html">UserProfile</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00146.html#a2c1fadc684c02a385efc1257b931857b">GetAuthors</a> (Guid id)</td></tr>
+<tr class="separator:a2c1fadc684c02a385efc1257b931857b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02ca9aaa4505209032e15c8b49601e5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00146.html#a02ca9aaa4505209032e15c8b49601e5f">AddAuthor</a> (Guid id, Guid authorId)</td></tr>
+<tr class="separator:a02ca9aaa4505209032e15c8b49601e5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7c7a62069d0034f56f4052a2d7328c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00146.html#ac7c7a62069d0034f56f4052a2d7328c2">RemoveAuthor</a> (Guid id, Guid authorId)</td></tr>
+<tr class="separator:ac7c7a62069d0034f56f4052a2d7328c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="a00302_source.html#l00011">11</a> of file <a class="el" href="a00302_source.html">ReportThesisRepository.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00246_source.html#l00015">15</a> of file <a class="el" href="a00246_source.html">ReportThesisService.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="af88a92b8eb26aa2ad54ca123dc7de7d3"></a>
+<a class="anchor" id="aa94f1948a33dea6198a046afaf7ccf02"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">ScientificReport.DAL.Repositories.ReportThesisRepository.ReportThesisRepository </td>
+          <td class="memname">ScientificReport.BLL.Services.ReportThesisService.ReportThesisService </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00177.html">ScientificReportDbContext</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="a00175.html">ScientificReportDbContext</a>&#160;</td>
           <td class="paramname"><em>context</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00302_source.html#l00015">15</a> of file <a class="el" href="a00302_source.html">ReportThesisRepository.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00246_source.html#l00021">21</a> of file <a class="el" href="a00246_source.html">ReportThesisService.cs</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a74a69648619f642cfcbfc9e501050cfa"></a>
+<a class="anchor" id="a02ca9aaa4505209032e15c8b49601e5f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ScientificReport.BLL.Services.ReportThesisService.AddAuthor </td>
+          <td>(</td>
+          <td class="paramtype">Guid&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Guid&#160;</td>
+          <td class="paramname"><em>authorId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="a00067.html#a630009fc007ea75a4b27073376cdb81b">ScientificReport.BLL.Interfaces.IReportThesisService</a>.</p>
+
+<p>Definition at line <a class="el" href="a00246_source.html#l00123">123</a> of file <a class="el" href="a00246_source.html">ReportThesisService.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af7830ca81443d01f2060eb5c33e25e10"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -182,9 +224,10 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual IEnumerable&lt;<a class="el" href="a00139.html">ReportThesis</a>&gt; ScientificReport.DAL.Repositories.ReportThesisRepository.All </td>
+          <td class="memname">virtual void ScientificReport.BLL.Services.ReportThesisService.CreateItem </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="a00143.html">ReportThesisModel</a>&#160;</td>
+          <td class="paramname"><em>model</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -195,11 +238,13 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00302_source.html#l00020">20</a> of file <a class="el" href="a00302_source.html">ReportThesisRepository.cs</a>.</p>
+<p>Implements <a class="el" href="a00067.html#a5e74cd1625491e230647d064b8072bc8">ScientificReport.BLL.Interfaces.IReportThesisService</a>.</p>
+
+<p>Definition at line <a class="el" href="a00246_source.html#l00079">79</a> of file <a class="el" href="a00246_source.html">ReportThesisService.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a778be722f6f361956dbfb699b24df7e1"></a>
+<a class="anchor" id="a82ce58482e170f73ea22bdb77dbf2f4e"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -207,59 +252,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual IEnumerable&lt;<a class="el" href="a00139.html">ReportThesis</a>&gt; ScientificReport.DAL.Repositories.ReportThesisRepository.AllWhere </td>
-          <td>(</td>
-          <td class="paramtype">Func&lt; <a class="el" href="a00139.html">ReportThesis</a>, bool &gt;&#160;</td>
-          <td class="paramname"><em>predicate</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00302_source.html#l00028">28</a> of file <a class="el" href="a00302_source.html">ReportThesisRepository.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="afb10cfb54cb3c8e08a368f01c8cb06af"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void ScientificReport.DAL.Repositories.ReportThesisRepository.Create </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00139.html">ReportThesis</a>&#160;</td>
-          <td class="paramname"><em>item</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00302_source.html#l00043">43</a> of file <a class="el" href="a00302_source.html">ReportThesisRepository.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a03821b7c0f5ed91bf72ebab5168d2165"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void ScientificReport.DAL.Repositories.ReportThesisRepository.Delete </td>
+          <td class="memname">virtual void ScientificReport.BLL.Services.ReportThesisService.DeleteById </td>
           <td>(</td>
           <td class="paramtype">Guid&#160;</td>
           <td class="paramname"><em>id</em></td><td>)</td>
@@ -273,11 +266,13 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00302_source.html#l00056">56</a> of file <a class="el" href="a00302_source.html">ReportThesisRepository.cs</a>.</p>
+<p>Implements <a class="el" href="a00067.html#add48b32f5afbe28cfc2f486c4fd0557a">ScientificReport.BLL.Interfaces.IReportThesisService</a>.</p>
+
+<p>Definition at line <a class="el" href="a00246_source.html#l00101">101</a> of file <a class="el" href="a00246_source.html">ReportThesisService.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a96c58819ee839854e5282e590e85ae41"></a>
+<a class="anchor" id="a8fba0fb0b8143e74ae391614aa0b4c41"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -285,7 +280,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="a00139.html">ReportThesis</a> ScientificReport.DAL.Repositories.ReportThesisRepository.Get </td>
+          <td class="memname">virtual bool ScientificReport.BLL.Services.ReportThesisService.Exists </td>
           <td>(</td>
           <td class="paramtype">Guid&#160;</td>
           <td class="paramname"><em>id</em></td><td>)</td>
@@ -299,11 +294,13 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00302_source.html#l00033">33</a> of file <a class="el" href="a00302_source.html">ReportThesisRepository.cs</a>.</p>
+<p>Implements <a class="el" href="a00067.html#a05f0a3cf4b975547036bf33330014f66">ScientificReport.BLL.Interfaces.IReportThesisService</a>.</p>
+
+<p>Definition at line <a class="el" href="a00246_source.html#l00106">106</a> of file <a class="el" href="a00246_source.html">ReportThesisService.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a71b4dd6351ab1544db87260ed4f3ff36"></a>
+<a class="anchor" id="a92935789ab571e273e8b5219ece06750"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -311,9 +308,9 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="a00139.html">ReportThesis</a> ScientificReport.DAL.Repositories.ReportThesisRepository.Get </td>
+          <td class="memname">virtual <a class="el" href="a00138.html">ReportThesis</a> ScientificReport.BLL.Services.ReportThesisService.Get </td>
           <td>(</td>
-          <td class="paramtype">Func&lt; <a class="el" href="a00139.html">ReportThesis</a>, bool &gt;&#160;</td>
+          <td class="paramtype">Func&lt; <a class="el" href="a00138.html">ReportThesis</a>, bool &gt;&#160;</td>
           <td class="paramname"><em>predicate</em></td><td>)</td>
           <td></td>
         </tr>
@@ -325,11 +322,13 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00302_source.html#l00038">38</a> of file <a class="el" href="a00302_source.html">ReportThesisRepository.cs</a>.</p>
+<p>Implements <a class="el" href="a00067.html#ab3a3eabb0d909657a9d314348d80a80c">ScientificReport.BLL.Interfaces.IReportThesisService</a>.</p>
+
+<p>Definition at line <a class="el" href="a00246_source.html#l00074">74</a> of file <a class="el" href="a00246_source.html">ReportThesisService.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a19af17ed571e5fe4115cf7ba77d3c007"></a>
+<a class="anchor" id="a88ac2b7fa20e378fb7aa67873fd9743f"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -337,7 +336,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual IQueryable&lt;<a class="el" href="a00139.html">ReportThesis</a>&gt; ScientificReport.DAL.Repositories.ReportThesisRepository.GetQuery </td>
+          <td class="memname">virtual IEnumerable&lt;<a class="el" href="a00138.html">ReportThesis</a>&gt; ScientificReport.BLL.Services.ReportThesisService.GetAll </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -350,11 +349,13 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00302_source.html#l00064">64</a> of file <a class="el" href="a00302_source.html">ReportThesisRepository.cs</a>.</p>
+<p>Implements <a class="el" href="a00067.html#a947ac103c2f1175c2c5f3e3d9510895f">ScientificReport.BLL.Interfaces.IReportThesisService</a>.</p>
+
+<p>Definition at line <a class="el" href="a00246_source.html#l00028">28</a> of file <a class="el" href="a00246_source.html">ReportThesisService.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a432fb84bc7a671f08fe10611fa84be1d"></a>
+<a class="anchor" id="a28e742de1ddafb1fad8b41ff5147e925"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -362,10 +363,10 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void ScientificReport.DAL.Repositories.ReportThesisRepository.Update </td>
+          <td class="memname">virtual IEnumerable&lt;<a class="el" href="a00138.html">ReportThesis</a>&gt; ScientificReport.BLL.Services.ReportThesisService.GetAllWhere </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00139.html">ReportThesis</a>&#160;</td>
-          <td class="paramname"><em>item</em></td><td>)</td>
+          <td class="paramtype">Func&lt; <a class="el" href="a00138.html">ReportThesis</a>, bool &gt;&#160;</td>
+          <td class="paramname"><em>predicate</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -376,19 +377,246 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00302_source.html#l00049">49</a> of file <a class="el" href="a00302_source.html">ReportThesisRepository.cs</a>.</p>
+<p>Implements <a class="el" href="a00067.html#ad6d1f65dabbaa9a7d39f57eb7ed4dc69">ScientificReport.BLL.Interfaces.IReportThesisService</a>.</p>
+
+<p>Definition at line <a class="el" href="a00246_source.html#l00033">33</a> of file <a class="el" href="a00246_source.html">ReportThesisService.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2c1fadc684c02a385efc1257b931857b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual IEnumerable&lt;<a class="el" href="a00201.html">UserProfile</a>&gt; ScientificReport.BLL.Services.ReportThesisService.GetAuthors </td>
+          <td>(</td>
+          <td class="paramtype">Guid&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="a00067.html#a89c5eeded5649c5a939b90b7d0e028f8">ScientificReport.BLL.Interfaces.IReportThesisService</a>.</p>
+
+<p>Definition at line <a class="el" href="a00246_source.html#l00111">111</a> of file <a class="el" href="a00246_source.html">ReportThesisService.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1f6ca1934b458225d79f894c0c9a3ae0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="a00138.html">ReportThesis</a> ScientificReport.BLL.Services.ReportThesisService.GetById </td>
+          <td>(</td>
+          <td class="paramtype">Guid&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="a00067.html#ab994c02e9150fc34c55238a3587064e6">ScientificReport.BLL.Interfaces.IReportThesisService</a>.</p>
+
+<p>Definition at line <a class="el" href="a00246_source.html#l00069">69</a> of file <a class="el" href="a00246_source.html">ReportThesisService.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a702dd4e4f5e57431b4ab536a65a77320"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int ScientificReport.BLL.Services.ReportThesisService.GetCountByRole </td>
+          <td>(</td>
+          <td class="paramtype">ClaimsPrincipal&#160;</td>
+          <td class="paramname"><em>userClaims</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="a00067.html#ae08e0fc210ae1625d0f40af367b9fba7">ScientificReport.BLL.Interfaces.IReportThesisService</a>.</p>
+
+<p>Definition at line <a class="el" href="a00246_source.html#l00064">64</a> of file <a class="el" href="a00246_source.html">ReportThesisService.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a19eba70728d71acdee75ca7c2ce415be"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual IEnumerable&lt;<a class="el" href="a00138.html">ReportThesis</a>&gt; ScientificReport.BLL.Services.ReportThesisService.GetItemsByRole </td>
+          <td>(</td>
+          <td class="paramtype">ClaimsPrincipal&#160;</td>
+          <td class="paramname"><em>userClaims</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="a00067.html#aa1cfaf34e063f259731396fba8a2a9a3">ScientificReport.BLL.Interfaces.IReportThesisService</a>.</p>
+
+<p>Definition at line <a class="el" href="a00246_source.html#l00038">38</a> of file <a class="el" href="a00246_source.html">ReportThesisService.cs</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00146_a19eba70728d71acdee75ca7c2ce415be_cgraph.png" border="0" usemap="#a00146_a19eba70728d71acdee75ca7c2ce415be_cgraph" alt=""/></div>
+<map name="a00146_a19eba70728d71acdee75ca7c2ce415be_cgraph" id="a00146_a19eba70728d71acdee75ca7c2ce415be_cgraph">
+<area shape="rect" id="node2" href="a00200.html#acea6561dc994e369de9603eb0eca43fc" title="ScientificReport.BLL.Utils.\lUserHelpers.IsAdmin" alt="" coords="337,5,520,47"/>
+<area shape="rect" id="node3" href="a00200.html#add1e07b14605b8c4422301fa93ade6b9" title="ScientificReport.BLL.Utils.\lUserHelpers.IsHeadOfDepartment" alt="" coords="308,71,549,112"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae16d68a6e188e126f36ba58d54be5fdc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual IEnumerable&lt;<a class="el" href="a00138.html">ReportThesis</a>&gt; ScientificReport.BLL.Services.ReportThesisService.GetPageByRole </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>page</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ClaimsPrincipal&#160;</td>
+          <td class="paramname"><em>userClaims</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="a00067.html#a822b953c254891e0c7bd0806f15a7e40">ScientificReport.BLL.Interfaces.IReportThesisService</a>.</p>
+
+<p>Definition at line <a class="el" href="a00246_source.html#l00059">59</a> of file <a class="el" href="a00246_source.html">ReportThesisService.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac7c7a62069d0034f56f4052a2d7328c2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ScientificReport.BLL.Services.ReportThesisService.RemoveAuthor </td>
+          <td>(</td>
+          <td class="paramtype">Guid&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Guid&#160;</td>
+          <td class="paramname"><em>authorId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="a00067.html#aa7fde4781ad4e0510e04e9fddb877456">ScientificReport.BLL.Interfaces.IReportThesisService</a>.</p>
+
+<p>Definition at line <a class="el" href="a00246_source.html#l00140">140</a> of file <a class="el" href="a00246_source.html">ReportThesisService.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad0c4172d268ae22e0c9550a834cb04dd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ScientificReport.BLL.Services.ReportThesisService.UpdateItem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00141.html">ReportThesisEdit</a>&#160;</td>
+          <td class="paramname"><em>model</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="a00067.html#ad968acc1f4fe2d25d062852706c23f16">ScientificReport.BLL.Interfaces.IReportThesisService</a>.</p>
+
+<p>Definition at line <a class="el" href="a00246_source.html#l00088">88</a> of file <a class="el" href="a00246_source.html">ReportThesisService.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/travis/build/lnupmi11/ScientificReport/ScientificReport.DAL/Repositories/<a class="el" href="a00302_source.html">ReportThesisRepository.cs</a></li>
+<li>/home/travis/build/lnupmi11/ScientificReport/ScientificReport.BLL/Services/<a class="el" href="a00246_source.html">ReportThesisService.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00466.html">ScientificReport</a></li><li class="navelem"><a class="el" href="a00473.html">DAL</a></li><li class="navelem"><a class="el" href="a00479.html">Repositories</a></li><li class="navelem"><a class="el" href="a00146.html">ReportThesisRepository</a></li>
+    <li class="navelem"><a class="el" href="a00462.html">ScientificReport</a></li><li class="navelem"><a class="el" href="a00463.html">BLL</a></li><li class="navelem"><a class="el" href="a00465.html">Services</a></li><li class="navelem"><a class="el" href="a00146.html">ReportThesisService</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>

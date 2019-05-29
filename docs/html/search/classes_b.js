@@ -1,15 +1,16 @@
 var searchData=
 [
-  ['pagemodel',['PageModel',['../a00097.html',1,'ScientificReport::DTO::Models']]],
-  ['patentlicenseactivity',['PatentLicenseActivity',['../a00098.html',1,'ScientificReport::DAL::Entities']]],
-  ['patentlicenseactivitycontroller',['PatentLicenseActivityController',['../a00099.html',1,'ScientificReport::Controllers']]],
-  ['patentlicenseactivityeditmodel',['PatentLicenseActivityEditModel',['../a00100.html',1,'ScientificReport::DTO::Models::PatentLicenseActivity']]],
-  ['patentlicenseactivityindexmodel',['PatentLicenseActivityIndexModel',['../a00101.html',1,'ScientificReport::DTO::Models::PatentLicenseActivity']]],
-  ['patentlicenseactivitymodel',['PatentLicenseActivityModel',['../a00102.html',1,'ScientificReport::DTO::Models::PatentLicenseActivity']]],
-  ['patentlicenseactivityrepository',['PatentLicenseActivityRepository',['../a00103.html',1,'ScientificReport::DAL::Repositories']]],
-  ['patentlicenseactivityrepositorytests',['PatentLicenseActivityRepositoryTests',['../a00104.html',1,'ScientificReport::Test::RepositoriesTests']]],
-  ['patentlicenseactivityservice',['PatentLicenseActivityService',['../a00105.html',1,'ScientificReport::BLL::Services']]],
-  ['patentlicenseactivityservicetests',['PatentLicenseActivityServiceTests',['../a00106.html',1,'ScientificReport::Test::ServicesTests']]],
+  ['pagemodel',['PageModel',['../a00096.html',1,'ScientificReport::DTO::Models']]],
+  ['patentlicenseactivity',['PatentLicenseActivity',['../a00097.html',1,'ScientificReport::DAL::Entities']]],
+  ['patentlicenseactivitycontroller',['PatentLicenseActivityController',['../a00098.html',1,'ScientificReport::Controllers']]],
+  ['patentlicenseactivityeditmodel',['PatentLicenseActivityEditModel',['../a00099.html',1,'ScientificReport::DTO::Models::PatentLicenseActivity']]],
+  ['patentlicenseactivityindexmodel',['PatentLicenseActivityIndexModel',['../a00100.html',1,'ScientificReport::DTO::Models::PatentLicenseActivity']]],
+  ['patentlicenseactivitymodel',['PatentLicenseActivityModel',['../a00101.html',1,'ScientificReport::DTO::Models::PatentLicenseActivity']]],
+  ['patentlicenseactivityrepository',['PatentLicenseActivityRepository',['../a00102.html',1,'ScientificReport::DAL::Repositories']]],
+  ['patentlicenseactivityrepositorytests',['PatentLicenseActivityRepositoryTests',['../a00103.html',1,'ScientificReport::Test::RepositoriesTests']]],
+  ['patentlicenseactivityservice',['PatentLicenseActivityService',['../a00104.html',1,'ScientificReport::BLL::Services']]],
+  ['patentlicenseactivityservicetests',['PatentLicenseActivityServiceTests',['../a00105.html',1,'ScientificReport::Test::ServicesTests']]],
+  ['patentlicenseactivityupduserrequest',['PatentLicenseActivityUpdUserRequest',['../a00106.html',1,'ScientificReport::DTO::Models::PatentLicenseActivity']]],
   ['postgraduatedissertationguidance',['PostgraduateDissertationGuidance',['../a00107.html',1,'ScientificReport::DAL::Entities']]],
   ['postgraduatedissertationguidancecontroller',['PostgraduateDissertationGuidanceController',['../a00108.html',1,'ScientificReport::Controllers']]],
   ['postgraduatedissertationguidanceeditmodel',['PostgraduateDissertationGuidanceEditModel',['../a00109.html',1,'ScientificReport::DTO::Models::PostgraduateDissertationGuidance']]],
@@ -38,6 +39,5 @@ var searchData=
   ['publicationrepository',['PublicationRepository',['../a00132.html',1,'ScientificReport::DAL::Repositories']]],
   ['publicationrepositorytests',['PublicationRepositoryTests',['../a00133.html',1,'ScientificReport::Test::RepositoriesTests']]],
   ['publicationservice',['PublicationService',['../a00134.html',1,'ScientificReport::BLL::Services']]],
-  ['publicationservicetests',['PublicationServiceTests',['../a00135.html',1,'ScientificReport::Test::ServicesTests']]],
-  ['publicationupdateauthorsrequest',['PublicationUpdateAuthorsRequest',['../a00136.html',1,'ScientificReport::DTO::Models::Publication']]]
+  ['publicationservicetests',['PublicationServiceTests',['../a00135.html',1,'ScientificReport::Test::ServicesTests']]]
 ];

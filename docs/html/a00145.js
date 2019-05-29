@@ -1,9 +1,9 @@
 var a00145 =
 [
-    [ "ReportThesisModel", "a00145.html#a934ad7770aee0679cea8670df87ea3b2", null ],
-    [ "ReportThesisModel", "a00145.html#afa9bd010d87afb55811fddd9abc302c4", null ],
-    [ "Conference", "a00145.html#a7ea7302ee84be3eaf2bc729016940477", null ],
-    [ "ConferenceId", "a00145.html#ac8bcd4b37f278b2dde930a019c14f683", null ],
-    [ "Conferences", "a00145.html#a9fc3d83d106580ced2c5d75afaf3487d", null ],
-    [ "Thesis", "a00145.html#aa22dadd493e63fdc8547a1b640fb65f1", null ]
+    [ "AllTest", "a00145.html#ab476a2156c008b7834f4afb3f1fca44f", null ],
+    [ "AllWhereTest", "a00145.html#a7eab4b9cb9fbe086ac64ab7f36452297", null ],
+    [ "CreateTest", "a00145.html#ab0c90a9c5315453a88387a15b37a4843", null ],
+    [ "DeleteTest", "a00145.html#a87105a6c894be48428439569b887c096", null ],
+    [ "GetByIdTest", "a00145.html#a24e0abbb83c6493ee50d747a7f8aa784", null ],
+    [ "UpdateTest", "a00145.html#a2cc355a5da74a92eb191f91ed1dcd9d2", null ]
 ];

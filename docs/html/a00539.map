@@ -1,3 +1,2 @@
-<map id="ScientificReport.BLL.Interfaces.IPatentLicenseActivityService" name="ScientificReport.BLL.Interfaces.IPatentLicenseActivityService">
-<area shape="rect" id="node2" href="$a00105.html" title="{ScientificReport.BLL.Services.\lPatentLicenseActivityService\n||+ PatentLicenseActivityService()\l+ GetAll()\l+ GetAllWhere()\l+ GetPage()\l+ GetCount()\l+ GetById()\l+ Get()\l+ CreateItem()\l+ UpdateItem()\l+ DeleteById()\l+ Exists()\l+ GetAuthors()\l+ GetApplicants()\l+ GetCoauthors()\l+ GetCoApplicants()\l}" alt="" coords="5,336,235,633"/>
+<map id="ScientificReport.BLL.Interfaces.IPostgraduateDissertationGuidanceService" name="ScientificReport.BLL.Interfaces.IPostgraduateDissertationGuidanceService">
 </map>

@@ -1,11 +1,9 @@
 var a00096 =
 [
-    [ "CreateItemTest", "a00096.html#a1fa7c1f714f99c52747d75d338b32712", null ],
-    [ "DeleteItemTest", "a00096.html#a7e8a6b02587ff12e10f3a4c55962761a", null ],
-    [ "DoesNotExistTest", "a00096.html#ab03dfa7740aeb610e70832f1c4d1eb62", null ],
-    [ "ExistsTest", "a00096.html#a3bbf163d9f48961891d42596cc556ae3", null ],
-    [ "GetAllTest", "a00096.html#ada3f9e4be1665299734e5139be744592", null ],
-    [ "GetAllWhereTest", "a00096.html#aa570bb0b66d0e824e13d3816de3c8cef", null ],
-    [ "GetByIdTest", "a00096.html#aea78311ffb509982747031c3688e061c", null ],
-    [ "UpdateItemTest", "a00096.html#a83e772f6129886fec4a01f1dae09b601", null ]
+    [ "ShowNext", "a00096.html#ab059766611de4f68e3f2b912d465363c", null ],
+    [ "ShowPrevious", "a00096.html#a8081a5dca972575fdbfbac6a2bcb1b55", null ],
+    [ "TotalPages", "a00096.html#a13ff8be63fea388f147803e88d9f52aa", null ],
+    [ "Count", "a00096.html#aacfdf013bf09c6c69f17ab4fc90cd44a", null ],
+    [ "CurrentPage", "a00096.html#a8f677e7efd74d3b0cd3b2a6559ae220d", null ],
+    [ "PageSize", "a00096.html#a7134929887cc2dabe3d4b10e51071a0f", null ]
 ];

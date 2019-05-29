@@ -1,18 +1,15 @@
 var a00105 =
 [
-    [ "PatentLicenseActivityService", "a00105.html#accc31d1a83cf9d590e79cdd81c0f70ec", null ],
-    [ "CreateItem", "a00105.html#a36c223cc6e46641ddd2c2ce866017c38", null ],
-    [ "DeleteById", "a00105.html#a09c1a015921ce9f8ad52b210cee97bf0", null ],
-    [ "Exists", "a00105.html#afbffe90be4918e5fd0aa97249eb829c7", null ],
-    [ "Get", "a00105.html#a5bc4bd7a4482dc7bbe4aa93d68a759cc", null ],
-    [ "GetAll", "a00105.html#a27b7a5f0408d507b93526a597d4b37a3", null ],
-    [ "GetAllWhere", "a00105.html#ab9e1ca9bf72299adb9f2c67ef5129f67", null ],
-    [ "GetApplicants", "a00105.html#a04e4377334e5cd1d9ef3e394978aa981", null ],
-    [ "GetAuthors", "a00105.html#af3459c4056be5fccc2569dbb834be490", null ],
-    [ "GetById", "a00105.html#adc8cc5b65626a1e54f994877fe9841fd", null ],
-    [ "GetCoApplicants", "a00105.html#a3206ecb11e4e245095759634630bb494", null ],
-    [ "GetCoauthors", "a00105.html#a5009eced262482fbdb86a1323f233205", null ],
-    [ "GetCount", "a00105.html#afc7709bab3c7e11360b2f1ea67a7975e", null ],
-    [ "GetPage", "a00105.html#a76959b9ba2c5d7846a35a4e0a3b0caba", null ],
-    [ "UpdateItem", "a00105.html#a3265353bfce3ee85b90fdda0eff04b10", null ]
+    [ "CreateItemTest", "a00105.html#ab0b636103a1f116503c5508dea52cddb", null ],
+    [ "DeleteItemTest", "a00105.html#a864eaf0bd6ea0bae1026d3a6125f6a3b", null ],
+    [ "DoesNotExistTest", "a00105.html#a725e14143c6d3e64dfa1b600c12a3507", null ],
+    [ "ExistsTest", "a00105.html#a4e33f4cdca1a7efb16291f01efaf4754", null ],
+    [ "GetAllTest", "a00105.html#a9e3c2fa1151b4c2cd1b54f3c4a9bc80f", null ],
+    [ "GetAllWhereTest", "a00105.html#a19876d3a34a874c4fe0891295dab14bc", null ],
+    [ "GetApplicantsTest", "a00105.html#a432d2f4b6e29e9af68abfbc4db7e14ff", null ],
+    [ "GetAuthorsTest", "a00105.html#a4b83ee6a07b32761814b8261232ffcd6", null ],
+    [ "GetByIdTest", "a00105.html#a2ccc7ce4a4a81a4a8af6fa61c15a68b6", null ],
+    [ "GetCoApplicantsTest", "a00105.html#a27cc4c9d27747db12f94ddb51c5c125e", null ],
+    [ "GetCoauthorsTest", "a00105.html#a01a271cc1e0f0138c90953ec8408e8d8", null ],
+    [ "UpdateItemTest", "a00105.html#a7542d3566d8ab41fe68d38e641889c26", null ]
 ];

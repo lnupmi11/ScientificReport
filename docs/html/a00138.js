@@ -1,6 +1,7 @@
 var a00138 =
 [
-    [ "Created", "a00138.html#a4c6f95476a0b35431dc52549c1191e8d", null ],
-    [ "Edited", "a00138.html#aa20fdfab6311a6a8bc6fbe9e1ee4c978", null ],
-    [ "Id", "a00138.html#aecf60f0b39b46e7902de25947d6b9083", null ]
+    [ "Conference", "a00138.html#a5f66f376a5dccd112f0774a70bf05ccc", null ],
+    [ "Id", "a00138.html#afb97f2248461878aebcaf5c6e0f45ce4", null ],
+    [ "Thesis", "a00138.html#a40326e178f4cb273aaa2616064dd86a5", null ],
+    [ "UserProfilesReportTheses", "a00138.html#ad01291f2a9746b0c078ee9ca6a9561a7", null ]
 ];

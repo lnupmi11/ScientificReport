@@ -1,9 +1,6 @@
 var a00483 =
 [
-    [ "ArticleCreateModel", "a00006.html", "a00006" ],
-    [ "ArticleDetailsModel", "a00007.html", "a00007" ],
-    [ "ArticleEditModel", "a00008.html", "a00008" ],
-    [ "ArticleIndexModel", "a00009.html", "a00009" ],
-    [ "ArticleModel", "a00010.html", "a00010" ],
-    [ "ArticleUpdateAuthorsRequest", "a00015.html", "a00015" ]
+    [ "MembershipEditModel", "a00079.html", "a00079" ],
+    [ "MembershipIndexModel", "a00080.html", "a00080" ],
+    [ "MembershipModel", "a00081.html", "a00081" ]
 ];

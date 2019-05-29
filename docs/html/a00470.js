@@ -1,4 +1,4 @@
 var a00470 =
 [
-    [ "UserHelpers", "a00202.html", null ]
+    [ "ScientificReportDbContext", "a00175.html", "a00175" ]
 ];

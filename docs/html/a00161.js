@@ -1,6 +1,9 @@
 var a00161 =
 [
-    [ "ScientificConsultationEditModel", "a00161.html#a7d1758dcc65694b7b09b7ea6d3ebd5d2", null ],
-    [ "ScientificConsultationEditModel", "a00161.html#a6149581c8adbfda5e22c27f052d63d21", null ],
-    [ "Id", "a00161.html#a4fbb2ceabf85d625e324d301dbbd3b75", null ]
+    [ "ScientificConsultationModel", "a00161.html#a36817ec0c1d438df503775070a190869", null ],
+    [ "ScientificConsultationModel", "a00161.html#ae59fce760d0a872e1f673747e183d4e4", null ],
+    [ "CandidateName", "a00161.html#a5cc574e74b18ec8377b9e56de5995573", null ],
+    [ "DissertationTitle", "a00161.html#aaad7f3b4fcf5b32a3a2640192c5077f3", null ],
+    [ "Guide", "a00161.html#a014eeee2fa7b53ae02152f770a58dd1f", null ],
+    [ "GuideId", "a00161.html#a4370e79c50fb1d60a8d22732a092ba01", null ]
 ];

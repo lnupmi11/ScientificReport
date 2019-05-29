@@ -1,11 +1,7 @@
 var a00055 =
 [
-    [ "CreateItemTest", "a00055.html#acc5cf7c8c84e3fe4e315d87b74794fbc", null ],
-    [ "DeleteItemTest", "a00055.html#ac3db4c882dfbb2a33bc03b95aec344ae", null ],
-    [ "DoesNotExistTest", "a00055.html#a525267cb0d29b82a0b1f39bb5574bf33", null ],
-    [ "ExistsTest", "a00055.html#a3c303cb0af99e15c2429c78d26556898", null ],
-    [ "GetAllTest", "a00055.html#aeaaab27bcf957a75766c8e1d9a448344", null ],
-    [ "GetAllWhereTest", "a00055.html#a9b7061d76bf207dc237ba9497d852daa", null ],
-    [ "GetByIdTest", "a00055.html#a322d8623113277595e1773b0b445c297", null ],
-    [ "UpdateItemTest", "a00055.html#aea6b414138a8a6ac17c9dcccc1a8055e", null ]
+    [ "AccessDenied", "a00055.html#aa84c4c6ad9ae9885f6dbdbe6b5f2fa42", null ],
+    [ "Error", "a00055.html#ab23c5c5bb2a8f95c1c6ca4de3e32318d", null ],
+    [ "Index", "a00055.html#acc629acfd1137f0a258c5f691a71a3ce", null ],
+    [ "SetLanguage", "a00055.html#aa75b5dd975e7272c5630a996aebe09f8", null ]
 ];

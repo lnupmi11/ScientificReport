@@ -1,54 +1,54 @@
 var dir_e8ad640c8829891fd612dca792676b94 =
 [
-    [ "ArticleService.cs", "a00238.html", [
+    [ "ArticleService.cs", "a00236.html", [
       [ "ArticleService", "a00013.html", "a00013" ]
     ] ],
-    [ "ConferenceService.cs", "a00239.html", [
+    [ "ConferenceService.cs", "a00237.html", [
       [ "ConferenceService", "a00027.html", "a00027" ]
     ] ],
-    [ "DepartmentService.cs", "a00240.html", [
+    [ "DepartmentService.cs", "a00238.html", [
       [ "DepartmentService", "a00039.html", "a00039" ]
     ] ],
-    [ "GrantService.cs", "a00241.html", [
-      [ "GrantService", "a00054.html", "a00054" ]
+    [ "GrantService.cs", "a00239.html", [
+      [ "GrantService", "a00053.html", "a00053" ]
     ] ],
-    [ "MembershipService.cs", "a00242.html", [
-      [ "MembershipService", "a00085.html", "a00085" ]
+    [ "MembershipService.cs", "a00240.html", [
+      [ "MembershipService", "a00084.html", "a00084" ]
     ] ],
-    [ "OppositionService.cs", "a00243.html", [
-      [ "OppositionService", "a00095.html", "a00095" ]
+    [ "OppositionService.cs", "a00241.html", [
+      [ "OppositionService", "a00094.html", "a00094" ]
     ] ],
-    [ "PatentLicenseActivityService.cs", "a00244.html", [
-      [ "PatentLicenseActivityService", "a00105.html", "a00105" ]
+    [ "PatentLicenseActivityService.cs", "a00242.html", [
+      [ "PatentLicenseActivityService", "a00104.html", "a00104" ]
     ] ],
-    [ "PostgraduateDissertationGuidanceService.cs", "a00245.html", [
+    [ "PostgraduateDissertationGuidanceService.cs", "a00243.html", [
       [ "PostgraduateDissertationGuidanceService", "a00114.html", "a00114" ]
     ] ],
-    [ "PostgraduateGuidanceService.cs", "a00246.html", [
+    [ "PostgraduateGuidanceService.cs", "a00244.html", [
       [ "PostgraduateGuidanceService", "a00123.html", "a00123" ]
     ] ],
-    [ "PublicationService.cs", "a00247.html", [
+    [ "PublicationService.cs", "a00245.html", [
       [ "PublicationService", "a00134.html", "a00134" ]
     ] ],
-    [ "ReportThesisService.cs", "a00248.html", [
-      [ "ReportThesisService", "a00148.html", "a00148" ]
+    [ "ReportThesisService.cs", "a00246.html", [
+      [ "ReportThesisService", "a00146.html", "a00146" ]
     ] ],
-    [ "ReviewService.cs", "a00249.html", [
-      [ "ReviewService", "a00157.html", "a00157" ]
+    [ "ReviewService.cs", "a00247.html", [
+      [ "ReviewService", "a00155.html", "a00155" ]
     ] ],
-    [ "ScientificConsultationService.cs", "a00250.html", [
-      [ "ScientificConsultationService", "a00166.html", "a00166" ]
+    [ "ScientificConsultationService.cs", "a00248.html", [
+      [ "ScientificConsultationService", "a00164.html", "a00164" ]
     ] ],
-    [ "ScientificInternshipService.cs", "a00251.html", [
-      [ "ScientificInternshipService", "a00175.html", "a00175" ]
+    [ "ScientificInternshipService.cs", "a00249.html", [
+      [ "ScientificInternshipService", "a00173.html", "a00173" ]
     ] ],
-    [ "ScientificWorkService.cs", "a00252.html", [
-      [ "ScientificWorkService", "a00187.html", "a00187" ]
+    [ "ScientificWorkService.cs", "a00250.html", [
+      [ "ScientificWorkService", "a00184.html", "a00184" ]
     ] ],
-    [ "TeacherReportService.cs", "a00253.html", [
-      [ "TeacherReportService", "a00197.html", "a00197" ]
+    [ "TeacherReportService.cs", "a00251.html", [
+      [ "TeacherReportService", "a00194.html", "a00194" ]
     ] ],
-    [ "UserProfileService.cs", "a00254.html", [
-      [ "UserProfileService", "a00211.html", "a00211" ]
+    [ "UserProfileService.cs", "a00252.html", [
+      [ "UserProfileService", "a00209.html", "a00209" ]
     ] ]
 ];

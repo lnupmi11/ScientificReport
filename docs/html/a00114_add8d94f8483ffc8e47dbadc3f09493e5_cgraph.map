@@ -1,0 +1,4 @@
+<map id="ScientificReport.BLL.Services.PostgraduateDissertationGuidanceService.GetItemsByRole" name="ScientificReport.BLL.Services.PostgraduateDissertationGuidanceService.GetItemsByRole">
+<area shape="rect" id="node2" href="$a00200.html#acea6561dc994e369de9603eb0eca43fc" title="ScientificReport.BLL.Utils.\lUserHelpers.IsAdmin" alt="" coords="328,5,511,47"/>
+<area shape="rect" id="node3" href="$a00200.html#add1e07b14605b8c4422301fa93ade6b9" title="ScientificReport.BLL.Utils.\lUserHelpers.IsHeadOfDepartment" alt="" coords="299,71,540,112"/>
+</map>

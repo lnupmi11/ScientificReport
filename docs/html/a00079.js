@@ -1,12 +1,6 @@
 var a00079 =
 [
-    [ "MembershipController", "a00079.html#aff8369ba2215c024104c7f4c3501326f", null ],
-    [ "Create", "a00079.html#a02fc0df2311db12137a8a0c92d1a090d", null ],
-    [ "Create", "a00079.html#ae3ff4b70f8e9d3bbb2970e4706fa23f4", null ],
-    [ "Delete", "a00079.html#ad1c4a70e5821478431d69512ab141dd3", null ],
-    [ "DeleteConfirmed", "a00079.html#ac18fdf04bec9e4d488de6aa4c079c83c", null ],
-    [ "Details", "a00079.html#aff0d6a630d864f73a73627d0131d2aa6", null ],
-    [ "Edit", "a00079.html#ab2f07709962468b166fc10e2c4ca5c8a", null ],
-    [ "Edit", "a00079.html#a8c5948b7bc3ddabd889ac28cdebefaf7", null ],
-    [ "Index", "a00079.html#a161e0d4227a189b6e8b85bd9a8b03d94", null ]
+    [ "MembershipEditModel", "a00079.html#a447df1036280699ce5915fe2884b05f9", null ],
+    [ "MembershipEditModel", "a00079.html#a82be2ef24ad555a35a8cdb2762db8de7", null ],
+    [ "Id", "a00079.html#abcf0fbf3f21dd1c885606d29227b4ea8", null ]
 ];

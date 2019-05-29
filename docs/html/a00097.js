@@ -1,9 +1,16 @@
 var a00097 =
 [
-    [ "ShowNext", "a00097.html#ab059766611de4f68e3f2b912d465363c", null ],
-    [ "ShowPrevious", "a00097.html#a8081a5dca972575fdbfbac6a2bcb1b55", null ],
-    [ "TotalPages", "a00097.html#a13ff8be63fea388f147803e88d9f52aa", null ],
-    [ "Count", "a00097.html#aacfdf013bf09c6c69f17ab4fc90cd44a", null ],
-    [ "CurrentPage", "a00097.html#a8f677e7efd74d3b0cd3b2a6559ae220d", null ],
-    [ "PageSize", "a00097.html#a7134929887cc2dabe3d4b10e51071a0f", null ]
+    [ "Types", "a00097.html#a533a7e0d56e30a52cc3c4e5e538fbd37", [
+      [ "Patent", "a00097.html#a533a7e0d56e30a52cc3c4e5e538fbd37a092ade8847d7c0575bae2ecb87ffcbc4", null ],
+      [ "Application", "a00097.html#a533a7e0d56e30a52cc3c4e5e538fbd37ae498749f3c42246d50b15c81c101d988", null ]
+    ] ],
+    [ "ApplicantsPatentLicenseActivities", "a00097.html#a090b7e6a3045515da27e70f4ab38dcc1", null ],
+    [ "AuthorsPatentLicenseActivities", "a00097.html#aa455a9124c8949c7eac17f9781f28a2c", null ],
+    [ "CoApplicantsPatentLicenseActivities", "a00097.html#ab73c612fda452b1ab66f94b245610e5b", null ],
+    [ "CoauthorsPatentLicenseActivities", "a00097.html#af7501803eaddfd0efa7369ac6ae00b5d", null ],
+    [ "DateTime", "a00097.html#ad999a19511e7fe30e205d41d122d269b", null ],
+    [ "Id", "a00097.html#a31416bf48efadfa8013a1e1eb49e9398", null ],
+    [ "Name", "a00097.html#a20fbf489b35d3de4670d91b237ed7184", null ],
+    [ "Number", "a00097.html#a118149f7dd61797065c449cee33761ea", null ],
+    [ "Type", "a00097.html#ad9f779ab1efe640a3a0c09de90dd9736", null ]
 ];

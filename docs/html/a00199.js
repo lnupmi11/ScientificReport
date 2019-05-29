@@ -1,6 +1,5 @@
 var a00199 =
 [
-    [ "Id", "a00199.html#a0f770b07aeb4e7cb8f8e9356af25bc30", null ],
-    [ "ScientificWork", "a00199.html#a52048d2fc2b1699b9f0329f27abb71d5", null ],
-    [ "TeacherReport", "a00199.html#adfb4c640509606576dda08f46d67cbcb", null ]
+    [ "FullPositionTitle", "a00199.html#a56123cdd1d34c7a8b81c0415516076d5", null ],
+    [ "User", "a00199.html#af3a38310da28002ac44a6be61a8f630a", null ]
 ];

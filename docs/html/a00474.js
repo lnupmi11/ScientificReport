@@ -1,4 +1,5 @@
 var a00474 =
 [
-    [ "ScientificReportDbContext", "a00177.html", "a00177" ]
+    [ "IRepository", "a00068.html", null ],
+    [ "ITrackable", "a00074.html", "a00074" ]
 ];

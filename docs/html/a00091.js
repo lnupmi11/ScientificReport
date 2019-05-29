@@ -1,4 +1,8 @@
 var a00091 =
 [
-    [ "Oppositions", "a00091.html#a990164baa48aa39b02dca6eb4d03c44d", null ]
+    [ "OppositionModel", "a00091.html#a9f4e54b9b40450139138206d12523794", null ],
+    [ "OppositionModel", "a00091.html#a117862efb63f5f7be443167838ae49cb", null ],
+    [ "About", "a00091.html#a25b0c34870938531fb85ebd9594f7923", null ],
+    [ "DateOfOpposition", "a00091.html#a69975b663f7aedf3db3ff2a1011b1079", null ],
+    [ "Opponent", "a00091.html#ae3cdec8f0d0e708eefdf9bc25784bb8e", null ]
 ];

@@ -1,6 +1,7 @@
 var a00489 =
 [
-    [ "PatentLicenseActivityEditModel", "a00100.html", "a00100" ],
-    [ "PatentLicenseActivityIndexModel", "a00101.html", "a00101" ],
-    [ "PatentLicenseActivityModel", "a00102.html", "a00102" ]
+    [ "ReportThesisDetails", "a00140.html", "a00140" ],
+    [ "ReportThesisEdit", "a00141.html", "a00141" ],
+    [ "ReportThesisIndexModel", "a00142.html", "a00142" ],
+    [ "ReportThesisModel", "a00143.html", "a00143" ]
 ];

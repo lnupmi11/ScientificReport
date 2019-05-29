@@ -1,11 +1,12 @@
 var a00078 =
 [
-    [ "MemberOfChoices", "a00078.html#aace9f24594ca57df8f05d4680ca835ba", [
-      [ "EditorialBoard", "a00078.html#aace9f24594ca57df8f05d4680ca835baaa49e0a45e75c086f428289d64b469f96", null ],
-      [ "ScientificCouncil", "a00078.html#aace9f24594ca57df8f05d4680ca835baa0d1bf9d3831cac38a4a5f7856ea59396", null ],
-      [ "ExpertCouncil", "a00078.html#aace9f24594ca57df8f05d4680ca835baa709e626e10341618753f60e902891d9c", null ]
-    ] ],
-    [ "Id", "a00078.html#a31d546527be48bdf75bcb080d1b26264", null ],
-    [ "MemberOf", "a00078.html#aedc9aecc9ae9e8ddbbac97026c2ef72e", null ],
-    [ "MembershipInfo", "a00078.html#ae19aabc2ca4bbfa44224e4baa2ee15cc", null ]
+    [ "MembershipController", "a00078.html#a98d262bec7c49432335b7f80c79a10bb", null ],
+    [ "Create", "a00078.html#a02fc0df2311db12137a8a0c92d1a090d", null ],
+    [ "Create", "a00078.html#ae3ff4b70f8e9d3bbb2970e4706fa23f4", null ],
+    [ "Delete", "a00078.html#ad1c4a70e5821478431d69512ab141dd3", null ],
+    [ "DeleteConfirmed", "a00078.html#ac18fdf04bec9e4d488de6aa4c079c83c", null ],
+    [ "Details", "a00078.html#aff0d6a630d864f73a73627d0131d2aa6", null ],
+    [ "Edit", "a00078.html#ab2f07709962468b166fc10e2c4ca5c8a", null ],
+    [ "Edit", "a00078.html#a8c5948b7bc3ddabd889ac28cdebefaf7", null ],
+    [ "Index", "a00078.html#a161e0d4227a189b6e8b85bd9a8b03d94", null ]
 ];

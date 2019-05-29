@@ -1,3 +1,3 @@
-<map id="ScientificReport.DTO.Models.PostgraduateGuidance.PostgraduateGuidanceIndexModel" name="ScientificReport.DTO.Models.PostgraduateGuidance.PostgraduateGuidanceIndexModel">
-<area shape="rect" id="node2" href="$a00097.html" title="{PageModel\n|+ TotalPages\l+ ShowPrevious\l+ ShowNext\l+ CurrentPage\l+ Count\l+ PageSize\l|}" alt="" coords="72,5,197,156"/>
+<map id="ScientificReport.DTO.Models.PostgraduateGuidance.PostgraduateGuidanceModel" name="ScientificReport.DTO.Models.PostgraduateGuidance.PostgraduateGuidanceModel">
+<area shape="rect" id="node2" href="$a00118.html" title="{ScientificReport.DTO.Models.\lPostgraduateGuidance.Postgraduate\lGuidanceEditModel\n|+ Id\l|+ PostgraduateGuidanceEdit\lModel()\l+ PostgraduateGuidanceEdit\lModel()\l}" alt="" coords="5,219,264,369"/>
 </map>

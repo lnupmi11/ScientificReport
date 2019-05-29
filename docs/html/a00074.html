@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>ScientificReport: ScientificReport.BLL.Interfaces.ITeacherReportService Interface Reference</title>
+<title>ScientificReport: ScientificReport.DAL.Interfaces.ITrackable Interface Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -107,223 +107,95 @@ $(document).ready(function(){initNavTree('a00074.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a00565.html">List of all members</a>  </div>
+<a href="#properties">Properties</a> &#124;
+<a href="a00747.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ScientificReport.BLL.Interfaces.ITeacherReportService Interface Reference</div>  </div>
+<div class="title">ScientificReport.DAL.Interfaces.ITrackable Interface Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Inheritance diagram for ScientificReport.BLL.Interfaces.ITeacherReportService:</div>
+Inheritance diagram for ScientificReport.DAL.Interfaces.ITrackable:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00566.png" border="0" usemap="#_scientific_report_8_b_l_l_8_interfaces_8_i_teacher_report_service_inherit__map" alt="Inheritance graph"/></div>
-<map name="_scientific_report_8_b_l_l_8_interfaces_8_i_teacher_report_service_inherit__map" id="_scientific_report_8_b_l_l_8_interfaces_8_i_teacher_report_service_inherit__map">
-<area shape="rect" id="node2" href="a00197.html" title="{ScientificReport.BLL.Services.\lTeacherReportService\n||+ TeacherReportService()\l+ GetAll()\l+ GetAllWhere()\l+ GetById()\l+ Get()\l+ CreateItem()\l+ UpdateItem()\l+ DeleteById()\l+ Any()\l+ Exists()\l}" alt="" coords="10,263,219,487"/>
+<div class="center"><img src="a00748.png" border="0" usemap="#_scientific_report_8_d_a_l_8_interfaces_8_i_trackable_inherit__map" alt="Inheritance graph"/></div>
+<map name="_scientific_report_8_d_a_l_8_interfaces_8_i_trackable_inherit__map" id="_scientific_report_8_d_a_l_8_interfaces_8_i_trackable_inherit__map">
+<area shape="rect" id="node2" href="a00137.html" title="{ScientificReport.DAL.Entities.\lReports.Report\n|+ Id\l+ Created\l+ Edited\l|}" alt="" coords="235,160,440,281"/>
+<area shape="rect" id="node3" href="a00034.html" title="{ScientificReport.DAL.Entities.\lReports.DepartmentReport\n|+ HeadOfDepartment\l+ TeacherReports\l+ Conferences\l|}" alt="" coords="5,410,211,531"/>
+<area shape="rect" id="node4" href="a00043.html" title="{ScientificReport.DAL.Entities.\lReports.FacultyReport\n|+ Administrator\l+ DepartmentReports\l|}" alt="" coords="235,417,440,524"/>
+<area shape="rect" id="node5" href="a00189.html" title="{ScientificReport.DAL.Entities.\lReports.TeacherReport\n|+ Teacher\l+ ScientificWorks\l+ Grants\l+ ScientificInternships\l+ PostgraduateDissertation\lGuidances\l+ PostgraduateGuidances\l+ ScientificConsultations\l+ Publications\l+ ReportTheses\l+ Patents\l+ Reviews\l+ Memberships\l+ Oppositions\l|}" alt="" coords="464,329,669,612"/>
 </map>
 </div>
 <div class="dynheader">
-Collaboration diagram for ScientificReport.BLL.Interfaces.ITeacherReportService:</div>
+Collaboration diagram for ScientificReport.DAL.Interfaces.ITrackable:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00567.png" border="0" usemap="#_scientific_report_8_b_l_l_8_interfaces_8_i_teacher_report_service_coll__map" alt="Collaboration graph"/></div>
-<map name="_scientific_report_8_b_l_l_8_interfaces_8_i_teacher_report_service_coll__map" id="_scientific_report_8_b_l_l_8_interfaces_8_i_teacher_report_service_coll__map">
+<div class="center"><img src="a00749.png" border="0" usemap="#_scientific_report_8_d_a_l_8_interfaces_8_i_trackable_coll__map" alt="Collaboration graph"/></div>
+<map name="_scientific_report_8_d_a_l_8_interfaces_8_i_trackable_coll__map" id="_scientific_report_8_d_a_l_8_interfaces_8_i_trackable_coll__map">
 </map>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:ae5e50eaf77f44857c96c42897182e0a7"><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; <a class="el" href="a00192.html">TeacherReport</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00074.html#ae5e50eaf77f44857c96c42897182e0a7">GetAll</a> ()</td></tr>
-<tr class="separator:ae5e50eaf77f44857c96c42897182e0a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6873398ee85f08f67ac03677c734cd66"><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; <a class="el" href="a00192.html">TeacherReport</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00074.html#a6873398ee85f08f67ac03677c734cd66">GetAllWhere</a> (Func&lt; <a class="el" href="a00192.html">TeacherReport</a>, bool &gt; predicate)</td></tr>
-<tr class="separator:a6873398ee85f08f67ac03677c734cd66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a47afbf0aa1ca2167807d4ed525e15c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00192.html">TeacherReport</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00074.html#a9a47afbf0aa1ca2167807d4ed525e15c">GetById</a> (Guid id)</td></tr>
-<tr class="separator:a9a47afbf0aa1ca2167807d4ed525e15c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5438428bf605db4c921605a6ce6f2ed9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00192.html">TeacherReport</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00074.html#a5438428bf605db4c921605a6ce6f2ed9">Get</a> (Func&lt; <a class="el" href="a00192.html">TeacherReport</a>, bool &gt; predicate)</td></tr>
-<tr class="separator:a5438428bf605db4c921605a6ce6f2ed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8503111e95dee06dea1013463f36684"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00074.html#ae8503111e95dee06dea1013463f36684">CreateItem</a> (<a class="el" href="a00192.html">TeacherReport</a> item)</td></tr>
-<tr class="separator:ae8503111e95dee06dea1013463f36684"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4530eaf8398c3076309ab81081f33f47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00074.html#a4530eaf8398c3076309ab81081f33f47">UpdateItem</a> (<a class="el" href="a00192.html">TeacherReport</a> item)</td></tr>
-<tr class="separator:a4530eaf8398c3076309ab81081f33f47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a049bb4617c6342b848e6098694cc7ada"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00074.html#a049bb4617c6342b848e6098694cc7ada">DeleteById</a> (Guid id)</td></tr>
-<tr class="separator:a049bb4617c6342b848e6098694cc7ada"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacb68292d6fc0a846f0a13be8d7055c3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00074.html#aacb68292d6fc0a846f0a13be8d7055c3">Any</a> (Func&lt; <a class="el" href="a00192.html">TeacherReport</a>, bool &gt; predicate)</td></tr>
-<tr class="separator:aacb68292d6fc0a846f0a13be8d7055c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ad82a20d80b79276735d8f52e2dd280"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00074.html#a7ad82a20d80b79276735d8f52e2dd280">Exists</a> (Guid id)</td></tr>
-<tr class="separator:a7ad82a20d80b79276735d8f52e2dd280"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a90c907a8f53be68c402c8657fe22249c"><td class="memItemLeft" align="right" valign="top">DateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00074.html#a90c907a8f53be68c402c8657fe22249c">Created</a><code> [get, set]</code></td></tr>
+<tr class="separator:a90c907a8f53be68c402c8657fe22249c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc6f4b9e3157a5289c1963456a0495fd"><td class="memItemLeft" align="right" valign="top">DateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00074.html#adc6f4b9e3157a5289c1963456a0495fd">Edited</a><code> [get, set]</code></td></tr>
+<tr class="separator:adc6f4b9e3157a5289c1963456a0495fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="a00236_source.html#l00008">8</a> of file <a class="el" href="a00236_source.html">ITeacherReportService.cs</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aacb68292d6fc0a846f0a13be8d7055c3"></a>
+<p>Definition at line <a class="el" href="a00287_source.html#l00006">6</a> of file <a class="el" href="a00287_source.html">ITrackable.cs</a>.</p>
+</div><h2 class="groupheader">Property Documentation</h2>
+<a class="anchor" id="a90c907a8f53be68c402c8657fe22249c"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool ScientificReport.BLL.Interfaces.ITeacherReportService.Any </td>
-          <td>(</td>
-          <td class="paramtype">Func&lt; <a class="el" href="a00192.html">TeacherReport</a>, bool &gt;&#160;</td>
-          <td class="paramname"><em>predicate</em></td><td>)</td>
-          <td></td>
+          <td class="memname">DateTime ScientificReport.DAL.Interfaces.ITrackable.Created</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="a00197.html#afc5ff72d8c8c31ce25f5447df752f0f2">ScientificReport.BLL.Services.TeacherReportService</a>.</p>
+<p>Definition at line <a class="el" href="a00287_source.html#l00009">9</a> of file <a class="el" href="a00287_source.html">ITrackable.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ae8503111e95dee06dea1013463f36684"></a>
+<a class="anchor" id="adc6f4b9e3157a5289c1963456a0495fd"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void ScientificReport.BLL.Interfaces.ITeacherReportService.CreateItem </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00192.html">TeacherReport</a>&#160;</td>
-          <td class="paramname"><em>item</em></td><td>)</td>
-          <td></td>
+          <td class="memname">DateTime ScientificReport.DAL.Interfaces.ITrackable.Edited</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="a00197.html#a3e776339b589ffa0b5b30714b86e0b97">ScientificReport.BLL.Services.TeacherReportService</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a049bb4617c6342b848e6098694cc7ada"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ScientificReport.BLL.Interfaces.ITeacherReportService.DeleteById </td>
-          <td>(</td>
-          <td class="paramtype">Guid&#160;</td>
-          <td class="paramname"><em>id</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="a00197.html#a57ea58f553a3d42274e134fe41a8a40a">ScientificReport.BLL.Services.TeacherReportService</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a7ad82a20d80b79276735d8f52e2dd280"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool ScientificReport.BLL.Interfaces.ITeacherReportService.Exists </td>
-          <td>(</td>
-          <td class="paramtype">Guid&#160;</td>
-          <td class="paramname"><em>id</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="a00197.html#a782dd0c6610e26ef181f66ce9f23ef47">ScientificReport.BLL.Services.TeacherReportService</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a5438428bf605db4c921605a6ce6f2ed9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00192.html">TeacherReport</a> ScientificReport.BLL.Interfaces.ITeacherReportService.Get </td>
-          <td>(</td>
-          <td class="paramtype">Func&lt; <a class="el" href="a00192.html">TeacherReport</a>, bool &gt;&#160;</td>
-          <td class="paramname"><em>predicate</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="a00197.html#a0258f8b08b9fd58e653163bcbba9f7e0">ScientificReport.BLL.Services.TeacherReportService</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ae5e50eaf77f44857c96c42897182e0a7"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">IEnumerable&lt;<a class="el" href="a00192.html">TeacherReport</a>&gt; ScientificReport.BLL.Interfaces.ITeacherReportService.GetAll </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="a00197.html#a7686a0db3234780eb65e46c3c6e2e242">ScientificReport.BLL.Services.TeacherReportService</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a6873398ee85f08f67ac03677c734cd66"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">IEnumerable&lt;<a class="el" href="a00192.html">TeacherReport</a>&gt; ScientificReport.BLL.Interfaces.ITeacherReportService.GetAllWhere </td>
-          <td>(</td>
-          <td class="paramtype">Func&lt; <a class="el" href="a00192.html">TeacherReport</a>, bool &gt;&#160;</td>
-          <td class="paramname"><em>predicate</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="a00197.html#a67232616bdf0fb7a72d022509754a8a1">ScientificReport.BLL.Services.TeacherReportService</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a9a47afbf0aa1ca2167807d4ed525e15c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00192.html">TeacherReport</a> ScientificReport.BLL.Interfaces.ITeacherReportService.GetById </td>
-          <td>(</td>
-          <td class="paramtype">Guid&#160;</td>
-          <td class="paramname"><em>id</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="a00197.html#a9094c57021d0c7cbd8fdfbff346affcb">ScientificReport.BLL.Services.TeacherReportService</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a4530eaf8398c3076309ab81081f33f47"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ScientificReport.BLL.Interfaces.ITeacherReportService.UpdateItem </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00192.html">TeacherReport</a>&#160;</td>
-          <td class="paramname"><em>item</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="a00197.html#a01684ed0ab22b91830cf45114dcd36bd">ScientificReport.BLL.Services.TeacherReportService</a>.</p>
+<p>Definition at line <a class="el" href="a00287_source.html#l00012">12</a> of file <a class="el" href="a00287_source.html">ITrackable.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>/home/travis/build/lnupmi11/ScientificReport/ScientificReport.BLL/Interfaces/<a class="el" href="a00236_source.html">ITeacherReportService.cs</a></li>
+<li>/home/travis/build/lnupmi11/ScientificReport/ScientificReport.DAL/Interfaces/<a class="el" href="a00287_source.html">ITrackable.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00466.html">ScientificReport</a></li><li class="navelem"><a class="el" href="a00467.html">BLL</a></li><li class="navelem"><a class="el" href="a00468.html">Interfaces</a></li><li class="navelem"><a class="el" href="a00074.html">ITeacherReportService</a></li>
+    <li class="navelem"><a class="el" href="a00462.html">ScientificReport</a></li><li class="navelem"><a class="el" href="a00469.html">DAL</a></li><li class="navelem"><a class="el" href="a00474.html">Interfaces</a></li><li class="navelem"><a class="el" href="a00074.html">ITrackable</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>

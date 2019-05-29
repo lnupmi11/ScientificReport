@@ -12,6 +12,5 @@ var searchData=
   ['departmentrepositorytests',['DepartmentRepositoryTests',['../a00038.html',1,'ScientificReport::Test::RepositoriesTests']]],
   ['departmentservice',['DepartmentService',['../a00039.html',1,'ScientificReport::BLL::Services']]],
   ['departmentservicetests',['DepartmentServiceTests',['../a00040.html',1,'ScientificReport::Test::ServicesTests']]],
-  ['departmentupdatescientificworksrequest',['DepartmentUpdateScientificWorksRequest',['../a00041.html',1,'ScientificReport::DTO::Models::Department']]],
-  ['departmentupdatestaffrequest',['DepartmentUpdateStaffRequest',['../a00042.html',1,'ScientificReport::DTO::Models::Department']]]
+  ['departmentupdatescientificworksrequest',['DepartmentUpdateScientificWorksRequest',['../a00041.html',1,'ScientificReport::DTO::Models::Department']]]
 ];

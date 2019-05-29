@@ -8,7 +8,8 @@ var a00114 =
     [ "GetAll", "a00114.html#a745a0be150394724a2ee68a17eee379d", null ],
     [ "GetAllWhere", "a00114.html#a412c3a9c5ebd0ef24e8fa72d2b9b1416", null ],
     [ "GetById", "a00114.html#a493c8060034278c57cc91c2b42fae42f", null ],
-    [ "GetCount", "a00114.html#ac9b43c45c96d895b8718969eaa3e30e8", null ],
-    [ "GetPage", "a00114.html#affad4ff70f8219af41d19b88aef27815", null ],
+    [ "GetCountByRole", "a00114.html#ad18fb6899efe5e06de52681c9a7a7363", null ],
+    [ "GetItemsByRole", "a00114.html#add8d94f8483ffc8e47dbadc3f09493e5", null ],
+    [ "GetPageByRole", "a00114.html#a7aa4a7ce77d23c7bc7766dda97075654", null ],
     [ "UpdateItem", "a00114.html#acae69cd64ef189fd017ae2ed41afaff6", null ]
 ];

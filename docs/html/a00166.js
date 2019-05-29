@@ -1,14 +1,9 @@
 var a00166 =
 [
-    [ "ScientificConsultationService", "a00166.html#afaaf71499fce7df14b2525d212e79987", null ],
-    [ "CreateItem", "a00166.html#a9d93b5d931871afa0abe6a0ada3238f5", null ],
-    [ "DeleteById", "a00166.html#ae66a4734fe604b279849dd0c9af29d00", null ],
-    [ "Exists", "a00166.html#a22995fd70000b87664d320b289d2bfdb", null ],
-    [ "Get", "a00166.html#a1a81309adc311365e726d1e4fe85ec67", null ],
-    [ "GetAll", "a00166.html#aa0cb94338a5279dbee432999ec9a5513", null ],
-    [ "GetAllWhere", "a00166.html#a4ef14027f345b179fe4443b08e35d1b9", null ],
-    [ "GetById", "a00166.html#affc52a6da850d946e638e0828b0fdb78", null ],
-    [ "GetCount", "a00166.html#afc784a20da786c00cc80b91ecd6c11c5", null ],
-    [ "GetPage", "a00166.html#ac0feadb8ec43dd16d2c6824969905759", null ],
-    [ "UpdateItem", "a00166.html#a0d991a6bba1cd4d68445265051c0c29a", null ]
+    [ "Contents", "a00166.html#a0b6a99f02096299e6891b603c7694de1", null ],
+    [ "Ended", "a00166.html#a2ab4c94f9120dfd6584cbbe465f9c677", null ],
+    [ "Id", "a00166.html#af621cfa335114c4502a540eb14eb1252", null ],
+    [ "PlaceOfInternship", "a00166.html#ab8363b1109f259e519956ac0a13a8d3f", null ],
+    [ "Started", "a00166.html#a3924dc68df70088c781a06aee9cdee85", null ],
+    [ "UserProfilesScientificInternships", "a00166.html#ac8035a92606d88042526aafa9bfee44e", null ]
 ];

@@ -1,9 +1,27 @@
 var a00104 =
 [
-    [ "AllTest", "a00104.html#ad0d0b4871e2840999096b5c95980ab4c", null ],
-    [ "AllWhereTest", "a00104.html#a3e849a6e75e6e35d04ed61adde2ba871", null ],
-    [ "CreateTest", "a00104.html#ad9e2616652bf954168184dc66e758967", null ],
-    [ "DeleteTest", "a00104.html#a1e7ccc58076a893beac53f167f5798db", null ],
-    [ "GetByIdTest", "a00104.html#a1abf1c5a1ab758a8fe032f3846edcce6", null ],
-    [ "UpdateTest", "a00104.html#a0cf05522159818f16fdbbb3f3780156c", null ]
+    [ "PatentLicenseActivityService", "a00104.html#accc31d1a83cf9d590e79cdd81c0f70ec", null ],
+    [ "AddApplicant", "a00104.html#a5a1857949666c73c1654b91cef644a73", null ],
+    [ "AddAuthor", "a00104.html#a1192c5bbbf3e1fcb393101f4254c677e", null ],
+    [ "AddCoApplicant", "a00104.html#a92f5dc26cf8217c8daed7411bc60727a", null ],
+    [ "AddCoauthor", "a00104.html#aaaadd29e462d91a14a0720143dedbef2", null ],
+    [ "CreateItem", "a00104.html#a36c223cc6e46641ddd2c2ce866017c38", null ],
+    [ "DeleteById", "a00104.html#a09c1a015921ce9f8ad52b210cee97bf0", null ],
+    [ "Exists", "a00104.html#afbffe90be4918e5fd0aa97249eb829c7", null ],
+    [ "Get", "a00104.html#a5bc4bd7a4482dc7bbe4aa93d68a759cc", null ],
+    [ "GetAll", "a00104.html#a27b7a5f0408d507b93526a597d4b37a3", null ],
+    [ "GetAllWhere", "a00104.html#ab9e1ca9bf72299adb9f2c67ef5129f67", null ],
+    [ "GetApplicants", "a00104.html#a04e4377334e5cd1d9ef3e394978aa981", null ],
+    [ "GetAuthors", "a00104.html#af3459c4056be5fccc2569dbb834be490", null ],
+    [ "GetById", "a00104.html#adc8cc5b65626a1e54f994877fe9841fd", null ],
+    [ "GetCoApplicants", "a00104.html#a3206ecb11e4e245095759634630bb494", null ],
+    [ "GetCoauthors", "a00104.html#a5009eced262482fbdb86a1323f233205", null ],
+    [ "GetCountByRole", "a00104.html#a002069dab5fc31e8ddb37d972d1bed86", null ],
+    [ "GetItemsByRole", "a00104.html#ab823823d4e4ea6b2a1650342ce8066eb", null ],
+    [ "GetPageByRole", "a00104.html#a8b8d74e5e1fabd649d1e65c80c508681", null ],
+    [ "RemoveApplicant", "a00104.html#aee90794a6abd0803471ffe826a547ca0", null ],
+    [ "RemoveAuthor", "a00104.html#aea4c2de3cbcf1de1adb2e034227d45d3", null ],
+    [ "RemoveCoApplicant", "a00104.html#a157c74225c10d03cde8f54d5e68d6130", null ],
+    [ "RemoveCoauthor", "a00104.html#a60b70f29b18b8f4c422e37a406e773ea", null ],
+    [ "UpdateItem", "a00104.html#a3265353bfce3ee85b90fdda0eff04b10", null ]
 ];

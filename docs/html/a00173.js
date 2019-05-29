@@ -1,12 +1,18 @@
 var a00173 =
 [
-    [ "ScientificInternshipRepository", "a00173.html#ab12a4c8cdafae6b5384f589e55138848", null ],
-    [ "All", "a00173.html#a831125ba9f8b91cefeab7fdd8ecb8550", null ],
-    [ "AllWhere", "a00173.html#a81878baec308259d671046913e6742f9", null ],
-    [ "Create", "a00173.html#a82692c5517f6d5fa5bd86f95578b7900", null ],
-    [ "Delete", "a00173.html#a04001dfc6ec10b0ff728d62645594448", null ],
-    [ "Get", "a00173.html#af6ae4809bbd830ae67fbbc061a97341c", null ],
-    [ "Get", "a00173.html#ae9c02f5ec537e892045db787c41fe592", null ],
-    [ "GetQuery", "a00173.html#a52ef362858c073f36813f425fa81398f", null ],
-    [ "Update", "a00173.html#abcc5aa0759cbfdc5370b065477721a26", null ]
+    [ "ScientificInternshipService", "a00173.html#a0366111b500575ba62587b42de32ce5d", null ],
+    [ "AddUser", "a00173.html#aaf53e505182508355e411a917e3035df", null ],
+    [ "CreateItem", "a00173.html#a6919b4da5f924a3e0a5919bd03f4f267", null ],
+    [ "DeleteById", "a00173.html#a9307d476253dd087574e4e460790b558", null ],
+    [ "Exists", "a00173.html#a1a9ef85baa118ee73f8b196ff73eaebe", null ],
+    [ "Get", "a00173.html#a07ffd13c9f6cdcef0daf38f511f377bf", null ],
+    [ "GetAll", "a00173.html#a14a282dda994780edb8fac9afbb41f33", null ],
+    [ "GetAllWhere", "a00173.html#ad851c6640bad71dbaeec3e0dc732b85f", null ],
+    [ "GetById", "a00173.html#ad22fe64eae7b7b1a32ebaa861be8c4f0", null ],
+    [ "GetCountByRole", "a00173.html#ae713135bd36d6e48c56e1d132e2f0a86", null ],
+    [ "GetItemsByRole", "a00173.html#a11bae4d4d8f773e19bcbd95d5f462a6e", null ],
+    [ "GetPageByRole", "a00173.html#a26040f9b1206ff68342f75e51a09b20f", null ],
+    [ "GetUsers", "a00173.html#abc85f29378cc83a95aa958e134e6586a", null ],
+    [ "RemoveUser", "a00173.html#a04c1377f698e186924f31ff9659f30bd", null ],
+    [ "UpdateItem", "a00173.html#a8212bd2314f1c06054fb7bd30121e3f6", null ]
 ];

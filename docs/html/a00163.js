@@ -1,9 +1,9 @@
 var a00163 =
 [
-    [ "ScientificConsultationModel", "a00163.html#a36817ec0c1d438df503775070a190869", null ],
-    [ "ScientificConsultationModel", "a00163.html#ae59fce760d0a872e1f673747e183d4e4", null ],
-    [ "CandidateName", "a00163.html#a5cc574e74b18ec8377b9e56de5995573", null ],
-    [ "DissertationTitle", "a00163.html#aaad7f3b4fcf5b32a3a2640192c5077f3", null ],
-    [ "Guide", "a00163.html#a014eeee2fa7b53ae02152f770a58dd1f", null ],
-    [ "GuideId", "a00163.html#a4370e79c50fb1d60a8d22732a092ba01", null ]
+    [ "AllTest", "a00163.html#a77260d4ac1edd1a78ba01ff1874bc27a", null ],
+    [ "AllWhereTest", "a00163.html#a9f7712f05229ea47b858319da6ff5d55", null ],
+    [ "CreateTest", "a00163.html#a03ecb8bd9ba8937cdde9d30c97b59073", null ],
+    [ "DeleteTest", "a00163.html#a3701229b6163f3dde263dfcf53bc012c", null ],
+    [ "GetByIdTest", "a00163.html#a4cfad382664b449a53ad1a3543bc7da2", null ],
+    [ "UpdateTest", "a00163.html#a6569a40a7a2f1a8ee26f35082169ba14", null ]
 ];

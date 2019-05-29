@@ -1,6 +1,5 @@
 var a00496 =
 [
-    [ "ScientificInternshipEditModel", "a00170.html", "a00170" ],
-    [ "ScientificInternshipIndexModel", "a00171.html", "a00171" ],
-    [ "ScientificInternshipModel", "a00172.html", "a00172" ]
+    [ "Initial", "a00061.html", "a00061" ],
+    [ "ScientificReportDbContextModelSnapshot", "a00176.html", "a00176" ]
 ];

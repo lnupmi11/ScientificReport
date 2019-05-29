@@ -1,3 +1,2 @@
-<map id="ScientificReport.BLL.Interfaces.IPostgraduateDissertationGuidanceService" name="ScientificReport.BLL.Interfaces.IPostgraduateDissertationGuidanceService">
-<area shape="rect" id="node2" href="$a00114.html" title="{ScientificReport.BLL.Services.\lPostgraduateDissertationGuidance\lService\n||+ PostgraduateDissertation\lGuidanceService()\l+ GetAll()\l+ GetAllWhere()\l+ GetPage()\l+ GetCount()\l+ GetById()\l+ Get()\l+ CreateItem()\l+ UpdateItem()\l+ DeleteById()\l+ Exists()\l}" alt="" coords="30,277,275,545"/>
+<map id="ScientificReport.BLL.Interfaces.IPostgraduateGuidanceService" name="ScientificReport.BLL.Interfaces.IPostgraduateGuidanceService">
 </map>

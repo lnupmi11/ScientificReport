@@ -1,8 +1,12 @@
 var a00190 =
 [
-    [ "SelectItem", "a00190.html#a0f1ab8b402c83f39d51e4d80c73da603", null ],
-    [ "SelectItem", "a00190.html#aeb3da5cc4917fd74ff7ffe07fcccaab1", null ],
-    [ "Selected", "a00190.html#ac5c871a329f481d348975cab6c827c4f", null ],
-    [ "Text", "a00190.html#a19131771c1658cb6bff49c24dcae702d", null ],
-    [ "Value", "a00190.html#ac7d264c6dd5744f92a85536835e494e5", null ]
+    [ "TeacherReportController", "a00190.html#a9ae124cbaf13e5ccf5b7b6a588ae0047", null ],
+    [ "Create", "a00190.html#ad6f3535d91804167f7eeae6580679a89", null ],
+    [ "Create", "a00190.html#a329e413c7fe01c9608c40d4a38bbe58b", null ],
+    [ "Delete", "a00190.html#a891e57c2bc26135543cb9fb97efd081c", null ],
+    [ "DeleteConfirmed", "a00190.html#a665886dfd60f90d84ff77e481f299d1f", null ],
+    [ "Details", "a00190.html#a635d58ca103e12b890c073d321b68b53", null ],
+    [ "Edit", "a00190.html#a18a783eb681c3a1cde7ce8337dbbbc35", null ],
+    [ "Edit", "a00190.html#aa87e16aa425ad868793929e14cc9069a", null ],
+    [ "Index", "a00190.html#a5561a7927a4586d654deeacc259f88dd", null ]
 ];

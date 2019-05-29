@@ -1,14 +1,18 @@
 var a00072 =
 [
-    [ "CreateItem", "a00072.html#acd8e547ac9b264abeed2867f7b7cc847", null ],
-    [ "DeleteById", "a00072.html#a0d5a9b38c8dd9a6bd031189a64025eed", null ],
-    [ "Exists", "a00072.html#a8e7b52273daaa9b6d73bca5c308c890b", null ],
-    [ "Get", "a00072.html#a15079ba6335b39d3c7e9ea2f87c6d7f8", null ],
-    [ "GetAll", "a00072.html#a215afb31a3ee3bc5c89430a455c8a52f", null ],
-    [ "GetAllWhere", "a00072.html#aee68fe5ee323ce3f8e17f0e10ca8063c", null ],
-    [ "GetById", "a00072.html#a2553f1ec4be0f145c88e7fadef0d7e10", null ],
-    [ "GetCount", "a00072.html#ab07a8880444c8f1cd39ab63d5322b21b", null ],
-    [ "GetPage", "a00072.html#a22a5937e03f09f4687abfa315827ab88", null ],
-    [ "GetUsers", "a00072.html#a0f3b1dce32f328d424beef8e357f66ab", null ],
-    [ "UpdateItem", "a00072.html#a58ce63f0047d724c7373a17093747524", null ]
+    [ "AddAuthor", "a00072.html#a947f097e14a82bedd44d0a7b35189aa9", null ],
+    [ "Any", "a00072.html#a10f8257ea5e77535a2d0e29948bdfa32", null ],
+    [ "CreateItem", "a00072.html#ad7c799de80eccc4672c64bfa3b1736c9", null ],
+    [ "DeleteById", "a00072.html#af872d6fefa5b46e6c5e7e4556c2885b7", null ],
+    [ "Exists", "a00072.html#a05263f6b86fa03145eb3419547892e6c", null ],
+    [ "Get", "a00072.html#a5da4dfa5ce4b8aee1ad44da7a7d19717", null ],
+    [ "GetAll", "a00072.html#aa1d2bdcd9a0cc3f9bbfc7aba6817ffeb", null ],
+    [ "GetAllWhere", "a00072.html#a587f28a05e65fb7ec669910ac662db1d", null ],
+    [ "GetAuthors", "a00072.html#afbc89518840d6142b2e3ba745dcd91e5", null ],
+    [ "GetById", "a00072.html#a9149e43946769bb247057229875e9bc6", null ],
+    [ "GetCountByRole", "a00072.html#ad0bfd388eaed5715db946bf0147be770", null ],
+    [ "GetItemsByRole", "a00072.html#a1896062114db3df9bd3b931106650d43", null ],
+    [ "GetPageByRole", "a00072.html#a0b401514088296ef20da4faab30093bd", null ],
+    [ "RemoveAuthor", "a00072.html#a470cdd99381f674acce570fdfa11dec8", null ],
+    [ "UpdateItem", "a00072.html#a8f003e4d70c3705989c93730f77f0e0f", null ]
 ];

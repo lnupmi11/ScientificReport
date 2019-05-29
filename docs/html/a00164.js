@@ -1,12 +1,15 @@
 var a00164 =
 [
-    [ "ScientificConsultationRepository", "a00164.html#a90be535c13ab99d88f70c1ec10234f91", null ],
-    [ "All", "a00164.html#ac368e00e9d2c8aff8120b5dad6f53092", null ],
-    [ "AllWhere", "a00164.html#aae5374e3e99c522384c0792bfd062803", null ],
-    [ "Create", "a00164.html#a876ca6f5402647e60087d97c44e0c066", null ],
-    [ "Delete", "a00164.html#acd310b3d803b13548c90d9aa7159ef16", null ],
-    [ "Get", "a00164.html#af1b4a52a302a6b34346075b908e4bdcd", null ],
-    [ "Get", "a00164.html#acf02c93ac82e8adbe3474cb2020df750", null ],
-    [ "GetQuery", "a00164.html#a029675b9ec157e1c4a4524d264cac29f", null ],
-    [ "Update", "a00164.html#aa5455d4ead1e31f2abc2fe48b341f1bd", null ]
+    [ "ScientificConsultationService", "a00164.html#afaaf71499fce7df14b2525d212e79987", null ],
+    [ "CreateItem", "a00164.html#a9d93b5d931871afa0abe6a0ada3238f5", null ],
+    [ "DeleteById", "a00164.html#ae66a4734fe604b279849dd0c9af29d00", null ],
+    [ "Exists", "a00164.html#a22995fd70000b87664d320b289d2bfdb", null ],
+    [ "Get", "a00164.html#a1a81309adc311365e726d1e4fe85ec67", null ],
+    [ "GetAll", "a00164.html#aa0cb94338a5279dbee432999ec9a5513", null ],
+    [ "GetAllWhere", "a00164.html#a4ef14027f345b179fe4443b08e35d1b9", null ],
+    [ "GetById", "a00164.html#affc52a6da850d946e638e0828b0fdb78", null ],
+    [ "GetCountByRole", "a00164.html#a09487f62c982715c415f71b3121f8026", null ],
+    [ "GetItemsByRole", "a00164.html#a3a5f607be75e285021128ffb0b340a4e", null ],
+    [ "GetPageByRole", "a00164.html#a40e8265fb8557f0d16b33a7db60146df", null ],
+    [ "UpdateItem", "a00164.html#a0d991a6bba1cd4d68445265051c0c29a", null ]
 ];

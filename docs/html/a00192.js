@@ -1,16 +1,12 @@
 var a00192 =
 [
-    [ "Grants", "a00192.html#af5a4f593a0041706a8889409ca8f5e76", null ],
-    [ "Memberships", "a00192.html#a846dfc6a0c071f8b59e2bb38e44a288b", null ],
-    [ "Oppositions", "a00192.html#af97726c80450498087ca983b46bae869", null ],
-    [ "Patents", "a00192.html#ab7d95ac2c0d83a585e12a4295b0b9bda", null ],
-    [ "PostgraduateDissertationGuidances", "a00192.html#a16c2f13690bd9bbdbd1ee7afe7483614", null ],
-    [ "PostgraduateGuidances", "a00192.html#ab823033f61fd32b52cab5eede92ba128", null ],
-    [ "Publications", "a00192.html#ac269c2e1d7f82c8e0e026c87e2fb078a", null ],
-    [ "ReportTheses", "a00192.html#ac8d31ad046ab3736dcfabd47643e1b41", null ],
-    [ "Reviews", "a00192.html#a676d99202bbbadc95e59f3b79e5e9d75", null ],
-    [ "ScientificConsultations", "a00192.html#a3ff649c14c189338b4d3a1b17ea48c1c", null ],
-    [ "ScientificInternships", "a00192.html#a3ad85da9a84bd05279dd10cd0e59b6e1", null ],
-    [ "ScientificWorks", "a00192.html#a98768111808f194b462cbcced3eb9a9f", null ],
-    [ "Teacher", "a00192.html#af34909fd1c6b19514c2d42c81b5b4fc9", null ]
+    [ "TeacherReportRepository", "a00192.html#a50e232d5434886259cf5106991bf479d", null ],
+    [ "All", "a00192.html#ab37197ffa9f26a1d9eacff88708434db", null ],
+    [ "AllWhere", "a00192.html#a791e927ee6303175a19372cb90a95b6b", null ],
+    [ "Create", "a00192.html#a41f32b1bb6208e78d7feb0dac97485bf", null ],
+    [ "Delete", "a00192.html#a95b9f550796e9bea58418d856e368237", null ],
+    [ "Get", "a00192.html#abf7f3c93e612d1e2244661b8f62496e6", null ],
+    [ "Get", "a00192.html#a97d81aa9fb46ae405e11806cd924c25e", null ],
+    [ "GetQuery", "a00192.html#aadb805875b52a0f82403cb398faa0cc0", null ],
+    [ "Update", "a00192.html#a2f5ed16419f2d9927b28d330701c3ba0", null ]
 ];

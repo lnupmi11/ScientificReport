@@ -1,12 +1,18 @@
 var a00146 =
 [
-    [ "ReportThesisRepository", "a00146.html#af88a92b8eb26aa2ad54ca123dc7de7d3", null ],
-    [ "All", "a00146.html#a74a69648619f642cfcbfc9e501050cfa", null ],
-    [ "AllWhere", "a00146.html#a778be722f6f361956dbfb699b24df7e1", null ],
-    [ "Create", "a00146.html#afb10cfb54cb3c8e08a368f01c8cb06af", null ],
-    [ "Delete", "a00146.html#a03821b7c0f5ed91bf72ebab5168d2165", null ],
-    [ "Get", "a00146.html#a96c58819ee839854e5282e590e85ae41", null ],
-    [ "Get", "a00146.html#a71b4dd6351ab1544db87260ed4f3ff36", null ],
-    [ "GetQuery", "a00146.html#a19af17ed571e5fe4115cf7ba77d3c007", null ],
-    [ "Update", "a00146.html#a432fb84bc7a671f08fe10611fa84be1d", null ]
+    [ "ReportThesisService", "a00146.html#aa94f1948a33dea6198a046afaf7ccf02", null ],
+    [ "AddAuthor", "a00146.html#a02ca9aaa4505209032e15c8b49601e5f", null ],
+    [ "CreateItem", "a00146.html#af7830ca81443d01f2060eb5c33e25e10", null ],
+    [ "DeleteById", "a00146.html#a82ce58482e170f73ea22bdb77dbf2f4e", null ],
+    [ "Exists", "a00146.html#a8fba0fb0b8143e74ae391614aa0b4c41", null ],
+    [ "Get", "a00146.html#a92935789ab571e273e8b5219ece06750", null ],
+    [ "GetAll", "a00146.html#a88ac2b7fa20e378fb7aa67873fd9743f", null ],
+    [ "GetAllWhere", "a00146.html#a28e742de1ddafb1fad8b41ff5147e925", null ],
+    [ "GetAuthors", "a00146.html#a2c1fadc684c02a385efc1257b931857b", null ],
+    [ "GetById", "a00146.html#a1f6ca1934b458225d79f894c0c9a3ae0", null ],
+    [ "GetCountByRole", "a00146.html#a702dd4e4f5e57431b4ab536a65a77320", null ],
+    [ "GetItemsByRole", "a00146.html#a19eba70728d71acdee75ca7c2ce415be", null ],
+    [ "GetPageByRole", "a00146.html#ae16d68a6e188e126f36ba58d54be5fdc", null ],
+    [ "RemoveAuthor", "a00146.html#ac7c7a62069d0034f56f4052a2d7328c2", null ],
+    [ "UpdateItem", "a00146.html#ad0c4172d268ae22e0c9550a834cb04dd", null ]
 ];
