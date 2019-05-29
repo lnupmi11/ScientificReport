@@ -19,14 +19,23 @@ namespace ScientificReport.Controllers
 		private readonly ITeacherReportService _teacherReportService;
 		private readonly IUserProfileService _userProfileService;
 		private readonly IPublicationService _publicationService;
+		private readonly IArticleService _articleService;
+		private readonly IScientificWorkService _scientificWorkService;
+		private readonly IReportThesisService _reportThesisService;
 
 		public TeacherReportController(ITeacherReportService teacherReportService,
 			IUserProfileService userProfileService,
+			IArticleService articleService,
+			IScientificWorkService scientificWorkService,
+			IReportThesisService reportThesisService,
 			IPublicationService publicationService)
 		{
 			_teacherReportService = teacherReportService;
 			_userProfileService = userProfileService;
 			_publicationService = publicationService;
+			_articleService = articleService;
+			_scientificWorkService = scientificWorkService;
+			_reportThesisService = reportThesisService;
 		}
 
 		// GET: Report
@@ -134,7 +143,10 @@ namespace ScientificReport.Controllers
 				Publications = _publicationService.GetAll()
 					.OrderByDescending(p => report.TeacherReportsPublications.Any(tp => tp.Publication.Id == p.Id))
 					.ThenByDescending(p => p.UserProfilesPublications.Any(u => u.UserProfile.Id == user.Id))
-					.ThenBy(p => p.Title)
+					.ThenBy(p => p.Title),
+				Articles = _articleService.GetAll(),
+				ScientificWorks = _scientificWorkService.GetAll(),
+				ReportTheses = _reportThesisService.GetAll()
 			};
 			return View(data);
 		}
@@ -215,6 +227,48 @@ namespace ScientificReport.Controllers
 		public IActionResult DeletePublication(Guid id, [FromBody] TeacherReportToggleEntityRequest request)
 		{
 			_teacherReportService.RemovePublication(id, request.EntityId);
+			return Json(ApiResponse.Ok);
+		}
+
+		[HttpPost]
+		public IActionResult AddArticle(Guid id, [FromBody] TeacherReportToggleEntityRequest request)
+		{
+			_teacherReportService.AddArticle(id, request.EntityId);
+			return Json(ApiResponse.Ok);
+		}
+
+		[HttpPost]
+		public IActionResult DeleteArticle(Guid id, [FromBody] TeacherReportToggleEntityRequest request)
+		{
+			_teacherReportService.RemoveArticle(id, request.EntityId);
+			return Json(ApiResponse.Ok);
+		}
+
+		[HttpPost]
+		public IActionResult AddScientificWork(Guid id, [FromBody] TeacherReportToggleEntityRequest request)
+		{
+			_teacherReportService.AddScientificWork(id, request.EntityId);
+			return Json(ApiResponse.Ok);
+		}
+
+		[HttpPost]
+		public IActionResult DeleteScientificWork(Guid id, [FromBody] TeacherReportToggleEntityRequest request)
+		{
+			_teacherReportService.RemoveScientificWork(id, request.EntityId);
+			return Json(ApiResponse.Ok);
+		}
+
+		[HttpPost]
+		public IActionResult AddReportThesis(Guid id, [FromBody] TeacherReportToggleEntityRequest request)
+		{
+			_teacherReportService.AddReportThesis(id, request.EntityId);
+			return Json(ApiResponse.Ok);
+		}
+
+		[HttpPost]
+		public IActionResult DeleteReportThesis(Guid id, [FromBody] TeacherReportToggleEntityRequest request)
+		{
+			_teacherReportService.RemoveReportThesis(id, request.EntityId);
 			return Json(ApiResponse.Ok);
 		}
 	}

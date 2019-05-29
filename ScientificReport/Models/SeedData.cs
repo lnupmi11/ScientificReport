@@ -208,6 +208,7 @@ namespace ScientificReport.Models
 				new Conference
 				{
 					Topic = "Best topic ever",
+					Type = Conference.Types.Local,
 					Date = DateTime.Now
 				}
 			);

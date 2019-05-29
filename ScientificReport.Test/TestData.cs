@@ -458,43 +458,43 @@ namespace ScientificReport.Test
 //			{
 //				Publication1, Publication2
 //			},
-			ScientificWorks = new List<ScientificWork>
-			{
-				ScientificWork1
-			},
-			Patents = new List<PatentLicenseActivity>
-			{
-				PatentLicenseActivity1
-			},
-			Reviews = new List<Review>
-			{
-				Review1
-			},
-			Memberships = new List<Membership>
-			{
-				Membership1
-			},
-			Oppositions = new List<Opposition>
-			{
-				Opposition1
-			},
-			ReportTheses = new List<ReportThesis>(),
-			PostgraduateGuidances = new List<PostgraduateGuidance>
-			{
-				PostgraduateGuidance1
-			},
-			ScientificInternships = new List<ScientificInternship>
-			{
-				ScientificInternship1
-			},
-			ScientificConsultations = new List<ScientificConsultation>
-			{
-				ScientificConsultation1
-			},
-			PostgraduateDissertationGuidances = new List<PostgraduateDissertationGuidance>
-			{
-				PostgraduateDissertationGuidance1
-			}
+//			ScientificWorks = new List<ScientificWork>
+//			{
+//				ScientificWork1
+//			},
+//			Patents = new List<PatentLicenseActivity>
+//			{
+//				PatentLicenseActivity1
+//			},
+//			Reviews = new List<Review>
+//			{
+//				Review1
+//			},
+//			Memberships = new List<Membership>
+//			{
+//				Membership1
+//			},
+//			Oppositions = new List<Opposition>
+//			{
+//				Opposition1
+//			},
+//			ReportTheses = new List<ReportThesis>(),
+//			PostgraduateGuidances = new List<PostgraduateGuidance>
+//			{
+//				PostgraduateGuidance1
+//			},
+//			ScientificInternships = new List<ScientificInternship>
+//			{
+//				ScientificInternship1
+//			},
+//			ScientificConsultations = new List<ScientificConsultation>
+//			{
+//				ScientificConsultation1
+//			},
+//			PostgraduateDissertationGuidances = new List<PostgraduateDissertationGuidance>
+//			{
+//				PostgraduateDissertationGuidance1
+//			}
 		};
 		public static readonly TeacherReport TeacherReport2 = new TeacherReport
 		{
@@ -510,43 +510,43 @@ namespace ScientificReport.Test
 //			{
 //				Publication2, Publication3
 //			},
-			ScientificWorks = new List<ScientificWork>
-			{
-				ScientificWork2
-			},
-			Patents = new List<PatentLicenseActivity>
-			{
-				PatentLicenseActivity2
-			},
-			Reviews = new List<Review>
-			{
-				Review2
-			},
-			Memberships = new List<Membership>
-			{
-				Membership2
-			},
-			Oppositions = new List<Opposition>
-			{
-				Opposition2
-			},
-			ReportTheses = new List<ReportThesis>(),
-			PostgraduateGuidances = new List<PostgraduateGuidance>
-			{
-				PostgraduateGuidance2
-			},
-			ScientificInternships = new List<ScientificInternship>
-			{
-				ScientificInternship2
-			},
-			ScientificConsultations = new List<ScientificConsultation>
-			{
-				ScientificConsultation2
-			},
-			PostgraduateDissertationGuidances = new List<PostgraduateDissertationGuidance>
-			{
-				PostgraduateDissertationGuidance2
-			}
+//			ScientificWorks = new List<ScientificWork>
+//			{
+//				ScientificWork2
+//			},
+//			Patents = new List<PatentLicenseActivity>
+//			{
+//				PatentLicenseActivity2
+//			},
+//			Reviews = new List<Review>
+//			{
+//				Review2
+//			},
+//			Memberships = new List<Membership>
+//			{
+//				Membership2
+//			},
+//			Oppositions = new List<Opposition>
+//			{
+//				Opposition2
+//			},
+//			ReportTheses = new List<ReportThesis>(),
+//			PostgraduateGuidances = new List<PostgraduateGuidance>
+//			{
+//				PostgraduateGuidance2
+//			},
+//			ScientificInternships = new List<ScientificInternship>
+//			{
+//				ScientificInternship2
+//			},
+//			ScientificConsultations = new List<ScientificConsultation>
+//			{
+//				ScientificConsultation2
+//			},
+//			PostgraduateDissertationGuidances = new List<PostgraduateDissertationGuidance>
+//			{
+//				PostgraduateDissertationGuidance2
+//			}
 		};
 		public static readonly TeacherReport TeacherReport3 = new TeacherReport
 		{
@@ -562,43 +562,43 @@ namespace ScientificReport.Test
 //			{
 //				Publication1
 //			},
-			ScientificWorks = new List<ScientificWork>
-			{
-				ScientificWork3
-			},
-			Patents = new List<PatentLicenseActivity>
-			{
-				PatentLicenseActivity3
-			},
-			Reviews = new List<Review>
-			{
-				Review3
-			},
-			Memberships = new List<Membership>
-			{
-				Membership3
-			},
-			Oppositions = new List<Opposition>
-			{
-				Opposition3
-			},
-			ReportTheses = new List<ReportThesis>(),
-			PostgraduateGuidances = new List<PostgraduateGuidance>
-			{
-				PostgraduateGuidance3
-			},
-			ScientificInternships = new List<ScientificInternship>
-			{
-				ScientificInternship3
-			},
-			ScientificConsultations = new List<ScientificConsultation>
-			{
-				ScientificConsultation3
-			},
-			PostgraduateDissertationGuidances = new List<PostgraduateDissertationGuidance>
-			{
-				PostgraduateDissertationGuidance3
-			}
+//			ScientificWorks = new List<ScientificWork>
+//			{
+//				ScientificWork3
+//			},
+//			Patents = new List<PatentLicenseActivity>
+//			{
+//				PatentLicenseActivity3
+//			},
+//			Reviews = new List<Review>
+//			{
+//				Review3
+//			},
+//			Memberships = new List<Membership>
+//			{
+//				Membership3
+//			},
+//			Oppositions = new List<Opposition>
+//			{
+//				Opposition3
+//			},
+//			ReportTheses = new List<ReportThesis>(),
+//			PostgraduateGuidances = new List<PostgraduateGuidance>
+//			{
+//				PostgraduateGuidance3
+//			},
+//			ScientificInternships = new List<ScientificInternship>
+//			{
+//				ScientificInternship3
+//			},
+//			ScientificConsultations = new List<ScientificConsultation>
+//			{
+//				ScientificConsultation3
+//			},
+//			PostgraduateDissertationGuidances = new List<PostgraduateDissertationGuidance>
+//			{
+//				PostgraduateDissertationGuidance3
+//			}
 		};
 
 		public static readonly DepartmentReport DepartmentReport1 = new DepartmentReport

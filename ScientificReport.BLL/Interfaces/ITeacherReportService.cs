@@ -18,5 +18,11 @@ namespace ScientificReport.BLL.Interfaces
 			bool Exists(Guid id);
 			void AddPublication(Guid id, Guid entityId);
 			void RemovePublication(Guid id, Guid entityId);
+			void AddArticle(Guid id, Guid entityId);
+			void RemoveArticle(Guid id, Guid entityId);
+			void AddScientificWork(Guid id, Guid entityId);
+			void RemoveScientificWork(Guid id, Guid entityId);
+			void AddReportThesis(Guid id, Guid entityId);
+			void RemoveReportThesis(Guid id, Guid entityId);
 	}
 }

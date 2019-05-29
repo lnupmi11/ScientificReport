@@ -12,13 +12,17 @@ namespace ScientificReport.BLL.Services
 	public class TeacherReportService : ITeacherReportService
 	{
 		private readonly TeacherReportRepository _teacherReportRepository;
+		private readonly ArticleRepository _articleRepository;
 		private readonly ScientificWorkRepository _scientificWorkRepository;
+		private readonly ReportThesisRepository _reportThesisRepository;
 		private readonly PublicationRepository _publicationRepository;
 
 		public TeacherReportService(ScientificReportDbContext context)
 		{
 			_teacherReportRepository = new TeacherReportRepository(context);
+			_articleRepository = new ArticleRepository(context);
 			_scientificWorkRepository = new ScientificWorkRepository(context);
+			_reportThesisRepository = new ReportThesisRepository(context);
 			_publicationRepository = new PublicationRepository(context);
 		}
 
@@ -91,6 +95,84 @@ namespace ScientificReport.BLL.Services
 
 			report.TeacherReportsPublications = report.TeacherReportsPublications
 				.Where(u => u.Publication.Id != entityId).ToList();
+			UpdateItem(report);
+		}
+		public void AddArticle(Guid id, Guid entityId)
+		{
+			var report = GetById(id);
+			var entity = _articleRepository.Get(entityId);
+			if (report.TeacherReportsArticles.Any(u => u.Article.Id == entityId))
+				return;
+			
+			report.TeacherReportsArticles.Add(new TeacherReportsArticles
+			{
+				TeacherReport = report,
+				Article = entity
+			});
+			UpdateItem(report);
+		}
+
+		public void RemoveArticle(Guid id, Guid entityId)
+		{
+			var report = _teacherReportRepository.Get(id);
+			if (report.TeacherReportsArticles.All(u => u.Article.Id != entityId))
+				return;
+			
+
+			report.TeacherReportsArticles = report.TeacherReportsArticles
+				.Where(u => u.Article.Id != entityId).ToList();
+			UpdateItem(report);
+		}
+		public void AddScientificWork(Guid id, Guid entityId)
+		{
+			var report = GetById(id);
+			var entity = _scientificWorkRepository.Get(entityId);
+			if (report.TeacherReportsScientificWorks.Any(u => u.ScientificWork.Id == entityId))
+				return;
+			
+			report.TeacherReportsScientificWorks.Add(new TeacherReportsScientificWorks
+			{
+				TeacherReport = report,
+				ScientificWork = entity
+			});
+			UpdateItem(report);
+		}
+
+		public void RemoveScientificWork(Guid id, Guid entityId)
+		{
+			var report = _teacherReportRepository.Get(id);
+			if (report.TeacherReportsScientificWorks.All(u => u.ScientificWork.Id != entityId))
+				return;
+			
+
+			report.TeacherReportsScientificWorks = report.TeacherReportsScientificWorks
+				.Where(u => u.ScientificWork.Id != entityId).ToList();
+			UpdateItem(report);
+		}
+		public void AddReportThesis(Guid id, Guid entityId)
+		{
+			var report = GetById(id);
+			var entity = _reportThesisRepository.Get(entityId);
+			if (report.TeacherReportsReportThesis.Any(u => u.ReportThesis.Id == entityId))
+				return;
+			
+			report.TeacherReportsReportThesis.Add(new TeacherReportsReportThesis
+			{
+				TeacherReport = report,
+				ReportThesis = entity
+			});
+			UpdateItem(report);
+		}
+
+		public void RemoveReportThesis(Guid id, Guid entityId)
+		{
+			var report = _teacherReportRepository.Get(id);
+			if (report.TeacherReportsReportThesis.All(u => u.ReportThesis.Id != entityId))
+				return;
+			
+
+			report.TeacherReportsReportThesis = report.TeacherReportsReportThesis
+				.Where(u => u.ReportThesis.Id != entityId).ToList();
 			UpdateItem(report);
 		}
 	}

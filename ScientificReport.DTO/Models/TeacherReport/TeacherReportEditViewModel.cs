@@ -9,5 +9,8 @@ namespace ScientificReport.DTO.Models.TeacherReport
 
 		public IEnumerable<DAL.Entities.UserProfile.UserProfile> Users { get; set; }
 		public IEnumerable<DAL.Entities.Publication> Publications { get; set; }
+		public IEnumerable<DAL.Entities.Article> Articles { get; set; }
+		public IEnumerable<DAL.Entities.ScientificWork> ScientificWorks { get; set; }
+		public IEnumerable<DAL.Entities.ReportThesis> ReportTheses { get; set; }
 	}
 }
