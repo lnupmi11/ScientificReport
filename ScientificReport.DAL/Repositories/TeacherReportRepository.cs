@@ -17,14 +17,14 @@ namespace ScientificReport.DAL.Repositories
 			_context = context;
 		}
 		
-		public virtual IEnumerable<TeacherReport> All()
+		public IEnumerable<TeacherReport> All()
 		{
 			return _context.TeacherReports
 						.Include(r => r.Teacher)
 						.Include(g => g.Grants)
 						.Include(b=> b.Reviews)
 						.Include(o=>o.Oppositions)
-						.Include(p=>p.Publications)
+						.Include(p=>p.TeacherReportsPublications).ThenInclude(p => p.Publication)
 						.Include(r=>r.ReportTheses)
 						.Include(s=>s.ScientificWorks)
 						.Include(p=>p.PostgraduateGuidances)

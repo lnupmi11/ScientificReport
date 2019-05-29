@@ -454,10 +454,10 @@ namespace ScientificReport.Test
 			},
 			Created = DateTime.Now,
 			Teacher = User1,
-			Publications = new List<Publication>
-			{
-				Publication1, Publication2
-			},
+//			Publications = new List<Publication>
+//			{
+//				Publication1, Publication2
+//			},
 			ScientificWorks = new List<ScientificWork>
 			{
 				ScientificWork1
@@ -506,10 +506,10 @@ namespace ScientificReport.Test
 			},
 			Created = DateTime.Now,
 			Teacher = User2,
-			Publications = new List<Publication>
-			{
-				Publication2, Publication3
-			},
+//			Publications = new List<Publication>
+//			{
+//				Publication2, Publication3
+//			},
 			ScientificWorks = new List<ScientificWork>
 			{
 				ScientificWork2
@@ -558,10 +558,10 @@ namespace ScientificReport.Test
 			},
 			Created = DateTime.Now,
 			Teacher = User3,
-			Publications = new List<Publication>
-			{
-				Publication1
-			},
+//			Publications = new List<Publication>
+//			{
+//				Publication1
+//			},
 			ScientificWorks = new List<ScientificWork>
 			{
 				ScientificWork3

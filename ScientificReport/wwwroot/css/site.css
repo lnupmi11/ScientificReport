@@ -1,61 +1,4 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-/*a.navbar-brand {*/
-/*white-space: normal;*/
-/*text-align: center;*/
-/*word-break: break-all;*/
-/*}*/
-
-/*!* Sticky footer styles*/
-/*-------------------------------------------------- *!*/
-/*html {*/
-/*font-size: 14px;*/
-/*}*/
-/*@media (min-width: 768px) {*/
-/*html {*/
-/*font-size: 16px;*/
-/*}*/
-/*}*/
-
-/*.border-top {*/
-/*border-top: 1px solid #e5e5e5;*/
-/*}*/
-/*.border-bottom {*/
-/*border-bottom: 1px solid #e5e5e5;*/
-/*}*/
-
-/*.box-shadow {*/
-/*box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);*/
-/*}*/
-
-/*button.accept-policy {*/
-/*font-size: 1rem;*/
-/*line-height: inherit;*/
-/*}*/
-
-/*!* Sticky footer styles*/
-/*-------------------------------------------------- *!*/
-/*html {*/
-/*position: relative;*/
-/*min-height: 100%;*/
-/*}*/
-
-/*body {*/
-/*!* Margin bottom by footer height *!*/
-/*margin-bottom: 60px;*/
-/*}*/
-/*.footer {*/
-/*position: absolute;*/
-/*bottom: 0;*/
-/*width: 100%;*/
-/*white-space: nowrap;*/
-/*!* Set the fixed height of the footer here *!*/
-/*height: 60px;*/
-/*line-height: 60px; !* Vertically center the text there *!*/
-/*}*/
-
-.mylogo {
+﻿.mylogo {
 	width: 50px;
 	height: 50px;
 	margin-top: 5px;
@@ -63,3 +6,56 @@ for details on configuring this project to bundle and minify static web assets. 
 	border-radius: 50%;
 }
 
+html, body { height: 100%; }
+
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+.mylogo {
+	width: 50px;
+	height: 50px;
+	margin-top: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+	-ms-border-radius: 50%;
+	border-radius: 50%;
+}
+
+#dropdown1, #reports-dropdown {
+	position: absolute;
+	top: -48px;
+	height: auto;
+}
+
+.dropdown-content li { min-height: 32px; }
+
+.dropdown-content li > a {
+	font-size: 15px;
+	color: black;
+	padding: 5px 9px;
+	cursor: pointer;
+}
+
+footer {
+	padding-top: 7px;
+	margin-top: 20px;
+	-o-flex-shrink: 0;
+	-webkit-flex-shrink: 0;
+	flex-shrink: 0;
+	font-size: 14px;
+	font-family: 'Roboto', sans-serif;
+	height: 50px;
+}
+
+.content {
+	-webkit-flex: 1 0 auto;
+	-ms-flex: 1 0 auto;
+	-o-flex: 1 0 auto;
+	flex: 1 0 auto;
+}
+
+.text-green { color: rgb(0, 179, 0); }
+.text-red { color: rgb(177, 0, 0); }
+.hidden { display: none; }

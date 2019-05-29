@@ -1,22 +1,32 @@
 using System;
+using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Rotativa.AspNetCore;
 using ScientificReport.BLL.Interfaces;
+using ScientificReport.Controllers.Utils;
 using ScientificReport.DAL.Entities.Reports;
+using ScientificReport.DAL.Entities.UserProfile;
+using ScientificReport.DAL.Roles;
 using ScientificReport.DTO.Models.TeacherReport;
 
 namespace ScientificReport.Controllers
 {
-//	[Authorize(Roles = UserProfileRole.Teacher)]
+	[Authorize(Roles = UserProfileRole.Teacher)]
 	public class TeacherReportController : Controller
 	{
 		private readonly ITeacherReportService _teacherReportService;
 		private readonly IUserProfileService _userProfileService;
+		private readonly IPublicationService _publicationService;
 
-		public TeacherReportController(ITeacherReportService teacherReportService, IUserProfileService userProfileService)
+		public TeacherReportController(ITeacherReportService teacherReportService,
+			IUserProfileService userProfileService,
+			IPublicationService publicationService)
 		{
 			_teacherReportService = teacherReportService;
 			_userProfileService = userProfileService;
+			_publicationService = publicationService;
 		}
 
 		// GET: Report
@@ -42,6 +52,28 @@ namespace ScientificReport.Controllers
 			return View(report);
 		}
 
+		// GET: Report/Print/{id}
+		public IActionResult Print(Guid? id)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
+
+//			ViewData["Message"] = "Your application description page.";
+			var report = _teacherReportService.GetById(id.Value);
+
+			var filename = $"{report.Teacher.UserName}-{report.Created}_report.pdf";
+
+			// TODO: delete the next row, when the development is finished
+			filename = null;
+
+			return new ViewAsPdf(report, ViewData)
+			{
+				FileName = filename
+			};
+		}
+
 		// GET: Report/Create
 		public IActionResult Create()
 		{
@@ -56,12 +88,13 @@ namespace ScientificReport.Controllers
 		// POST: Report/Create
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public IActionResult Create(Guid UserId)
+		public IActionResult Create(Guid userId)
 		{
 			if (!ModelState.IsValid)
 			{
 				var viewModel = new TeacherReportCreateViewModel
 				{
+					UserId = _userProfileService.Get(u => u.UserName == HttpContext.User.Identity.Name).Id,
 					Users = _userProfileService.GetAll()
 				};
 
@@ -71,12 +104,12 @@ namespace ScientificReport.Controllers
 
 			var report = new TeacherReport
 			{
-				Teacher = _userProfileService.GetById(UserId)
+				Teacher = _userProfileService.GetById(userId)
 			};
 
 			_teacherReportService.CreateItem(report);
 			return RedirectToAction(nameof(Index));
-		}	
+		}
 
 		// GET: Report/Edit/{id}
 		public IActionResult Edit(Guid? id)
@@ -92,31 +125,49 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
-			return View(report);
+			var user = _userProfileService.Get(u => u.UserName == HttpContext.User.Identity.Name);
+
+			var data = new TeacherReportEditViewModel
+			{
+				TeacherReport = report,
+				Users = _userProfileService.GetAll(),
+				Publications = _publicationService.GetAll()
+					.OrderByDescending(p => report.TeacherReportsPublications.Any(tp => tp.Publication.Id == p.Id))
+					.ThenByDescending(p => p.UserProfilesPublications.Any(u => u.UserProfile.Id == user.Id))
+					.ThenBy(p => p.Title)
+			};
+			return View(data);
 		}
 
 		// POST: Report/Edit/{id}
-		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public IActionResult Edit(Guid id, [Bind("Id,Created")] TeacherReport report)
+		public IActionResult Edit(Guid id, TeacherReportEditViewModel data)
 		{
-			if (id != report.Id)
+			if (id != data.TeacherReport.Id)
 			{
 				return NotFound();
 			}
 
-			if (!ModelState.IsValid) return View(report);
+			if (!ModelState.IsValid)
+			{
+				data.Publications = _publicationService.GetAll();
+				data.Users = _userProfileService.GetAll();
+
+				return View(data);
+			}
+
+			data.TeacherReport.Teacher = _userProfileService.GetById(data.TeacherReport.Teacher.Id);
+
 			try
 			{
-				_teacherReportService.UpdateItem(report);
+				_teacherReportService.UpdateItem(data.TeacherReport);
 			}
 			catch (DbUpdateConcurrencyException)
 			{
-				if (!_teacherReportService.Exists(report.Id))
+				if (!_teacherReportService.Exists(data.TeacherReport.Id))
 					return NotFound();
-
+				Console.WriteLine();
 				throw;
 			}
 
@@ -140,13 +191,31 @@ namespace ScientificReport.Controllers
 			return View(report);
 		}
 
-		// POST: Report/Delete/{id}
+		// POST: TeacherReport/Delete/{id}
 		[HttpPost, ActionName("Delete")]
 		[ValidateAntiForgeryToken]
 		public IActionResult DeleteConfirmed(Guid id)
 		{
 			_teacherReportService.DeleteById(id);
 			return RedirectToAction(nameof(Index));
+		}
+
+		// POST: TeacherReport/AddAuthor/5
+		[HttpPost]
+//		[ValidateAntiForgeryToken]
+		public IActionResult AddPublication(Guid id, [FromBody] TeacherReportToggleEntityRequest request)
+		{
+			_teacherReportService.AddPublication(id, request.EntityId);
+			return Json(ApiResponse.Ok);
+		}
+
+		// POST: TeacherReport/DeleteAuthor/5
+		[HttpPost]
+//		[ValidateAntiForgeryToken]
+		public IActionResult DeletePublication(Guid id, [FromBody] TeacherReportToggleEntityRequest request)
+		{
+			_teacherReportService.RemovePublication(id, request.EntityId);
+			return Json(ApiResponse.Ok);
 		}
 	}
 }

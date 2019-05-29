@@ -16,5 +16,7 @@ namespace ScientificReport.BLL.Interfaces
 			void DeleteById(Guid id);
 			bool Any(Func<TeacherReport, bool> predicate);
 			bool Exists(Guid id);
+			void AddPublication(Guid id, Guid entityId);
+			void RemovePublication(Guid id, Guid entityId);
 	}
 }

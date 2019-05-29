@@ -38,58 +38,6 @@
 	<link rel="stylesheet" href="~/css/site.css"/>
 	<link rel="stylesheet" href="~/css/hrStyles.css"/>
 	<link rel="stylesheet" href="~/css/inputsStyle.css"/>
-	<style>
-		
-		html, body { height: 100%; }
-
-		body {
-			display: flex;
-			flex-direction: column;
-		}
-
-		.mylogo {
-			width: 50px;
-			height: 50px;
-			margin-top: 5px;
-			margin-right: 10px;
-			margin-left: 10px;
-			-ms-border-radius: 50%;
-			border-radius: 50%;
-		}
-
-		#dropdown1, #reports-dropdown {
-			position: absolute;
-			top: -48px;
-			height: auto;
-		}
-
-		.dropdown-content li { min-height: 32px; }
-
-		.dropdown-content li > a {
-			font-size: 15px;
-			color: black;
-			padding: 5px 9px;
-			cursor: pointer;
-		}
-
-		footer {
-			padding-top: 7px;
-			margin-top: 20px;
-			-o-flex-shrink: 0;
-			-webkit-flex-shrink: 0;
-			flex-shrink: 0;
-			font-size: 14px;
-			font-family: 'Roboto', sans-serif;
-			height: 50px;
-		}
-
-		.content {
-			-webkit-flex: 1 0 auto;
-			-ms-flex: 1 0 auto;
-			-o-flex: 1 0 auto;
-			flex: 1 0 auto;
-		}
-	</style>
 </head>
 <body>
 <header>
@@ -255,9 +203,8 @@
 	        integrity="sha256-E/V4cWE4qvAeO5MOhjtGtqDzPndRO1LBk8lJ/PR7CA4=">
 	</script>
 </environment>
-<script src="~/js/site.js" asp-append-version="true"></script>
 <script type="text/javascript" src="~/js/materialize.min.js"></script>
-<script> $(".dropdown-trigger").dropdown(); </script>
+<script src="~/js/site.js" asp-append-version="true"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
 
 @RenderSection("Scripts", required: false)
