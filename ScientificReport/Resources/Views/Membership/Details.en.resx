@@ -44,4 +44,7 @@
 	<data name="EditorialBoard" xml:space="preserve">
 		<value>Scientific journal editorial board</value>
 	</data>
+	<data name="User" xml:space="preserve">
+		<value>User</value>
+	</data>
 </root>

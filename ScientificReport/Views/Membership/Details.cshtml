@@ -11,6 +11,17 @@
 	<hr/>
 	<dl class="row">
 		<dt class = "col s3">
+			@Localizer["User"]
+		</dt>
+		<dd class = "col s9">
+			<a asp-controller="UserProfile" asp-action="Details"
+			   asp-route-id="@Model.User.Id">
+				@Model.User.FullName
+			</a>
+		</dd>
+	</dl>
+	<dl class="row">
+		<dt class = "col s3">
 			@Localizer["Member of"]
 		</dt>
 		<dd class = "col s9">

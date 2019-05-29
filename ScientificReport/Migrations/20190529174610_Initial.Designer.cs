@@ -9,7 +9,7 @@ using ScientificReport.DAL.DbContext;
 namespace ScientificReport.Migrations
 {
     [DbContext(typeof(ScientificReportDbContext))]
-    [Migration("20190529125441_Initial")]
+    [Migration("20190529174610_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -262,9 +262,13 @@ namespace ScientificReport.Migrations
 
                     b.Property<Guid?>("TeacherReportId");
 
+                    b.Property<Guid?>("UserId");
+
                     b.HasKey("Id");
 
                     b.HasIndex("TeacherReportId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Memberships");
                 });
@@ -913,6 +917,10 @@ namespace ScientificReport.Migrations
                     b.HasOne("ScientificReport.DAL.Entities.Reports.TeacherReport")
                         .WithMany("Memberships")
                         .HasForeignKey("TeacherReportId");
+
+                    b.HasOne("ScientificReport.DAL.Entities.UserProfile.UserProfile", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.Opposition", b =>

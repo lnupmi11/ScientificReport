@@ -17,8 +17,8 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="Membership" xml:space="preserve">
-		<value>Membership</value>
+    <data name="Memberships" xml:space="preserve">
+		<value>Memberships</value>
 	</data>
 	<data name="Member of" xml:space="preserve">
 		<value>Member of</value>
@@ -52,5 +52,8 @@
 	</data>
 	<data name="EditorialBoard" xml:space="preserve">
 		<value>Scientific journal editorial board</value>
+	</data>
+	<data name="User" xml:space="preserve">
+		<value>User</value>
 	</data>
 </root>

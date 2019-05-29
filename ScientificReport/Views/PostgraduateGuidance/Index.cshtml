@@ -12,19 +12,28 @@
 </p>
 <table class="responsive-table">
 	<thead>
-		<tr>
-			<th>
+	<tr>
+		<th>
+			@Localizer["Guide"]
+		</th>
+		<th>
 			@Localizer["Postgraduate name"]
-			</th>
-			<th>
+		</th>
+		<th>
 			@Localizer["Postgraduate info"]
-			</th>
-			<th></th>
-		</tr>
+		</th>
+		<th></th>
+	</tr>
 	</thead>
 	<tbody>
 @foreach (var item in Model.PostgraduateGuidances) {
 		<tr>
+			<td>
+				<a asp-controller="UserProfile" asp-action="Details"
+				   asp-route-id="@item.Guide.Id">
+					@item.Guide.FullName
+				</a>
+			</td>
 			<td>
 				@Html.DisplayFor(modelItem => item.PostgraduateName)
 			</td>

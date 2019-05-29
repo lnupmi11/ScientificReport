@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Interfaces;
@@ -18,7 +19,7 @@ namespace ScientificReport.DAL.Repositories
 		
 		public virtual IEnumerable<PostgraduateDissertationGuidance> All()
 		{
-			return _context.PostgraduateDissertationGuidances;
+			return _context.PostgraduateDissertationGuidances.Include(pd => pd.Guide);
 		}
 
 		public virtual IEnumerable<PostgraduateDissertationGuidance> AllWhere(Func<PostgraduateDissertationGuidance, bool> predicate)

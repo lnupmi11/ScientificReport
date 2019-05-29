@@ -2,6 +2,8 @@ using System;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ScientificReport.BLL.Interfaces;
+using ScientificReport.Controllers.Utils;
+using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Roles;
 using ScientificReport.DTO.Models.Membership;
 
@@ -11,17 +13,25 @@ namespace ScientificReport.Controllers
 	public class MembershipController : Controller
 	{
 		private readonly IMembershipService _membershipService;
+		private readonly IDepartmentService _departmentService;
+		private readonly IUserProfileService _userProfileService;
 
-		public MembershipController(IMembershipService membershipService)
+		public MembershipController(
+			IMembershipService membershipService,
+			IDepartmentService departmentService,
+			IUserProfileService userProfileService
+		)
 		{
 			_membershipService = membershipService;
+			_departmentService = departmentService;
+			_userProfileService = userProfileService;
 		}
 
 		// GET: Membership
 		public IActionResult Index(MembershipIndexModel model)
 		{
-			model.Memberships = _membershipService.GetPage(model.CurrentPage, model.PageSize);
-			model.Count = _membershipService.GetCount();
+			model.Memberships = _membershipService.GetPageByRole(model.CurrentPage, model.PageSize, User);
+			model.Count = _membershipService.GetCountByRole(User);
 			return View(model);
 		}
 
@@ -39,6 +49,11 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
+			if (!UserHasPermission(membership))
+			{
+				return Forbid();
+			}
+
 			return View(membership);
 		}
 
@@ -54,7 +69,10 @@ namespace ScientificReport.Controllers
 			{
 				return View(model);
 			}
+
+			model.User = _userProfileService.Get(User);
 			_membershipService.CreateItem(model);
+
 			return RedirectToAction(nameof(Index));
 		}
 
@@ -71,6 +89,11 @@ namespace ScientificReport.Controllers
 			{
 				return NotFound();
 			}
+			
+			if (!UserHasPermission(membership))
+			{
+				return Forbid();
+			}
 
 			return View(new MembershipEditModel(membership));
 		}
@@ -84,12 +107,17 @@ namespace ScientificReport.Controllers
 			{
 				return NotFound();
 			}
-
+			
+			if (!UserHasPermission(_membershipService.GetById(id)))
+			{
+				return Forbid();
+			}
+			
 			if (!ModelState.IsValid)
 			{
 				return View(model);
 			}
-
+			
 			_membershipService.UpdateItem(model);
 			return RedirectToAction(nameof(Index));
 		}
@@ -108,6 +136,11 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
+			if (!UserHasPermission(membership))
+			{
+				return Forbid();
+			}
+
 			return View(membership);
 		}
 
@@ -120,9 +153,24 @@ namespace ScientificReport.Controllers
 			{
 				return NotFound();
 			}
+			
+			if (!UserHasPermission(_membershipService.GetById(id)))
+			{
+				return Forbid();
+			}
 
 			_membershipService.DeleteById(id);
 			return RedirectToAction(nameof(Index));
+		}
+		
+		private bool UserHasPermission(Membership membership)
+		{
+			var user = _userProfileService.Get(User);
+			var department = _departmentService.Get(d => d.Staff.Contains(user));
+			return PageHelpers.IsAdmin(User) ||
+			       PageHelpers.IsHeadOfDepartment(User) &&
+			       department.Staff.Contains(membership.User) ||
+			       membership.User.Id == user.Id;
 		}
 	}
 }

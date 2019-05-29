@@ -11,7 +11,7 @@
 	ViewData["Title"] = Localizer["Details of publication"];
 }
 
-@if (!Model.UserIsAuthor && Model.Publication.PublishingYear == DateTime.Now.Year)
+@if (!Model.UserIsAuthor)
 {
 	<div class="row">
 		<div class="col s12 m12" style="display: inline-block;">
@@ -159,7 +159,7 @@
 			isHeadOfDepartment = Model.Publication.UserProfilesPublications.Any(p => department.Staff.Contains(p.UserProfile));	
 		}
 	}
-	@if ((PageHelpers.IsAdmin(User) || isHeadOfDepartment || Model.Publication.UserProfilesPublications.Any(p => p.UserProfile.UserName == User.Identity.Name)) && Model.Publication.PublishingYear == DateTime.Now.Year)
+	@if ((PageHelpers.IsAdmin(User) || isHeadOfDepartment || Model.Publication.UserProfilesPublications.Any(p => p.UserProfile.UserName == User.Identity.Name)))
 	{
 		<a asp-action="Edit" asp-route-id="@Model.Publication.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
 	}

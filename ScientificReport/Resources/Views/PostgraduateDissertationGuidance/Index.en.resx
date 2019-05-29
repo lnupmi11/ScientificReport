@@ -52,4 +52,7 @@
 	<data name="Next" xml:space="preserve">
 		<value>Next</value>
 	</data>
+	<data name="Guide" xml:space="preserve">
+		<value>Guide</value>
+	</data>
 </root>

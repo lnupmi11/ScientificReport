@@ -19,12 +19,21 @@
 			<th>
 				@Localizer["Date of opposition"]
 			</th>
+			<th>
+				@Localizer["Opponent"]
+			</th>
 			<th></th>
 		</tr>
 	</thead>
 	<tbody>
 @foreach (var item in Model.Oppositions) {
 		<tr>
+			<td>
+				<a asp-controller="UserProfile" asp-action="Details"
+				   asp-route-id="@item.Opponent.Id">
+					@item.Opponent.FullName
+				</a>
+			</td>
 			<td>
 				@Html.DisplayFor(modelItem => item.About)
 			</td>

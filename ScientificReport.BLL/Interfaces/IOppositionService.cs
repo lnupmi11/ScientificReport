@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Security.Claims;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DTO.Models.Opposition;
 
@@ -9,8 +10,9 @@ namespace ScientificReport.BLL.Interfaces
 	{
 		IEnumerable<Opposition> GetAll();
 		IEnumerable<Opposition> GetAllWhere(Func<Opposition, bool> predicate);
-		IEnumerable<Opposition> GetPage(int page, int count);
-		int GetCount();
+		IEnumerable<Opposition> GetItemsByRole(ClaimsPrincipal userClaims);
+		IEnumerable<Opposition> GetPageByRole(int page, int count, ClaimsPrincipal userClaims);
+		int GetCountByRole(ClaimsPrincipal userClaims);
 		Opposition GetById(Guid id);
 		Opposition Get(Func<Opposition, bool> predicate);
 		void CreateItem(OppositionModel model);

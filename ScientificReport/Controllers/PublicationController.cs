@@ -189,14 +189,14 @@ namespace ScientificReport.Controllers
 			}
 
 			var user = _userProfileService.Get(User);
-			if (!_publicationService.GetPublicationAuthors(publication.Id).Contains(user) && publication.PublishingYear == DateTime.Now.Year)
+			if (!_publicationService.GetPublicationAuthors(publication.Id).Contains(user))
 			{
 				_publicationService.AddAuthor(publication, user);
 			}
 
 			return RedirectToAction("Details", new { id = id.Value });
 		}
-		
+
 		// POST: Publication/AddUserToAuthors/{publicationId}
 		[HttpPost]
 		[Authorize(Roles = UserProfileRole.HeadOfDepartmentOrAdmin)]
@@ -281,7 +281,7 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 			
-			if (!PageHelpers.IsAdmin(User) || publication.PublishingYear != DateTime.Now.Year)
+			if (!PageHelpers.IsAdmin(User))
 			{
 				return Forbid();
 			}
@@ -300,7 +300,7 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 			
-			if (!PageHelpers.IsAdmin(User) || publication.PublishingYear != DateTime.Now.Year)
+			if (!PageHelpers.IsAdmin(User))
 			{
 				return Forbid();
 			}
@@ -315,8 +315,7 @@ namespace ScientificReport.Controllers
 			var department = _departmentService.Get(d => d.Staff.Contains(user));
 			var isHeadOfDepartment = PageHelpers.IsHeadOfDepartment(User) && publication.UserProfilesPublications.Any(p => department.Staff.Contains(p.UserProfile));
 			return PageHelpers.IsAdmin(User) || isHeadOfDepartment ||
-			       publication.UserProfilesPublications.Any(p => p.UserProfile.UserName == User.Identity.Name) &&
-			       publication.PublishingYear == DateTime.Now.Year;
+			       publication.UserProfilesPublications.Any(p => p.UserProfile.UserName == User.Identity.Name);
 		}
 	}
 }

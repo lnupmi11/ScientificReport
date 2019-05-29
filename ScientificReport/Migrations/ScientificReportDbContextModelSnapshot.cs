@@ -260,9 +260,13 @@ namespace ScientificReport.Migrations
 
                     b.Property<Guid?>("TeacherReportId");
 
+                    b.Property<Guid?>("UserId");
+
                     b.HasKey("Id");
 
                     b.HasIndex("TeacherReportId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Memberships");
                 });
@@ -911,6 +915,10 @@ namespace ScientificReport.Migrations
                     b.HasOne("ScientificReport.DAL.Entities.Reports.TeacherReport")
                         .WithMany("Memberships")
                         .HasForeignKey("TeacherReportId");
+
+                    b.HasOne("ScientificReport.DAL.Entities.UserProfile.UserProfile", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.Opposition", b =>

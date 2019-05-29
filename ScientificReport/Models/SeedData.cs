@@ -415,7 +415,8 @@ namespace ScientificReport.Models
 			postgraduateGuidanceService.CreateItem(new PostgraduateGuidanceModel(new PostgraduateGuidance
 			{
 				PostgraduateName = "Bogdan Ivanovych",
-				PostgraduateInfo = "now is working"
+				PostgraduateInfo = "now is working",
+				Guide = context.UserProfiles.First(u => u.UserName == "orest")
 			}));
 		}
 
@@ -431,7 +432,8 @@ namespace ScientificReport.Models
 				Dissertation = "big",
 				Speciality = "math",
 				DateDegreeGained = DateTime.Today,
-				GraduationYear = 2012
+				GraduationYear = 2012,
+				Guide = context.UserProfiles.First(u => u.UserName == "yura")
 			}));
 		}
 
@@ -469,6 +471,7 @@ namespace ScientificReport.Models
 				{
 					About = "Nice opposition",
 					DateOfOpposition = DateTime.Now,
+					Opponent = context.UserProfiles.First(u => u.UserName == "yura")
 				})
 			);
 			
@@ -477,6 +480,7 @@ namespace ScientificReport.Models
 				{
 					About = "Bad opposition",
 					DateOfOpposition = DateTime.Today,
+					Opponent = context.UserProfiles.First(u => u.UserName == "olena")
 				})
 			);
 		}
@@ -490,17 +494,20 @@ namespace ScientificReport.Models
 			membershipService.CreateItem(new MembershipModel(new Membership
 			{
 				MemberOf = Membership.MemberOfChoices.ScientificCouncil,
-				MembershipInfo = "good helper"
+				MembershipInfo = "good helper",
+				User = context.UserProfiles.First(u => u.UserName == "yura")
 			}));
 			membershipService.CreateItem(new MembershipModel(new Membership
 			{
 				MemberOf = Membership.MemberOfChoices.ExpertCouncil,
-				MembershipInfo = "best helper"
+				MembershipInfo = "best helper",
+				User = context.UserProfiles.First(u => u.UserName == "orest")
 			}));
 			membershipService.CreateItem(new MembershipModel(new Membership
 			{
 				MemberOf = Membership.MemberOfChoices.EditorialBoard,
-				MembershipInfo = "normal guy"
+				MembershipInfo = "normal guy",
+				User = context.UserProfiles.First(u => u.UserName == "yura")
 			}));
 		}
 

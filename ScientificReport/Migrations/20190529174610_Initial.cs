@@ -336,6 +336,7 @@ namespace ScientificReport.Migrations
                     Id = table.Column<Guid>(nullable: false),
                     MemberOf = table.Column<int>(nullable: false),
                     MembershipInfo = table.Column<string>(nullable: true),
+                    UserId = table.Column<Guid>(nullable: true),
                     TeacherReportId = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
@@ -345,6 +346,12 @@ namespace ScientificReport.Migrations
                         name: "FK_Memberships_TeacherReports_TeacherReportId",
                         column: x => x.TeacherReportId,
                         principalTable: "TeacherReports",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Memberships_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -914,6 +921,11 @@ namespace ScientificReport.Migrations
                 name: "IX_Memberships_TeacherReportId",
                 table: "Memberships",
                 column: "TeacherReportId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Memberships_UserId",
+                table: "Memberships",
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Oppositions_OpponentId",

@@ -47,4 +47,7 @@
 	<data name="Back to list" xml:space="preserve">
 		<value>Back to list</value>
 	</data>
+	<data name="Guide" xml:space="preserve">
+		<value>Guide</value>
+	</data>
 </root>

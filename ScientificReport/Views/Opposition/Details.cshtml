@@ -22,6 +22,15 @@
 		<dd class = "col s10">
 			@Html.DisplayFor(model => model.DateOfOpposition)
 		</dd>
+		<dt class = "col s2">
+			@Localizer["Opponent"]
+		</dt>
+		<dd class="col s10">
+			<a asp-controller="UserProfile" asp-action="Details"
+			   asp-route-id="@Model.Opponent.Id">
+				@Model.Opponent.FullName
+			</a>
+		</dd>
 	</dl>
 </div>
 <div style="margin-top: 20px">
