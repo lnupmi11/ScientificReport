@@ -2,6 +2,8 @@ using System;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ScientificReport.BLL.Interfaces;
+using ScientificReport.Controllers.Utils;
+using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Roles;
 using ScientificReport.DTO.Models.ScientificConsultation;
 
@@ -11,17 +13,25 @@ namespace ScientificReport.Controllers
 	public class ScientificConsultationController : Controller
 	{
 		private readonly IScientificConsultationService _scientificConsultationService;
+		private readonly IUserProfileService _userProfileService;
+		private readonly IDepartmentService _departmentService;
 
-		public ScientificConsultationController(IScientificConsultationService scientificConsultationService)
+		public ScientificConsultationController(
+			IScientificConsultationService scientificConsultationService,
+			IUserProfileService userProfileService,
+			IDepartmentService departmentService
+		)
 		{
 			_scientificConsultationService = scientificConsultationService;
+			_userProfileService = userProfileService;
+			_departmentService = departmentService;
 		}
 
 		// GET: ScientificConsultation
 		public IActionResult Index(ScientificConsultationIndexModel model)
 		{
-			model.ScientificConsultations = _scientificConsultationService.GetPage(model.CurrentPage, model.PageSize);
-			model.Count = _scientificConsultationService.GetCount();
+			model.ScientificConsultations = _scientificConsultationService.GetPageByRole(model.CurrentPage, model.PageSize, User);
+			model.Count = _scientificConsultationService.GetCountByRole(User);
 			return View(model);
 		}
 
@@ -39,6 +49,11 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
+			if (!UserHasPermission(scientificConsultation))
+			{
+				return Forbid();
+			}
+
 			return View(scientificConsultation);
 		}
 
@@ -54,6 +69,8 @@ namespace ScientificReport.Controllers
 			{
 				return View(model);
 			}
+
+			model.Guide = _userProfileService.Get(User);
 			_scientificConsultationService.CreateItem(model);
 			return RedirectToAction(nameof(Index));
 		}
@@ -71,6 +88,11 @@ namespace ScientificReport.Controllers
 			{
 				return NotFound();
 			}
+			
+			if (!UserHasPermission(scientificConsultation))
+			{
+				return Forbid();
+			}
 
 			return View(new ScientificConsultationEditModel(scientificConsultation));
 		}
@@ -83,6 +105,11 @@ namespace ScientificReport.Controllers
 			if (id != model.Id || !_scientificConsultationService.Exists(id))
 			{
 				return NotFound();
+			}
+			
+			if (!UserHasPermission(_scientificConsultationService.GetById(id)))
+			{
+				return Forbid();
 			}
 
 			if (!ModelState.IsValid)
@@ -107,6 +134,11 @@ namespace ScientificReport.Controllers
 			{
 				return NotFound();
 			}
+			
+			if (!UserHasPermission(scientificConsultation))
+			{
+				return Forbid();
+			}
 
 			return View(scientificConsultation);
 		}
@@ -120,9 +152,24 @@ namespace ScientificReport.Controllers
 			{
 				return NotFound();
 			}
+			
+			if (!UserHasPermission(_scientificConsultationService.GetById(id)))
+			{
+				return Forbid();
+			}
 
 			_scientificConsultationService.DeleteById(id);
 			return RedirectToAction(nameof(Index));
+		}
+
+		private bool UserHasPermission(ScientificConsultation scientificConsultation)
+		{
+			var user = _userProfileService.Get(User);
+			var department = _departmentService.Get(d => d.Staff.Contains(user));
+			return PageHelpers.IsAdmin(User) ||
+			       PageHelpers.IsHeadOfDepartment(User) &&
+			       department.Staff.Contains(scientificConsultation.Guide) ||
+			       scientificConsultation.Guide.Id == user.Id;
 		}
 	}
 }

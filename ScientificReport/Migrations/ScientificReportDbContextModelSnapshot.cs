@@ -744,19 +744,15 @@ namespace ScientificReport.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("ScientificInternshipId");
+                    b.Property<Guid>("ScientificInternshipId");
 
-                    b.Property<Guid?>("ScientificInternshipId1");
-
-                    b.Property<int>("UserProfileId");
-
-                    b.Property<Guid?>("UserProfileId1");
+                    b.Property<Guid>("UserProfileId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ScientificInternshipId1");
+                    b.HasIndex("ScientificInternshipId");
 
-                    b.HasIndex("UserProfileId1");
+                    b.HasIndex("UserProfileId");
 
                     b.ToTable("UserProfilesScientificInternships");
                 });
@@ -1124,11 +1120,13 @@ namespace ScientificReport.Migrations
                 {
                     b.HasOne("ScientificReport.DAL.Entities.ScientificInternship", "ScientificInternship")
                         .WithMany("UserProfilesScientificInternships")
-                        .HasForeignKey("ScientificInternshipId1");
+                        .HasForeignKey("ScientificInternshipId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("ScientificReport.DAL.Entities.UserProfile.UserProfile", "UserProfile")
                         .WithMany("UserProfilesScientificInternships")
-                        .HasForeignKey("UserProfileId1");
+                        .HasForeignKey("UserProfileId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.UserProfile.UserProfilesScientificWorks", b =>

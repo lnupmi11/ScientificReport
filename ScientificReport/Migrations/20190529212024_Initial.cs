@@ -743,26 +743,24 @@ namespace ScientificReport.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    UserProfileId = table.Column<int>(nullable: false),
-                    UserProfileId1 = table.Column<Guid>(nullable: true),
-                    ScientificInternshipId = table.Column<int>(nullable: false),
-                    ScientificInternshipId1 = table.Column<Guid>(nullable: true)
+                    UserProfileId = table.Column<Guid>(nullable: false),
+                    ScientificInternshipId = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_UserProfilesScientificInternships", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_UserProfilesScientificInternships_ScientificInternships_ScientificInternshipId1",
-                        column: x => x.ScientificInternshipId1,
+                        name: "FK_UserProfilesScientificInternships_ScientificInternships_ScientificInternshipId",
+                        column: x => x.ScientificInternshipId,
                         principalTable: "ScientificInternships",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_UserProfilesScientificInternships_AspNetUsers_UserProfileId1",
-                        column: x => x.UserProfileId1,
+                        name: "FK_UserProfilesScientificInternships_AspNetUsers_UserProfileId",
+                        column: x => x.UserProfileId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -1078,14 +1076,14 @@ namespace ScientificReport.Migrations
                 column: "UserProfileId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserProfilesScientificInternships_ScientificInternshipId1",
+                name: "IX_UserProfilesScientificInternships_ScientificInternshipId",
                 table: "UserProfilesScientificInternships",
-                column: "ScientificInternshipId1");
+                column: "ScientificInternshipId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserProfilesScientificInternships_UserProfileId1",
+                name: "IX_UserProfilesScientificInternships_UserProfileId",
                 table: "UserProfilesScientificInternships",
-                column: "UserProfileId1");
+                column: "UserProfileId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserProfilesScientificWorks_ScientificWorkId",

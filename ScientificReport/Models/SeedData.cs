@@ -365,8 +365,11 @@ namespace ScientificReport.Models
 				PlaceOfInternship = "America",
 				Started = DateTime.Today,
 				Ended = DateTime.Now,
-				Contents = "Good Job",
+				Contents = "Good Job"
 			}));
+			scientificInternshipService.AddUser(
+				context.ScientificInternships.FirstOrDefault(m => m.PlaceOfInternship == "PlaceOfInternship"),
+				context.UserProfiles.FirstOrDefault(u => u.UserName == "yura"));
 		}
 
 		private static void SeedScientificConsultation(ScientificReportDbContext context)
@@ -378,12 +381,14 @@ namespace ScientificReport.Models
 			scientificConsultationsService.CreateItem(new ScientificConsultationModel(new ScientificConsultation
 			{
 				CandidateName = "Igor",
-				DissertationTitle = "Work in Africa"
+				DissertationTitle = "Work in Africa",
+				Guide = context.UserProfiles.First(u => u.UserName == "orest")
 			}));
 			scientificConsultationsService.CreateItem(new ScientificConsultationModel(new ScientificConsultation
 			{
 				CandidateName = "Yura",
-				DissertationTitle = "Work in Canada"
+				DissertationTitle = "Work in Canada",
+				Guide = context.UserProfiles.First(u => u.UserName == "roman")
 			}));
 		}
 
