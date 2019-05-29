@@ -57,10 +57,14 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
+			var authors = _publicationService.GetPublicationAuthors(id.Value);
 			var model = new PublicationDetailsModel
 			{
-				Publication = publication, Authors = _publicationService.GetPublicationAuthors(id.Value)
+				Publication = publication,
+				Authors = authors,
+				UserIsAuthor = authors.Contains(_userProfileService.Get(User))
 			};
+			
 			return View(model);
 		}
 
@@ -169,6 +173,30 @@ namespace ScientificReport.Controllers
 			return View(editModel);
 		}
 
+		// POST: Publication/AddSelfToAuthors/{id}
+		[HttpPost]
+		public IActionResult AddSelfToAuthors(Guid? id)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
+			
+			var publication = _publicationService.GetById(id.Value);
+			if (publication == null)
+			{
+				return NotFound();
+			}
+
+			var user = _userProfileService.Get(User);
+			if (!_publicationService.GetPublicationAuthors(publication.Id).Contains(user) && publication.PublishingYear == DateTime.Now.Year)
+			{
+				_publicationService.AddAuthor(publication, user);
+			}
+
+			return RedirectToAction("Details", new { id = id.Value });
+		}
+		
 		// POST: Publication/AddUserToAuthors/{publicationId}
 		[HttpPost]
 		[Authorize(Roles = UserProfileRole.HeadOfDepartmentOrAdmin)]
@@ -285,7 +313,7 @@ namespace ScientificReport.Controllers
 		{
 			var user = _userProfileService.Get(User);
 			var department = _departmentService.Get(d => d.Staff.Contains(user));
-			var isHeadOfDepartment = publication.UserProfilesPublications.Any(p => department.Staff.Contains(p.UserProfile));
+			var isHeadOfDepartment = PageHelpers.IsHeadOfDepartment(User) && publication.UserProfilesPublications.Any(p => department.Staff.Contains(p.UserProfile));
 			return PageHelpers.IsAdmin(User) || isHeadOfDepartment ||
 			       publication.UserProfilesPublications.Any(p => p.UserProfile.UserName == User.Identity.Name) &&
 			       publication.PublishingYear == DateTime.Now.Year;
