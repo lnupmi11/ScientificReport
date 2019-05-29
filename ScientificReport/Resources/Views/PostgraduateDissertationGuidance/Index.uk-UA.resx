@@ -53,4 +53,7 @@
 	<data name="Next" xml:space="preserve">
 		<value>Наступна</value>
 	</data>
+	<data name="Guide" xml:space="preserve">
+		<value>Керівник</value>
+	</data>
 </root>

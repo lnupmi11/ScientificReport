@@ -11,6 +11,24 @@
 	ViewData["Title"] = Localizer["Details of publication"];
 }
 
+@if (!Model.UserIsAuthor)
+{
+	<div class="row">
+		<div class="col s12 m12" style="display: inline-block;">
+			<div class="card green darken-1">
+				<div class="card-content white-text" style="text-align: center;">
+					<p style="width: 100%; text-align: center; margin-bottom: 10px">
+						@Localizer["You are not an author or coauthor of this publication"]
+					</p>
+					<form asp-action="AddSelfToAuthors" style="display: inline-block;">
+						<input type="hidden" name="id" asp-for="Publication.Id"/>
+						<button type="submit" class="waves-effect btn-small blue darken-3">@Localizer["Become Author"]</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>	
+}
 <div>
 	<h5>@ViewData["Title"]</h5>
 	<hr/>
@@ -120,7 +138,12 @@
 				<ul>
 					@foreach (var author in Model.Authors)
 					{
-						<li>@author</li>
+						<li>
+							<a asp-controller="UserProfile" asp-action="Details"
+							   asp-route-id="@author.Id">
+								@author.FullName
+							</a>
+						</li>
 					}
 				</ul>
 			</dd>	
@@ -136,7 +159,7 @@
 			isHeadOfDepartment = Model.Publication.UserProfilesPublications.Any(p => department.Staff.Contains(p.UserProfile));	
 		}
 	}
-	@if ((PageHelpers.IsAdmin(User) || isHeadOfDepartment || Model.Publication.UserProfilesPublications.Any(p => p.UserProfile.UserName == User.Identity.Name)) && Model.Publication.PublishingYear == DateTime.Now.Year)
+	@if ((PageHelpers.IsAdmin(User) || isHeadOfDepartment || Model.Publication.UserProfilesPublications.Any(p => p.UserProfile.UserName == User.Identity.Name)))
 	{
 		<a asp-action="Edit" asp-route-id="@Model.Publication.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
 	}

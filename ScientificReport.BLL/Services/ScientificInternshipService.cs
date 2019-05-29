@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using ScientificReport.BLL.Interfaces;
+using ScientificReport.BLL.Utils;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Entities.UserProfile;
@@ -13,10 +15,14 @@ namespace ScientificReport.BLL.Services
 	public class ScientificInternshipService : IScientificInternshipService
 	{
 		private readonly ScientificInternshipRepository _scientificInternshipRepository;
+		private readonly DepartmentRepository _departmentRepository;
+		private readonly UserProfileRepository _userProfileRepository;
 
 		public ScientificInternshipService(ScientificReportDbContext context)
 		{
 			_scientificInternshipRepository = new ScientificInternshipRepository(context);
+			_departmentRepository = new DepartmentRepository(context);
+			_userProfileRepository = new UserProfileRepository(context);
 		}
 
 		public virtual IEnumerable<ScientificInternship> GetAll()
@@ -29,14 +35,35 @@ namespace ScientificReport.BLL.Services
 			return GetAll().Where(predicate);
 		}
 
-		public virtual IEnumerable<ScientificInternship> GetPage(int page, int count)
+		public virtual IEnumerable<ScientificInternship> GetItemsByRole(ClaimsPrincipal userClaims)
 		{
-			return _scientificInternshipRepository.All().Skip((page - 1) * count).Take(count).ToList();
+			IEnumerable<ScientificInternship> items;
+			if (UserHelpers.IsAdmin(userClaims))
+			{
+				items = _scientificInternshipRepository.All();
+			}
+			else if (UserHelpers.IsHeadOfDepartment(userClaims))
+			{
+				var department = _departmentRepository.Get(r => r.Head.UserName == userClaims.Identity.Name);
+				items = _scientificInternshipRepository.AllWhere(m => m.UserProfilesScientificInternships.Any(p => department.Staff.Contains(p.UserProfile)));
+			}
+			else
+			{
+				var user = _userProfileRepository.Get(u => u.UserName == userClaims.Identity.Name);
+				items = _scientificInternshipRepository.AllWhere(m => m.UserProfilesScientificInternships.Any(p => p.UserProfile.Id == user.Id));
+			}
+
+			return items;
 		}
 
-		public virtual int GetCount()
+		public virtual IEnumerable<ScientificInternship> GetPageByRole(int page, int count, ClaimsPrincipal userClaims)
 		{
-			return _scientificInternshipRepository.All().Count();
+			return GetItemsByRole(userClaims).Skip((page - 1) * count).Take(count).ToList();
+		}
+
+		public virtual int GetCountByRole(ClaimsPrincipal userClaims)
+		{
+			return GetItemsByRole(userClaims).Count();
 		}
 
 		public virtual ScientificInternship GetById(Guid id)
@@ -83,6 +110,35 @@ namespace ScientificReport.BLL.Services
 		public virtual bool Exists(Guid id)
 		{
 			return _scientificInternshipRepository.Get(id) != null;
+		}
+
+		public void AddUser(ScientificInternship scientificInternship, UserProfile user)
+		{
+			if (scientificInternship == null || user == null)
+			{
+				return;
+			}
+			
+			scientificInternship.UserProfilesScientificInternships.Add(new UserProfilesScientificInternships
+			{
+				UserProfile = user,
+				UserProfileId = user.Id,
+				ScientificInternship = scientificInternship,
+				ScientificInternshipId = scientificInternship.Id
+			});
+			_scientificInternshipRepository.Update(scientificInternship);
+		}
+
+		public void RemoveUser(ScientificInternship scientificInternship, UserProfile user)
+		{
+			if (scientificInternship == null || user == null)
+			{
+				return;
+			}
+
+			scientificInternship.UserProfilesScientificInternships.Remove(
+				scientificInternship.UserProfilesScientificInternships.First(p => p.UserProfile.Id == user.Id));
+			_scientificInternshipRepository.Update(scientificInternship);
 		}
 
 		public virtual IEnumerable<UserProfile> GetUsers(Guid id)

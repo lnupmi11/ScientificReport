@@ -102,19 +102,15 @@ namespace ScientificReport.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("ApplicantId");
+                    b.Property<Guid>("ApplicantId");
 
-                    b.Property<Guid?>("ApplicantId1");
-
-                    b.Property<int>("PatentLicenseActivityId");
-
-                    b.Property<Guid?>("PatentLicenseActivityId1");
+                    b.Property<Guid>("PatentLicenseActivityId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ApplicantId1");
+                    b.HasIndex("ApplicantId");
 
-                    b.HasIndex("PatentLicenseActivityId1");
+                    b.HasIndex("PatentLicenseActivityId");
 
                     b.ToTable("ApplicantsPatentLicenseActivities");
                 });
@@ -158,19 +154,15 @@ namespace ScientificReport.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("AuthorId");
+                    b.Property<Guid>("AuthorId");
 
-                    b.Property<Guid?>("AuthorId1");
-
-                    b.Property<int>("PatentLicenseActivityId");
-
-                    b.Property<Guid?>("PatentLicenseActivityId1");
+                    b.Property<Guid>("PatentLicenseActivityId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AuthorId1");
+                    b.HasIndex("AuthorId");
 
-                    b.HasIndex("PatentLicenseActivityId1");
+                    b.HasIndex("PatentLicenseActivityId");
 
                     b.ToTable("AuthorsPatentLicenseActivities");
                 });
@@ -182,13 +174,11 @@ namespace ScientificReport.Migrations
 
                     b.Property<string>("CoApplicant");
 
-                    b.Property<int>("PatentLicenseActivityId");
-
-                    b.Property<Guid?>("PatentLicenseActivityId1");
+                    b.Property<Guid>("PatentLicenseActivityId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PatentLicenseActivityId1");
+                    b.HasIndex("PatentLicenseActivityId");
 
                     b.ToTable("CoApplicantsPatentLicenseActivities");
                 });
@@ -200,13 +190,11 @@ namespace ScientificReport.Migrations
 
                     b.Property<string>("Coauthor");
 
-                    b.Property<int>("PatentLicenseActivityId");
-
-                    b.Property<Guid?>("PatentLicenseActivityId1");
+                    b.Property<Guid>("PatentLicenseActivityId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PatentLicenseActivityId1");
+                    b.HasIndex("PatentLicenseActivityId");
 
                     b.ToTable("CoauthorsPatentLicenseActivities");
                 });
@@ -250,6 +238,8 @@ namespace ScientificReport.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Info");
+
                     b.Property<Guid?>("TeacherReportId");
 
                     b.HasKey("Id");
@@ -270,9 +260,13 @@ namespace ScientificReport.Migrations
 
                     b.Property<Guid?>("TeacherReportId");
 
+                    b.Property<Guid?>("UserId");
+
                     b.HasKey("Id");
 
                     b.HasIndex("TeacherReportId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Memberships");
                 });
@@ -696,19 +690,15 @@ namespace ScientificReport.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("GrantId");
+                    b.Property<Guid>("GrantId");
 
-                    b.Property<Guid?>("GrantId1");
-
-                    b.Property<int>("UserProfileId");
-
-                    b.Property<Guid?>("UserProfileId1");
+                    b.Property<Guid>("UserProfileId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("GrantId1");
+                    b.HasIndex("GrantId");
 
-                    b.HasIndex("UserProfileId1");
+                    b.HasIndex("UserProfileId");
 
                     b.ToTable("UserProfilesGrants");
                 });
@@ -754,19 +744,15 @@ namespace ScientificReport.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("ScientificInternshipId");
+                    b.Property<Guid>("ScientificInternshipId");
 
-                    b.Property<Guid?>("ScientificInternshipId1");
-
-                    b.Property<int>("UserProfileId");
-
-                    b.Property<Guid?>("UserProfileId1");
+                    b.Property<Guid>("UserProfileId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ScientificInternshipId1");
+                    b.HasIndex("ScientificInternshipId");
 
-                    b.HasIndex("UserProfileId1");
+                    b.HasIndex("UserProfileId");
 
                     b.ToTable("UserProfilesScientificInternships");
                 });
@@ -861,36 +847,42 @@ namespace ScientificReport.Migrations
                 {
                     b.HasOne("ScientificReport.DAL.Entities.UserProfile.UserProfile", "Applicant")
                         .WithMany("ApplicantsPatentLicenseActivities")
-                        .HasForeignKey("ApplicantId1");
+                        .HasForeignKey("ApplicantId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("ScientificReport.DAL.Entities.PatentLicenseActivity", "PatentLicenseActivity")
                         .WithMany("ApplicantsPatentLicenseActivities")
-                        .HasForeignKey("PatentLicenseActivityId1");
+                        .HasForeignKey("PatentLicenseActivityId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.AuthorsPatentLicenseActivities", b =>
                 {
                     b.HasOne("ScientificReport.DAL.Entities.UserProfile.UserProfile", "Author")
                         .WithMany("AuthorsPatentLicenseActivities")
-                        .HasForeignKey("AuthorId1");
+                        .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("ScientificReport.DAL.Entities.PatentLicenseActivity", "PatentLicenseActivity")
                         .WithMany("AuthorsPatentLicenseActivities")
-                        .HasForeignKey("PatentLicenseActivityId1");
+                        .HasForeignKey("PatentLicenseActivityId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.CoApplicantsPatentLicenseActivities", b =>
                 {
                     b.HasOne("ScientificReport.DAL.Entities.PatentLicenseActivity", "PatentLicenseActivity")
                         .WithMany("CoApplicantsPatentLicenseActivities")
-                        .HasForeignKey("PatentLicenseActivityId1");
+                        .HasForeignKey("PatentLicenseActivityId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.CoauthorsPatentLicenseActivities", b =>
                 {
                     b.HasOne("ScientificReport.DAL.Entities.PatentLicenseActivity", "PatentLicenseActivity")
                         .WithMany("CoauthorsPatentLicenseActivities")
-                        .HasForeignKey("PatentLicenseActivityId1");
+                        .HasForeignKey("PatentLicenseActivityId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.Conference", b =>
@@ -919,6 +911,10 @@ namespace ScientificReport.Migrations
                     b.HasOne("ScientificReport.DAL.Entities.Reports.TeacherReport")
                         .WithMany("Memberships")
                         .HasForeignKey("TeacherReportId");
+
+                    b.HasOne("ScientificReport.DAL.Entities.UserProfile.UserProfile", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.Opposition", b =>
@@ -1087,11 +1083,13 @@ namespace ScientificReport.Migrations
                 {
                     b.HasOne("ScientificReport.DAL.Entities.Grant", "Grant")
                         .WithMany("UserProfilesGrants")
-                        .HasForeignKey("GrantId1");
+                        .HasForeignKey("GrantId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("ScientificReport.DAL.Entities.UserProfile.UserProfile", "UserProfile")
                         .WithMany("UserProfilesGrants")
-                        .HasForeignKey("UserProfileId1");
+                        .HasForeignKey("UserProfileId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.UserProfile.UserProfilesPublications", b =>
@@ -1122,11 +1120,13 @@ namespace ScientificReport.Migrations
                 {
                     b.HasOne("ScientificReport.DAL.Entities.ScientificInternship", "ScientificInternship")
                         .WithMany("UserProfilesScientificInternships")
-                        .HasForeignKey("ScientificInternshipId1");
+                        .HasForeignKey("ScientificInternshipId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("ScientificReport.DAL.Entities.UserProfile.UserProfile", "UserProfile")
                         .WithMany("UserProfilesScientificInternships")
-                        .HasForeignKey("UserProfileId1");
+                        .HasForeignKey("UserProfileId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.UserProfile.UserProfilesScientificWorks", b =>

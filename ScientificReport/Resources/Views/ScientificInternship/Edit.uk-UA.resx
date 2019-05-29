@@ -41,7 +41,13 @@
 	<data name="Contents" xml:space="preserve">
 		<value>Контент</value>
 	</data>
+	<data name="Save" xml:space="preserve">
+		<value>Зберегти</value>
+	</data>
 	<data name="Cancel" xml:space="preserve">
 		<value>Відмінити</value>
+	</data>
+	<data name="Users" xml:space="preserve">
+		<value>Користувачі</value>
 	</data>
 </root>

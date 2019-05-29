@@ -7,6 +7,7 @@ using ScientificReport.BLL.Interfaces;
 using ScientificReport.Controllers.Utils;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Roles;
+using ScientificReport.DTO.Models;
 using ScientificReport.DTO.Models.ScientificWorks;
 
 namespace ScientificReport.Controllers
@@ -194,7 +195,7 @@ namespace ScientificReport.Controllers
 		// POST: ScientificWork/AddAuthor/{id}
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public IActionResult AddAuthor(Guid id, [FromBody] ScientificWorkAuthorRequest request)
+		public IActionResult AddAuthor(Guid id, [FromBody] UpdateUserRequest request)
 		{
 			if (!_scientificWorkService.Exists(id))
 			{
@@ -206,14 +207,14 @@ namespace ScientificReport.Controllers
 				return Forbid();
 			}
 			
-			_scientificWorkService.AddAuthor(id, request.AuthorId);
+			_scientificWorkService.AddAuthor(id, request.UserId);
 			return Json(ApiResponse.Ok);
 		}
 		
 		// POST: ScientificWork/DeleteAuthor/{id}
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public IActionResult DeleteAuthor(Guid id, [FromBody] ScientificWorkAuthorRequest request)
+		public IActionResult DeleteAuthor(Guid id, [FromBody] UpdateUserRequest request)
 		{
 			if (!_scientificWorkService.Exists(id))
 			{
@@ -225,7 +226,7 @@ namespace ScientificReport.Controllers
 				return Forbid();
 			}
 			
-			_scientificWorkService.RemoveAuthor(id, request.AuthorId);
+			_scientificWorkService.RemoveAuthor(id, request.UserId);
 			return Json(ApiResponse.Ok);
 		}
 		

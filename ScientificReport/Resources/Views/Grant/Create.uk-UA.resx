@@ -29,4 +29,7 @@
 	<data name="Create" xml:space="preserve">
 		<value>Створити</value>
 	</data>
+	<data name="Info" xml:space="preserve">
+		<value>Інформація</value>
+	</data>
 </root>

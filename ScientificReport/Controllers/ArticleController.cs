@@ -249,7 +249,7 @@ namespace ScientificReport.Controllers
 		{
 			var user = _userProfileService.Get(User);
 			var department = _departmentService.Get(d => d.Staff.Contains(user));
-			var isHeadOfDepartment = article.UserProfilesArticles.Any(p => department.Staff.Contains(p.Author));
+			var isHeadOfDepartment = PageHelpers.IsHeadOfDepartment(User) && article.UserProfilesArticles.Any(p => department.Staff.Contains(p.Author));
 			return PageHelpers.IsAdmin(User) || isHeadOfDepartment ||
 			       article.UserProfilesArticles.Any(p => p.Author.UserName == User.Identity.Name) &&
 			       article.PublishingYear == DateTime.Now.Year;

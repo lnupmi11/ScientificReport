@@ -44,4 +44,7 @@
 	<data name="EditorialBoard" xml:space="preserve">
 		<value>Редколегія наукового журналу</value>
 	</data>
+	<data name="User" xml:space="preserve">
+		<value>Користувач</value>
+	</data>
 </root>

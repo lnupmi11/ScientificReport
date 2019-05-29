@@ -35,4 +35,7 @@
 	<data name="Back to list" xml:space="preserve">
 		<value>Back to list</value>
 	</data>
+	<data name="Opponent" xml:space="preserve">
+		<value>Opponent</value>
+	</data>
 </root>

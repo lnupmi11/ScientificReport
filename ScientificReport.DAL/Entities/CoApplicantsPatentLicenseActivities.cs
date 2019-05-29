@@ -11,7 +11,7 @@ namespace ScientificReport.DAL.Entities
 
 		public string CoApplicant { get; set; }
 
-		public int PatentLicenseActivityId { get; set; }
+		public Guid PatentLicenseActivityId { get; set; }
 		
 		public virtual PatentLicenseActivity PatentLicenseActivity { get; set; }
 	}

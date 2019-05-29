@@ -1,13 +1,19 @@
 @model ScientificReport.DTO.Models.Publication.PublicationEditModel
 @using Microsoft.AspNetCore.Mvc.Localization
+@using ScientificReport.BLL.Interfaces
 @using ScientificReport.Controllers.Utils
 @using ScientificReport.DTO.Models.Department
 @inject IViewLocalizer Localizer
+@inject IUserProfileService UserProfileService
 
 @{
 	ViewData["Title"] = Localizer["Edit publication"];
 }
 <style>
+	.authors-list {
+        overflow-y: scroll;
+        height: 200px;
+    }
 	.authors-label {
 		/* margin-bottom: 10px; */
 		position: relative !important;
@@ -19,7 +25,6 @@
 	.cursor-pointer { cursor: pointer; }
 	.hidden { display: none; }
 </style>
-
 <h5>@ViewData["Title"]</h5>
 <hr/>
 <div class="row">
@@ -96,14 +101,14 @@
 						<select asp-for="PrintStatus" class="col s12 push-s2">
 							@foreach (var option in Model.PrintStatusOptions)
 							{
-								<option value="@option" @(option==Model.PrintStatus.ToString() ? "selected" : "")>@Localizer[option]</option>
+								<option value="@option" @(option == Model.PrintStatus.ToString() ? "selected" : "")>@Localizer[option]</option>
 							}
 						</select>
 						<label asp-for="PrintStatus">@Localizer["Publishing status"]</label>
 					</div>
 				</div>	
 			}
-			@if (PageHelpers.IsAdminOrHead(User))
+			@if (PageHelpers.IsAdminOrHead(User) || Model.Authors.Contains(UserProfileService.Get(User)))
 			{
 				<div class="row">
 					<div class="col s6">

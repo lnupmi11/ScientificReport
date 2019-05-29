@@ -92,4 +92,10 @@
 	<data name="Authors" xml:space="preserve">
 		<value>Authors</value>
 	</data>
+	<data name="You are not an author or coauthor of this publication" xml:space="preserve">
+		<value>You are not an author or coauthor of this publication</value>
+	</data>
+	<data name="Become Author" xml:space="preserve">
+		<value>Become Author</value>
+	</data>
 </root>

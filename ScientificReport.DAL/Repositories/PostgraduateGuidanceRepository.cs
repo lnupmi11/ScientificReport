@@ -19,7 +19,7 @@ namespace ScientificReport.DAL.Repositories
 		
 		public virtual IEnumerable<PostgraduateGuidance> All()
 		{
-			return _context.PostgraduateGuidances;
+			return _context.PostgraduateGuidances.Include(pg => pg.Guide);
 		}
 
 		public virtual IEnumerable<PostgraduateGuidance> AllWhere(Func<PostgraduateGuidance, bool> predicate)

@@ -1,8 +1,12 @@
 using System;
+using System.Linq;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ScientificReport.BLL.Interfaces;
+using ScientificReport.Controllers.Utils;
+using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Roles;
+using ScientificReport.DTO.Models;
 using ScientificReport.DTO.Models.Grant;
 
 namespace ScientificReport.Controllers
@@ -11,17 +15,25 @@ namespace ScientificReport.Controllers
 	public class GrantController : Controller
 	{
 		private readonly IGrantService _grantService;
+		private readonly IUserProfileService _userProfileService;
+		private readonly IDepartmentService _departmentService;
 
-		public GrantController(IGrantService grantService)
+		public GrantController(
+			IGrantService grantService,
+			IUserProfileService userProfileService,
+			IDepartmentService departmentService
+		)
 		{
 			_grantService = grantService;
+			_userProfileService = userProfileService;
+			_departmentService = departmentService;
 		}
 
 		// GET: Grant
 		public IActionResult Index(GrantIndexModel model)
 		{
-			model.Grants = _grantService.GetPage(model.CurrentPage, model.PageSize);
-			model.Count = _grantService.GetCount();
+			model.Grants = _grantService.GetPageByRole(model.CurrentPage, model.PageSize, User);
+			model.Count = _grantService.GetCountByRole(User);
 			return View(model);
 		}
 
@@ -39,6 +51,11 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
+			if (!UserHasPermission(grant))
+			{
+				return Forbid();
+			}
+
 			return View(grant);
 		}
 
@@ -54,7 +71,10 @@ namespace ScientificReport.Controllers
 			{
 				return View(model);
 			}
+			
 			_grantService.CreateItem(model);
+			_grantService.AddUser(_grantService.Get(g => g.Info == model.Info), _userProfileService.Get(User));
+			
 			return RedirectToAction(nameof(Index));
 		}
 
@@ -71,8 +91,17 @@ namespace ScientificReport.Controllers
 			{
 				return NotFound();
 			}
+			
+			if (!UserHasPermission(grant))
+			{
+				return Forbid();
+			}
 
-			return View(new GrantEditModel(grant));
+			return View(new GrantEditModel(grant)
+			{
+				Users = _userProfileService.GetAll(),
+				Authors = _grantService.GetUsers(grant.Id)
+			});
 		}
 
 		// POST: Grant/Edit/{id}
@@ -85,6 +114,12 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
+			var grant = _grantService.GetById(id);
+			if (!UserHasPermission(grant))
+			{
+				return Forbid();
+			}
+			
 			if (!ModelState.IsValid)
 			{
 				return View(model);
@@ -107,6 +142,11 @@ namespace ScientificReport.Controllers
 			{
 				return NotFound();
 			}
+			
+			if (!UserHasPermission(grant))
+			{
+				return Forbid();
+			}
 
 			return View(grant);
 		}
@@ -120,9 +160,62 @@ namespace ScientificReport.Controllers
 			{
 				return NotFound();
 			}
+			
+			if (!UserHasPermission(_grantService.GetById(id)))
+			{
+				return Forbid();
+			}
 
 			_grantService.DeleteById(id);
 			return RedirectToAction(nameof(Index));
+		}
+		
+		// POST: Grant/AddAuthor/{id}
+		[HttpPost]
+		public IActionResult AddAuthor(Guid id, [FromBody] UpdateUserRequest request)
+		{
+			if (!_grantService.Exists(id))
+			{
+				return NotFound();
+			}
+
+			var grant = _grantService.GetById(id);
+			if (!UserHasPermission(grant))
+			{
+				return Forbid();
+			}
+			
+			_grantService.AddUser(grant, _userProfileService.GetById(request.UserId));
+			return Json(ApiResponse.Ok);
+		}
+
+		// POST: Grant/DeleteAuthor/{id}
+		[HttpPost]
+		public IActionResult DeleteAuthor(Guid id, [FromBody] UpdateUserRequest request)
+		{
+			if (!_grantService.Exists(id))
+			{
+				return NotFound();
+			}
+			
+			var grant = _grantService.GetById(id);
+			if (!UserHasPermission(grant))
+			{
+				return Forbid();
+			}
+			
+			_grantService.RemoveUser(grant, _userProfileService.GetById(request.UserId));
+			return Json(ApiResponse.Ok);
+		}
+
+		private bool UserHasPermission(Grant grant)
+		{
+			var user = _userProfileService.Get(User);
+			var department = _departmentService.Get(d => d.Staff.Contains(user));
+			return PageHelpers.IsAdmin(User) ||
+			       PageHelpers.IsHeadOfDepartment(User) &&
+			       _grantService.GetUsers(grant.Id).Any(p => department.Staff.Contains(p)) ||
+			       _grantService.GetUsers(grant.Id).Contains(user);
 		}
 	}
 }

@@ -2,6 +2,8 @@ using System;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ScientificReport.BLL.Interfaces;
+using ScientificReport.Controllers.Utils;
+using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Roles;
 using ScientificReport.DTO.Models.PostgraduateGuidance;
 
@@ -11,17 +13,25 @@ namespace ScientificReport.Controllers
 	public class PostgraduateGuidanceController : Controller
 	{
 		private readonly IPostgraduateGuidanceService _postgraduateGuidanceService;
+		private readonly IUserProfileService _userProfileService;
+		private readonly IDepartmentService _departmentService;
 
-		public PostgraduateGuidanceController(IPostgraduateGuidanceService postgraduateGuidanceService)
+		public PostgraduateGuidanceController(
+			IPostgraduateGuidanceService postgraduateGuidanceService,
+			IUserProfileService userProfileService,
+			IDepartmentService departmentService
+		)
 		{
 			_postgraduateGuidanceService = postgraduateGuidanceService;
+			_userProfileService = userProfileService;
+			_departmentService = departmentService;
 		}
 
 		// GET: PostgraduateGuidance
 		public IActionResult Index(PostgraduateGuidanceIndexModel model)
 		{
-			model.PostgraduateGuidances = _postgraduateGuidanceService.GetPage(model.CurrentPage, model.PageSize);
-			model.Count = _postgraduateGuidanceService.GetCount();
+			model.PostgraduateGuidances = _postgraduateGuidanceService.GetPageByRole(model.CurrentPage, model.PageSize, User);
+			model.Count = _postgraduateGuidanceService.GetCountByRole(User);
 			return View(model);
 		}
 
@@ -39,6 +49,11 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
+			if (!UserHasPermission(postgraduateGuidance))
+			{
+				return Forbid();
+			}
+
 			return View(postgraduateGuidance);
 		}
 
@@ -54,6 +69,8 @@ namespace ScientificReport.Controllers
 			{
 				return View(model);
 			}
+
+			model.Guide = _userProfileService.Get(User);
 			_postgraduateGuidanceService.CreateItem(model);
 			return RedirectToAction(nameof(Index));
 		}
@@ -71,6 +88,11 @@ namespace ScientificReport.Controllers
 			{
 				return NotFound();
 			}
+			
+			if (!UserHasPermission(postgraduateGuidance))
+			{
+				return Forbid();
+			}
 
 			return View(new PostgraduateGuidanceEditModel(postgraduateGuidance));
 		}
@@ -83,6 +105,11 @@ namespace ScientificReport.Controllers
 			if (id != model.Id || !_postgraduateGuidanceService.Exists(id))
 			{
 				return NotFound();
+			}
+
+			if (!UserHasPermission(_postgraduateGuidanceService.GetById(id)))
+			{
+				return Forbid();
 			}
 
 			if (!ModelState.IsValid)
@@ -107,6 +134,11 @@ namespace ScientificReport.Controllers
 			{
 				return NotFound();
 			}
+			
+			if (!UserHasPermission(postgraduateGuidance))
+			{
+				return Forbid();
+			}
 
 			return View(postgraduateGuidance);
 		}
@@ -120,9 +152,24 @@ namespace ScientificReport.Controllers
 			{
 				return NotFound();
 			}
+			
+			if (!UserHasPermission(_postgraduateGuidanceService.GetById(id)))
+			{
+				return Forbid();
+			}
 
 			_postgraduateGuidanceService.DeleteById(id);
 			return RedirectToAction(nameof(Index));
+		}
+		
+		private bool UserHasPermission(PostgraduateGuidance guidance)
+		{
+			var user = _userProfileService.Get(User);
+			var department = _departmentService.Get(d => d.Staff.Contains(user));
+			return PageHelpers.IsAdmin(User) ||
+			       PageHelpers.IsHeadOfDepartment(User) &&
+			       department.Staff.Contains(guidance.Guide) ||
+			       guidance.Guide.Id == user.Id;
 		}
 	}
 }

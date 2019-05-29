@@ -32,4 +32,10 @@
 	<data name="Cancel" xml:space="preserve">
 		<value>Cancel</value>
 	</data>
+	<data name="Info" xml:space="preserve">
+		<value>Info</value>
+	</data>
+	<data name="Authors" xml:space="preserve">
+		<value>Authors</value>
+	</data>
 </root>

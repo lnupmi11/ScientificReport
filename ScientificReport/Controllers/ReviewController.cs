@@ -2,6 +2,8 @@ using System;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ScientificReport.BLL.Interfaces;
+using ScientificReport.Controllers.Utils;
+using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Roles;
 using ScientificReport.DTO.Models.Review;
 
@@ -11,17 +13,28 @@ namespace ScientificReport.Controllers
 	public class ReviewController : Controller
 	{
 		private readonly IReviewService _reviewService;
+		private readonly IUserProfileService _userProfileService;
+		private readonly IDepartmentService _departmentService;
+		private readonly IPublicationService _publicationService;
 
-		public ReviewController(IReviewService reviewService)
+		public ReviewController(
+			IReviewService reviewService,
+			IUserProfileService userProfileService,
+			IDepartmentService departmentService,
+			IPublicationService publicationService
+		)
 		{
 			_reviewService = reviewService;
+			_userProfileService = userProfileService;
+			_departmentService = departmentService;
+			_publicationService = publicationService;
 		}
 
 		// GET: Review
 		public IActionResult Index(ReviewIndexModel model)
 		{
-			model.Reviews = _reviewService.GetPage(model.CurrentPage, model.PageSize);
-			model.Count = _reviewService.GetCount();
+			model.Reviews = _reviewService.GetPageByRole(model.CurrentPage, model.PageSize, User);
+			model.Count = _reviewService.GetCountByRole(User);
 			return View(model);
 		}
 
@@ -39,11 +52,22 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
+			if (!UserHasPermission(review))
+			{
+				return Forbid();
+			}
+
 			return View(review);
 		}
 
 		// GET: Review/Create
-		public IActionResult Create() => View();
+		public IActionResult Create()
+		{
+			return View(new ReviewModel
+			{
+				Publications = _publicationService.GetAll()
+			});
+		}
 
 		// POST: Review/Create
 		[HttpPost]
@@ -52,8 +76,17 @@ namespace ScientificReport.Controllers
 		{
 			if (!ModelState.IsValid)
 			{
+				model.Publications = _publicationService.GetAll();
 				return View(model);
 			}
+
+			if (!_publicationService.PublicationExists(model.WorkId))
+			{
+				return NotFound();
+			}
+
+			model.Work = _publicationService.GetById(model.WorkId);
+			model.Reviewer = _userProfileService.Get(User);
 			_reviewService.CreateItem(model);
 			return RedirectToAction(nameof(Index));
 		}
@@ -71,8 +104,16 @@ namespace ScientificReport.Controllers
 			{
 				return NotFound();
 			}
+			
+			if (!UserHasPermission(review))
+			{
+				return Forbid();
+			}
 
-			return View(new ReviewEditModel(review));
+			return View(new ReviewEditModel(review)
+			{
+				Publications = _publicationService.GetAll()
+			});
 		}
 
 		// POST: Review/Edit/{id}
@@ -85,11 +126,23 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
+			if (!UserHasPermission(_reviewService.GetById(id)))
+			{
+				return Forbid();
+			}
+			
 			if (!ModelState.IsValid)
 			{
+				model.Publications = _publicationService.GetAll();
 				return View(model);
 			}
 
+			if (!_publicationService.PublicationExists(model.WorkId))
+			{
+				return NotFound();
+			}
+			
+			model.Work = _publicationService.GetById(model.WorkId);
 			_reviewService.UpdateItem(model);
 			return RedirectToAction(nameof(Index));
 		}
@@ -107,6 +160,11 @@ namespace ScientificReport.Controllers
 			{
 				return NotFound();
 			}
+			
+			if (!UserHasPermission(review))
+			{
+				return Forbid();
+			}
 
 			return View(review);
 		}
@@ -120,9 +178,24 @@ namespace ScientificReport.Controllers
 			{
 				return NotFound();
 			}
+			
+			if (!UserHasPermission(_reviewService.GetById(id)))
+			{
+				return Forbid();
+			}
 
 			_reviewService.DeleteById(id);
 			return RedirectToAction(nameof(Index));
+		}
+		
+		private bool UserHasPermission(Review guidance)
+		{
+			var user = _userProfileService.Get(User);
+			var department = _departmentService.Get(d => d.Staff.Contains(user));
+			return PageHelpers.IsAdmin(User) ||
+			       PageHelpers.IsHeadOfDepartment(User) &&
+			       department.Staff.Contains(guidance.Reviewer) ||
+			       guidance.Reviewer.Id == user.Id;
 		}
 	}
 }

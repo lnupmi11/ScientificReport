@@ -3,7 +3,7 @@
 @inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = Localizer["Membership"];
+	ViewData["Title"] = Localizer["Memberships"];
 }
 
 <h4>@ViewData["Title"]</h4>
@@ -13,6 +13,9 @@
 <table class="responsive-table">
 	<thead>
 		<tr>
+			<th>
+				@Localizer["User"]
+			</th>
 			<th>
 				@Localizer["Member of"]
 			</th>
@@ -26,6 +29,12 @@
 	@foreach (var item in Model.Memberships)
 	{
 		<tr>
+			<td>
+				<a asp-controller="UserProfile" asp-action="Details"
+				   asp-route-id="@item.User.Id">
+					@item.User.FullName
+				</a>
+			</td>
 			<td>
 				@Localizer[item.MemberOf.ToString()]
 			</td>

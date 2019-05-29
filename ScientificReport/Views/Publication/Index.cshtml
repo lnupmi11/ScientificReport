@@ -124,14 +124,14 @@
 					var isHeadOfDepartment = false;
 					if (department != null)
 					{
-						isHeadOfDepartment = item.UserProfilesPublications.Any(p => department.Staff.Contains(p.UserProfile));	
+						isHeadOfDepartment = item.UserProfilesPublications.Any(p => department.Staff.Contains(p.UserProfile));
 					}
 				}
-				@if ((PageHelpers.IsAdmin(User) || isHeadOfDepartment || item.UserProfilesPublications.Any(p => p.UserProfile.UserName == User.Identity.Name)) && item.PublishingYear == DateTime.Now.Year)
+				@if ((PageHelpers.IsAdmin(User) || isHeadOfDepartment || item.UserProfilesPublications.Any(p => p.UserProfile.UserName == User.Identity.Name)))
 				{
 					<a asp-action="Edit" asp-route-id="@item.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>	
 				}
-				@if (PageHelpers.IsAdmin(User) && item.PublishingYear == DateTime.Now.Year)
+				@if (PageHelpers.IsAdmin(User))
 				{
 					<form asp-action="Delete" asp-route-id="@item.Id" method="get" style="display: inline;">
 						<button type="submit" class="waves-effect btn-small deep-orange darken-3">@Localizer["Delete"]</button>

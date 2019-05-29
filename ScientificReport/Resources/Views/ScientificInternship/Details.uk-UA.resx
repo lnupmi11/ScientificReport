@@ -44,4 +44,7 @@
 	<data name="Back to list" xml:space="preserve">
 		<value>Повернутися до списку</value>
 	</data>
+	<data name="Users" xml:space="preserve">
+		<value>Користувачі</value>
+	</data>
 </root>

@@ -9,6 +9,8 @@ namespace ScientificReport.DTO.Models.Membership
 		
 		[Required]
 		public string MembershipInfo { get; set; }
+
+		public DAL.Entities.UserProfile.UserProfile User { get; set; }
 		
 		public MembershipModel()
 		{
@@ -18,6 +20,7 @@ namespace ScientificReport.DTO.Models.Membership
 		{
 			MemberOf = membership.MemberOf;
 			MembershipInfo = membership.MembershipInfo;
+			User = membership.User;
 		}
 	}
 }

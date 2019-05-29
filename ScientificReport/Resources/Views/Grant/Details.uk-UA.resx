@@ -32,4 +32,10 @@
 	<data name="Back to List" xml:space="preserve">
 		<value>Повернутися до списку</value>
 	</data>
+	<data name="Info" xml:space="preserve">
+		<value>Інформація</value>
+	</data>
+	<data name="Authors" xml:space="preserve">
+		<value>Автори</value>
+	</data>
 </root>

@@ -365,8 +365,11 @@ namespace ScientificReport.Models
 				PlaceOfInternship = "America",
 				Started = DateTime.Today,
 				Ended = DateTime.Now,
-				Contents = "Good Job",
+				Contents = "Good Job"
 			}));
+			scientificInternshipService.AddUser(
+				context.ScientificInternships.FirstOrDefault(m => m.PlaceOfInternship == "PlaceOfInternship"),
+				context.UserProfiles.FirstOrDefault(u => u.UserName == "yura"));
 		}
 
 		private static void SeedScientificConsultation(ScientificReportDbContext context)
@@ -378,12 +381,14 @@ namespace ScientificReport.Models
 			scientificConsultationsService.CreateItem(new ScientificConsultationModel(new ScientificConsultation
 			{
 				CandidateName = "Igor",
-				DissertationTitle = "Work in Africa"
+				DissertationTitle = "Work in Africa",
+				Guide = context.UserProfiles.First(u => u.UserName == "orest")
 			}));
 			scientificConsultationsService.CreateItem(new ScientificConsultationModel(new ScientificConsultation
 			{
 				CandidateName = "Yura",
-				DissertationTitle = "Work in Canada"
+				DissertationTitle = "Work in Canada",
+				Guide = context.UserProfiles.First(u => u.UserName == "roman")
 			}));
 		}
 
@@ -415,7 +420,8 @@ namespace ScientificReport.Models
 			postgraduateGuidanceService.CreateItem(new PostgraduateGuidanceModel(new PostgraduateGuidance
 			{
 				PostgraduateName = "Bogdan Ivanovych",
-				PostgraduateInfo = "now is working"
+				PostgraduateInfo = "now is working",
+				Guide = context.UserProfiles.First(u => u.UserName == "orest")
 			}));
 		}
 
@@ -431,7 +437,8 @@ namespace ScientificReport.Models
 				Dissertation = "big",
 				Speciality = "math",
 				DateDegreeGained = DateTime.Today,
-				GraduationYear = 2012
+				GraduationYear = 2012,
+				Guide = context.UserProfiles.First(u => u.UserName == "yura")
 			}));
 		}
 
@@ -469,6 +476,7 @@ namespace ScientificReport.Models
 				{
 					About = "Nice opposition",
 					DateOfOpposition = DateTime.Now,
+					Opponent = context.UserProfiles.First(u => u.UserName == "yura")
 				})
 			);
 			
@@ -477,6 +485,7 @@ namespace ScientificReport.Models
 				{
 					About = "Bad opposition",
 					DateOfOpposition = DateTime.Today,
+					Opponent = context.UserProfiles.First(u => u.UserName == "olena")
 				})
 			);
 		}
@@ -490,17 +499,20 @@ namespace ScientificReport.Models
 			membershipService.CreateItem(new MembershipModel(new Membership
 			{
 				MemberOf = Membership.MemberOfChoices.ScientificCouncil,
-				MembershipInfo = "good helper"
+				MembershipInfo = "good helper",
+				User = context.UserProfiles.First(u => u.UserName == "yura")
 			}));
 			membershipService.CreateItem(new MembershipModel(new Membership
 			{
 				MemberOf = Membership.MemberOfChoices.ExpertCouncil,
-				MembershipInfo = "best helper"
+				MembershipInfo = "best helper",
+				User = context.UserProfiles.First(u => u.UserName == "orest")
 			}));
 			membershipService.CreateItem(new MembershipModel(new Membership
 			{
 				MemberOf = Membership.MemberOfChoices.EditorialBoard,
-				MembershipInfo = "normal guy"
+				MembershipInfo = "normal guy",
+				User = context.UserProfiles.First(u => u.UserName == "yura")
 			}));
 		}
 

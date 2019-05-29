@@ -6,6 +6,7 @@ using ScientificReport.BLL.Interfaces;
 using ScientificReport.Controllers.Utils;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Roles;
+using ScientificReport.DTO.Models;
 using ScientificReport.DTO.Models.ReportThesis;
 
 namespace ScientificReport.Controllers
@@ -191,9 +192,9 @@ namespace ScientificReport.Controllers
 			return RedirectToAction(nameof(Index));
 		}
 
-		// POST: ScientificWork/AddAuthor/{id}
+		// POST: ReportThesis/AddAuthor/{id}
 		[HttpPost]
-		public IActionResult AddAuthor(Guid id, [FromBody] ReportThesisAuthorRequest request)
+		public IActionResult AddAuthor(Guid id, [FromBody] UpdateUserRequest request)
 		{
 			if (!_reportThesisService.Exists(id))
 			{
@@ -205,13 +206,13 @@ namespace ScientificReport.Controllers
 				return Forbid();
 			}
 			
-			_reportThesisService.AddAuthor(id, request.AuthorId);
+			_reportThesisService.AddAuthor(id, request.UserId);
 			return Json(ApiResponse.Ok);
 		}
 
-		// POST: ScientificWork/DeleteAuthor/{id}
+		// POST: ReportThesis/DeleteAuthor/{id}
 		[HttpPost]
-		public IActionResult DeleteAuthor(Guid id, [FromBody] ReportThesisAuthorRequest request)
+		public IActionResult DeleteAuthor(Guid id, [FromBody] UpdateUserRequest request)
 		{
 			if (!_reportThesisService.Exists(id))
 			{
@@ -223,7 +224,7 @@ namespace ScientificReport.Controllers
 				return Forbid();
 			}
 			
-			_reportThesisService.RemoveAuthor(id, request.AuthorId);
+			_reportThesisService.RemoveAuthor(id, request.UserId);
 			return Json(ApiResponse.Ok);
 		}
 		
