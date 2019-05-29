@@ -20,7 +20,8 @@ namespace ScientificReport.DAL.Repositories
 		public virtual IEnumerable<Publication> All()
 		{
 			return _context.Publications
-				.Include(b => b.UserProfilesPublications);
+				.Include(b => b.UserProfilesPublications)
+				.ThenInclude(b => b.UserProfile);
 		}
 
 		public virtual IEnumerable<Publication> AllWhere(Func<Publication, bool> predicate)

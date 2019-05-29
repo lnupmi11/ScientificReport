@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using ScientificReport.BLL.Interfaces;
+using ScientificReport.BLL.Utils;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Entities.UserProfile;
@@ -13,10 +15,14 @@ namespace ScientificReport.BLL.Services
 	public class PatentLicenseActivityService : IPatentLicenseActivityService
 	{
 		private readonly PatentLicenseActivityRepository _patentLicenseActivityRepository;
+		private readonly UserProfileRepository _userProfileRepository;
+		private readonly DepartmentRepository _departmentRepository;
 
 		public PatentLicenseActivityService(ScientificReportDbContext context)
 		{
 			_patentLicenseActivityRepository = new PatentLicenseActivityRepository(context);
+			_userProfileRepository = new UserProfileRepository(context);
+			_departmentRepository = new DepartmentRepository(context);
 		}
 
 		public virtual IEnumerable<PatentLicenseActivity> GetAll()
@@ -29,14 +35,41 @@ namespace ScientificReport.BLL.Services
 			return GetAll().Where(predicate);
 		}
 
-		public virtual IEnumerable<PatentLicenseActivity> GetPage(int page, int count)
+		public virtual IEnumerable<PatentLicenseActivity> GetItemsByRole(ClaimsPrincipal userClaims)
 		{
-			return _patentLicenseActivityRepository.All().Skip((page - 1) * count).Take(count).ToList();
+			IEnumerable<PatentLicenseActivity> items;
+			if (UserHelpers.IsAdmin(userClaims))
+			{
+				items = _patentLicenseActivityRepository.All();
+			}
+			else if (UserHelpers.IsHeadOfDepartment(userClaims))
+			{
+				var department = _departmentRepository.Get(r => r.Head.UserName == userClaims.Identity.Name);
+				items = _patentLicenseActivityRepository.AllWhere(
+					a => a.AuthorsPatentLicenseActivities.Any(u => department.Staff.Contains(u.Author)) ||
+					a.ApplicantsPatentLicenseActivities.Any(u => department.Staff.Contains(u.Applicant))
+				);
+			}
+			else
+			{
+				var user = _userProfileRepository.Get(u => u.UserName == userClaims.Identity.Name);
+				items = _patentLicenseActivityRepository.AllWhere(
+					a => a.AuthorsPatentLicenseActivities.Any(u => u.Author.Id == user.Id) ||
+					a.ApplicantsPatentLicenseActivities.Any(u => u.Applicant.Id == user.Id)
+				);
+			}
+
+			return items;
+		}
+		
+		public virtual IEnumerable<PatentLicenseActivity> GetPageByRole(int page, int count, ClaimsPrincipal userClaims)
+		{
+			return GetItemsByRole(userClaims).Skip((page - 1) * count).Take(count).ToList();
 		}
 
-		public virtual int GetCount()
+		public virtual int GetCountByRole(ClaimsPrincipal userClaims)
 		{
-			return _patentLicenseActivityRepository.All().Count();
+			return GetItemsByRole(userClaims).Count();
 		}
 
 		public virtual PatentLicenseActivity GetById(Guid id)
@@ -69,7 +102,29 @@ namespace ScientificReport.BLL.Services
 			}
 
 			patentLicenseActivity.Name = model.Name;
-			patentLicenseActivity.Type = model.Type;
+			if (patentLicenseActivity.Type != model.Type)
+			{
+				if (model.Type == PatentLicenseActivity.Types.Patent)
+				{
+					var users = patentLicenseActivity.ApplicantsPatentLicenseActivities.Select(u => u.Applicant).ToList();
+					for (var i = 0; i < users.Count; i++)
+					{
+						RemoveApplicant(patentLicenseActivity.Id, users[i]);
+						AddAuthor(patentLicenseActivity, users[i]);
+					}
+				}
+				else
+				{
+					var users = patentLicenseActivity.AuthorsPatentLicenseActivities.Select(u => u.Author).ToList();
+					for (var i = 0; i < users.Count; i++)
+					{
+						RemoveAuthor(patentLicenseActivity.Id, users[i]);
+						AddApplicant(patentLicenseActivity, users[i]);
+					}
+				}
+				
+				patentLicenseActivity.Type = model.Type;	
+			}
 			patentLicenseActivity.Number = model.Number;
 			patentLicenseActivity.DateTime = model.DateTime;
 			_patentLicenseActivityRepository.Update(patentLicenseActivity);
@@ -83,6 +138,122 @@ namespace ScientificReport.BLL.Services
 		public virtual bool Exists(Guid id)
 		{
 			return _patentLicenseActivityRepository.Get(id) != null;
+		}
+
+		public virtual void AddAuthor(PatentLicenseActivity patentLicenseActivity, UserProfile user)
+		{
+			if (patentLicenseActivity == null)
+			{
+				return;
+			}
+			
+			patentLicenseActivity.AuthorsPatentLicenseActivities.Add(new AuthorsPatentLicenseActivities
+			{
+				Author = user,
+				AuthorId = user.Id,
+				PatentLicenseActivity = patentLicenseActivity,
+				PatentLicenseActivityId = patentLicenseActivity.Id
+			});
+			_patentLicenseActivityRepository.Update(patentLicenseActivity);
+		}
+		
+		public virtual void RemoveAuthor(Guid id, UserProfile user)
+		{
+			var patentLicenseActivity = _patentLicenseActivityRepository.Get(id);
+			if (patentLicenseActivity == null)
+			{
+				return;
+			}
+			
+			patentLicenseActivity.AuthorsPatentLicenseActivities.Remove(patentLicenseActivity.AuthorsPatentLicenseActivities.First(u => u.Author.Id == user.Id));
+			_patentLicenseActivityRepository.Update(patentLicenseActivity);
+		}
+
+		public virtual void AddApplicant(PatentLicenseActivity patentLicenseActivity, UserProfile user)
+		{
+			if (patentLicenseActivity == null)
+			{
+				return;
+			}
+			
+			patentLicenseActivity.ApplicantsPatentLicenseActivities.Add(new ApplicantsPatentLicenseActivities
+			{
+				Applicant = user,
+				ApplicantId = user.Id,
+				PatentLicenseActivity = patentLicenseActivity,
+				PatentLicenseActivityId = patentLicenseActivity.Id
+			});
+			_patentLicenseActivityRepository.Update(patentLicenseActivity);
+		}
+
+		public virtual void RemoveApplicant(Guid id, UserProfile user)
+		{
+			var patentLicenseActivity = _patentLicenseActivityRepository.Get(id);
+			if (patentLicenseActivity == null)
+			{
+				return;
+			}
+			
+			patentLicenseActivity.ApplicantsPatentLicenseActivities.Remove(patentLicenseActivity.ApplicantsPatentLicenseActivities.First(u => u.Applicant.Id == user.Id));
+			_patentLicenseActivityRepository.Update(patentLicenseActivity);
+		}
+		
+		public virtual void AddCoauthor(Guid id, string coauthor)
+		{
+			var patentLicenseActivity = _patentLicenseActivityRepository.Get(id);
+			if (patentLicenseActivity == null)
+			{
+				return;
+			}
+			
+			patentLicenseActivity.CoauthorsPatentLicenseActivities.Add(new CoauthorsPatentLicenseActivities
+			{
+				Coauthor = coauthor,
+				PatentLicenseActivity = patentLicenseActivity,
+				PatentLicenseActivityId = patentLicenseActivity.Id
+			});
+			_patentLicenseActivityRepository.Update(patentLicenseActivity);
+		}
+		
+		public virtual void RemoveCoauthor(Guid id, string coauthor)
+		{
+			var patentLicenseActivity = _patentLicenseActivityRepository.Get(id);
+			if (patentLicenseActivity == null)
+			{
+				return;
+			}
+			
+			patentLicenseActivity.CoauthorsPatentLicenseActivities.Remove(patentLicenseActivity.CoauthorsPatentLicenseActivities.First(u => u.Coauthor == coauthor));
+			_patentLicenseActivityRepository.Update(patentLicenseActivity);
+		}
+
+		public virtual void AddCoApplicant(Guid id, string coApplicant)
+		{
+			var patentLicenseActivity = _patentLicenseActivityRepository.Get(id);
+			if (patentLicenseActivity == null)
+			{
+				return;
+			}
+			
+			patentLicenseActivity.CoApplicantsPatentLicenseActivities.Add(new CoApplicantsPatentLicenseActivities
+			{
+				CoApplicant = coApplicant,
+				PatentLicenseActivity = patentLicenseActivity,
+				PatentLicenseActivityId = patentLicenseActivity.Id
+			});
+			_patentLicenseActivityRepository.Update(patentLicenseActivity);
+		}
+
+		public virtual void RemoveCoApplicant(Guid id, string coApplicant)
+		{
+			var patentLicenseActivity = _patentLicenseActivityRepository.Get(id);
+			if (patentLicenseActivity == null)
+			{
+				return;
+			}
+			
+			patentLicenseActivity.CoApplicantsPatentLicenseActivities.Remove(patentLicenseActivity.CoApplicantsPatentLicenseActivities.First(u => u.CoApplicant == coApplicant));
+			_patentLicenseActivityRepository.Update(patentLicenseActivity);
 		}
 
 		public virtual IEnumerable<UserProfile> GetAuthors(Guid id)

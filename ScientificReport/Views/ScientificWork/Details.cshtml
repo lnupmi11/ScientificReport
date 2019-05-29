@@ -7,7 +7,7 @@
 }
 
 <div>
-	<h5>@ViewData["Title"]</h5>
+	<h5>@Model.ScientificWork.Title</h5>
 	<hr/>
 	<dl class="row">
 		<dt class="col s2">
@@ -23,37 +23,29 @@
 			@Html.DisplayFor(model => model.ScientificWork.Category)
 		</dd>
 		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.ScientificWork.Title)]
-		</dt>
-		<dd class="col s10">
-			@Html.DisplayFor(model => model.ScientificWork.Title)
-		</dd>
-		<dt class="col s2">
 			@Localizer[Html.DisplayNameFor(model => model.ScientificWork.Contents)]
 		</dt>
 		<dd class="col s10">
 			@Html.DisplayFor(model => model.ScientificWork.Contents)
 		</dd>
-		<dt class="col s2">
-			@Localizer["Authors"]
-		</dt>
-		@if (Model.Authors != null)
+		@if (Model.Authors != null && Model.Authors.Any())
 		{
-			var authors = "";
-			foreach (var author in Model.Authors)
-			 {
-				 if (author != null && Model.Authors.Last() != author)
-				 {
-					 authors += $"{author.FirstName} {author.LastName}, ";
-				 }
-				 else if (author != null )
-				 {
-					 authors += $"{author.FirstName} {author.LastName}";
-				 }
-			 }
+			<dt class="col s2">
+				@Localizer["Authors"]
+			</dt>
 			<dd class="col s10">
-				@authors
-			</dd>
+				<ul>
+					@foreach (var author in Model.Authors)
+					{
+						<li>
+							<a asp-controller="UserProfile" asp-action="Details"
+							   asp-route-id="@author.Id">
+								@author.FullName
+							</a>
+						</li>
+					}
+				</ul>
+			</dd>	
 		}
 	</dl>
 </div>

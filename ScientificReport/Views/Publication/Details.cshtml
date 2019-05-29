@@ -120,7 +120,12 @@
 				<ul>
 					@foreach (var author in Model.Authors)
 					{
-						<li>@author</li>
+						<li>
+							<a asp-controller="UserProfile" asp-action="Details"
+							   asp-route-id="@author.Id">
+								@author.FullName
+							</a>
+						</li>
 					}
 				</ul>
 			</dd>	

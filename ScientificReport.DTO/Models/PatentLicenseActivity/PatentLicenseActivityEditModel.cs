@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace ScientificReport.DTO.Models.PatentLicenseActivity
@@ -7,6 +8,10 @@ namespace ScientificReport.DTO.Models.PatentLicenseActivity
 	{
 	    [Required]
 		public Guid Id { get; set; }
+
+		public IEnumerable<DAL.Entities.UserProfile.UserProfile> Users { get; set; }
+		
+		public IEnumerable<DAL.Entities.UserProfile.UserProfile> AuthorsOrApplicants { get; set; }
 
 		public PatentLicenseActivityEditModel()
         {

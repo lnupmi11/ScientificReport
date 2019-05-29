@@ -7,6 +7,7 @@ using ScientificReport.BLL.Interfaces;
 using ScientificReport.Controllers.Utils;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Roles;
+using ScientificReport.DTO.Models;
 using ScientificReport.DTO.Models.Publication;
 
 namespace ScientificReport.Controllers
@@ -171,7 +172,7 @@ namespace ScientificReport.Controllers
 		// POST: Publication/AddUserToAuthors/{publicationId}
 		[HttpPost]
 		[Authorize(Roles = UserProfileRole.HeadOfDepartmentOrAdmin)]
-		public IActionResult AddUserToAuthors(Guid? id, [FromBody] PublicationUpdateAuthorsRequest request)
+		public IActionResult AddUserToAuthors(Guid? id, [FromBody] UpdateUserRequest request)
 		{
 			if (id == null)
 			{
@@ -206,7 +207,7 @@ namespace ScientificReport.Controllers
 		// POST: Publication/RemoveUserFromAuthors/{publicationId}
 		[HttpPost]
 		[Authorize(Roles = UserProfileRole.HeadOfDepartmentOrAdmin)]
-		public IActionResult RemoveUserFromAuthors(Guid? id, [FromBody] PublicationUpdateAuthorsRequest request)
+		public IActionResult RemoveUserFromAuthors(Guid? id, [FromBody] UpdateUserRequest request)
 		{
 			if (id == null)
 			{

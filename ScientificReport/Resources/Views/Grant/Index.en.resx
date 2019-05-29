@@ -38,4 +38,7 @@
 	<data name="Next" xml:space="preserve">
 		<value>Next</value>
 	</data>
+	<data name="Info" xml:space="preserve">
+		<value>Info</value>
+	</data>
 </root>

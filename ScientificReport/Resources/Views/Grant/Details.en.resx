@@ -32,4 +32,10 @@
 	<data name="Back to List" xml:space="preserve">
 		<value>Back to List</value>
 	</data>
+	<data name="Info" xml:space="preserve">
+		<value>Info</value>
+	</data>
+	<data name="Authors" xml:space="preserve">
+		<value>Authors</value>
+	</data>
 </root>

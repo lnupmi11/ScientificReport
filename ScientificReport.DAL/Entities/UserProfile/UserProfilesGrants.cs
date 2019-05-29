@@ -8,10 +8,10 @@ namespace ScientificReport.DAL.Entities.UserProfile
 		[Key]
 		public Guid Id { get; set; }
 		
-		public int UserProfileId { get; set; }
+		public Guid UserProfileId { get; set; }
 		public virtual UserProfile UserProfile { get; set; }
 		
-		public int GrantId { get; set; }
+		public Guid GrantId { get; set; }
 		public virtual Grant Grant { get; set; }
 	}
 }
