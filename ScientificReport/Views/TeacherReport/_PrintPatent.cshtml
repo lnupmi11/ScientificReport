@@ -1,6 +1,14 @@
+@using ScientificReport.BLL.Interfaces
 @model ScientificReport.Views.TeacherReport.PrintPatent
+@inject IPatentLicenseActivityService PublicationService
 @{
-    Layout = null;
+	Layout = null;
 }
 
-    <li class="patent-item">Патент @Model.Patent.Number, @Model.Patent.Name / PLACEHOLDER-allAuthors</li>
+@{
+	var authors = PublicationService.GetAuthors(Model.Patent.Id).ToList();
+	var authorString = "";
+	if(authors.Count>0){authorString = authors.Select(u => u.LastName +" " + u.FirstName.ToCharArray()[0] +". "+ u.MiddleName.ToCharArray()[0]+ ".").Aggregate((current, item) => current +", "+ item);}
+}
+
+    <li class="patent-item">Патент @Model.Patent.Number, @Model.Patent.Name / @authorString</li>
