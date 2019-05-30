@@ -8,7 +8,7 @@ using ScientificReport.DAL.Interfaces;
 
 namespace ScientificReport.DAL.Repositories
 {
-	public class TeacherReportRepository: IRepository<TeacherReport>
+	public class TeacherReportRepository : IRepository<TeacherReport>
 	{
 		private readonly ScientificReportDbContext _context;
 
@@ -16,23 +16,28 @@ namespace ScientificReport.DAL.Repositories
 		{
 			_context = context;
 		}
-		
+
 		public IEnumerable<TeacherReport> All()
 		{
 			return _context.TeacherReports
-						.Include(r => r.Teacher)
-						.Include(g => g.Grants)
-						.Include(b=> b.Reviews)
-						.Include(o=>o.Oppositions)
-						.Include(p=>p.TeacherReportsPublications).ThenInclude(p => p.Publication)
-						.Include(p=>p.TeacherReportsArticles).ThenInclude(p => p.Article)
-						.Include(p=>p.TeacherReportsReportThesis).ThenInclude(p => p.ReportThesis).ThenInclude(p => p.Conference)
-						.Include(p=>p.TeacherReportsScientificWorks).ThenInclude(p => p.ScientificWork)
-						.Include(p=>p.PostgraduateGuidances)
-						.Include(sci=>sci.ScientificInternships)
-						.Include(scc=>scc.ScientificConsultations)
-						.Include(pdg=>pdg.PostgraduateDissertationGuidances)
-						.Include(p=>p.Patents);
+				.Include(p => p.Teacher)
+				.Include(p => p.TeacherReportsPublications).ThenInclude(p => p.Publication)
+				.Include(p => p.TeacherReportsArticles).ThenInclude(p => p.Article)
+				.Include(p => p.TeacherReportsReportThesis).ThenInclude(p => p.ReportThesis)
+				.ThenInclude(p => p.Conference)
+				.Include(p => p.TeacherReportsScientificWorks).ThenInclude(p => p.ScientificWork)
+				
+				.Include(p => p.TeacherReportsGrants).ThenInclude(p => p.Grant)
+				.Include(p => p.TeacherReportsScientificInternships).ThenInclude(p => p.ScientificInternship)
+				.Include(p => p.TeacherReportsPostgraduateGuidances).ThenInclude(p => p.PostgraduateGuidance)
+				.Include(p => p.TeacherReportsScientificConsultations).ThenInclude(p => p.ScientificConsultation)
+				.Include(p => p.TeacherReportsPostgraduateDissertationGuidances)
+				.ThenInclude(p => p.PostgraduateDissertationGuidance)
+				.Include(p => p.TeacherReportsReviews).ThenInclude(p => p.Review)
+				.Include(p => p.TeacherReportsOppositions).ThenInclude(p => p.Opposition)
+				.Include(p => p.TeacherReportsPatents).ThenInclude(p => p.Patent)
+				.Include(p => p.TeacherReportsMemberships).ThenInclude(p => p.Membership)
+				;
 		}
 
 		public virtual IEnumerable<TeacherReport> AllWhere(Func<TeacherReport, bool> predicate)

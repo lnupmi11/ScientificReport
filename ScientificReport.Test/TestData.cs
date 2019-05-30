@@ -156,19 +156,19 @@ namespace ScientificReport.Test
 		public static readonly Membership Membership1 = new Membership
 		{
 			Id = Guid.NewGuid(),
-			MemberOf = Membership.MemberOfChoices.ExpertCouncil,
+			Type = Membership.Types.ExpertCouncil,
 			MembershipInfo = "Some membership info 1"
 		};
 		public static readonly Membership Membership2 = new Membership
 		{
 			Id = Guid.NewGuid(),
-			MemberOf = Membership.MemberOfChoices.EditorialBoard,
+			Type = Membership.Types.EditorialBoard,
 			MembershipInfo = "Some membership info 2"
 		};
 		public static readonly Membership Membership3 = new Membership
 		{
 			Id = Guid.NewGuid(),
-			MemberOf = Membership.MemberOfChoices.ScientificCouncil,
+			Type = Membership.Types.ScientificCouncil,
 			MembershipInfo = "Some membership info 3"
 		};
 
@@ -284,7 +284,7 @@ namespace ScientificReport.Test
 			Name = "Some name 1",
 			Type = PatentLicenseActivity.Types.Patent,
 			Number = 1,
-			DateTime = DateTime.Now
+			Date = DateTime.Now
 		};
 		public static readonly PatentLicenseActivity PatentLicenseActivity2 = new PatentLicenseActivity
 		{
@@ -292,7 +292,7 @@ namespace ScientificReport.Test
 			Name = "Some name 2",
 			Type = PatentLicenseActivity.Types.Patent,
 			Number = 2,
-			DateTime = DateTime.Now
+			Date = DateTime.Now
 		};
 		public static readonly PatentLicenseActivity PatentLicenseActivity3 = new PatentLicenseActivity
 		{
@@ -300,7 +300,7 @@ namespace ScientificReport.Test
 			Name = "Some name 3",
 			Type = PatentLicenseActivity.Types.Patent,
 			Number = 3,
-			DateTime = DateTime.Now
+			Date = DateTime.Now
 		};
 
 		public static readonly Review Review1 = new Review
@@ -448,10 +448,10 @@ namespace ScientificReport.Test
 		{
 			Id = Guid.NewGuid(),
 			Edited = DateTime.Now,
-			Grants = new List<Grant>
-			{
-				Grant1
-			},
+//			Grants = new List<Grant>
+//			{
+//				Grant1
+//			},
 			Created = DateTime.Now,
 			Teacher = User1,
 //			Publications = new List<Publication>
@@ -500,10 +500,10 @@ namespace ScientificReport.Test
 		{
 			Id = Guid.NewGuid(),
 			Edited = DateTime.Now,
-			Grants = new List<Grant>
-			{
-				Grant2
-			},
+//			Grants = new List<Grant>
+//			{
+//				Grant2
+//			},
 			Created = DateTime.Now,
 			Teacher = User2,
 //			Publications = new List<Publication>
@@ -552,10 +552,10 @@ namespace ScientificReport.Test
 		{
 			Id = Guid.NewGuid(),
 			Edited = DateTime.Now,
-			Grants = new List<Grant>
-			{
-				Grant3
-			},
+//			Grants = new List<Grant>
+//			{
+//				Grant3
+//			},
 			Created = DateTime.Now,
 			Teacher = User3,
 //			Publications = new List<Publication>

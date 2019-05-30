@@ -22,12 +22,30 @@ namespace ScientificReport.Controllers
 		private readonly IArticleService _articleService;
 		private readonly IScientificWorkService _scientificWorkService;
 		private readonly IReportThesisService _reportThesisService;
+		private readonly IMembershipService _membershipService;
+		private readonly IGrantService _grantService;
+		private readonly IOppositionService _oppositionService;
+		private readonly IPatentLicenseActivityService _patentService;
+		private readonly IPostgraduateDissertationGuidanceService _postgraduateDissertationGuidanceService;
+		private readonly IPostgraduateGuidanceService _postgraduateGuidanceService;
+		private readonly IReviewService _reviewService;
+		private readonly IScientificConsultationService _scientificConsultationService;
+		private readonly IScientificInternshipService _scientificInternshipService;
 
 		public TeacherReportController(ITeacherReportService teacherReportService,
 			IUserProfileService userProfileService,
 			IArticleService articleService,
 			IScientificWorkService scientificWorkService,
 			IReportThesisService reportThesisService,
+			IMembershipService membershipService,
+			IGrantService grantService,
+			IOppositionService oppositionService,
+			IPatentLicenseActivityService patentService,
+			IPostgraduateDissertationGuidanceService postgraduateDissertationGuidanceService,
+			IPostgraduateGuidanceService postgraduateGuidanceService,
+			IReviewService reviewService,
+			IScientificConsultationService scientificConsultationService,
+			IScientificInternshipService scientificInternshipService,
 			IPublicationService publicationService)
 		{
 			_teacherReportService = teacherReportService;
@@ -36,6 +54,15 @@ namespace ScientificReport.Controllers
 			_articleService = articleService;
 			_scientificWorkService = scientificWorkService;
 			_reportThesisService = reportThesisService;
+			_membershipService = membershipService;
+			_grantService = grantService;
+			_oppositionService = oppositionService;
+			_patentService = patentService;
+			_postgraduateDissertationGuidanceService = postgraduateDissertationGuidanceService;
+			_postgraduateGuidanceService = postgraduateGuidanceService;
+			_reviewService = reviewService;
+			_scientificConsultationService = scientificConsultationService;
+			_scientificInternshipService = scientificInternshipService;
 		}
 
 		// GET: Report
@@ -146,7 +173,15 @@ namespace ScientificReport.Controllers
 					.ThenBy(p => p.Title),
 				Articles = _articleService.GetAll(),
 				ScientificWorks = _scientificWorkService.GetAll(),
-				ReportTheses = _reportThesisService.GetAll()
+				ReportTheses = _reportThesisService.GetAll(),
+				Grants = _grantService.GetAll(),
+				ScientificInternships = _scientificInternshipService.GetAll(),
+				PostgraduateGuidances = _postgraduateGuidanceService.GetAll(),
+				ScientificConsultations = _scientificConsultationService.GetAll(),
+				PostgraduateDissertationGuidances = _postgraduateDissertationGuidanceService.GetAll(),
+				Reviews = _reviewService.GetAll(),
+				Oppositions = _oppositionService.GetAll(),
+				Patents = _patentService.GetAll()
 			};
 			return View(data);
 		}
@@ -269,6 +304,125 @@ namespace ScientificReport.Controllers
 		public IActionResult DeleteReportThesis(Guid id, [FromBody] TeacherReportToggleEntityRequest request)
 		{
 			_teacherReportService.RemoveReportThesis(id, request.EntityId);
+			return Json(ApiResponse.Ok);
+		}
+		
+		[HttpPost]
+		public IActionResult AddGrant(Guid id, [FromBody] TeacherReportToggleEntityRequest request)
+		{
+			_teacherReportService.AddGrant(id, request.EntityId);
+			return Json(ApiResponse.Ok);
+		}
+
+		[HttpPost]
+		public IActionResult DeleteGrant(Guid id, [FromBody] TeacherReportToggleEntityRequest request)
+		{
+			_teacherReportService.RemoveGrant(id, request.EntityId);
+			return Json(ApiResponse.Ok);
+		}
+		[HttpPost]
+		public IActionResult AddScientificInternship(Guid id, [FromBody] TeacherReportToggleEntityRequest request)
+		{
+			_teacherReportService.AddScientificInternship(id, request.EntityId);
+			return Json(ApiResponse.Ok);
+		}
+
+		[HttpPost]
+		public IActionResult DeleteScientificInternship(Guid id, [FromBody] TeacherReportToggleEntityRequest request)
+		{
+			_teacherReportService.RemoveScientificInternship(id, request.EntityId);
+			return Json(ApiResponse.Ok);
+		}
+		[HttpPost]
+		public IActionResult AddPostgraduateGuidance(Guid id, [FromBody] TeacherReportToggleEntityRequest request)
+		{
+			_teacherReportService.AddPostgraduateGuidance(id, request.EntityId);
+			return Json(ApiResponse.Ok);
+		}
+
+		[HttpPost]
+		public IActionResult DeletePostgraduateGuidance(Guid id, [FromBody] TeacherReportToggleEntityRequest request)
+		{
+			_teacherReportService.RemovePostgraduateGuidance(id, request.EntityId);
+			return Json(ApiResponse.Ok);
+		}
+		[HttpPost]
+		public IActionResult AddScientificConsultation(Guid id, [FromBody] TeacherReportToggleEntityRequest request)
+		{
+			_teacherReportService.AddScientificConsultation(id, request.EntityId);
+			return Json(ApiResponse.Ok);
+		}
+
+		[HttpPost]
+		public IActionResult DeleteScientificConsultation(Guid id, [FromBody] TeacherReportToggleEntityRequest request)
+		{
+			_teacherReportService.RemoveScientificConsultation(id, request.EntityId);
+			return Json(ApiResponse.Ok);
+		}
+		[HttpPost]
+		public IActionResult AddPostgraduateDissertationGuidance(Guid id, [FromBody] TeacherReportToggleEntityRequest request)
+		{
+			_teacherReportService.AddPostgraduateDissertationGuidance(id, request.EntityId);
+			return Json(ApiResponse.Ok);
+		}
+
+		[HttpPost]
+		public IActionResult DeletePostgraduateDissertationGuidance(Guid id, [FromBody] TeacherReportToggleEntityRequest request)
+		{
+			_teacherReportService.RemovePostgraduateDissertationGuidance(id, request.EntityId);
+			return Json(ApiResponse.Ok);
+		}
+		[HttpPost]
+		public IActionResult AddReview(Guid id, [FromBody] TeacherReportToggleEntityRequest request)
+		{
+			_teacherReportService.AddReview(id, request.EntityId);
+			return Json(ApiResponse.Ok);
+		}
+
+		[HttpPost]
+		public IActionResult DeleteReview(Guid id, [FromBody] TeacherReportToggleEntityRequest request)
+		{
+			_teacherReportService.RemoveReview(id, request.EntityId);
+			return Json(ApiResponse.Ok);
+		}
+		[HttpPost]
+		public IActionResult AddOpposition(Guid id, [FromBody] TeacherReportToggleEntityRequest request)
+		{
+			_teacherReportService.AddOpposition(id, request.EntityId);
+			return Json(ApiResponse.Ok);
+		}
+
+		[HttpPost]
+		public IActionResult DeleteOpposition(Guid id, [FromBody] TeacherReportToggleEntityRequest request)
+		{
+			_teacherReportService.RemoveOpposition(id, request.EntityId);
+			return Json(ApiResponse.Ok);
+		}
+		[HttpPost]
+		public IActionResult AddPatent(Guid id, [FromBody] TeacherReportToggleEntityRequest request)
+		{
+			_teacherReportService.AddPatent(id, request.EntityId);
+			return Json(ApiResponse.Ok);
+		}
+
+		[HttpPost]
+		public IActionResult DeletePatent(Guid id, [FromBody] TeacherReportToggleEntityRequest request)
+		{
+			_teacherReportService.RemovePatent(id, request.EntityId);
+			return Json(ApiResponse.Ok);
+		}
+		
+		[HttpPost]
+		public IActionResult AddMembership(Guid id, [FromBody] TeacherReportToggleEntityRequest request)
+		{
+			_teacherReportService.AddMembership(id, request.EntityId);
+			return Json(ApiResponse.Ok);
+		}
+
+		[HttpPost]
+		public IActionResult DeleteMembership(Guid id, [FromBody] TeacherReportToggleEntityRequest request)
+		{
+			_teacherReportService.RemoveMembership(id, request.EntityId);
 			return Json(ApiResponse.Ok);
 		}
 	}

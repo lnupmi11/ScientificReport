@@ -3,7 +3,7 @@
 @inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = Localizer["Edit"];
+	ViewData["Title"] = Localizer["Edit"];
 }
 
 <!--suppress HtmlFormInputWithoutLabel -->
@@ -12,149 +12,339 @@
 <h5>@Localizer["Report"]</h5>
 <hr/>
 <div class="row">
-    <div class="col s12">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="validate"></div>
-            <input type="hidden" asp-for="TeacherReport.Id"/>
-            <div class="row">
-                <div class="input-field col s6">
-                    <input asp-for="TeacherReport.Created" type="date" class="validate">
-                    <label asp-for="TeacherReport.Created">@Localizer["Created"]</label>
-                    <span class="helper-text" asp-validation-for="TeacherReport.Created" data-error="" data-success=""></span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s6">
-                    @Html.DropDownListFor(
-                        r => r.TeacherReport.Teacher.Id,
-                        new SelectList(Model.Users, "Id", "FullName", Model.TeacherReport.Teacher.Id), new {@class = "col s6"})
-                    @Html.ValidationMessageFor(x => x.TeacherReport.Teacher.Id, "", new {@class = "validate"})
-                    <label asp-for="TeacherReport.Teacher" class="active">@Localizer["Teacher"]</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s6">
-                    <h4>@Localizer["Publications"]:</h4>
-                    <div class="publication-list">
-                        @if (Model.Publications != null)
-                        {
-                            foreach (var publication in Model.Publications)
-                            {
-                                if (publication != null)
-                                {
-                                    var exists = Model.TeacherReport.TeacherReportsPublications.Any(p => p.Publication.Id == publication.Id);
-                                    <p>
-                                        @publication.Title
-                                        <i class="add-publication fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addPublication(this, '@Model.TeacherReport.Id', '@publication.Id')"></i>
-                                        <i class="remove-publication fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deletePublication(this, '@Model.TeacherReport.Id', '@publication.Id')"></i>
-                                    </p>
-                                }
-                            }
-                        }
-                    </div>
-                    <a asp-controller="Publication" asp-action="Create" asp-route-next="@Url.Action("Edit", Model.TeacherReport.Id)" class="btn-small blue darken-3">@Localizer["Add New Publication"]</a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s6">
-                    <h4>@Localizer["Articles"]:</h4>
-                    <div class="publication-list">
-                        @if (Model.Articles != null)
-                        {
-                            foreach (var article in Model.Articles)
-                            {
-                                if (article != null)
-                                {
-                                    var exists = Model.TeacherReport.TeacherReportsArticles.Any(p => p.Article.Id == article.Id);
-                                    <p>
-                                        @article.Title
-                                        <i class="add-article fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addArticle(this, '@Model.TeacherReport.Id', '@article.Id')"></i>
-                                        <i class="remove-article fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteArticle(this, '@Model.TeacherReport.Id', '@article.Id')"></i>
-                                    </p>
-                                }
-                            }
-                        }
-                    </div>
-                    <a asp-controller="Article" asp-action="Create" asp-route-next="@Url.Action("Edit", Model.TeacherReport.Id)" class="btn-small blue darken-3">@Localizer["Add New Article"]</a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s6">
-                    <h4>@Localizer["ScientificWorks"]:</h4>
-                    <div class="publication-list">
-                        @if (Model.ScientificWorks != null)
-                        {
-                            foreach (var scientificWork in Model.ScientificWorks)
-                            {
-                                if (scientificWork != null)
-                                {
-                                    var exists = Model.TeacherReport.TeacherReportsScientificWorks.Any(p => p.ScientificWork.Id == scientificWork.Id);
-                                    <p>
-                                        @scientificWork.Title
-                                        <i class="add-scientificWork fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addScientificWork(this, '@Model.TeacherReport.Id', '@scientificWork.Id')"></i>
-                                        <i class="remove-scientificWork fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteScientificWork(this, '@Model.TeacherReport.Id', '@scientificWork.Id')"></i>
-                                    </p>
-                                }
-                            }
-                        }
-                    </div>
-                    <a asp-controller="ScientificWork" asp-action="Create" asp-route-next="@Url.Action("Edit", Model.TeacherReport.Id)" class="btn-small blue darken-3">@Localizer["Add New Scientific Work"]</a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s6">
-                    <h4>@Localizer["ReportTheses"]:</h4>
-                    <div class="publication-list">
-                        @if (Model.ReportTheses != null)
-                        {
-                            foreach (var reportThesis in Model.ReportTheses)
-                            {
-                                if (reportThesis != null)
-                                {
-                                    var exists = Model.TeacherReport.TeacherReportsReportThesis.Any(p => p.ReportThesis.Id == reportThesis.Id);
-                                    <p>
-                                        @reportThesis.Thesis
-                                        <i class="add-reportThesis fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addReportThesis(this, '@Model.TeacherReport.Id', '@reportThesis.Id')"></i>
-                                        <i class="remove-reportThesis fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteReportThesis(this, '@Model.TeacherReport.Id', '@reportThesis.Id')"></i>
-                                    </p>
-                                }
-                            }
-                        }
-                    </div>
-                    <a asp-controller="ReportThesis" asp-action="Create" asp-route-next="@Url.Action("Edit", Model.TeacherReport.Id)" class="btn-small blue darken-3">@Localizer["Add New Report Thesis"]</a>
-                </div>
-            </div>
-            <div class="row myButtons">
-                <button type="submit" class="waves-effect btn-small amber accent-2">@Localizer["Save"]</button>
-                <a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
-            </div>
-        </form>
-    </div>
+<div class="col s12">
+<form asp-action="Edit">
+<div asp-validation-summary="ModelOnly" class="validate"></div>
+<input type="hidden" asp-for="TeacherReport.Id"/>
+<div class="row">
+	<div class="input-field col s6">
+		<input asp-for="TeacherReport.Created" type="date" class="validate">
+		<label asp-for="TeacherReport.Created">@Localizer["Created"]</label>
+		<span class="helper-text" asp-validation-for="TeacherReport.Created" data-error="" data-success=""></span>
+	</div>
+</div>
+<div class="row">
+	<div class="input-field col s6">
+		@Html.DropDownListFor(
+			r => r.TeacherReport.Teacher.Id,
+			new SelectList(Model.Users, "Id", "FullName", Model.TeacherReport.Teacher.Id), new {@class = "col s6"})
+		@Html.ValidationMessageFor(x => x.TeacherReport.Teacher.Id, "", new {@class = "validate"})
+		<label asp-for="TeacherReport.Teacher" class="active">@Localizer["Teacher"]</label>
+	</div>
+</div>
+<div class="row">
+	<div class="col s6">
+		<h4>@Localizer["Publications"]:</h4>
+		<div class="publication-list">
+			@if (Model.Publications != null)
+			{
+				foreach (var publication in Model.Publications)
+				{
+					if (publication != null)
+					{
+						var exists = Model.TeacherReport.TeacherReportsPublications.Any(p => p.Publication.Id == publication.Id);
+						<p>
+							@publication.Title
+							<i class="add-publication fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addPublication(this, '@Model.TeacherReport.Id', '@publication.Id')"></i>
+							<i class="remove-publication fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deletePublication(this, '@Model.TeacherReport.Id', '@publication.Id')"></i>
+						</p>
+					}
+				}
+			}
+		</div>
+		<a asp-controller="Publication" asp-action="Create" asp-route-next="@Url.Action("Edit", Model.TeacherReport.Id)" class="btn-small blue darken-3">@Localizer["Add New Publication"]</a>
+	</div>
+</div>
+<div class="row">
+	<div class="col s6">
+		<h4>@Localizer["Articles"]:</h4>
+		<div class="publication-list">
+			@if (Model.Articles != null)
+			{
+				foreach (var article in Model.Articles)
+				{
+					if (article != null)
+					{
+						var exists = Model.TeacherReport.TeacherReportsArticles.Any(p => p.Article.Id == article.Id);
+						<p>
+							@article.Title
+							<i class="add-article fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addArticle(this, '@Model.TeacherReport.Id', '@article.Id')"></i>
+							<i class="remove-article fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteArticle(this, '@Model.TeacherReport.Id', '@article.Id')"></i>
+						</p>
+					}
+				}
+			}
+		</div>
+		<a asp-controller="Article" asp-action="Create" asp-route-next="@Url.Action("Edit", Model.TeacherReport.Id)" class="btn-small blue darken-3">@Localizer["Add New Article"]</a>
+	</div>
+</div>
+<div class="row">
+	<div class="col s6">
+		<h4>@Localizer["ScientificWorks"]:</h4>
+		<div class="publication-list">
+			@if (Model.ScientificWorks != null)
+			{
+				foreach (var scientificWork in Model.ScientificWorks)
+				{
+					if (scientificWork != null)
+					{
+						var exists = Model.TeacherReport.TeacherReportsScientificWorks.Any(p => p.ScientificWork.Id == scientificWork.Id);
+						<p>
+							@scientificWork.Title
+							<i class="add-scientificWork fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addScientificWork(this, '@Model.TeacherReport.Id', '@scientificWork.Id')"></i>
+							<i class="remove-scientificWork fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteScientificWork(this, '@Model.TeacherReport.Id', '@scientificWork.Id')"></i>
+						</p>
+					}
+				}
+			}
+		</div>
+		<a asp-controller="ScientificWork" asp-action="Create" asp-route-next="@Url.Action("Edit", Model.TeacherReport.Id)" class="btn-small blue darken-3">@Localizer["Add New Scientific Work"]</a>
+	</div>
+</div>
+<div class="row">
+	<div class="col s6">
+		<h4>@Localizer["ReportTheses"]:</h4>
+		<div class="publication-list">
+			@if (Model.ReportTheses != null)
+			{
+				foreach (var reportThesis in Model.ReportTheses)
+				{
+					if (reportThesis != null)
+					{
+						var exists = Model.TeacherReport.TeacherReportsReportThesis.Any(p => p.ReportThesis.Id == reportThesis.Id);
+						<p>
+							@reportThesis.Thesis
+							<i class="add-reportThesis fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addReportThesis(this, '@Model.TeacherReport.Id', '@reportThesis.Id')"></i>
+							<i class="remove-reportThesis fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteReportThesis(this, '@Model.TeacherReport.Id', '@reportThesis.Id')"></i>
+						</p>
+					}
+				}
+			}
+		</div>
+		<a asp-controller="ReportThesis" asp-action="Create" asp-route-next="@Url.Action("Edit", Model.TeacherReport.Id)" class="btn-small blue darken-3">@Localizer["Add New Report Thesis"]</a>
+	</div>
+</div>
+<div class="row">
+	<div class="col s6">
+		<h4>@Localizer["Grant"]:</h4>
+		<div class="publication-list">
+			@if (Model.Grants != null)
+			{
+				foreach (var grant in Model.Grants)
+				{
+					if (grant != null)
+					{
+						var exists = Model.TeacherReport.TeacherReportsGrants.Any(p => p.Grant.Id == grant.Id);
+						<p>
+							@grant.Id
+							<i class="add-grant fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addGrant(this, '@Model.TeacherReport.Id', '@grant.Id')"></i>
+							<i class="remove-grant fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteGrant(this, '@Model.TeacherReport.Id', '@grant.Id')"></i>
+						</p>
+					}
+				}
+			}
+		</div>
+		<a asp-controller="Grant" asp-action="Create" asp-route-next="@Url.Action("Edit", Model.TeacherReport.Id)" class="btn-small blue darken-3">@Localizer["Add New Grant"]</a>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col s6">
+		<h4>@Localizer["ScientificInternship"]:</h4>
+		<div class="publication-list">
+			@if (Model.ScientificInternships != null)
+			{
+				foreach (var scientificInternship in Model.ScientificInternships)
+				{
+					if (scientificInternship != null)
+					{
+						var exists = Model.TeacherReport.TeacherReportsScientificInternships.Any(p => p.ScientificInternship.Id == scientificInternship.Id);
+						<p>
+							@scientificInternship.Contents
+							<i class="add-scientificInternship fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addScientificInternship(this, '@Model.TeacherReport.Id', '@scientificInternship.Id')"></i>
+							<i class="remove-scientificInternship fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteScientificInternship(this, '@Model.TeacherReport.Id', '@scientificInternship.Id')"></i>
+						</p>
+					}
+				}
+			}
+		</div>
+		<a asp-controller="ScientificInternship" asp-action="Create" asp-route-next="@Url.Action("Edit", Model.TeacherReport.Id)" class="btn-small blue darken-3">@Localizer["Add New ScientificInternship"]</a>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col s6">
+		<h4>@Localizer["PostgraduateGuidance"]:</h4>
+		<div class="publication-list">
+			@if (Model.PostgraduateGuidances != null)
+			{
+				foreach (var postgraduateGuidance in Model.PostgraduateGuidances)
+				{
+					if (postgraduateGuidance != null)
+					{
+						var exists = Model.TeacherReport.TeacherReportsPostgraduateGuidances.Any(p => p.PostgraduateGuidance.Id == postgraduateGuidance.Id);
+						<p>
+							@postgraduateGuidance.Guide
+							<i class="add-postgraduateGuidance fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addPostgraduateGuidance(this, '@Model.TeacherReport.Id', '@postgraduateGuidance.Id')"></i>
+							<i class="remove-postgraduateGuidance fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deletePostgraduateGuidance(this, '@Model.TeacherReport.Id', '@postgraduateGuidance.Id')"></i>
+						</p>
+					}
+				}
+			}
+		</div>
+		<a asp-controller="PostgraduateGuidance" asp-action="Create" asp-route-next="@Url.Action("Edit", Model.TeacherReport.Id)" class="btn-small blue darken-3">@Localizer["Add New PostgraduateGuidance"]</a>
+	</div>
+</div>
+<div class="row">
+	<div class="col s6">
+		<h4>@Localizer["ScientificConsultation"]:</h4>
+		<div class="publication-list">
+			@if (Model.ScientificConsultations != null)
+			{
+				foreach (var scientificConsultation in Model.ScientificConsultations)
+				{
+					if (scientificConsultation != null)
+					{
+						var exists = Model.TeacherReport.TeacherReportsScientificConsultations.Any(p => p.ScientificConsultation.Id == scientificConsultation.Id);
+						<p>
+							@scientificConsultation.DissertationTitle (@scientificConsultation.Guide)
+							<i class="add-scientificConsultation fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addScientificConsultation(this, '@Model.TeacherReport.Id', '@scientificConsultation.Id')"></i>
+							<i class="remove-scientificConsultation fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteScientificConsultation(this, '@Model.TeacherReport.Id', '@scientificConsultation.Id')"></i>
+						</p>
+					}
+				}
+			}
+		</div>
+		<a asp-controller="ScientificConsultation" asp-action="Create" asp-route-next="@Url.Action("Edit", Model.TeacherReport.Id)" class="btn-small blue darken-3">@Localizer["Add New ScientificConsultation"]</a>
+	</div>
+</div>
+<div class="row">
+	<div class="col s6">
+		<h4>@Localizer["PostgraduateDissertationGuidance"]:</h4>
+		<div class="publication-list">
+			@if (Model.PostgraduateDissertationGuidances != null)
+			{
+				foreach (var postgraduateDissertationGuidance in Model.PostgraduateDissertationGuidances)
+				{
+					if (postgraduateDissertationGuidance != null)
+					{
+						var exists = Model.TeacherReport.TeacherReportsPostgraduateDissertationGuidances.Any(p => p.PostgraduateDissertationGuidance.Id == postgraduateDissertationGuidance.Id);
+						<p>
+							@postgraduateDissertationGuidance.Dissertation (@postgraduateDissertationGuidance.Guide)
+							<i class="add-postgraduateDissertationGuidance fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addPostgraduateDissertationGuidance(this, '@Model.TeacherReport.Id', '@postgraduateDissertationGuidance.Id')"></i>
+							<i class="remove-postgraduateDissertationGuidance fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deletePostgraduateDissertationGuidance(this, '@Model.TeacherReport.Id', '@postgraduateDissertationGuidance.Id')"></i>
+						</p>
+					}
+				}
+			}
+		</div>
+		<a asp-controller="PostgraduateDissertationGuidance" asp-action="Create" asp-route-next="@Url.Action("Edit", Model.TeacherReport.Id)" class="btn-small blue darken-3">@Localizer["Add New PostgraduateDissertationGuidance"]</a>
+	</div>
+</div>
+<div class="row">
+	<div class="col s6">
+		<h4>@Localizer["Review"]:</h4>
+		<div class="publication-list">
+			@if (Model.Reviews != null)
+			{
+				foreach (var review in Model.Reviews)
+				{
+					if (review != null)
+					{
+						var exists = Model.TeacherReport.TeacherReportsReviews.Any(p => p.Review.Id == review.Id);
+						<p>
+							@review.Reviewer (@review.DateOfReview)
+							<i class="add-review fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addReview(this, '@Model.TeacherReport.Id', '@review.Id')"></i>
+							<i class="remove-review fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteReview(this, '@Model.TeacherReport.Id', '@review.Id')"></i>
+						</p>
+					}
+				}
+			}
+		</div>
+		<a asp-controller="Review" asp-action="Create" asp-route-next="@Url.Action("Edit", Model.TeacherReport.Id)" class="btn-small blue darken-3">@Localizer["Add New Review"]</a>
+	</div>
+</div>
+<div class="row">
+	<div class="col s6">
+		<h4>@Localizer["Opposition"]:</h4>
+		<div class="publication-list">
+			@if (Model.Oppositions != null)
+			{
+				foreach (var opposition in Model.Oppositions)
+				{
+					if (opposition != null)
+					{
+						var exists = Model.TeacherReport.TeacherReportsOppositions.Any(p => p.Opposition.Id == opposition.Id);
+						<p>
+							@opposition.About (@opposition.Opponent - @opposition.DateOfOpposition)
+							<i class="add-opposition fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addOpposition(this, '@Model.TeacherReport.Id', '@opposition.Id')"></i>
+							<i class="remove-opposition fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteOpposition(this, '@Model.TeacherReport.Id', '@opposition.Id')"></i>
+						</p>
+					}
+				}
+			}
+		</div>
+		<a asp-controller="Opposition" asp-action="Create" asp-route-next="@Url.Action("Edit", Model.TeacherReport.Id)" class="btn-small blue darken-3">@Localizer["Add New Opposition"]</a>
+	</div>
+</div>
+<div class="row">
+	<div class="col s6">
+		<h4>@Localizer["Patent"]:</h4>
+		<div class="publication-list">
+			@if (Model.Patents != null)
+			{
+				foreach (var patent in Model.Patents)
+				{
+					if (patent != null)
+					{
+						var exists = Model.TeacherReport.TeacherReportsPatents.Any(p => p.Patent.Id == patent.Id);
+						<p>
+							@patent.Number @patent.Name
+							<i class="add-patent fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addPatent(this, '@Model.TeacherReport.Id', '@patent.Id')"></i>
+							<i class="remove-patent fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deletePatent(this, '@Model.TeacherReport.Id', '@patent.Id')"></i>
+						</p>
+					}
+				}
+			}
+		</div>
+		<a asp-controller="PatentLicenseActivity" asp-action="Create" asp-route-next="@Url.Action("Edit", Model.TeacherReport.Id)" class="btn-small blue darken-3">@Localizer["Add New Patent"]</a>
+	</div>
+</div>
+<div class="row">
+	<div class="col s6">
+		<h4>@Localizer["Membership"]:</h4>
+		<div class="publication-list">
+			@if (Model.Memberships != null)
+			{
+				foreach (var membership in Model.Memberships)
+				{
+					if (membership != null)
+					{
+						var exists = Model.TeacherReport.TeacherReportsMemberships.Any(p => p.Membership.Id == membership.Id);
+						<p>
+							@membership.MembershipInfo
+							<i class="add-membership fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addMembership(this, '@Model.TeacherReport.Id', '@membership.Id')"></i>
+							<i class="remove-membership fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteMembership(this, '@Model.TeacherReport.Id', '@membership.Id')"></i>
+						</p>
+					}
+				}
+			}
+		</div>
+		<a asp-controller="Membership" asp-action="Create" asp-route-next="@Url.Action("Edit", Model.TeacherReport.Id)" class="btn-small blue darken-3">@Localizer["Add New Membership"]</a>
+	</div>
+</div>
+
+<div class="row myButtons">
+	<button type="submit" class="waves-effect btn-small amber accent-2">@Localizer["Save"]</button>
+	<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
+</div>
+</form>
+</div>
 </div>
 
 @section Scripts {
-    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
-    <script>
-        const toggleEntity = (controller, endpoint, tagName) => (tag, id, entityId) => {
-            const config = {
-                method: 'POST',
-                body: JSON.stringify({
-                    EntityId: entityId,
-                }),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            };
-            fetch(`/${controller}/${endpoint}/${id}`, config).then(response => {
-               console.log(response);
-                if (response.status !== 200) throw {msg: "Failed to toggle the entity", response};
-                tag.classList.add('hidden');
-                tag.parentElement.getElementsByClassName(tagName)[0].classList.remove('hidden');
-            }).catch(e => {
-                console.error(e);
-            });
-        };
-    
+	@{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+	<script>    
         const addPublication = toggleEntity('TeacherReport', 'AddPublication', 'remove-publication');
         const deletePublication = toggleEntity('TeacherReport', 'DeletePublication', 'add-publication');
         const addArticle = toggleEntity('TeacherReport', 'AddArticle', 'remove-article');
@@ -163,6 +353,32 @@
         const deleteScientificWork = toggleEntity('TeacherReport', 'DeleteScientificWork', 'add-scientificWork');
         const addReportThesis = toggleEntity('TeacherReport', 'AddReportThesis', 'remove-reportThesis');
         const deleteReportThesis = toggleEntity('TeacherReport', 'DeleteReportThesis', 'add-reportThesis');
-
-    </script>
+        
+        const addGrant = toggleEntity('TeacherReport', 'AddGrant', 'remove-grant');
+        const deleteGrant = toggleEntity('TeacherReport', 'DeleteGrant', 'add-grant');
+        
+        const addScientificInternship = toggleEntity('TeacherReport', 'AddScientificInternship', 'remove-scientificInternship');
+        const deleteScientificInternship = toggleEntity('TeacherReport', 'DeleteScientificInternship', 'add-scientificInternship');
+        
+        const addPostgraduateGuidance = toggleEntity('TeacherReport', 'AddPostgraduateGuidance', 'remove-postgraduateGuidance');
+        const deletePostgraduateGuidance = toggleEntity('TeacherReport', 'DeletePostgraduateGuidance', 'add-postgraduateGuidance');
+        
+        const addScientificConsultation = toggleEntity('TeacherReport', 'AddScientificConsultation', 'remove-scientificConsultation');
+        const deleteScientificConsultation = toggleEntity('TeacherReport', 'DeleteScientificConsultation', 'add-scientificConsultation');
+        
+        const addPostgraduateDissertationGuidance = toggleEntity('TeacherReport', 'AddPostgraduateDissertationGuidance', 'remove-postgraduateDissertationGuidance');
+        const deletePostgraduateDissertationGuidance = toggleEntity('TeacherReport', 'DeletePostgraduateDissertationGuidance', 'add-postgraduateDissertationGuidance');
+        
+        const addReview = toggleEntity('TeacherReport', 'AddReview', 'remove-review');
+        const deleteReview = toggleEntity('TeacherReport', 'DeleteReview', 'add-review');
+        
+        const addOpposition = toggleEntity('TeacherReport', 'AddOpposition', 'remove-opposition');
+        const deleteOpposition = toggleEntity('TeacherReport', 'DeleteOpposition', 'add-opposition');
+        
+        const addPatent = toggleEntity('TeacherReport', 'AddPatent', 'remove-patent');
+        const deletePatent = toggleEntity('TeacherReport', 'DeletePatent', 'add-patent');
+       
+        const addMembership = toggleEntity('TeacherReport', 'AddMembership', 'remove-membership');
+        const deleteMembership = toggleEntity('TeacherReport', 'DeleteMembership', 'add-membership');
+ </script>
 }

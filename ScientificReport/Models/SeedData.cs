@@ -446,7 +446,7 @@ namespace ScientificReport.Models
 			{
 				Name = "High",
 				Number = 2,
-				DateTime = DateTime.Now,
+				Date = DateTime.Now,
 				Type = PatentLicenseActivity.Types.Application	
 			}));
 			
@@ -454,7 +454,7 @@ namespace ScientificReport.Models
 			{
 				Name = "Medium",
 				Number = 4,
-				DateTime = DateTime.Today,
+				Date = DateTime.Today,
 				Type = PatentLicenseActivity.Types.Patent	
 			}));
 		}
@@ -490,17 +490,17 @@ namespace ScientificReport.Models
 
 			membershipService.CreateItem(new MembershipModel(new Membership
 			{
-				MemberOf = Membership.MemberOfChoices.ScientificCouncil,
+				Type = Membership.Types.ScientificCouncil,
 				MembershipInfo = "good helper"
 			}));
 			membershipService.CreateItem(new MembershipModel(new Membership
 			{
-				MemberOf = Membership.MemberOfChoices.ExpertCouncil,
+				Type = Membership.Types.ExpertCouncil,
 				MembershipInfo = "best helper"
 			}));
 			membershipService.CreateItem(new MembershipModel(new Membership
 			{
-				MemberOf = Membership.MemberOfChoices.EditorialBoard,
+				Type = Membership.Types.EditorialBoard,
 				MembershipInfo = "normal guy"
 			}));
 		}

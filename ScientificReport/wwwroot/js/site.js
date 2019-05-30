@@ -3,3 +3,24 @@
 	$(".dropdown-trigger").dropdown();
 	// Materialize.updateTextFields();
 });
+
+const toggleEntity = (controller, endpoint, tagName) => (tag, id, entityId) => {
+	const config = {
+		method: 'POST',
+		body: JSON.stringify({
+			EntityId: entityId,
+		}),
+		headers: {
+			'Content-Type': 'application/json'
+		}
+	};
+	fetch(`/${controller}/${endpoint}/${id}`, config).then(response => {
+		console.log(response);
+		if (response.status !== 200) throw {msg: "Failed to toggle the entity", response};
+		tag.classList.add('hidden');
+		tag.parentElement.getElementsByClassName(tagName)[0].classList.remove('hidden');
+	}).catch(e => {
+		console.error(e);
+	});
+};
+

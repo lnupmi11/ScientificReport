@@ -266,7 +266,7 @@ namespace ScientificReport.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("MemberOf");
+                    b.Property<int>("Type");
 
                     b.Property<string>("MembershipInfo");
 
@@ -302,7 +302,7 @@ namespace ScientificReport.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime>("DateTime");
+                    b.Property<DateTime>("Date");
 
                     b.Property<string>("Name");
 

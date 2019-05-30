@@ -5,7 +5,7 @@ namespace ScientificReport.DTO.Models.Membership
 	public class MembershipModel
 	{
 		[Required]
-		public DAL.Entities.Membership.MemberOfChoices MemberOf { get; set; }
+		public DAL.Entities.Membership.Types MemberOf { get; set; }
 		
 		[Required]
 		public string MembershipInfo { get; set; }
@@ -16,7 +16,7 @@ namespace ScientificReport.DTO.Models.Membership
 
 		public MembershipModel(DAL.Entities.Membership membership)
 		{
-			MemberOf = membership.MemberOf;
+			MemberOf = membership.Type;
 			MembershipInfo = membership.MembershipInfo;
 		}
 	}

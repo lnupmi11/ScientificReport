@@ -52,7 +52,7 @@ namespace ScientificReport.BLL.Services
 		{
 			_membershipRepository.Create(new Membership
 			{
-				MemberOf = model.MemberOf,
+				Type = model.MemberOf,
 				MembershipInfo = model.MembershipInfo
 			});
 		}
@@ -65,7 +65,7 @@ namespace ScientificReport.BLL.Services
 				return;
 			}
 			
-			membership.MemberOf = model.MemberOf;
+			membership.Type = model.MemberOf;
 			membership.MembershipInfo = model.MembershipInfo;
 			_membershipRepository.Update(membership);
 		}

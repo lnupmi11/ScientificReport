@@ -24,5 +24,23 @@ namespace ScientificReport.BLL.Interfaces
 			void RemoveScientificWork(Guid id, Guid entityId);
 			void AddReportThesis(Guid id, Guid entityId);
 			void RemoveReportThesis(Guid id, Guid entityId);
+			void AddGrant(Guid id, Guid entityId);
+			void RemoveGrant(Guid id, Guid entityId);
+			void AddScientificInternship(Guid id, Guid entityId);
+			void RemoveScientificInternship(Guid id, Guid entityId);
+			void AddPostgraduateGuidance(Guid id, Guid entityId);
+			void RemovePostgraduateGuidance(Guid id, Guid entityId);
+			void AddScientificConsultation(Guid id, Guid entityId);
+			void RemoveScientificConsultation(Guid id, Guid entityId);
+			void AddPostgraduateDissertationGuidance(Guid id, Guid entityId);
+			void RemovePostgraduateDissertationGuidance(Guid id, Guid entityId);
+			void AddReview(Guid id, Guid entityId);
+			void RemoveReview(Guid id, Guid entityId);
+			void AddOpposition(Guid id, Guid entityId);
+			void RemoveOpposition(Guid id, Guid entityId);
+			void AddPatent(Guid id, Guid entityId);
+			void RemovePatent(Guid id, Guid entityId);
+			void AddMembership(Guid id, Guid entityId);
+			void RemoveMembership(Guid id, Guid entityId);
 	}
 }

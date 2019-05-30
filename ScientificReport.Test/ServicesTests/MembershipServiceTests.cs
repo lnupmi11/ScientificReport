@@ -81,7 +81,7 @@ namespace ScientificReport.Test.ServicesTests
 			var service = new MembershipService(GetMockContext().Object);
 
 			var expected = GetTestData().First();
-			expected.MemberOf = TestData.Membership3.MemberOf;
+			expected.Type = TestData.Membership3.Type;
 			service.UpdateItem(new MembershipEditModel(expected));
 
 			_mockDbSet.Verify(m => m.Update(expected), Times.Once);

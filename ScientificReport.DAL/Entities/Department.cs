@@ -18,6 +18,8 @@ namespace ScientificReport.DAL.Entities
  
 		public virtual UserProfile.UserProfile Head { get; set; }
 		
+		public virtual IEnumerable<UserProfile.UserProfile> Members { get; set; }
+		
 		public virtual ICollection<ScientificWork> ScientificWorks { get; set; }
 		
 		public virtual ICollection<UserProfile.UserProfile> Staff { get; set; }
