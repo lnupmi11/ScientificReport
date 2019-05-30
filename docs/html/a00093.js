@@ -5,5 +5,8 @@ var a00093 =
     [ "CreateTest", "a00093.html#a4417f0e800d7193e987fee21f7cec3f6", null ],
     [ "DeleteTest", "a00093.html#a26c466e21352dc4310f74577fb736375", null ],
     [ "GetByIdTest", "a00093.html#aaf99dc096aa4565088a3573f19874f32", null ],
+    [ "GetQueryTest", "a00093.html#a7f9eb007d7d3704f217c1e72d3cd080b", null ],
+    [ "GetTest", "a00093.html#afc46d2324da3b951fff9589ba4e0716c", null ],
+    [ "UpdateItemIsNullTest", "a00093.html#a180e367a2324a5692a545fd975fa574a", null ],
     [ "UpdateTest", "a00093.html#aae2c5b48927a9223dec7fae1a2c9fdc8", null ]
 ];

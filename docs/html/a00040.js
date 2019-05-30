@@ -9,6 +9,8 @@ var a00040 =
     [ "GetAllTest", "a00040.html#ab26ab354762448b3f5083c22173e50c5", null ],
     [ "GetAllWhereTest", "a00040.html#a85840d60c065eff085b6c843544b54b6", null ],
     [ "GetByIdTest", "a00040.html#a64e6002272207ab96399ce8942f82c94", null ],
+    [ "GetCountTest", "a00040.html#a2bc567068dd62593d699dc75ec992fd6", null ],
+    [ "GetPageTest", "a00040.html#a9abb3ee306a2ff22a77f81a6495db68e", null ],
     [ "RemoveScientificWorkTest", "a00040.html#adbad9ade64489dfc692dba94608f2410", null ],
     [ "RemoveUserTest", "a00040.html#aed40a5c315448e84c40ae721616dcc38", null ],
     [ "UpdateItemTest", "a00040.html#a878916b0405d8ee987e62f7f27500afd", null ],

@@ -58,7 +58,7 @@ var searchData=
   ['teacherreportsscientificinternships',['TeacherReportsScientificInternships',['../a00205.html#adcde67ac3b51ceb65c1d645db47040d3',1,'ScientificReport::DAL::Entities::Reports::TeacherReport']]],
   ['teacherreportsscientificinternships',['TeacherReportsScientificInternships',['../a00224.html',1,'ScientificReport::DAL::Entities::Reports']]],
   ['teacherreportsscientificinternships_2ecs',['TeacherReportsScientificInternships.cs',['../a00312.html',1,'']]],
-  ['teacherreportsscientificworks',['TeacherReportsScientificWorks',['../a00191.html#a086c2b7059cd8a67a24de4009f05248c',1,'ScientificReport.DAL.DbContext.ScientificReportDbContext.TeacherReportsScientificWorks()'],['../a00205.html#af21f55be1ac5b2033174343268d687fd',1,'ScientificReport.DAL.Entities.Reports.TeacherReport.TeacherReportsScientificWorks()']]],
+  ['teacherreportsscientificworks',['TeacherReportsScientificWorks',['../a00191.html#a7fe433a1f6b70225a89ba5bb5ae2538e',1,'ScientificReport.DAL.DbContext.ScientificReportDbContext.TeacherReportsScientificWorks()'],['../a00205.html#af21f55be1ac5b2033174343268d687fd',1,'ScientificReport.DAL.Entities.Reports.TeacherReport.TeacherReportsScientificWorks()']]],
   ['teacherreportsscientificworks',['TeacherReportsScientificWorks',['../a00225.html',1,'ScientificReport::DAL::Entities::Reports']]],
   ['teacherreportsscientificworks_2ecs',['TeacherReportsScientificWorks.cs',['../a00313.html',1,'']]],
   ['teacherreporttoggleentityrequest',['TeacherReportToggleEntityRequest',['../a00226.html',1,'ScientificReport::DTO::Models::TeacherReport']]],

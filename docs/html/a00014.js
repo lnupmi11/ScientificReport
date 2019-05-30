@@ -8,5 +8,7 @@ var a00014 =
     [ "GetAllWhereTest", "a00014.html#ab41de2f16f8a9e4f9c99e683c0d6bc87", null ],
     [ "GetAuthorsTest", "a00014.html#a872b260a5727cb37af5f0a560d732c68", null ],
     [ "GetByIdTest", "a00014.html#adcfdade96ea481af8ddf9f9408106c68", null ],
+    [ "GetCountTest", "a00014.html#a134c89a408695e16e8d765239b9db4a8", null ],
+    [ "GetPageTest", "a00014.html#a8bf81c0ab62f0b99abd096685039f85a", null ],
     [ "UpdateItemTest", "a00014.html#a6d720644f34509fe077c55695d5c1be0", null ]
 ];
