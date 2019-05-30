@@ -69,8 +69,4 @@
 	  <Folder Include="Migrations" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Migrations" />
-	</ItemGroup>
-
 </Project>

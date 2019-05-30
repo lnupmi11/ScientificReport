@@ -83,4 +83,16 @@
 	<data name="Roles" xml:space="preserve">
 		<value>Roles</value>
 	</data>
+	<data name="None" xml:space="preserve">
+		<value>None</value>
+	</data>
+	<data name="Male" xml:space="preserve">
+		<value>Male</value>
+	</data>
+	<data name="Female" xml:space="preserve">
+		<value>Female</value>
+	</data>
+	<data name="Sex" xml:space="preserve">
+		<value>Sex</value>
+	</data>
 </root>

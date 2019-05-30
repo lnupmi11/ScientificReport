@@ -89,4 +89,7 @@
 	<data name="Cancel" xml:space="preserve">
 		<value>Cancel</value>
 	</data>
+	<data name="Available publications" xml:space="preserve">
+		<value>Available publications</value>
+	</data>
 </root>
