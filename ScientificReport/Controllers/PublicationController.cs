@@ -308,6 +308,26 @@ namespace ScientificReport.Controllers
 			_publicationService.DeleteById(id);
 			return RedirectToAction(nameof(Index));
 		}
+
+		public IActionResult SearchPublications(string substring, Publication.Types? type)
+		{
+			if (substring == null || type == null)
+			{
+				return Json(ApiResponse.Fail);
+			}
+
+			var publications = _publicationService.GetAllWhere(p => p.Type == type.Value && p.Title.ToLower().Contains(substring.ToLower()));
+			return Json(new PublicationSearchApiResponse
+			{
+				Publications = publications.Select(p => new PublicationApiResponse
+				{
+					Id = p.Id,
+					Title = p.Title
+				}),
+				Success = true
+			});
+		}
+
 		
 		private bool AllowUserToEditPublication(Publication publication)
 		{
