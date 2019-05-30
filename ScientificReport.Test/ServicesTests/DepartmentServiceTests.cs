@@ -223,5 +223,29 @@ namespace ScientificReport.Test.ServicesTests
 			actual = service.UserIsHired(TestData.User2);
 			Assert.False(actual);
 		}
+		
+		[Fact]
+		public void GetPageTest()
+		{
+			var service = new DepartmentService(GetMockContext().Object);
+			var expected = _mockDbSetDepartments.Object.AsQueryable();
+			
+			Assert.NotNull(expected);
+			
+			var count = expected.Count();
+			var actual = service.GetPage(1, count);
+			
+			Assert.NotNull(actual);
+			Assert.Equal(count, actual.Count());
+		}
+		
+		[Fact]
+		public void GetCountTest()
+		{
+			var service = new DepartmentService(GetMockContext().Object);
+			var expected = _mockDbSetDepartments.Object.AsQueryable();
+			
+			Assert.Equal(expected.Count(), service.GetCount());
+		}
 	}
 }

@@ -1,6 +1,14 @@
+@using ScientificReport.DAL.Entities.UserProfile
 @model ScientificReport.Views.TeacherReport.PrintScientificWork
 @{
     Layout = null;
 }
 
-<li class="article-item">@Model.ScientificWork.Title // @Model.ScientificWork.Contents</li>
+@if (Model.User.Sex == UserProfile.SexValue.Male)
+{
+	<li class="scientificWork-item">Брав участь у науковій роботі за темою “@Model.ScientificWork.Title”, номер державної реєстрації роботи @Model.ScientificWork.Cypher, визначеною для кафедри напрямком досліджень на PLACEHOLDER-yearsOfSciWorkTheme роки, науковий керівник – PLACEHOLDER-headOfDepartment.</li>
+}
+else
+{
+	<li class="article-item">Брала участь у науковій роботі за темою “@Model.ScientificWork.Title”, номер державної реєстрації роботи @Model.ScientificWork.Cypher, визначеною для кафедри напрямком досліджень на PLACEHOLDER-yearsOfSciWorkTheme роки, науковий керівник – PLACEHOLDER-headOfDepartment.</li>
+} 

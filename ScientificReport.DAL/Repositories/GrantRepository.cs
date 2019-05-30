@@ -8,20 +8,20 @@ using ScientificReport.DAL.Interfaces;
 
 namespace ScientificReport.DAL.Repositories
 {
-	public class GrantRepository: IRepository<Grant>
+	public class GrantRepository : IRepository<Grant>
 	{
 		private readonly ScientificReportDbContext _context;
-		
+
 		public GrantRepository(ScientificReportDbContext context)
 		{
 			_context = context;
 		}
-		
+
 		public virtual IEnumerable<Grant> All()
 		{
 			return _context.Grants
-						.Include(b => b.UserProfilesGrants)
-						.ThenInclude(b => b.UserProfile);
+				.Include(b => b.UserProfilesGrants)
+				.ThenInclude(b => b.UserProfile);
 		}
 
 		public virtual IEnumerable<Grant> AllWhere(Func<Grant, bool> predicate)
@@ -46,7 +46,8 @@ namespace ScientificReport.DAL.Repositories
 		}
 
 		public virtual void Update(Grant item)
-		{if (item != null)
+		{
+			if (item != null)
 			{
 				_context.Grants.Update(item);
 				_context.SaveChanges();
@@ -55,10 +56,10 @@ namespace ScientificReport.DAL.Repositories
 
 		public virtual void Delete(Guid id)
 		{
-			var user = _context.Grants.Find(id);
-			if (user != null)
+			var item = _context.Grants.Find(id);
+			if (item != null)
 			{
-				_context.Grants.Remove(user);
+				_context.Grants.Remove(item);
 				_context.SaveChanges();
 			}
 		}

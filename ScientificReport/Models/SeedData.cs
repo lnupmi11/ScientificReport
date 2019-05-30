@@ -272,7 +272,15 @@ namespace ScientificReport.Models
 					PrintStatus = Publication.PrintStatuses.IsPrintCanceled
 				}
 			);
-
+			publicationsService.AddAuthor(
+				publicationsService.Get(a => a.Title == "my first publication"),
+				context.Users.First(u => u.UserName == "olena")
+			);
+			publicationsService.AddAuthor(
+				publicationsService.Get(a => a.Title == "my first publication"),
+				context.Users.First(u => u.UserName == "yura")
+			);
+			
 			publicationsService.CreateItem(new Publication
 				{
 					Type = Publication.Types.TextBook,
@@ -286,6 +294,19 @@ namespace ScientificReport.Models
 				}
 			);
 
+			publicationsService.AddAuthor(
+				publicationsService.Get(a => a.Title == "my second publication"),
+				context.Users.First(u => u.UserName == "olena")
+			);
+			
+			publicationsService.AddAuthor(
+				publicationsService.Get(a => a.Title == "my second publication"),
+				context.Users.First(u => u.UserName == "yura")
+			);
+			publicationsService.AddAuthor(
+				publicationsService.Get(a => a.Title == "my second publication"),
+				context.Users.First(u => u.UserName == "roman")
+			);
 			publicationsService.CreateItem(new Publication
 				{
 					Type = Publication.Types.Comment,

@@ -157,13 +157,15 @@ namespace ScientificReport.Test
 		{
 			Id = Guid.NewGuid(),
 			Type = Membership.Types.ExpertCouncil,
-			MembershipInfo = "Some membership info 1"
+			MembershipInfo = "Some membership info 1",
+			User = User1
 		};
 		public static readonly Membership Membership2 = new Membership
 		{
 			Id = Guid.NewGuid(),
 			Type = Membership.Types.EditorialBoard,
-			MembershipInfo = "Some membership info 2"
+			MembershipInfo = "Some membership info 2",
+			User = User1
 		};
 		public static readonly Membership Membership3 = new Membership
 		{
@@ -182,7 +184,7 @@ namespace ScientificReport.Test
 		public static readonly Opposition Opposition2 = new Opposition
 		{
 			Id = Guid.NewGuid(),
-			Opponent = User2,
+			Opponent = User1,
 			About = "About info 2",
 			DateOfOpposition = DateTime.Today
 		};
@@ -284,7 +286,7 @@ namespace ScientificReport.Test
 			Name = "Some name 1",
 			Type = PatentLicenseActivity.Types.Patent,
 			Number = 1,
-			Date = DateTime.Now
+			Date = DateTime.Now, 
 		};
 		public static readonly PatentLicenseActivity PatentLicenseActivity2 = new PatentLicenseActivity
 		{
@@ -429,12 +431,12 @@ namespace ScientificReport.Test
 		{
 			Id = Guid.NewGuid(),
 			Conference = Conference1,
-			Thesis = "Some thesis 1"
+			Thesis = "Some thesis 1",
 		};
 		public static readonly ReportThesis ReportThesis2 = new ReportThesis
 		{
 			Id = Guid.NewGuid(),
-			Conference = Conference2,
+			Conference = Conference1,
 			Thesis = "Some thesis 2"
 		};
 		public static readonly ReportThesis ReportThesis3 = new ReportThesis

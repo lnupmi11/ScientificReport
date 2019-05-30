@@ -44,6 +44,25 @@ namespace ScientificReport.Test.RepositoriesTests
 		}
 
 		[Fact]
+		public void GetTest()
+		{
+			var mockContext = GetMockContext();
+			var repository = new UserProfileRepository(mockContext.Object);
+			var expected = mockContext.Object.UserProfiles.First();
+			var actual = repository.Get(o => o.Id == expected.Id);
+			Assert.NotNull(actual);
+		}
+		
+		[Fact]
+		public void GetQueryTest()
+		{
+			var mockContext = GetMockContext();
+			var repository = new UserProfileRepository(mockContext.Object);
+			var actual = repository.GetQuery();
+			Assert.Equal(actual.Count(), mockContext.Object.UserProfiles.Count());
+		}
+		
+		[Fact]
 		public void GetByIdTest()
 		{
 			var mockContext = GetMockContext();
@@ -71,6 +90,14 @@ namespace ScientificReport.Test.RepositoriesTests
 			var item = mockContext.Object.UserProfiles.First();
 			repository.Update(item);
 			Assert.NotNull(repository.Get(item.Id));
+		}
+		
+		[Fact]
+		public void UpdateItemIsNullTest()
+		{
+			var mockContext = GetMockContext();
+			var repository = new UserProfileRepository(mockContext.Object);
+			repository.Update(null);
 		}
 
 		[Fact]

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
 using Moq;
 
@@ -16,6 +17,14 @@ namespace ScientificReport.Test
 			mockSet.As<IQueryable<T>>().Setup(m => m.ElementType).Returns(list.ElementType);
 			mockSet.As<IQueryable<T>>().Setup(m => m.GetEnumerator()).Returns(list.GetEnumerator());
 			return mockSet;
+		}
+		
+		public static Mock<ClaimsPrincipal> GetMockClaimsPrincipal(string role, string name)
+		{
+			var cp = new Mock<ClaimsPrincipal>();
+			cp.Setup(m => m.IsInRole(role)).Returns(true);
+			cp.Setup(m => m.Identity.Name).Returns(name);
+			return cp;
 		}
 	}
 }

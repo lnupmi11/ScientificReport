@@ -61,9 +61,13 @@ namespace ScientificReport.DAL.Repositories
 
 		public virtual void Delete(Guid id)
 		{
-			var user = _context.UserProfiles.Find(id);
-			if (user == null) return;
-			_context.UserProfiles.Remove(user);
+			var item = _context.UserProfiles.Find(id);
+			if (item == null)
+			{
+				return;
+			}
+			
+			_context.UserProfiles.Remove(item);
 			_context.SaveChanges();
 		}
 

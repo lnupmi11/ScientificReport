@@ -138,5 +138,29 @@ namespace ScientificReport.Test.ServicesTests
 			
 			service.Verify(m => m.GetAuthors(article.Id), Times.Once);
 		}
+
+		[Fact]
+		public void GetPageTest()
+		{
+			var service = new ArticleService(GetMockContext().Object);
+			var expectedArticles = _mockDbSet.Object.AsQueryable();
+			
+			Assert.NotNull(expectedArticles);
+			
+			var count = expectedArticles.Count();
+			var actualArticles = service.GetPage(1, count);
+			
+			Assert.NotNull(actualArticles);
+			Assert.Equal(count, actualArticles.Count());
+		}
+		
+		[Fact]
+		public void GetCountTest()
+		{
+			var service = new ArticleService(GetMockContext().Object);
+			var expectedArticles = _mockDbSet.Object.AsQueryable();
+			
+			Assert.Equal(expectedArticles.Count(), service.GetCount());
+		}
 	}
 }

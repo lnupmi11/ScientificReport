@@ -55,9 +55,13 @@ namespace ScientificReport.DAL.Repositories
 
 		public virtual void Delete(Guid id)
 		{
-			var user = _context.ReportTheses.Find(id);
-			if (user == null) return;
-			_context.ReportTheses.Remove(user);
+			var item = _context.ReportTheses.Find(id);
+			if (item == null)
+			{
+				return;
+			}
+			
+			_context.ReportTheses.Remove(item);
 			_context.SaveChanges();
 		}
 
