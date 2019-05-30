@@ -19,6 +19,9 @@
 			<th>
 				@Localizer["Work"]
 			</th>
+			<th>
+				@Localizer["Reviewer"]
+			</th>
 			<th></th>
 		</tr>
 	</thead>
@@ -29,10 +32,16 @@
 				@Html.DisplayFor(modelItem => item.DateOfReview)
 			</td>
 			<td>
-				@if (item.Work != null)
-				{
-					<a asp-action="Details" asp-controller="Publication" asp-route-id="@item.Work.Id" class="btn-small blue darken-3">@item.Work.Title</a>
-				}
+				<a asp-controller="Publication" asp-action="Details"
+				   asp-route-id="@item.Work.Id">
+					@item.Work.Title
+				</a>
+			</td>
+			<td>
+				<a asp-controller="UserProfile" asp-action="Details"
+				   asp-route-id="@item.Reviewer.Id">
+					@item.Reviewer.FullName
+				</a>
 			</td>
 			<td>
 				<a asp-action="Details" asp-route-id="@item.Id" class="waves-effect btn-small blue darken-3">@Localizer["Details"]</a>

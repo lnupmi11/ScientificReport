@@ -17,8 +17,11 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-	<data name="Details of patent/application" xml:space="preserve">
-		<value>Патентно-ліцензійна діяльність</value>
+	<data name="Details of patent" xml:space="preserve">
+		<value>Деталі патенту</value>
+	</data>
+	<data name="Details of application" xml:space="preserve">
+		<value>Деталі заявки</value>
 	</data>
     <data name="Patent license activity" xml:space="preserve">
 		<value>Патентно-ліцензійна діяльність</value>

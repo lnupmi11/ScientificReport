@@ -10,6 +10,34 @@
 	<h5>@ViewData["Title"]</h5>
 	<hr/>
 	<dl class="row">
+		<dt class = "col s2">
+			@Localizer[Html.DisplayNameFor(model => model.Info)]
+		</dt>
+		<dd class="col s10">
+			@Html.DisplayFor(model => model.Info)
+		</dd>
+		@{
+			var authors = Model.UserProfilesGrants.Select(g => g.UserProfile).ToList();
+		}
+		@if (authors.Count > 0)
+		{
+			<dt class="col s2">
+				@Localizer["Authors"]
+			</dt>
+			<dd class="col s10">
+				<ul>
+					@foreach (var author in authors)
+					{
+						<li>
+							<a asp-controller="UserProfile" asp-action="Details"
+							   asp-route-id="@author.Id">
+								@author.FullName
+							</a>
+						</li>
+					}
+				</ul>
+			</dd>
+		}
 	</dl>
 </div>
 <div style="margin-top: 20px">

@@ -3,7 +3,7 @@
 @inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = Localizer["Details of patent/application"];
+	ViewData["Title"] = Localizer["Details of " + Model.Type.ToString().ToLower()];
 }
 
 <div>
@@ -36,65 +36,79 @@
 		</dd>
 		@if (Model.Type.ToString() == "Patent")
 		{
-			<dt class = "col s2">
-				@Localizer["Authors"]
-			</dt>
-			<dd class = "col s10">
-				<ul>
-					@{
-						var authors = Model.AuthorsPatentLicenseActivities.Select(a => a.Author);
-					} 
-					@foreach (var author in authors)
-					{
-						<li>@author.FullName</li>
-					}
-				</ul>
-			</dd>
-			<dt class = "col s2">
-				@Localizer["Co-authors"]
-			</dt>
-			<dd class = "col s10">
-				<ul>
-					@{
-						var coauthors = Model.CoauthorsPatentLicenseActivities.Select(a => a.Coauthor);
-					} 
-					@foreach (var coauthor in coauthors)
-					{
-						<li>@coauthor</li>
-					}
-				</ul>
-			</dd>
+			var authors = Model.AuthorsPatentLicenseActivities.Select(a => a.Author).ToList();
+			if (authors.Count > 0)
+			{
+				<dt class = "col s2">
+					@Localizer["Authors"]
+				</dt>
+				<dd class = "col s10">
+					<ul>
+						@foreach (var author in authors)
+						{
+							<li>
+								<a asp-controller="UserProfile" asp-action="Details"
+								   asp-route-id="@author.Id">
+									@author.FullName
+								</a>
+							</li>
+						}
+					</ul>
+				</dd>
+			}
+			var coauthors = Model.CoauthorsPatentLicenseActivities.Select(a => a.Coauthor).ToList();
+			if (coauthors.Count > 0)
+			{
+				<dt class = "col s2">
+					@Localizer["Co-authors"]
+				</dt>
+				<dd class = "col s10">
+					<ul>
+						@foreach (var coauthor in coauthors)
+						{
+							<li>@coauthor</li>
+						}
+					</ul>
+				</dd>	
+			}
 		}
 		else
 		{
-			<dt class = "col s2">
-				@Localizer["Applicants"]
-			</dt>
-			<dd class = "col s10">
-				<ul>
-					@{
-						var applicants = Model.ApplicantsPatentLicenseActivities.Select(a => a.Applicant);
-					} 
-					@foreach (var applicant in applicants)
-					{
-						<li>@applicant.FullName</li>
-					}
-				</ul>
-			</dd>
-			<dt class = "col s2">
-				@Localizer["Co-applicants"]
-			</dt>
-			<dd class = "col s10">
-				<ul>
-					@{
-						var coApplicants = Model.CoApplicantsPatentLicenseActivities.Select(a => a.CoApplicant);
-					} 
-					@foreach (var coApplicant in coApplicants)
-					{
-						<li>@coApplicant</li>
-					}
-				</ul>
-			</dd>
+			var applicants = Model.ApplicantsPatentLicenseActivities.Select(a => a.Applicant).ToList();
+			if (applicants.Count > 0)
+			{
+				<dt class = "col s2">
+					@Localizer["Applicants"]
+				</dt>
+				<dd class = "col s10">
+					<ul>
+						@foreach (var applicant in applicants)
+						{
+							<li>
+								<a asp-controller="UserProfile" asp-action="Details"
+								   asp-route-id="@applicant.Id">
+									@applicant.FullName
+								</a>
+							</li>
+						}
+					</ul>
+				</dd>
+			}
+			var coApplicants = Model.CoApplicantsPatentLicenseActivities.Select(a => a.CoApplicant).ToList();
+			if (coApplicants.Count > 0)
+			{
+				<dt class = "col s2">
+					@Localizer["Co-applicants"]
+				</dt>
+				<dd class = "col s10">
+					<ul>
+						@foreach (var coApplicant in coApplicants)
+						{
+							<li>@coApplicant</li>
+						}
+					</ul>
+				</dd>
+			}
 		}
 	</dl>
 </div>

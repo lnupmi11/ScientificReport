@@ -17,7 +17,7 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="Membership" xml:space="preserve">
+    <data name="Memberships" xml:space="preserve">
 		<value>Членство</value>
 	</data>
 	<data name="Member of" xml:space="preserve">
@@ -52,5 +52,8 @@
 	</data>
 	<data name="EditorialBoard" xml:space="preserve">
 		<value>Редколегія наукового журналу</value>
+	</data>
+	<data name="User" xml:space="preserve">
+		<value>Користувач</value>
 	</data>
 </root>

@@ -38,10 +38,13 @@
 	<data name="Contents" xml:space="preserve">
 		<value>Contents</value>
 	</data>
-	<data name="Create" xml:space="preserve">
-		<value>Create</value>
+	<data name="Save" xml:space="preserve">
+		<value>Save</value>
 	</data>
 	<data name="Cancel" xml:space="preserve">
 		<value>Cancel</value>
+	</data>
+	<data name="Users" xml:space="preserve">
+		<value>Users</value>
 	</data>
 </root>

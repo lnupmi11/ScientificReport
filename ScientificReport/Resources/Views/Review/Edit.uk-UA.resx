@@ -35,4 +35,7 @@
 	<data name="Cancel" xml:space="preserve">
 		<value>Скасувати</value>
 	</data>
+	<data name="Work" xml:space="preserve">
+		<value>Робота</value>
+	</data>
 </root>

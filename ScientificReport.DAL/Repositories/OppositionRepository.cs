@@ -19,7 +19,7 @@ namespace ScientificReport.DAL.Repositories
 		
 		public virtual IEnumerable<Opposition> All()
 		{
-			return _context.Oppositions;
+			return _context.Oppositions.Include(o => o.Opponent);
 		}
 
 		public virtual IEnumerable<Opposition> AllWhere(Func<Opposition, bool> predicate)

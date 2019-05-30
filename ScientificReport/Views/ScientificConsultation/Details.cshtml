@@ -22,6 +22,15 @@
         <dd class = "col s8">
             @Html.DisplayFor(model => model.DissertationTitle)
         </dd>
+        <dt class = "col s4">
+            @Localizer["Guide"]
+        </dt>
+        <dd class="col s8">
+            <a asp-controller="UserProfile" asp-action="Details"
+               asp-route-id="@Model.Guide.Id">
+                @Model.Guide.FullName
+            </a>
+        </dd>
     </dl>
 </div>
 <div style="margin-top: 20px">

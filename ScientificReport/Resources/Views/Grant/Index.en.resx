@@ -18,7 +18,7 @@
         </value>
     </resheader>
     <data name="Grants" xml:space="preserve">
-		<value>Grant</value>
+		<value>Grants</value>
 	</data>
 	<data name="Details" xml:space="preserve">
 		<value>Details</value>
@@ -37,5 +37,8 @@
 	</data>
 	<data name="Next" xml:space="preserve">
 		<value>Next</value>
+	</data>
+	<data name="Info" xml:space="preserve">
+		<value>Info</value>
 	</data>
 </root>

@@ -1,14 +1,19 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace ScientificReport.DTO.Models.Review
 {
 	public class ReviewModel
 	{
-//		[Required]
+		[Required]
 		public Guid WorkId { get; set; }
 		
 		public DAL.Entities.Publication Work { get; set; }
+		
+		public IEnumerable<DAL.Entities.Publication> Publications { get; set; }
+		
+		public DAL.Entities.UserProfile.UserProfile Reviewer { get; set; }
         
 		[Required]
         [DataType(DataType.Date)]
@@ -20,6 +25,7 @@ namespace ScientificReport.DTO.Models.Review
 
         public ReviewModel(DAL.Entities.Review review)
         {
+	        Reviewer = review.Reviewer;
 	        Work = review.Work;
 	        DateOfReview = review.DateOfReview;
         }

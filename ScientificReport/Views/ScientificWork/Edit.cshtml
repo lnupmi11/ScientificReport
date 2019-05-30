@@ -9,7 +9,13 @@
 <style type="text/css">
     .authors-list {
         overflow-y: scroll;
-        height: 100px;
+        height: 200px;
+    }
+    .authors-label {
+        /* margin-bottom: 10px; */
+        position: relative !important;
+        left: 0 !important;
+        font-size: 12.5px !important;
     }
 </style>
 
@@ -51,7 +57,7 @@
             </div>
             <div class="row">
                 <div class="col s6">
-                    <h4>@Localizer["Create"]:</h4>
+                    <label class="authors-label">@Localizer["Authors"]:</label>
                     <div class="authors-list">
                         @if (Model.Users != null)
                         {
@@ -85,7 +91,7 @@
         const config = {
             method: 'POST',
             body: JSON.stringify({
-                AuthorId: authorId
+                UserId: authorId
             }),
             headers: {
                 'Content-Type': 'application/json'

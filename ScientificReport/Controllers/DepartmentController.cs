@@ -10,6 +10,7 @@ using ScientificReport.Controllers.Utils;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Entities.UserProfile;
 using ScientificReport.DAL.Roles;
+using ScientificReport.DTO.Models;
 using ScientificReport.DTO.Models.Department;
 
 namespace ScientificReport.Controllers
@@ -254,7 +255,7 @@ namespace ScientificReport.Controllers
 		// POST: Department/AddUserToStaff/{departmentId}
 		[HttpPost]
 		[Authorize(Roles = UserProfileRole.HeadOfDepartmentOrAdmin)]
-		public async Task<IActionResult> AddUserToStaff(Guid? id, [FromBody] DepartmentUpdateStaffRequest request)
+		public async Task<IActionResult> AddUserToStaff(Guid? id, [FromBody] UpdateUserRequest request)
 		{
 			if (id == null)
 			{
@@ -289,7 +290,7 @@ namespace ScientificReport.Controllers
 		// POST: Department/RemoveUserFromStaff/{departmentId}
 		[HttpPost]
 		[Authorize(Roles = UserProfileRole.HeadOfDepartmentOrAdmin)]
-		public IActionResult RemoveUserFromStaff(Guid? id, [FromBody] DepartmentUpdateStaffRequest request)
+		public IActionResult RemoveUserFromStaff(Guid? id, [FromBody] UpdateUserRequest request)
 		{
 			if (id == null)
 			{

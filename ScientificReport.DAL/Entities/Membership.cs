@@ -18,5 +18,7 @@ namespace ScientificReport.DAL.Entities
 		public Types Type { get; set; }
 		
 		public string MembershipInfo { get; set; }
+		
+		public virtual UserProfile.UserProfile User { get; set; }
 	}
 }

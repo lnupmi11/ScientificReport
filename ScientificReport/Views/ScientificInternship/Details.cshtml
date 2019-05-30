@@ -34,6 +34,28 @@
         <dd class = "col s10">
             @Html.DisplayFor(model => model.Contents)
         </dd>
+        @{
+            var authors = Model.UserProfilesScientificInternships.Select(a => a.UserProfile).ToList();
+        }
+        @if (authors.Count > 0)
+        {
+            <dt class = "col s2">
+                @Localizer["Users"]
+            </dt>
+            <dd class = "col s10">
+                <ul>
+                    @foreach (var author in authors)
+                    {
+                        <li>
+                            <a asp-controller="UserProfile" asp-action="Details"
+                               asp-route-id="@author.Id">
+                                @author.FullName
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </dd>
+        }
     </dl>
 </div>
 <div style="margin-top: 20px">

@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using ScientificReport.BLL.Interfaces;
+using ScientificReport.BLL.Utils;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Repositories;
@@ -12,10 +14,14 @@ namespace ScientificReport.BLL.Services
 	public class PostgraduateDissertationGuidanceService : IPostgraduateDissertationGuidanceService
 	{
 		private readonly PostgraduateDissertationGuidanceRepository _postgraduateDissertationGuidanceRepository;
+		private readonly DepartmentRepository _departmentRepository;
+		private readonly UserProfileRepository _userProfileRepository;
 
 		public PostgraduateDissertationGuidanceService(ScientificReportDbContext context)
 		{
 			_postgraduateDissertationGuidanceRepository = new PostgraduateDissertationGuidanceRepository(context);
+			_departmentRepository = new DepartmentRepository(context);
+			_userProfileRepository = new UserProfileRepository(context);
 		}
 
 		public virtual IEnumerable<PostgraduateDissertationGuidance> GetAll()
@@ -28,14 +34,35 @@ namespace ScientificReport.BLL.Services
 			return GetAll().Where(predicate);
 		}
 
-		public virtual IEnumerable<PostgraduateDissertationGuidance> GetPage(int page, int count)
+		public virtual IEnumerable<PostgraduateDissertationGuidance> GetItemsByRole(ClaimsPrincipal userClaims)
 		{
-			return _postgraduateDissertationGuidanceRepository.All().Skip((page - 1) * count).Take(count).ToList();
+			IEnumerable<PostgraduateDissertationGuidance> items;
+			if (UserHelpers.IsAdmin(userClaims))
+			{
+				items = _postgraduateDissertationGuidanceRepository.All();
+			}
+			else if (UserHelpers.IsHeadOfDepartment(userClaims))
+			{
+				var department = _departmentRepository.Get(r => r.Head.UserName == userClaims.Identity.Name);
+				items = _postgraduateDissertationGuidanceRepository.AllWhere(m => department.Staff.Contains(m.Guide));
+			}
+			else
+			{
+				var user = _userProfileRepository.Get(u => u.UserName == userClaims.Identity.Name);
+				items = _postgraduateDissertationGuidanceRepository.AllWhere(m => m.Guide.Id == user.Id);
+			}
+
+			return items;
 		}
 
-		public virtual int GetCount()
+		public virtual IEnumerable<PostgraduateDissertationGuidance> GetPageByRole(int page, int count, ClaimsPrincipal userClaims)
 		{
-			return _postgraduateDissertationGuidanceRepository.All().Count();
+			return GetItemsByRole(userClaims).Skip((page - 1) * count).Take(count).ToList();
+		}
+
+		public virtual int GetCountByRole(ClaimsPrincipal userClaims)
+		{
+			return GetItemsByRole(userClaims).Count();
 		}
 
 		public virtual PostgraduateDissertationGuidance GetById(Guid id)
@@ -69,7 +96,6 @@ namespace ScientificReport.BLL.Services
 				return;
 			}
 
-			postgraduateDissertationGuidance.Guide = model.Guide;
 			postgraduateDissertationGuidance.Speciality = model.Speciality;
 			postgraduateDissertationGuidance.Dissertation = model.Dissertation;
 			postgraduateDissertationGuidance.GraduationYear = model.GraduationYear;

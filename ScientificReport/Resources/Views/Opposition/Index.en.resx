@@ -44,4 +44,7 @@
 	<data name="Next" xml:space="preserve">
 		<value>Next</value>
 	</data>
+	<data name="Opponent" xml:space="preserve">
+		<value>Opponent</value>
+	</data>
 </root>

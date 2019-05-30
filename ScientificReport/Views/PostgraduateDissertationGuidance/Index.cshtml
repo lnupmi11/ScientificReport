@@ -14,6 +14,9 @@
 	<thead>
 		<tr>
 			<th>
+				@Localizer["Guide"]
+			</th>
+			<th>
 				@Localizer["Postgraduate name"]
 			</th>
 			<th>
@@ -22,18 +25,18 @@
 			<th>
 				@Localizer["Speciality"]
 			</th>
-			<th>
-				@Localizer["Date degree gained"]
-			</th>
-			<th>
-				@Localizer["Graduation year"]
-			</th>
 			<th></th>
 		</tr>
 	</thead>
 	<tbody>
 @foreach (var item in Model.PostgraduateDissertationGuidances) {
 		<tr>
+			<td>
+				<a asp-controller="UserProfile" asp-action="Details"
+				   asp-route-id="@item.Guide.Id">
+					@item.Guide.FullName
+				</a>
+			</td>
 			<td>
 				@Html.DisplayFor(modelItem => item.PostgraduateName)
 			</td>
@@ -42,12 +45,6 @@
 			</td>
 			<td>
 				@Html.DisplayFor(modelItem => item.Speciality)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.DateDegreeGained)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.GraduationYear)
 			</td>
 			<td>
 				<a asp-action="Details" asp-route-id="@item.Id" class="waves-effect btn-small blue darken-3">@Localizer["Details"]</a>

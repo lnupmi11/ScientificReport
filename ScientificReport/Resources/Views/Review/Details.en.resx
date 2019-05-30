@@ -38,4 +38,7 @@
 	<data name="Work" xml:space="preserve">
 		<value>Work</value>
 	</data>
+	<data name="Reviewer" xml:space="preserve">
+		<value>Reviewer</value>
+	</data>
 </root>

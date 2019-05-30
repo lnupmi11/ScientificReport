@@ -1,8 +1,10 @@
 @using Microsoft.AspNetCore.Mvc.Localization
+@using ScientificReport.BLL.Interfaces
 @using ScientificReport.Controllers.Utils
 @using ScientificReport.DTO.Models.Department
 @model ScientificReport.DTO.Models.Article.ArticleEditModel
 @inject IViewLocalizer Localizer
+@inject IUserProfileService UserProfileService
 
 @{
 	ViewData["Title"] = Localizer["Edit article"];
@@ -115,7 +117,7 @@
 					<span>@Localizer["Is recommended to print"]</span>
 				</label>
 			</div>
-			@if (PageHelpers.IsAdminOrHead(User))
+			@if (PageHelpers.IsAdminOrHead(User) || Model.Authors.Contains(UserProfileService.Get(User)))
 			{
 				<div class="row">
 					<div class="col s6">

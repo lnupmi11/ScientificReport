@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using ScientificReport.BLL.Interfaces;
+using ScientificReport.BLL.Utils;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Repositories;
@@ -12,10 +14,14 @@ namespace ScientificReport.BLL.Services
 	public class PostgraduateGuidanceService : IPostgraduateGuidanceService
 	{
 		private readonly PostgraduateGuidanceRepository _postgraduateGuidanceRepository;
+		private readonly DepartmentRepository _departmentRepository;
+		private readonly UserProfileRepository _userProfileRepository;
 
 		public PostgraduateGuidanceService(ScientificReportDbContext context)
 		{
 			_postgraduateGuidanceRepository = new PostgraduateGuidanceRepository(context);
+			_departmentRepository = new DepartmentRepository(context);
+			_userProfileRepository = new UserProfileRepository(context);
 		}
 
 		public virtual IEnumerable<PostgraduateGuidance> GetAll()
@@ -28,14 +34,35 @@ namespace ScientificReport.BLL.Services
 			return GetAll().Where(predicate);
 		}
 
-		public virtual IEnumerable<PostgraduateGuidance> GetPage(int page, int count)
+		public virtual IEnumerable<PostgraduateGuidance> GetItemsByRole(ClaimsPrincipal userClaims)
 		{
-			return _postgraduateGuidanceRepository.All().Skip((page - 1) * count).Take(count).ToList();
+			IEnumerable<PostgraduateGuidance> items;
+			if (UserHelpers.IsAdmin(userClaims))
+			{
+				items = _postgraduateGuidanceRepository.All();
+			}
+			else if (UserHelpers.IsHeadOfDepartment(userClaims))
+			{
+				var department = _departmentRepository.Get(r => r.Head.UserName == userClaims.Identity.Name);
+				items = _postgraduateGuidanceRepository.AllWhere(m => department.Staff.Contains(m.Guide));
+			}
+			else
+			{
+				var user = _userProfileRepository.Get(u => u.UserName == userClaims.Identity.Name);
+				items = _postgraduateGuidanceRepository.AllWhere(m => m.Guide.Id == user.Id);
+			}
+
+			return items;
 		}
 
-		public virtual int GetCount()
+		public virtual IEnumerable<PostgraduateGuidance> GetPageByRole(int page, int count, ClaimsPrincipal userClaims)
 		{
-			return _postgraduateGuidanceRepository.All().Count();
+			return GetItemsByRole(userClaims).Skip((page - 1) * count).Take(count).ToList();
+		}
+
+		public virtual int GetCountByRole(ClaimsPrincipal userClaims)
+		{
+			return GetItemsByRole(userClaims).Count();
 		}
 
 		public virtual PostgraduateGuidance GetById(Guid id)

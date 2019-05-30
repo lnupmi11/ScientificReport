@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Security.Claims;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DTO.Models.ScientificConsultation;
 
@@ -9,8 +10,9 @@ namespace ScientificReport.BLL.Interfaces
 	{
 		IEnumerable<ScientificConsultation> GetAll();
 		IEnumerable<ScientificConsultation> GetAllWhere(Func<ScientificConsultation, bool> predicate);
-		IEnumerable<ScientificConsultation> GetPage(int page, int count);
-		int GetCount();
+		IEnumerable<ScientificConsultation> GetItemsByRole(ClaimsPrincipal userClaims);
+		IEnumerable<ScientificConsultation> GetPageByRole(int page, int count, ClaimsPrincipal userClaims);
+		int GetCountByRole(ClaimsPrincipal userClaims);
 		ScientificConsultation GetById(Guid id);
 		ScientificConsultation Get(Func<ScientificConsultation, bool> predicate);
 		void CreateItem(ScientificConsultationModel model);

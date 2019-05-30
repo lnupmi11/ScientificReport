@@ -17,8 +17,8 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="Patent licence activity" xml:space="preserve">
-		<value>Patent licence activity</value>
+    <data name="Patent licence activities" xml:space="preserve">
+		<value>Patent licence activities</value>
 	</data>
 	<data name="Name" xml:space="preserve">
 		<value>Name</value>
