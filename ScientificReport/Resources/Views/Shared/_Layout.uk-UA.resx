@@ -18,17 +18,11 @@
         </value>
     </resheader>
 
-    <data name="ScientificReport" xml:space="preserve">
+    <data name="Scientific Reports" xml:space="preserve">
 		<value>Звітність про наукову діяльність</value>
 	</data>
-	<data name="ApplicantsPatentLicenseActivities" xml:space="preserve">
-		<value>Заявники (Патентно-ліцензійна діяльність)</value>
-	</data>
-	<data name="Article" xml:space="preserve">
+	<data name="Articles" xml:space="preserve">
 		<value>Статті</value>
-	</data>
-	<data name="AuthorsPatentLicenseActivities" xml:space="preserve">
-		<value>Автори (Патентно-ліцензійна діяльність)</value>
 	</data>
 	<data name="Conferences" xml:space="preserve">
 		<value>Конференції</value>
@@ -42,34 +36,34 @@
 	<data name="Oppositions" xml:space="preserve">
 		<value>Опонування</value>
 	</data>
-	<data name="PatentLicenseActivities" xml:space="preserve">
+	<data name="Patent license activities" xml:space="preserve">
 		<value>Патентно-ліцензійна діяльність</value>
 	</data>
-	<data name="PostgraduateDissertationGuidance" xml:space="preserve">
+	<data name="Postgraduate dissertation guidance" xml:space="preserve">
 		<value>Наукове консультування при написанні дисертацій</value>
 	</data>
-	<data name="PostgraduateGuidance" xml:space="preserve">
+	<data name="Postgraduate guidance" xml:space="preserve">
 		<value>Наукове керівництво аспірантами</value>
 	</data>
 	<data name="Publications" xml:space="preserve">
 		<value>Публікації</value>
 	</data>
-	<data name="ReportTheses" xml:space="preserve">
+	<data name="Report theses" xml:space="preserve">
 		<value>Тези доповідей</value>
 	</data>
 	<data name="Reviews" xml:space="preserve">
 		<value>Рецензування</value>
 	</data>
-	<data name="ScientificConsultations" xml:space="preserve">
+	<data name="Scientific consultations" xml:space="preserve">
 		<value>Наукові консультації</value>
 	</data>
-	<data name="TeacherReports" xml:space="preserve">
+	<data name="Teacher reports" xml:space="preserve">
 		<value>Викладацькі звіти</value>
 	</data>
-	<data name="ScientificWorks" xml:space="preserve">
+	<data name="Scientific works" xml:space="preserve">
 		<value>Наукові роботи</value>
 	</data>
-	<data name="ScientificInternship" xml:space="preserve">
+	<data name="Scientific internships" xml:space="preserve">
 		<value>Наукові стажування</value>
 	</data>
 	<data name="Users" xml:space="preserve">
@@ -84,19 +78,22 @@
 	<data name="Department" xml:space="preserve">
 		<value>Кафедра</value>
 	</data>
-	<data name="OtherReportData" xml:space="preserve">
+	<data name="Other report data" xml:space="preserve">
 		<value>Інша інформація для звіту</value>
 	</data>
 	<data name="Reports" xml:space="preserve">
 		<value>Звітність</value>
 	</data>
-	<data name="TeacherReport" xml:space="preserve">
+	<data name="Teacher report" xml:space="preserve">
 		<value>Індивідуальний звіт</value>
 	</data>
-	<data name="DepartmentReport" xml:space="preserve">
+	<data name="Department report" xml:space="preserve">
 		<value>Кафедральний звіт</value>
 	</data>
-	<data name="FacultyReport" xml:space="preserve">
+	<data name="Faculty report" xml:space="preserve">
 		<value>Звіт факультету</value>
+	</data>
+	<data name="Faculty of Applied Mathematics and Informatics. All rights reserved." xml:space="preserve">
+		<value>Факультет прикладної математики та інформатики. Всі права захищено.</value>
 	</data>
 </root>

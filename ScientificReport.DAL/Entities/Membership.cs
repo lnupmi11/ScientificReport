@@ -5,7 +5,7 @@ namespace ScientificReport.DAL.Entities
 {
 	public class Membership
 	{
-		public enum MemberOfChoices
+		public enum Types
 		{
 			EditorialBoard,
 			ScientificCouncil,
@@ -15,8 +15,10 @@ namespace ScientificReport.DAL.Entities
 		[Key]
 		public Guid Id { get; set; }
 		
-		public MemberOfChoices MemberOf { get; set; }
+		public Types Type { get; set; }
 		
 		public string MembershipInfo { get; set; }
+		
+		public virtual UserProfile.UserProfile User { get; set; }
 	}
 }

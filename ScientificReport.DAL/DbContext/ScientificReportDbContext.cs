@@ -32,7 +32,6 @@ namespace ScientificReport.DAL.DbContext
 		public virtual DbSet<ScientificWork> ScientificWorks { get; set; }
 		public DbSet<UserProfilesScientificWorks> UserProfilesScientificWorks { get; set; }
 		public virtual DbSet<Review> Reviews { get; set; }
-		public DbSet<UserProfilesReviews> UserProfilesReviews { get; set; }
 		public virtual DbSet<Conference> Conferences { get; set; }
 		public virtual DbSet<ReportThesis> ReportTheses { get; set; }
 		public DbSet<UserProfilesReportThesis> UserProfilesReportTheses { get; set; }

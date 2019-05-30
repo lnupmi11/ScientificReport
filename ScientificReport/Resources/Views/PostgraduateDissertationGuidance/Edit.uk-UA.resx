@@ -17,13 +17,13 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="Postgraduate Dissertation Guidance" xml:space="preserve">
+	<data name="Edit postgraduate dissertation guidance" xml:space="preserve">
+		<value>Редагувати наукове консультування при написанні дисертацій</value>
+	</data>
+    <data name="Postgraduate dissertation guidance" xml:space="preserve">
 		<value>Наукове консультування при написанні дисертацій</value>
 	</data>
-	<data name="Create New" xml:space="preserve">
-		<value>Створити нове</value>
-	</data>
-	<data name="PostgraduateName" xml:space="preserve">
+	<data name="Postgraduate name" xml:space="preserve">
 		<value>Ім'я дисертанта</value>
 	</data>
 	<data name="Dissertation" xml:space="preserve">
@@ -32,20 +32,14 @@
 	<data name="Speciality" xml:space="preserve">
 		<value>Спеціальність</value>
 	</data>
-	<data name="DateDegreeGained" xml:space="preserve">
+	<data name="Date degree gained" xml:space="preserve">
 		<value>Дата захисту</value>
 	</data>
-	<data name="GraduationYear" xml:space="preserve">
+	<data name="Graduation year" xml:space="preserve">
 		<value>Рік закінчення аспірантури, докторантури</value>
-	</data>
-	<data name="Details" xml:space="preserve">
-		<value>Деталі</value>
 	</data>
 	<data name="Edit" xml:space="preserve">
 		<value>Редагувати</value>
-	</data>
-	<data name="Delete" xml:space="preserve">
-		<value>Видалити</value>
 	</data>
 	<data name="Save" xml:space="preserve">
 		<value>Зберегти</value>

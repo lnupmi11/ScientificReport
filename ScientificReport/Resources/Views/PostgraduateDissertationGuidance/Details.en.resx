@@ -17,11 +17,14 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="Postgraduate Dissertation Guidance" xml:space="preserve">
-		<value>Postgraduate Dissertation Guidance</value>
+	<data name="Postgraduate dissertation guidance - Details" xml:space="preserve">
+		<value>Postgraduate dissertation guidance - Details</value>
 	</data>
-	<data name="PostgraduateName" xml:space="preserve">
-		<value>PostgraduateName</value>
+    <data name="Postgraduate dissertation guidance" xml:space="preserve">
+		<value>Postgraduate dissertation guidance</value>
+	</data>
+	<data name="Postgraduate name" xml:space="preserve">
+		<value>Postgraduate name</value>
 	</data>
 	<data name="Dissertation" xml:space="preserve">
 		<value>Dissertation</value>
@@ -29,14 +32,11 @@
 	<data name="Speciality" xml:space="preserve">
 		<value>Speciality</value>
 	</data>
-	<data name="DateDegreeGained" xml:space="preserve">
-		<value>DateDegreeGained</value>
+	<data name="Date degree gained" xml:space="preserve">
+		<value>Date degree gained</value>
 	</data>
-	<data name="GraduationYear" xml:space="preserve">
-		<value>GraduationYear</value>
-	</data>
-	<data name="Create New" xml:space="preserve">
-		<value>Create New</value>
+	<data name="Graduation year" xml:space="preserve">
+		<value>Graduation year</value>
 	</data>
 	<data name="Details" xml:space="preserve">
 		<value>Details</value>
@@ -44,19 +44,10 @@
 	<data name="Edit" xml:space="preserve">
 		<value>Edit</value>
 	</data>
-	<data name="Delete" xml:space="preserve">
-		<value>Delete</value>
+	<data name="Back to list" xml:space="preserve">
+		<value>Back to list</value>
 	</data>
-	<data name="Save" xml:space="preserve">
-		<value>Save</value>
-	</data>
-	<data name="Create" xml:space="preserve">
-		<value>Create</value>
-	</data>
-	<data name="Cancel" xml:space="preserve">
-		<value>Cancel</value>
-	</data>
-	<data name="Back to List" xml:space="preserve">
-		<value>Back to List</value>
+	<data name="Guide" xml:space="preserve">
+		<value>Guide</value>
 	</data>
 </root>

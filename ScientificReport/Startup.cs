@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Localization;
+using Rotativa.AspNetCore;
 using Microsoft.Extensions.Options;
 using ScientificReport.BLL.Interfaces;
 using ScientificReport.BLL.Services;
@@ -62,6 +62,7 @@ namespace ScientificReport
 			services.AddTransient<IPatentLicenseActivityService, PatentLicenseActivityService>();
 			services.AddTransient<IPostgraduateDissertationGuidanceService, PostgraduateDissertationGuidanceService>();
 			services.AddTransient<IPostgraduateGuidanceService, PostgraduateGuidanceService>();
+			services.AddTransient<IPublicationService, PublicationService>();
 			services.AddTransient<IReportThesisService, ReportThesisService>();
 			services.AddTransient<IReviewService, ReviewService>();
 			services.AddTransient<IScientificConsultationService, ScientificConsultationService>();
@@ -146,6 +147,8 @@ namespace ScientificReport
 			var options = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
 			app.UseRequestLocalization(options.Value);
 			
+			RotativaConfiguration.Setup(env);
+
 			app.UseMvc(routes =>
 			{
 				routes.MapRoute(

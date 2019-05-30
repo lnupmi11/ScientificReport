@@ -17,16 +17,22 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
+	<data name="Create review" xml:space="preserve">
+		<value>Create review</value>
+	</data>
     <data name="Create" xml:space="preserve">
 		<value>Create</value>
 	</data>
 	<data name="Review" xml:space="preserve">
 		<value>Review</value>
 	</data>
-	<data name="DateOfReview" xml:space="preserve">
-		<value>Date of Review</value>
+	<data name="Date of review" xml:space="preserve">
+		<value>Date of review</value>
 	</data>
 	<data name="Cancel" xml:space="preserve">
 		<value>Cancel</value>
+	</data>
+	<data name="Work" xml:space="preserve">
+		<value>Work</value>
 	</data>
 </root>

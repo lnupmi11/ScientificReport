@@ -3,12 +3,12 @@
 @inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = Localizer["Edit"];
+	ViewData["Title"] = Localizer["Edit report thesis"];
 }
 <style type="text/css">
 	.authors-list {
 		overflow-y: scroll;
-		height: 100px;
+		height: 250px;
 	}
 	.text-green { color: rgb(0, 179, 0); }
 	.text-red { color: rgb(177, 0, 0); }
@@ -16,19 +16,18 @@
 	.cursor-pointer { cursor: pointer; }
 </style>
 
-<h3>Edit</h3>
-<h5>@Localizer["ReportThesis"]</h5>
+<h5>@ViewData["Title"]</h5>
 <hr/>
 <div class="row">
 	<div class="col s12">
 		<form asp-action="Edit">
 			<div asp-validation-summary="ModelOnly" class="validate"></div>
-			<input type="hidden" asp-for="ReportThesis.Id"/>
+			<input type="hidden" asp-for="Id"/>
 			<div class="row">
 				<div class="input-field col s7">
-					<input asp-for="ReportThesis.Thesis" type="text" class="validate">
-					<label asp-for="ReportThesis.Thesis">@Localizer["Thesis"]</label>
-					<span class="helper-text" asp-validation-for="ReportThesis.Thesis" data-error="" data-success=""></span>
+					<input asp-for="Thesis" type="text" class="validate">
+					<label asp-for="Thesis">@Localizer["Thesis"]</label>
+					<span class="helper-text" asp-validation-for="Thesis" data-error="" data-success=""></span>
 				</div>
 				<div class="col s6">
 					<h4>@Localizer["Authors"]:</h4>
@@ -41,9 +40,9 @@
 								{
 									var exists = Model.Authors.Any(u => u.Id == user.Id);
 									<p>
-										@user.FirstName @user.LastName
-										<i class="add-user fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addAuthor(this, '@Model.ReportThesis.Id', '@user.Id')"></i>
-										<i class="remove-user fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteAuthor(this, '@Model.ReportThesis.Id', '@user.Id')"></i>
+										@user.FullName
+										<i class="add-user fas fa-plus-circle fa-lg cursor-pointer text-green @(exists ? "hidden" : "")" onclick="addAuthor(this, '@Model.Id', '@user.Id')"></i>
+										<i class="remove-user fas fa-minus-circle fa-lg cursor-pointer text-red @(exists ? "" : "hidden")" onclick="deleteAuthor(this, '@Model.Id', '@user.Id')"></i>
 									</p>
 								}
 							}
@@ -51,15 +50,12 @@
 					</div>
 				</div>
 			</div>
-			
-			
 			<div class="row myButtons">
-				<input type="submit" value="Save" class="waves-effect btn-small  amber accent-2"/>
-				<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
+				<button type="submit" class="waves-effect btn-small accent-2">@Localizer["Save"]</button>
+				<a asp-action="Index" class="waves-effect btn-small blue darken-3">@Localizer["Cancel"]</a>
 			</div>
 		</form>
 	</div>
-	
 </div>
 
 <script>
@@ -67,7 +63,7 @@
 		const config = {
 			method: 'POST',
 			body: JSON.stringify({
-				AuthorId: authorId
+				UserId: authorId
 			}),
 			headers: {
 				'Content-Type': 'application/json'

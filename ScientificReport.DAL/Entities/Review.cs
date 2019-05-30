@@ -15,6 +15,6 @@ namespace ScientificReport.DAL.Entities
 		[DataType(DataType.Date)]
 		public DateTime DateOfReview { get; set; }
 		
-		public virtual ICollection<UserProfilesReviews> UserProfilesReviews { get; set; }
+		public virtual UserProfile.UserProfile Reviewer { get; set; }
 	}
 }

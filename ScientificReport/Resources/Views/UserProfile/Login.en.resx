@@ -17,17 +17,17 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="LogIn" xml:space="preserve">
-		<value>Log In</value>
+    <data name="Log in" xml:space="preserve">
+		<value>Log in</value>
 	</data>
-    <data name="UserName" xml:space="preserve">
-		<value>User Name</value>
+    <data name="User name" xml:space="preserve">
+		<value>User name</value>
 	</data>
     <data name="Password" xml:space="preserve">
 		<value>Password</value>
 	</data>
-    <data name="RememberMe" xml:space="preserve">
-		<value>Remember Me</value>
+    <data name="Remember me" xml:space="preserve">
+		<value>Remember me</value>
 	</data>
     <data name="Cancel" xml:space="preserve">
 		<value>Cancel</value>

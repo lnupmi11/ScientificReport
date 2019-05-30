@@ -1,92 +1,119 @@
+@model ScientificReport.DTO.Models.Article.ArticleDetailsModel
+
 @using Microsoft.AspNetCore.Mvc.Localization
-@model ScientificReport.DAL.Entities.Article
+@using ScientificReport.BLL.Interfaces
+@using ScientificReport.Controllers.Utils
+
+@inject IDepartmentService DepartmentService
 @inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = Localizer["Details"];
+	ViewData["Title"] = Localizer["Article details"];
 }
 
-<h3>@Localizer["Details"]</h3>
-
 <div>
-    <h5>@Localizer["Article"]</h5>
-    <hr />
-    <div class="row">
-        <div class = "col s2">
-            @Localizer[Html.DisplayNameFor(model => model.Type)]
-        </div>
-        <div class = "col s10">
-            @Html.DisplayFor(model => model.Type)
-        </div>
-        <div class = "col s2">
-            @Localizer[Html.DisplayNameFor(model => model.Title)]
-        </div>
-        <div class = "col s10">
-            @Html.DisplayFor(model => model.Title)
-        </div>
-        <div class = "col s2">
-            @Localizer[Html.DisplayNameFor(model => model.LiabilityInfo)]
-        </div>
-        <div class = "col s10">
-            @Html.DisplayFor(model => model.LiabilityInfo)
-        </div>
-        <div class = "col s2">
-            @Localizer[Html.DisplayNameFor(model => model.DocumentInfo)]
-        </div>
-        <div class = "col s10">
-            @Html.DisplayFor(model => model.DocumentInfo)
-        </div>
-        <div class = "col s2">
-            @Localizer[Html.DisplayNameFor(model => model.PublishingPlace)]
-        </div>
-        <div class = "col s10">
-            @Html.DisplayFor(model => model.PublishingPlace)
-        </div>
-        <div class = "col s2">
-            @Localizer[Html.DisplayNameFor(model => model.PublishingHouseName)]
-        </div>
-        <div class = "col s10">
-            @Html.DisplayFor(model => model.PublishingHouseName)
-        </div>
-        <div class = "col s2">
-            @Localizer[Html.DisplayNameFor(model => model.PublishingYear)]
-        </div>
-        <div class = "col s10">
-            @Html.DisplayFor(model => model.PublishingYear)
-        </div>
-        <div class = "col s2">
-            @Localizer[Html.DisplayNameFor(model => model.IsPeriodical)]
-        </div>
-        <div class = "col s10">
-            <span>@Localizer[(Model.IsPeriodical ? "Yes" : "No")]</span>
-        </div>
-        <div class = "col s2">
-            @Localizer[Html.DisplayNameFor(model => model.Number)]
-        </div>
-        <div class = "col s10">
-            @Html.DisplayFor(model => model.Number)
-        </div>
-        <div class = "col s2">
-            @Localizer[Html.DisplayNameFor(model => model.PagesAmount)]
-        </div>
-        <div class = "col s10">
-            @Html.DisplayFor(model => model.PagesAmount)
-        </div>
-        <div class = "col s2">
-            @Localizer[Html.DisplayNameFor(model => model.IsPrintCanceled)]
-        </div>
-        <div class = "col s10">
-            <span>@Localizer[(Model.IsPrintCanceled ? "Yes" : "No")]</span>
-        </div>
-        <div class = "col s2">
-            @Localizer[Html.DisplayNameFor(model => model.IsRecommendedToPrint)]
-        </div>
-        <div class = "col s10">
-            <span>@Localizer[(Model.IsRecommendedToPrint ? "Yes" : "No")]</span>
-        </div>
-    </div>
+	<h5>@Model.Article.Title</h5>
+	<hr />
+	<div class="row">
+		<div class = "col s4">
+			@Localizer[Html.DisplayNameFor(model => model.Article.Type)]
+		</div>
+		<div class = "col s8">
+			@Html.DisplayFor(model => model.Article.Type)
+		</div>
+		<div class = "col s4">
+			@Localizer["Liability info"]
+		</div>
+		<div class = "col s8">
+			@Html.DisplayFor(model => model.Article.LiabilityInfo)
+		</div>
+		<div class = "col s4">
+			@Localizer["Document info"]
+		</div>
+		<div class = "col s8">
+			@Html.DisplayFor(model => model.Article.DocumentInfo)
+		</div>
+		<div class = "col s4">
+			@Localizer["Publishing place"]
+		</div>
+		<div class = "col s8">
+			@Html.DisplayFor(model => model.Article.PublishingPlace)
+		</div>
+		<div class = "col s4">
+			@Localizer["Publishing house name"]
+		</div>
+		<div class = "col s8">
+			@Html.DisplayFor(model => model.Article.PublishingHouseName)
+		</div>
+		<div class = "col s4">
+			@Localizer["Publishing year"]
+		</div>
+		<div class = "col s8">
+			@Html.DisplayFor(model => model.Article.PublishingYear)
+		</div>
+		<div class = "col s4">
+			@Localizer["Is periodical"]
+		</div>
+		<div class = "col s8">
+			<span>@Localizer[(Model.Article.IsPeriodical ? "Yes" : "No")]</span>
+		</div>
+		<div class = "col s4">
+			@Localizer[Html.DisplayNameFor(model => model.Article.Number)]
+		</div>
+		<div class = "col s8">
+			@Html.DisplayFor(model => model.Article.Number)
+		</div>
+		<div class = "col s4">
+			@Localizer["Pages amount"]
+		</div>
+		<div class = "col s8">
+			@Html.DisplayFor(model => model.Article.PagesAmount)
+		</div>
+		<div class = "col s4">
+			@Localizer["Is print canceled"]
+		</div>
+		<div class = "col s8">
+			<span>@Localizer[(Model.Article.IsPrintCanceled ? "Yes" : "No")]</span>
+		</div>
+		<div class = "col s4">
+			@Localizer["Is recommended to print"]
+		</div>
+		<div class = "col s8">
+			<span>@Localizer[(Model.Article.IsRecommendedToPrint ? "Yes" : "No")]</span>
+		</div>
+		@if (Model.Authors != null && Model.Authors.Any())
+		{
+			<dt class="col s4">
+				@Localizer["Authors"]
+			</dt>
+			<dd class="col s8">
+				<ul>
+					@foreach (var author in Model.Authors)
+					{
+						<li>
+							<a asp-controller="UserProfile" asp-action="Details"
+							   asp-route-id="@author.Id">
+								@author.FullName
+							</a>
+						</li>
+					}
+				</ul>
+			</dd>	
+		}
+	</div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
-    <a asp-action="Index" class="btn-small blue darken-3">@Localizer["Back to List"]</a>
+<div style="margin-top: 20px">
+	@{
+		var department = DepartmentService.Get(d => d.Staff.Any(s => s.UserName == User.Identity.Name));
+		var isHeadOfDepartment = false;
+		if (department != null)
+		{
+			isHeadOfDepartment = Model.Article.UserProfilesArticles.Any(p => department.Staff.Contains(p.Author));
+		}
+	}
+	@if ((PageHelpers.IsAdmin(User) || isHeadOfDepartment || Model.Article.UserProfilesArticles.Any(p => p.Author.UserName == User.Identity.Name)) && Model.Article.PublishingYear == DateTime.Now.Year)
+	{
+		<a asp-action="Edit" asp-route-id="@Model.Article.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
+	}
+	<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Back to list"]</a>
 </div>

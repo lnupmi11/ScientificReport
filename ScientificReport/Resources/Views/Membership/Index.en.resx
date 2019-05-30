@@ -17,17 +17,17 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="Membership" xml:space="preserve">
-		<value>Membership</value>
+    <data name="Memberships" xml:space="preserve">
+		<value>Memberships</value>
 	</data>
-	<data name="MemberOf" xml:space="preserve">
+	<data name="Member of" xml:space="preserve">
 		<value>Member of</value>
 	</data>
-	<data name="MembershipInfo" xml:space="preserve">
+	<data name="Membership info" xml:space="preserve">
 		<value>Membership info</value>
 	</data>
-	<data name="Create New" xml:space="preserve">
-		<value>Create New</value>
+	<data name="Create" xml:space="preserve">
+		<value>Create</value>
 	</data>
 	<data name="Details" xml:space="preserve">
 		<value>Details</value>
@@ -38,16 +38,22 @@
 	<data name="Delete" xml:space="preserve">
 		<value>Delete</value>
 	</data>
-	<data name="Save" xml:space="preserve">
-		<value>Save</value>
+	<data name="Previous" xml:space="preserve">
+		<value>Previous</value>
 	</data>
-	<data name="Create" xml:space="preserve">
-		<value>Create</value>
+	<data name="Next" xml:space="preserve">
+		<value>Next</value>
 	</data>
-	<data name="Cancel" xml:space="preserve">
-		<value>Cancel</value>
+	<data name="ScientificCouncil" xml:space="preserve">
+		<value>Scientific council</value>
 	</data>
-	<data name="Back to List" xml:space="preserve">
-		<value>Back to List</value>
+	<data name="ExpertCouncil" xml:space="preserve">
+		<value>Expert council</value>
+	</data>
+	<data name="EditorialBoard" xml:space="preserve">
+		<value>Scientific journal editorial board</value>
+	</data>
+	<data name="User" xml:space="preserve">
+		<value>User</value>
 	</data>
 </root>

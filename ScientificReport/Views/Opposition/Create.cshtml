@@ -1,14 +1,12 @@
 @using Microsoft.AspNetCore.Mvc.Localization
-@model ScientificReport.DAL.Entities.Opposition
+@model ScientificReport.DTO.Models.Opposition.OppositionModel
 @inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = Localizer["Create"];
+	ViewData["Title"] = Localizer["Add opposition"];
 }
 
-<h3>@Localizer["Create"]</h3>
-
-<h5>@Localizer["Opposition"]</h5>
+<h5>@ViewData["Title"]</h5>
 <hr />
 <div class="row">
 	<div class="col s12">
@@ -25,15 +23,15 @@
 			<div class="row">
 				<div class="input-field col s6">
 					<input asp-for="DateOfOpposition" type="date" class="validate"/>
-					<label asp-for="DateOfOpposition">@Localizer["DateOfOpposition"]</label>
+					<label asp-for="DateOfOpposition">@Localizer["Date of opposition"]</label>
 					<span class="helper-text" asp-validation-for="DateOfOpposition" 
 						   data-error="" data-success=""></span>
 				</div>
 			</div>
 	
 			<div class="row myButtons">
-				<input type="submit" value="@Localizer["Create"]" class="waves-effect btn-small  amber accent-2"/>
-				<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
+				<button type="submit" class="waves-effect btn-small accent-2">@Localizer["Create"]</button>
+				<a asp-action="Index" class="waves-effect btn-small blue darken-3">@Localizer["Cancel"]</a>
 			</div>
 		</form>
 	</div>

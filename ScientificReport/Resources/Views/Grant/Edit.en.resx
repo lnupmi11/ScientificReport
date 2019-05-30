@@ -17,31 +17,25 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
+	<data name="Edit grant" xml:space="preserve">
+		<value>Edit grant</value>
+	</data>
     <data name="Grant" xml:space="preserve">
 		<value>Grant</value>
-	</data>
-	<data name="Create New" xml:space="preserve">
-		<value>Create New</value>
-	</data>
-	<data name="Details" xml:space="preserve">
-		<value>Details</value>
 	</data>
 	<data name="Edit" xml:space="preserve">
 		<value>Edit</value>
 	</data>
-	<data name="Delete" xml:space="preserve">
-		<value>Delete</value>
-	</data>
 	<data name="Save" xml:space="preserve">
 		<value>Save</value>
-	</data>
-	<data name="Create" xml:space="preserve">
-		<value>Create</value>
 	</data>
 	<data name="Cancel" xml:space="preserve">
 		<value>Cancel</value>
 	</data>
-	<data name="Back to List" xml:space="preserve">
-		<value>Back to List</value>
+	<data name="Info" xml:space="preserve">
+		<value>Info</value>
+	</data>
+	<data name="Authors" xml:space="preserve">
+		<value>Authors</value>
 	</data>
 </root>

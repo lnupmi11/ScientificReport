@@ -3,23 +3,23 @@
 @inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = Localizer["Edit"];
+    ViewData["Title"] = Localizer["Edit scientific work"];
 }
 
 <style type="text/css">
     .authors-list {
         overflow-y: scroll;
-        height: 100px;
+        height: 200px;
     }
- 
-    .text-green { color: rgb(0, 179, 0); }
-
-    .text-red { color: rgb(177, 0, 0); }
-
-    .hidden { display: none; }
+    .authors-label {
+        /* margin-bottom: 10px; */
+        position: relative !important;
+        left: 0 !important;
+        font-size: 12.5px !important;
+    }
 </style>
 
-<h5>@Localizer["ScientificWork"]</h5>
+<h5>@ViewData["Title"]</h5>
 <hr/>
 <div class="row">
     <div class="col s12">
@@ -57,7 +57,7 @@
             </div>
             <div class="row">
                 <div class="col s6">
-                    <h4>@Localizer["Create"]:</h4>
+                    <label class="authors-label">@Localizer["Authors"]:</label>
                     <div class="authors-list">
                         @if (Model.Users != null)
                         {
@@ -78,8 +78,8 @@
                 </div>
             </div>
             <div class="row myButtons">
-                <input type="submit" value="@Localizer["Create"]" class="waves-effect btn-small  amber accent-2"/>
-                <a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
+                <button type="submit" class="waves-effect btn-small accent-2">@Localizer["Save"]</button>
+                <a asp-action="Index" class="waves-effect btn-small blue darken-3">@Localizer["Cancel"]</a>
             </div>
         </form>
     </div>
@@ -91,7 +91,7 @@
         const config = {
             method: 'POST',
             body: JSON.stringify({
-                AuthorId: authorId
+                UserId: authorId
             }),
             headers: {
                 'Content-Type': 'application/json'

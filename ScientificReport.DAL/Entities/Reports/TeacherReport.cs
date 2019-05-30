@@ -1,36 +1,154 @@
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
 
 namespace ScientificReport.DAL.Entities.Reports
 {
 	public class TeacherReport : Report
 	{
-		public virtual UserProfile.UserProfile Teacher { get; set; }
+		[Key]
+		public override Guid Id { get; set; }
 
-		public virtual ICollection<ScientificWork> ScientificWorks { get; set; }
+		public override DateTime Created { get; set; }
+		public override DateTime Edited { get; set; }
 
-		public virtual ICollection<Grant> Grants { get; set; }
+		public UserProfile.UserProfile Teacher { get; set; }
 
-		public virtual ICollection<ScientificInternship> ScientificInternships { get; set; }
 
-		// Scientific guidance field
-		public virtual ICollection<PostgraduateDissertationGuidance> PostgraduateDissertationGuidances { get; set; }
+		public ICollection<TeacherReportsPostgraduateDissertationGuidances> TeacherReportsPostgraduateDissertationGuidances { get; set; }
+		public ICollection<TeacherReportsPostgraduateGuidances> TeacherReportsPostgraduateGuidances { get; set; }
+		public ICollection<TeacherReportsPatents> TeacherReportsPatents { get; set; }
+		public ICollection<TeacherReportsReviews> TeacherReportsReviews { get; set; }
+		public ICollection<TeacherReportsOppositions> TeacherReportsOppositions { get; set; }
+		public ICollection<TeacherReportsScientificConsultations> TeacherReportsScientificConsultations { get; set; }
+		public ICollection<TeacherReportsArticles> TeacherReportsArticles { get; set; }
+		public ICollection<TeacherReportsScientificWorks> TeacherReportsScientificWorks { get; set; }
+		public ICollection<TeacherReportsPublications> TeacherReportsPublications { get; set; }
+		public ICollection<TeacherReportsReportThesis> TeacherReportsReportThesis { get; set; }
+		public ICollection<TeacherReportsGrants> TeacherReportsGrants { get; set; }
+		public ICollection<TeacherReportsScientificInternships> TeacherReportsScientificInternships { get; set; }
+		public ICollection<TeacherReportsMemberships> TeacherReportsMemberships { get; set; }
 
-		// Scientific guidance field
-		public virtual ICollection<PostgraduateGuidance> PostgraduateGuidances { get; set; }
+		public IEnumerable<ScientificWork> GetScientificWorks()
+		{
+			return TeacherReportsScientificWorks.Select(tr => tr.ScientificWork);
+		}
+		public IEnumerable<Publication> GetPublications()
+		{
+			return TeacherReportsPublications.Select(tr => tr.Publication);
+		}
+		public IEnumerable<Article> GetArticles()
+		{
 
-		// Scientific guidance field
-		public virtual ICollection<ScientificConsultation> ScientificConsultations { get; set; }
+			return	TeacherReportsArticles.Select(tr => tr.Article);
+		}
+		public IEnumerable<ReportThesis> GetReportTheses()
+		{
+			return	TeacherReportsReportThesis.Select(tr => tr.ReportThesis);
+		}
+		
+		public IEnumerable<Grant> GetGrants()
+		{
+			return  TeacherReportsGrants.Select(tr => tr.Grant);
+		}
+		public IEnumerable<ScientificInternship> GetScientificInternships()
+		{
+			return  TeacherReportsScientificInternships.Select(tr => tr.ScientificInternship);
+		}
+		public IEnumerable<PostgraduateGuidance> GetPostgraduateGuidances()
+		{
+			return  TeacherReportsPostgraduateGuidances.Select(tr => tr.PostgraduateGuidance);
+		}
+		public IEnumerable<ScientificConsultation> GetScientificConsultations()
+		{
+			return  TeacherReportsScientificConsultations.Select(tr => tr.ScientificConsultation);
+		}
+		public IEnumerable<PostgraduateDissertationGuidance> GetPostgraduateDissertationGuidances()
+		{
+			return  TeacherReportsPostgraduateDissertationGuidances.Select(tr => tr.PostgraduateDissertationGuidance);
+		}
+		public IEnumerable<Review> GetReviews()
+		{
+			return  TeacherReportsReviews.Select(tr => tr.Review);
+		}
+		public IEnumerable<Opposition> GetOppositions()
+		{
+			return  TeacherReportsOppositions.Select(tr => tr.Opposition);
+		}
+		
+		public IEnumerable<Membership> GetMemberships()
+		{
+			return  TeacherReportsMemberships.Select(tr => tr.Membership);
+		}
+		public IEnumerable<Membership> GetMembershipsWithFilter(Func<Membership, int, bool> predicate)
+		{
+			return GetMemberships().Where(predicate);
+		}
+		public IEnumerable<Membership> GetMembershipsByType(Membership.Types type)
+		{
+			return GetMembershipsWithFilter((p, i) => p.Type == type);
+		}
 
-		public virtual ICollection<Publication> Publications { get; set; }
+		public IEnumerable<PatentLicenseActivity> GetPatents()
+		{
+			return  TeacherReportsPatents.Select(tr => tr.Patent);
+		}
+		public IEnumerable<PatentLicenseActivity> GetPatentsWithFilter(Func<PatentLicenseActivity, int, bool> predicate)
+		{
+			return GetPatents().Where(predicate);
+		}
+		public IEnumerable<PatentLicenseActivity> GetPatentsByType(PatentLicenseActivity.Types type)
+		{
+			return GetPatentsWithFilter((p, i) => p.Type == type);
+		}
 
-		public virtual ICollection<ReportThesis> ReportTheses { get; set; }
+		
+		public IEnumerable<Conference> GetConferences()
+		{
+			return  TeacherReportsReportThesis.Select(tr => tr.ReportThesis.Conference);
+		}
+		public IEnumerable<Conference> GetConferencesWithFilter(Func<Conference, int, bool> predicate)
+		{
+			return GetConferences().Where(predicate);
+		}
+		public IEnumerable<Conference> GetConferencesByType(Conference.Types type)
+		{
+			return GetConferencesWithFilter((p, i) => p.Type == type);
+		}
 
-		public virtual ICollection<PatentLicenseActivity> Patents { get; set; }
+		public IEnumerable<Publication> GetPublicationsWithFilter(Func<Publication, int, bool> predicate)
+		{
+			return GetPublications().Where(predicate);
+		}
+		public IEnumerable<Publication> GetPublicationsByType(Publication.Types type)
+		{
+			return GetPublicationsWithFilter((p, i) => p.Type == type);
+		}
+		public IEnumerable<Publication> GetPublicationsOther()
+		{
+			return GetPublicationsWithFilter((p, i) => p.Type == Publication.Types.Other || p.Type == Publication.Types.Comment || p.Type == Publication.Types.BibliographicIndex );
+		}
 
-		public virtual ICollection<Review> Reviews { get; set; }
 
-		public virtual ICollection<Membership> Memberships { get; set; }
+		public IEnumerable<Article> GetArticlesWithFilter(Func<Article, int, bool> predicate)
+		{
+			return GetArticles().Where(predicate);
+		}
+		public IEnumerable<Article> GetArticlesByType(Article.Types type)
+		{
+			return GetArticlesWithFilter((p, i) => p.Type == type);
+		}
+		
 
-		public virtual ICollection<Opposition> Oppositions { get; set; }
+		public IEnumerable<ReportThesis> GetReportThesesWithFilter(Func<ReportThesis, int, bool> predicate)
+		{
+			return GetReportTheses().Where(predicate);
+		}
+		public IEnumerable<ReportThesis> GetReportThesesByConferenceType(Conference.Types type)
+		{
+			return GetReportThesesWithFilter((p, i) => p.Conference.Type == type);
+		}
+
 	}
 }

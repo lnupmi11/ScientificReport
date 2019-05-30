@@ -17,13 +17,16 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="PostgraduateGuidance" xml:space="preserve">
+	<data name="Edit postgraduate guidance" xml:space="preserve">
+		<value>Редагувати наукове керівництво аспірантами</value>
+	</data>
+    <data name="Postgraduate guidance" xml:space="preserve">
 		<value>Наукове керівництво аспірантами</value>
 	</data>
-	<data name="PostgraduateName" xml:space="preserve">
+	<data name="Postgraduate name" xml:space="preserve">
 		<value>І'мя аспіранта</value>
 	</data>
-	<data name="PostgraduateInfo" xml:space="preserve">
+	<data name="Postgraduate info" xml:space="preserve">
 		<value>Інформація про аспіранта</value>
 	</data>
 	<data name="Edit" xml:space="preserve">

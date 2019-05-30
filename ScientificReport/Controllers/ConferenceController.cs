@@ -1,34 +1,43 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ScientificReport.BLL.Interfaces;
-using ScientificReport.DAL.DbContext;
+using ScientificReport.Controllers.Utils;
 using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Roles;
 using ScientificReport.DTO.Models.Conference;
 
 namespace ScientificReport.Controllers
 {
-//	[Authorize(Roles = UserProfileRole.Teacher)]
+	[Authorize(Roles = UserProfileRole.Any)]
 	public class ConferenceController : Controller
 	{
 		private readonly IConferenceService _conferenceService;
+		private readonly IDepartmentService _departmentService;
+		private readonly IUserProfileService _userProfileService;
 
-		public ConferenceController(IConferenceService conferenceService)
+		public ConferenceController(
+			IConferenceService conferenceService,
+			IDepartmentService departmentService,
+			IUserProfileService userProfileService
+		)
 		{
 			_conferenceService = conferenceService;
+			_departmentService = departmentService;
+			_userProfileService = userProfileService;
 		}
 
 		// GET: Conference
-		public IActionResult Index()
+		public IActionResult Index(ConferenceIndexModel model)
 		{
-			return View(_conferenceService.GetAll());
+			model.Conferences = _conferenceService.GetPageByRole(model.CurrentPage, model.PageSize, User);
+			model.Count = _conferenceService.GetCountByRole(User);
+			return View(model);
 		}
 
-		// GET: Conference/Details/5
+		// GET: Conference/Details/{id}
 		public IActionResult Details(Guid? id)
 		{
 			if (id == null)
@@ -43,6 +52,11 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
+			if (!UserHasPermission(conference))
+			{
+				return Forbid();
+			}
+
 			var conferenceDetails = new ConferenceDetails
 			{
 				Conference = conference
@@ -52,25 +66,23 @@ namespace ScientificReport.Controllers
 		}
 
 		// GET: Conference/Create
-		public IActionResult Create()
-		{
-			return View();
-		}
+		public IActionResult Create() => View();
 
 		// POST: Conference/Create
-		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public IActionResult Create([Bind("Id,Topic,Date")] Conference conference)
 		{
-			if (!ModelState.IsValid) return View(conference);
+			if (!ModelState.IsValid)
+			{
+				return View(conference);
+			}
 
 			_conferenceService.CreateItem(conference);
 			return RedirectToAction(nameof(Index));
 		}
 
-		// GET: Conference/Edit/5
+		// GET: Conference/Edit/{id}
 		public IActionResult Edit(Guid? id)
 		{
 			if (id == null)
@@ -83,8 +95,12 @@ namespace ScientificReport.Controllers
 			{
 				return NotFound();
 			}
-
 			
+			if (!UserHasPermission(conference))
+			{
+				return Forbid();
+			}
+
 			var conferenceEdit = new ConferenceEdit
 			{
 				Conference = conference
@@ -93,9 +109,7 @@ namespace ScientificReport.Controllers
 			return View(conferenceEdit);
 		}
 
-		// POST: Conference/Edit/5
-		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+		// POST: Conference/Edit/{id}
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public IActionResult Edit(Guid id, ConferenceEdit conferenceEdit)
@@ -106,7 +120,15 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
-			if (!ModelState.IsValid) return View(conferenceEdit);
+			if (!UserHasPermission(conference))
+			{
+				return Forbid();
+			}
+			
+			if (!ModelState.IsValid)
+			{
+				return View(conferenceEdit);
+			}
 			try
 			{
 				_conferenceService.UpdateItem(conference);
@@ -123,7 +145,7 @@ namespace ScientificReport.Controllers
 			return RedirectToAction(nameof(Index));
 		}
 
-		// GET: Conference/Delete/5
+		// GET: Conference/Delete/{id}
 		public IActionResult Delete(Guid? id)
 		{
 			if (id == null)
@@ -136,22 +158,37 @@ namespace ScientificReport.Controllers
 			{
 				return NotFound();
 			}
+			
+			if (!UserHasPermission(conference))
+			{
+				return Forbid();
+			}
 
 			return View(conference);
 		}
 
-		// POST: Conference/Delete/5
+		// POST: Conference/Delete/{id}
 		[HttpPost, ActionName("Delete")]
 		[ValidateAntiForgeryToken]
 		public IActionResult DeleteConfirmed(Guid id)
 		{
+			if (!UserHasPermission(_conferenceService.GetById(id)))
+			{
+				return Forbid();
+			}
+			
 			_conferenceService.DeleteById(id);
 			return RedirectToAction(nameof(Index));
 		}
-
-		private bool ConferenceExists(Guid id)
+		
+		private bool UserHasPermission(Conference conference)
 		{
-			return _conferenceService.Exists(id);
+			var user = _userProfileService.Get(User);
+			var department = _departmentService.Get(d => d.Staff.Contains(user));
+			return PageHelpers.IsAdmin(User) ||
+				   PageHelpers.IsHeadOfDepartment(User) &&
+				   _conferenceService.GetParticipators(conference.Id).Any(p => department.Staff.Contains(p)) ||
+				   _conferenceService.GetParticipators(conference.Id).Contains(user);
 		}
 	}
 }

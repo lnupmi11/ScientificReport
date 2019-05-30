@@ -21,7 +21,11 @@ namespace ScientificReport.DAL.Repositories
 		{
 			return _context.PatentLicenseActivities
 						.Include(b => b.AuthorsPatentLicenseActivities)
-						.Include(a=>a.ApplicantsPatentLicenseActivities);
+						.ThenInclude(b => b.Author)
+						.Include(b => b.CoauthorsPatentLicenseActivities)
+						.Include(a=>a.ApplicantsPatentLicenseActivities)
+						.ThenInclude(b => b.Applicant)
+						.Include(b => b.CoApplicantsPatentLicenseActivities);
 		}
 
 		public virtual IEnumerable<PatentLicenseActivity> AllWhere(Func<PatentLicenseActivity, bool> predicate)

@@ -17,20 +17,17 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="Index" xml:space="preserve">
-		<value>Index</value>
+	<data name="Scientific consultations" xml:space="preserve">
+		<value>Scientific consultations</value>
 	</data>
 	<data name="Create" xml:space="preserve">
 		<value>Create</value>
 	</data>
-	<data name="ScientificConsultation" xml:space="preserve">
-		<value>Scientific Consultation</value>
+	<data name="Candidate last, first and middle names" xml:space="preserve">
+		<value>Candidate last, first and middle names</value>
 	</data>
-	<data name="CandidateName" xml:space="preserve">
-		<value>CandidateName</value>
-	</data>
-	<data name="DissertationTitle" xml:space="preserve">
-		<value>DissertationTitle</value>
+	<data name="Dissertation title" xml:space="preserve">
+		<value>Dissertation title</value>
 	</data>
 	<data name="Details" xml:space="preserve">
 		<value>Details</value>
@@ -40,5 +37,14 @@
 	</data>
 	<data name="Delete" xml:space="preserve">
 		<value>Delete</value>
+	</data>
+	<data name="Previous" xml:space="preserve">
+		<value>Previous</value>
+	</data>
+	<data name="Next" xml:space="preserve">
+		<value>Next</value>
+	</data>
+	<data name="Guide" xml:space="preserve">
+		<value>Guide</value>
 	</data>
 </root>

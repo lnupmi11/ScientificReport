@@ -17,13 +17,16 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="PostgraduateGuidance" xml:space="preserve">
+	<data name="Edit postgraduate guidance" xml:space="preserve">
+		<value>Edit postgraduate guidance</value>
+	</data>
+    <data name="Postgraduate guidance" xml:space="preserve">
 		<value>Postgraduate guidance</value>
 	</data>
-	<data name="PostgraduateName" xml:space="preserve">
+	<data name="Postgraduate name" xml:space="preserve">
 		<value>Postgraduate name</value>
 	</data>
-	<data name="PostgraduateInfo" xml:space="preserve">
+	<data name="Postgraduate info" xml:space="preserve">
 		<value>Postgraduate info</value>
 	</data>
 	<data name="Edit" xml:space="preserve">

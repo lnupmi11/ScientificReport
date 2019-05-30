@@ -3,18 +3,44 @@
 @inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = Localizer["Details"];
+	ViewData["Title"] = Localizer["Details of grant"];
 }
 
-<h3>@Localizer["Details"]</h3>
-
 <div>
-	<h5>@Localizer["Grant"]</h5>
-	<hr />
+	<h5>@ViewData["Title"]</h5>
+	<hr/>
 	<dl class="row">
+		<dt class = "col s2">
+			@Localizer[Html.DisplayNameFor(model => model.Info)]
+		</dt>
+		<dd class="col s10">
+			@Html.DisplayFor(model => model.Info)
+		</dd>
+		@{
+			var authors = Model.UserProfilesGrants.Select(g => g.UserProfile).ToList();
+		}
+		@if (authors.Count > 0)
+		{
+			<dt class="col s2">
+				@Localizer["Authors"]
+			</dt>
+			<dd class="col s10">
+				<ul>
+					@foreach (var author in authors)
+					{
+						<li>
+							<a asp-controller="UserProfile" asp-action="Details"
+							   asp-route-id="@author.Id">
+								@author.FullName
+							</a>
+						</li>
+					}
+				</ul>
+			</dd>
+		}
 	</dl>
 </div>
-<div>
+<div style="margin-top: 20px">
 	<a asp-action="Edit" asp-route-id="@Model.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
-	<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Back to List"]</a>
+	<a asp-action="Index" class="waves-effect btn-small blue darken-3">@Localizer["Back to list"]</a>
 </div>

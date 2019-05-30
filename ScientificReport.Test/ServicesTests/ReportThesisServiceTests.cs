@@ -5,6 +5,7 @@ using Moq;
 using ScientificReport.BLL.Services;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
+using ScientificReport.DTO.Models.ReportThesis;
 using Xunit;
 
 namespace ScientificReport.Test.ServicesTests
@@ -69,7 +70,7 @@ namespace ScientificReport.Test.ServicesTests
 			var service = new ReportThesisService(GetMockContext().Object);
 
 			var expected = TestData.ReportThesis3;
-			service.CreateItem(expected);
+			service.CreateItem(new ReportThesisModel(expected));
 
 			_mockDbSet.Verify(m => m.Add(It.IsAny<ReportThesis>()), Times.Once);
 		}
@@ -81,7 +82,7 @@ namespace ScientificReport.Test.ServicesTests
 
 			var expected = GetTestData().First();
 			expected.Thesis = TestData.ReportThesis3.Thesis;
-			service.UpdateItem(expected);
+			service.UpdateItem(new ReportThesisEdit(expected));
 
 			_mockDbSet.Verify(m => m.Update(expected), Times.Once);
 		}

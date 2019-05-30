@@ -1,155 +1,289 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using ScientificReport.DAL.DbContext;
+using ScientificReport.BLL.Interfaces;
+using ScientificReport.Controllers.Utils;
 using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Roles;
+using ScientificReport.DTO.Models.PatentLicenseActivity;
 
 namespace ScientificReport.Controllers
 {
-//	[Authorize(Roles = UserProfileRole.Teacher)]
+	[Authorize(Roles = UserProfileRole.Any)]
 	public class PatentLicenseActivityController : Controller
 	{
-		private readonly ScientificReportDbContext _context;
+		private readonly IPatentLicenseActivityService _patentLicenseActivityService;
+		private readonly IDepartmentService _departmentService;
+		private readonly IUserProfileService _userProfileService;
 
-		public PatentLicenseActivityController(ScientificReportDbContext context)
+		public PatentLicenseActivityController(
+			IPatentLicenseActivityService patentLicenseActivityService,
+			IDepartmentService departmentService,
+			IUserProfileService userProfileService
+		)
 		{
-			_context = context;
+			_patentLicenseActivityService = patentLicenseActivityService;
+			_departmentService = departmentService;
+			_userProfileService = userProfileService;
 		}
 
 		// GET: PatentLicenseActivity
-		public async Task<IActionResult> Index()
+		public IActionResult Index(PatentLicenseActivityIndexModel model)
 		{
-			return View(await _context.PatentLicenseActivities.ToListAsync());
+			model.PatentLicenseActivities = _patentLicenseActivityService.GetPageByRole(model.CurrentPage, model.PageSize, User);
+			model.Count = _patentLicenseActivityService.GetCountByRole(User);
+			return View(model);
 		}
 
-		// GET: PatentLicenseActivity/Details/5
-		public async Task<IActionResult> Details(Guid? id)
+		// GET: PatentLicenseActivity/Details/{id}
+		public IActionResult Details(Guid? id)
 		{
 			if (id == null)
 			{
 				return NotFound();
 			}
 
-			var patentLicenseActivity = await _context.PatentLicenseActivities
-				.FirstOrDefaultAsync(m => m.Id == id);
+			var patentLicenseActivity = _patentLicenseActivityService.GetById(id.Value);
 			if (patentLicenseActivity == null)
 			{
 				return NotFound();
+			}
+
+			if (!UserHasPermission(patentLicenseActivity))
+			{
+				return Forbid();
 			}
 
 			return View(patentLicenseActivity);
 		}
 
 		// GET: PatentLicenseActivity/Create
-		public IActionResult Create()
-		{
-			return View();
-		}
+		public IActionResult Create() => View();
 
 		// POST: PatentLicenseActivity/Create
-		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Create([Bind("Id,Name,Number,DateTime,Type")] PatentLicenseActivity patentLicenseActivity)
+		public IActionResult Create(PatentLicenseActivityModel model)
 		{
-			if (ModelState.IsValid)
+			if (!ModelState.IsValid)
 			{
-				patentLicenseActivity.Id = Guid.NewGuid();
-				_context.Add(patentLicenseActivity);
-				await _context.SaveChangesAsync();
-				return RedirectToAction(nameof(Index));
-			}
-			return View(patentLicenseActivity);
-		}
-
-		// GET: PatentLicenseActivity/Edit/5
-		public async Task<IActionResult> Edit(Guid? id)
-		{
-			if (id == null)
-			{
-				return NotFound();
+				return View(model);
 			}
 
-			var patentLicenseActivity = await _context.PatentLicenseActivities.FindAsync(id);
-			if (patentLicenseActivity == null)
+			_patentLicenseActivityService.CreateItem(model);
+			var patentLicenseActivity = _patentLicenseActivityService.Get(pla => pla.Name == model.Name);
+			var user = _userProfileService.Get(User);
+			if (model.Type == PatentLicenseActivity.Types.Patent)
 			{
-				return NotFound();
+				_patentLicenseActivityService.AddAuthor(patentLicenseActivity, user);
 			}
-			return View(patentLicenseActivity);
-		}
-
-		// POST: PatentLicenseActivity/Edit/5
-		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name,Number,DateTime,Type")] PatentLicenseActivity patentLicenseActivity)
-		{
-			if (id != patentLicenseActivity.Id)
+			else
 			{
-				return NotFound();
+				_patentLicenseActivityService.AddApplicant(patentLicenseActivity, user);
 			}
 
-			if (ModelState.IsValid)
-			{
-				try
-				{
-					_context.Update(patentLicenseActivity);
-					await _context.SaveChangesAsync();
-				}
-				catch (DbUpdateConcurrencyException)
-				{
-					if (!PatentLicenseActivityExists(patentLicenseActivity.Id))
-					{
-						return NotFound();
-					}
-					else
-					{
-						throw;
-					}
-				}
-				return RedirectToAction(nameof(Index));
-			}
-			return View(patentLicenseActivity);
-		}
-
-		// GET: PatentLicenseActivity/Delete/5
-		public async Task<IActionResult> Delete(Guid? id)
-		{
-			if (id == null)
-			{
-				return NotFound();
-			}
-
-			var patentLicenseActivity = await _context.PatentLicenseActivities
-				.FirstOrDefaultAsync(m => m.Id == id);
-			if (patentLicenseActivity == null)
-			{
-				return NotFound();
-			}
-
-			return View(patentLicenseActivity);
-		}
-
-		// POST: PatentLicenseActivity/Delete/5
-		[HttpPost, ActionName("Delete")]
-		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> DeleteConfirmed(Guid id)
-		{
-			var patentLicenseActivity = await _context.PatentLicenseActivities.FindAsync(id);
-			_context.PatentLicenseActivities.Remove(patentLicenseActivity);
-			await _context.SaveChangesAsync();
 			return RedirectToAction(nameof(Index));
 		}
 
-		private bool PatentLicenseActivityExists(Guid id)
+		// GET: PatentLicenseActivity/Edit/{id}
+		public IActionResult Edit(Guid? id)
 		{
-			return _context.PatentLicenseActivities.Any(e => e.Id == id);
+			if (id == null)
+			{
+				return NotFound();
+			}
+
+			var patentLicenseActivity = _patentLicenseActivityService.GetById(id.Value);
+			if (patentLicenseActivity == null)
+			{
+				return NotFound();
+			}
+			
+			if (!UserHasPermission(patentLicenseActivity))
+			{
+				return Forbid();
+			}
+
+			return View(new PatentLicenseActivityEditModel(patentLicenseActivity)
+			{
+				Users = _userProfileService.GetAll(),
+				AuthorsOrApplicants = patentLicenseActivity.Type == PatentLicenseActivity.Types.Patent
+					? _patentLicenseActivityService.GetAuthors(patentLicenseActivity.Id)
+					: _patentLicenseActivityService.GetApplicants(patentLicenseActivity.Id)
+			});
+		}
+
+		// POST: PatentLicenseActivity/Edit/{id}
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public IActionResult Edit(Guid id, PatentLicenseActivityEditModel model)
+		{
+			if (id != model.Id || !_patentLicenseActivityService.Exists(id))
+			{
+				return NotFound();
+			}
+
+			var patentLicenseActivity = _patentLicenseActivityService.GetById(id);
+			if (!UserHasPermission(patentLicenseActivity))
+			{
+				return Forbid();
+			}
+			
+			if (!ModelState.IsValid)
+			{
+				model.Users = _userProfileService.GetAll();
+				model.AuthorsOrApplicants = patentLicenseActivity.Type == PatentLicenseActivity.Types.Patent
+					? _patentLicenseActivityService.GetAuthors(patentLicenseActivity.Id)
+					: _patentLicenseActivityService.GetApplicants(patentLicenseActivity.Id);
+				return View(model);
+			}
+
+			_patentLicenseActivityService.UpdateItem(model);
+			return RedirectToAction(nameof(Index));
+		}
+
+		// GET: PatentLicenseActivity/Delete/{id}
+		public IActionResult Delete(Guid? id)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
+
+			var patentLicenseActivity = _patentLicenseActivityService.GetById(id.Value);
+			if (patentLicenseActivity == null)
+			{
+				return NotFound();
+			}
+			
+			if (!UserHasPermission(patentLicenseActivity))
+			{
+				return Forbid();
+			}
+
+			return View(patentLicenseActivity);
+		}
+
+		// POST: PatentLicenseActivity/Delete/{id}
+		[HttpPost, ActionName("Delete")]
+		[ValidateAntiForgeryToken]
+		public IActionResult DeleteConfirmed(Guid id)
+		{
+			if (!_patentLicenseActivityService.Exists(id))
+			{
+				return NotFound();
+			}
+			
+			if (!UserHasPermission(_patentLicenseActivityService.GetById(id)))
+			{
+				return Forbid();
+			}
+
+			_patentLicenseActivityService.DeleteById(id);
+			return RedirectToAction(nameof(Index));
+		}
+
+		// POST: PatentLicenseActivity/AddUser/{patentLicenseActivityId}
+		[HttpPost]
+		[Authorize(Roles = UserProfileRole.HeadOfDepartmentOrAdmin)]
+		public IActionResult AddUser(Guid? id, [FromBody] PatentLicenseActivityUpdUserRequest request)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
+			
+			var user = _userProfileService.GetById(request.UserId);
+			if (user == null)
+			{
+				return Json(ApiResponse.Fail);
+			}
+			
+			var patentLicenseActivity = _patentLicenseActivityService.GetById(id.Value);
+			if (patentLicenseActivity == null)
+			{
+				return NotFound();
+			}
+			
+			if (!UserHasPermission(patentLicenseActivity))
+			{
+				return Json(ApiResponse.Fail);
+			}
+
+			if (request.ActivityType == PatentLicenseActivity.Types.Patent)
+			{
+				if (!_patentLicenseActivityService.GetAuthors(patentLicenseActivity.Id).Contains(user))
+				{
+					_patentLicenseActivityService.AddAuthor(patentLicenseActivity, user);
+				}
+			}
+			else
+			{
+				if (!_patentLicenseActivityService.GetApplicants(patentLicenseActivity.Id).Contains(user))
+				{
+					_patentLicenseActivityService.AddApplicant(patentLicenseActivity, user);
+				}
+			}
+
+			return Json(ApiResponse.Ok);
+		}
+
+		// POST: PatentLicenseActivity/RemoveUser/{patentLicenseActivityId}
+		[HttpPost]
+		[Authorize(Roles = UserProfileRole.HeadOfDepartmentOrAdmin)]
+		public IActionResult RemoveUser(Guid? id, [FromBody] PatentLicenseActivityUpdUserRequest request)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
+			
+			var user = _userProfileService.GetById(request.UserId);
+			if (user == null)
+			{
+				return Json(ApiResponse.Fail);
+			}
+			
+			var patentLicenseActivity = _patentLicenseActivityService.GetById(id.Value);
+			if (patentLicenseActivity == null)
+			{
+				return NotFound();
+			}
+			
+			if (!UserHasPermission(patentLicenseActivity))
+			{
+				return Json(ApiResponse.Fail);
+			}
+
+			if (request.ActivityType == PatentLicenseActivity.Types.Patent)
+			{
+				if (_patentLicenseActivityService.GetAuthors(patentLicenseActivity.Id).Contains(user))
+				{
+					_patentLicenseActivityService.RemoveAuthor(patentLicenseActivity.Id, user);
+				}
+			}
+			else
+			{
+				if (_patentLicenseActivityService.GetApplicants(patentLicenseActivity.Id).Contains(user))
+				{
+					_patentLicenseActivityService.RemoveApplicant(patentLicenseActivity.Id, user);
+				}
+			}
+
+			return Json(ApiResponse.Ok);
+		}
+		
+		private bool UserHasPermission(PatentLicenseActivity patentLicenseActivity)
+		{
+			var user = _userProfileService.Get(User);
+			var department = _departmentService.Get(d => d.Staff.Contains(user));
+			return PageHelpers.IsAdmin(User) ||
+				   PageHelpers.IsHeadOfDepartment(User) &&
+				   (patentLicenseActivity.AuthorsPatentLicenseActivities.Any(p => department.Staff.Contains(p.Author)) ||
+					patentLicenseActivity.ApplicantsPatentLicenseActivities.Any(p => department.Staff.Contains(p.Applicant))) ||
+				   patentLicenseActivity.AuthorsPatentLicenseActivities.Any(a => a.Author.Id == user.Id) ||
+				   patentLicenseActivity.ApplicantsPatentLicenseActivities.Any(a => a.Applicant.Id == user.Id);
 		}
 	}
 }

@@ -2,12 +2,16 @@ using System;
 using System.Collections.Generic;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Entities.UserProfile;
+using ScientificReport.DTO.Models.Department;
 
 namespace ScientificReport.BLL.Interfaces
 {
 	public interface IDepartmentService
 	{
+		int GetCount();
+		IEnumerable<Department> GetPage(int page, int count);
 		IEnumerable<Department> GetAll();
+		IEnumerable<Department> Filter(DepartmentIndexModel model);
 		IEnumerable<Department> GetAllWhere(Func<Department, bool> predicate);
 		Department GetById(Guid id);
 		Department Get(Func<Department, bool> predicate);
@@ -21,5 +25,6 @@ namespace ScientificReport.BLL.Interfaces
 		void RemoveUser(Guid id, UserProfile user);
 		bool UserIsHired(UserProfile user);
 		bool UserWorksInDepartment(UserProfile headOfDepartment, Guid userId);
+		IEnumerable<Department> SortDepartmentsBy(Department.SortByOption option, int page, int count);
 	}
 }

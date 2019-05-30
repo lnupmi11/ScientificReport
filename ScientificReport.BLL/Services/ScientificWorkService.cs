@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using ScientificReport.BLL.Interfaces;
+using ScientificReport.BLL.Utils;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Entities.UserProfile;
@@ -13,11 +15,13 @@ namespace ScientificReport.BLL.Services
 	{
 		private readonly ScientificWorkRepository _scientificWorkRepository;
 		private readonly UserProfileRepository _userProfileRepository;
+		private readonly DepartmentRepository _departmentRepository;
 
 		public ScientificWorkService(ScientificReportDbContext context)
 		{
 			_scientificWorkRepository = new ScientificWorkRepository(context);
 			_userProfileRepository = new UserProfileRepository(context);
+			_departmentRepository = new DepartmentRepository(context);
 		}
 
 		public virtual IEnumerable<ScientificWork> GetAll()
@@ -28,6 +32,37 @@ namespace ScientificReport.BLL.Services
 		public virtual IEnumerable<ScientificWork> GetAllWhere(Func<ScientificWork, bool> predicate)
 		{
 			return _scientificWorkRepository.AllWhere(predicate);
+		}
+		
+		public virtual IEnumerable<ScientificWork> GetItemsByRole(ClaimsPrincipal userClaims)
+		{
+			IEnumerable<ScientificWork> items;
+			if (UserHelpers.IsAdmin(userClaims))
+			{
+				items = _scientificWorkRepository.All();
+			}
+			else if (UserHelpers.IsHeadOfDepartment(userClaims))
+			{
+				var department = _departmentRepository.Get(r => r.Head.UserName == userClaims.Identity.Name);
+				items = _scientificWorkRepository.AllWhere(a => a.UserProfilesScientificWorks.Any(u => department.Staff.Contains(u.UserProfile)));
+			}
+			else
+			{
+				var user = _userProfileRepository.Get(u => u.UserName == userClaims.Identity.Name);
+				items = _scientificWorkRepository.AllWhere(a => a.UserProfilesScientificWorks.Any(u => u.UserProfile.Id == user.Id));
+			}
+
+			return items;
+		}
+		
+		public virtual IEnumerable<ScientificWork> GetPageByRole(int page, int count, ClaimsPrincipal userClaims)
+		{
+			return GetItemsByRole(userClaims).Skip((page - 1) * count).Take(count).ToList();
+		}
+
+		public virtual int GetCountByRole(ClaimsPrincipal userClaims)
+		{
+			return GetItemsByRole(userClaims).Count();
 		}
 
 		public virtual ScientificWork GetById(Guid id)

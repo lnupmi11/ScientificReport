@@ -12,6 +12,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\ScientificReport.DAL\ScientificReport.DAL.csproj" />
+	  <ProjectReference Include="..\ScientificReport.DTO\ScientificReport.DTO.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -62,7 +62,7 @@ namespace ScientificReport.Test.ServicesTests
 			
 			var service = new Mock<PublicationService>(_mockContext.Object);
 			
-			service.Object.CreateItem(TestData.User1, expected);
+			service.Object.CreateItem(expected);
 			
 			service.Setup(item => item.GetById(expected.Id));
 			service.Object.GetById(expected.Id);
@@ -75,11 +75,10 @@ namespace ScientificReport.Test.ServicesTests
 			var service = new Mock<PublicationService>(_mockContext.Object);
 
 			var expectedPublication = TestData.Publication1;
-			var user = TestData.User1;
 			
-			service.Setup(it => it.CreateItem(user, expectedPublication));
-			service.Object.CreateItem(user, expectedPublication);
-			service.Verify(it => it.CreateItem(user, expectedPublication), Times.Once);
+			service.Setup(it => it.CreateItem(expectedPublication));
+			service.Object.CreateItem(expectedPublication);
+			service.Verify(it => it.CreateItem(expectedPublication), Times.Once);
 		}
 
 		[Fact]
@@ -93,11 +92,9 @@ namespace ScientificReport.Test.ServicesTests
 			var service = new PublicationService(mockContext.Object);
 
 			var publication = GetTestData().First();
-
-			var user = TestData.User1;
 			
-			service.CreateItem(user, publication);
-			service.UpdateItem(user, publication);
+			service.CreateItem(publication);
+			service.UpdateItem(publication);
 			
 			mockDbSet.Verify(m => m.Update(It.IsAny<Publication>()), Times.Once());
 		}
@@ -120,7 +117,7 @@ namespace ScientificReport.Test.ServicesTests
 			var service = new Mock<PublicationService>(_mockContext.Object);
 
 			var publication = GetTestData().First();
-			service.Object.CreateItem(TestData.User1, publication);
+			service.Object.CreateItem(publication);
 			
 			service.Setup(a => a.PublicationExists(publication.Id));
 			service.Object.PublicationExists(publication.Id);

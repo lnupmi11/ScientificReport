@@ -1,86 +1,167 @@
-@model ScientificReport.DAL.Entities.Publication
+@model ScientificReport.DTO.Models.Publication.PublicationDetailsModel
 @using Microsoft.AspNetCore.Mvc.Localization
+@using ScientificReport.BLL.Interfaces
+@using ScientificReport.Controllers.Utils
+@using ScientificReport.DAL.Entities
+
+@inject IDepartmentService DepartmentService
 @inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = Localizer["Details"];
+	ViewData["Title"] = Localizer["Details of publication"];
 }
 
-<h3>@Localizer["Details"]</h3>
-
+@if (!Model.UserIsAuthor)
+{
+	<div class="row">
+		<div class="col s12 m12" style="display: inline-block;">
+			<div class="card green darken-1">
+				<div class="card-content white-text" style="text-align: center;">
+					<p style="width: 100%; text-align: center; margin-bottom: 10px">
+						@Localizer["You are not an author or coauthor of this publication"]
+					</p>
+					<form asp-action="AddSelfToAuthors" style="display: inline-block;">
+						<input type="hidden" name="id" asp-for="Publication.Id"/>
+						<button type="submit" class="waves-effect btn-small blue darken-3">@Localizer["Become Author"]</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>	
+}
 <div>
-	<h4>@Localizer["Publication"]</h4>
+	<h5>@ViewData["Title"]</h5>
 	<hr/>
 	<dl class="row">
 		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.Type)]
+			@Localizer[Html.DisplayNameFor(model => model.Publication.Type)]
 		</dt>
 		<dd class="col s10">
-			@Html.DisplayFor(model => model.Type)
+			@{
+				string type;
+				switch (Model.Publication.Type)
+				{
+					case Publication.Types.Monograph:
+						type = "Monograph";
+						break;
+					case Publication.Types.TextBook:
+						type = "Textbook";
+						break;
+					case Publication.Types.HandBook:
+						type = "Handbook";
+						break;
+					case Publication.Types.Dictionary:
+						type = "Dictionary";
+						break;
+					case Publication.Types.Translation:
+						type = "Translation";
+						break;
+					case Publication.Types.Comment:
+						type = "Comment";
+						break;
+					case Publication.Types.BibliographicIndex:
+						type = "Bibliographic index";
+						break;
+					default:
+						type = "Other";
+						break;
+				}
+			}
+			@Localizer[type]
 		</dd>
 		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.Title)]
+			@Localizer[Html.DisplayNameFor(model => model.Publication.Title)]
 		</dt>
 		<dd class="col s10">
-			@Html.DisplayFor(model => model.Title)
+			@Html.DisplayFor(model => model.Publication.Title)
 		</dd>
 		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.Specification)]
+			@Localizer[Html.DisplayNameFor(model => model.Publication.Specification)]
 		</dt>
 		<dd class="col s10">
-			@Html.DisplayFor(model => model.Specification)
+			@Html.DisplayFor(model => model.Publication.Specification)
 		</dd>
 		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.PublishingPlace)]
+			@Localizer["Publishing place"]
 		</dt>
 		<dd class="col s10">
-			@Html.DisplayFor(model => model.PublishingPlace)
+			@Html.DisplayFor(model => model.Publication.PublishingPlace)
 		</dd>
 		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.PublishingHouseName)]
+			@Localizer["Publishing house name"]
 		</dt>
 		<dd class="col s10">
-			@Html.DisplayFor(model => model.PublishingHouseName)
+			@Html.DisplayFor(model => model.Publication.PublishingHouseName)
 		</dd>
 		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.PublishingYear)]
+			@Localizer["Publishing year"]
 		</dt>
 		<dd class="col s10">
-			@Html.DisplayFor(model => model.PublishingYear)
+			@Html.DisplayFor(model => model.Publication.PublishingYear)
 		</dd>
 		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.PagesAmount)]
+			@Localizer["Pages amount"]
 		</dt>
 		<dd class="col s10">
-			@Html.DisplayFor(model => model.PagesAmount)
+			@Html.DisplayFor(model => model.Publication.PagesAmount)
 		</dd>
 		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.IsPrintCanceled)]
+			@Localizer["Publishing status"]
 		</dt>
 		<dd class="col s10">
-			<span>@Localizer[(Model.IsPrintCanceled ? "Yes" : "No")]</span>
+			@{
+				string status;
+				switch (Model.Publication.PrintStatus)
+				{
+					case Publication.PrintStatuses.Any:
+						status = "Any";
+						break;
+					case Publication.PrintStatuses.IsPrintCanceled:
+						status = "Is print canceled";
+						break;
+					case Publication.PrintStatuses.IsRecommendedToPrint:
+						status = "Is recommended to print";
+						break;
+					default:
+						status = "Any";
+						break;
+				}
+			}
+			@Localizer[status]
 		</dd>
-		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.IsRecommendedToPrint)]
-		</dt>
-		<dd class="col s10">
-			<span>@Localizer[(Model.IsRecommendedToPrint ? "Yes" : "No")]</span>
-		</dd>
-		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.CreatedAt)]
-		</dt>
-		<dd class="col s10">
-			@Html.DisplayFor(model => model.CreatedAt)
-		</dd>
-		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.LastEditAt)]
-		</dt>
-		<dd class="col s10">
-			@Html.DisplayFor(model => model.LastEditAt)
-		</dd>
+		@if (Model.Authors != null && Model.Authors.Any())
+		{
+			<dt class="col s2">
+				@Localizer["Authors"]
+			</dt>
+			<dd class="col s10">
+				<ul>
+					@foreach (var author in Model.Authors)
+					{
+						<li>
+							<a asp-controller="UserProfile" asp-action="Details"
+							   asp-route-id="@author.Id">
+								@author.FullName
+							</a>
+						</li>
+					}
+				</ul>
+			</dd>	
+		}
 	</dl>
 </div>
-<div>
-	<a asp-action="Edit" asp-route-id="@Model.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
-	<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Back to List"]</a>
+<div style="margin-top: 20px">
+	@{
+		var department = DepartmentService.Get(d => d.Staff.Any(s => s.UserName == User.Identity.Name));
+		var isHeadOfDepartment = false;
+		if (department != null)
+		{
+			isHeadOfDepartment = Model.Publication.UserProfilesPublications.Any(p => department.Staff.Contains(p.UserProfile));	
+		}
+	}
+	@if ((PageHelpers.IsAdmin(User) || isHeadOfDepartment || Model.Publication.UserProfilesPublications.Any(p => p.UserProfile.UserName == User.Identity.Name)))
+	{
+		<a asp-action="Edit" asp-route-id="@Model.Publication.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
+	}
+	<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Back to list"]</a>
 </div>

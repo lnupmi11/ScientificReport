@@ -1,155 +1,256 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using ScientificReport.DAL.DbContext;
+using ScientificReport.BLL.Interfaces;
+using ScientificReport.Controllers.Utils;
 using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Roles;
+using ScientificReport.DTO.Models;
+using ScientificReport.DTO.Models.ScientificInternship;
 
 namespace ScientificReport.Controllers
 {
-//	[Authorize(Roles = UserProfileRole.Teacher)]
-    public class ScientificInternshipController : Controller
-    {
-        private readonly ScientificReportDbContext _context;
+	[Authorize(Roles = UserProfileRole.Any)]
+	public class ScientificInternshipController : Controller
+	{
+		private readonly IScientificInternshipService _scientificInternshipService;
+		private readonly IUserProfileService _userProfileService;
+		private readonly IDepartmentService _departmentService;
 
-        public ScientificInternshipController(ScientificReportDbContext context)
-        {
-            _context = context;
-        }
+		public ScientificInternshipController(
+			IScientificInternshipService scientificInternshipService,
+			IUserProfileService userProfileService,
+			IDepartmentService departmentService
+		)
+		{
+			_scientificInternshipService = scientificInternshipService;
+			_userProfileService = userProfileService;
+			_departmentService = departmentService;
+		}
 
-        // GET: ScientificInternship
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.ScientificInternships.ToListAsync());
-        }
+		// GET: ScientificInternship
+		public IActionResult Index(ScientificInternshipIndexModel model)
+		{
+			model.ScientificInternships = _scientificInternshipService.GetPageByRole(model.CurrentPage, model.PageSize, User);
+			model.Count = _scientificInternshipService.GetCountByRole(User);
+			return View(model);
+		}
 
-        // GET: ScientificInternship/Details/5
-        public async Task<IActionResult> Details(Guid? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+		// GET: ScientificInternship/Details/{id}
+		public IActionResult Details(Guid? id)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
 
-            var scientificInternship = await _context.ScientificInternships
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (scientificInternship == null)
-            {
-                return NotFound();
-            }
+			var scientificInternship = _scientificInternshipService.GetById(id.Value);
+			if (scientificInternship == null)
+			{
+				return NotFound();
+			}
 
-            return View(scientificInternship);
-        }
+			if (!UserHasPermission(scientificInternship))
+			{
+				return Forbid();
+			}
 
-        // GET: ScientificInternship/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
+			return View(scientificInternship);
+		}
 
-        // POST: ScientificInternship/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,PlaceOfInternship,Started,Ended,Contents")] ScientificInternship scientificInternship)
-        {
-            if (ModelState.IsValid)
-            {
-                scientificInternship.Id = Guid.NewGuid();
-                _context.Add(scientificInternship);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(scientificInternship);
-        }
+		// GET: ScientificInternship/Create
+		public IActionResult Create() => View();
 
-        // GET: ScientificInternship/Edit/5
-        public async Task<IActionResult> Edit(Guid? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+		// POST: ScientificInternship/Create
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public IActionResult Create(ScientificInternshipModel model)
+		{
+			if (!ModelState.IsValid)
+			{
+				return View(model);
+			}
+			
+			_scientificInternshipService.CreateItem(model);
+			_scientificInternshipService.AddUser(
+				_scientificInternshipService.Get(si =>
+					si.Contents == model.Contents && si.PlaceOfInternship == model.PlaceOfInternship),
+				_userProfileService.Get(User));
+			
+			return RedirectToAction(nameof(Index));
+		}
 
-            var scientificInternship = await _context.ScientificInternships.FindAsync(id);
-            if (scientificInternship == null)
-            {
-                return NotFound();
-            }
-            return View(scientificInternship);
-        }
+		// GET: ScientificInternship/Edit/{id}
+		public IActionResult Edit(Guid? id)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
 
-        // POST: ScientificInternship/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,PlaceOfInternship,Started,Ended,Contents")] ScientificInternship scientificInternship)
-        {
-            if (id != scientificInternship.Id)
-            {
-                return NotFound();
-            }
+			var scientificInternship = _scientificInternshipService.GetById(id.Value);
+			if (scientificInternship == null)
+			{
+				return NotFound();
+			}
+			
+			if (!UserHasPermission(scientificInternship))
+			{
+				return Forbid();
+			}
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(scientificInternship);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!ScientificInternshipExists(scientificInternship.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(scientificInternship);
-        }
+			return View(new ScientificInternshipEditModel(scientificInternship)
+			{
+				Users = _scientificInternshipService.GetUsers(scientificInternship.Id),
+				AllUsers = _userProfileService.GetAll()
+			});
+		}
 
-        // GET: ScientificInternship/Delete/5
-        public async Task<IActionResult> Delete(Guid? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+		// POST: ScientificInternship/Edit/{id}
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public IActionResult Edit(Guid id, ScientificInternshipEditModel model)
+		{
+			if (id != model.Id || !_scientificInternshipService.Exists(id))
+			{
+				return NotFound();
+			}
 
-            var scientificInternship = await _context.ScientificInternships
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (scientificInternship == null)
-            {
-                return NotFound();
-            }
+			var scientificInternship = _scientificInternshipService.GetById(id);
+			if (!UserHasPermission(scientificInternship))
+			{
+				return Forbid();
+			}
 
-            return View(scientificInternship);
-        }
+			if (!ModelState.IsValid)
+			{
+				model.Users = _scientificInternshipService.GetUsers(scientificInternship.Id);
+				model.AllUsers = _userProfileService.GetAll();
+				return View(model);
+			}
 
-        // POST: ScientificInternship/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(Guid id)
-        {
-            var scientificInternship = await _context.ScientificInternships.FindAsync(id);
-            _context.ScientificInternships.Remove(scientificInternship);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
+			_scientificInternshipService.UpdateItem(model);
+			return RedirectToAction(nameof(Index));
+		}
 
-        private bool ScientificInternshipExists(Guid id)
-        {
-            return _context.ScientificInternships.Any(e => e.Id == id);
-        }
-    }
+		// GET: ScientificInternship/Delete/{id}
+		public IActionResult Delete(Guid? id)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
+
+			var scientificInternship = _scientificInternshipService.GetById(id.Value);
+			if (scientificInternship == null)
+			{
+				return NotFound();
+			}
+			
+			if (!UserHasPermission(scientificInternship))
+			{
+				return Forbid();
+			}
+
+			return View(scientificInternship);
+		}
+
+		// POST: ScientificInternship/Delete/{id}
+		[HttpPost, ActionName("Delete")]
+		[ValidateAntiForgeryToken]
+		public IActionResult DeleteConfirmed(Guid id)
+		{
+			if (!_scientificInternshipService.Exists(id))
+			{
+				return NotFound();
+			}
+			
+			if (!UserHasPermission(_scientificInternshipService.GetById(id)))
+			{
+				return Forbid();
+			}
+
+			_scientificInternshipService.DeleteById(id);
+			return RedirectToAction(nameof(Index));
+		}
+		
+		// POST: ScientificInternship/AddUser/{scientificInternshipId}
+		[HttpPost]
+		public IActionResult AddUser(Guid? id, [FromBody] UpdateUserRequest request)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
+			
+			var user = _userProfileService.GetById(request.UserId);
+			if (user == null)
+			{
+				return Json(ApiResponse.Fail);
+			}
+			
+			var scientificInternship = _scientificInternshipService.GetById(id.Value);
+			if (scientificInternship == null)
+			{
+				return NotFound();
+			}
+			
+			if (!UserHasPermission(scientificInternship))
+			{
+				return Json(ApiResponse.Fail);
+			}
+			
+			if (!_scientificInternshipService.GetUsers(scientificInternship.Id).Contains(user))
+			{
+				_scientificInternshipService.AddUser(scientificInternship, user);
+			}
+
+			return Json(ApiResponse.Ok);
+		}
+
+		// POST: ScientificInternship/RemoveUser/{scientificInternshipId}
+		[HttpPost]
+		public IActionResult RemoveUser(Guid? id, [FromBody] UpdateUserRequest request)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
+			
+			var user = _userProfileService.GetById(request.UserId);
+			if (user == null)
+			{
+				return Json(ApiResponse.Fail);
+			}
+			
+			var publication = _scientificInternshipService.GetById(id.Value);
+			if (publication == null)
+			{
+				return NotFound();
+			}
+			
+			if (!UserHasPermission(publication))
+			{
+				return Json(ApiResponse.Fail);
+			}
+			
+			if (_scientificInternshipService.GetUsers(publication.Id).Contains(user))
+			{
+				_scientificInternshipService.RemoveUser(publication, user);
+			}
+
+			return Json(ApiResponse.Ok);
+		}
+		
+		private bool UserHasPermission(ScientificInternship scientificInternship)
+		{
+			var user = _userProfileService.Get(User);
+			var department = _departmentService.Get(d => d.Staff.Contains(user));
+			return PageHelpers.IsAdmin(User) ||
+				   PageHelpers.IsHeadOfDepartment(User) &&
+				   scientificInternship.UserProfilesScientificInternships.Any(p => department.Staff.Contains(p.UserProfile)) ||
+				   scientificInternship.UserProfilesScientificInternships.Any(p => p.UserProfile.Id == user.Id);
+		}
+	}
 }

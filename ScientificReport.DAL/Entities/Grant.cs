@@ -10,6 +10,8 @@ namespace ScientificReport.DAL.Entities
 		[Key]
 		public Guid Id { get; set; }
 		
+		public string Info { get; set; }
+		
 		public virtual ICollection<UserProfilesGrants> UserProfilesGrants { get; set; }
 	}
 }

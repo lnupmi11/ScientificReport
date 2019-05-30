@@ -1,155 +1,175 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using ScientificReport.DAL.DbContext;
+using ScientificReport.BLL.Interfaces;
+using ScientificReport.Controllers.Utils;
 using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Roles;
+using ScientificReport.DTO.Models.PostgraduateGuidance;
 
 namespace ScientificReport.Controllers
 {
-//	[Authorize(Roles = UserProfileRole.Teacher)]
+	[Authorize(Roles = UserProfileRole.Any)]
 	public class PostgraduateGuidanceController : Controller
 	{
-		private readonly ScientificReportDbContext _context;
+		private readonly IPostgraduateGuidanceService _postgraduateGuidanceService;
+		private readonly IUserProfileService _userProfileService;
+		private readonly IDepartmentService _departmentService;
 
-		public PostgraduateGuidanceController(ScientificReportDbContext context)
+		public PostgraduateGuidanceController(
+			IPostgraduateGuidanceService postgraduateGuidanceService,
+			IUserProfileService userProfileService,
+			IDepartmentService departmentService
+		)
 		{
-			_context = context;
+			_postgraduateGuidanceService = postgraduateGuidanceService;
+			_userProfileService = userProfileService;
+			_departmentService = departmentService;
 		}
 
 		// GET: PostgraduateGuidance
-		public async Task<IActionResult> Index()
+		public IActionResult Index(PostgraduateGuidanceIndexModel model)
 		{
-			return View(await _context.PostgraduateGuidances.ToListAsync());
+			model.PostgraduateGuidances = _postgraduateGuidanceService.GetPageByRole(model.CurrentPage, model.PageSize, User);
+			model.Count = _postgraduateGuidanceService.GetCountByRole(User);
+			return View(model);
 		}
 
-		// GET: PostgraduateGuidance/Details/5
-		public async Task<IActionResult> Details(Guid? id)
+		// GET: PostgraduateGuidance/Details/{id}
+		public IActionResult Details(Guid? id)
 		{
 			if (id == null)
 			{
 				return NotFound();
 			}
 
-			var postgraduateGuidance = await _context.PostgraduateGuidances
-				.FirstOrDefaultAsync(m => m.Id == id);
+			var postgraduateGuidance = _postgraduateGuidanceService.GetById(id.Value);
 			if (postgraduateGuidance == null)
 			{
 				return NotFound();
+			}
+
+			if (!UserHasPermission(postgraduateGuidance))
+			{
+				return Forbid();
 			}
 
 			return View(postgraduateGuidance);
 		}
 
 		// GET: PostgraduateGuidance/Create
-		public IActionResult Create()
-		{
-			return View();
-		}
+		public IActionResult Create() => View();
 
 		// POST: PostgraduateGuidance/Create
-		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Create([Bind("Id,PostgraduateName,PostgraduateInfo")] PostgraduateGuidance postgraduateGuidance)
+		public IActionResult Create(PostgraduateGuidanceModel model)
 		{
-			if (ModelState.IsValid)
+			if (!ModelState.IsValid)
 			{
-				postgraduateGuidance.Id = Guid.NewGuid();
-				_context.Add(postgraduateGuidance);
-				await _context.SaveChangesAsync();
-				return RedirectToAction(nameof(Index));
-			}
-			return View(postgraduateGuidance);
-		}
-
-		// GET: PostgraduateGuidance/Edit/5
-		public async Task<IActionResult> Edit(Guid? id)
-		{
-			if (id == null)
-			{
-				return NotFound();
+				return View(model);
 			}
 
-			var postgraduateGuidance = await _context.PostgraduateGuidances.FindAsync(id);
-			if (postgraduateGuidance == null)
-			{
-				return NotFound();
-			}
-			return View(postgraduateGuidance);
-		}
-
-		// POST: PostgraduateGuidance/Edit/5
-		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Edit(Guid id, [Bind("Id,PostgraduateName,PostgraduateInfo")] PostgraduateGuidance postgraduateGuidance)
-		{
-			if (id != postgraduateGuidance.Id)
-			{
-				return NotFound();
-			}
-
-			if (ModelState.IsValid)
-			{
-				try
-				{
-					_context.Update(postgraduateGuidance);
-					await _context.SaveChangesAsync();
-				}
-				catch (DbUpdateConcurrencyException)
-				{
-					if (!PostgraduateGuidanceExists(postgraduateGuidance.Id))
-					{
-						return NotFound();
-					}
-					else
-					{
-						throw;
-					}
-				}
-				return RedirectToAction(nameof(Index));
-			}
-			return View(postgraduateGuidance);
-		}
-
-		// GET: PostgraduateGuidance/Delete/5
-		public async Task<IActionResult> Delete(Guid? id)
-		{
-			if (id == null)
-			{
-				return NotFound();
-			}
-
-			var postgraduateGuidance = await _context.PostgraduateGuidances
-				.FirstOrDefaultAsync(m => m.Id == id);
-			if (postgraduateGuidance == null)
-			{
-				return NotFound();
-			}
-
-			return View(postgraduateGuidance);
-		}
-
-		// POST: PostgraduateGuidance/Delete/5
-		[HttpPost, ActionName("Delete")]
-		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> DeleteConfirmed(Guid id)
-		{
-			var postgraduateGuidance = await _context.PostgraduateGuidances.FindAsync(id);
-			_context.PostgraduateGuidances.Remove(postgraduateGuidance);
-			await _context.SaveChangesAsync();
+			model.Guide = _userProfileService.Get(User);
+			_postgraduateGuidanceService.CreateItem(model);
 			return RedirectToAction(nameof(Index));
 		}
 
-		private bool PostgraduateGuidanceExists(Guid id)
+		// GET: PostgraduateGuidance/Edit/{id}
+		public IActionResult Edit(Guid? id)
 		{
-			return _context.PostgraduateGuidances.Any(e => e.Id == id);
+			if (id == null)
+			{
+				return NotFound();
+			}
+
+			var postgraduateGuidance = _postgraduateGuidanceService.GetById(id.Value);
+			if (postgraduateGuidance == null)
+			{
+				return NotFound();
+			}
+			
+			if (!UserHasPermission(postgraduateGuidance))
+			{
+				return Forbid();
+			}
+
+			return View(new PostgraduateGuidanceEditModel(postgraduateGuidance));
+		}
+
+		// POST: PostgraduateGuidance/Edit/{id}
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public IActionResult Edit(Guid id, PostgraduateGuidanceEditModel model)
+		{
+			if (id != model.Id || !_postgraduateGuidanceService.Exists(id))
+			{
+				return NotFound();
+			}
+
+			if (!UserHasPermission(_postgraduateGuidanceService.GetById(id)))
+			{
+				return Forbid();
+			}
+
+			if (!ModelState.IsValid)
+			{
+				return View(model);
+			}
+
+			_postgraduateGuidanceService.UpdateItem(model);
+			return RedirectToAction(nameof(Index));
+		}
+
+		// GET: PostgraduateGuidance/Delete/{id}
+		public IActionResult Delete(Guid? id)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
+
+			var postgraduateGuidance = _postgraduateGuidanceService.GetById(id.Value);
+			if (postgraduateGuidance == null)
+			{
+				return NotFound();
+			}
+			
+			if (!UserHasPermission(postgraduateGuidance))
+			{
+				return Forbid();
+			}
+
+			return View(postgraduateGuidance);
+		}
+
+		// POST: PostgraduateGuidance/Delete/{id}
+		[HttpPost, ActionName("Delete")]
+		[ValidateAntiForgeryToken]
+		public IActionResult DeleteConfirmed(Guid id)
+		{
+			if (!_postgraduateGuidanceService.Exists(id))
+			{
+				return NotFound();
+			}
+			
+			if (!UserHasPermission(_postgraduateGuidanceService.GetById(id)))
+			{
+				return Forbid();
+			}
+
+			_postgraduateGuidanceService.DeleteById(id);
+			return RedirectToAction(nameof(Index));
+		}
+		
+		private bool UserHasPermission(PostgraduateGuidance guidance)
+		{
+			var user = _userProfileService.Get(User);
+			var department = _departmentService.Get(d => d.Staff.Contains(user));
+			return PageHelpers.IsAdmin(User) ||
+			       PageHelpers.IsHeadOfDepartment(User) &&
+			       department.Staff.Contains(guidance.Guide) ||
+			       guidance.Guide.Id == user.Id;
 		}
 	}
 }

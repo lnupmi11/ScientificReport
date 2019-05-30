@@ -17,7 +17,7 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="ofDepartment" xml:space="preserve">
+    <data name="of department" xml:space="preserve">
 		<value>кафедри</value>
 	</data>
     <data name="Teacher" xml:space="preserve">
@@ -29,16 +29,16 @@
 	<data name="Administrator" xml:space="preserve">
 		<value>Адміністратор</value>
 	</data>
-    <data name="AccountNotApproved" xml:space="preserve">
+    <data name="Account is not approved yet" xml:space="preserve">
 		<value>Ваш обліковий запис ще не підтвердили</value>
 	</data>
-    <data name="UserAlreadyExists" xml:space="preserve">
+    <data name="User already exists" xml:space="preserve">
 		<value>Такий користувач існує</value>
 	</data>
-    <data name="PasswordConfirmationFailed" xml:space="preserve">
+    <data name="Password confirmation failed" xml:space="preserve">
 		<value>Повторний пароль відрізняється від нового</value>
 	</data>
-    <data name="IncorrectLoginOrPassword" xml:space="preserve">
+    <data name="Incorrect login or password" xml:space="preserve">
 		<value>Неправильне ім'я користувача або пароль</value>
 	</data>
 </root>

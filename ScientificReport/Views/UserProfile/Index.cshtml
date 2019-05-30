@@ -2,44 +2,97 @@
 @using Microsoft.AspNetCore.Mvc.Localization
 @using ScientificReport.Controllers.Utils
 @using ScientificReport.DAL.Entities.UserProfile
-@model IEnumerable<ScientificReport.DAL.Entities.UserProfile.UserProfile>
+@model ScientificReport.DTO.Models.UserProfile.UserProfileIndexModel
 @inject UserManager<UserProfile> UserManager;
 @inject IViewLocalizer Localizer
 
 @if (PageHelpers.IsHeadOfDepartment(User))
 {
 	ViewData["Title"] = Localizer["Workers"];
-	<h3>@Localizer["Workers"]</h3>	
 }
 else
 {
 	ViewData["Title"] = Localizer["Users"];
-	<h3>@Localizer["Users"]</h3>
 }
 
+<h4>@ViewData["Title"]</h4>
+<div class="row">
+	<div class="col s12">
+		<form asp-action="Index" method="get">
+			<div class="row">
+				<div class="input-field col s1">
+					<select asp-for="IsApproved" class="col s12 push-s2">
+						@foreach (var option in Model.IsApprovedOptions)
+						{
+							var selected = option == "All" && Model.IsApproved == null || Model.IsApproved != null && Model.IsApproved.Value.ToString() == option ? "selected" : "";
+							<option value="@option" @selected>@Localizer[option]</option>
+						}
+					</select>
+					<label asp-for="IsApproved">@Localizer["Is approved"]</label>
+				</div>
+				@{
+					var colWidth = PageHelpers.IsAdmin(User) ? "3" : "5";
+				}
+				<div class="input-field col s@(colWidth)">
+					<input asp-for="LastName" class="validate" />
+					<label asp-for="LastName">@Localizer["Last name"]</label>
+				</div>
+				<div class="input-field col s@(colWidth)">
+					<input asp-for="FirstName" class="validate" />
+					<label asp-for="FirstName">@Localizer["First name"]</label>
+				</div>
+				@if (PageHelpers.IsAdmin(User))
+				{
+					<div class="input-field col s3">
+						<select asp-for="DepartmentId" class="col s12 push-s2">
+							@if (Model.DepartmentId == null)
+							{
+								<option selected>@Localizer["Any"]</option>	
+							}
+							else
+							{
+								<option>@Localizer["Any"]</option>
+							}
+							
+							@foreach (var department in Model.Departments)
+							{
+								var selected = Model.DepartmentId != null && Model.DepartmentId.Value == department.Id ? "selected" : "";
+								<option value="@department.Id" @selected>@department.Title</option>
+							}
+						</select>
+						<label asp-for="DepartmentId">@Localizer["Department"]</label>
+					</div>	
+				}
+				<div class="col s1">
+					<button type="submit" class="waves-effect btn-small waves-light">@Localizer["Filter"]</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
 <table class="table">
 	<thead>
 	<tr>
 		<th>
-			@Localizer[Html.DisplayNameFor(model => model.IsApproved)]
+			@Localizer["Is approved"]
 		</th>
 		<th>
-			@Localizer[Html.DisplayNameFor(model => model.LastName)]
+			@Localizer["Last name"]
 		</th>
 		<th>
-			@Localizer[Html.DisplayNameFor(model => model.FirstName)]
+			@Localizer["First name"]
 		</th>
 		<th>
-			@Localizer[Html.DisplayNameFor(model => model.MiddleName)]
+			@Localizer["Middle name"]
 		</th>
 		<th>
-			@Localizer[Html.DisplayNameFor(model => model.Email)]
+			@Localizer["Email"]
 		</th>
 		<th></th>
 	</tr>
 	</thead>
 	<tbody>
-	@foreach (var item in Model)
+	@foreach (var item in Model.UserProfiles)
 	{
 		<tr>
 			<td>
@@ -58,7 +111,7 @@ else
 				@Html.DisplayFor(modelItem => item.Email)
 			</th>
 			<td>
-				<a asp-action="Details" asp-route-id="@item.Id" class="btn-small blue darken-3">@Localizer["Details"]</a>
+				<a asp-action="Details" asp-route-id="@item.Id" class="waves-effect btn-small blue darken-3">@Localizer["Details"]</a>
 				<a asp-action="Edit" asp-route-id="@item.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
 				@if (User.Identity.Name != item.UserName)
 				{
@@ -77,3 +130,34 @@ else
 	}
 	</tbody>
 </table>
+<ul class="pagination">
+	@if (Model.ShowPrevious)
+	{
+		<li class="page-item">
+			<a asp-action="Index" asp-route-currentpage="@(Model.CurrentPage - 1)" class="page-link">@Localizer["Previous"]</a>
+		</li>
+	}
+	@if (Model.TotalPages > 1)
+	{
+		for (var i = 1; i <= Model.TotalPages; i++)
+		{
+			<li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+				<a asp-action="Index" asp-route-currentpage="@i" class="page-link">@i</a>
+			</li>
+		}	
+	}
+	@if (Model.ShowNext)
+	{
+		<li class="page-item">
+			<a asp-action="Index" asp-route-currentpage="@(Model.CurrentPage + 1)" class="page-link">@Localizer["Next"]</a>
+		</li>
+	}
+</ul>
+
+@section Scripts {
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('select').formSelect();
+		});
+	</script>
+}

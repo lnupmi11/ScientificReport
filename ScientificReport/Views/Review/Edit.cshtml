@@ -1,35 +1,58 @@
 @using Microsoft.AspNetCore.Mvc.Localization
-@model ScientificReport.DAL.Entities.Review
+@using ScientificReport.DTO.Models.Department
+@model ScientificReport.DTO.Models.Review.ReviewEditModel
 @inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = Localizer["Edit"];
+	ViewData["Title"] = Localizer["Edit review"];
 }
 
-<h3>@Localizer["Edit"]</h3>
-
-<h5>@Localizer["Review"]</h5>
+<style type="text/css">
+	.selected-head-id-label {
+		/* margin-bottom: 10px; */
+		position: relative !important;
+		left: 0 !important;
+		font-size: 12.5px !important;
+	}
+</style>
+<h5>@ViewData["Title"]</h5>
 <hr />
 <div class="row">
-    <div class="col s12">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="validate"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="row">
-                <div class="input-field col s6">
-                    <input asp-for="DateOfReview" type="date" class="validate">
-                    <label asp-for="DateOfReview">Password</label>
-                    <span asp-validation-for="DateOfReview" data-error="" data-success=""></span>
-                </div>
-            </div>
-            <div class="row myButtons">
-                <input type="submit" value="Save" class="waves-effect btn-small  amber accent-2"/>
-                <a asp-action="Index" class="btn-small blue darken-3">Cancel</a>
-            </div>
-        </form>
-    </div>
+	<div class="col s12">
+		<form asp-action="Edit">
+			<div asp-validation-summary="ModelOnly" class="validate"></div>
+			<input type="hidden" asp-for="Id" />
+			<div class="row">
+				<div class="input-field col s6">
+					<input asp-for="DateOfReview" type="date" class="validate">
+					<label asp-for="DateOfReview">@Localizer["Date of review"]</label>
+					<span asp-validation-for="DateOfReview" data-error="" data-success=""></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s4">
+					<label asp-for="WorkId" class="myLabel">@Localizer["Work"]</label>
+					@{
+						var userSelection = Model.Publications.Select(p => new SelectItem(p.Title, p.Id.ToString(), p.Id == Model.Work.Id));
+					}
+					@Html.DropDownListFor(x => Model.WorkId, new SelectList(userSelection, "Value", "Text"), new {@class = "col s12"})
+					@Html.ValidationMessageFor(x => x.WorkId, "", new {@class = "validate", @required = "required"})
+					<br/>
+				</div>
+			</div>
+			<div class="row myButtons">
+				<button type="submit" class="waves-effect btn-small accent-2">@Localizer["Save"]</button>
+				<a asp-action="Index" class="waves-effect btn-small blue darken-3">@Localizer["Cancel"]</a>
+			</div>
+		</form>
+	</div>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('select').formSelect();
+		});
+	</script>
+	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

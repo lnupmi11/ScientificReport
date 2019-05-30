@@ -10,6 +10,7 @@ using ScientificReport.Controllers.Utils;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Entities.UserProfile;
 using ScientificReport.DAL.Roles;
+using ScientificReport.DTO.Models;
 using ScientificReport.DTO.Models.Department;
 
 namespace ScientificReport.Controllers
@@ -23,8 +24,12 @@ namespace ScientificReport.Controllers
 		private readonly IUserProfileService _userProfileService;
 		private readonly IScientificWorkService _scientificWorkService;
 
-		public DepartmentController(IDepartmentService departmentService, IUserProfileService userProfileService,
-			IScientificWorkService scientificWorkService, UserManager<UserProfile> userManager)
+		public DepartmentController(
+			IDepartmentService departmentService,
+			IUserProfileService userProfileService,
+			IScientificWorkService scientificWorkService,
+			UserManager<UserProfile> userManager
+		)
 		{
 			_userManager = userManager;
 			_departmentService = departmentService;
@@ -34,11 +39,13 @@ namespace ScientificReport.Controllers
 
 		// GET: Department/Index
 		[HttpGet]
-		public IActionResult Index()
+		public IActionResult Index(DepartmentIndexModel model)
 		{
 			if (PageHelpers.IsAdmin(User))
 			{
-				return View(_departmentService.GetAll());
+				model.Departments = _departmentService.Filter(model);
+				model.Count = _departmentService.GetCount();
+				return View(model);
 			}
 
 			var department = _departmentService.Get(
@@ -248,7 +255,7 @@ namespace ScientificReport.Controllers
 		// POST: Department/AddUserToStaff/{departmentId}
 		[HttpPost]
 		[Authorize(Roles = UserProfileRole.HeadOfDepartmentOrAdmin)]
-		public async Task<IActionResult> AddUserToStaff(Guid? id, [FromBody] DepartmentUpdateStaffRequest request)
+		public async Task<IActionResult> AddUserToStaff(Guid? id, [FromBody] UpdateUserRequest request)
 		{
 			if (id == null)
 			{
@@ -283,7 +290,7 @@ namespace ScientificReport.Controllers
 		// POST: Department/RemoveUserFromStaff/{departmentId}
 		[HttpPost]
 		[Authorize(Roles = UserProfileRole.HeadOfDepartmentOrAdmin)]
-		public IActionResult RemoveUserFromStaff(Guid? id, [FromBody] DepartmentUpdateStaffRequest request)
+		public IActionResult RemoveUserFromStaff(Guid? id, [FromBody] UpdateUserRequest request)
 		{
 			if (id == null)
 			{

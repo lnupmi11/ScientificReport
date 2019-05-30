@@ -20,8 +20,11 @@
     <data name="Review" xml:space="preserve">
 		<value>Рецензія</value>
 	</data>
-	<data name="DateOfReview" xml:space="preserve">
+	<data name="Date of review" xml:space="preserve">
 		<value>Дата рецензування</value>
+	</data>
+	<data name="Edit review" xml:space="preserve">
+		<value>Редагувати рецензію</value>
 	</data>
 	<data name="Edit" xml:space="preserve">
 		<value>Редагувати</value>
@@ -29,7 +32,10 @@
 	<data name="Save" xml:space="preserve">
 		<value>Зберегти</value>
 	</data>
-	<data name="Back to List" xml:space="preserve">
-		<value>Повернутися до списку</value>
+	<data name="Cancel" xml:space="preserve">
+		<value>Скасувати</value>
+	</data>
+	<data name="Work" xml:space="preserve">
+		<value>Робота</value>
 	</data>
 </root>

@@ -1,14 +1,29 @@
 @using Microsoft.AspNetCore.Mvc.Localization
-@model ScientificReport.DAL.Entities.ScientificInternship
+@using ScientificReport.DTO.Models.Department
+@model ScientificReport.DTO.Models.ScientificInternship.ScientificInternshipEditModel
 @inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = Localizer["Edit"];
+	ViewData["Title"] = Localizer["Edit scientific internship"];
 }
 
-<h3>@Localizer["Edit"]</h3>
-
-<h5>@Localizer["ScientificInternship"]</h5>
+<style>
+	.authors-list {
+		overflow-y: scroll;
+		height: 200px;
+	}
+	.authors-label {
+		/* margin-bottom: 10px; */
+		position: relative !important;
+		left: 0 !important;
+		font-size: 12.5px !important;
+	}
+	.text-green { color: rgb(0, 179, 0); }
+	.text-red { color: rgb(177, 0, 0); }
+	.cursor-pointer { cursor: pointer; }
+	.hidden { display: none; }
+</style>
+<h5>@ViewData["Title"]</h5>
 <hr />
 <div class="row">
 	<div class="col s12">
@@ -18,7 +33,7 @@
 			<div class="row">
 				<div class="input-field col s6">
 					<input asp-for="PlaceOfInternship" type="text" class="validate">
-					<label asp-for="PlaceOfInternship">@Localizer["PlaceOfInternship"]</label>
+					<label asp-for="PlaceOfInternship">@Localizer["Place of internship"]</label>
 					<span class="helper-text" asp-validation-for="PlaceOfInternship" data-error="" data-success=""></span>
 				</div>
 			</div>
@@ -44,14 +59,58 @@
 					      data-length="400" data-error="" data-success=""></span>
 				</div>
 			</div>
+			<div class="row">
+				<div class="col s6">
+					<label class="authors-label">@Localizer["Users"]:</label>
+					<div class="authors-list">
+						@if (Model.AllUsers != null)
+						{
+							var selection = Model.AllUsers.Select(user => new SelectItem(user.FullName, user.Id.ToString(), Model.Users.Contains(user)));
+							foreach (var user in selection)
+							{
+								var contains = Model.Users.Any(s => s.Id.ToString().Equals(user.Value));
+								<p>
+									<i class="add-user fas fa-plus-circle fa-lg cursor-pointer text-green @(contains ? "hidden" : "")" onclick="addUser(this, '@user.Value', '@Model.Id')"></i>
+									<i class="remove-user fas fa-minus-circle fa-lg cursor-pointer text-red @(contains ? "" : "hidden")" onclick="removeUser(this, '@user.Value', '@Model.Id')"></i>
+									@user.Text
+								</p>
+							}
+						}
+					</div>
+				</div>
+			</div>
 			<div class="row myButtons">
-				<input type="submit" value="@Localizer["Create"]" class="waves-effect btn-small  amber accent-2"/>
-				<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
+				<button type="submit" class="waves-effect btn-small accent-2">@Localizer["Save"]</button>
+				<a asp-action="Index" class="waves-effect btn-small blue darken-3">@Localizer["Cancel"]</a>
 			</div>
 		</form>
 	</div>
 </div>
 
 @section Scripts {
+	<script>
+		const toggle = (tagName, actionName, bodyFn) => (tag, firstParam, secondParam) => {
+			const config = {
+				method: 'POST',
+				body: JSON.stringify(bodyFn(firstParam)),
+				headers: {
+					'Content-Type': 'application/json'
+				}
+			};
+			fetch('/ScientificInternship/' + actionName + `/${secondParam}`, config).then(response => {
+				if (response.status !== 200) throw { msg: `Failed to toggle ${tagName}`, response };
+				tag.classList.add('hidden');
+				tag.parentElement.getElementsByClassName(tagName)[0].classList.remove('hidden');
+			}).catch(e => {
+				console.error(e);
+			});
+		}
+
+		let reqAuthorBody = (userId) => {
+			return { UserId: userId };
+		};
+		const addUser = toggle('remove-user', 'AddUser', reqAuthorBody);
+		const removeUser = toggle('add-user', 'RemoveUser', reqAuthorBody);
+	</script>
 	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

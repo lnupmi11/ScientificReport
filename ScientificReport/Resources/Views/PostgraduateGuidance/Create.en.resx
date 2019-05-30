@@ -20,13 +20,16 @@
     <data name="Create" xml:space="preserve">
 		<value>Create</value>
 	</data>
-	<data name="PostgraduateGuidance" xml:space="preserve">
+	<data name="Add postgraduate guidance" xml:space="preserve">
+		<value>Add postgraduate guidance</value>
+	</data>
+	<data name="Postgraduate guidance" xml:space="preserve">
 		<value>Postgraduate guidance</value>
 	</data>
-	<data name="PostgraduateName" xml:space="preserve">
+	<data name="Postgraduate name" xml:space="preserve">
 		<value>Postgraduate name</value>
 	</data>
-	<data name="PostgraduateInfo" xml:space="preserve">
+	<data name="Postgraduate info" xml:space="preserve">
 		<value>Postgraduate info</value>
 	</data>
 	<data name="Cancel" xml:space="preserve">

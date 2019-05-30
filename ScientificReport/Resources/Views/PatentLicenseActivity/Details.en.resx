@@ -17,8 +17,14 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="Patent Licence Activity" xml:space="preserve">
-		<value>Patent Licence Activity</value>
+	<data name="Details of patent" xml:space="preserve">
+		<value>Details of patent</value>
+	</data>
+	<data name="Details of application" xml:space="preserve">
+		<value>Details of application</value>
+	</data>
+    <data name="Patent license activity" xml:space="preserve">
+		<value>Patent license activity</value>
 	</data>
 	<data name="Name" xml:space="preserve">
 		<value>Name</value>
@@ -26,11 +32,8 @@
 	<data name="Number" xml:space="preserve">
 		<value>Number</value>
 	</data>
-	<data name="DateTime" xml:space="preserve">
+	<data name="Date" xml:space="preserve">
 		<value>Date</value>
-	</data>
-	<data name="Choose your option" xml:space="preserve">
-		<value>Choose your option</value>
 	</data>
 	<data name="Patent" xml:space="preserve">
 		<value>Patent</value>
@@ -38,28 +41,25 @@
 	<data name="Application" xml:space="preserve">
 		<value>Application</value>
 	</data>
-	<data name="Create New" xml:space="preserve">
-		<value>Create New</value>
-	</data>
 	<data name="Details" xml:space="preserve">
 		<value>Details</value>
 	</data>
 	<data name="Edit" xml:space="preserve">
 		<value>Edit</value>
 	</data>
-	<data name="Delete" xml:space="preserve">
-		<value>Delete</value>
+	<data name="Back to list" xml:space="preserve">
+		<value>Back to list</value>
 	</data>
-	<data name="Save" xml:space="preserve">
-		<value>Save</value>
+	<data name="Authors" xml:space="preserve">
+		<value>Authors</value>
 	</data>
-	<data name="Create" xml:space="preserve">
-		<value>Create</value>
+	<data name="Co-authors" xml:space="preserve">
+		<value>Co-authors</value>
 	</data>
-	<data name="Cancel" xml:space="preserve">
-		<value>Cancel</value>
+	<data name="Applicants" xml:space="preserve">
+		<value>Applicants</value>
 	</data>
-	<data name="Back to List" xml:space="preserve">
-		<value>Back to List</value>
+	<data name="Co-applicants" xml:space="preserve">
+		<value>Co-applicants</value>
 	</data>
 </root>

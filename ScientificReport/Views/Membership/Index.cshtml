@@ -1,30 +1,48 @@
 @using Microsoft.AspNetCore.Mvc.Localization
-@model IEnumerable<ScientificReport.DAL.Entities.Membership>
+@model ScientificReport.DTO.Models.Membership.MembershipIndexModel
 @inject IViewLocalizer Localizer
 
 @{
 	ViewData["Title"] = Localizer["Memberships"];
 }
 
-<h3>@Localizer["Membership"]</h3>
-
+<h4>@ViewData["Title"]</h4>
 <p>
 	<button type="button" class="waves-effect btn-small green darken-3" onclick="location.href = '@Url.Action("Create", "Membership")'">@Localizer["Create"]</button>
 </p>
-
 <table class="responsive-table">
+	<thead>
+		<tr>
+			<th>
+				@Localizer["User"]
+			</th>
+			<th>
+				@Localizer["Member of"]
+			</th>
+			<th>
+				@Localizer["Membership info"]
+			</th>
+			<th></th>
+		</tr>
+	</thead>
 	<tbody>
-	@foreach (var item in Model)
+	@foreach (var item in Model.Memberships)
 	{
 		<tr>
 			<td>
-				@Html.DisplayFor(modelItem => item.MemberOf)
+				<a asp-controller="UserProfile" asp-action="Details"
+				   asp-route-id="@item.User.Id">
+					@item.User.FullName
+				</a>
+			</td>
+			<td>
+				@Localizer[item.Type.ToString()]
 			</td>
 			<td>
 				@Html.DisplayFor(modelItem => item.MembershipInfo)
 			</td>
 			<td>
-				<a asp-action="Details" asp-route-id="@item.Id" class="btn-small blue darken-3">@Localizer["Details"]</a>
+				<a asp-action="Details" asp-route-id="@item.Id" class="waves-effect btn-small blue darken-3">@Localizer["Details"]</a>
 				<a asp-action="Edit" asp-route-id="@item.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
 				<form asp-action="Delete" asp-route-id="@item.Id" method="post" style="display: inline;">
 					<button type="submit" class="waves-effect btn-small deep-orange darken-3">@Localizer["Delete"]</button>
@@ -34,3 +52,26 @@
 	}
 	</tbody>
 </table>
+<ul class="pagination">
+    @if (Model.ShowPrevious)
+    {
+        <li class="page-item">
+            <a asp-action="Index" asp-route-currentpage="@(Model.CurrentPage - 1)" class="page-link">@Localizer["Previous"]</a>
+        </li>
+    }
+    @if (Model.TotalPages > 1)
+    {
+        for (var i = 1; i <= Model.TotalPages; i++)
+        {
+            <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                <a asp-action="Index" asp-route-currentpage="@i" class="page-link">@i</a>
+            </li>
+        }
+    }
+    @if (Model.ShowNext)
+    {
+        <li class="page-item">
+            <a asp-action="Index" asp-route-currentpage="@(Model.CurrentPage + 1)" class="page-link">@Localizer["Next"]</a>
+        </li>
+    }
+</ul>

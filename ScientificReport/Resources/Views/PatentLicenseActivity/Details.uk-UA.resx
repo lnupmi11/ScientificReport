@@ -17,7 +17,13 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="Patent Licence Activity" xml:space="preserve">
+	<data name="Details of patent" xml:space="preserve">
+		<value>Деталі патенту</value>
+	</data>
+	<data name="Details of application" xml:space="preserve">
+		<value>Деталі заявки</value>
+	</data>
+    <data name="Patent license activity" xml:space="preserve">
 		<value>Патентно-ліцензійна діяльність</value>
 	</data>
 	<data name="Name" xml:space="preserve">
@@ -26,11 +32,8 @@
 	<data name="Number" xml:space="preserve">
 		<value>Номер</value>
 	</data>
-	<data name="DateTime" xml:space="preserve">
+	<data name="Date" xml:space="preserve">
 		<value>Дата</value>
-	</data>
-	<data name="Choose your option" xml:space="preserve">
-		<value>Оберіть варіант</value>
 	</data>
 	<data name="Patent" xml:space="preserve">
 		<value>Патент</value>
@@ -38,28 +41,25 @@
 	<data name="Application" xml:space="preserve">
 		<value>Заявка</value>
 	</data>
-	<data name="Create New" xml:space="preserve">
-		<value>Створити нове</value>
-	</data>
 	<data name="Details" xml:space="preserve">
 		<value>Деталі</value>
 	</data>
 	<data name="Edit" xml:space="preserve">
 		<value>Редагувати</value>
 	</data>
-	<data name="Delete" xml:space="preserve">
-		<value>Видалити</value>
-	</data>
-	<data name="Back to List" xml:space="preserve">
+	<data name="Back to list" xml:space="preserve">
 		<value>Повернутися до списку</value>
 	</data>
-	<data name="Save" xml:space="preserve">
-		<value>Зберегти</value>
+	<data name="Authors" xml:space="preserve">
+		<value>Автори</value>
 	</data>
-	<data name="Cancel" xml:space="preserve">
-		<value>Скасувати</value>
+	<data name="Co-authors" xml:space="preserve">
+		<value>Співавтори</value>
 	</data>
-	<data name="Create" xml:space="preserve">
-		<value>Створити</value>
+	<data name="Applicants" xml:space="preserve">
+		<value>Заявники</value>
+	</data>
+	<data name="Co-applicants" xml:space="preserve">
+		<value>Співзаявники</value>
 	</data>
 </root>

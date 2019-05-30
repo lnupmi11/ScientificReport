@@ -4,7 +4,7 @@
 @inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = Localizer["EditDepartment"];
+	ViewData["Title"] = Localizer["Edit department"];
 	Layout = "_Layout";
 }
 
@@ -12,7 +12,7 @@
 	.myLabel {
 		/* margin-bottom: 10px; */
 		position: relative !important;
-		left: 0px !important;
+		left: 0 !important;
 		font-size: 12.5px !important;
 	}
 	.roles-list {
@@ -25,7 +25,7 @@
 	.hidden { display: none; }
 </style>
 
-<h4>@Localizer["EditDepartment"]</h4>
+<h4>@ViewData["Title"]</h4>
 <div class="row">
 <div class="col s12">
 	<div asp-validation-summary="All" class="validate"></div>
@@ -49,56 +49,56 @@
 			</div>
 		</div>
 		<div class="row">
-		<div class="col s6">
-			<label class="myLabel">@Localizer["Staff"]:</label>
-			<div class="authors-list">
-				@if (Model.UserSelection != null && Model.Staff != null)
-				{
-					var selection = Model.UserSelection.Select(user => new SelectItem(user.FullName, user.Id.ToString(), user.Id.Equals(Model.Department.Head.Id)));
-					foreach (var user in selection)
+			<div class="col s6">
+				<label class="myLabel">@Localizer["Staff"]:</label>
+				<div class="authors-list">
+					@if (Model.UserSelection != null && Model.Staff != null)
 					{
-						var contains = Model.Staff.Any(s => s.Id.ToString().Equals(user.Value));
-						<p>
-							@if (!Model.Head.Id.ToString().Equals(user.Value))
-							{
-								<i class="add-user fas fa-plus-circle fa-lg cursor-pointer text-green @(contains ? "hidden" : "")" onclick="addUserToStaff(this, '@user.Value', '@Model.DepartmentId')"></i>
-								<i class="remove-user fas fa-minus-circle fa-lg cursor-pointer text-red @(contains ? "" : "hidden")" onclick="removeUserFromStaff(this, '@user.Value', '@Model.DepartmentId')"></i>
-							}
-							else
-							{
-								<i class="remove-user fas fa-minus-circle fa-lg" title="Can not remove head of department"></i>
-							}
-							@user.Text
-						</p>
-					}
-				}
-			</div>
-		</div>
-		<div class="col s6">
-			<label class="myLabel">@Localizer["ScientificWorks"]:</label>
-			<div class="authors-list">
-				@if (Model.AvailableScientificWork != null)
-				{
-					var scientificWorkItems = Model.AvailableScientificWork.Select(scientificWork => new SelectItem(scientificWork.Title, scientificWork.Id.ToString()));
-					if (Model.ScientificWorks != null)
-					{
-						foreach (var scientificWork in scientificWorkItems)
+						var selection = Model.UserSelection.Select(user => new SelectItem(user.FullName, user.Id.ToString(), user.Id.Equals(Model.Department.Head.Id)));
+						foreach (var user in selection)
 						{
-							var contains = Model.ScientificWorks.Any(sw => sw.Id.ToString().Equals(scientificWork.Value));
+							var contains = Model.Staff.Any(s => s.Id.ToString().Equals(user.Value));
 							<p>
-								<i class="add-scientific-work fas fa-plus-circle fa-lg cursor-pointer text-green @(contains ? "hidden" : "")" onclick="addScientificWork(this, '@scientificWork.Value', '@Model.DepartmentId')"></i>
-								<i class="remove-scientific-work fas fa-minus-circle fa-lg cursor-pointer text-red @(contains ? "" : "hidden")" onclick="removeScientificWork(this, '@scientificWork.Value', '@Model.DepartmentId')"></i>
-								@scientificWork.Text
+								@if (!Model.Head.Id.ToString().Equals(user.Value))
+								{
+									<i class="add-user fas fa-plus-circle fa-lg cursor-pointer text-green @(contains ? "hidden" : "")" onclick="addUserToStaff(this, '@user.Value', '@Model.DepartmentId')"></i>
+									<i class="remove-user fas fa-minus-circle fa-lg cursor-pointer text-red @(contains ? "" : "hidden")" onclick="removeUserFromStaff(this, '@user.Value', '@Model.DepartmentId')"></i>
+								}
+								else
+								{
+									<i class="remove-user fas fa-minus-circle fa-lg" title="Can not remove head of department"></i>
+								}
+								@user.Text
 							</p>
 						}
 					}
-				}
+				</div>
+			</div>
+			<div class="col s6">
+				<label class="myLabel">@Localizer["Scientific works"]:</label>
+				<div class="authors-list">
+					@if (Model.AvailableScientificWork != null)
+					{
+						var scientificWorkItems = Model.AvailableScientificWork.Select(scientificWork => new SelectItem(scientificWork.Title, scientificWork.Id.ToString()));
+						if (Model.ScientificWorks != null)
+						{
+							foreach (var scientificWork in scientificWorkItems)
+							{
+								var contains = Model.ScientificWorks.Any(sw => sw.Id.ToString().Equals(scientificWork.Value));
+								<p>
+									<i class="add-scientific-work fas fa-plus-circle fa-lg cursor-pointer text-green @(contains ? "hidden" : "")" onclick="addScientificWork(this, '@scientificWork.Value', '@Model.DepartmentId')"></i>
+									<i class="remove-scientific-work fas fa-minus-circle fa-lg cursor-pointer text-red @(contains ? "" : "hidden")" onclick="removeScientificWork(this, '@scientificWork.Value', '@Model.DepartmentId')"></i>
+									@scientificWork.Text
+								</p>
+							}
+						}
+					}
+				</div>
 			</div>
 		</div>
-		</div>
 		<div class="row myButtons">
-			<input type="submit" value="@Localizer["Save"]" class="waves-effect btn-small  amber accent-2"/>
-			<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Cancel"]</a>
+			<button type="submit" class="waves-effect btn-small accent-2">@Localizer["Save"]</button>
+			<a asp-action="Index" class="waves-effect btn-small blue darken-3">@Localizer["Cancel"]</a>
 		</div>
 	</form>
 </div>

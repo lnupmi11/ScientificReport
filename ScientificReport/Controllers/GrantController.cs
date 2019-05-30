@@ -1,155 +1,221 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using ScientificReport.DAL.DbContext;
+using ScientificReport.BLL.Interfaces;
+using ScientificReport.Controllers.Utils;
 using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Roles;
+using ScientificReport.DTO.Models;
+using ScientificReport.DTO.Models.Grant;
 
 namespace ScientificReport.Controllers
 {
-//	[Authorize(Roles = UserProfileRole.Teacher)]
+	[Authorize(Roles = UserProfileRole.Any)]
 	public class GrantController : Controller
 	{
-		private readonly ScientificReportDbContext _context;
+		private readonly IGrantService _grantService;
+		private readonly IUserProfileService _userProfileService;
+		private readonly IDepartmentService _departmentService;
 
-		public GrantController(ScientificReportDbContext context)
+		public GrantController(
+			IGrantService grantService,
+			IUserProfileService userProfileService,
+			IDepartmentService departmentService
+		)
 		{
-			_context = context;
+			_grantService = grantService;
+			_userProfileService = userProfileService;
+			_departmentService = departmentService;
 		}
 
 		// GET: Grant
-		public async Task<IActionResult> Index()
+		public IActionResult Index(GrantIndexModel model)
 		{
-			return View(await _context.Grants.ToListAsync());
+			model.Grants = _grantService.GetPageByRole(model.CurrentPage, model.PageSize, User);
+			model.Count = _grantService.GetCountByRole(User);
+			return View(model);
 		}
 
-		// GET: Grant/Details/5
-		public async Task<IActionResult> Details(Guid? id)
+		// GET: Grant/Details/{id}
+		public IActionResult Details(Guid? id)
 		{
 			if (id == null)
 			{
 				return NotFound();
 			}
 
-			var grant = await _context.Grants
-				.FirstOrDefaultAsync(m => m.Id == id);
+			var grant = _grantService.GetById(id.Value);
 			if (grant == null)
 			{
 				return NotFound();
+			}
+
+			if (!UserHasPermission(grant))
+			{
+				return Forbid();
 			}
 
 			return View(grant);
 		}
 
 		// GET: Grant/Create
-		public IActionResult Create()
-		{
-			return View();
-		}
+		public IActionResult Create() => View();
 
 		// POST: Grant/Create
-		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Create([Bind("Id")] Grant grant)
+		public IActionResult Create(GrantModel model)
 		{
-			if (ModelState.IsValid)
+			if (!ModelState.IsValid)
 			{
-				grant.Id = Guid.NewGuid();
-				_context.Add(grant);
-				await _context.SaveChangesAsync();
-				return RedirectToAction(nameof(Index));
+				return View(model);
 			}
-			return View(grant);
-		}
-
-		// GET: Grant/Edit/5
-		public async Task<IActionResult> Edit(Guid? id)
-		{
-			if (id == null)
-			{
-				return NotFound();
-			}
-
-			var grant = await _context.Grants.FindAsync(id);
-			if (grant == null)
-			{
-				return NotFound();
-			}
-			return View(grant);
-		}
-
-		// POST: Grant/Edit/5
-		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Edit(Guid id, [Bind("Id")] Grant grant)
-		{
-			if (id != grant.Id)
-			{
-				return NotFound();
-			}
-
-			if (ModelState.IsValid)
-			{
-				try
-				{
-					_context.Update(grant);
-					await _context.SaveChangesAsync();
-				}
-				catch (DbUpdateConcurrencyException)
-				{
-					if (!GrantExists(grant.Id))
-					{
-						return NotFound();
-					}
-					else
-					{
-						throw;
-					}
-				}
-				return RedirectToAction(nameof(Index));
-			}
-			return View(grant);
-		}
-
-		// GET: Grant/Delete/5
-		public async Task<IActionResult> Delete(Guid? id)
-		{
-			if (id == null)
-			{
-				return NotFound();
-			}
-
-			var grant = await _context.Grants
-				.FirstOrDefaultAsync(m => m.Id == id);
-			if (grant == null)
-			{
-				return NotFound();
-			}
-
-			return View(grant);
-		}
-
-		// POST: Grant/Delete/5
-		[HttpPost, ActionName("Delete")]
-		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> DeleteConfirmed(Guid id)
-		{
-			var grant = await _context.Grants.FindAsync(id);
-			_context.Grants.Remove(grant);
-			await _context.SaveChangesAsync();
+			
+			_grantService.CreateItem(model);
+			_grantService.AddUser(_grantService.Get(g => g.Info == model.Info), _userProfileService.Get(User));
+			
 			return RedirectToAction(nameof(Index));
 		}
 
-		private bool GrantExists(Guid id)
+		// GET: Grant/Edit/{id}
+		public IActionResult Edit(Guid? id)
 		{
-			return _context.Grants.Any(e => e.Id == id);
+			if (id == null)
+			{
+				return NotFound();
+			}
+
+			var grant = _grantService.GetById(id.Value);
+			if (grant == null)
+			{
+				return NotFound();
+			}
+			
+			if (!UserHasPermission(grant))
+			{
+				return Forbid();
+			}
+
+			return View(new GrantEditModel(grant)
+			{
+				Users = _userProfileService.GetAll(),
+				Authors = _grantService.GetUsers(grant.Id)
+			});
+		}
+
+		// POST: Grant/Edit/{id}
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public IActionResult Edit(Guid id, GrantEditModel model)
+		{
+			if (id != model.Id || !_grantService.Exists(id))
+			{
+				return NotFound();
+			}
+
+			var grant = _grantService.GetById(id);
+			if (!UserHasPermission(grant))
+			{
+				return Forbid();
+			}
+			
+			if (!ModelState.IsValid)
+			{
+				return View(model);
+			}
+
+			_grantService.UpdateItem(model);
+			return RedirectToAction(nameof(Index));
+		}
+
+		// GET: Grant/Delete/{id}
+		public IActionResult Delete(Guid? id)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
+
+			var grant = _grantService.GetById(id.Value);
+			if (grant == null)
+			{
+				return NotFound();
+			}
+			
+			if (!UserHasPermission(grant))
+			{
+				return Forbid();
+			}
+
+			return View(grant);
+		}
+
+		// POST: Grant/Delete/{id}
+		[HttpPost, ActionName("Delete")]
+		[ValidateAntiForgeryToken]
+		public IActionResult DeleteConfirmed(Guid id)
+		{
+			if (!_grantService.Exists(id))
+			{
+				return NotFound();
+			}
+			
+			if (!UserHasPermission(_grantService.GetById(id)))
+			{
+				return Forbid();
+			}
+
+			_grantService.DeleteById(id);
+			return RedirectToAction(nameof(Index));
+		}
+		
+		// POST: Grant/AddAuthor/{id}
+		[HttpPost]
+		public IActionResult AddAuthor(Guid id, [FromBody] UpdateUserRequest request)
+		{
+			if (!_grantService.Exists(id))
+			{
+				return NotFound();
+			}
+
+			var grant = _grantService.GetById(id);
+			if (!UserHasPermission(grant))
+			{
+				return Forbid();
+			}
+			
+			_grantService.AddUser(grant, _userProfileService.GetById(request.UserId));
+			return Json(ApiResponse.Ok);
+		}
+
+		// POST: Grant/DeleteAuthor/{id}
+		[HttpPost]
+		public IActionResult DeleteAuthor(Guid id, [FromBody] UpdateUserRequest request)
+		{
+			if (!_grantService.Exists(id))
+			{
+				return NotFound();
+			}
+			
+			var grant = _grantService.GetById(id);
+			if (!UserHasPermission(grant))
+			{
+				return Forbid();
+			}
+			
+			_grantService.RemoveUser(grant, _userProfileService.GetById(request.UserId));
+			return Json(ApiResponse.Ok);
+		}
+
+		private bool UserHasPermission(Grant grant)
+		{
+			var user = _userProfileService.Get(User);
+			var department = _departmentService.Get(d => d.Staff.Contains(user));
+			return PageHelpers.IsAdmin(User) ||
+			       PageHelpers.IsHeadOfDepartment(User) &&
+			       _grantService.GetUsers(grant.Id).Any(p => department.Staff.Contains(p)) ||
+			       _grantService.GetUsers(grant.Id).Contains(user);
 		}
 	}
 }

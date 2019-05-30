@@ -1,0 +1,495 @@
+@using ScientificReport.DAL.Entities
+@using ScientificReport.Views.TeacherReport
+@model ScientificReport.DAL.Entities.Reports.TeacherReport
+
+@{
+	Layout = null;
+	ViewData["Title"] = "Printed report";
+}
+
+
+<!--suppress CssUnusedSymbol -->
+
+<div class="title-block">
+	Індивідуальний звіт
+	про наукову роботу у @Model.Created.Year році
+	@(Model.Teacher.Position.Length != 0 ?  $"{Model.Teacher.Position} кафедри undefined" : "")
+	@Model.Teacher.FullName
+</div>
+<div class="teacher-info">
+	<b>Відомості про вченого:</b>
+
+	Рік народження – @Model.Teacher.BirthYear
+	Рік закінчення ВНЗ – @Model.Teacher.GraduationYear
+	Вчене звання – @Model.Teacher.Position, рік присвоєння – @Model.Teacher.YearDegreeAssigned
+	Науковий ступінь – @Model.Teacher.ScientificDegree, рік захисту – @Model.Teacher.YearDegreeAssigned
+</div>
+
+<ol>
+<li class="@(!Model.GetScientificWorks().Any() ? "hidden" : "")">
+	<b>1.</b> Участь у науково-дослідній тематиці підрозділу − шифр теми,
+	категорія (держбюджетна, госпдоговірна, в межах робочого часу),
+	назва, стисло зміст виконаної роботи (до семи рядків).
+	<ol class="scientific-works-list">
+		@foreach (var data in Model.GetScientificWorks().Select((p, i) => new PrintScientificWork
+		{
+			Index = i,
+			User = Model.Teacher,
+			ScientificWork = p
+		}))
+		{
+			<partial name="_PrintScientificWork" model="@data"></partial>
+		}
+	</ol>
+</li>
+<li class="@(!Model.GetGrants().Any() ? "hidden" : "")">
+	<b>2.</b> Участь у виконанні індивідуальних або колективних ґрантів (окрім ґрантів на поїздки) − згідно з додатком 3.
+	<ol class="grants-list">
+		@foreach (var data in Model.GetGrants().Select((p, i) => new PrintGrant
+		{
+			Index = i,
+			User = Model.Teacher,
+			Grant = p
+		}))
+		{
+			<partial name="_PrintGrant" model="@data"></partial>
+		}
+	</ol>
+</li>
+<li class="@(!Model.GetScientificInternships().Any() ? "hidden" : "")">
+	<b>3.</b> Наукові стажування.
+	<ol class="scientificInternships-list">
+		@foreach (var data in Model.GetScientificInternships().Select((p, i) => new PrintScientificInternship
+		{
+			Index = i,
+			User = Model.Teacher,
+			ScientificInternship = p
+		}))
+		{
+			<partial name="_PrintScientificInternship" model="@data"></partial>
+		}
+	</ol>
+</li>
+<li class="@(!(Model.GetPostgraduateGuidances().Any() || Model.GetScientificConsultations().Any() || Model.GetPostgraduateDissertationGuidances().Any()) ? "hidden" : "")">
+	<b>4.</b> Наукове керівництво аспірантами, здобувачами, наукове консультування при написанні докторських дисертацій. Захист дисертацій аспірантами, докторантами (прізвище, назва дисертації, спеціальність, дата захисту, рік закінчення аспірантури, докторантури).
+	<ol class="postgraduateGuidances-list">
+		@foreach (var data in Model.GetPostgraduateGuidances().Select((p, i) => new PrintPostgraduateGuidance
+		{
+			Index = i,
+			User = Model.Teacher,
+			PostgraduateGuidance = p
+		}))
+		{
+			<partial name="_PrintPostgraduateGuidance" model="@data"></partial>
+		}
+	</ol>
+	<ol class="scientificConsultations-list">
+		@foreach (var data in Model.GetScientificConsultations().Select((p, i) => new PrintScientificConsultation
+		{
+			Index = i,
+			User = Model.Teacher,
+			ScientificConsultation = p
+		}))
+		{
+			<partial name="_PrintScientificConsultation" model="@data"></partial>
+		}
+	</ol>
+	<ol class="postgraduateDissertationGuidances-list">
+		@foreach (var data in Model.GetPostgraduateDissertationGuidances().Select((p, i) => new PrintPostgraduateDissertationGuidance
+		{
+			Index = i,
+			User = Model.Teacher,
+			PostgraduateDissertationGuidance = p
+		}))
+		{
+			<partial name="_PrintPostgraduateDissertationGuidance" model="@data"></partial>
+		}
+	</ol>
+</li>
+<li class="hidden">
+	@*TODO: fill in this info*@
+	<b>5.</b> Керівництво студентською науковою роботою, спільні публікації, керівництво студентськими гуртками, підготовка студентів для участі у Всеукраїнських конкурсах студентських наукових робіт тощо.
+</li>
+<li>
+<b>6.</b> Загальна кількість наукових публікацій
+<table class="publications-table">
+	<thead>
+	<tr>
+		<th>Тип</th>
+		<th>Разом</th>
+		<th>За звітний період</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>Монографії</td>
+		<td>@Model.GetPublicationsByType(Publication.Types.Monograph).Count()</td>
+		<td>@Model.GetPublicationsByType(Publication.Types.Monograph).Count(p => p.PublishingYear == Model.Created.Year)</td>
+	</tr>
+	<tr>
+		<td>Підручники</td>
+		<td>@Model.GetPublicationsByType(Publication.Types.TextBook).Count()</td>
+		<td>@Model.GetPublicationsByType(Publication.Types.TextBook).Count(p => p.PublishingYear == Model.Created.Year)</td>
+	</tr>
+	<tr>
+		<td>Навчальні посібники</td>
+		<td>@Model.GetPublicationsByType(Publication.Types.HandBook).Count()</td>
+		<td>@Model.GetPublicationsByType(Publication.Types.HandBook).Count(p => p.PublishingYear == Model.Created.Year)</td>
+	</tr>
+	<tr>
+		<td>Статті</td>
+		<td>@Model.GetArticles().Count()</td>
+		<td>@Model.GetArticles().Count(p => p.PublishingYear == Model.Created.Year)</td>
+	</tr>
+	<tr>
+		<td>Патенти</td>
+		<td>@Model.GetPatents().Count()</td>
+		<td>@Model.GetPatents().Count(p => p.Date.Year == Model.Created.Year)</td>
+	</tr>
+	<tr>
+		<td>Тези доповідей на конференціях</td>
+		<td>@Model.GetReportTheses().Count()</td>
+		<td>@Model.GetReportTheses().Count(p => p.Conference.Date.Year == Model.Created.Year)</td>
+	</tr>
+	</tbody>
+</table>
+<ol>
+	<li class="@(!(Model.GetPublications().Any() || Model.GetArticles().Any()) ? "hidden" : "")">
+		<b>6.1</b> Праці, що вийшли з друку (бібліографічний опис згідно з державним стандартом):
+		<ol>
+			<li class="@(!Model.GetPublicationsByType(Publication.Types.Monograph).Any() ? "hidden" : "")">
+				<b>6.1.1.</b> Монографії:
+				<ol class="publications-list">
+					@foreach (var data in Model.GetPublicationsByType(Publication.Types.Monograph).Select((p, i) => new PrintPublication
+					{
+						Index = i,
+						User = Model.Teacher,
+						Publication = p
+					}))
+					{
+						<partial name="_PrintPublication" model="@data"></partial>
+					}
+				</ol>
+			</li>
+			<li class="@(!Model.GetPublicationsByType(Publication.Types.TextBook).Any() ? "hidden" : "")">
+				<b>6.1.2.</b> Підручники:
+				<ol class="publications-list">
+					@foreach (var data in Model.GetPublicationsByType(Publication.Types.TextBook).Select((p, i) => new PrintPublication
+					{
+						Index = i,
+						User = Model.Teacher,
+						Publication = p
+					}))
+					{
+						<partial name="_PrintPublication" model="@data"></partial>
+					}
+				</ol>
+
+			</li>
+			<li class="@(!Model.GetPublicationsByType(Publication.Types.HandBook).Any() ? "hidden" : "")">
+				<b>6.1.3.</b> Навчальні посібники:
+				<ol class="publications-list">
+					@foreach (var data in Model.GetPublicationsByType(Publication.Types.HandBook).Select((p, i) => new PrintPublication
+					{
+						Index = i,
+						User = Model.Teacher,
+						Publication = p
+					}))
+					{
+						<partial name="_PrintPublication" model="@data"></partial>
+					}
+				</ol>
+			</li>
+			<li class="@(!Model.GetPublicationsOther().Any() ? "hidden" : "")">
+				<b>6.1.4.</b>Інші наукові видання (словники, переклади наукових праць, науковий коментар, бібліографічний покажчик тощо):
+				<ol class="publications-list">
+					@foreach (var data in Model.GetPublicationsOther().Select((p, i) => new PrintPublication
+					{
+						Index = i,
+						User = Model.Teacher,
+						Publication = p
+					}))
+					{
+						<partial name="_PrintPublication" model="@data"></partial>
+					}
+				</ol>
+			</li>
+			<li class="@(!Model.GetArticles().Any() ? "hidden" : "")">
+				<b>6.1.5.</b> Статті:
+				<ol>
+					<li class="@(!Model.GetArticlesByType(Article.Types.ImpactFactor).Any() ? "hidden" : "")">
+						<b>6.1.5.1.</b> Статті у виданнях, які мають імпакт-фактор;
+						<ol class="article-list">
+							@foreach (var data in Model.GetArticlesByType(Article.Types.ImpactFactor).Select((p, i) => new PrintArticle
+							{
+								Index = i,
+								User = Model.Teacher,
+								Article = p
+							}))
+							{
+								<partial name="_PrintArticle" model="@data"></partial>
+							}
+						</ol>
+					</li>
+					<li class="@(!Model.GetArticlesByType(Article.Types.ForeignReportThesisWithResearchResults).Any() ? "hidden" : "")">
+						<b>6.1.5.2.</b> Статті в інших виданнях, які включені до міжнародних наукометричних баз даних Web of Science, Scopus та інших;
+						<ol class="article-list">
+							@foreach (var data in Model.GetArticlesByType(Article.Types.ForeignReportThesisWithResearchResults).Select((p, i) => new PrintArticle
+							{
+								Index = i,
+								User = Model.Teacher,
+								Article = p
+							}))
+							{
+								<partial name="_PrintArticle" model="@data"></partial>
+							}
+						</ol>
+					</li>
+					<li class="@(!Model.GetArticlesByType(Article.Types.ForeignPublishing).Any() ? "hidden" : "")">
+						<b>6.1.5.3.</b> Статті в інших закордонних виданнях;
+						<ol class="article-list">
+							@foreach (var data in Model.GetArticlesByType(Article.Types.ForeignPublishing).Select((p, i) => new PrintArticle
+							{
+								Index = i,
+								User = Model.Teacher,
+								Article = p
+							}))
+							{
+								<partial name="_PrintArticle" model="@data"></partial>
+							}
+						</ol>
+					</li>
+					<li class="@(!Model.GetArticlesByType(Article.Types.DomesticReportThesis).Any() ? "hidden" : "")">
+						<b>6.1.5.4.</b> Статті у фахових виданнях України;
+						<ol class="article-list">
+							@foreach (var data in Model.GetArticlesByType(Article.Types.DomesticReportThesis).Select((p, i) => new PrintArticle
+							{
+								Index = i,
+								User = Model.Teacher,
+								Article = p
+							}))
+							{
+								<partial name="_PrintArticle" model="@data"></partial>
+							}
+						</ol>
+					</li>
+					<li class="@(!Model.GetArticlesByType(Article.Types.OtherPublishingOfUkraine).Any() ? "hidden" : "")">
+						<b>6.1.5.5.</b> Статті в інших виданнях України.
+						<ol class="article-list">
+							@foreach (var data in Model.GetArticlesByType(Article.Types.OtherPublishingOfUkraine).Select((p, i) => new PrintArticle
+							{
+								Index = i,
+								User = Model.Teacher,
+								Article = p
+							}))
+							{
+								<partial name="_PrintArticle" model="@data"></partial>
+							}
+						</ol>
+					</li>
+				</ol>
+			</li>
+			<li class="@(!Model.GetReportTheses().Any() ? "hidden" : "")">
+				<b>6.1.6.</b> Тези доповідей:
+				<ol>
+					<li class="@(!Model.GetReportThesesByConferenceType(Conference.Types.Foreign).Any() ? "hidden" : "")">
+						<b>6.1.6.1.</b> Тези доповідей на міжнародних конференціях;
+						<ol class="report-thesis-list">
+							@foreach (var data in Model.GetReportThesesByConferenceType(Conference.Types.Foreign).Select((p, i) => new PrintReportThesis
+							{
+								Index = i,
+								User = Model.Teacher,
+								ReportThesis = p
+							}))
+							{
+								<partial name="_PrintReportThesis" model="@data"></partial>
+							}
+						</ol>
+					</li>
+					<li class="@(!Model.GetReportThesesByConferenceType(Conference.Types.Local).Any() ? "hidden" : "")">
+						<b>6.1.6.2.</b> Тези доповідей на вітчизняних конференціях.
+						<ol class="report-thesis-list">
+							@foreach (var data in Model.GetReportThesesByConferenceType(Conference.Types.Local).Select((p, i) => new PrintReportThesis
+							{
+								Index = i,
+								User = Model.Teacher,
+								ReportThesis = p
+							}))
+							{
+								<partial name="_PrintReportThesis" model="@data"></partial>
+							}
+						</ol>
+					</li>
+				</ol>
+			</li>
+			<li class="@(!Model.GetConferencesByType(Conference.Types.Foreign).Any() ? "hidden" : "")">
+				<b>6.1.7.</b> Перелік міжнародних конференцій за кордоном, на яких представлено результати досліджень.
+				<ol class="conferences-list">
+					@foreach (var data in Model.GetConferencesByType(Conference.Types.Foreign).Select((p, i) => new PrintConference
+					{
+						Index = i,
+						User = Model.Teacher,
+						Conference = p
+					}))
+					{
+						<partial name="_PrintConference" model="@data"></partial>
+					}
+				</ol>
+			</li>
+		</ol>
+	</li>
+	<li class="hidden">
+		@*TODO: fill in this info*@
+		<b>6.2.</b> Праці, рекомендовані Вченою радою університету до друку (автори, назва праці, обсяг, дата подачі):
+		<ol>
+			<li><b>6.2.1.</b> Монографії</li>
+			<li><b>6.2.2.</b> Підручники</li>
+			<li><b>6.2.3.</b> Навчальні посібники</li>
+			<li><b>6.2.4.</b> Інші наукові видання (словники, переклади наукових праць, науковий коментар, бібліографічний покажчик тощо)</li>
+			<li><b>6.2.5.</b> Статті, прийняті до друку</li>
+		</ol>
+	</li>
+</ol>
+</li>
+<li class="@(!Model.GetPatents().Any() ? "hidden" : "")">
+	<b>7.</b> Патентно-ліцензійна діяльність:
+	<ol>
+		<li class="@(!Model.GetPatentsByType(PatentLicenseActivity.Types.Application).Any() ? "hidden" : "")">
+			<b>7.1.</b> Заявки на винахід (корисну модель) (на видачу патенту на винахід (корисну модель)) − автори, назва, № заявки, дата подачі, заявник(и);
+			<ol class="patents-list">
+				@foreach (var data in Model.GetPatentsByType(PatentLicenseActivity.Types.Application).Select((p, i) => new PrintPatent
+				{
+					Index = i,
+					User = Model.Teacher,
+					Patent = p
+				}))
+				{
+					<partial name="_PrintPatent" model="@data"></partial>
+				}
+			</ol>
+		</li>
+		<li class="@(!Model.GetPatentsByType(PatentLicenseActivity.Types.Patent).Any() ? "hidden" : "")">
+			<b>7.2.</b> Патенти на винахід (корисну модель) − автори, назва, № патенту, дата видачі, заявник(и).
+			<ol class="patents-list">
+				@foreach (var data in Model.GetPatentsByType(PatentLicenseActivity.Types.Patent).Select((p, i) => new PrintPatent
+				{
+					Index = i,
+					User = Model.Teacher,
+					Patent = p
+				}))
+				{
+					<partial name="_PrintPatent" model="@data"></partial>
+				}
+			</ol>
+		</li>
+	</ol>
+</li>
+<li class="@(!(Model.GetReviews().Any() || Model.GetOppositions().Any()) ? "hidden" : "")">
+	<b>8.</b> Рецензування та опонування дисертацій, відгуки на автореферати, експертні висновки.
+	<ol class="reviews-list">
+		@foreach (var data in Model.GetReviews().Select((p, i) => new PrintReview
+		{
+			Index = i,
+			User = Model.Teacher,
+			Review = p
+		}))
+		{
+			<partial name="_PrintReview" model="@data"></partial>
+		}
+	</ol>
+	<ol class="oppositions-list">
+		@foreach (var data in Model.GetOppositions().Select((p, i) => new PrintOpposition
+		{
+			Index = i,
+			User = Model.Teacher,
+			Opposition = p
+		}))
+		{
+			<partial name="_PrintOpposition" model="@data"></partial>
+		}
+	</ol>
+</li>
+<li class="@(!Model.GetMemberships().Any() ? "hidden" : "")">
+	<b>9.</b> Членство у спеціалізованих вчених, експертних радах, редколегіях наукових журналів тощо.
+	    <ol class="memberships-list">
+            @foreach (var data in Model.GetMemberships().Select((p, i) => new PrintMembership
+            {
+                Index = i,
+                User = Model.Teacher,
+                Membership = p
+            }))
+            {
+                <partial name="_PrintMembership" model="@data"></partial>
+            }
+        </ol>
+</li>
+<li class="hidden">
+		@*TODO: fill in this info*@
+<b>10.</b> Інше.
+</li>
+</ol>
+<footer>
+	Підпис_______________
+
+	Звіт заслухано і затверджено на засіданні кафедри (підрозділу) _____________
+	(протокол/дата)
+
+	Завідувач кафедри (керівник підрозділу)_______________
+	(підпис)
+</footer>
+<style>
+    .title-block {
+        text-align: center;
+        width: 100%;
+        font-weight: bold;
+        white-space: pre-line;
+    }
+
+    .teacher-info { white-space: pre-line; }
+    
+    .publications-title{
+        font-weight: bold;
+    }
+    
+    .publications-item{
+        white-space: pre-wrap;
+        text-indent: 50px;
+    }
+    
+    .publications-list{
+        counter-reset: pl 1;
+    }
+    
+    .publications-list li:before {
+        content: counter(pl) ". "; 
+        font-weight: normal;
+    }
+    
+    ol { counter-reset: item; }
+    li{ 
+        display: block; 
+        text-indent: 20px;
+    }
+    li:before { 
+        /*content: counters(item, ".") ". "; */
+        /*counter-increment: item; */
+        /*font-weight: bold;*/
+        content: none;
+    }
+        
+    .publications-table, .publications-table td, .publications-table th {
+        border: 1px black solid;
+    }
+    
+    .publications-table {
+      border-collapse: collapse;
+    }
+
+    footer{
+        margin-top: -25px;
+        white-space: pre-wrap;
+    }  
+    .hidden {
+        display: none;
+    }
+</style>

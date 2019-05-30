@@ -17,11 +17,14 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
+	<data name="Edit scientific work" xml:space="preserve">
+		<value>Edit scientific Work</value>
+	</data>
     <data name="Edit" xml:space="preserve">
 		<value>Edit</value>
 	</data>
-	<data name="ScientificWork" xml:space="preserve">
-		<value>Scientific Work</value>
+	<data name="Scientific work" xml:space="preserve">
+		<value>Scientific work</value>
 	</data>
 	<data name="Cypher" xml:space="preserve">
 		<value>Cypher</value>

@@ -17,27 +17,34 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="Index" xml:space="preserve">
-		<value>Index</value>
+    <data name="Reviews" xml:space="preserve">
+		<value>Reviews</value>
 	</data>
 	<data name="Create" xml:space="preserve">
 		<value>Create</value>
 	</data>
-	<data name="Review" xml:space="preserve">
-		<value>Review</value>
-	</data>
-	<data name="DateOfReview" xml:space="preserve">
-		<value>Date of Review</value>
+	<data name="Date of review" xml:space="preserve">
+		<value>Date of review</value>
 	</data>
 	<data name="Edit" xml:space="preserve">
 		<value>Edit</value>
 	</data>
-
 	<data name="Details" xml:space="preserve">
 		<value>Details</value>
 	</data>
 	<data name="Delete" xml:space="preserve">
 		<value>Delete</value>
 	</data>
-
+	<data name="Previous" xml:space="preserve">
+		<value>Previous</value>
+	</data>
+	<data name="Next" xml:space="preserve">
+		<value>Next</value>
+	</data>
+	<data name="Work" xml:space="preserve">
+		<value>Work</value>
+	</data>
+	<data name="Reviewer" xml:space="preserve">
+		<value>Reviewer</value>
+	</data>
 </root>

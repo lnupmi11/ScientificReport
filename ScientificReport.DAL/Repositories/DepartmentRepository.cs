@@ -20,9 +20,10 @@ namespace ScientificReport.DAL.Repositories
 		public virtual IEnumerable<Department> All()
 		{
 			return _context.Departments
-				.Include(b => b.ScientificWorks)
-				.Include(u => u.Staff)
-				.Include(h => h.Head);
+					.Include(b => b.ScientificWorks)
+					.Include(u => u.Staff)
+					.Include(h => h.Head)
+				;
 		}
 
 		public virtual IEnumerable<Department> AllWhere(Func<Department, bool> predicate)

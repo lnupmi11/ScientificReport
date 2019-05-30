@@ -7,29 +7,38 @@ using ScientificReport.BLL.Interfaces;
 using ScientificReport.Controllers.Utils;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Roles;
+using ScientificReport.DTO.Models;
 using ScientificReport.DTO.Models.ScientificWorks;
 
 namespace ScientificReport.Controllers
 {
-//	[Authorize(Roles = UserProfileRole.Teacher)]
+	[Authorize(Roles = UserProfileRole.Teacher)]
 	public class ScientificWorkController : Controller
 	{
 		private readonly IScientificWorkService _scientificWorkService;
 		private readonly IUserProfileService _userProfileService;
+		private readonly IDepartmentService _departmentService;
 
-		public ScientificWorkController(IScientificWorkService scientificWorkService, IUserProfileService userProfileService)
+		public ScientificWorkController(
+			IScientificWorkService scientificWorkService,
+			IUserProfileService userProfileService,
+			IDepartmentService departmentService
+		)
 		{
 			_scientificWorkService = scientificWorkService;
 			_userProfileService = userProfileService;
+			_departmentService = departmentService;
 		}
 
 		// GET: ScientificWork
-		public IActionResult Index()
+		public IActionResult Index(ScientificWorkIndexModel model)
 		{
-			return View(_scientificWorkService.GetAll());
+			model.ScientificWorks = _scientificWorkService.GetPageByRole(model.CurrentPage, model.PageSize, User);
+			model.Count = _scientificWorkService.GetCountByRole(User);
+			return View(model);
 		}
 
-		// GET: ScientificWork/Details/5
+		// GET: ScientificWork/Details/{id}
 		public IActionResult Details(Guid? id)
 		{
 			if (id == null)
@@ -43,6 +52,11 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
+			if (!UserHasPermission(scientificWork))
+			{
+				return Forbid();
+			}
+			
 			var scientificWorksDetails = new ScientificWorksDetails
 			{
 				ScientificWork = scientificWork,
@@ -53,10 +67,7 @@ namespace ScientificReport.Controllers
 		}
 
 		// GET: ScientificWork/Create
-		public IActionResult Create()
-		{
-			return View();
-		}
+		public IActionResult Create() => View();
 
 		// POST: ScientificWork/Create
 		[HttpPost]
@@ -64,13 +75,16 @@ namespace ScientificReport.Controllers
 		public IActionResult Create([Bind("Id,Cypher,Category,Title,Contents")]
 			ScientificWork scientificWork)
 		{
-			if (!ModelState.IsValid) return View(scientificWork);
+			if (!ModelState.IsValid)
+			{
+				return View(scientificWork);
+			}
 
 			_scientificWorkService.CreateItem(scientificWork);
 			return RedirectToAction(nameof(Index));
 		}
 
-		// GET: ScientificWork/Edit/5
+		// GET: ScientificWork/Edit/{id}
 		public IActionResult Edit(Guid? id)
 		{
 			if (id == null)
@@ -84,6 +98,10 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
+			if (!UserHasPermission(scientificWork))
+			{
+				return Forbid();
+			}
 			
 			var scientificWorksEdit = new ScientificWorksEdit
 			{
@@ -95,7 +113,7 @@ namespace ScientificReport.Controllers
 			return View(scientificWorksEdit);
 		}
 
-		// POST: ScientificWork/Edit/5
+		// POST: ScientificWork/Edit/{id}
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public IActionResult Edit(Guid id, ScientificWorksEdit scientificWorksEdit)
@@ -104,6 +122,11 @@ namespace ScientificReport.Controllers
 			if (id != scientificWork.Id)
 			{
 				return NotFound();
+			}
+			
+			if (!UserHasPermission(scientificWork))
+			{
+				return Forbid();
 			}
 
 			if (!ModelState.IsValid)
@@ -128,7 +151,7 @@ namespace ScientificReport.Controllers
 			return RedirectToAction(nameof(Index));
 		}
 
-		// GET: ScientificWork/Delete/5
+		// GET: ScientificWork/Delete/{id}
 		public IActionResult Delete(Guid? id)
 		{
 			if (id == null)
@@ -141,34 +164,78 @@ namespace ScientificReport.Controllers
 			{
 				return NotFound();
 			}
+			
+			if (!UserHasPermission(scientificWork))
+			{
+				return Forbid();
+			}
 
 			return View(scientificWork);
 		}
 
-		// POST: ScientificWork/Delete/5
+		// POST: ScientificWork/Delete/{id}
 		[HttpPost, ActionName("Delete")]
 		[ValidateAntiForgeryToken]
 		public IActionResult DeleteConfirmed(Guid id)
 		{
+			if (!_scientificWorkService.Exists(id))
+			{
+				return NotFound();
+			}
+			
+			if (!UserHasPermission(_scientificWorkService.GetById(id)))
+			{
+				return Forbid();
+			}
+			
 			_scientificWorkService.DeleteById(id);
 			return RedirectToAction(nameof(Index));
 		}
 		
-		// POST: ScientificWork/AddAuthor/5
+		// POST: ScientificWork/AddAuthor/{id}
 		[HttpPost]
-//		[ValidateAntiForgeryToken]
-		public IActionResult AddAuthor(Guid id, [FromBody] ScientificWorkAuthorRequest request)
+		[ValidateAntiForgeryToken]
+		public IActionResult AddAuthor(Guid id, [FromBody] UpdateUserRequest request)
 		{
-			_scientificWorkService.AddAuthor(id, request.AuthorId);
+			if (!_scientificWorkService.Exists(id))
+			{
+				return NotFound();
+			}
+			
+			if (!UserHasPermission(_scientificWorkService.GetById(id)))
+			{
+				return Forbid();
+			}
+			
+			_scientificWorkService.AddAuthor(id, request.UserId);
 			return Json(ApiResponse.Ok);
 		}
-		// POST: ScientificWork/DeleteAuthor/5
+		
+		// POST: ScientificWork/DeleteAuthor/{id}
 		[HttpPost]
-//		[ValidateAntiForgeryToken]
-		public IActionResult DeleteAuthor(Guid id, [FromBody] ScientificWorkAuthorRequest request)
+		[ValidateAntiForgeryToken]
+		public IActionResult DeleteAuthor(Guid id, [FromBody] UpdateUserRequest request)
 		{
-			_scientificWorkService.RemoveAuthor(id, request.AuthorId);
+			if (!_scientificWorkService.Exists(id))
+			{
+				return NotFound();
+			}
+			
+			if (!UserHasPermission(_scientificWorkService.GetById(id)))
+			{
+				return Forbid();
+			}
+			
+			_scientificWorkService.RemoveAuthor(id, request.UserId);
 			return Json(ApiResponse.Ok);
+		}
+		
+		private bool UserHasPermission(ScientificWork scientificWork)
+		{
+			var user = _userProfileService.Get(User);
+			var department = _departmentService.Get(d => d.Staff.Contains(user));
+			var isHeadOfDepartment = PageHelpers.IsHeadOfDepartment(User) && scientificWork.UserProfilesScientificWorks.Any(p => department.Staff.Contains(p.UserProfile));
+			return PageHelpers.IsAdmin(User) || isHeadOfDepartment || scientificWork.UserProfilesScientificWorks.Any(p => p.UserProfile.UserName == User.Identity.Name);
 		}
 	}
 }

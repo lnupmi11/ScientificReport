@@ -1,38 +1,46 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using ScientificReport.BLL.Interfaces;
 using ScientificReport.Controllers.Utils;
-using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Roles;
+using ScientificReport.DTO.Models;
 using ScientificReport.DTO.Models.ReportThesis;
-using ScientificReport.DTO.Models.ScientificWorks;
 
 namespace ScientificReport.Controllers
 {
-//	[Authorize(Roles = UserProfileRole.Teacher)]
+	[Authorize(Roles = UserProfileRole.Any)]
 	public class ReportThesisController : Controller
 	{
 		private readonly IReportThesisService _reportThesisService;
 		private readonly IUserProfileService _userProfileService;
+		private readonly IDepartmentService _departmentService;
+		private readonly IConferenceService _conferenceService;
 
-		public ReportThesisController(IReportThesisService reportThesisService, IUserProfileService userProfileService)
+		public ReportThesisController(
+			IReportThesisService reportThesisService,
+			IUserProfileService userProfileService,
+			IDepartmentService departmentService,
+			IConferenceService conferenceService
+		)
 		{
 			_reportThesisService = reportThesisService;
 			_userProfileService = userProfileService;
+			_departmentService = departmentService;
+			_conferenceService = conferenceService;
 		}
 
 		// GET: ReportThesis
-		public IActionResult Index()
+		public IActionResult Index(ReportThesisIndexModel model)
 		{
-			return View(_reportThesisService.GetAll());
+			model.ReportTheses = _reportThesisService.GetPageByRole(model.CurrentPage, model.PageSize, User);
+			model.Count = _reportThesisService.GetCountByRole(User);
+			return View(model);
 		}
 
-		// GET: ReportThesis/Details/5
+		// GET: ReportThesis/Details/{id}
 		public IActionResult Details(Guid? id)
 		{
 			if (id == null)
@@ -47,6 +55,11 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
+			if (!UserHasPermission(reportThesis))
+			{
+				return Forbid();
+			}
+
 			var reportThesisDetails = new ReportThesisDetails
 			{
 				ReportThesis = reportThesis,
@@ -59,23 +72,31 @@ namespace ScientificReport.Controllers
 		// GET: ReportThesis/Create
 		public IActionResult Create()
 		{
-			return View();
+			return View(new ReportThesisModel
+			{
+				Conferences = _conferenceService.GetAll()
+			});
 		}
 
 		// POST: ReportThesis/Create
-		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public IActionResult Create([Bind("Id,Thesis")] ReportThesis reportThesis)
+		public IActionResult Create(ReportThesisModel model)
 		{
-			if (!ModelState.IsValid) return View(reportThesis);
+			if (!ModelState.IsValid)
+			{
+				model.Conferences = _conferenceService.GetAll();
+				return View(model);
+			}
 
-			_reportThesisService.CreateItem(reportThesis);
+			model.Conference = _conferenceService.GetById(model.ConferenceId);
+			_reportThesisService.CreateItem(model);
+			_reportThesisService.AddAuthor(_reportThesisService.Get(r => r.Thesis == model.Thesis).Id,
+				_userProfileService.Get(User).Id);
 			return RedirectToAction(nameof(Index));
 		}
 
-		// GET: ReportThesis/Edit/5
+		// GET: ReportThesis/Edit/{id}
 		public IActionResult Edit(Guid? id)
 		{
 			if (id == null)
@@ -89,53 +110,48 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
-			var reportThesisEdt = new ReportThesisEdit
+			if (!UserHasPermission(reportThesis))
 			{
-				ReportThesis = reportThesis,
+				return Forbid();
+			}
+
+			return View(new ReportThesisEdit(reportThesis)
+			{
 				Authors = _reportThesisService.GetAuthors(reportThesis.Id),
 				Users = _userProfileService.GetAll()
-			};
-			return View(reportThesisEdt);
+			});
 		}
 
-		// POST: ReportThesis/Edit/5
-		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+		// POST: ReportThesis/Edit/{id}
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public IActionResult Edit(Guid? id, ReportThesisEdit reportThesisEdit)
+		public IActionResult Edit(Guid? id, ReportThesisEdit model)
 		{
-			var reportThesis = reportThesisEdit.ReportThesis;
+			var reportThesis = _reportThesisService.GetById(model.Id);
 			if (id != reportThesis.Id)
 			{
 				return NotFound();
 			}
+			
+			if (!UserHasPermission(reportThesis))
+			{
+				return Forbid();
+			}
 
 			if (!ModelState.IsValid)
 			{
-				reportThesisEdit.Authors = _reportThesisService.GetAuthors(reportThesis.Id);
-				reportThesisEdit.Users = _userProfileService.GetAll();
-				return View(reportThesisEdit);
+				model.Authors = _reportThesisService.GetAuthors(reportThesis.Id);
+				model.Users = _userProfileService.GetAll();
+				return View(model);
 			}
 
-			try
-			{
-				_reportThesisService.UpdateItem(reportThesis);
-			}
-			catch (DbUpdateConcurrencyException)
-			{
-				if (!_reportThesisService.Exists(reportThesis.Id))
-				{
-					return NotFound();
-				}
-
-				throw;
-			}
+			model.Conference = _conferenceService.GetById(model.ConferenceId);
+			_reportThesisService.UpdateItem(model);
 
 			return RedirectToAction(nameof(Index));
 		}
 
-		// GET: ReportThesis/Delete/5
+		// GET: ReportThesis/Delete/{id}
 		public IActionResult Delete(Guid? id)
 		{
 			if (id == null)
@@ -148,40 +164,78 @@ namespace ScientificReport.Controllers
 			{
 				return NotFound();
 			}
+			
+			if (!UserHasPermission(reportThesis))
+			{
+				return Forbid();
+			}
 
 			return View(reportThesis);
 		}
 
-		// POST: ReportThesis/Delete/5
+		// POST: ReportThesis/Delete/{id}
 		[HttpPost, ActionName("Delete")]
 		[ValidateAntiForgeryToken]
 		public IActionResult DeleteConfirmed(Guid id)
 		{
+			if (!_reportThesisService.Exists(id))
+			{
+				return NotFound();
+			}
+			
+			if (!UserHasPermission(_reportThesisService.GetById(id)))
+			{
+				return Forbid();
+			}
+			
 			_reportThesisService.DeleteById(id);
 			return RedirectToAction(nameof(Index));
 		}
 
-		private bool ReportThesisExists(Guid id)
-		{
-			return _reportThesisService.GetAll().Any(e => e.Id == id);
-		}
-
-		// POST: ScientificWork/AddAuthor/5
+		// POST: ReportThesis/AddAuthor/{id}
 		[HttpPost]
-//		[ValidateAntiForgeryToken]
-		public IActionResult AddAuthor(Guid id, [FromBody] ReportThesisAuthorRequest request)
+		public IActionResult AddAuthor(Guid id, [FromBody] UpdateUserRequest request)
 		{
-			_reportThesisService.AddAuthor(id, request.AuthorId);
+			if (!_reportThesisService.Exists(id))
+			{
+				return NotFound();
+			}
+			
+			if (!UserHasPermission(_reportThesisService.GetById(id)))
+			{
+				return Forbid();
+			}
+			
+			_reportThesisService.AddAuthor(id, request.UserId);
 			return Json(ApiResponse.Ok);
 		}
 
-		// POST: ScientificWork/DeleteAuthor/5
+		// POST: ReportThesis/DeleteAuthor/{id}
 		[HttpPost]
-//		[ValidateAntiForgeryToken]
-		public IActionResult DeleteAuthor(Guid id, [FromBody] ReportThesisAuthorRequest request)
+		public IActionResult DeleteAuthor(Guid id, [FromBody] UpdateUserRequest request)
 		{
-			_reportThesisService.RemoveAuthor(id, request.AuthorId);
+			if (!_reportThesisService.Exists(id))
+			{
+				return NotFound();
+			}
+			
+			if (!UserHasPermission(_reportThesisService.GetById(id)))
+			{
+				return Forbid();
+			}
+			
+			_reportThesisService.RemoveAuthor(id, request.UserId);
 			return Json(ApiResponse.Ok);
+		}
+		
+		private bool UserHasPermission(ReportThesis reportThesis)
+		{
+			var user = _userProfileService.Get(User);
+			var department = _departmentService.Get(d => d.Staff.Contains(user));
+			return PageHelpers.IsAdmin(User) ||
+			       PageHelpers.IsHeadOfDepartment(User) &&
+			       _reportThesisService.GetAuthors(reportThesis.Id).Any(p => department.Staff.Contains(p)) ||
+			       _reportThesisService.GetAuthors(reportThesis.Id).Contains(user);
 		}
 	}
 }

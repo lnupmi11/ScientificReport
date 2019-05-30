@@ -3,30 +3,37 @@
 @inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = Localizer["Details"];
+    ViewData["Title"] = Localizer["Details of scientific consultation"];
 }
 
-<h3>@Localizer["Details"]</h3>
-
 <div>
-    <h5>@Localizer["ScientificConsultation"]</h5>
+    <h5>@ViewData["Title"]</h5>
     <hr />
     <dl class="row">
         <dt class = "col s4">
-            @Localizer[Html.DisplayNameFor(model => model.CandidateName)]
+            @Localizer["Candidate last, first and middle names"]
         </dt>
         <dd class = "col s8">
             @Html.DisplayFor(model => model.CandidateName)
         </dd>
         <dt class = "col s4">
-            @Localizer[Html.DisplayNameFor(model => model.DissertationTitle)]
+            @Localizer["Dissertation title"]
         </dt>
         <dd class = "col s8">
             @Html.DisplayFor(model => model.DissertationTitle)
         </dd>
+        <dt class = "col s4">
+            @Localizer["Guide"]
+        </dt>
+        <dd class="col s8">
+            <a asp-controller="UserProfile" asp-action="Details"
+               asp-route-id="@Model.Guide.Id">
+                @Model.Guide.FullName
+            </a>
+        </dd>
     </dl>
 </div>
-<div>
+<div style="margin-top: 20px">
     <a asp-action="Edit" asp-route-id="@Model.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
-    <a asp-action="Index" class="btn-small blue darken-3">@Localizer["Back to List"]</a>
+    <a asp-action="Index" class="btn-small blue darken-3">@Localizer["Back to list"]</a>
 </div>

@@ -24,8 +24,8 @@ namespace ScientificReport.DAL.Repositories
 				.Include(g => g.UserProfilesGrants)
 				.Include(sw => sw.UserProfilesScientificWorks)
 				.Include(a => a.UserProfilesArticles)
+//				.Include(a => a.Department)
 				.Include(rt => rt.UserProfilesReportTheses)
-				.Include(r => r.UserProfilesReviews)
 				.Include(si => si.UserProfilesScientificInternships)
 				.Include(ap => ap.AuthorsPatentLicenseActivities)
 				.Include(apl => apl.ApplicantsPatentLicenseActivities);

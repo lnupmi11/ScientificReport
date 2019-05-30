@@ -17,8 +17,14 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="Article" xml:space="preserve">
-		<value>Article</value>
+    <data name="Edit article" xml:space="preserve">
+		<value>Edit article</value>
+	</data>
+	<data name="Article editing" xml:space="preserve">
+		<value>Article Editing</value>
+	</data>
+	<data name="Edit" xml:space="preserve">
+		<value>Edit</value>
 	</data>
 	<data name="Type" xml:space="preserve">
 		<value>Type</value>
@@ -26,23 +32,11 @@
 	<data name="Title" xml:space="preserve">
 		<value>Title</value>
 	</data>
-	<data name="PublishingHouseName" xml:space="preserve">
+	<data name="Publishing house name" xml:space="preserve">
 		<value>Publishing house name</value>
 	</data>
-	<data name="PublishingYear" xml:space="preserve">
+	<data name="Publishing year" xml:space="preserve">
 		<value>Publishing year</value>
-	</data>
-	<data name="Create New" xml:space="preserve">
-		<value>Create New</value>
-	</data>
-	<data name="Details" xml:space="preserve">
-		<value>Details</value>
-	</data>
-	<data name="Edit" xml:space="preserve">
-		<value>Edit</value>
-	</data>
-	<data name="Delete" xml:space="preserve">
-		<value>Delete</value>
 	</data>
 	<data name="Save" xml:space="preserve">
 		<value>Save</value>
@@ -53,7 +47,64 @@
 	<data name="Cancel" xml:space="preserve">
 		<value>Cancel</value>
 	</data>
-	<data name="Back to List" xml:space="preserve">
-		<value>Back to List</value>
+	<data name="Back to list" xml:space="preserve">
+		<value>Back to list</value>
+	</data>
+	<data name="Choose an option" xml:space="preserve">
+		<value>Choose an option</value>
+	</data>
+	<data name="Impact factor" xml:space="preserve">
+		<value>Impact factor</value>
+	</data>
+	<data name="Included in Web of Science Scopus and others" xml:space="preserve">
+		<value>Included in Web of Science Scopus and others</value>
+	</data>
+	<data name="Foreign publishing" xml:space="preserve">
+		<value>Foreign publishing</value>
+	</data>
+	<data name="Professional publishing of Ukraine" xml:space="preserve">
+		<value>Professional publishing of Ukraine</value>
+	</data>
+	<data name="Other publishing of Ukraine" xml:space="preserve">
+		<value>Other publishing of Ukraine</value>
+	</data>
+	<data name="Report thesis" xml:space="preserve">
+		<value>Report thesis</value>
+	</data>
+	<data name="International report thesis" xml:space="preserve">
+		<value>International report thesis</value>
+	</data>
+	<data name="Domestic report thesis" xml:space="preserve">
+		<value>Domestic report thesis</value>
+	</data>
+	<data name="Foreign report thesis with research results" xml:space="preserve">
+		<value>Foreign report thesis with research results</value>
+	</data>
+	<data name="Liability info" xml:space="preserve">
+		<value>Liability info</value>
+	</data>
+	<data name="Document Info" xml:space="preserve">
+		<value>Document info</value>
+	</data>
+	<data name="Publishing place" xml:space="preserve">
+		<value>Publishing place</value>
+	</data>
+	<data name="Number" xml:space="preserve">
+		<value>Number</value>
+	</data>
+	<data name="Pages amount" xml:space="preserve">
+		<value>Pages amount</value>
+	</data>
+	<data name="Authors" xml:space="preserve">
+		<value>Authors</value>
+	</data>
+	<data name="Is periodical" xml:space="preserve">
+		<value>Is periodical</value>
+	</data>
+	<data name="Is print canceled" xml:space="preserve">
+		<value>Is print canceled</value>
+	</data>
+	<data name="Is recommended to print" xml:space="preserve">
+		<value>Is recommended to print</value>
 	</data>
 </root>

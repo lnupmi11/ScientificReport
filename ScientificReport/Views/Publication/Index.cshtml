@@ -1,39 +1,112 @@
-@model IEnumerable<ScientificReport.DAL.Entities.Publication>
+@model ScientificReport.DTO.Models.Publication.PublicationIndexModel
 @using Microsoft.AspNetCore.Mvc.Localization
+@using ScientificReport.BLL.Interfaces
+@using ScientificReport.Controllers.Utils
+@using ScientificReport.DAL.Entities
+
+@inject IDepartmentService DepartmentService
 @inject IViewLocalizer Localizer
 
 @{
-	ViewData["Title"] = Localizer["Index"];
+	ViewData["Title"] = Localizer["Publications"];
 }
 
-<h3>@Localizer["Publication"]</h3>
-
+<h4>@ViewData["Title"]</h4>
 <p>
-	<a asp-action="Create" class="waves-effect btn-small green darken-3">@Localizer["CreateNew"]</a>
+	<a asp-action="Create" class="waves-effect btn-small green darken-3">@Localizer["Create"]</a>
 </p>
+<div class="row">
+	<div class="col s12">
+		<form asp-action="Index" method="get">
+			<div class="row">
+				<div class="input-field col s4">
+					<select asp-for="PrintStatus" class="col s12 push-s2">
+						@foreach (var option in Model.PrintStatusOptions)
+						{
+							var selected = option == "Any" && Model.PrintStatus == null || Model.PrintStatus != null && Model.PrintStatus.Value.ToString() == option ? "selected" : "";
+							<option value="@option" @selected>@Localizer[option]</option>
+						}
+					</select>
+					<label asp-for="PrintStatus">@Localizer["Publishing status"]</label>
+				</div>
+				<div class="input-field col s2">
+					<input asp-for="YearFromFilter" type="number" class="validate" />
+					<label asp-for="YearFromFilter">@Localizer["Year from"]</label>
+				</div>
+				<div class="input-field col s2">
+					<input asp-for="YearToFilter" type="number" class="validate" />
+					<label asp-for="YearToFilter">@Localizer["Year to"]</label>
+				</div>
+				<div class="input-field col s2">
+					<select asp-for="PublicationSetType" class="col s12 push-s2">
+						@foreach (var option in Model.PublicationSetTypeOptions)
+						{
+							var selected = option == "Individual" && Model.PublicationSetType == null || Model.PublicationSetType != null && Model.PublicationSetType.Value.ToString() == option ? "selected" : "";
+							<option value="@option" @selected>@Localizer[option]</option>
+						}
+					</select>
+					<label asp-for="PrintStatus">@Localizer["Publication set"]</label>
+				</div>
+				<div class="col s1">
+					<button type="submit" class="waves-effect btn-small waves-light">@Localizer["Filter"]</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
 <table class="responsive-table">
 	<thead>
 	<tr>
 		<th>
-			@Localizer[Html.DisplayNameFor(model => model.Type)]
+			<a asp-action="Index" asp-route-SortBy="Type">@Localizer["Type"]</a>
 		</th>
 		<th>
-			@Localizer[Html.DisplayNameFor(model => model.Title)]
+			<a asp-action="Index" asp-route-SortBy="Title">@Localizer["Title"]</a>
 		</th>
 		<th>
-			@Localizer[Html.DisplayNameFor(model => model.PublishingHouseName)]
+			<a asp-action="Index" asp-route-SortBy="PublishingHouse">@Localizer["Publishing house name"]</a>
 		</th>
 		<th>
-			@Localizer[Html.DisplayNameFor(model => model.PublishingYear)]
+			<a asp-action="Index" asp-route-SortBy="PublishingYear">@Localizer["Publishing year"]</a>
 		</th>
 		<th></th>
 	</tr>
 	</thead>
 	<tbody>
-	@foreach (var item in Model) {
+	@foreach (var item in Model.Publications) {
 		<tr>
 			<td>
-				@Html.DisplayFor(modelItem => item.Type)
+				@{
+					string type;
+					switch (item.Type)
+					{
+						case Publication.Types.Monograph:
+							type = "Monograph";
+							break;
+						case Publication.Types.TextBook:
+							type = "Textbook";
+							break;
+						case Publication.Types.HandBook:
+							type = "Handbook";
+							break;
+						case Publication.Types.Dictionary:
+							type = "Dictionary";
+							break;
+						case Publication.Types.Translation:
+							type = "Translation";
+							break;
+						case Publication.Types.Comment:
+							type = "Comment";
+							break;
+						case Publication.Types.BibliographicIndex:
+							type = "Bibliographic index";
+							break;
+						default:
+							type = "Other";
+							break;
+					}
+				}
+				@Localizer[type]
 			</td>
 			<td>
 				@Html.DisplayFor(modelItem => item.Title)
@@ -45,13 +118,58 @@
 				@Html.DisplayFor(modelItem => item.PublishingYear)
 			</td>
 			<td>
-				<a asp-action="Details" asp-route-id="@item.Id" class="btn-small blue darken-3">@Localizer["Details"]</a>
-				<a asp-action="Edit" asp-route-id="@item.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
-				<form asp-action="Delete" asp-route-id="@item.Id" method="post" style="display: inline;">
-					<button type="submit" class="waves-effect btn-small deep-orange darken-3">@Localizer["Delete"]</button>
-				</form>
+				<a asp-action="Details" asp-route-id="@item.Id" class="waves-effect btn-small blue darken-3">@Localizer["Details"]</a>
+				@{
+					var department = DepartmentService.Get(d => d.Staff.Any(s => s.UserName == User.Identity.Name));
+					var isHeadOfDepartment = false;
+					if (department != null)
+					{
+						isHeadOfDepartment = item.UserProfilesPublications.Any(p => department.Staff.Contains(p.UserProfile));
+					}
+				}
+				@if ((PageHelpers.IsAdmin(User) || isHeadOfDepartment || item.UserProfilesPublications.Any(p => p.UserProfile.UserName == User.Identity.Name)))
+				{
+					<a asp-action="Edit" asp-route-id="@item.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>	
+				}
+				@if (PageHelpers.IsAdmin(User))
+				{
+					<form asp-action="Delete" asp-route-id="@item.Id" method="get" style="display: inline;">
+						<button type="submit" class="waves-effect btn-small deep-orange darken-3">@Localizer["Delete"]</button>
+					</form>	
+				}
 			</td>
 		</tr>
 	}
 	</tbody>
 </table>
+<ul class="pagination">
+	@if (Model.ShowPrevious)
+	{
+		<li class="page-item">
+			<a asp-action="Index" asp-route-currentpage="@(Model.CurrentPage - 1)" class="page-link">@Localizer["Previous"]</a>
+		</li>
+	}
+	@if (Model.TotalPages > 1)
+	{
+		for (var i = 1; i <= Model.TotalPages; i++)
+		{
+			<li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+				<a asp-action="Index" asp-route-currentpage="@i" class="page-link">@i</a>
+			</li>
+		}	
+	}
+	@if (Model.ShowNext)
+	{
+		<li class="page-item">
+			<a asp-action="Index" asp-route-currentpage="@(Model.CurrentPage + 1)" class="page-link">@Localizer["Next"]</a>
+		</li>
+	}
+</ul>
+
+@section Scripts {
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('select').formSelect();
+		});
+	</script>
+}

@@ -17,19 +17,28 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
+	<data name="Details of review" xml:space="preserve">
+		<value>Деталі рецензії</value>
+	</data>
     <data name="Details" xml:space="preserve">
 		<value>Деталі</value>
 	</data>
 	<data name="Review" xml:space="preserve">
 		<value>Рецензія</value>
 	</data>
-	<data name="DateOfReview" xml:space="preserve">
+	<data name="Date of review" xml:space="preserve">
 		<value>Дата рецензування</value>
 	</data>
 	<data name="Edit" xml:space="preserve">
 		<value>Редагувати</value>
 	</data>
-	<data name="Back to List" xml:space="preserve">
+	<data name="Back to list" xml:space="preserve">
 		<value>Повернутися до списку</value>
+	</data>
+	<data name="Work" xml:space="preserve">
+		<value>Робота</value>
+	</data>
+	<data name="Reviewer" xml:space="preserve">
+		<value>Рецензент</value>
 	</data>
 </root>

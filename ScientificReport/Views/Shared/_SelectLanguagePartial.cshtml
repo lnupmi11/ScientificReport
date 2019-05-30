@@ -1,3 +1,4 @@
+@using System.Globalization
 @using Microsoft.AspNetCore.Builder
 @using Microsoft.AspNetCore.Localization
 @using Microsoft.AspNetCore.Mvc.Localization
@@ -5,13 +6,6 @@
 
 @inject IViewLocalizer Localizer
 @inject IOptions<RequestLocalizationOptions> LocOptions
-
-@{
-	var requestCulture = Context.Features.Get<IRequestCultureFeature>();
-	var cultureItems = LocOptions.Value.SupportedUICultures
-		.Select(c => new SelectListItem {Value = c.Name, Text = c.DisplayName})
-		.ToList();
-}
 
 <style>
 	/* form { */
@@ -78,28 +72,35 @@
 		}
 	}
 	
-	label {
-		color: white;
-		font-size: 20px;
-	}
-	.oneMoreStyle {
-		position: relative;
-		bottom: 2px;
+	.active-lang-btn {
+		color: #ffffff !important;
 	}
 </style>
+@{
+	var currentCulture = CultureInfo.CurrentCulture;
+	var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+	var cultureItems = LocOptions.Value.SupportedUICultures
+		.Select(c => new SelectListItem {Value = c.Name, Text = c.DisplayName})
+		.ToList();
+}
 @if (requestCulture != null)
 {
-	<form id="selectLanguage" asp-controller="Home" class="form-inline oneMoreStyle"
-	      asp-action="SetLanguage" asp-route-returnUrl="@Context.Request.Path"
-	      method="post" role="form">
-		<input type="hidden" name="culture" value="@cultureItems[0].Value"/>
-		<button type="submit" class="waves-effect btn-small  amber accent-2">@Localizer[cultureItems[0].Text]</button>
-	</form>
-	<form  id="selectLanguage" asp-controller="Home" class="form-inline"
-	       asp-action="SetLanguage" asp-route-returnUrl="@Context.Request.Path"
-	       method="post" role="form">
-		<label for="selectLanguage">@Localizer["Language"]:</label>
-		<input type="hidden" name="culture" value="@cultureItems[1].Value"/>
-		<button type="submit" class="waves-effect btn-small  amber accent-2">@Localizer[cultureItems[1].Text]</button>
-	</form>
+	foreach (var cultureItem in cultureItems)
+	{
+		<form asp-controller="Home" class="form-inline"
+		      asp-action="SetLanguage" asp-route-returnUrl="@Context.Request.Path"
+		      method="post" role="form">
+			<input type="hidden" name="culture" value="@cultureItem.Value"/>
+			@if (cultureItem.Value == currentCulture.Name)
+			{
+				<button type="submit" class="btn-flat disabled">@Localizer[cultureItem.Text]</button>	
+			}
+			else
+			{
+			<button type="submit" class="btn-flat">
+				<span class="active-lang-btn">@Localizer[cultureItem.Text]</span>
+			</button>
+			}
+		</form>
+	}
 }

@@ -82,9 +82,8 @@ namespace ScientificReport.Test
 			PagesAmount = 10,
 			PublishingYear = 2007,
 			PublishingPlace = "Publishing Place 1",
-			IsPrintCanceled = false,
 			PublishingHouseName = "Publishing House Name 1",
-			IsRecommendedToPrint = true
+			PrintStatus = Publication.PrintStatuses.IsRecommendedToPrint
 		};
 		public static readonly Publication Publication2 = new Publication
 		{
@@ -95,9 +94,8 @@ namespace ScientificReport.Test
 			PagesAmount = 20,
 			PublishingYear = 2014,
 			PublishingPlace = "Publishing Place 2",
-			IsPrintCanceled = true,
 			PublishingHouseName = "Publishing House Name 2",
-			IsRecommendedToPrint = false
+			PrintStatus = Publication.PrintStatuses.IsPrintCanceled
 		};
 		public static readonly Publication Publication3 = new Publication
 		{
@@ -108,9 +106,8 @@ namespace ScientificReport.Test
 			PagesAmount = 30,
 			PublishingYear = 2007,
 			PublishingPlace = "Publishing Place 3",
-			IsPrintCanceled = false,
 			PublishingHouseName = "Publishing House Name 3",
-			IsRecommendedToPrint = false
+			PrintStatus = Publication.PrintStatuses.Any
 		};
 
 		public static readonly Department Department1 = new Department
@@ -159,19 +156,19 @@ namespace ScientificReport.Test
 		public static readonly Membership Membership1 = new Membership
 		{
 			Id = Guid.NewGuid(),
-			MemberOf = Membership.MemberOfChoices.ExpertCouncil,
+			Type = Membership.Types.ExpertCouncil,
 			MembershipInfo = "Some membership info 1"
 		};
 		public static readonly Membership Membership2 = new Membership
 		{
 			Id = Guid.NewGuid(),
-			MemberOf = Membership.MemberOfChoices.EditorialBoard,
+			Type = Membership.Types.EditorialBoard,
 			MembershipInfo = "Some membership info 2"
 		};
 		public static readonly Membership Membership3 = new Membership
 		{
 			Id = Guid.NewGuid(),
-			MemberOf = Membership.MemberOfChoices.ScientificCouncil,
+			Type = Membership.Types.ScientificCouncil,
 			MembershipInfo = "Some membership info 3"
 		};
 
@@ -287,7 +284,7 @@ namespace ScientificReport.Test
 			Name = "Some name 1",
 			Type = PatentLicenseActivity.Types.Patent,
 			Number = 1,
-			DateTime = DateTime.Now
+			Date = DateTime.Now
 		};
 		public static readonly PatentLicenseActivity PatentLicenseActivity2 = new PatentLicenseActivity
 		{
@@ -295,7 +292,7 @@ namespace ScientificReport.Test
 			Name = "Some name 2",
 			Type = PatentLicenseActivity.Types.Patent,
 			Number = 2,
-			DateTime = DateTime.Now
+			Date = DateTime.Now
 		};
 		public static readonly PatentLicenseActivity PatentLicenseActivity3 = new PatentLicenseActivity
 		{
@@ -303,7 +300,7 @@ namespace ScientificReport.Test
 			Name = "Some name 3",
 			Type = PatentLicenseActivity.Types.Patent,
 			Number = 3,
-			DateTime = DateTime.Now
+			Date = DateTime.Now
 		};
 
 		public static readonly Review Review1 = new Review
@@ -451,157 +448,157 @@ namespace ScientificReport.Test
 		{
 			Id = Guid.NewGuid(),
 			Edited = DateTime.Now,
-			Grants = new List<Grant>
-			{
-				Grant1
-			},
+//			Grants = new List<Grant>
+//			{
+//				Grant1
+//			},
 			Created = DateTime.Now,
 			Teacher = User1,
-			Publications = new List<Publication>
-			{
-				Publication1, Publication2
-			},
-			ScientificWorks = new List<ScientificWork>
-			{
-				ScientificWork1
-			},
-			Patents = new List<PatentLicenseActivity>
-			{
-				PatentLicenseActivity1
-			},
-			Reviews = new List<Review>
-			{
-				Review1
-			},
-			Memberships = new List<Membership>
-			{
-				Membership1
-			},
-			Oppositions = new List<Opposition>
-			{
-				Opposition1
-			},
-			ReportTheses = new List<ReportThesis>(),
-			PostgraduateGuidances = new List<PostgraduateGuidance>
-			{
-				PostgraduateGuidance1
-			},
-			ScientificInternships = new List<ScientificInternship>
-			{
-				ScientificInternship1
-			},
-			ScientificConsultations = new List<ScientificConsultation>
-			{
-				ScientificConsultation1
-			},
-			PostgraduateDissertationGuidances = new List<PostgraduateDissertationGuidance>
-			{
-				PostgraduateDissertationGuidance1
-			}
+//			Publications = new List<Publication>
+//			{
+//				Publication1, Publication2
+//			},
+//			ScientificWorks = new List<ScientificWork>
+//			{
+//				ScientificWork1
+//			},
+//			Patents = new List<PatentLicenseActivity>
+//			{
+//				PatentLicenseActivity1
+//			},
+//			Reviews = new List<Review>
+//			{
+//				Review1
+//			},
+//			Memberships = new List<Membership>
+//			{
+//				Membership1
+//			},
+//			Oppositions = new List<Opposition>
+//			{
+//				Opposition1
+//			},
+//			ReportTheses = new List<ReportThesis>(),
+//			PostgraduateGuidances = new List<PostgraduateGuidance>
+//			{
+//				PostgraduateGuidance1
+//			},
+//			ScientificInternships = new List<ScientificInternship>
+//			{
+//				ScientificInternship1
+//			},
+//			ScientificConsultations = new List<ScientificConsultation>
+//			{
+//				ScientificConsultation1
+//			},
+//			PostgraduateDissertationGuidances = new List<PostgraduateDissertationGuidance>
+//			{
+//				PostgraduateDissertationGuidance1
+//			}
 		};
 		public static readonly TeacherReport TeacherReport2 = new TeacherReport
 		{
 			Id = Guid.NewGuid(),
 			Edited = DateTime.Now,
-			Grants = new List<Grant>
-			{
-				Grant2
-			},
+//			Grants = new List<Grant>
+//			{
+//				Grant2
+//			},
 			Created = DateTime.Now,
 			Teacher = User2,
-			Publications = new List<Publication>
-			{
-				Publication2, Publication3
-			},
-			ScientificWorks = new List<ScientificWork>
-			{
-				ScientificWork2
-			},
-			Patents = new List<PatentLicenseActivity>
-			{
-				PatentLicenseActivity2
-			},
-			Reviews = new List<Review>
-			{
-				Review2
-			},
-			Memberships = new List<Membership>
-			{
-				Membership2
-			},
-			Oppositions = new List<Opposition>
-			{
-				Opposition2
-			},
-			ReportTheses = new List<ReportThesis>(),
-			PostgraduateGuidances = new List<PostgraduateGuidance>
-			{
-				PostgraduateGuidance2
-			},
-			ScientificInternships = new List<ScientificInternship>
-			{
-				ScientificInternship2
-			},
-			ScientificConsultations = new List<ScientificConsultation>
-			{
-				ScientificConsultation2
-			},
-			PostgraduateDissertationGuidances = new List<PostgraduateDissertationGuidance>
-			{
-				PostgraduateDissertationGuidance2
-			}
+//			Publications = new List<Publication>
+//			{
+//				Publication2, Publication3
+//			},
+//			ScientificWorks = new List<ScientificWork>
+//			{
+//				ScientificWork2
+//			},
+//			Patents = new List<PatentLicenseActivity>
+//			{
+//				PatentLicenseActivity2
+//			},
+//			Reviews = new List<Review>
+//			{
+//				Review2
+//			},
+//			Memberships = new List<Membership>
+//			{
+//				Membership2
+//			},
+//			Oppositions = new List<Opposition>
+//			{
+//				Opposition2
+//			},
+//			ReportTheses = new List<ReportThesis>(),
+//			PostgraduateGuidances = new List<PostgraduateGuidance>
+//			{
+//				PostgraduateGuidance2
+//			},
+//			ScientificInternships = new List<ScientificInternship>
+//			{
+//				ScientificInternship2
+//			},
+//			ScientificConsultations = new List<ScientificConsultation>
+//			{
+//				ScientificConsultation2
+//			},
+//			PostgraduateDissertationGuidances = new List<PostgraduateDissertationGuidance>
+//			{
+//				PostgraduateDissertationGuidance2
+//			}
 		};
 		public static readonly TeacherReport TeacherReport3 = new TeacherReport
 		{
 			Id = Guid.NewGuid(),
 			Edited = DateTime.Now,
-			Grants = new List<Grant>
-			{
-				Grant3
-			},
+//			Grants = new List<Grant>
+//			{
+//				Grant3
+//			},
 			Created = DateTime.Now,
 			Teacher = User3,
-			Publications = new List<Publication>
-			{
-				Publication1
-			},
-			ScientificWorks = new List<ScientificWork>
-			{
-				ScientificWork3
-			},
-			Patents = new List<PatentLicenseActivity>
-			{
-				PatentLicenseActivity3
-			},
-			Reviews = new List<Review>
-			{
-				Review3
-			},
-			Memberships = new List<Membership>
-			{
-				Membership3
-			},
-			Oppositions = new List<Opposition>
-			{
-				Opposition3
-			},
-			ReportTheses = new List<ReportThesis>(),
-			PostgraduateGuidances = new List<PostgraduateGuidance>
-			{
-				PostgraduateGuidance3
-			},
-			ScientificInternships = new List<ScientificInternship>
-			{
-				ScientificInternship3
-			},
-			ScientificConsultations = new List<ScientificConsultation>
-			{
-				ScientificConsultation3
-			},
-			PostgraduateDissertationGuidances = new List<PostgraduateDissertationGuidance>
-			{
-				PostgraduateDissertationGuidance3
-			}
+//			Publications = new List<Publication>
+//			{
+//				Publication1
+//			},
+//			ScientificWorks = new List<ScientificWork>
+//			{
+//				ScientificWork3
+//			},
+//			Patents = new List<PatentLicenseActivity>
+//			{
+//				PatentLicenseActivity3
+//			},
+//			Reviews = new List<Review>
+//			{
+//				Review3
+//			},
+//			Memberships = new List<Membership>
+//			{
+//				Membership3
+//			},
+//			Oppositions = new List<Opposition>
+//			{
+//				Opposition3
+//			},
+//			ReportTheses = new List<ReportThesis>(),
+//			PostgraduateGuidances = new List<PostgraduateGuidance>
+//			{
+//				PostgraduateGuidance3
+//			},
+//			ScientificInternships = new List<ScientificInternship>
+//			{
+//				ScientificInternship3
+//			},
+//			ScientificConsultations = new List<ScientificConsultation>
+//			{
+//				ScientificConsultation3
+//			},
+//			PostgraduateDissertationGuidances = new List<PostgraduateDissertationGuidance>
+//			{
+//				PostgraduateDissertationGuidance3
+//			}
 		};
 
 		public static readonly DepartmentReport DepartmentReport1 = new DepartmentReport
@@ -748,7 +745,19 @@ namespace ScientificReport.Test
 
 		public static Publication RandPublication()
 		{
-			var randBool = RandBool();
+			Publication.PrintStatuses printStatus;
+			switch (Rand.Next(2))
+			{
+				case 1:
+					printStatus = Publication.PrintStatuses.IsPrintCanceled;
+					break;
+				case 2:
+					printStatus = Publication.PrintStatuses.IsRecommendedToPrint;
+					break;
+				default:
+					printStatus = Publication.PrintStatuses.Any;
+					break;
+			}
 			return new Publication
 			{
 				Id = Guid.NewGuid(),
@@ -758,9 +767,8 @@ namespace ScientificReport.Test
 				PagesAmount = Rand.Next(3, 100),
 				PublishingYear = Rand.Next(1990, 2018),
 				PublishingPlace = RandText(4),
-				IsPrintCanceled = randBool,
 				PublishingHouseName = RandText(4),
-				IsRecommendedToPrint = !randBool
+				PrintStatus = printStatus
 			};
 		}
 	}

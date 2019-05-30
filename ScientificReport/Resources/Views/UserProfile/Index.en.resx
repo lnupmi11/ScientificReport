@@ -17,17 +17,14 @@
 			PublicKeyToken=b77a5c561934e089
 		</value>
 	</resheader>
-	<data name="Index" xml:space="preserve">
-		<value>Index</value>
-	</data>
 	<data name="Users" xml:space="preserve">
 		<value>Users</value>
 	</data>
 	<data name="Workers" xml:space="preserve">
 		<value>Workers</value>
 	</data>
-	<data name="IsApproved" xml:space="preserve">
-		<value>Is Approved</value>
+	<data name="Is approved" xml:space="preserve">
+		<value>Is approved</value>
 	</data>
 	<data name="Yes" xml:space="preserve">
 		<value>Yes</value>
@@ -35,14 +32,14 @@
 	<data name="No" xml:space="preserve">
 		<value>No</value>
 	</data>
-	<data name="FirstName" xml:space="preserve">
-		<value>First Name</value>
+	<data name="First name" xml:space="preserve">
+		<value>First name</value>
 	</data>
-	<data name="MiddleName" xml:space="preserve">
-		<value>Middle Name</value>
+	<data name="Middle name" xml:space="preserve">
+		<value>Middle name</value>
 	</data>
-	<data name="LastName" xml:space="preserve">
-		<value>Last Name</value>
+	<data name="Last name" xml:space="preserve">
+		<value>Last name</value>
 	</data>
 	<data name="Email" xml:space="preserve">
 		<value>Email</value>
@@ -61,5 +58,23 @@
 	</data>
 	<data name="Deactivate" xml:space="preserve">
 		<value>Deactivate</value>
+	</data>
+	<data name="Any" xml:space="preserve">
+		<value>Any</value>
+	</data>
+	<data name="Department" xml:space="preserve">
+		<value>Department</value>
+	</data>
+	<data name="Filter" xml:space="preserve">
+		<value>Filter</value>
+	</data>
+	<data name="All" xml:space="preserve">
+		<value>All</value>
+	</data>
+	<data name="Previous" xml:space="preserve">
+		<value>Previous</value>
+	</data>
+	<data name="Next" xml:space="preserve">
+		<value>Next</value>
 	</data>
 </root>
