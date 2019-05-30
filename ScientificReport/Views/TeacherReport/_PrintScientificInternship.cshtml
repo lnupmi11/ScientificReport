@@ -1,6 +1,14 @@
+@using ScientificReport.DAL.Entities.UserProfile
 @model ScientificReport.Views.TeacherReport.PrintScientificInternship
 @{
     Layout = null;
 }
 
-<li class="scientificInternship-item">@Model.ScientificInternship</li>
+@if (Model.User.Sex == UserProfile.SexValue.Male)
+{
+	<li class="scientificInternship-item">Проходив стажування у @Model.ScientificInternship.PlaceOfInternship з @Model.ScientificInternship.Started. по @Model.ScientificInternship.Ended.</li>
+}
+else
+{
+	<li class="scientificInternship-item">Проходила стажування у @Model.ScientificInternship.PlaceOfInternship з @Model.ScientificInternship.Started. по @Model.ScientificInternship.Ended.</li>
+}
