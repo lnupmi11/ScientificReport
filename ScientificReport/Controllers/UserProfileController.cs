@@ -142,6 +142,7 @@ namespace ScientificReport.Controllers
 					IsActive = user.IsActive,
 					UserName = user.UserName,
 					Email = user.Email,
+					Sex = user.Sex,
 					IsSelfEditing = currentUser.Id == user.Id,
 					AllRoles = _roleManager.Roles.ToList(),
 					UserRoles = await _userManager.GetRolesAsync(user),
@@ -197,7 +198,9 @@ namespace ScientificReport.Controllers
 						user.AcademicStatus = model.AcademicStatus;
 						user.YearDegreeAssigned = model.YearDegreeAssigned;	
 					}
-					
+
+					user.Sex = model.Sex;
+
 					user.PhoneNumber = model.PhoneNumber;
 					if (PageHelpers.IsAdminOrHead(User) && currentUser.Id != id.Value)
 					{
@@ -400,6 +403,7 @@ namespace ScientificReport.Controllers
 				Position = UserProfileRole.Teacher,
 				IsApproved = false,
 				IsActive = true,
+				Sex = UserProfile.SexValue.None,
 				PhoneNumber = model.PhoneNumber
 			};
 			if (model.Password.Equals(model.PasswordRepeat))

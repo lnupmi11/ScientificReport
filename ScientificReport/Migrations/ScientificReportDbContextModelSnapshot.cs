@@ -14,7 +14,7 @@ namespace ScientificReport.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.3-servicing-35854");
+                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062");
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
@@ -813,6 +813,8 @@ namespace ScientificReport.Migrations
                     b.Property<string>("ScientificDegree");
 
                     b.Property<string>("SecurityStamp");
+
+                    b.Property<int>("Sex");
 
                     b.Property<bool>("TwoFactorEnabled");
 

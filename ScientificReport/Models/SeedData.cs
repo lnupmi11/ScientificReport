@@ -84,7 +84,8 @@ namespace ScientificReport.Models
 					AcademicStatus = "Бакалавр",
 					ScientificDegree = "Бакалавр",
 					YearDegreeGained = 2020,
-					GraduationYear = 2020
+					GraduationYear = 2020,
+					Sex = UserProfile.SexValue.Male
 				},
 				new UserProfile
 				{
@@ -101,7 +102,8 @@ namespace ScientificReport.Models
 					AcademicStatus = "Бакалавр",
 					ScientificDegree = "Бакалавр",
 					YearDegreeGained = 2020,
-					GraduationYear = 2020
+					GraduationYear = 2020,
+					Sex = UserProfile.SexValue.Male
 				},
 				new UserProfile
 				{
@@ -118,7 +120,8 @@ namespace ScientificReport.Models
 					AcademicStatus = "Бакалавр",
 					ScientificDegree = "Бакалавр",
 					YearDegreeGained = 2020,
-					GraduationYear = 2020
+					GraduationYear = 2020,
+					Sex = UserProfile.SexValue.Female
 				},
 				new UserProfile
 				{
@@ -135,7 +138,8 @@ namespace ScientificReport.Models
 					AcademicStatus = "Бакалавр",
 					ScientificDegree = "Бакалавр",
 					YearDegreeGained = 2020,
-					GraduationYear = 2020
+					GraduationYear = 2020,
+					Sex = UserProfile.SexValue.Male
 				}
 			};
 			var userManager = serviceProvider.GetRequiredService<UserManager<UserProfile>>();

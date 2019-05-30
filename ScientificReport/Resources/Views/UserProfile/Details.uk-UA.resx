@@ -80,4 +80,7 @@
 	<data name="Back to list" xml:space="preserve">
 		<value>Повернутися до списку</value>
 	</data>
+	<data name="Sex" xml:space="preserve">
+		<value>Стать</value>
+	</data>
 </root>

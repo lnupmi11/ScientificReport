@@ -4,9 +4,8 @@ let searchRequest = (pSubstring, pType) => {
 		type: pType
 	}, function (response) {
 		if (response.success !== true) {
-			console.log({msg: 'Failed publications search', response});
+			console.log({msg: 'Failed publications search'});
 		} else {
-			console.log(response['publications']);
 			buildDropdown(response['publications']);
 		}
 	});
@@ -17,6 +16,8 @@ let inputsChanged = () => {
 	let pType = $('#Type').val();
 	if (pSubstring.length > 0) {
 		searchRequest(pSubstring, pType);
+	} else {
+		$('#search-result-list').addClass('hide');
 	}
 };
 
@@ -24,7 +25,7 @@ let buildDropdown = (publications) => {
 	let ul = $('#search-result-list');
 	ul.empty();
 	$('<h6/>')
-		.text('Available publications')
+		.text(availablePublicationsText)
 		.appendTo(
 		$('<li/>')
 			.addClass('collection-header')
@@ -39,7 +40,11 @@ let buildDropdown = (publications) => {
 			.text(publications[i].title)
 			.appendTo(li);
 	}
-	ul.removeClass('hide');
+	if (publications.length > 0) {
+		ul.removeClass('hide');	
+	} else {
+		ul.addClass('hide');
+	}
 };
 
 $(document).ready(function () {
