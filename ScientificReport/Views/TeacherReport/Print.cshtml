@@ -13,7 +13,7 @@
 <div class="title-block">
 	Індивідуальний звіт
 	про наукову роботу у @Model.Created.Year році
-	@(Model.Teacher.Position.Length != 0 ?  $"{Model.Teacher.Position} кафедри " + ViewData["department"] : "")
+	@(Model.Teacher.Position.Length != 0 ?  "Викладач кафедри " + ViewData["department"] : "")
 	@Model.Teacher.FullName
 </div>
 <div class="teacher-info">
