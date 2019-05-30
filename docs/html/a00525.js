@@ -1,10 +1,8 @@
 var a00525 =
 [
-    [ "UserProfile", "a00228.html", "a00228" ],
-    [ "UserProfilesArticles", "a00235.html", "a00235" ],
-    [ "UserProfilesGrants", "a00238.html", "a00238" ],
-    [ "UserProfilesPublications", "a00239.html", "a00239" ],
-    [ "UserProfilesReportThesis", "a00240.html", "a00240" ],
-    [ "UserProfilesScientificInternships", "a00241.html", "a00241" ],
-    [ "UserProfilesScientificWorks", "a00242.html", "a00242" ]
+    [ "DbContext", "a00526.html", "a00526" ],
+    [ "Entities", "a00527.html", "a00527" ],
+    [ "Interfaces", "a00530.html", "a00530" ],
+    [ "Repositories", "a00531.html", "a00531" ],
+    [ "Roles", "a00532.html", "a00532" ]
 ];

@@ -1,3 +1,3 @@
-<map id="ScientificReport.BLL.Services.MembershipService" name="ScientificReport.BLL.Services.MembershipService">
-<area shape="rect" id="node2" href="$a00060.html" title="{IMembershipService\n||+ GetAll()\l+ GetAllWhere()\l+ GetItemsByRole()\l+ GetPageByRole()\l+ GetCountByRole()\l+ GetById()\l+ Get()\l+ CreateItem()\l+ UpdateItem()\l+ DeleteById()\l+ Exists()\l}" alt="" coords="35,5,185,229"/>
+<map id="ScientificReport.BLL.Services.GrantService" name="ScientificReport.BLL.Services.GrantService">
+<area shape="rect" id="node2" href="$a00059.html" title="{IGrantService\n||+ GetAll()\l+ GetAllWhere()\l+ GetItemsByRole()\l+ GetPageByRole()\l+ GetCountByRole()\l+ GetById()\l+ Get()\l+ CreateItem()\l+ UpdateItem()\l+ DeleteById()\l+ Exists()\l+ AddUser()\l+ RemoveUser()\l+ GetUsers()\l}" alt="" coords="35,5,185,273"/>
 </map>

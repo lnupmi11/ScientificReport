@@ -1,12 +1,11 @@
 var a00172 =
 [
-    [ "ScientificConsultationController", "a00172.html#a53d405b230d8922ea429d0580e5710b2", null ],
-    [ "Create", "a00172.html#a6153fd2ec4217ce19347cb930c7a3fa4", null ],
-    [ "Create", "a00172.html#a247e940fb1dab0d596365e88d61b3871", null ],
-    [ "Delete", "a00172.html#a089b1ea5e733e73a21a8b6b209e037fb", null ],
-    [ "DeleteConfirmed", "a00172.html#add0fc8fdb7a64abd32dab754650f0b1d", null ],
-    [ "Details", "a00172.html#aafd2d3d888660fbe61c1cd213a31a4b1", null ],
-    [ "Edit", "a00172.html#a5f9420d56069184d806c0261ea42b6e0", null ],
-    [ "Edit", "a00172.html#a60a26a9487f931db834dac3115ecc31e", null ],
-    [ "Index", "a00172.html#a66fa2dfbf1ec6f48c5bb7092f0c705b6", null ]
+    [ "CreateItemTest", "a00172.html#a1551bfb2d9c277fd8a18c35273d50ffd", null ],
+    [ "DeleteItemTest", "a00172.html#aec1ed46471d9e848fb1552bbdfa78754", null ],
+    [ "DoesNotExistTest", "a00172.html#a631b1af8e27d8f5053a23d5b2c75f755", null ],
+    [ "ExistsTest", "a00172.html#a41cf1a59770e870510221d818a0dded6", null ],
+    [ "GetAllTest", "a00172.html#aacc7d9395abb0e3e22b934db8b20d32c", null ],
+    [ "GetAllWhereTest", "a00172.html#adf319cb2e76c0d363ee66ce37ad38f1a", null ],
+    [ "GetByIdTest", "a00172.html#a42747e1dc8c8c1bcd57f135a51e1d41f", null ],
+    [ "UpdateItemTest", "a00172.html#ab88fce9d967f407123251b5e29de5841", null ]
 ];

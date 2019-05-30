@@ -1,3 +1,3 @@
-<map id="ScientificReport.DAL.Repositories.PatentLicenseActivityRepository" name="ScientificReport.DAL.Repositories.PatentLicenseActivityRepository">
-<area shape="rect" id="node2" href="$a00068.html" title="{IRepository\&lt; PatentLicense\lActivity \&gt;\n||}" alt="" coords="32,5,227,97"/>
+<map id="ScientificReport.DAL.Repositories.GrantRepository" name="ScientificReport.DAL.Repositories.GrantRepository">
+<area shape="rect" id="node2" href="$a00068.html" title="{IRepository\&lt; Grant \&gt;\n||}" alt="" coords="44,5,201,83"/>
 </map>

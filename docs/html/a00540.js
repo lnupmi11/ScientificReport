@@ -1,7 +1,6 @@
 var a00540 =
 [
-    [ "PublicationCreateModel", "a00142.html", "a00142" ],
-    [ "PublicationDetailsModel", "a00143.html", "a00143" ],
-    [ "PublicationEditModel", "a00144.html", "a00144" ],
-    [ "PublicationIndexModel", "a00145.html", "a00145" ]
+    [ "OppositionEditModel", "a00089.html", "a00089" ],
+    [ "OppositionIndexModel", "a00090.html", "a00090" ],
+    [ "OppositionModel", "a00091.html", "a00091" ]
 ];

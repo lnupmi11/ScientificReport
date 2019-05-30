@@ -1,2 +1,3 @@
-<map id="ScientificReport.DAL.Entities.AuthorsPatentLicenseActivities" name="ScientificReport.DAL.Entities.AuthorsPatentLicenseActivities">
+<map id="ScientificReport.Controllers.Utils.PublicationSearchApiResponse" name="ScientificReport.Controllers.Utils.PublicationSearchApiResponse">
+<area shape="rect" id="node2" href="$a00002.html" title="{ApiResponse\n|+ Ok\l+ Fail\l+ Success\l|}" alt="" coords="79,5,181,112"/>
 </map>

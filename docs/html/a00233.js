@@ -1,9 +1,17 @@
 var a00233 =
 [
-    [ "AllTest", "a00233.html#a44ac0cba3d4d25663893da4f9cb8d34d", null ],
-    [ "AllWhereTest", "a00233.html#af204cd10414f8c94e9ca13f167dfbb60", null ],
-    [ "CreateTest", "a00233.html#a607fe1f55a9099d5ab9d4d4d4221bb25", null ],
-    [ "DeleteTest", "a00233.html#a70745e34b81c75011493d0d746f9c484", null ],
-    [ "GetByIdTest", "a00233.html#a7d11c8c8dcc5ad939f30461c5ebfc256", null ],
-    [ "UpdateTest", "a00233.html#a9363c310693aa5e574d481903f690dca", null ]
+    [ "IsApprovedOption", "a00233.html#a4083cb58d85f00c2cdb1fe186f1f6673", [
+      [ "All", "a00233.html#a4083cb58d85f00c2cdb1fe186f1f6673ab1c94ca2fbc3e78fc30069c8d0f01680", null ],
+      [ "Yes", "a00233.html#a4083cb58d85f00c2cdb1fe186f1f6673a93cba07454f06a4a960172bbd6e2a435", null ],
+      [ "No", "a00233.html#a4083cb58d85f00c2cdb1fe186f1f6673abafd7322c6e97d25b6299b5d6fe8920b", null ]
+    ] ],
+    [ "UserProfileIndexModel", "a00233.html#adf40707552113b58769e1bc0b61ae0de", null ],
+    [ "UserProfileIndexModel", "a00233.html#a74fd374e7be6d4771821cff80c363271", null ],
+    [ "DepartmentId", "a00233.html#a76cde0d9e166c85dd03bdd485e39343c", null ],
+    [ "Departments", "a00233.html#a83fc9a63514174398d26fd187447b75f", null ],
+    [ "FirstName", "a00233.html#af025d7d02b56926003a2000ab8f92053", null ],
+    [ "IsApproved", "a00233.html#a7cdeeffed94765fe0de3c8eda64f3cb8", null ],
+    [ "IsApprovedOptions", "a00233.html#a8382af3c9944a61c31ec991a764e682b", null ],
+    [ "LastName", "a00233.html#a29071e34d654d252f92c816d854fa14f", null ],
+    [ "UserProfiles", "a00233.html#a42692e20ddf73657e7f91e9405f4b57d", null ]
 ];

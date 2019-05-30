@@ -1,6 +1,7 @@
 var a00164 =
 [
-    [ "ReviewEditModel", "a00164.html#aee42bb9eb6ad313c6f45a457b1cc2615", null ],
-    [ "ReviewEditModel", "a00164.html#a791069ab1700618370cfcbcbe3f1efb2", null ],
-    [ "Id", "a00164.html#af0ccc918841722f023fe421ef36083f7", null ]
+    [ "DateOfReview", "a00164.html#ad80fb8005af97c2958766cc83896c745", null ],
+    [ "Id", "a00164.html#ae6d0d656501b0a3e9707281730e32763", null ],
+    [ "Reviewer", "a00164.html#a4e34c446e3f43cb94e1b0701ce1ed71f", null ],
+    [ "Work", "a00164.html#af10582fe559f808bb4a60360acd6c6f9", null ]
 ];

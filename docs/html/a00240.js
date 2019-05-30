@@ -1,6 +1,8 @@
 var a00240 =
 [
-    [ "Id", "a00240.html#aba6a4de243b57aebe596410aa8cafd5d", null ],
-    [ "ReportThesis", "a00240.html#a3c9bac7405683b31b0bc6a61010caee8", null ],
-    [ "UserProfile", "a00240.html#a663c6da79e0d4ee5172aa92097588653", null ]
+    [ "Grant", "a00240.html#ab8860c696568d993084f775f9033b016", null ],
+    [ "GrantId", "a00240.html#abe7352f3360c8383d249e624883bb7ee", null ],
+    [ "Id", "a00240.html#afc89b615853d96734cf7b3858c83b7b6", null ],
+    [ "UserProfile", "a00240.html#acbb5e1636b1e96d33f56ea8dd2e8c24a", null ],
+    [ "UserProfileId", "a00240.html#a2146df5573d346b40a1e89faba82ece0", null ]
 ];

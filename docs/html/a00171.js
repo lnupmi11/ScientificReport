@@ -1,7 +1,15 @@
 var a00171 =
 [
-    [ "CandidateName", "a00171.html#aa38c1f52c83c87393ea0107659668f3e", null ],
-    [ "DissertationTitle", "a00171.html#a70de78164714b4281c56a07fef00c48d", null ],
-    [ "Guide", "a00171.html#a6ccdd6cb8d9c2ff26eaa3378aa2bba14", null ],
-    [ "Id", "a00171.html#a888b1ee75a41642751927a221543e21e", null ]
+    [ "ReviewService", "a00171.html#a3ebc9d58291036a3acfb935605c48039", null ],
+    [ "CreateItem", "a00171.html#ab83b58e4c8f830c01ad439f58b44f9eb", null ],
+    [ "DeleteById", "a00171.html#a3c2a8cb6d90c7c8cabfd53bb9da989c2", null ],
+    [ "Exists", "a00171.html#a3f69b085dabab4611a3ceb4b47455c83", null ],
+    [ "Get", "a00171.html#adbd1e73a282fe7caab73b71de0e71edc", null ],
+    [ "GetAll", "a00171.html#a6d9416d5e19edda47c9e272b5d9a05ad", null ],
+    [ "GetAllWhere", "a00171.html#a9f74a804ae39aa8e6d5fd02eafd0bcbd", null ],
+    [ "GetById", "a00171.html#a7fd119e67a7edfb650868c9ae281657e", null ],
+    [ "GetCountByRole", "a00171.html#ad9aaa6c177ba9e1323d20dcbfbdd4de7", null ],
+    [ "GetItemsByRole", "a00171.html#a829581adbd7eb22549db526bdfdf36af", null ],
+    [ "GetPageByRole", "a00171.html#a923bfa26ff39efdaea4879c095b8d2a2", null ],
+    [ "UpdateItem", "a00171.html#af0aa84d2b698bb4e764d0903b29e1754", null ]
 ];

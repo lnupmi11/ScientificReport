@@ -1,6 +1,6 @@
 var a00546 =
 [
-    [ "TeacherReportCreateViewModel", "a00205.html", "a00205" ],
-    [ "TeacherReportEditViewModel", "a00206.html", "a00206" ],
-    [ "TeacherReportToggleEntityRequest", "a00224.html", "a00224" ]
+    [ "ReviewEditModel", "a00166.html", "a00166" ],
+    [ "ReviewIndexModel", "a00167.html", "a00167" ],
+    [ "ReviewModel", "a00168.html", "a00168" ]
 ];

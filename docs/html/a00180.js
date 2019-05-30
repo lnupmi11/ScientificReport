@@ -1,9 +1,15 @@
 var a00180 =
 [
-    [ "Contents", "a00180.html#a0b6a99f02096299e6891b603c7694de1", null ],
-    [ "Ended", "a00180.html#a2ab4c94f9120dfd6584cbbe465f9c677", null ],
-    [ "Id", "a00180.html#af621cfa335114c4502a540eb14eb1252", null ],
-    [ "PlaceOfInternship", "a00180.html#ab8363b1109f259e519956ac0a13a8d3f", null ],
-    [ "Started", "a00180.html#a3924dc68df70088c781a06aee9cdee85", null ],
-    [ "UserProfilesScientificInternships", "a00180.html#ac8035a92606d88042526aafa9bfee44e", null ]
+    [ "ScientificConsultationService", "a00180.html#afaaf71499fce7df14b2525d212e79987", null ],
+    [ "CreateItem", "a00180.html#a9d93b5d931871afa0abe6a0ada3238f5", null ],
+    [ "DeleteById", "a00180.html#ae66a4734fe604b279849dd0c9af29d00", null ],
+    [ "Exists", "a00180.html#a22995fd70000b87664d320b289d2bfdb", null ],
+    [ "Get", "a00180.html#a1a81309adc311365e726d1e4fe85ec67", null ],
+    [ "GetAll", "a00180.html#aa0cb94338a5279dbee432999ec9a5513", null ],
+    [ "GetAllWhere", "a00180.html#a4ef14027f345b179fe4443b08e35d1b9", null ],
+    [ "GetById", "a00180.html#affc52a6da850d946e638e0828b0fdb78", null ],
+    [ "GetCountByRole", "a00180.html#a09487f62c982715c415f71b3121f8026", null ],
+    [ "GetItemsByRole", "a00180.html#a3a5f607be75e285021128ffb0b340a4e", null ],
+    [ "GetPageByRole", "a00180.html#a40e8265fb8557f0d16b33a7db60146df", null ],
+    [ "UpdateItem", "a00180.html#a0d991a6bba1cd4d68445265051c0c29a", null ]
 ];

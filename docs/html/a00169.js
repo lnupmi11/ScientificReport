@@ -1,15 +1,12 @@
 var a00169 =
 [
-    [ "ReviewService", "a00169.html#a3ebc9d58291036a3acfb935605c48039", null ],
-    [ "CreateItem", "a00169.html#ab83b58e4c8f830c01ad439f58b44f9eb", null ],
-    [ "DeleteById", "a00169.html#a3c2a8cb6d90c7c8cabfd53bb9da989c2", null ],
-    [ "Exists", "a00169.html#a3f69b085dabab4611a3ceb4b47455c83", null ],
-    [ "Get", "a00169.html#adbd1e73a282fe7caab73b71de0e71edc", null ],
-    [ "GetAll", "a00169.html#a6d9416d5e19edda47c9e272b5d9a05ad", null ],
-    [ "GetAllWhere", "a00169.html#a9f74a804ae39aa8e6d5fd02eafd0bcbd", null ],
-    [ "GetById", "a00169.html#a7fd119e67a7edfb650868c9ae281657e", null ],
-    [ "GetCountByRole", "a00169.html#ad9aaa6c177ba9e1323d20dcbfbdd4de7", null ],
-    [ "GetItemsByRole", "a00169.html#a829581adbd7eb22549db526bdfdf36af", null ],
-    [ "GetPageByRole", "a00169.html#a923bfa26ff39efdaea4879c095b8d2a2", null ],
-    [ "UpdateItem", "a00169.html#af0aa84d2b698bb4e764d0903b29e1754", null ]
+    [ "ReviewRepository", "a00169.html#add9026b0c333df3b7d77efbc81881eda", null ],
+    [ "All", "a00169.html#a06eb3bcb9751848570c62ab1319d993e", null ],
+    [ "AllWhere", "a00169.html#aeba88443b6bfefeea6cf9e32bf60b033", null ],
+    [ "Create", "a00169.html#a7753464f983301771e7d90ad46acfc45", null ],
+    [ "Delete", "a00169.html#a215a01f807c5111848951f66073b4ff7", null ],
+    [ "Get", "a00169.html#a36a3908f2e671ed5500684c3a150e653", null ],
+    [ "Get", "a00169.html#a1d2aa0afff6db43c93f42ee4425b5173", null ],
+    [ "GetQuery", "a00169.html#ad864a579e12844afb875c825468068b5", null ],
+    [ "Update", "a00169.html#aa8b3997b177c4ce3a4b357d911e97901", null ]
 ];

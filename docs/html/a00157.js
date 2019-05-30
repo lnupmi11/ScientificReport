@@ -1,9 +1,8 @@
 var a00157 =
 [
-    [ "ReportThesisModel", "a00157.html#a934ad7770aee0679cea8670df87ea3b2", null ],
-    [ "ReportThesisModel", "a00157.html#afa9bd010d87afb55811fddd9abc302c4", null ],
-    [ "Conference", "a00157.html#a7ea7302ee84be3eaf2bc729016940477", null ],
-    [ "ConferenceId", "a00157.html#ac8bcd4b37f278b2dde930a019c14f683", null ],
-    [ "Conferences", "a00157.html#a9fc3d83d106580ced2c5d75afaf3487d", null ],
-    [ "Thesis", "a00157.html#aa22dadd493e63fdc8547a1b640fb65f1", null ]
+    [ "ReportThesisEdit", "a00157.html#aab90165d9f7920d3bf5c1813d7b6cdd1", null ],
+    [ "ReportThesisEdit", "a00157.html#a9195704eae421eb7b8087fbd78533e8f", null ],
+    [ "Authors", "a00157.html#a23eb6378a7be5bebd4dc728583cd0dd0", null ],
+    [ "Id", "a00157.html#aac801778c9f6f60057ba06ca42157fc2", null ],
+    [ "Users", "a00157.html#a59bc519e58aa92a9ab3b5555df1a17b0", null ]
 ];

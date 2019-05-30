@@ -1,13 +1,20 @@
 var a00150 =
 [
-    [ "Departments", "a00150.html#ab3ffc809dfe240517c849c3199338425", null ],
-    [ "Email", "a00150.html#aec8957225ff7103b72ac292644ba23df", null ],
-    [ "FirstName", "a00150.html#a13d9fcf3d07669f2d5ffddf26291e388", null ],
-    [ "LastName", "a00150.html#a88cc5681703525c6049397e1b65ca1c6", null ],
-    [ "MiddleName", "a00150.html#af6e9a428d5e388268df53f10836de3f0", null ],
-    [ "Password", "a00150.html#a4bfdc25675140b7b8330b6a1354cdd6a", null ],
-    [ "PasswordRepeat", "a00150.html#a886cf08d40fd5b72f34daf10a699548f", null ],
-    [ "PhoneNumber", "a00150.html#a677ab8babccb0b8516d713a71ca1ea04", null ],
-    [ "SelectedDepartmentId", "a00150.html#a379d5f37326b00246dfe78e20191d542", null ],
-    [ "UserName", "a00150.html#af15339676489d284654acd60bab80af5", null ]
+    [ "PublicationService", "a00150.html#a3016c0bcf0893f3699196ae88b5c7228", null ],
+    [ "AddAuthor", "a00150.html#a2ebf2994add2c186d52a69c5b997583a", null ],
+    [ "CreateItem", "a00150.html#aae8215125fcd351750278728945d7a89", null ],
+    [ "DeleteById", "a00150.html#abf2228f9f105f55ad8aeb9e463b3c81a", null ],
+    [ "Filter", "a00150.html#a07c6bfccd97b6412f7d6f42ac2a961f7", null ],
+    [ "Get", "a00150.html#abd903cf30bd5c1a30ae45d3db1f49c41", null ],
+    [ "GetAll", "a00150.html#a2dccd69383c9e8f7131e8c08b5c0ca0a", null ],
+    [ "GetAllWhere", "a00150.html#a595b43a7f4b9609be0341290303898e3", null ],
+    [ "GetById", "a00150.html#a8ef002c406fa9ecb0ce5ea26a2821daf", null ],
+    [ "GetCount", "a00150.html#adae3a485385f5dbb641e345c79e00f82", null ],
+    [ "GetPage", "a00150.html#a953a288952f79ed8e640a2d6d3dfb59e", null ],
+    [ "GetPublicationAuthors", "a00150.html#a44c5433cf3da8d5e8bcfe9110383a4e4", null ],
+    [ "GetUserPublications", "a00150.html#a206b9ddac80856f7f758eb06317175f8", null ],
+    [ "PublicationExists", "a00150.html#a443e8a6041b604ce36548bc886424ff5", null ],
+    [ "RemoveAuthor", "a00150.html#a2aefdfacb2d018b15cfea84b9e8dbc3b", null ],
+    [ "SortPublicationsBy", "a00150.html#acd4a0f2b18d3b8ec6885f088c7d9dcf1", null ],
+    [ "UpdateItem", "a00150.html#a532b19049f94b2c15c6fbc00a86a12f0", null ]
 ];

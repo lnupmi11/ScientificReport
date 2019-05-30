@@ -1,6 +1,6 @@
 var a00221 =
 [
-    [ "Id", "a00221.html#a4465d27f00c843c058d5f76d87a913c8", null ],
-    [ "ScientificConsultation", "a00221.html#abc6e062e1fe38919e3ac7808d3a1e7a6", null ],
-    [ "TeacherReport", "a00221.html#ad9426c219dd90b5b5861f7c84061c979", null ]
+    [ "Id", "a00221.html#aa36c779f20fc3c53d07b7ccb183af7b5", null ],
+    [ "ReportThesis", "a00221.html#abc92dfc51734ad13e9ff81b8c7031eb4", null ],
+    [ "TeacherReport", "a00221.html#afbf84de8b72c95bad6ee12a3e56268be", null ]
 ];

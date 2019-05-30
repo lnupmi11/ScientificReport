@@ -1,16 +1,16 @@
 var a00142 =
 [
-    [ "PublicationCreateModel", "a00142.html#a4b0d7dbb87e7181d2121cc70a0f0a724", null ],
-    [ "PublicationCreateModel", "a00142.html#a2a0fe4be376a1162aadc8422b03c3937", null ],
-    [ "ToPublication", "a00142.html#a9cf008b3b890cfde1d85cac55bc24413", null ],
-    [ "Id", "a00142.html#a65fb54aaf53647c266c57bf4b9f0018d", null ],
-    [ "PagesAmount", "a00142.html#ac2d753e951637734af9a13fa6e0da191", null ],
-    [ "PrintStatus", "a00142.html#a800f0c56d34f5ba5e1d36b50a89a2b94", null ],
-    [ "PrintStatusOptions", "a00142.html#a9ad0a8dd1d783f3bf55a141ef398be1d", null ],
-    [ "PublishingHouseName", "a00142.html#a4ab91f5829f3a01b7d9a536fe5db0c09", null ],
-    [ "PublishingPlace", "a00142.html#a059747339d4728967756fec9a0a96d77", null ],
-    [ "PublishingYear", "a00142.html#aa75af1fbc3178fc28b8531bd4568d144", null ],
-    [ "Specification", "a00142.html#af4df5ea88a9c125586f42dd9f507fa2f", null ],
-    [ "Title", "a00142.html#a81e7148d404492cc84d3d1d47b4c1593", null ],
-    [ "Type", "a00142.html#add4dce0e199436e2c5044a094f2b7c16", null ]
+    [ "PublicationController", "a00142.html#adfe19409dea2b8a0f6099db24ebd0b4e", null ],
+    [ "AddSelfToAuthors", "a00142.html#aa6df1d4619314055774982f8080ad79c", null ],
+    [ "AddUserToAuthors", "a00142.html#a9ce08898ff2c0417bb856d2eea9bac1b", null ],
+    [ "Create", "a00142.html#a3c552db007a71bf093b2fb54ff559855", null ],
+    [ "Create", "a00142.html#a305b888f1abcdf3bca7bf6a52a997af9", null ],
+    [ "Delete", "a00142.html#a0f15f6be5fcabe688fd1064eea363c7d", null ],
+    [ "DeleteConfirmed", "a00142.html#a353e6f8cceb98e5d60a4b47360dfd129", null ],
+    [ "Details", "a00142.html#a9ecb91efe3576852955a34041880d25d", null ],
+    [ "Edit", "a00142.html#a27c7ceebdf7a2e36efa487f0dd1406d4", null ],
+    [ "Edit", "a00142.html#ae17ca9b021aa622d861a4c268831cbef", null ],
+    [ "Index", "a00142.html#a6b7390fe81843ea60ad83874bca9c561", null ],
+    [ "RemoveUserFromAuthors", "a00142.html#a72c0d8e837c694692455bc5732709b53", null ],
+    [ "SearchPublications", "a00142.html#a26cc0c944602e9e164b4cd93243c744d", null ]
 ];

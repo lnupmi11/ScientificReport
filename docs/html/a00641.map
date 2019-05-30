@@ -1,3 +1,3 @@
-<map id="ScientificReport.BLL.Services.PatentLicenseActivityService" name="ScientificReport.BLL.Services.PatentLicenseActivityService">
-<area shape="rect" id="node2" href="$a00063.html" title="{IPatentLicenseActivityService\n||+ GetAll()\l+ GetAllWhere()\l+ GetItemsByRole()\l+ GetPageByRole()\l+ GetCountByRole()\l+ GetById()\l+ Get()\l+ CreateItem()\l+ UpdateItem()\l+ DeleteById()\land 13 more...\l}" alt="" coords="17,5,223,229"/>
+<map id="ScientificReport.BLL.Services.OppositionService" name="ScientificReport.BLL.Services.OppositionService">
+<area shape="rect" id="node2" href="$a00062.html" title="{IOppositionService\n||+ GetAll()\l+ GetAllWhere()\l+ GetItemsByRole()\l+ GetPageByRole()\l+ GetCountByRole()\l+ GetById()\l+ Get()\l+ CreateItem()\l+ UpdateItem()\l+ DeleteById()\l+ Exists()\l}" alt="" coords="35,5,185,229"/>
 </map>

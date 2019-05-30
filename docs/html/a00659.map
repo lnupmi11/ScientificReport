@@ -1,3 +1,3 @@
-<map id="ScientificReport.BLL.Services.ScientificConsultationService" name="ScientificReport.BLL.Services.ScientificConsultationService">
-<area shape="rect" id="node2" href="$a00070.html" title="{IScientificConsultationService\n||+ GetAll()\l+ GetAllWhere()\l+ GetItemsByRole()\l+ GetPageByRole()\l+ GetCountByRole()\l+ GetById()\l+ Get()\l+ CreateItem()\l+ UpdateItem()\l+ DeleteById()\l+ Exists()\l}" alt="" coords="16,5,225,229"/>
+<map id="ScientificReport.BLL.Services.ReviewService" name="ScientificReport.BLL.Services.ReviewService">
+<area shape="rect" id="node2" href="$a00069.html" title="{IReviewService\n||+ GetAll()\l+ GetAllWhere()\l+ GetItemsByRole()\l+ GetPageByRole()\l+ GetCountByRole()\l+ GetById()\l+ Get()\l+ CreateItem()\l+ UpdateItem()\l+ DeleteById()\l+ Exists()\l}" alt="" coords="35,5,185,229"/>
 </map>

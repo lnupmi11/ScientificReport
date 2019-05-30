@@ -1,3 +1,3 @@
-<map id="ScientificReport.DTO.Models.Membership.MembershipEditModel" name="ScientificReport.DTO.Models.Membership.MembershipEditModel">
-<area shape="rect" id="node2" href="$a00081.html" title="{MembershipModel\n|+ MemberOf\l+ MembershipInfo\l+ User\l|+ MembershipModel()\l+ MembershipModel()\l}" alt="" coords="47,5,211,127"/>
+<map id="ScientificReport.DTO.Models.Grant.GrantEditModel" name="ScientificReport.DTO.Models.Grant.GrantEditModel">
+<area shape="rect" id="node2" href="$a00050.html" title="{GrantModel\n|+ Info\l|+ GrantModel()\l+ GrantModel()\l}" alt="" coords="46,5,167,97"/>
 </map>

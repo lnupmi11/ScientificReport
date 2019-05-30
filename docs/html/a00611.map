@@ -1,2 +1,3 @@
-<map id="ScientificReport.BLL.Interfaces.IScientificInternshipService" name="ScientificReport.BLL.Interfaces.IScientificInternshipService">
+<map id="ScientificReport.BLL.Interfaces.IScientificConsultationService" name="ScientificReport.BLL.Interfaces.IScientificConsultationService">
+<area shape="rect" id="node2" href="$a00180.html" title="{ScientificReport.BLL.Services.\lScientificConsultationService\n||+ ScientificConsultationService()\l+ GetAll()\l+ GetAllWhere()\l+ GetItemsByRole()\l+ GetPageByRole()\l+ GetCountByRole()\l+ GetById()\l+ Get()\l+ CreateItem()\l+ UpdateItem()\l+ DeleteById()\l+ Exists()\l}" alt="" coords="5,292,236,545"/>
 </map>

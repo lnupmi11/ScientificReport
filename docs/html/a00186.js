@@ -1,9 +1,9 @@
 var a00186 =
 [
-    [ "AllTest", "a00186.html#a9cdd2a085467a84ac2567616f3c3bc76", null ],
-    [ "AllWhereTest", "a00186.html#abe15f1b056d40847d39d08583348ddf9", null ],
-    [ "CreateTest", "a00186.html#acf54d5e98783f853a58e9e1623ced225", null ],
-    [ "DeleteTest", "a00186.html#ada1190b4034230102104b5de3dc1c3e9", null ],
-    [ "GetByIdTest", "a00186.html#a00a44f0ce06c9467e47bea77a3b0f33d", null ],
-    [ "UpdateTest", "a00186.html#aa8c39b61f5366597b1ba285cd87e10a6", null ]
+    [ "ScientificInternshipModel", "a00186.html#a88befbabca7d0ed13ac425fbcbedc2ce", null ],
+    [ "ScientificInternshipModel", "a00186.html#a8b3e46e7b898713b517b8f38cd577c02", null ],
+    [ "Contents", "a00186.html#a673d4ac316bafcfd4751ae67399efcc5", null ],
+    [ "Ended", "a00186.html#af1bda2c0d40779370b5025ee293e90bc", null ],
+    [ "PlaceOfInternship", "a00186.html#adf08d1a8661a561770b063fb495a3c54", null ],
+    [ "Started", "a00186.html#aad25647f50c6ce61346d6969e185c180", null ]
 ];

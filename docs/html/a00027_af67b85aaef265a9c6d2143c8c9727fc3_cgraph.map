@@ -1,4 +1,4 @@
 <map id="ScientificReport.BLL.Services.ConferenceService.GetItemsByRole" name="ScientificReport.BLL.Services.ConferenceService.GetItemsByRole">
-<area shape="rect" id="node2" href="$a00227.html#acea6561dc994e369de9603eb0eca43fc" title="ScientificReport.BLL.Utils.\lUserHelpers.IsAdmin" alt="" coords="329,5,512,47"/>
-<area shape="rect" id="node3" href="$a00227.html#add1e07b14605b8c4422301fa93ade6b9" title="ScientificReport.BLL.Utils.\lUserHelpers.IsHeadOfDepartment" alt="" coords="300,71,541,112"/>
+<area shape="rect" id="node2" href="$a00229.html#acea6561dc994e369de9603eb0eca43fc" title="ScientificReport.BLL.Utils.\lUserHelpers.IsAdmin" alt="" coords="329,5,512,47"/>
+<area shape="rect" id="node3" href="$a00229.html#add1e07b14605b8c4422301fa93ade6b9" title="ScientificReport.BLL.Utils.\lUserHelpers.IsHeadOfDepartment" alt="" coords="300,71,541,112"/>
 </map>

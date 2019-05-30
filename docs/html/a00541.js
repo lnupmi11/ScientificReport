@@ -1,7 +1,7 @@
 var a00541 =
 [
-    [ "ReportThesisDetails", "a00154.html", "a00154" ],
-    [ "ReportThesisEdit", "a00155.html", "a00155" ],
-    [ "ReportThesisIndexModel", "a00156.html", "a00156" ],
-    [ "ReportThesisModel", "a00157.html", "a00157" ]
+    [ "PatentLicenseActivityEditModel", "a00099.html", "a00099" ],
+    [ "PatentLicenseActivityIndexModel", "a00100.html", "a00100" ],
+    [ "PatentLicenseActivityModel", "a00101.html", "a00101" ],
+    [ "PatentLicenseActivityUpdUserRequest", "a00106.html", "a00106" ]
 ];

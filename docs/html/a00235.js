@@ -1,8 +1,9 @@
 var a00235 =
 [
-    [ "Article", "a00235.html#a4188b8dd3fba4a546c2b69b9db337ab2", null ],
-    [ "ArticleId", "a00235.html#a01a5476999e501c9d05967b0a6bb8bd0", null ],
-    [ "Author", "a00235.html#a44e6b9b9e652c702cfd481177d6ba95c", null ],
-    [ "AuthorId", "a00235.html#a0a0eba8e1642d2e4b0d6ae7fc4a856a4", null ],
-    [ "Id", "a00235.html#a92f811f435b60cdd2dea1d1296a3fa8b", null ]
+    [ "AllTest", "a00235.html#a44ac0cba3d4d25663893da4f9cb8d34d", null ],
+    [ "AllWhereTest", "a00235.html#af204cd10414f8c94e9ca13f167dfbb60", null ],
+    [ "CreateTest", "a00235.html#a607fe1f55a9099d5ab9d4d4d4221bb25", null ],
+    [ "DeleteTest", "a00235.html#a70745e34b81c75011493d0d746f9c484", null ],
+    [ "GetByIdTest", "a00235.html#a7d11c8c8dcc5ad939f30461c5ebfc256", null ],
+    [ "UpdateTest", "a00235.html#a9363c310693aa5e574d481903f690dca", null ]
 ];

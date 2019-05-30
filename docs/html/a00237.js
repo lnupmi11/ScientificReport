@@ -1,11 +1,8 @@
 var a00237 =
 [
-    [ "CreateItemTest", "a00237.html#a4e96008d0fef8a91319b9acf3537df85", null ],
-    [ "DeleteItemTest", "a00237.html#ac72eecb1c358fabb8e59b811e9cfede1", null ],
-    [ "DoesNotExistTest", "a00237.html#aec2dbd20eff06621ad8187b0e00c2e26", null ],
-    [ "ExistsTest", "a00237.html#a8c7d1030984321df7664de53231fec07", null ],
-    [ "GetAllTest", "a00237.html#a5ed719f21df205216a99e42b815f689a", null ],
-    [ "GetAllWhereTest", "a00237.html#a5c388e0775e440f7e8077f5f8d09be86", null ],
-    [ "GetByIdTest", "a00237.html#a9f630b6179a25b8527ccec3a1b4db7c4", null ],
-    [ "UpdateItemTest", "a00237.html#a557881ef8e531a6b637ba66584f3a78e", null ]
+    [ "Article", "a00237.html#a4188b8dd3fba4a546c2b69b9db337ab2", null ],
+    [ "ArticleId", "a00237.html#a01a5476999e501c9d05967b0a6bb8bd0", null ],
+    [ "Author", "a00237.html#a44e6b9b9e652c702cfd481177d6ba95c", null ],
+    [ "AuthorId", "a00237.html#a0a0eba8e1642d2e4b0d6ae7fc4a856a4", null ],
+    [ "Id", "a00237.html#a92f811f435b60cdd2dea1d1296a3fa8b", null ]
 ];

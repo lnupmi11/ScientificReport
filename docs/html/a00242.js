@@ -1,6 +1,6 @@
 var a00242 =
 [
-    [ "Id", "a00242.html#a41c69576e213267a931a0b040ed78c10", null ],
-    [ "ScientificWork", "a00242.html#a23dd81a832da33eddd42b7c31cb121b4", null ],
-    [ "UserProfile", "a00242.html#aff751709571ad432fd6e00125636691f", null ]
+    [ "Id", "a00242.html#aba6a4de243b57aebe596410aa8cafd5d", null ],
+    [ "ReportThesis", "a00242.html#a3c9bac7405683b31b0bc6a61010caee8", null ],
+    [ "UserProfile", "a00242.html#a663c6da79e0d4ee5172aa92097588653", null ]
 ];
