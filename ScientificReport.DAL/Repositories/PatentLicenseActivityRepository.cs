@@ -60,10 +60,10 @@ namespace ScientificReport.DAL.Repositories
 
 		public virtual void Delete(Guid id)
 		{
-			var user = _context.PatentLicenseActivities.Find(id);
-			if (user != null)
+			var item = _context.PatentLicenseActivities.Find(id);
+			if (item != null)
 			{
-				_context.PatentLicenseActivities.Remove(user);
+				_context.PatentLicenseActivities.Remove(item);
 				_context.SaveChanges();
 			}
 		}

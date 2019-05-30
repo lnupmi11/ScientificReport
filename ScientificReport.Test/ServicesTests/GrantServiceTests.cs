@@ -1,10 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
 using Moq;
 using ScientificReport.BLL.Services;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Entities.UserProfile;
 using ScientificReport.DTO.Models.Grant;
 using Xunit;
 
@@ -16,6 +18,22 @@ namespace ScientificReport.Test.ServicesTests
 
 		private static IEnumerable<Grant> GetTestData()
 		{
+			TestData.Grant1.UserProfilesGrants = new List<UserProfilesGrants>
+			{
+				new UserProfilesGrants
+				{
+					UserProfile = TestData.User1,
+					Grant = TestData.Grant1,
+				}
+			};
+			TestData.Grant2.UserProfilesGrants = new List<UserProfilesGrants>
+			{
+				new UserProfilesGrants
+				{
+					UserProfile = TestData.User1,
+					Grant = TestData.Grant2,
+				}
+			};
 			return new[]
 			{
 				TestData.Grant1,
@@ -27,6 +45,13 @@ namespace ScientificReport.Test.ServicesTests
 		{
 			var mockContext = new Mock<ScientificReportDbContext>();
 			mockContext.Setup(item => item.Grants).Returns(_mockDbSet.Object);
+			
+			var userProfileSet = MockProvider.GetMockSet(new []{TestData.User1}.AsQueryable());
+			var departmentSet = MockProvider.GetMockSet(new []{TestData.Department1}.AsQueryable());
+			
+			mockContext.Setup(item => item.UserProfiles).Returns(userProfileSet.Object);
+			mockContext.Setup(item => item.Departments).Returns(departmentSet.Object);
+			
 			return mockContext;
 		}
 

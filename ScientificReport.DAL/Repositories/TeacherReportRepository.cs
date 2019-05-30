@@ -70,9 +70,13 @@ namespace ScientificReport.DAL.Repositories
 
 		public virtual void Delete(Guid id)
 		{
-			var report = _context.TeacherReports.Find(id);
-			if (report == null) return;
-			_context.TeacherReports.Remove(report);
+			var item = _context.TeacherReports.Find(id);
+			if (item == null)
+			{
+				return;
+			}
+			
+			_context.TeacherReports.Remove(item);
 			_context.SaveChanges();
 		}
 

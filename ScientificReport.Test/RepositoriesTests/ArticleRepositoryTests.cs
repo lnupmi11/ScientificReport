@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Moq;
@@ -44,6 +45,25 @@ namespace ScientificReport.Test.RepositoriesTests
 		}
 
 		[Fact]
+		public void GetTest()
+		{
+			var mockContext = GetMockContext();
+			var repository = new ArticleRepository(mockContext.Object);
+			var expected = mockContext.Object.Articles.First();
+			var actual = repository.Get(o => o.Id == expected.Id);
+			Assert.NotNull(actual);
+		}
+		
+		[Fact]
+		public void GetQueryTest()
+		{
+			var mockContext = GetMockContext();
+			var repository = new ArticleRepository(mockContext.Object);
+			var actual = repository.GetQuery();
+			Assert.Equal(actual.Count(), mockContext.Object.Articles.Count());
+		}
+		
+		[Fact]
 		public void GetByIdTest()
 		{
 			var mockContext = GetMockContext();
@@ -71,6 +91,14 @@ namespace ScientificReport.Test.RepositoriesTests
 			var item = mockContext.Object.Articles.First();
 			repository.Update(item);
 			Assert.NotNull(repository.Get(item.Id));
+		}
+		
+		[Fact]
+		public void UpdateItemIsNullTest()
+		{
+			var mockContext = GetMockContext();
+			var repository = new ArticleRepository(mockContext.Object);
+			repository.Update(null);
 		}
 
 		[Fact]

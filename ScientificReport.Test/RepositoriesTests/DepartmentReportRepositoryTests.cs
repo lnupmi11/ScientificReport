@@ -42,6 +42,25 @@ namespace ScientificReport.Test.RepositoriesTests
 			var actual = repository.AllWhere(a => a.Id == mockContext.Object.DepartmentReports.First().Id);
 			Assert.Single(actual);
 		}
+		
+		[Fact]
+		public void GetTest()
+		{
+			var mockContext = GetMockContext();
+			var repository = new DepartmentReportRepository(mockContext.Object);
+			var expected = mockContext.Object.DepartmentReports.First();
+			var actual = repository.Get(o => o.Id == expected.Id);
+			Assert.NotNull(actual);
+		}
+		
+		[Fact]
+		public void GetQueryTest()
+		{
+			var mockContext = GetMockContext();
+			var repository = new DepartmentReportRepository(mockContext.Object);
+			var actual = repository.GetQuery();
+			Assert.Equal(actual.Count(), mockContext.Object.DepartmentReports.Count());
+		}
 
 		[Fact]
 		public void GetByIdTest()
@@ -71,6 +90,14 @@ namespace ScientificReport.Test.RepositoriesTests
 			var item = mockContext.Object.DepartmentReports.First();
 			repository.Update(item);
 			Assert.NotNull(repository.Get(item.Id));
+		}
+		
+		[Fact]
+		public void UpdateItemIsNullTest()
+		{
+			var mockContext = GetMockContext();
+			var repository = new DepartmentReportRepository(mockContext.Object);
+			repository.Update(null);
 		}
 
 		[Fact]
