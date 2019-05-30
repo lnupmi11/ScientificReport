@@ -7,7 +7,6 @@ using Rotativa.AspNetCore;
 using ScientificReport.BLL.Interfaces;
 using ScientificReport.Controllers.Utils;
 using ScientificReport.DAL.Entities.Reports;
-using ScientificReport.DAL.Entities.UserProfile;
 using ScientificReport.DAL.Roles;
 using ScientificReport.DTO.Models.TeacherReport;
 
@@ -31,8 +30,10 @@ namespace ScientificReport.Controllers
 		private readonly IReviewService _reviewService;
 		private readonly IScientificConsultationService _scientificConsultationService;
 		private readonly IScientificInternshipService _scientificInternshipService;
+		private readonly IDepartmentService _departmentService;
 
-		public TeacherReportController(ITeacherReportService teacherReportService,
+		public TeacherReportController(
+			ITeacherReportService teacherReportService,
 			IUserProfileService userProfileService,
 			IArticleService articleService,
 			IScientificWorkService scientificWorkService,
@@ -46,7 +47,9 @@ namespace ScientificReport.Controllers
 			IReviewService reviewService,
 			IScientificConsultationService scientificConsultationService,
 			IScientificInternshipService scientificInternshipService,
-			IPublicationService publicationService)
+			IPublicationService publicationService,
+			IDepartmentService departmentService
+		)
 		{
 			_teacherReportService = teacherReportService;
 			_userProfileService = userProfileService;
@@ -63,6 +66,7 @@ namespace ScientificReport.Controllers
 			_reviewService = reviewService;
 			_scientificConsultationService = scientificConsultationService;
 			_scientificInternshipService = scientificInternshipService;
+			_departmentService = departmentService;
 		}
 
 		// GET: Report
@@ -103,6 +107,11 @@ namespace ScientificReport.Controllers
 
 			// TODO: delete the next row, when the development is finished
 			filename = null;
+
+			var department = _departmentService.Get(
+				d => d.Staff.Contains(_userProfileService.Get(User))
+			);
+			ViewData["department"] = department != null ? department.Title : "undefined";
 
 			return new ViewAsPdf(report, ViewData)
 			{

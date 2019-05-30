@@ -295,16 +295,16 @@ namespace ScientificReport.Models
 			);
 
 			publicationsService.AddAuthor(
-				publicationsService.Get(a => a.Title == "my first publication"),
+				publicationsService.Get(a => a.Title == "my second publication"),
 				context.Users.First(u => u.UserName == "olena")
 			);
 			
 			publicationsService.AddAuthor(
-				publicationsService.Get(a => a.Title == "my first publication"),
+				publicationsService.Get(a => a.Title == "my second publication"),
 				context.Users.First(u => u.UserName == "yura")
 			);
 			publicationsService.AddAuthor(
-				publicationsService.Get(a => a.Title == "my first publication"),
+				publicationsService.Get(a => a.Title == "my second publication"),
 				context.Users.First(u => u.UserName == "roman")
 			);
 			publicationsService.CreateItem(new Publication
