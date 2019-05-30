@@ -28,13 +28,15 @@
 					<label asp-for="Type">@Localizer["Type"]</label>
 				</div>
 			</div>
-			
 			<div class="row">
 				<div class="input-field col s7">
 					<input asp-for="Title" type="text" class="validate">
 					<label asp-for="Title">@Localizer["Title"]</label>
 					<span class="helper-text" asp-validation-for="Title" data-error="" data-success=""></span>
 				</div>
+			</div>
+			<div class="row">
+				<ul id="search-result-list" class="collection with-header hide col s7"></ul>
 			</div>
 			<div class="row">
 				<div class="input-field col s7">
@@ -98,7 +100,10 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('select').formSelect();
+			$('.collapsible').collapsible();
 		});
+		let availablePublicationsText = '@Localizer["Available publications"]';
 	</script>
+	<script src="~/js/publication_search.js"></script>
 	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

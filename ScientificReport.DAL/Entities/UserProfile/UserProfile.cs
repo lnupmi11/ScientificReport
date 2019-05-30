@@ -5,7 +5,12 @@ using Microsoft.AspNetCore.Identity;
 namespace ScientificReport.DAL.Entities.UserProfile
 {
 	public class UserProfile : IdentityUser<Guid>
-	{		
+	{
+		public enum SexValue
+		{
+			Male, Female, None
+		}
+
 		public string FirstName { get; set; }
 		
 		public string MiddleName { get; set; }
@@ -26,12 +31,12 @@ namespace ScientificReport.DAL.Entities.UserProfile
 		
 		public string Position { get; set; }
 		
-//		public Department Department { get; set; }
-		
 		public bool IsApproved { get; set; }
 		
 		public bool IsActive { get; set; }
 		
+		public SexValue Sex { get; set; }
+
 		public virtual ICollection<UserProfilesPublications> UserProfilesPublications { get; set; }
 		
 		public virtual ICollection<UserProfilesGrants> UserProfilesGrants { get; set; }
