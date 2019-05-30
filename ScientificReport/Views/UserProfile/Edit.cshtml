@@ -1,5 +1,6 @@
 @using Microsoft.AspNetCore.Mvc.Localization
 @using ScientificReport.Controllers.Utils
+@using ScientificReport.DAL.Entities.UserProfile
 @using ScientificReport.DAL.Roles
 @model ScientificReport.DTO.Models.UserProfile.UserProfileEditModel
 @inject IViewLocalizer Localizer
@@ -42,7 +43,6 @@
 					<label asp-for="FirstName">@Localizer["First name"]</label>
 					<span class="helper-text" asp-validation-for="FirstName" data-error="" data-success=""></span>
 				</div>
-
 				<div class="input-field col s4">
 					<input asp-for="MiddleName" type="text" class="validate">
 					<label asp-for="MiddleName">@Localizer["Middle name"]</label>
@@ -50,12 +50,20 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="input-field col s6">
+				<div class="input-field col s4">
 					<input asp-for="BirthYear" type="number" class="validate">
 					<label asp-for="BirthYear">@Localizer["Birth year"]</label>
 					<span class="helper-text" asp-validation-for="BirthYear" data-error="" data-success=""></span>
 				</div>
-				<div class="input-field col s6">
+				<div class="input-field col s4">
+					<select asp-for="Sex" class="col s12 push-s2">
+						<option value="None" disabled @(Model.Sex == UserProfile.SexValue.None ? "selected" : "")>@Localizer["None"]</option>
+						<option value="Male" @(Model.Sex == UserProfile.SexValue.Male ? "selected" : "")>@Localizer["Male"]</option>
+						<option value="Female" @(Model.Sex == UserProfile.SexValue.Female ? "selected" : "")>@Localizer["Female"]</option>
+					</select>
+					<label asp-for="Sex">@Localizer["Sex"]</label>
+				</div>
+				<div class="input-field col s4">
 					<input asp-for="GraduationYear" type="number" class="validate">
 					<label asp-for="GraduationYear">@Localizer["Graduation year"]</label>
 					<span class="helper-text" asp-validation-for="GraduationYear" data-error="" data-success=""></span>

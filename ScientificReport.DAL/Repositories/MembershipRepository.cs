@@ -54,10 +54,10 @@ namespace ScientificReport.DAL.Repositories
 
 		public virtual void Delete(Guid id)
 		{
-			var user = _context.Memberships.Find(id);
-			if (user != null)
+			var item = _context.Memberships.Find(id);
+			if (item != null)
 			{
-				_context.Memberships.Remove(user);
+				_context.Memberships.Remove(item);
 				_context.SaveChanges();
 			}
 		}

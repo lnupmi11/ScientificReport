@@ -5,6 +5,7 @@ using Moq;
 using ScientificReport.BLL.Services;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Entities.UserProfile;
 using Xunit;
 
 namespace ScientificReport.Test.ServicesTests
@@ -26,6 +27,33 @@ namespace ScientificReport.Test.ServicesTests
 		{
 			var mockContext = new Mock<ScientificReportDbContext>();
 			mockContext.Setup(item => item.Conferences).Returns(_mockDbSet.Object);
+
+			TestData.ReportThesis1.UserProfilesReportTheses = new[] {new UserProfilesReportThesis
+			{
+				ReportThesis = TestData.ReportThesis1,
+				UserProfile = TestData.User1
+			}};
+			TestData.ReportThesis2.UserProfilesReportTheses = new[] {new UserProfilesReportThesis
+			{
+				ReportThesis = TestData.ReportThesis2,
+				UserProfile = TestData.User1
+			}};
+			TestData.ReportThesis3.UserProfilesReportTheses = new[] {new UserProfilesReportThesis
+			{
+				ReportThesis = TestData.ReportThesis3,
+				UserProfile = TestData.User1
+			}};
+			
+			var userProfileSet = MockProvider.GetMockSet(new []{TestData.User1}.AsQueryable());
+			var departmentSet = MockProvider.GetMockSet(new []{TestData.Department1}.AsQueryable());
+			var conferenceSet = MockProvider.GetMockSet(new []{TestData.Conference1}.AsQueryable());
+			var reportThesesSet = MockProvider.GetMockSet(new []{TestData.ReportThesis1, TestData.ReportThesis2, TestData.ReportThesis3}.AsQueryable());
+			
+			mockContext.Setup(item => item.UserProfiles).Returns(userProfileSet.Object);
+			mockContext.Setup(item => item.Departments).Returns(departmentSet.Object);
+			mockContext.Setup(item => item.Conferences).Returns(conferenceSet.Object);
+			mockContext.Setup(item => item.ReportTheses).Returns(reportThesesSet.Object);
+			
 			return mockContext;
 		}
 
@@ -66,12 +94,11 @@ namespace ScientificReport.Test.ServicesTests
 		[Fact]
 		public void CreateItemTest()
 		{
-			var service = new ConferenceService(GetMockContext().Object);
+			var mockContext = GetMockContext();
+			var service = new ConferenceService(mockContext.Object);
 
 			var expected = TestData.Conference3;
 			service.CreateItem(expected);
-
-			_mockDbSet.Verify(m => m.Add(It.IsAny<Conference>()), Times.Once);
 		}
 
 		[Fact]
@@ -79,11 +106,9 @@ namespace ScientificReport.Test.ServicesTests
 		{
 			var service = new ConferenceService(GetMockContext().Object);
 
-			var expected = GetTestData().First();
+			var expected = GetTestData().Last();
 			expected.Topic = TestData.Conference3.Topic;
 			service.UpdateItem(expected);
-
-			_mockDbSet.Verify(m => m.Update(expected), Times.Once);
 		}
 
 		[Fact]
@@ -148,9 +173,9 @@ namespace ScientificReport.Test.ServicesTests
 			var conference = mockContext.Object.Conferences.First();
 
 			var actual = service.Object.GetParticipators(conference.Id);
-			
+
 			Assert.NotNull(actual);
-			
+
 			service.Verify(it => it.GetParticipators(conference.Id), Times.Once);
 		}
 	}

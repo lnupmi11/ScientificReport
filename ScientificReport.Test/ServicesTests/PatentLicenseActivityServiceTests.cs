@@ -16,6 +16,22 @@ namespace ScientificReport.Test.ServicesTests
 
 		private static IEnumerable<PatentLicenseActivity> GetTestData()
 		{
+			TestData.PatentLicenseActivity1.AuthorsPatentLicenseActivities = new List<AuthorsPatentLicenseActivities>
+			{
+				new AuthorsPatentLicenseActivities
+				{
+					PatentLicenseActivity = TestData.PatentLicenseActivity1,
+					Author = TestData.User1
+				}
+			};
+			TestData.PatentLicenseActivity2.AuthorsPatentLicenseActivities = new List<AuthorsPatentLicenseActivities>
+			{
+				new AuthorsPatentLicenseActivities
+				{
+					PatentLicenseActivity = TestData.PatentLicenseActivity2,
+					Author = TestData.User1
+				}
+			};
 			return new[]
 			{
 				TestData.PatentLicenseActivity1,
@@ -27,6 +43,13 @@ namespace ScientificReport.Test.ServicesTests
 		{
 			var mockContext = new Mock<ScientificReportDbContext>();
 			mockContext.Setup(item => item.PatentLicenseActivities).Returns(_mockDbSet.Object);
+			
+			var userProfileSet = MockProvider.GetMockSet(new []{TestData.User1}.AsQueryable());
+			var departmentSet = MockProvider.GetMockSet(new []{TestData.Department1}.AsQueryable());
+			
+			mockContext.Setup(item => item.UserProfiles).Returns(userProfileSet.Object);
+			mockContext.Setup(item => item.Departments).Returns(departmentSet.Object);
+			
 			return mockContext;
 		}
 

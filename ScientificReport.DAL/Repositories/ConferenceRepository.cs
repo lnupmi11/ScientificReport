@@ -52,9 +52,13 @@ namespace ScientificReport.DAL.Repositories
 
 		public virtual void Delete(Guid id)
 		{
-			var user = _context.Conferences.Find(id);
-			if (user == null) return;
-			_context.Conferences.Remove(user);
+			var item = _context.Conferences.Find(id);
+			if (item == null)
+			{
+				return;
+			}
+			
+			_context.Conferences.Remove(item);
 			_context.SaveChanges();
 		}
 

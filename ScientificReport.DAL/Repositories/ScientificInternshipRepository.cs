@@ -56,10 +56,10 @@ namespace ScientificReport.DAL.Repositories
 
 		public virtual void Delete(Guid id)
 		{
-			var user = _context.ScientificInternships.Find(id);
-			if (user != null)
+			var item = _context.ScientificInternships.Find(id);
+			if (item != null)
 			{
-				_context.ScientificInternships.Remove(user);
+				_context.ScientificInternships.Remove(item);
 				_context.SaveChanges();
 			}
 		}
