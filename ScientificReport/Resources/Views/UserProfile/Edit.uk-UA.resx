@@ -83,4 +83,16 @@
 	<data name="Roles" xml:space="preserve">
 		<value>Ролі</value>
 	</data>
+	<data name="None" xml:space="preserve">
+		<value>Відсутня</value>
+	</data>
+	<data name="Male" xml:space="preserve">
+		<value>Чоловік</value>
+	</data>
+	<data name="Female" xml:space="preserve">
+		<value>Жінка</value>
+	</data>
+	<data name="Sex" xml:space="preserve">
+		<value>Стать</value>
+	</data>
 </root>

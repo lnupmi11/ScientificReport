@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ScientificReport.Migrations
 {
-    public partial class InitMigration : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -400,6 +400,7 @@ namespace ScientificReport.Migrations
                     Position = table.Column<string>(nullable: true),
                     IsApproved = table.Column<bool>(nullable: false),
                     IsActive = table.Column<bool>(nullable: false),
+                    Sex = table.Column<int>(nullable: false),
                     DepartmentId = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>

@@ -3,4 +3,4 @@
     Layout = null;
 }
 
-<li class="article-item">@Model.Article.Title // @Model.Article.PublishingYear</li>
+<li class="article-item">@Model.User.LastName @Model.User.FirstName.ToCharArray()[0]. @Model.User.MiddleName.ToCharArray()[0]. @Model.Article.Title / @Model.Article.LiabilityInfo // @Model.Article.DocumentInfo. – @Model.Article.PublishingPlace : @Model.Article.PublishingHouseName, @Model.Article.PublishingYear. –  @Model.Article.PagesAmount. </li>

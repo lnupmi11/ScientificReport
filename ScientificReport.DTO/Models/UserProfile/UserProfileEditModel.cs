@@ -40,6 +40,8 @@ namespace ScientificReport.DTO.Models.UserProfile
 		
 		public bool IsActive { get; set; }
 		
+		public DAL.Entities.UserProfile.UserProfile.SexValue Sex { get; set; }
+		
 		public Guid UserId { get; set; }
 		
 		public bool IsSelfEditing { get; set; }

@@ -89,4 +89,7 @@
 	<data name="Cancel" xml:space="preserve">
 		<value>Скасувати</value>
 	</data>
+	<data name="Available publications" xml:space="preserve">
+		<value>Доступні публікації</value>
+	</data>
 </root>
