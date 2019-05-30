@@ -1,6 +1,38 @@
+@using ScientificReport.DAL.Entities
 @model ScientificReport.Views.TeacherReport.PrintPublication
 @{
     Layout = null;
 }
 
-<li class="publications-item">@Model.Publication.Title // @Model.Publication.Specification</li>
+
+@switch (Model.Publication.Type)
+{
+	case Publication.Types.BibliographicIndex:
+		<li class="publications-item">@Model.Publication.Title: бібліогр. покажч. / уклад. @Model.User.LastName @Model.User.FirstName.ToCharArray()[0]. @Model.User.MiddleName.ToCharArray()[0]. @Model.Publication.Specification – @Model.Publication.PublishingPlace :  @Model.Publication.PublishingHouseName, @Model.Publication.PublishingYear – @Model.Publication.PagesAmount</li>
+		break;
+	case Publication.Types.TextBook:
+		<li class="publications-item">@Model.User.LastName @Model.User.FirstName.ToCharArray()[0]. @Model.User.MiddleName.ToCharArray()[0]. @Model.Publication.Title : підручник / PLACEHOLDER-allCoauthors @Model.Publication.Specification – @Model.Publication.PublishingPlace :  @Model.Publication.PublishingHouseName, @Model.Publication.PublishingYear – @Model.Publication.PagesAmount</li>
+		break;
+	case Publication.Types.HandBook:
+		<li class="publications-item">@Model.User.LastName @Model.User.FirstName.ToCharArray()[0]. @Model.User.MiddleName.ToCharArray()[0]. @Model.Publication.Title : навч. посіб./ PLACEHOLDER-allCoauthors @Model.Publication.Specification – @Model.Publication.PublishingPlace :  @Model.Publication.PublishingHouseName, @Model.Publication.PublishingYear – @Model.Publication.PagesAmount</li>
+		break;
+	case Publication.Types.Dictionary:
+		<li class="publications-item">@Model.User.LastName @Model.User.FirstName.ToCharArray()[0]. @Model.User.MiddleName.ToCharArray()[0]. : словник/ PLACEHOLDER-allCoauthors @Model.Publication.Specification – @Model.Publication.PublishingPlace : @Model.Publication.PublishingHouseName, @Model.Publication.PublishingYear – @Model.Publication.PagesAmount</li>
+		break;
+	case Publication.Types.Comment:
+		<li class="publications-item"> Науково-практичний коментар @Model.Publication.Title : станом на дата (день місяць словом рік) / PLACEHOLDER-allCoauthors @Model.Publication.Specification. @Model.Publication.PublishingPlace :  @Model.Publication.PublishingHouseName, @Model.Publication.PublishingYear @Model.Publication.PagesAmount</li>
+		break;
+	case Publication.Types.Monograph:
+		//check if amount of coauthors < 4
+		if(true){
+			<li class="publications-item">@Model.User.LastName @Model.User.FirstName.ToCharArray()[0]. @Model.User.MiddleName.ToCharArray()[0]. @Model.Publication.Title /PLACEHOLDER-allCoauthors @Model.Publication.Specification – @Model.Publication.PublishingPlace :  @Model.Publication.PublishingHouseName, @Model.Publication.PublishingYear – @Model.Publication.PagesAmount</li>
+		}
+		else
+		{
+			<li class="publications-item">@Model.Publication.Title /PLACEHOLDER-firstThreeCoauthors @Model.Publication.Specification – @Model.Publication.PublishingPlace :  @Model.Publication.PublishingHouseName, @Model.Publication.PublishingYear – @Model.Publication.PagesAmount</li>
+		}
+		break;
+	default:
+		<li class="publications-item">@Model.User.LastName @Model.User.FirstName.ToCharArray()[0]. @Model.User.MiddleName.ToCharArray()[0]. @Model.Publication.Title / PLACEHOLDER-allCoauthors @Model.Publication.Specification – @Model.Publication.PublishingPlace :  @Model.Publication.PublishingHouseName, @Model.Publication.PublishingYear – @Model.Publication.PagesAmount</li>
+		break;
+}
