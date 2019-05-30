@@ -1,6 +1,7 @@
 var searchData=
 [
   ['main',['Main',['../a00139.html#ae42d2d35dbaa644476282c09ddaf277a',1,'ScientificReport::Program']]],
+  ['male',['Male',['../a00230.html#a0ad191829e7d852e09b3e96f327db719a63889cfb9d3cbe05d1bd2be5cc9953fd',1,'ScientificReport::DAL::Entities::UserProfile::UserProfile']]],
   ['memberof',['MemberOf',['../a00081.html#ab513127afc71b9dc66f0900f7cc434eb',1,'ScientificReport::DTO::Models::Membership::MembershipModel']]],
   ['membership',['Membership',['../a00077.html',1,'ScientificReport::DAL::Entities']]],
   ['membership',['Membership',['../a00128.html#aca013e26ab100d4759037b383e0fd836',1,'ScientificReport.Views.TeacherReport.PrintMembership.Membership()'],['../a00215.html#a2d2a42461d328a7eecb28be588f2ae0b',1,'ScientificReport.DAL.Entities.Reports.TeacherReportsMemberships.Membership()']]],
@@ -14,11 +15,11 @@ var searchData=
   ['membershipindexmodel',['MembershipIndexModel',['../a00080.html',1,'ScientificReport::DTO::Models::Membership']]],
   ['membershipindexmodel_2ecs',['MembershipIndexModel.cs',['../a00367.html',1,'']]],
   ['membershipinfo',['MembershipInfo',['../a00077.html#ae19aabc2ca4bbfa44224e4baa2ee15cc',1,'ScientificReport.DAL.Entities.Membership.MembershipInfo()'],['../a00081.html#a4b749b933815ab8a5e23fd27d211940a',1,'ScientificReport.DTO.Models.Membership.MembershipModel.MembershipInfo()']]],
-  ['membershipmodel',['MembershipModel',['../a00081.html#a6d837d48b945617dae135dc932ef7930',1,'ScientificReport.DTO.Models.Membership.MembershipModel.MembershipModel()'],['../a00081.html#a84e8b614f32126c59e19e3a63d3cbb0d',1,'ScientificReport.DTO.Models.Membership.MembershipModel.MembershipModel(DAL.Entities.Membership membership)']]],
   ['membershipmodel',['MembershipModel',['../a00081.html',1,'ScientificReport::DTO::Models::Membership']]],
+  ['membershipmodel',['MembershipModel',['../a00081.html#a6d837d48b945617dae135dc932ef7930',1,'ScientificReport.DTO.Models.Membership.MembershipModel.MembershipModel()'],['../a00081.html#a84e8b614f32126c59e19e3a63d3cbb0d',1,'ScientificReport.DTO.Models.Membership.MembershipModel.MembershipModel(DAL.Entities.Membership membership)']]],
   ['membershipmodel_2ecs',['MembershipModel.cs',['../a00368.html',1,'']]],
-  ['membershiprepository',['MembershipRepository',['../a00082.html',1,'ScientificReport::DAL::Repositories']]],
   ['membershiprepository',['MembershipRepository',['../a00082.html#a05adfe00beb66eb4e4fbce13904c555b',1,'ScientificReport::DAL::Repositories::MembershipRepository']]],
+  ['membershiprepository',['MembershipRepository',['../a00082.html',1,'ScientificReport::DAL::Repositories']]],
   ['membershiprepository_2ecs',['MembershipRepository.cs',['../a00334.html',1,'']]],
   ['membershiprepositorytests',['MembershipRepositoryTests',['../a00083.html',1,'ScientificReport::Test::RepositoriesTests']]],
   ['membershiprepositorytests_2ecs',['MembershipRepositoryTests.cs',['../a00421.html',1,'']]],

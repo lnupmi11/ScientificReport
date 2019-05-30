@@ -5,7 +5,7 @@ var searchData=
   ['idepartmentservice',['IDepartmentService',['../a00058.html',1,'ScientificReport::BLL::Interfaces']]],
   ['igrantservice',['IGrantService',['../a00059.html',1,'ScientificReport::BLL::Interfaces']]],
   ['imembershipservice',['IMembershipService',['../a00060.html',1,'ScientificReport::BLL::Interfaces']]],
-  ['initmigration',['InitMigration',['../a00061.html',1,'ScientificReport::Migrations']]],
+  ['initial',['Initial',['../a00061.html',1,'ScientificReport::Migrations']]],
   ['ioppositionservice',['IOppositionService',['../a00062.html',1,'ScientificReport::BLL::Interfaces']]],
   ['ipatentlicenseactivityservice',['IPatentLicenseActivityService',['../a00063.html',1,'ScientificReport::BLL::Interfaces']]],
   ['ipostgraduatedissertationguidanceservice',['IPostgraduateDissertationGuidanceService',['../a00064.html',1,'ScientificReport::BLL::Interfaces']]],

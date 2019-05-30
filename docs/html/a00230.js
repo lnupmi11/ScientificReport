@@ -1,5 +1,10 @@
 var a00230 =
 [
+    [ "SexValue", "a00230.html#a0ad191829e7d852e09b3e96f327db719", [
+      [ "Male", "a00230.html#a0ad191829e7d852e09b3e96f327db719a63889cfb9d3cbe05d1bd2be5cc9953fd", null ],
+      [ "Female", "a00230.html#a0ad191829e7d852e09b3e96f327db719ab719ce180ec7bd9641fece2f920f4817", null ],
+      [ "None", "a00230.html#a0ad191829e7d852e09b3e96f327db719a6adf97f83acf6453d4a6a4b1070f3754", null ]
+    ] ],
     [ "ToString", "a00230.html#a6349033780354db5a28947c339ac375a", null ],
     [ "FullName", "a00230.html#ac998087addff577dc5e8db36175598c7", null ],
     [ "AcademicStatus", "a00230.html#a46135a488a910171dc00126e1d1efdcc", null ],
@@ -14,6 +19,7 @@ var a00230 =
     [ "MiddleName", "a00230.html#a5db8c28a0893682b9b52e0b870f34514", null ],
     [ "Position", "a00230.html#a475c85dab3f8cb18e5cf1fb913ec3705", null ],
     [ "ScientificDegree", "a00230.html#a57e326035c085b9c9f7f60b91f39b6e0", null ],
+    [ "Sex", "a00230.html#a22d903a81e4f59278e1a45952092d117", null ],
     [ "UserProfilesArticles", "a00230.html#a80da8d86937bba3455b991df0f965cb3", null ],
     [ "UserProfilesGrants", "a00230.html#a78862515c68f654afff5a2111d3acbc0", null ],
     [ "UserProfilesPublications", "a00230.html#af2ba7e87b70cb8550a5581c6b52ccc35", null ],

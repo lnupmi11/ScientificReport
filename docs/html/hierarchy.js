@@ -193,7 +193,7 @@ var hierarchy =
     [ "ScientificReport.Test.RepositoriesTests.MembershipRepositoryTests", "a00083.html", null ],
     [ "ScientificReport.Test.ServicesTests.MembershipServiceTests", "a00085.html", null ],
     [ "Migration", null, [
-      [ "ScientificReport.Migrations.InitMigration", "a00061.html", null ]
+      [ "ScientificReport.Migrations.Initial", "a00061.html", null ]
     ] ],
     [ "ScientificReport.Test.MockProvider", "a00086.html", null ],
     [ "ModelSnapshot", null, [

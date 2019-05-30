@@ -14,6 +14,7 @@ var a00232 =
     [ "MiddleName", "a00232.html#a27e4a12dfa72a1866095b13e9af811b8", null ],
     [ "PhoneNumber", "a00232.html#a61a857ed08f63d395b58a900c9ab0f1e", null ],
     [ "ScientificDegree", "a00232.html#a97c864ba2967484297e8bdecc9456d19", null ],
+    [ "Sex", "a00232.html#afd74a68fcf981dfdc629cfa0d1f7d218", null ],
     [ "UserId", "a00232.html#aa6eb00632cbeac2172c7033af90df929", null ],
     [ "UserName", "a00232.html#a2ce2fe83195920acb3313c2adf3e0333", null ],
     [ "UserRoles", "a00232.html#aee573adce53a5a2c21285c157009f7b9", null ],
