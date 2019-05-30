@@ -1,7 +1,12 @@
 ﻿$(document).ready(function() {
 	$('select').formSelect();
 	$(".dropdown-trigger").dropdown();
+
 	// Materialize.updateTextFields();
+});
+
+$(document).ready(function () {
+	$('.sidenav').sidenav();
 });
 
 const toggleEntity = (controller, endpoint, tagName) => (tag, id, entityId) => {
@@ -23,4 +28,3 @@ const toggleEntity = (controller, endpoint, tagName) => (tag, id, entityId) => {
 		console.error(e);
 	});
 };
-

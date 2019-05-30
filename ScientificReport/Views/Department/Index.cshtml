@@ -12,11 +12,12 @@
 	<div class="col s12">
 		<form asp-action="Index" method="get">
 			<div class="row">
-				<div class="input-field col s11">
-					<input asp-for="TitleFilter" class="validate" />
+				<div class="input-field col s9 respBut">
+					<input asp-for="TitleFilter" class="validate"/>
 					<label asp-for="TitleFilter">@Localizer["Title filter"]</label>
+
 				</div>
-				<div class="col s1">
+				<div class="col s3">
 					<button type="submit" class="waves-effect btn-small waves-light">@Localizer["Filter"]</button>
 				</div>
 			</div>
@@ -79,7 +80,7 @@
 			<li class="page-item @(i == Model.CurrentPage ? "active" : "")">
 				<a asp-action="Index" asp-route-currentpage="@i" class="page-link">@i</a>
 			</li>
-		}	
+		}
 	}
 	@if (Model.ShowNext)
 	{
@@ -88,3 +89,26 @@
 		</li>
 	}
 </ul>
+
+
+@section Scripts
+{
+	<script type="text/javascript">
+		let respFilter = document.querySelector('.respBut');
+
+         window.onResize = function() {
+           if (window.innerWidth <= 600)
+          	{
+          		respFilter.classList.replace('s11', 's1');
+          		
+          }
+        };
+         
+         let $homeIcon = $('.fa-iconname');
+         
+         $(window).resize(function() {
+           if (window.innerWidth <= 1000) $homeIcon.addClass('lg-2x');
+           else $homeIcon.removeClass('lg-2x');
+         });
+	</script>
+}

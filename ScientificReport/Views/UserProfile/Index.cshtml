@@ -20,7 +20,7 @@ else
 	<div class="col s12">
 		<form asp-action="Index" method="get">
 			<div class="row">
-				<div class="input-field col s1">
+				<div class="input-field col s5">
 					<select asp-for="IsApproved" class="col s12 push-s2">
 						@foreach (var option in Model.IsApprovedOptions)
 						{
@@ -30,30 +30,20 @@ else
 					</select>
 					<label asp-for="IsApproved">@Localizer["Is approved"]</label>
 				</div>
-				@{
-					var colWidth = PageHelpers.IsAdmin(User) ? "3" : "5";
-				}
-				<div class="input-field col s@(colWidth)">
-					<input asp-for="LastName" class="validate" />
-					<label asp-for="LastName">@Localizer["Last name"]</label>
-				</div>
-				<div class="input-field col s@(colWidth)">
-					<input asp-for="FirstName" class="validate" />
-					<label asp-for="FirstName">@Localizer["First name"]</label>
-				</div>
+
 				@if (PageHelpers.IsAdmin(User))
 				{
-					<div class="input-field col s3">
+					<div class="input-field col s5">
 						<select asp-for="DepartmentId" class="col s12 push-s2">
 							@if (Model.DepartmentId == null)
 							{
-								<option selected>@Localizer["Any"]</option>	
+								<option selected>@Localizer["Any"]</option>
 							}
 							else
 							{
 								<option>@Localizer["Any"]</option>
 							}
-							
+
 							@foreach (var department in Model.Departments)
 							{
 								var selected = Model.DepartmentId != null && Model.DepartmentId.Value == department.Id ? "selected" : "";
@@ -61,16 +51,32 @@ else
 							}
 						</select>
 						<label asp-for="DepartmentId">@Localizer["Department"]</label>
-					</div>	
+					</div>
 				}
-				<div class="col s1">
+				<div class="col s2">
 					<button type="submit" class="waves-effect btn-small waves-light">@Localizer["Filter"]</button>
 				</div>
 			</div>
+			@{
+				//					var colWidth = PageHelpers.IsAdmin(User) ? "3" : "5";
+				var colWidth = "5";
+			}
+			<div class="row">
+				<div class="input-field col s@(colWidth)">
+					<input asp-for="LastName" class="validate"/>
+					<label asp-for="LastName">@Localizer["Last name"]</label>
+				</div>
+				<div class="input-field col s@(colWidth)">
+					<input asp-for="FirstName" class="validate"/>
+					<label asp-for="FirstName">@Localizer["First name"]</label>
+				</div>
+			</div>
+
+
 		</form>
 	</div>
 </div>
-<table class="table">
+<table class="responsive-table">
 	<thead>
 	<tr>
 		<th>
@@ -107,7 +113,7 @@ else
 			<td>
 				@Html.DisplayFor(modelItem => item.MiddleName)
 			</td>
-			<th>
+			<th style="text-align: left">
 				@Html.DisplayFor(modelItem => item.Email)
 			</th>
 			<td>
@@ -144,7 +150,7 @@ else
 			<li class="page-item @(i == Model.CurrentPage ? "active" : "")">
 				<a asp-action="Index" asp-route-currentpage="@i" class="page-link">@i</a>
 			</li>
-		}	
+		}
 	}
 	@if (Model.ShowNext)
 	{

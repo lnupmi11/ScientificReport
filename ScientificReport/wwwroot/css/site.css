@@ -59,3 +59,29 @@ footer {
 .text-green { color: rgb(0, 179, 0); }
 .text-red { color: rgb(177, 0, 0); }
 .hidden { display: none; }
+
+
+@media only screen and (max-width: 550px) {
+
+	[class*="resp"] {
+		line-height: 12px;
+		font-size: 11px;
+	}
+
+	[class*="s11"] {
+		width: 50%;
+	}
+
+	label {
+		font-size: 10px !important;
+	}
+
+	a.btn-small, button[type="submit"], input.input-field {
+		font-size: 10px;
+	}
+
+	button[type='submit'].waves-light {
+		width: 62px;
+	}
+
+}

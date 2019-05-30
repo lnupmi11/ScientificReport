@@ -1,0 +1,136 @@
+@using ScientificReport.Controllers.Utils
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+
+<header>
+	<ul id="dropdown1" style="color: black;" class="dropdown-content">
+		<li style="font-size: 5px; -o-justify-content: center; -webkit-justify-content: center; justify-content: center">
+			<a asp-area="" asp-controller="ReportThesis" asp-action="Index">@Localizer["Report theses"]</a>
+		</li>
+		<li>
+			<a asp-area="" asp-controller="PatentLicenseActivity" asp-action="Index">@Localizer["Patent license activities"]</a>
+		</li>
+		<li>
+			<a asp-area="" asp-controller="Grant" asp-action="Index">@Localizer["Grants"]</a>
+		</li>
+		<li>
+			<a asp-area="" asp-controller="Membership" asp-action="Index">@Localizer["Memberships"]</a>
+		</li>
+		<li>
+			<a asp-area="" asp-controller="Opposition" asp-action="Index">@Localizer["Oppositions"]</a>
+		</li>
+		<li>
+			<a asp-area="" asp-controller="PostgraduateDissertationGuidance" asp-action="Index">@Localizer["Postgraduate dissertation guidance"]</a>
+		</li>
+		<li>
+			<a asp-area="" asp-controller="PostgraduateGuidance" asp-action="Index">@Localizer["Postgraduate guidance"]</a>
+		</li>
+		<li>
+			<a asp-area="" asp-controller="Review" asp-action="Index">@Localizer["Reviews"]</a>
+		</li>
+		<li>
+			<a asp-area="" asp-controller="ScientificConsultation" asp-action="Index">@Localizer["Scientific consultations"]</a>
+		</li>
+		<li>
+			<a asp-area="" asp-controller="ScientificInternship" asp-action="Index">@Localizer["Scientific internships"]</a>
+		</li>
+	</ul>
+	@if (PageHelpers.IsAdminOrHead(User))
+	{
+		<ul id="reports-dropdown" style="color: black;" class="dropdown-content">
+			<li style="font-size: 5px; -o-justify-content: center; -webkit-justify-content: center; justify-content: center">
+				<a asp-area="" asp-controller="TeacherReport" asp-action="Index">@Localizer["Teacher report"]</a>
+			</li>
+			<li>
+				<a asp-area="" asp-controller="TeacherReport" asp-action="Index">@Localizer["Department report"]</a>
+			</li>
+			@if (PageHelpers.IsAdmin(User))
+			{
+				<li>
+					<a asp-area="" asp-controller="TeacherReport" asp-action="Index">@Localizer["Faculty report"]</a>
+				</li>
+			}
+		</ul>
+	}
+	<nav>
+		<div class="nav-wrapper light-blue darken-4">
+			<partial name="_LoginPartial"></partial>
+			<a class="left" asp-area="" asp-controller="Home" asp-action="Index">
+				<img class="mylogo" src="~/css/mathlogo.png" alt="Main"/>
+			</a>
+			<a href="#" data-target="responsive" class="sidenav-trigger">
+				<i class="material-icons">menu</i>
+			</a>
+			@if (User.Identity.IsAuthenticated)
+			{
+				<ul class="left hide-on-med-and-down">
+					@if (PageHelpers.IsAdminOrHead(User))
+					{
+						<li>
+							<a class="dropdown-trigger" data-target="reports-dropdown">
+								@Localizer["Reports"]<i class="material-icons right">arrow_drop_down</i>
+							</a>
+						</li>
+					}
+					else
+					{
+						<li>
+							<a asp-area="" asp-controller="TeacherReport" asp-action="Index">@Localizer["Reports"]</a>
+						</li>
+					}
+					@if (PageHelpers.IsAdminOrHead(User))
+					{
+						if (PageHelpers.IsHeadOfDepartment(User))
+						{
+							<li>
+								<a asp-area="" asp-controller="Department" asp-action="Index">@Localizer["Department"]</a>
+							</li>
+							<li>
+								<a asp-area="" asp-controller="UserProfile" asp-action="Index">@Localizer["Workers"]</a>
+							</li>
+						}
+						else
+						{
+							<li>
+								<a asp-area="" asp-controller="Department" asp-action="Index">@Localizer["Departments"]</a>
+							</li>
+							<li>
+								<a asp-area="" asp-controller="UserProfile" asp-action="Index">@Localizer["Users"]</a>
+							</li>
+						}
+					}
+					else
+					{
+						<li>
+							<a asp-area="" asp-controller="Department" asp-action="Index">@Localizer["Department"]</a>
+						</li>
+					}
+					<li>
+						<a asp-area="" asp-controller="Publication" asp-action="Index">@Localizer["Publications"]</a>
+					</li>
+					<li>
+						<a asp-area="" asp-controller="Article" asp-action="Index">@Localizer["Articles"]</a>
+					</li>
+					<li>
+						<a asp-area="" asp-controller="ScientificWork" asp-action="Index">@Localizer["Scientific works"]</a>
+					</li>
+					<li>
+						<a asp-area="" asp-controller="Conference" asp-action="Index">@Localizer["Conferences"]</a>
+					</li>
+					<li>
+						<a class="dropdown-trigger" data-target="dropdown1">
+							@Localizer["Other report data"]<i class="material-icons right">arrow_drop_down</i>
+						</a>
+					</li>
+				</ul>
+			}
+			else
+			{
+				<a class="left" style="font-size: 18px;" asp-area="" asp-controller="Home" asp-action="Index">
+					AMI | @Localizer["Scientific Reports"]
+				</a>
+			}
+		</div>
+	</nav>
+</header>
