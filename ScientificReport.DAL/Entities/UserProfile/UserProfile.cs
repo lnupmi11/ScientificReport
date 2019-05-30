@@ -26,7 +26,7 @@ namespace ScientificReport.DAL.Entities.UserProfile
 		
 		public string Position { get; set; }
 		
-		public Department Department { get; set; }
+//		public Department Department { get; set; }
 		
 		public bool IsApproved { get; set; }
 		
