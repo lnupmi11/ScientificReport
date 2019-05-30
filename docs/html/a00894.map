@@ -1,2 +1,2 @@
-<map id="ScientificReport.DTO.Models.PatentLicenseActivity.PatentLicenseActivityUpdUserRequest" name="ScientificReport.DTO.Models.PatentLicenseActivity.PatentLicenseActivityUpdUserRequest">
+<map id="ScientificReport.DTO.Models.UpdateUserRequest" name="ScientificReport.DTO.Models.UpdateUserRequest">
 </map>

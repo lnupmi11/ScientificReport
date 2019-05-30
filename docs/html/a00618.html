@@ -88,7 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00200.html','');});
+$(document).ready(function(){initNavTree('a00075.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -107,16 +107,42 @@ $(document).ready(function(){initNavTree('a00200.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">ScientificReport.BLL.Utils.UserHelpers Member List</div>  </div>
+<div class="title">ScientificReport.BLL.Interfaces.IUserProfileService Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00200.html">ScientificReport.BLL.Utils.UserHelpers</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00200.html#acea6561dc994e369de9603eb0eca43fc">IsAdmin</a>(ClaimsPrincipal user)</td><td class="entry"><a class="el" href="a00200.html">ScientificReport.BLL.Utils.UserHelpers</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00200.html#ad1d4e15e2f9ae2eee959afeb57d47bf4">IsAdminOrHead</a>(ClaimsPrincipal user)</td><td class="entry"><a class="el" href="a00200.html">ScientificReport.BLL.Utils.UserHelpers</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00200.html#add1e07b14605b8c4422301fa93ade6b9">IsHeadOfDepartment</a>(ClaimsPrincipal user)</td><td class="entry"><a class="el" href="a00200.html">ScientificReport.BLL.Utils.UserHelpers</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00200.html#ae35db4cd3a83b96d817a64046dc36bc6">IsTeacher</a>(ClaimsPrincipal user)</td><td class="entry"><a class="el" href="a00200.html">ScientificReport.BLL.Utils.UserHelpers</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00075.html#a5ce540b1389f4f0cff8db372efbb76f2">AddToRoleAsync</a>(UserProfile user, string roleName, UserManager&lt; UserProfile &gt; userManager)</td><td class="entry"><a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00075.html#af1a86466a68a305294b31d0cac9995ca">ChangePassword</a>(UserProfile user, string oldPassword, string newPassword, string newPasswordRepeat, UserManager&lt; UserProfile &gt; userManager)</td><td class="entry"><a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00075.html#aeaf6379158a81215b8c3eee7aa6ee7cd">CreateItem</a>(UserProfile item)</td><td class="entry"><a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00075.html#a1f34a1b4502e3c4dc873b5446f9b0910">DeleteById</a>(Guid id)</td><td class="entry"><a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00075.html#adac6cebe8becb0c29be04e4903fe1926">Filter</a>(UserProfileIndexModel model, ClaimsPrincipal userPrincipal, bool userIsAdmin)</td><td class="entry"><a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00075.html#adc89b2a8a577d3e5a2b66f22fd3a0fdf">Get</a>(ClaimsPrincipal claimsPrincipal)</td><td class="entry"><a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00075.html#a6722fb55fe283081294ae27e7bdaa2aa">Get</a>(Func&lt; UserProfile, bool &gt; predicate)</td><td class="entry"><a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00075.html#a6b076a2b111466e58c56d1e79e1d5881">GetAll</a>()</td><td class="entry"><a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00075.html#a959fc0f3fc9f459d9c64c2f9976d905e">GetAllWhere</a>(Func&lt; UserProfile, bool &gt; predicate)</td><td class="entry"><a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00075.html#a6f95ae4e12621bc3fca944089ed8bb0d">GetById</a>(Guid id)</td><td class="entry"><a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00075.html#aa44c62917804954dea191c460ac72823">GetCount</a>()</td><td class="entry"><a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00075.html#a87f8fdf9fc13f45d4b0c47617d83e7f3">GetPage</a>(int page, int count)</td><td class="entry"><a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00075.html#a76cb343f7e2c087a5f364068ea756275">GetPage</a>(IEnumerable&lt; UserProfile &gt; userProfiles, int page, int count)</td><td class="entry"><a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00075.html#addbf9b6c5b64b058e6dfaacdaa4e50a4">GetUserArticles</a>(Guid id)</td><td class="entry"><a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00075.html#ae19974b4ad86990e5c06232497216669">GetUserGrants</a>(Guid id)</td><td class="entry"><a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00075.html#a699b83e3cf3144cc7f770d6a4ad61774">GetUserPatentLicenseActivitiesAsApplicant</a>(Guid id)</td><td class="entry"><a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00075.html#ada6abc9047935a62b734d08c9c3bb9e3">GetUserPatentLicenseActivitiesAsAuthor</a>(Guid id)</td><td class="entry"><a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00075.html#a512515857add6bf8b8f749aff3860010">GetUserPublications</a>(Guid id)</td><td class="entry"><a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00075.html#a2d1953c55cf525e4dde8869174a92422">GetUserReportTheses</a>(Guid id)</td><td class="entry"><a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00075.html#ad45622e9cdbd0410ee300002c8ef103c">GetUserReviews</a>(Guid id)</td><td class="entry"><a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00075.html#aa95bfd03d17a3c96dfac7847ac34ebab">GetUserScientificConsultations</a>(Guid id)</td><td class="entry"><a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00075.html#a8664f21bb7903b7c8883507af53300a9">GetUserScientificInternships</a>(Guid id)</td><td class="entry"><a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00075.html#a3df0eeed84fd52e1ae559e941639ead9">GetUserScientificWorks</a>(Guid id)</td><td class="entry"><a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00075.html#ad8c5670a60fbdcbb715fed00c82f3f89">IsInRoleAsync</a>(UserProfile user, string roleName, UserManager&lt; UserProfile &gt; userManager)</td><td class="entry"><a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00075.html#a9c7936ebafa87eba4dec53f9d4a4255e">IsTeacherOnlyAsync</a>(UserProfile user, UserManager&lt; UserProfile &gt; userManager)</td><td class="entry"><a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00075.html#a6aed503329eedc47ebdb1ad714206212">RemoveFromRoleAsync</a>(UserProfile user, string roleName, UserManager&lt; UserProfile &gt; userManager)</td><td class="entry"><a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00075.html#a39133b67d3bf5e10b6b45845d629365e">SetActiveById</a>(Guid id, bool isActive)</td><td class="entry"><a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00075.html#a6532e515c9443f5b0f5d263262757fa6">SetApproved</a>(Guid id, bool isApproved)</td><td class="entry"><a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00075.html#a69b78d3a2b226fd81cecdaa3a3fc11a3">UpdateItem</a>(UserProfile item)</td><td class="entry"><a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00075.html#a7bce9c593e027b4de98c073e91c854e6">UserExists</a>(Guid id)</td><td class="entry"><a class="el" href="a00075.html">ScientificReport.BLL.Interfaces.IUserProfileService</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

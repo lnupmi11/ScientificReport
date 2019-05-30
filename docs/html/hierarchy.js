@@ -31,14 +31,14 @@ var hierarchy =
       [ "ScientificReport.Controllers.PatentLicenseActivityController", "a00098.html", null ],
       [ "ScientificReport.Controllers.PostgraduateDissertationGuidanceController", "a00108.html", null ],
       [ "ScientificReport.Controllers.PostgraduateGuidanceController", "a00117.html", null ],
-      [ "ScientificReport.Controllers.PublicationController", "a00127.html", null ],
-      [ "ScientificReport.Controllers.ReportThesisController", "a00139.html", null ],
-      [ "ScientificReport.Controllers.ReviewController", "a00149.html", null ],
-      [ "ScientificReport.Controllers.ScientificConsultationController", "a00158.html", null ],
-      [ "ScientificReport.Controllers.ScientificInternshipController", "a00167.html", null ],
-      [ "ScientificReport.Controllers.ScientificWorkController", "a00178.html", null ],
-      [ "ScientificReport.Controllers.TeacherReportController", "a00190.html", null ],
-      [ "ScientificReport.Controllers.UserProfileController", "a00202.html", null ]
+      [ "ScientificReport.Controllers.PublicationController", "a00141.html", null ],
+      [ "ScientificReport.Controllers.ReportThesisController", "a00153.html", null ],
+      [ "ScientificReport.Controllers.ReviewController", "a00163.html", null ],
+      [ "ScientificReport.Controllers.ScientificConsultationController", "a00172.html", null ],
+      [ "ScientificReport.Controllers.ScientificInternshipController", "a00181.html", null ],
+      [ "ScientificReport.Controllers.ScientificWorkController", "a00192.html", null ],
+      [ "ScientificReport.Controllers.TeacherReportController", "a00204.html", null ],
+      [ "ScientificReport.Controllers.UserProfileController", "a00229.html", null ]
     ] ],
     [ "ScientificReport.DAL.Entities.Department", "a00029.html", null ],
     [ "ScientificReport.DTO.Models.Department.DepartmentCreateModel", "a00031.html", null ],
@@ -62,13 +62,13 @@ var hierarchy =
       [ "ScientificReport.BLL.Services.ConferenceService", "a00027.html", null ]
     ] ],
     [ "IdentityDbContext", null, [
-      [ "ScientificReport.DAL.DbContext.ScientificReportDbContext", "a00175.html", null ]
+      [ "ScientificReport.DAL.DbContext.ScientificReportDbContext", "a00189.html", null ]
     ] ],
     [ "IdentityRole", null, [
-      [ "ScientificReport.DAL.Roles.UserProfileRole", "a00207.html", null ]
+      [ "ScientificReport.DAL.Roles.UserProfileRole", "a00234.html", null ]
     ] ],
     [ "IdentityUser", null, [
-      [ "ScientificReport.DAL.Entities.UserProfile.UserProfile", "a00201.html", null ]
+      [ "ScientificReport.DAL.Entities.UserProfile.UserProfile", "a00228.html", null ]
     ] ],
     [ "ScientificReport.BLL.Interfaces.IDepartmentService", "a00058.html", [
       [ "ScientificReport.BLL.Services.DepartmentService", "a00039.html", null ]
@@ -92,10 +92,10 @@ var hierarchy =
       [ "ScientificReport.BLL.Services.PostgraduateGuidanceService", "a00123.html", null ]
     ] ],
     [ "ScientificReport.BLL.Interfaces.IPublicationService", "a00066.html", [
-      [ "ScientificReport.BLL.Services.PublicationService", "a00134.html", null ]
+      [ "ScientificReport.BLL.Services.PublicationService", "a00148.html", null ]
     ] ],
     [ "ScientificReport.BLL.Interfaces.IReportThesisService", "a00067.html", [
-      [ "ScientificReport.BLL.Services.ReportThesisService", "a00146.html", null ]
+      [ "ScientificReport.BLL.Services.ReportThesisService", "a00160.html", null ]
     ] ],
     [ "ScientificReport.DAL.Interfaces.IRepository< T, in in I >", "a00068.html", null ],
     [ "ScientificReport.DAL.Interfaces.IRepository< Article >", "a00068.html", [
@@ -132,62 +132,56 @@ var hierarchy =
       [ "ScientificReport.DAL.Repositories.PostgraduateGuidanceRepository", "a00121.html", null ]
     ] ],
     [ "ScientificReport.DAL.Interfaces.IRepository< Publication >", "a00068.html", [
-      [ "ScientificReport.DAL.Repositories.PublicationRepository", "a00132.html", null ]
+      [ "ScientificReport.DAL.Repositories.PublicationRepository", "a00146.html", null ]
     ] ],
     [ "ScientificReport.DAL.Interfaces.IRepository< ReportThesis >", "a00068.html", [
-      [ "ScientificReport.DAL.Repositories.ReportThesisRepository", "a00144.html", null ]
+      [ "ScientificReport.DAL.Repositories.ReportThesisRepository", "a00158.html", null ]
     ] ],
     [ "ScientificReport.DAL.Interfaces.IRepository< Review >", "a00068.html", [
-      [ "ScientificReport.DAL.Repositories.ReviewRepository", "a00153.html", null ]
+      [ "ScientificReport.DAL.Repositories.ReviewRepository", "a00167.html", null ]
     ] ],
     [ "ScientificReport.DAL.Interfaces.IRepository< ScientificConsultation >", "a00068.html", [
-      [ "ScientificReport.DAL.Repositories.ScientificConsultationRepository", "a00162.html", null ]
+      [ "ScientificReport.DAL.Repositories.ScientificConsultationRepository", "a00176.html", null ]
     ] ],
     [ "ScientificReport.DAL.Interfaces.IRepository< ScientificInternship >", "a00068.html", [
-      [ "ScientificReport.DAL.Repositories.ScientificInternshipRepository", "a00171.html", null ]
+      [ "ScientificReport.DAL.Repositories.ScientificInternshipRepository", "a00185.html", null ]
     ] ],
     [ "ScientificReport.DAL.Interfaces.IRepository< ScientificWork >", "a00068.html", [
-      [ "ScientificReport.DAL.Repositories.ScientificWorkRepository", "a00180.html", null ]
+      [ "ScientificReport.DAL.Repositories.ScientificWorkRepository", "a00194.html", null ]
     ] ],
     [ "ScientificReport.DAL.Interfaces.IRepository< T, Guid >", "a00068.html", [
       [ "ScientificReport.DAL.Interfaces.IRepository< T >", "a00068.html", null ]
     ] ],
     [ "ScientificReport.DAL.Interfaces.IRepository< TeacherReport >", "a00068.html", [
-      [ "ScientificReport.DAL.Repositories.TeacherReportRepository", "a00192.html", null ]
-    ] ],
-    [ "ScientificReport.DAL.Interfaces.IRepository< TeacherReportsScientificWorks >", "a00068.html", [
-      [ "ScientificReport.DAL.Repositories.TeacherReportsScientificWorksRepository", "a00197.html", null ]
+      [ "ScientificReport.DAL.Repositories.TeacherReportRepository", "a00207.html", null ]
     ] ],
     [ "ScientificReport.DAL.Interfaces.IRepository< UserProfile >", "a00068.html", [
-      [ "ScientificReport.DAL.Repositories.UserProfileRepository", "a00205.html", null ]
-    ] ],
-    [ "ScientificReport.DAL.Interfaces.IRepository< UserProfilesScientificWorks >", "a00068.html", [
-      [ "ScientificReport.DAL.Repositories.UserProfilesScientificWorksRepository", "a00216.html", null ]
+      [ "ScientificReport.DAL.Repositories.UserProfileRepository", "a00232.html", null ]
     ] ],
     [ "ScientificReport.BLL.Interfaces.IReviewService", "a00069.html", [
-      [ "ScientificReport.BLL.Services.ReviewService", "a00155.html", null ]
+      [ "ScientificReport.BLL.Services.ReviewService", "a00169.html", null ]
     ] ],
     [ "ScientificReport.BLL.Interfaces.IScientificConsultationService", "a00070.html", [
-      [ "ScientificReport.BLL.Services.ScientificConsultationService", "a00164.html", null ]
+      [ "ScientificReport.BLL.Services.ScientificConsultationService", "a00178.html", null ]
     ] ],
     [ "ScientificReport.BLL.Interfaces.IScientificInternshipService", "a00071.html", [
-      [ "ScientificReport.BLL.Services.ScientificInternshipService", "a00173.html", null ]
+      [ "ScientificReport.BLL.Services.ScientificInternshipService", "a00187.html", null ]
     ] ],
     [ "ScientificReport.BLL.Interfaces.IScientificWorkService", "a00072.html", [
-      [ "ScientificReport.BLL.Services.ScientificWorkService", "a00184.html", null ]
+      [ "ScientificReport.BLL.Services.ScientificWorkService", "a00198.html", null ]
     ] ],
     [ "ScientificReport.BLL.Interfaces.ITeacherReportService", "a00073.html", [
-      [ "ScientificReport.BLL.Services.TeacherReportService", "a00194.html", null ]
+      [ "ScientificReport.BLL.Services.TeacherReportService", "a00210.html", null ]
     ] ],
     [ "ScientificReport.DAL.Interfaces.ITrackable", "a00074.html", [
-      [ "ScientificReport.DAL.Entities.Reports.Report", "a00137.html", [
+      [ "ScientificReport.DAL.Entities.Reports.Report", "a00151.html", [
         [ "ScientificReport.DAL.Entities.Reports.DepartmentReport", "a00034.html", null ],
         [ "ScientificReport.DAL.Entities.Reports.FacultyReport", "a00043.html", null ],
-        [ "ScientificReport.DAL.Entities.Reports.TeacherReport", "a00189.html", null ]
+        [ "ScientificReport.DAL.Entities.Reports.TeacherReport", "a00203.html", null ]
       ] ]
     ] ],
     [ "ScientificReport.BLL.Interfaces.IUserProfileService", "a00075.html", [
-      [ "ScientificReport.BLL.Services.UserProfileService", "a00209.html", null ]
+      [ "ScientificReport.BLL.Services.UserProfileService", "a00236.html", null ]
     ] ],
     [ "ScientificReport.DTO.Models.UserProfile.LoginModel", "a00076.html", null ],
     [ "ScientificReport.DAL.Entities.Membership", "a00077.html", null ],
@@ -197,11 +191,11 @@ var hierarchy =
     [ "ScientificReport.Test.RepositoriesTests.MembershipRepositoryTests", "a00083.html", null ],
     [ "ScientificReport.Test.ServicesTests.MembershipServiceTests", "a00085.html", null ],
     [ "Migration", null, [
-      [ "ScientificReport.Migrations.Initial", "a00061.html", null ]
+      [ "ScientificReport.Migrations.InitMigration", "a00061.html", null ]
     ] ],
     [ "ScientificReport.Test.MockProvider", "a00086.html", null ],
     [ "ModelSnapshot", null, [
-      [ "ScientificReport.Migrations.ScientificReportDbContextModelSnapshot", "a00176.html", null ]
+      [ "ScientificReport.Migrations.ScientificReportDbContextModelSnapshot", "a00190.html", null ]
     ] ],
     [ "ScientificReport.DAL.Entities.Opposition", "a00087.html", null ],
     [ "ScientificReport.DTO.Models.Opposition.OppositionModel", "a00091.html", [
@@ -219,13 +213,13 @@ var hierarchy =
       [ "ScientificReport.DTO.Models.PatentLicenseActivity.PatentLicenseActivityIndexModel", "a00100.html", null ],
       [ "ScientificReport.DTO.Models.PostgraduateDissertationGuidance.PostgraduateDissertationGuidanceIndexModel", "a00110.html", null ],
       [ "ScientificReport.DTO.Models.PostgraduateGuidance.PostgraduateGuidanceIndexModel", "a00119.html", null ],
-      [ "ScientificReport.DTO.Models.Publication.PublicationIndexModel", "a00131.html", null ],
-      [ "ScientificReport.DTO.Models.ReportThesis.ReportThesisIndexModel", "a00142.html", null ],
-      [ "ScientificReport.DTO.Models.Review.ReviewIndexModel", "a00151.html", null ],
-      [ "ScientificReport.DTO.Models.ScientificConsultation.ScientificConsultationIndexModel", "a00160.html", null ],
-      [ "ScientificReport.DTO.Models.ScientificInternship.ScientificInternshipIndexModel", "a00169.html", null ],
-      [ "ScientificReport.DTO.Models.ScientificWorks.ScientificWorkIndexModel", "a00179.html", null ],
-      [ "ScientificReport.DTO.Models.UserProfile.UserProfileIndexModel", "a00204.html", null ]
+      [ "ScientificReport.DTO.Models.Publication.PublicationIndexModel", "a00145.html", null ],
+      [ "ScientificReport.DTO.Models.ReportThesis.ReportThesisIndexModel", "a00156.html", null ],
+      [ "ScientificReport.DTO.Models.Review.ReviewIndexModel", "a00165.html", null ],
+      [ "ScientificReport.DTO.Models.ScientificConsultation.ScientificConsultationIndexModel", "a00174.html", null ],
+      [ "ScientificReport.DTO.Models.ScientificInternship.ScientificInternshipIndexModel", "a00183.html", null ],
+      [ "ScientificReport.DTO.Models.ScientificWorks.ScientificWorkIndexModel", "a00193.html", null ],
+      [ "ScientificReport.DTO.Models.UserProfile.UserProfileIndexModel", "a00231.html", null ]
     ] ],
     [ "ScientificReport.DAL.Entities.PatentLicenseActivity", "a00097.html", null ],
     [ "ScientificReport.DTO.Models.PatentLicenseActivity.PatentLicenseActivityModel", "a00101.html", [
@@ -246,62 +240,90 @@ var hierarchy =
     ] ],
     [ "ScientificReport.Test.RepositoriesTests.PostgraduateGuidanceRepositoryTests", "a00122.html", null ],
     [ "ScientificReport.Test.ServicesTests.PostgraduateGuidanceServiceTests", "a00124.html", null ],
-    [ "ScientificReport.Program", "a00125.html", null ],
-    [ "ScientificReport.DAL.Entities.Publication", "a00126.html", null ],
-    [ "ScientificReport.DTO.Models.Publication.PublicationCreateModel", "a00128.html", null ],
-    [ "ScientificReport.DTO.Models.Publication.PublicationDetailsModel", "a00129.html", null ],
-    [ "ScientificReport.DTO.Models.Publication.PublicationEditModel", "a00130.html", null ],
-    [ "ScientificReport.Test.RepositoriesTests.PublicationRepositoryTests", "a00133.html", null ],
-    [ "ScientificReport.Test.ServicesTests.PublicationServiceTests", "a00135.html", null ],
-    [ "ScientificReport.DTO.Models.UserProfile.RegisterModel", "a00136.html", null ],
-    [ "ScientificReport.DAL.Entities.ReportThesis", "a00138.html", null ],
-    [ "ScientificReport.DTO.Models.ReportThesis.ReportThesisDetails", "a00140.html", null ],
-    [ "ScientificReport.DTO.Models.ReportThesis.ReportThesisModel", "a00143.html", [
-      [ "ScientificReport.DTO.Models.ReportThesis.ReportThesisEdit", "a00141.html", null ]
+    [ "ScientificReport.Views.TeacherReport.PrintArticle", "a00125.html", null ],
+    [ "ScientificReport.Views.TeacherReport.PrintConference", "a00126.html", null ],
+    [ "ScientificReport.Views.TeacherReport.PrintGrant", "a00127.html", null ],
+    [ "ScientificReport.Views.TeacherReport.PrintMembership", "a00128.html", null ],
+    [ "ScientificReport.Views.TeacherReport.PrintOpposition", "a00129.html", null ],
+    [ "ScientificReport.Views.TeacherReport.PrintPatent", "a00130.html", null ],
+    [ "ScientificReport.Views.TeacherReport.PrintPostgraduateDissertationGuidance", "a00131.html", null ],
+    [ "ScientificReport.Views.TeacherReport.PrintPostgraduateGuidance", "a00132.html", null ],
+    [ "ScientificReport.Views.TeacherReport.PrintPublication", "a00133.html", null ],
+    [ "ScientificReport.Views.TeacherReport.PrintReportThesis", "a00134.html", null ],
+    [ "ScientificReport.Views.TeacherReport.PrintReview", "a00135.html", null ],
+    [ "ScientificReport.Views.TeacherReport.PrintScientificConsultation", "a00136.html", null ],
+    [ "ScientificReport.Views.TeacherReport.PrintScientificInternship", "a00137.html", null ],
+    [ "ScientificReport.Views.TeacherReport.PrintScientificWork", "a00138.html", null ],
+    [ "ScientificReport.Program", "a00139.html", null ],
+    [ "ScientificReport.DAL.Entities.Publication", "a00140.html", null ],
+    [ "ScientificReport.DTO.Models.Publication.PublicationCreateModel", "a00142.html", null ],
+    [ "ScientificReport.DTO.Models.Publication.PublicationDetailsModel", "a00143.html", null ],
+    [ "ScientificReport.DTO.Models.Publication.PublicationEditModel", "a00144.html", null ],
+    [ "ScientificReport.Test.RepositoriesTests.PublicationRepositoryTests", "a00147.html", null ],
+    [ "ScientificReport.Test.ServicesTests.PublicationServiceTests", "a00149.html", null ],
+    [ "ScientificReport.DTO.Models.UserProfile.RegisterModel", "a00150.html", null ],
+    [ "ScientificReport.DAL.Entities.ReportThesis", "a00152.html", null ],
+    [ "ScientificReport.DTO.Models.ReportThesis.ReportThesisDetails", "a00154.html", null ],
+    [ "ScientificReport.DTO.Models.ReportThesis.ReportThesisModel", "a00157.html", [
+      [ "ScientificReport.DTO.Models.ReportThesis.ReportThesisEdit", "a00155.html", null ]
     ] ],
-    [ "ScientificReport.Test.RepositoriesTests.ReportThesisRepositoryTests", "a00145.html", null ],
-    [ "ScientificReport.Test.ServicesTests.ReportThesisServiceTests", "a00147.html", null ],
-    [ "ScientificReport.DAL.Entities.Review", "a00148.html", null ],
-    [ "ScientificReport.DTO.Models.Review.ReviewModel", "a00152.html", [
-      [ "ScientificReport.DTO.Models.Review.ReviewEditModel", "a00150.html", null ]
+    [ "ScientificReport.Test.RepositoriesTests.ReportThesisRepositoryTests", "a00159.html", null ],
+    [ "ScientificReport.Test.ServicesTests.ReportThesisServiceTests", "a00161.html", null ],
+    [ "ScientificReport.DAL.Entities.Review", "a00162.html", null ],
+    [ "ScientificReport.DTO.Models.Review.ReviewModel", "a00166.html", [
+      [ "ScientificReport.DTO.Models.Review.ReviewEditModel", "a00164.html", null ]
     ] ],
-    [ "ScientificReport.Test.RepositoriesTests.ReviewRepositoryTests", "a00154.html", null ],
-    [ "ScientificReport.Test.ServicesTests.ReviewServiceTests", "a00156.html", null ],
-    [ "ScientificReport.DAL.Entities.ScientificConsultation", "a00157.html", null ],
-    [ "ScientificReport.DTO.Models.ScientificConsultation.ScientificConsultationModel", "a00161.html", [
-      [ "ScientificReport.DTO.Models.ScientificConsultation.ScientificConsultationEditModel", "a00159.html", null ]
+    [ "ScientificReport.Test.RepositoriesTests.ReviewRepositoryTests", "a00168.html", null ],
+    [ "ScientificReport.Test.ServicesTests.ReviewServiceTests", "a00170.html", null ],
+    [ "ScientificReport.DAL.Entities.ScientificConsultation", "a00171.html", null ],
+    [ "ScientificReport.DTO.Models.ScientificConsultation.ScientificConsultationModel", "a00175.html", [
+      [ "ScientificReport.DTO.Models.ScientificConsultation.ScientificConsultationEditModel", "a00173.html", null ]
     ] ],
-    [ "ScientificReport.Test.RepositoriesTests.ScientificConsultationRepositoryTests", "a00163.html", null ],
-    [ "ScientificReport.Test.ServicesTests.ScientificConsultationServiceTests", "a00165.html", null ],
-    [ "ScientificReport.DAL.Entities.ScientificInternship", "a00166.html", null ],
-    [ "ScientificReport.DTO.Models.ScientificInternship.ScientificInternshipModel", "a00170.html", [
-      [ "ScientificReport.DTO.Models.ScientificInternship.ScientificInternshipEditModel", "a00168.html", null ]
+    [ "ScientificReport.Test.RepositoriesTests.ScientificConsultationRepositoryTests", "a00177.html", null ],
+    [ "ScientificReport.Test.ServicesTests.ScientificConsultationServiceTests", "a00179.html", null ],
+    [ "ScientificReport.DAL.Entities.ScientificInternship", "a00180.html", null ],
+    [ "ScientificReport.DTO.Models.ScientificInternship.ScientificInternshipModel", "a00184.html", [
+      [ "ScientificReport.DTO.Models.ScientificInternship.ScientificInternshipEditModel", "a00182.html", null ]
     ] ],
-    [ "ScientificReport.Test.RepositoriesTests.ScientificInternshipRepositoryTests", "a00172.html", null ],
-    [ "ScientificReport.Test.ServicesTests.ScientificInternshipServiceTests", "a00174.html", null ],
-    [ "ScientificReport.DAL.Entities.ScientificWork", "a00177.html", null ],
-    [ "ScientificReport.Test.RepositoriesTests.ScientificWorkRepositoryTests", "a00181.html", null ],
-    [ "ScientificReport.DTO.Models.ScientificWorks.ScientificWorksDetails", "a00182.html", null ],
-    [ "ScientificReport.DTO.Models.ScientificWorks.ScientificWorksEdit", "a00183.html", null ],
-    [ "ScientificReport.Test.ServicesTests.ScientificWorkServiceTests", "a00185.html", null ],
-    [ "ScientificReport.Models.SeedData", "a00186.html", null ],
-    [ "ScientificReport.DTO.Models.Department.SelectItem", "a00187.html", null ],
-    [ "ScientificReport.Startup", "a00188.html", null ],
-    [ "ScientificReport.DTO.Models.TeacherReport.TeacherReportCreateViewModel", "a00191.html", null ],
-    [ "ScientificReport.Test.RepositoriesTests.TeacherReportRepositoryTests", "a00193.html", null ],
-    [ "ScientificReport.Test.ServicesTests.TeacherReportServiceTests", "a00195.html", null ],
-    [ "ScientificReport.DAL.Entities.Reports.TeacherReportsScientificWorks", "a00196.html", null ],
-    [ "ScientificReport.DTO.Models.UpdateUserRequest", "a00198.html", null ],
-    [ "ScientificReport.DTO.Models.UserProfile.UserDetailsModel", "a00199.html", null ],
-    [ "ScientificReport.BLL.Utils.UserHelpers", "a00200.html", null ],
-    [ "ScientificReport.DTO.Models.UserProfile.UserProfileEditModel", "a00203.html", null ],
-    [ "ScientificReport.Test.RepositoriesTests.UserProfileRepositoryTests", "a00206.html", null ],
-    [ "ScientificReport.DAL.Entities.UserProfile.UserProfilesArticles", "a00208.html", null ],
-    [ "ScientificReport.Test.ServicesTests.UserProfileServiceTests", "a00210.html", null ],
-    [ "ScientificReport.DAL.Entities.UserProfile.UserProfilesGrants", "a00211.html", null ],
-    [ "ScientificReport.DAL.Entities.UserProfile.UserProfilesPublications", "a00212.html", null ],
-    [ "ScientificReport.DAL.Entities.UserProfile.UserProfilesReportThesis", "a00213.html", null ],
-    [ "ScientificReport.DAL.Entities.UserProfile.UserProfilesScientificInternships", "a00214.html", null ],
-    [ "ScientificReport.DAL.Entities.UserProfile.UserProfilesScientificWorks", "a00215.html", null ],
-    [ "ScientificReport.DTO.Models.UserProfile.UserProfileUpdateRolesRequest", "a00217.html", null ]
+    [ "ScientificReport.Test.RepositoriesTests.ScientificInternshipRepositoryTests", "a00186.html", null ],
+    [ "ScientificReport.Test.ServicesTests.ScientificInternshipServiceTests", "a00188.html", null ],
+    [ "ScientificReport.DAL.Entities.ScientificWork", "a00191.html", null ],
+    [ "ScientificReport.Test.RepositoriesTests.ScientificWorkRepositoryTests", "a00195.html", null ],
+    [ "ScientificReport.DTO.Models.ScientificWorks.ScientificWorksDetails", "a00196.html", null ],
+    [ "ScientificReport.DTO.Models.ScientificWorks.ScientificWorksEdit", "a00197.html", null ],
+    [ "ScientificReport.Test.ServicesTests.ScientificWorkServiceTests", "a00199.html", null ],
+    [ "ScientificReport.Models.SeedData", "a00200.html", null ],
+    [ "ScientificReport.DTO.Models.Department.SelectItem", "a00201.html", null ],
+    [ "ScientificReport.Startup", "a00202.html", null ],
+    [ "ScientificReport.DTO.Models.TeacherReport.TeacherReportCreateViewModel", "a00205.html", null ],
+    [ "ScientificReport.DTO.Models.TeacherReport.TeacherReportEditViewModel", "a00206.html", null ],
+    [ "ScientificReport.Test.RepositoriesTests.TeacherReportRepositoryTests", "a00208.html", null ],
+    [ "ScientificReport.DAL.Entities.Reports.TeacherReportsArticles", "a00209.html", null ],
+    [ "ScientificReport.Test.ServicesTests.TeacherReportServiceTests", "a00211.html", null ],
+    [ "ScientificReport.DAL.Entities.Reports.TeacherReportsGrants", "a00212.html", null ],
+    [ "ScientificReport.DAL.Entities.Reports.TeacherReportsMemberships", "a00213.html", null ],
+    [ "ScientificReport.DAL.Entities.Reports.TeacherReportsOppositions", "a00214.html", null ],
+    [ "ScientificReport.DAL.Entities.Reports.TeacherReportsPatents", "a00215.html", null ],
+    [ "ScientificReport.DAL.Entities.Reports.TeacherReportsPostgraduateDissertationGuidances", "a00216.html", null ],
+    [ "ScientificReport.DAL.Entities.Reports.TeacherReportsPostgraduateGuidances", "a00217.html", null ],
+    [ "ScientificReport.DAL.Entities.Reports.TeacherReportsPublications", "a00218.html", null ],
+    [ "ScientificReport.DAL.Entities.Reports.TeacherReportsReportThesis", "a00219.html", null ],
+    [ "ScientificReport.DAL.Entities.Reports.TeacherReportsReviews", "a00220.html", null ],
+    [ "ScientificReport.DAL.Entities.Reports.TeacherReportsScientificConsultations", "a00221.html", null ],
+    [ "ScientificReport.DAL.Entities.Reports.TeacherReportsScientificInternships", "a00222.html", null ],
+    [ "ScientificReport.DAL.Entities.Reports.TeacherReportsScientificWorks", "a00223.html", null ],
+    [ "ScientificReport.DTO.Models.TeacherReport.TeacherReportToggleEntityRequest", "a00224.html", null ],
+    [ "ScientificReport.DTO.Models.UpdateUserRequest", "a00225.html", null ],
+    [ "ScientificReport.DTO.Models.UserProfile.UserDetailsModel", "a00226.html", null ],
+    [ "ScientificReport.BLL.Utils.UserHelpers", "a00227.html", null ],
+    [ "ScientificReport.DTO.Models.UserProfile.UserProfileEditModel", "a00230.html", null ],
+    [ "ScientificReport.Test.RepositoriesTests.UserProfileRepositoryTests", "a00233.html", null ],
+    [ "ScientificReport.DAL.Entities.UserProfile.UserProfilesArticles", "a00235.html", null ],
+    [ "ScientificReport.Test.ServicesTests.UserProfileServiceTests", "a00237.html", null ],
+    [ "ScientificReport.DAL.Entities.UserProfile.UserProfilesGrants", "a00238.html", null ],
+    [ "ScientificReport.DAL.Entities.UserProfile.UserProfilesPublications", "a00239.html", null ],
+    [ "ScientificReport.DAL.Entities.UserProfile.UserProfilesReportThesis", "a00240.html", null ],
+    [ "ScientificReport.DAL.Entities.UserProfile.UserProfilesScientificInternships", "a00241.html", null ],
+    [ "ScientificReport.DAL.Entities.UserProfile.UserProfilesScientificWorks", "a00242.html", null ],
+    [ "ScientificReport.DTO.Models.UserProfile.UserProfileUpdateRolesRequest", "a00243.html", null ]
 ];

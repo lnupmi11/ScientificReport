@@ -1,12 +1,6 @@
 var a00132 =
 [
-    [ "PublicationRepository", "a00132.html#adb942460169fcd71c6dc75a65adf0718", null ],
-    [ "All", "a00132.html#a130bb2632565a43e8f05301675bc7e15", null ],
-    [ "AllWhere", "a00132.html#ae941ec8b19bc220c717029d81b5215af", null ],
-    [ "Create", "a00132.html#adcdd7d5da13733af6321128b2739274d", null ],
-    [ "Delete", "a00132.html#a3071242b6afa96b38a3b039060de3d8a", null ],
-    [ "Get", "a00132.html#aaae3f36c354fbb0fe1d0bbcd6d22521c", null ],
-    [ "Get", "a00132.html#a03b9fd356b4208b5cebb4a5f1c55924d", null ],
-    [ "GetQuery", "a00132.html#a49a828bde8626ce9032ee8c1fb65b653", null ],
-    [ "Update", "a00132.html#a7a2272697af326fb6f78881ab83cc9b6", null ]
+    [ "Index", "a00132.html#a6bf68b1e60d3702c47d3109957b77621", null ],
+    [ "PostgraduateGuidance", "a00132.html#ad923b2f3030ce0194866c110f851c0aa", null ],
+    [ "User", "a00132.html#ad16b6128b4bc62e8444322ca5e7a8670", null ]
 ];

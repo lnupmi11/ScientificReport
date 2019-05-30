@@ -1,12 +1,12 @@
 var a00149 =
 [
-    [ "ReviewController", "a00149.html#ac9df1ed08ce04c761b042febc821f30a", null ],
-    [ "Create", "a00149.html#a9f4aaaba262b6eeb64de8e1481d97381", null ],
-    [ "Create", "a00149.html#a8ea79ca5c83b4c140b195a1a33bf2240", null ],
-    [ "Delete", "a00149.html#ad9932a9d4e171a5b66cebd2e33714b6a", null ],
-    [ "DeleteConfirmed", "a00149.html#a790eecaf4597ade703605a0ce458ba52", null ],
-    [ "Details", "a00149.html#a136da861f2576ac12215dbbff1dba011", null ],
-    [ "Edit", "a00149.html#ac9e10ade846dbf09f03beef479c4f460", null ],
-    [ "Edit", "a00149.html#a345403b23f9bc8775ac2f741ca79777a", null ],
-    [ "Index", "a00149.html#a7f141e302b45e2c29df1f9bc479cca74", null ]
+    [ "CreateItemTest", "a00149.html#ab20b3aa498c50c153bed5ed0b5832648", null ],
+    [ "DeleteItemTest", "a00149.html#ac6b6f350abe4f6fa95058a790d6760f9", null ],
+    [ "GetAllTest", "a00149.html#ac2950f97433e13fbcc7c8bdd6f6cabad", null ],
+    [ "GetAllWhereTest", "a00149.html#a00d4588139d54dc0ead9635d6531c1fe", null ],
+    [ "GetByIdTest", "a00149.html#a0145db77d3ddde54d249dd4b64b5bb3b", null ],
+    [ "GetPublicationAuthorsTest", "a00149.html#a1eb3b3eca618eea06613a0cb9111d6aa", null ],
+    [ "PublicationDoesNotExistTest", "a00149.html#ab6b0034fbba97f553d6dd74a1a0e3fbd", null ],
+    [ "PublicationExistsTest", "a00149.html#abd4df33ffc74f91c329007fef9e1ee0c", null ],
+    [ "UpdateItemTest", "a00149.html#a5272c380128393f523adc7fa2834c04b", null ]
 ];

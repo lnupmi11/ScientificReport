@@ -1,9 +1,6 @@
 var a00143 =
 [
-    [ "ReportThesisModel", "a00143.html#a934ad7770aee0679cea8670df87ea3b2", null ],
-    [ "ReportThesisModel", "a00143.html#afa9bd010d87afb55811fddd9abc302c4", null ],
-    [ "Conference", "a00143.html#a7ea7302ee84be3eaf2bc729016940477", null ],
-    [ "ConferenceId", "a00143.html#ac8bcd4b37f278b2dde930a019c14f683", null ],
-    [ "Conferences", "a00143.html#a9fc3d83d106580ced2c5d75afaf3487d", null ],
-    [ "Thesis", "a00143.html#aa22dadd493e63fdc8547a1b640fb65f1", null ]
+    [ "Authors", "a00143.html#ab2762c749d20ef6c618c713060df85e6", null ],
+    [ "Publication", "a00143.html#abd9e52f00e7f811106c5c815c18025a2", null ],
+    [ "UserIsAuthor", "a00143.html#a3cee698c6f5d6bf7b7657d338f424322", null ]
 ];

@@ -1,12 +1,7 @@
 var a00171 =
 [
-    [ "ScientificInternshipRepository", "a00171.html#ab12a4c8cdafae6b5384f589e55138848", null ],
-    [ "All", "a00171.html#a831125ba9f8b91cefeab7fdd8ecb8550", null ],
-    [ "AllWhere", "a00171.html#a81878baec308259d671046913e6742f9", null ],
-    [ "Create", "a00171.html#a82692c5517f6d5fa5bd86f95578b7900", null ],
-    [ "Delete", "a00171.html#a04001dfc6ec10b0ff728d62645594448", null ],
-    [ "Get", "a00171.html#af6ae4809bbd830ae67fbbc061a97341c", null ],
-    [ "Get", "a00171.html#ae9c02f5ec537e892045db787c41fe592", null ],
-    [ "GetQuery", "a00171.html#a52ef362858c073f36813f425fa81398f", null ],
-    [ "Update", "a00171.html#abcc5aa0759cbfdc5370b065477721a26", null ]
+    [ "CandidateName", "a00171.html#aa38c1f52c83c87393ea0107659668f3e", null ],
+    [ "DissertationTitle", "a00171.html#a70de78164714b4281c56a07fef00c48d", null ],
+    [ "Guide", "a00171.html#a6ccdd6cb8d9c2ff26eaa3378aa2bba14", null ],
+    [ "Id", "a00171.html#a888b1ee75a41642751927a221543e21e", null ]
 ];

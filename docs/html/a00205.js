@@ -1,12 +1,5 @@
 var a00205 =
 [
-    [ "UserProfileRepository", "a00205.html#aa1624bb8f6d5e73fc550fcc64217c65a", null ],
-    [ "All", "a00205.html#af324ce4a712791ee67be778a08aa9122", null ],
-    [ "AllWhere", "a00205.html#a002fbfa1b07916e3c971e632aaeb96c0", null ],
-    [ "Create", "a00205.html#a9d147af9cd5670d4deda448a4c44a578", null ],
-    [ "Delete", "a00205.html#ae1a66428933ddf3844f399e0fad0f561", null ],
-    [ "Get", "a00205.html#a0228a08b7c70493eb74ef50738bfe702", null ],
-    [ "Get", "a00205.html#ac13fcb1e8fd5168757690d71ee23a085", null ],
-    [ "GetQuery", "a00205.html#af742c15cf688e7d3e2f499293eccc863", null ],
-    [ "Update", "a00205.html#adf4968a931bbe8c0905600948da71264", null ]
+    [ "UserId", "a00205.html#a204781080bf960cf9a740b2225410362", null ],
+    [ "Users", "a00205.html#a30e07cec0014930de00f8ec881bd9971", null ]
 ];

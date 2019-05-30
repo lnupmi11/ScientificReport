@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['no',['No',['../a00204.html#a4083cb58d85f00c2cdb1fe186f1f6673abafd7322c6e97d25b6299b5d6fe8920b',1,'ScientificReport::DTO::Models::UserProfile::UserProfileIndexModel']]]
+  ['monograph',['Monograph',['../a00140.html#a65e148316b30800fc153d00a8cd9a2efaeaa58a782f902418cec1a96233bea1f1',1,'ScientificReport::DAL::Entities::Publication']]]
 ];

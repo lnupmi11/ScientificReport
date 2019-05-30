@@ -1,14 +1,12 @@
 var a00167 =
 [
-    [ "ScientificInternshipController", "a00167.html#aa5feda265e4c557c806090c30764c22b", null ],
-    [ "AddUser", "a00167.html#a8e1f5f39577c28448c618d96326a8911", null ],
-    [ "Create", "a00167.html#afa569454aa9edc7452da3512effec672", null ],
-    [ "Create", "a00167.html#a97174ec069554b195980efa47dcf5f17", null ],
-    [ "Delete", "a00167.html#af9d9cbc343414e7c7b6ffc2c55927244", null ],
-    [ "DeleteConfirmed", "a00167.html#ab6bfcb1bf08b1f24bf26c424b95a74b7", null ],
-    [ "Details", "a00167.html#a1b15d1da7ef61c03eb62f9d7c05d45b7", null ],
-    [ "Edit", "a00167.html#ade6d6192e32ee5f3779ebfc4f19c6396", null ],
-    [ "Edit", "a00167.html#acb8924d5ce2dd661dca73b3af2183229", null ],
-    [ "Index", "a00167.html#ae1f33089c51cf6ea66ef82856f38aadf", null ],
-    [ "RemoveUser", "a00167.html#aae997df724d90f0f719bbc24160d46ad", null ]
+    [ "ReviewRepository", "a00167.html#add9026b0c333df3b7d77efbc81881eda", null ],
+    [ "All", "a00167.html#a06eb3bcb9751848570c62ab1319d993e", null ],
+    [ "AllWhere", "a00167.html#aeba88443b6bfefeea6cf9e32bf60b033", null ],
+    [ "Create", "a00167.html#a7753464f983301771e7d90ad46acfc45", null ],
+    [ "Delete", "a00167.html#a215a01f807c5111848951f66073b4ff7", null ],
+    [ "Get", "a00167.html#a36a3908f2e671ed5500684c3a150e653", null ],
+    [ "Get", "a00167.html#a1d2aa0afff6db43c93f42ee4425b5173", null ],
+    [ "GetQuery", "a00167.html#ad864a579e12844afb875c825468068b5", null ],
+    [ "Update", "a00167.html#aa8b3997b177c4ce3a4b357d911e97901", null ]
 ];

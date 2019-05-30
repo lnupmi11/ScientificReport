@@ -1,14 +1,12 @@
 var a00185 =
 [
-    [ "AddAuthorTest", "a00185.html#af27416124e6a1ce27bc7b79e02d6b253", null ],
-    [ "CreateItemTest", "a00185.html#a269dd0dbcda4c02a151c9e05df102777", null ],
-    [ "DeleteItemTest", "a00185.html#a1ee2210621474b13a3ca49348a378626", null ],
-    [ "DoesNotExistTest", "a00185.html#a9758150e6fadf4af825ccc580d72ef2a", null ],
-    [ "ExistsTest", "a00185.html#a1383fd4e0324b1d3cffe6c058284dc4e", null ],
-    [ "GetAllTest", "a00185.html#a99bf7fa56e42a93bced1c1f6b3c1a7d0", null ],
-    [ "GetAllWhereTest", "a00185.html#a83e940f2c4cca87cedc84deb69964a68", null ],
-    [ "GetAuthorsTest", "a00185.html#a596d569c97f87e84a8fe5f31dc5d52ac", null ],
-    [ "GetByIdTest", "a00185.html#ac5d1f6db94ffb66bd070ad8155013e99", null ],
-    [ "RemoveAuthorTest", "a00185.html#a38a4e2e8bf6ce7de77e15b631332448b", null ],
-    [ "UpdateItemTest", "a00185.html#a91ad8ea67d21d3d1ef93cbf989f4444a", null ]
+    [ "ScientificInternshipRepository", "a00185.html#ab12a4c8cdafae6b5384f589e55138848", null ],
+    [ "All", "a00185.html#a831125ba9f8b91cefeab7fdd8ecb8550", null ],
+    [ "AllWhere", "a00185.html#a81878baec308259d671046913e6742f9", null ],
+    [ "Create", "a00185.html#a82692c5517f6d5fa5bd86f95578b7900", null ],
+    [ "Delete", "a00185.html#a04001dfc6ec10b0ff728d62645594448", null ],
+    [ "Get", "a00185.html#af6ae4809bbd830ae67fbbc061a97341c", null ],
+    [ "Get", "a00185.html#ae9c02f5ec537e892045db787c41fe592", null ],
+    [ "GetQuery", "a00185.html#a52ef362858c073f36813f425fa81398f", null ],
+    [ "Update", "a00185.html#abcc5aa0759cbfdc5370b065477721a26", null ]
 ];

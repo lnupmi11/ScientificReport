@@ -1,6 +1,2 @@
-<map id="ScientificReport.DAL.Interfaces.ITrackable" name="ScientificReport.DAL.Interfaces.ITrackable">
-<area shape="rect" id="node2" href="$a00137.html" title="{ScientificReport.DAL.Entities.\lReports.Report\n|+ Id\l+ Created\l+ Edited\l|}" alt="" coords="235,160,440,281"/>
-<area shape="rect" id="node3" href="$a00034.html" title="{ScientificReport.DAL.Entities.\lReports.DepartmentReport\n|+ HeadOfDepartment\l+ TeacherReports\l+ Conferences\l|}" alt="" coords="5,410,211,531"/>
-<area shape="rect" id="node4" href="$a00043.html" title="{ScientificReport.DAL.Entities.\lReports.FacultyReport\n|+ Administrator\l+ DepartmentReports\l|}" alt="" coords="235,417,440,524"/>
-<area shape="rect" id="node5" href="$a00189.html" title="{ScientificReport.DAL.Entities.\lReports.TeacherReport\n|+ Teacher\l+ ScientificWorks\l+ Grants\l+ ScientificInternships\l+ PostgraduateDissertation\lGuidances\l+ PostgraduateGuidances\l+ ScientificConsultations\l+ Publications\l+ ReportTheses\l+ Patents\l+ Reviews\l+ Memberships\l+ Oppositions\l|}" alt="" coords="464,329,669,612"/>
+<map id="ScientificReport.DAL.Entities.Grant" name="ScientificReport.DAL.Entities.Grant">
 </map>

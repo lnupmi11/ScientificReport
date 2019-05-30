@@ -1,15 +1,15 @@
 var dir_0c448b692276497861cd2928a54c0b5d =
 [
-    [ "PublicationCreateModel.cs", "a00345.html", [
-      [ "PublicationCreateModel", "a00128.html", "a00128" ]
+    [ "PublicationCreateModel.cs", "a00381.html", [
+      [ "PublicationCreateModel", "a00142.html", "a00142" ]
     ] ],
-    [ "PublicationDetailsModel.cs", "a00346.html", [
-      [ "PublicationDetailsModel", "a00129.html", "a00129" ]
+    [ "PublicationDetailsModel.cs", "a00382.html", [
+      [ "PublicationDetailsModel", "a00143.html", "a00143" ]
     ] ],
-    [ "PublicationEditModel.cs", "a00347.html", [
-      [ "PublicationEditModel", "a00130.html", "a00130" ]
+    [ "PublicationEditModel.cs", "a00383.html", [
+      [ "PublicationEditModel", "a00144.html", "a00144" ]
     ] ],
-    [ "PublicationIndexModel.cs", "a00348.html", [
-      [ "PublicationIndexModel", "a00131.html", "a00131" ]
+    [ "PublicationIndexModel.cs", "a00384.html", [
+      [ "PublicationIndexModel", "a00145.html", "a00145" ]
     ] ]
 ];

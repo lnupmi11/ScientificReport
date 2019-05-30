@@ -1,3 +1,2 @@
-<map id="ScientificReport.BLL.Services.OppositionService" name="ScientificReport.BLL.Services.OppositionService">
-<area shape="rect" id="node2" href="$a00062.html" title="{IOppositionService\n||+ GetAll()\l+ GetAllWhere()\l+ GetItemsByRole()\l+ GetPageByRole()\l+ GetCountByRole()\l+ GetById()\l+ Get()\l+ CreateItem()\l+ UpdateItem()\l+ DeleteById()\l+ Exists()\l}" alt="" coords="35,5,185,229"/>
+<map id="ScientificReport.BLL.Interfaces.IMembershipService" name="ScientificReport.BLL.Interfaces.IMembershipService">
 </map>

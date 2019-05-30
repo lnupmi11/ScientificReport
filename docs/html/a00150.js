@@ -1,6 +1,13 @@
 var a00150 =
 [
-    [ "ReviewEditModel", "a00150.html#aee42bb9eb6ad313c6f45a457b1cc2615", null ],
-    [ "ReviewEditModel", "a00150.html#a791069ab1700618370cfcbcbe3f1efb2", null ],
-    [ "Id", "a00150.html#af0ccc918841722f023fe421ef36083f7", null ]
+    [ "Departments", "a00150.html#ab3ffc809dfe240517c849c3199338425", null ],
+    [ "Email", "a00150.html#aec8957225ff7103b72ac292644ba23df", null ],
+    [ "FirstName", "a00150.html#a13d9fcf3d07669f2d5ffddf26291e388", null ],
+    [ "LastName", "a00150.html#a88cc5681703525c6049397e1b65ca1c6", null ],
+    [ "MiddleName", "a00150.html#af6e9a428d5e388268df53f10836de3f0", null ],
+    [ "Password", "a00150.html#a4bfdc25675140b7b8330b6a1354cdd6a", null ],
+    [ "PasswordRepeat", "a00150.html#a886cf08d40fd5b72f34daf10a699548f", null ],
+    [ "PhoneNumber", "a00150.html#a677ab8babccb0b8516d713a71ca1ea04", null ],
+    [ "SelectedDepartmentId", "a00150.html#a379d5f37326b00246dfe78e20191d542", null ],
+    [ "UserName", "a00150.html#af15339676489d284654acd60bab80af5", null ]
 ];

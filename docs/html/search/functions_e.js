@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['teacherreportcontroller',['TeacherReportController',['../a00190.html#a9ae124cbaf13e5ccf5b7b6a588ae0047',1,'ScientificReport::Controllers::TeacherReportController']]],
-  ['teacherreportrepository',['TeacherReportRepository',['../a00192.html#a50e232d5434886259cf5106991bf479d',1,'ScientificReport::DAL::Repositories::TeacherReportRepository']]],
-  ['teacherreportservice',['TeacherReportService',['../a00194.html#a51b1bf375374ab13e9e65747d7d0c382',1,'ScientificReport::BLL::Services::TeacherReportService']]],
-  ['teacherreportsscientificworksrepository',['TeacherReportsScientificWorksRepository',['../a00197.html#af4fc3a38d3f52d5627272e50e06d12cb',1,'ScientificReport::DAL::Repositories::TeacherReportsScientificWorksRepository']]],
+  ['teacherreportcontroller',['TeacherReportController',['../a00204.html#a70b85f998620fb6b54f6e781bffa3ca0',1,'ScientificReport::Controllers::TeacherReportController']]],
+  ['teacherreportrepository',['TeacherReportRepository',['../a00207.html#a50e232d5434886259cf5106991bf479d',1,'ScientificReport::DAL::Repositories::TeacherReportRepository']]],
+  ['teacherreportservice',['TeacherReportService',['../a00210.html#a51b1bf375374ab13e9e65747d7d0c382',1,'ScientificReport::BLL::Services::TeacherReportService']]],
   ['toarticle',['ToArticle',['../a00006.html#a4a51f6d928494c85a60f2ee4de550021',1,'ScientificReport::DTO::Models::Article::ArticleCreateModel']]],
-  ['topublication',['ToPublication',['../a00128.html#a9cf008b3b890cfde1d85cac55bc24413',1,'ScientificReport::DTO::Models::Publication::PublicationCreateModel']]]
+  ['topublication',['ToPublication',['../a00142.html#a9cf008b3b890cfde1d85cac55bc24413',1,'ScientificReport::DTO::Models::Publication::PublicationCreateModel']]],
+  ['tostring',['ToString',['../a00228.html#a6349033780354db5a28947c339ac375a',1,'ScientificReport::DAL::Entities::UserProfile::UserProfile']]]
 ];

@@ -1,3 +1,3 @@
-<map id="ScientificReport.DTO.Models.ScientificConsultation.ScientificConsultationEditModel" name="ScientificReport.DTO.Models.ScientificConsultation.ScientificConsultationEditModel">
-<area shape="rect" id="node2" href="$a00161.html" title="{ScientificConsultationModel\n|+ GuideId\l+ Guide\l+ CandidateName\l+ DissertationTitle\l|+ ScientificConsultationModel()\l+ ScientificConsultationModel()\l}" alt="" coords="5,5,228,141"/>
+<map id="ScientificReport.DTO.Models.Membership.MembershipIndexModel" name="ScientificReport.DTO.Models.Membership.MembershipIndexModel">
+<area shape="rect" id="node2" href="$a00096.html" title="{PageModel\n|+ TotalPages\l+ ShowPrevious\l+ ShowNext\l+ CurrentPage\l+ Count\l+ PageSize\l|}" alt="" coords="71,5,196,156"/>
 </map>

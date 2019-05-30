@@ -1,10 +1,7 @@
 var a00152 =
 [
-    [ "ReviewModel", "a00152.html#a5417ad0c0f86c12bbdb8190168003a89", null ],
-    [ "ReviewModel", "a00152.html#a8f43968592b460e76ca18f367684e6e7", null ],
-    [ "DateOfReview", "a00152.html#a598818eb672b3417d5c5734eea9b0d92", null ],
-    [ "Publications", "a00152.html#a92f390ac44ef6e0565d30bb233553dd1", null ],
-    [ "Reviewer", "a00152.html#a3f1a66f7f85d9c7fc32d15d8a2523df9", null ],
-    [ "Work", "a00152.html#ae255527fbf590b67ce656716d424fb58", null ],
-    [ "WorkId", "a00152.html#ad4284503aadee1478202ddecb73adef6", null ]
+    [ "Conference", "a00152.html#a5f66f376a5dccd112f0774a70bf05ccc", null ],
+    [ "Id", "a00152.html#afb97f2248461878aebcaf5c6e0f45ce4", null ],
+    [ "Thesis", "a00152.html#a40326e178f4cb273aaa2616064dd86a5", null ],
+    [ "UserProfilesReportTheses", "a00152.html#ad01291f2a9746b0c078ee9ca6a9561a7", null ]
 ];

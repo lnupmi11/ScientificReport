@@ -1,6 +1,6 @@
 var a00129 =
 [
-    [ "Authors", "a00129.html#ab2762c749d20ef6c618c713060df85e6", null ],
-    [ "Publication", "a00129.html#abd9e52f00e7f811106c5c815c18025a2", null ],
-    [ "UserIsAuthor", "a00129.html#a3cee698c6f5d6bf7b7657d338f424322", null ]
+    [ "Index", "a00129.html#aeb5fccdb87d77b5066775de1bbe3d83f", null ],
+    [ "Opposition", "a00129.html#aff3b6b72276981128fd4fefdf8a61f11", null ],
+    [ "User", "a00129.html#a12a8542b83992b88b7326683b179628c", null ]
 ];

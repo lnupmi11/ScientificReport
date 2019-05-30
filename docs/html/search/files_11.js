@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['updateuserrequest_2ecs',['UpdateUserRequest.cs',['../a00404.html',1,'']]],
+  ['userdetailsmodel_2ecs',['UserDetailsModel.cs',['../a00408.html',1,'']]],
+  ['userhelpers_2ecs',['UserHelpers.cs',['../a00279.html',1,'']]],
+  ['userprofile_2ecs',['UserProfile.cs',['../a00317.html',1,'']]],
+  ['userprofilecontroller_2ecs',['UserProfileController.cs',['../a00467.html',1,'']]],
+  ['userprofileeditmodel_2ecs',['UserProfileEditModel.cs',['../a00409.html',1,'']]],
+  ['userprofileindexmodel_2ecs',['UserProfileIndexModel.cs',['../a00410.html',1,'']]],
+  ['userprofilerepository_2ecs',['UserProfileRepository.cs',['../a00344.html',1,'']]],
+  ['userprofilerepositorytests_2ecs',['UserProfileRepositoryTests.cs',['../a00431.html',1,'']]],
+  ['userprofilerole_2ecs',['UserProfileRole.cs',['../a00345.html',1,'']]],
+  ['userprofilesarticles_2ecs',['UserProfilesArticles.cs',['../a00318.html',1,'']]],
+  ['userprofileservice_2ecs',['UserProfileService.cs',['../a00278.html',1,'']]],
+  ['userprofileservicetests_2ecs',['UserProfileServiceTests.cs',['../a00448.html',1,'']]],
+  ['userprofilesgrants_2ecs',['UserProfilesGrants.cs',['../a00319.html',1,'']]],
+  ['userprofilespublications_2ecs',['UserProfilesPublications.cs',['../a00320.html',1,'']]],
+  ['userprofilesreportthesis_2ecs',['UserProfilesReportThesis.cs',['../a00321.html',1,'']]],
+  ['userprofilesscientificinternships_2ecs',['UserProfilesScientificInternships.cs',['../a00322.html',1,'']]],
+  ['userprofilesscientificworks_2ecs',['UserProfilesScientificWorks.cs',['../a00323.html',1,'']]],
+  ['userprofileupdaterolesrequest_2ecs',['UserProfileUpdateRolesRequest.cs',['../a00411.html',1,'']]]
+];

@@ -1,9 +1,10 @@
 var a00166 =
 [
-    [ "Contents", "a00166.html#a0b6a99f02096299e6891b603c7694de1", null ],
-    [ "Ended", "a00166.html#a2ab4c94f9120dfd6584cbbe465f9c677", null ],
-    [ "Id", "a00166.html#af621cfa335114c4502a540eb14eb1252", null ],
-    [ "PlaceOfInternship", "a00166.html#ab8363b1109f259e519956ac0a13a8d3f", null ],
-    [ "Started", "a00166.html#a3924dc68df70088c781a06aee9cdee85", null ],
-    [ "UserProfilesScientificInternships", "a00166.html#ac8035a92606d88042526aafa9bfee44e", null ]
+    [ "ReviewModel", "a00166.html#a5417ad0c0f86c12bbdb8190168003a89", null ],
+    [ "ReviewModel", "a00166.html#a8f43968592b460e76ca18f367684e6e7", null ],
+    [ "DateOfReview", "a00166.html#a598818eb672b3417d5c5734eea9b0d92", null ],
+    [ "Publications", "a00166.html#a92f390ac44ef6e0565d30bb233553dd1", null ],
+    [ "Reviewer", "a00166.html#a3f1a66f7f85d9c7fc32d15d8a2523df9", null ],
+    [ "Work", "a00166.html#ae255527fbf590b67ce656716d424fb58", null ],
+    [ "WorkId", "a00166.html#ad4284503aadee1478202ddecb73adef6", null ]
 ];

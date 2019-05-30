@@ -1,11 +1,9 @@
 var a00195 =
 [
-    [ "CreateItemTest", "a00195.html#a2f00e84607dd40f7e8374be588e8ea3c", null ],
-    [ "DeleteItemTest", "a00195.html#a75227d93fb4280a7817bd782185dc788", null ],
-    [ "DoesNotExistTest", "a00195.html#a10c964a2c121d04c5824d5b9144bc51e", null ],
-    [ "ExistsTest", "a00195.html#a64dd8bb96425e03a173c01ee24cd0bf9", null ],
-    [ "GetAllTest", "a00195.html#ae731ea13213cd60ded24e9fff641173a", null ],
-    [ "GetAllWhereTest", "a00195.html#a2aad20117436087939750a0475600333", null ],
-    [ "GetByIdTest", "a00195.html#aad46ad020242e306de3cbecb4802196e", null ],
-    [ "UpdateItemTest", "a00195.html#a66ce146e6122b38545c61badb5fb0342", null ]
+    [ "AllTest", "a00195.html#ae41e5bef9925f4f657673db5d57262c7", null ],
+    [ "AllWhereTest", "a00195.html#af33af68077ec102cd1c9dff3810ba681", null ],
+    [ "CreateTest", "a00195.html#adb112258a75a2a8f086a258af5795d5e", null ],
+    [ "DeleteTest", "a00195.html#a84a4c8ff50b94dfedb0cc9c85d8d2d04", null ],
+    [ "GetByIdTest", "a00195.html#a4552590ca60adee982fd666cb2f3e0bb", null ],
+    [ "UpdateTest", "a00195.html#a0d4d28cdecf0c34e3a94395cc0c48034", null ]
 ];

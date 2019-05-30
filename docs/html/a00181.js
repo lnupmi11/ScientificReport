@@ -1,9 +1,14 @@
 var a00181 =
 [
-    [ "AllTest", "a00181.html#ae41e5bef9925f4f657673db5d57262c7", null ],
-    [ "AllWhereTest", "a00181.html#af33af68077ec102cd1c9dff3810ba681", null ],
-    [ "CreateTest", "a00181.html#adb112258a75a2a8f086a258af5795d5e", null ],
-    [ "DeleteTest", "a00181.html#a84a4c8ff50b94dfedb0cc9c85d8d2d04", null ],
-    [ "GetByIdTest", "a00181.html#a4552590ca60adee982fd666cb2f3e0bb", null ],
-    [ "UpdateTest", "a00181.html#a0d4d28cdecf0c34e3a94395cc0c48034", null ]
+    [ "ScientificInternshipController", "a00181.html#aa5feda265e4c557c806090c30764c22b", null ],
+    [ "AddUser", "a00181.html#a8e1f5f39577c28448c618d96326a8911", null ],
+    [ "Create", "a00181.html#afa569454aa9edc7452da3512effec672", null ],
+    [ "Create", "a00181.html#a97174ec069554b195980efa47dcf5f17", null ],
+    [ "Delete", "a00181.html#af9d9cbc343414e7c7b6ffc2c55927244", null ],
+    [ "DeleteConfirmed", "a00181.html#ab6bfcb1bf08b1f24bf26c424b95a74b7", null ],
+    [ "Details", "a00181.html#a1b15d1da7ef61c03eb62f9d7c05d45b7", null ],
+    [ "Edit", "a00181.html#ade6d6192e32ee5f3779ebfc4f19c6396", null ],
+    [ "Edit", "a00181.html#acb8924d5ce2dd661dca73b3af2183229", null ],
+    [ "Index", "a00181.html#ae1f33089c51cf6ea66ef82856f38aadf", null ],
+    [ "RemoveUser", "a00181.html#aae997df724d90f0f719bbc24160d46ad", null ]
 ];

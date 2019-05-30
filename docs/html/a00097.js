@@ -8,7 +8,7 @@ var a00097 =
     [ "AuthorsPatentLicenseActivities", "a00097.html#aa455a9124c8949c7eac17f9781f28a2c", null ],
     [ "CoApplicantsPatentLicenseActivities", "a00097.html#ab73c612fda452b1ab66f94b245610e5b", null ],
     [ "CoauthorsPatentLicenseActivities", "a00097.html#af7501803eaddfd0efa7369ac6ae00b5d", null ],
-    [ "DateTime", "a00097.html#ad999a19511e7fe30e205d41d122d269b", null ],
+    [ "Date", "a00097.html#a7d3e5f66f01ea70241abfe24e9d5110e", null ],
     [ "Id", "a00097.html#a31416bf48efadfa8013a1e1eb49e9398", null ],
     [ "Name", "a00097.html#a20fbf489b35d3de4670d91b237ed7184", null ],
     [ "Number", "a00097.html#a118149f7dd61797065c449cee33761ea", null ],

@@ -1,3 +1,3 @@
-<map id="ScientificReport.DTO.Models.ScientificConsultation.ScientificConsultationModel" name="ScientificReport.DTO.Models.ScientificConsultation.ScientificConsultationModel">
-<area shape="rect" id="node2" href="$a00159.html" title="{ScientificReport.DTO.Models.\lScientificConsultation.Scientific\lConsultationEditModel\n|+ Id\l|+ ScientificConsultationEdit\lModel()\l+ ScientificConsultationEdit\lModel()\l}" alt="" coords="7,219,227,369"/>
+<map id="ScientificReport.DTO.Models.Opposition.OppositionEditModel" name="ScientificReport.DTO.Models.Opposition.OppositionEditModel">
+<area shape="rect" id="node2" href="$a00091.html" title="{OppositionModel\n|+ About\l+ DateOfOpposition\l+ Opponent\l|+ OppositionModel()\l+ OppositionModel()\l}" alt="" coords="41,5,194,127"/>
 </map>

@@ -1,9 +1,12 @@
 var a00172 =
 [
-    [ "AllTest", "a00172.html#a9cdd2a085467a84ac2567616f3c3bc76", null ],
-    [ "AllWhereTest", "a00172.html#abe15f1b056d40847d39d08583348ddf9", null ],
-    [ "CreateTest", "a00172.html#acf54d5e98783f853a58e9e1623ced225", null ],
-    [ "DeleteTest", "a00172.html#ada1190b4034230102104b5de3dc1c3e9", null ],
-    [ "GetByIdTest", "a00172.html#a00a44f0ce06c9467e47bea77a3b0f33d", null ],
-    [ "UpdateTest", "a00172.html#aa8c39b61f5366597b1ba285cd87e10a6", null ]
+    [ "ScientificConsultationController", "a00172.html#a53d405b230d8922ea429d0580e5710b2", null ],
+    [ "Create", "a00172.html#a6153fd2ec4217ce19347cb930c7a3fa4", null ],
+    [ "Create", "a00172.html#a247e940fb1dab0d596365e88d61b3871", null ],
+    [ "Delete", "a00172.html#a089b1ea5e733e73a21a8b6b209e037fb", null ],
+    [ "DeleteConfirmed", "a00172.html#add0fc8fdb7a64abd32dab754650f0b1d", null ],
+    [ "Details", "a00172.html#aafd2d3d888660fbe61c1cd213a31a4b1", null ],
+    [ "Edit", "a00172.html#a5f9420d56069184d806c0261ea42b6e0", null ],
+    [ "Edit", "a00172.html#a60a26a9487f931db834dac3115ecc31e", null ],
+    [ "Index", "a00172.html#a66fa2dfbf1ec6f48c5bb7092f0c705b6", null ]
 ];

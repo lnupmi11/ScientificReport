@@ -1,2 +1,2 @@
-<map id="ScientificReport.DAL.Entities.UserProfile.UserProfile" name="ScientificReport.DAL.Entities.UserProfile.UserProfile">
+<map id="ScientificReport.DAL.DbContext.ScientificReportDbContext" name="ScientificReport.DAL.DbContext.ScientificReportDbContext">
 </map>

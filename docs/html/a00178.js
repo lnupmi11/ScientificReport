@@ -1,14 +1,15 @@
 var a00178 =
 [
-    [ "ScientificWorkController", "a00178.html#ad7eda79df7906f8803f75df857a13d42", null ],
-    [ "AddAuthor", "a00178.html#ab09107dfde1baba6229e406436a4fce9", null ],
-    [ "Create", "a00178.html#a6f0d3e30f7fe1da3b839b1e37431fa28", null ],
-    [ "Create", "a00178.html#a6f339bf02af981c9b77871de8483d7ec", null ],
-    [ "Delete", "a00178.html#a6cb186af0c903b8efcb2f5f818d8a308", null ],
-    [ "DeleteAuthor", "a00178.html#a01de4374b9082d7359cd01644624b3b9", null ],
-    [ "DeleteConfirmed", "a00178.html#a46d0a64f1bc83d1ca1ed8c8c6cee393f", null ],
-    [ "Details", "a00178.html#abe09e781b55cebcd436991546295535a", null ],
-    [ "Edit", "a00178.html#ab053f61e772332e278284c8a7e4eb55b", null ],
-    [ "Edit", "a00178.html#a0a7fe6ecc4a4236b16a9737ee1571541", null ],
-    [ "Index", "a00178.html#a35374e4f56674b62ce9602b54f88157a", null ]
+    [ "ScientificConsultationService", "a00178.html#afaaf71499fce7df14b2525d212e79987", null ],
+    [ "CreateItem", "a00178.html#a9d93b5d931871afa0abe6a0ada3238f5", null ],
+    [ "DeleteById", "a00178.html#ae66a4734fe604b279849dd0c9af29d00", null ],
+    [ "Exists", "a00178.html#a22995fd70000b87664d320b289d2bfdb", null ],
+    [ "Get", "a00178.html#a1a81309adc311365e726d1e4fe85ec67", null ],
+    [ "GetAll", "a00178.html#aa0cb94338a5279dbee432999ec9a5513", null ],
+    [ "GetAllWhere", "a00178.html#a4ef14027f345b179fe4443b08e35d1b9", null ],
+    [ "GetById", "a00178.html#affc52a6da850d946e638e0828b0fdb78", null ],
+    [ "GetCountByRole", "a00178.html#a09487f62c982715c415f71b3121f8026", null ],
+    [ "GetItemsByRole", "a00178.html#a3a5f607be75e285021128ffb0b340a4e", null ],
+    [ "GetPageByRole", "a00178.html#a40e8265fb8557f0d16b33a7db60146df", null ],
+    [ "UpdateItem", "a00178.html#a0d991a6bba1cd4d68445265051c0c29a", null ]
 ];

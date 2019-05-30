@@ -1,8 +1,6 @@
 var a00214 =
 [
-    [ "Id", "a00214.html#a4ec81c68791ba278ce711d575a821e8c", null ],
-    [ "ScientificInternship", "a00214.html#a24d76e129452c24a6690e82af6376f7f", null ],
-    [ "ScientificInternshipId", "a00214.html#adc1531a9b33d5cb3b8dec1c6575f2185", null ],
-    [ "UserProfile", "a00214.html#aae49ffd0cf666f99bbba33dd482c5e69", null ],
-    [ "UserProfileId", "a00214.html#a56679b3532ff1de39739eb5cc1f6f804", null ]
+    [ "Id", "a00214.html#abb1d8c07f803eacbb8a796a3c5ba3bdd", null ],
+    [ "Opposition", "a00214.html#acf1935b84ad6787d38a220204b6763dc", null ],
+    [ "TeacherReport", "a00214.html#ab1663bc8f355cc4e57a336e3f95114ce", null ]
 ];

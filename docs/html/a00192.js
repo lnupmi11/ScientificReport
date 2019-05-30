@@ -1,12 +1,14 @@
 var a00192 =
 [
-    [ "TeacherReportRepository", "a00192.html#a50e232d5434886259cf5106991bf479d", null ],
-    [ "All", "a00192.html#ab37197ffa9f26a1d9eacff88708434db", null ],
-    [ "AllWhere", "a00192.html#a791e927ee6303175a19372cb90a95b6b", null ],
-    [ "Create", "a00192.html#a41f32b1bb6208e78d7feb0dac97485bf", null ],
-    [ "Delete", "a00192.html#a95b9f550796e9bea58418d856e368237", null ],
-    [ "Get", "a00192.html#abf7f3c93e612d1e2244661b8f62496e6", null ],
-    [ "Get", "a00192.html#a97d81aa9fb46ae405e11806cd924c25e", null ],
-    [ "GetQuery", "a00192.html#aadb805875b52a0f82403cb398faa0cc0", null ],
-    [ "Update", "a00192.html#a2f5ed16419f2d9927b28d330701c3ba0", null ]
+    [ "ScientificWorkController", "a00192.html#ad7eda79df7906f8803f75df857a13d42", null ],
+    [ "AddAuthor", "a00192.html#ab09107dfde1baba6229e406436a4fce9", null ],
+    [ "Create", "a00192.html#a6f0d3e30f7fe1da3b839b1e37431fa28", null ],
+    [ "Create", "a00192.html#a6f339bf02af981c9b77871de8483d7ec", null ],
+    [ "Delete", "a00192.html#a6cb186af0c903b8efcb2f5f818d8a308", null ],
+    [ "DeleteAuthor", "a00192.html#a01de4374b9082d7359cd01644624b3b9", null ],
+    [ "DeleteConfirmed", "a00192.html#a46d0a64f1bc83d1ca1ed8c8c6cee393f", null ],
+    [ "Details", "a00192.html#abe09e781b55cebcd436991546295535a", null ],
+    [ "Edit", "a00192.html#ab053f61e772332e278284c8a7e4eb55b", null ],
+    [ "Edit", "a00192.html#a0a7fe6ecc4a4236b16a9737ee1571541", null ],
+    [ "Index", "a00192.html#a35374e4f56674b62ce9602b54f88157a", null ]
 ];

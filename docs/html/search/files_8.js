@@ -1,22 +1,4 @@
 var searchData=
 [
-  ['iarticleservice_2ecs',['IArticleService.cs',['../a00219.html',1,'']]],
-  ['iconferenceservice_2ecs',['IConferenceService.cs',['../a00220.html',1,'']]],
-  ['idepartmentservice_2ecs',['IDepartmentService.cs',['../a00221.html',1,'']]],
-  ['igrantservice_2ecs',['IGrantService.cs',['../a00222.html',1,'']]],
-  ['imembershipservice_2ecs',['IMembershipService.cs',['../a00223.html',1,'']]],
-  ['ioppositionservice_2ecs',['IOppositionService.cs',['../a00224.html',1,'']]],
-  ['ipatentlicenseactivityservice_2ecs',['IPatentLicenseActivityService.cs',['../a00225.html',1,'']]],
-  ['ipostgraduatedissertationguidanceservice_2ecs',['IPostgraduateDissertationGuidanceService.cs',['../a00226.html',1,'']]],
-  ['ipostgraduateguidanceservice_2ecs',['IPostgraduateGuidanceService.cs',['../a00227.html',1,'']]],
-  ['ipublicationservice_2ecs',['IPublicationService.cs',['../a00228.html',1,'']]],
-  ['ireportthesisservice_2ecs',['IReportThesisService.cs',['../a00229.html',1,'']]],
-  ['irepository_2ecs',['IRepository.cs',['../a00286.html',1,'']]],
-  ['ireviewservice_2ecs',['IReviewService.cs',['../a00230.html',1,'']]],
-  ['iscientificconsultationservice_2ecs',['IScientificConsultationService.cs',['../a00231.html',1,'']]],
-  ['iscientificinternshipservice_2ecs',['IScientificInternshipService.cs',['../a00232.html',1,'']]],
-  ['iscientificworkservice_2ecs',['IScientificWorkService.cs',['../a00233.html',1,'']]],
-  ['iteacherreportservice_2ecs',['ITeacherReportService.cs',['../a00234.html',1,'']]],
-  ['itrackable_2ecs',['ITrackable.cs',['../a00287.html',1,'']]],
-  ['iuserprofileservice_2ecs',['IUserProfileService.cs',['../a00235.html',1,'']]]
+  ['homecontroller_2ecs',['HomeController.cs',['../a00454.html',1,'']]]
 ];

@@ -1,2 +1,2 @@
-<map id="ScientificReport.DTO.Models.Article.ArticleDetailsModel" name="ScientificReport.DTO.Models.Article.ArticleDetailsModel">
+<map id="ScientificReport.DAL.Interfaces.ITrackable" name="ScientificReport.DAL.Interfaces.ITrackable">
 </map>

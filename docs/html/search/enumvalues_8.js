@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['monograph',['Monograph',['../a00126.html#a65e148316b30800fc153d00a8cd9a2efaeaa58a782f902418cec1a96233bea1f1',1,'ScientificReport::DAL::Entities::Publication']]]
+  ['local',['Local',['../a00020.html#a32bc31f128353ecb4b6c3b1eeddfa22ba509820290d57f333403f490dde7316f4',1,'ScientificReport::DAL::Entities::Conference']]]
 ];

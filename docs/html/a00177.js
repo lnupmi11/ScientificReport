@@ -1,9 +1,9 @@
 var a00177 =
 [
-    [ "Category", "a00177.html#a008cd1d80b801d882dbc7d6d9bf3ead4", null ],
-    [ "Contents", "a00177.html#a6628687a1a2af4f00f6762ffbc547999", null ],
-    [ "Cypher", "a00177.html#a5e4a590ea91be92f219cdac586d6966f", null ],
-    [ "Id", "a00177.html#a68344e0013d06d848040eb7386868971", null ],
-    [ "Title", "a00177.html#a27b9b006879be7e23648e18afa115067", null ],
-    [ "UserProfilesScientificWorks", "a00177.html#a8e466cd457756d1683b3352ab33b1adb", null ]
+    [ "AllTest", "a00177.html#a77260d4ac1edd1a78ba01ff1874bc27a", null ],
+    [ "AllWhereTest", "a00177.html#a9f7712f05229ea47b858319da6ff5d55", null ],
+    [ "CreateTest", "a00177.html#a03ecb8bd9ba8937cdde9d30c97b59073", null ],
+    [ "DeleteTest", "a00177.html#a3701229b6163f3dde263dfcf53bc012c", null ],
+    [ "GetByIdTest", "a00177.html#a4cfad382664b449a53ad1a3543bc7da2", null ],
+    [ "UpdateTest", "a00177.html#a6569a40a7a2f1a8ee26f35082169ba14", null ]
 ];
