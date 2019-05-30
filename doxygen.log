@@ -2647,5 +2647,5 @@ Patching output file 242/245
 Patching output file 243/245
 Patching output file 244/245
 Patching output file 245/245
-lookup cache used 7458/65536 hits=30294 misses=8027
+lookup cache used 7463/65536 hits=30319 misses=8034
 finished...
