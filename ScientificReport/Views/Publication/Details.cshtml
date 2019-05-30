@@ -15,10 +15,10 @@
 {
 	<div class="row">
 		<div class="col s12 m12" style="display: inline-block;">
-			<div class="card green darken-1">
+			<div class="card green lighten-2">
 				<div class="card-content white-text" style="text-align: center;">
 					<p style="width: 100%; text-align: center; margin-bottom: 10px">
-						@Localizer["You are not an author or coauthor of this publication"]
+						@Localizer["You are not an author of this publication"]
 					</p>
 					<form asp-action="AddSelfToAuthors" style="display: inline-block;">
 						<input type="hidden" name="id" asp-for="Publication.Id"/>
