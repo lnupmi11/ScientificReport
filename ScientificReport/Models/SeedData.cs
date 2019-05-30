@@ -208,6 +208,7 @@ namespace ScientificReport.Models
 				new Conference
 				{
 					Topic = "Best topic ever",
+					Type = Conference.Types.Local,
 					Date = DateTime.Now
 				}
 			);
@@ -452,7 +453,7 @@ namespace ScientificReport.Models
 			{
 				Name = "High",
 				Number = 2,
-				DateTime = DateTime.Now,
+				Date = DateTime.Now,
 				Type = PatentLicenseActivity.Types.Application	
 			}));
 			
@@ -460,7 +461,7 @@ namespace ScientificReport.Models
 			{
 				Name = "Medium",
 				Number = 4,
-				DateTime = DateTime.Today,
+				Date = DateTime.Today,
 				Type = PatentLicenseActivity.Types.Patent	
 			}));
 		}
@@ -498,19 +499,19 @@ namespace ScientificReport.Models
 
 			membershipService.CreateItem(new MembershipModel(new Membership
 			{
-				MemberOf = Membership.MemberOfChoices.ScientificCouncil,
+				Type = Membership.Types.ScientificCouncil,
 				MembershipInfo = "good helper",
 				User = context.UserProfiles.First(u => u.UserName == "yura")
 			}));
 			membershipService.CreateItem(new MembershipModel(new Membership
 			{
-				MemberOf = Membership.MemberOfChoices.ExpertCouncil,
+				Type = Membership.Types.ExpertCouncil,
 				MembershipInfo = "best helper",
 				User = context.UserProfiles.First(u => u.UserName == "orest")
 			}));
 			membershipService.CreateItem(new MembershipModel(new Membership
 			{
-				MemberOf = Membership.MemberOfChoices.EditorialBoard,
+				Type = Membership.Types.EditorialBoard,
 				MembershipInfo = "normal guy",
 				User = context.UserProfiles.First(u => u.UserName == "yura")
 			}));
@@ -540,13 +541,11 @@ namespace ScientificReport.Models
 		{
 			foreach (var roleName in UserProfileRole.Roles)
 			{
-				if (!await roleManager.RoleExistsAsync(roleName))
+				if (await roleManager.RoleExistsAsync(roleName)) continue;
+				var taskResult = await roleManager.CreateAsync(new UserProfileRole(roleName));
+				if (!taskResult.Succeeded)
 				{
-					var taskResult = await roleManager.CreateAsync(new UserProfileRole(roleName));
-					if (!taskResult.Succeeded)
-					{
-						logger.LogWarning("Could not create role: " + roleName);
-					}
+					logger.LogWarning("Could not create role: " + roleName);
 				}
 			}
 		}

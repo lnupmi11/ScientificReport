@@ -89,7 +89,7 @@ namespace ScientificReport.BLL.Services
 				Name = model.Name,
 				Type = model.Type,
 				Number = model.Number,
-				DateTime = model.DateTime
+				Date = model.DateTime
 			});
 		}
 
@@ -126,7 +126,7 @@ namespace ScientificReport.BLL.Services
 				patentLicenseActivity.Type = model.Type;	
 			}
 			patentLicenseActivity.Number = model.Number;
-			patentLicenseActivity.DateTime = model.DateTime;
+			patentLicenseActivity.Date = model.DateTime;
 			_patentLicenseActivityRepository.Update(patentLicenseActivity);
 		}
 

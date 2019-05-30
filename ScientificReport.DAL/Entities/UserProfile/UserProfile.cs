@@ -26,6 +26,8 @@ namespace ScientificReport.DAL.Entities.UserProfile
 		
 		public string Position { get; set; }
 		
+//		public Department Department { get; set; }
+		
 		public bool IsApproved { get; set; }
 		
 		public bool IsActive { get; set; }
@@ -47,5 +49,9 @@ namespace ScientificReport.DAL.Entities.UserProfile
 		public virtual ICollection<ApplicantsPatentLicenseActivities> ApplicantsPatentLicenseActivities { get; set; }
 		
 		public string FullName => $"{LastName} {FirstName} {MiddleName}";
+		public override string ToString()
+		{
+			return FullName;
+		}
 	}
 }

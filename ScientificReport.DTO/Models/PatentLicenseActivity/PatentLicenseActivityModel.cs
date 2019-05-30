@@ -26,7 +26,7 @@ namespace ScientificReport.DTO.Models.PatentLicenseActivity
         {
 	        Name = patentLicenseActivity.Name;
 	        Number = patentLicenseActivity.Number;
-	        DateTime = patentLicenseActivity.DateTime;
+	        DateTime = patentLicenseActivity.Date;
 	        Type = patentLicenseActivity.Type;
         }
 	}

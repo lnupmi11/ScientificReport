@@ -4,12 +4,12 @@ using ScientificReport.DAL.Interfaces;
 
 namespace ScientificReport.DAL.Entities.Reports
 {
-	public class Report	: ITrackable
+	public abstract class Report : ITrackable
 	{
 		[Key]
-		public Guid Id { get; set; }
+		virtual public Guid Id { get; set; }
 
-		public DateTime Created { get; set; }
-		public DateTime Edited { get; set; }
+		virtual public DateTime Created { get; set; }
+		virtual public DateTime Edited { get; set; }
 	}
 }

@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Rotativa.AspNetCore;
 using Microsoft.Extensions.Options;
 using ScientificReport.BLL.Interfaces;
 using ScientificReport.BLL.Services;
@@ -61,11 +62,11 @@ namespace ScientificReport
 			services.AddTransient<IPatentLicenseActivityService, PatentLicenseActivityService>();
 			services.AddTransient<IPostgraduateDissertationGuidanceService, PostgraduateDissertationGuidanceService>();
 			services.AddTransient<IPostgraduateGuidanceService, PostgraduateGuidanceService>();
+			services.AddTransient<IPublicationService, PublicationService>();
 			services.AddTransient<IReportThesisService, ReportThesisService>();
 			services.AddTransient<IReviewService, ReviewService>();
 			services.AddTransient<IScientificConsultationService, ScientificConsultationService>();
 			services.AddTransient<IScientificInternshipService, ScientificInternshipService>();
-			services.AddTransient<IPublicationService, PublicationService>();
 
 			services.Configure<IdentityOptions>(options =>
 			{
@@ -115,11 +116,11 @@ namespace ScientificReport
 					// UI strings that we have localized.
 					opts.SupportedUICultures = supportedCultures;
 				});
-		
+
 			services.AddMvc()
 				.SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
 				.AddViewLocalization(
-					LanguageViewLocationExpanderFormat.SubFolder,
+					LanguageViewLocationExpanderFormat.Suffix,
 					opts => { opts.ResourcesPath = "Resources"; })
 				.AddDataAnnotationsLocalization();
 		}
@@ -146,6 +147,8 @@ namespace ScientificReport
 			var options = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
 			app.UseRequestLocalization(options.Value);
 			
+			RotativaConfiguration.Setup(env);
+
 			app.UseMvc(routes =>
 			{
 				routes.MapRoute(

@@ -19,7 +19,7 @@ namespace ScientificReport.DAL.Entities
 		public int Number { get; set; }
 		
 		[DataType(DataType.DateTime)]
-		public DateTime DateTime { get; set; }
+		public DateTime Date { get; set; }
 		
 		public Types Type { get; set; }
 		

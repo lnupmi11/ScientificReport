@@ -1,4 +1,26 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿$(document).ready(function() {
+	$('select').formSelect();
+	$(".dropdown-trigger").dropdown();
+	// Materialize.updateTextFields();
+});
 
-// Write your JavaScript code.
+const toggleEntity = (controller, endpoint, tagName) => (tag, id, entityId) => {
+	const config = {
+		method: 'POST',
+		body: JSON.stringify({
+			EntityId: entityId,
+		}),
+		headers: {
+			'Content-Type': 'application/json'
+		}
+	};
+	fetch(`/${controller}/${endpoint}/${id}`, config).then(response => {
+		console.log(response);
+		if (response.status !== 200) throw {msg: "Failed to toggle the entity", response};
+		tag.classList.add('hidden');
+		tag.parentElement.getElementsByClassName(tagName)[0].classList.remove('hidden');
+	}).catch(e => {
+		console.error(e);
+	});
+};
+
