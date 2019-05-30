@@ -252,11 +252,7 @@ namespace ScientificReport.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<Guid?>("TeacherReportId");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("TeacherReportId");
 
                     b.ToTable("Grants");
                 });
@@ -266,9 +262,9 @@ namespace ScientificReport.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("Type");
-
                     b.Property<string>("MembershipInfo");
+
+                    b.Property<int>("Type");
 
                     b.HasKey("Id");
 
@@ -286,13 +282,9 @@ namespace ScientificReport.Migrations
 
                     b.Property<Guid?>("OpponentId");
 
-                    b.Property<Guid?>("TeacherReportId");
-
                     b.HasKey("Id");
 
                     b.HasIndex("OpponentId");
-
-                    b.HasIndex("TeacherReportId");
 
                     b.ToTable("Oppositions");
                 });
@@ -308,13 +300,9 @@ namespace ScientificReport.Migrations
 
                     b.Property<int>("Number");
 
-                    b.Property<Guid?>("TeacherReportId");
-
                     b.Property<int>("Type");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("TeacherReportId");
 
                     b.ToTable("PatentLicenseActivities");
                 });
@@ -336,13 +324,9 @@ namespace ScientificReport.Migrations
 
                     b.Property<string>("Speciality");
 
-                    b.Property<Guid?>("TeacherReportId");
-
                     b.HasKey("Id");
 
                     b.HasIndex("GuideId");
-
-                    b.HasIndex("TeacherReportId");
 
                     b.ToTable("PostgraduateDissertationGuidances");
                 });
@@ -358,13 +342,9 @@ namespace ScientificReport.Migrations
 
                     b.Property<string>("PostgraduateName");
 
-                    b.Property<Guid?>("TeacherReportId");
-
                     b.HasKey("Id");
 
                     b.HasIndex("GuideId");
-
-                    b.HasIndex("TeacherReportId");
 
                     b.ToTable("PostgraduateGuidances");
                 });
@@ -491,6 +471,114 @@ namespace ScientificReport.Migrations
                     b.ToTable("TeacherReportsArticles");
                 });
 
+            modelBuilder.Entity("ScientificReport.DAL.Entities.Reports.TeacherReportsGrants", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<Guid?>("GrantId");
+
+                    b.Property<Guid?>("TeacherReportId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GrantId");
+
+                    b.HasIndex("TeacherReportId");
+
+                    b.ToTable("TeacherReportsGrants");
+                });
+
+            modelBuilder.Entity("ScientificReport.DAL.Entities.Reports.TeacherReportsMemberships", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<Guid?>("MembershipId");
+
+                    b.Property<Guid?>("TeacherReportId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MembershipId");
+
+                    b.HasIndex("TeacherReportId");
+
+                    b.ToTable("TeacherReportsMemberships");
+                });
+
+            modelBuilder.Entity("ScientificReport.DAL.Entities.Reports.TeacherReportsOppositions", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<Guid?>("OppositionId");
+
+                    b.Property<Guid?>("TeacherReportId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OppositionId");
+
+                    b.HasIndex("TeacherReportId");
+
+                    b.ToTable("TeacherReportsOppositions");
+                });
+
+            modelBuilder.Entity("ScientificReport.DAL.Entities.Reports.TeacherReportsPatents", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<Guid?>("PatentId");
+
+                    b.Property<Guid?>("TeacherReportId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PatentId");
+
+                    b.HasIndex("TeacherReportId");
+
+                    b.ToTable("TeacherReportsPatents");
+                });
+
+            modelBuilder.Entity("ScientificReport.DAL.Entities.Reports.TeacherReportsPostgraduateDissertationGuidances", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<Guid?>("PostgraduateDissertationGuidanceId");
+
+                    b.Property<Guid?>("TeacherReportId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PostgraduateDissertationGuidanceId");
+
+                    b.HasIndex("TeacherReportId");
+
+                    b.ToTable("TeacherReportsPostgraduateDissertationGuidances");
+                });
+
+            modelBuilder.Entity("ScientificReport.DAL.Entities.Reports.TeacherReportsPostgraduateGuidances", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<Guid?>("PostgraduateGuidanceId");
+
+                    b.Property<Guid?>("TeacherReportId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PostgraduateGuidanceId");
+
+                    b.HasIndex("TeacherReportId");
+
+                    b.ToTable("TeacherReportsPostgraduateGuidances");
+                });
+
             modelBuilder.Entity("ScientificReport.DAL.Entities.Reports.TeacherReportsPublications", b =>
                 {
                     b.Property<Guid>("Id")
@@ -527,6 +615,60 @@ namespace ScientificReport.Migrations
                     b.ToTable("TeacherReportsReportThesis");
                 });
 
+            modelBuilder.Entity("ScientificReport.DAL.Entities.Reports.TeacherReportsReviews", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<Guid?>("ReviewId");
+
+                    b.Property<Guid?>("TeacherReportId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ReviewId");
+
+                    b.HasIndex("TeacherReportId");
+
+                    b.ToTable("TeacherReportsReviews");
+                });
+
+            modelBuilder.Entity("ScientificReport.DAL.Entities.Reports.TeacherReportsScientificConsultations", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<Guid?>("ScientificConsultationId");
+
+                    b.Property<Guid?>("TeacherReportId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ScientificConsultationId");
+
+                    b.HasIndex("TeacherReportId");
+
+                    b.ToTable("TeacherReportsScientificConsultations");
+                });
+
+            modelBuilder.Entity("ScientificReport.DAL.Entities.Reports.TeacherReportsScientificInternships", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<Guid?>("ScientificInternshipId");
+
+                    b.Property<Guid?>("TeacherReportId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ScientificInternshipId");
+
+                    b.HasIndex("TeacherReportId");
+
+                    b.ToTable("TeacherReportsScientificInternships");
+                });
+
             modelBuilder.Entity("ScientificReport.DAL.Entities.Reports.TeacherReportsScientificWorks", b =>
                 {
                     b.Property<Guid>("Id")
@@ -554,15 +696,11 @@ namespace ScientificReport.Migrations
 
                     b.Property<Guid?>("ReviewerId");
 
-                    b.Property<Guid?>("TeacherReportId");
-
                     b.Property<Guid?>("WorkId");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ReviewerId");
-
-                    b.HasIndex("TeacherReportId");
 
                     b.HasIndex("WorkId");
 
@@ -580,13 +718,9 @@ namespace ScientificReport.Migrations
 
                     b.Property<Guid?>("GuideId");
 
-                    b.Property<Guid?>("TeacherReportId");
-
                     b.HasKey("Id");
 
                     b.HasIndex("GuideId");
-
-                    b.HasIndex("TeacherReportId");
 
                     b.ToTable("ScientificConsultations");
                 });
@@ -604,11 +738,7 @@ namespace ScientificReport.Migrations
 
                     b.Property<DateTime>("Started");
 
-                    b.Property<Guid?>("TeacherReportId");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("TeacherReportId");
 
                     b.ToTable("ScientificInternships");
                 });
@@ -947,29 +1077,11 @@ namespace ScientificReport.Migrations
                         .HasForeignKey("HeadId");
                 });
 
-            modelBuilder.Entity("ScientificReport.DAL.Entities.Grant", b =>
-                {
-                    b.HasOne("ScientificReport.DAL.Entities.Reports.TeacherReport")
-                        .WithMany("Grants")
-                        .HasForeignKey("TeacherReportId");
-                });
-
             modelBuilder.Entity("ScientificReport.DAL.Entities.Opposition", b =>
                 {
                     b.HasOne("ScientificReport.DAL.Entities.UserProfile.UserProfile", "Opponent")
                         .WithMany()
                         .HasForeignKey("OpponentId");
-
-                    b.HasOne("ScientificReport.DAL.Entities.Reports.TeacherReport")
-                        .WithMany("Oppositions")
-                        .HasForeignKey("TeacherReportId");
-                });
-
-            modelBuilder.Entity("ScientificReport.DAL.Entities.PatentLicenseActivity", b =>
-                {
-                    b.HasOne("ScientificReport.DAL.Entities.Reports.TeacherReport")
-                        .WithMany("Patents")
-                        .HasForeignKey("TeacherReportId");
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.PostgraduateDissertationGuidance", b =>
@@ -977,10 +1089,6 @@ namespace ScientificReport.Migrations
                     b.HasOne("ScientificReport.DAL.Entities.UserProfile.UserProfile", "Guide")
                         .WithMany()
                         .HasForeignKey("GuideId");
-
-                    b.HasOne("ScientificReport.DAL.Entities.Reports.TeacherReport")
-                        .WithMany("PostgraduateDissertationGuidances")
-                        .HasForeignKey("TeacherReportId");
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.PostgraduateGuidance", b =>
@@ -988,10 +1096,6 @@ namespace ScientificReport.Migrations
                     b.HasOne("ScientificReport.DAL.Entities.UserProfile.UserProfile", "Guide")
                         .WithMany()
                         .HasForeignKey("GuideId");
-
-                    b.HasOne("ScientificReport.DAL.Entities.Reports.TeacherReport")
-                        .WithMany("PostgraduateGuidances")
-                        .HasForeignKey("TeacherReportId");
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.ReportThesis", b =>
@@ -1041,6 +1145,72 @@ namespace ScientificReport.Migrations
                         .HasForeignKey("TeacherReportId");
                 });
 
+            modelBuilder.Entity("ScientificReport.DAL.Entities.Reports.TeacherReportsGrants", b =>
+                {
+                    b.HasOne("ScientificReport.DAL.Entities.Grant", "Grant")
+                        .WithMany()
+                        .HasForeignKey("GrantId");
+
+                    b.HasOne("ScientificReport.DAL.Entities.Reports.TeacherReport", "TeacherReport")
+                        .WithMany("TeacherReportsGrants")
+                        .HasForeignKey("TeacherReportId");
+                });
+
+            modelBuilder.Entity("ScientificReport.DAL.Entities.Reports.TeacherReportsMemberships", b =>
+                {
+                    b.HasOne("ScientificReport.DAL.Entities.Membership", "Membership")
+                        .WithMany()
+                        .HasForeignKey("MembershipId");
+
+                    b.HasOne("ScientificReport.DAL.Entities.Reports.TeacherReport", "TeacherReport")
+                        .WithMany("TeacherReportsMemberships")
+                        .HasForeignKey("TeacherReportId");
+                });
+
+            modelBuilder.Entity("ScientificReport.DAL.Entities.Reports.TeacherReportsOppositions", b =>
+                {
+                    b.HasOne("ScientificReport.DAL.Entities.Opposition", "Opposition")
+                        .WithMany()
+                        .HasForeignKey("OppositionId");
+
+                    b.HasOne("ScientificReport.DAL.Entities.Reports.TeacherReport", "TeacherReport")
+                        .WithMany("TeacherReportsOppositions")
+                        .HasForeignKey("TeacherReportId");
+                });
+
+            modelBuilder.Entity("ScientificReport.DAL.Entities.Reports.TeacherReportsPatents", b =>
+                {
+                    b.HasOne("ScientificReport.DAL.Entities.PatentLicenseActivity", "Patent")
+                        .WithMany()
+                        .HasForeignKey("PatentId");
+
+                    b.HasOne("ScientificReport.DAL.Entities.Reports.TeacherReport", "TeacherReport")
+                        .WithMany("TeacherReportsPatents")
+                        .HasForeignKey("TeacherReportId");
+                });
+
+            modelBuilder.Entity("ScientificReport.DAL.Entities.Reports.TeacherReportsPostgraduateDissertationGuidances", b =>
+                {
+                    b.HasOne("ScientificReport.DAL.Entities.PostgraduateDissertationGuidance", "PostgraduateDissertationGuidance")
+                        .WithMany()
+                        .HasForeignKey("PostgraduateDissertationGuidanceId");
+
+                    b.HasOne("ScientificReport.DAL.Entities.Reports.TeacherReport", "TeacherReport")
+                        .WithMany("TeacherReportsPostgraduateDissertationGuidances")
+                        .HasForeignKey("TeacherReportId");
+                });
+
+            modelBuilder.Entity("ScientificReport.DAL.Entities.Reports.TeacherReportsPostgraduateGuidances", b =>
+                {
+                    b.HasOne("ScientificReport.DAL.Entities.PostgraduateGuidance", "PostgraduateGuidance")
+                        .WithMany()
+                        .HasForeignKey("PostgraduateGuidanceId");
+
+                    b.HasOne("ScientificReport.DAL.Entities.Reports.TeacherReport", "TeacherReport")
+                        .WithMany("TeacherReportsPostgraduateGuidances")
+                        .HasForeignKey("TeacherReportId");
+                });
+
             modelBuilder.Entity("ScientificReport.DAL.Entities.Reports.TeacherReportsPublications", b =>
                 {
                     b.HasOne("ScientificReport.DAL.Entities.Publication", "Publication")
@@ -1063,6 +1233,39 @@ namespace ScientificReport.Migrations
                         .HasForeignKey("TeacherReportId");
                 });
 
+            modelBuilder.Entity("ScientificReport.DAL.Entities.Reports.TeacherReportsReviews", b =>
+                {
+                    b.HasOne("ScientificReport.DAL.Entities.Review", "Review")
+                        .WithMany()
+                        .HasForeignKey("ReviewId");
+
+                    b.HasOne("ScientificReport.DAL.Entities.Reports.TeacherReport", "TeacherReport")
+                        .WithMany("TeacherReportsReviews")
+                        .HasForeignKey("TeacherReportId");
+                });
+
+            modelBuilder.Entity("ScientificReport.DAL.Entities.Reports.TeacherReportsScientificConsultations", b =>
+                {
+                    b.HasOne("ScientificReport.DAL.Entities.ScientificConsultation", "ScientificConsultation")
+                        .WithMany()
+                        .HasForeignKey("ScientificConsultationId");
+
+                    b.HasOne("ScientificReport.DAL.Entities.Reports.TeacherReport", "TeacherReport")
+                        .WithMany("TeacherReportsScientificConsultations")
+                        .HasForeignKey("TeacherReportId");
+                });
+
+            modelBuilder.Entity("ScientificReport.DAL.Entities.Reports.TeacherReportsScientificInternships", b =>
+                {
+                    b.HasOne("ScientificReport.DAL.Entities.ScientificInternship", "ScientificInternship")
+                        .WithMany()
+                        .HasForeignKey("ScientificInternshipId");
+
+                    b.HasOne("ScientificReport.DAL.Entities.Reports.TeacherReport", "TeacherReport")
+                        .WithMany("TeacherReportsScientificInternships")
+                        .HasForeignKey("TeacherReportId");
+                });
+
             modelBuilder.Entity("ScientificReport.DAL.Entities.Reports.TeacherReportsScientificWorks", b =>
                 {
                     b.HasOne("ScientificReport.DAL.Entities.ScientificWork", "ScientificWork")
@@ -1080,10 +1283,6 @@ namespace ScientificReport.Migrations
                         .WithMany()
                         .HasForeignKey("ReviewerId");
 
-                    b.HasOne("ScientificReport.DAL.Entities.Reports.TeacherReport")
-                        .WithMany("Reviews")
-                        .HasForeignKey("TeacherReportId");
-
                     b.HasOne("ScientificReport.DAL.Entities.Publication", "Work")
                         .WithMany()
                         .HasForeignKey("WorkId");
@@ -1094,17 +1293,6 @@ namespace ScientificReport.Migrations
                     b.HasOne("ScientificReport.DAL.Entities.UserProfile.UserProfile", "Guide")
                         .WithMany()
                         .HasForeignKey("GuideId");
-
-                    b.HasOne("ScientificReport.DAL.Entities.Reports.TeacherReport")
-                        .WithMany("ScientificConsultations")
-                        .HasForeignKey("TeacherReportId");
-                });
-
-            modelBuilder.Entity("ScientificReport.DAL.Entities.ScientificInternship", b =>
-                {
-                    b.HasOne("ScientificReport.DAL.Entities.Reports.TeacherReport")
-                        .WithMany("ScientificInternships")
-                        .HasForeignKey("TeacherReportId");
                 });
 
             modelBuilder.Entity("ScientificReport.DAL.Entities.ScientificWork", b =>

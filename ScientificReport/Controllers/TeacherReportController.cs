@@ -181,7 +181,8 @@ namespace ScientificReport.Controllers
 				PostgraduateDissertationGuidances = _postgraduateDissertationGuidanceService.GetAll(),
 				Reviews = _reviewService.GetAll(),
 				Oppositions = _oppositionService.GetAll(),
-				Patents = _patentService.GetAll()
+				Patents = _patentService.GetAll(),
+				Memberships = _membershipService.GetAll()
 			};
 			return View(data);
 		}
