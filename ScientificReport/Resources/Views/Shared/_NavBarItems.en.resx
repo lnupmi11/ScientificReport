@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../resx_schema.xsd">
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>1.3</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+			PublicKeyToken=b77a5c561934e089
+		</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+			PublicKeyToken=b77a5c561934e089
+		</value>
+	</resheader>
+	<data name="Scientific Reports" xml:space="preserve">
+		<value>Scientific Reports</value>
+	</data>
+	<data name="Articles" xml:space="preserve">
+		<value>Articles</value>
+	</data>
+	<data name="Conferences" xml:space="preserve">
+		<value>Conferences</value>
+	</data>
+	<data name="Grants" xml:space="preserve">
+		<value>Grants</value>
+	</data>
+	<data name="Memberships" xml:space="preserve">
+		<value>Memberships</value>
+	</data>
+	<data name="Oppositions" xml:space="preserve">
+		<value>Oppositions</value>
+	</data>
+	<data name="Patent license activities" xml:space="preserve">
+		<value>Patent license activities</value>
+	</data>
+	<data name="Postgraduate dissertation guidance" xml:space="preserve">
+		<value>Postgraduate dissertation guidance</value>
+	</data>
+	<data name="Postgraduate guidance" xml:space="preserve">
+		<value>Postgraduate guidance</value>
+	</data>
+	<data name="Publications" xml:space="preserve">
+		<value>Publications</value>
+	</data>
+	<data name="Report theses" xml:space="preserve">
+		<value>Report theses</value>
+	</data>
+	<data name="Reviews" xml:space="preserve">
+		<value>Reviews</value>
+	</data>
+	<data name="Scientific consultations" xml:space="preserve">
+		<value>Scientific consultations</value>
+	</data>
+	<data name="Scientific internships" xml:space="preserve">
+		<value>Scientific internships</value>
+	</data>
+	<data name="Teacher reports" xml:space="preserve">
+		<value>Teacher Reports</value>
+	</data>
+	<data name="Scientific works" xml:space="preserve">
+		<value>Scientific works</value>
+	</data>
+	<data name="Users" xml:space="preserve">
+		<value>Users</value>
+	</data>
+	<data name="Workers" xml:space="preserve">
+		<value>Workers</value>
+	</data>
+	<data name="Departments" xml:space="preserve">
+		<value>Departments</value>
+	</data>
+	<data name="Department" xml:space="preserve">
+		<value>Department</value>
+	</data>
+	<data name="Other report data" xml:space="preserve">
+		<value>Other report data</value>
+	</data>
+	<data name="Reports" xml:space="preserve">
+		<value>Reports</value>
+	</data>
+	<data name="Teacher report" xml:space="preserve">
+		<value>Teacher report</value>
+	</data>
+	<data name="Department report" xml:space="preserve">
+		<value>Department report</value>
+	</data>
+	<data name="Faculty report" xml:space="preserve">
+		<value>Faculty report</value>
+	</data>
+</root>

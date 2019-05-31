@@ -2,7 +2,6 @@
 @using Microsoft.AspNetCore.Mvc.Localization
 @inject IViewLocalizer Localizer
 
-
 <ul id="dropdown2" style="color: black;" class="dropdown-content">
 	<li style="font-size: 5px; -o-justify-content: center; -webkit-justify-content: center; justify-content: center">
 		<a asp-area="" asp-controller="ReportThesis" asp-action="Index">@Localizer["Report theses"]</a>
@@ -58,12 +57,20 @@
 @if (User.Identity.IsAuthenticated)
 {
 	<ul class="sidenav" id="responsive">
-		<li>
-			<a class="dropdown-trigger" data-target="dropdown2">
-				@Localizer["Other report data"]<i class="material-icons right">arrow_drop_down</i>
-			</a>
-		</li>
-
+		@if (PageHelpers.IsAdminOrHead(User))
+        		{
+        			<li>
+        				<a class="dropdown-trigger" data-target="reports-dropdown2">
+        					@Localizer["Reports"]<i class="material-icons right">arrow_drop_down</i>
+        				</a>
+        			</li>
+        		}
+        		else
+        		{
+        			<li>
+        				<a asp-area="" asp-controller="TeacherReport" asp-action="Index">@Localizer["Reports"]</a>
+        			</li>
+        		}
 		@if (PageHelpers.IsAdminOrHead(User))
 		{
 			if (PageHelpers.IsHeadOfDepartment(User))
@@ -103,20 +110,11 @@
 		<li>
 			<a asp-area="" asp-controller="Conference" asp-action="Index">@Localizer["Conferences"]</a>
 		</li>
-		@if (PageHelpers.IsAdminOrHead(User))
-		{
-			<li>
-				<a class="dropdown-trigger" data-target="reports-dropdown2">
-					@Localizer["Reports"]<i class="material-icons right">arrow_drop_down</i>
-				</a>
-			</li>
-		}
-		else
-		{
-			<li>
-				<a asp-area="" asp-controller="TeacherReport" asp-action="Index">@Localizer["Reports"]</a>
-			</li>
-		}
+		<li>
+			<a class="dropdown-trigger" data-target="dropdown2">
+				@Localizer["Other report data"]<i class="material-icons right">arrow_drop_down</i>
+			</a>
+		</li>
 	</ul>
 }
 
