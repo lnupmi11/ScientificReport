@@ -106,7 +106,7 @@ namespace ScientificReport.Controllers
 			var filename = $"{report.Teacher.UserName}-{report.Created}_report.pdf";
 
 			// TODO: delete the next row, when the development is finished
-			filename = null;
+//			filename = null;
 
 			var department = _departmentService.Get(
 				d => d.Staff.Contains(_userProfileService.Get(User))
