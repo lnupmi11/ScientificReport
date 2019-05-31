@@ -19,7 +19,7 @@
 	<div class="col s12">
 		<form asp-action="Index" method="get">
 			<div class="row">
-				<div class="input-field col s4">
+				<div class="input-field col s5">
 					<select asp-for="PrintStatus" class="col s12 push-s2">
 						@foreach (var option in Model.PrintStatusOptions)
 						{
@@ -29,27 +29,32 @@
 					</select>
 					<label asp-for="PrintStatus">@Localizer["Publishing status"]</label>
 				</div>
-				<div class="input-field col s2">
-					<input asp-for="YearFromFilter" type="number" class="validate" />
-					<label asp-for="YearFromFilter">@Localizer["Year from"]</label>
-				</div>
-				<div class="input-field col s2">
-					<input asp-for="YearToFilter" type="number" class="validate" />
-					<label asp-for="YearToFilter">@Localizer["Year to"]</label>
-				</div>
-				<div class="input-field col s2">
+				<div class="input-field col s5">
 					<select asp-for="PublicationSetType" class="col s12 push-s2">
-						@foreach (var option in Model.PublicationSetTypeOptions)
-						{
-							var selected = option == "Individual" && Model.PublicationSetType == null || Model.PublicationSetType != null && Model.PublicationSetType.Value.ToString() == option ? "selected" : "";
-							<option value="@option" @selected>@Localizer[option]</option>
-						}
+						<optgroup label="">
+							@foreach (var option in Model.PublicationSetTypeOptions)
+							{
+								var selected = option == "Individual" && Model.PublicationSetType == null || Model.PublicationSetType != null && Model.PublicationSetType.Value.ToString() == option ? "selected" : "";
+								<option style="font-size: 5px !important;" value="@option" @selected>@Localizer[option]</option>
+							}
+						</optgroup>
 					</select>
 					<label asp-for="PrintStatus">@Localizer["Publication set"]</label>
 				</div>
-				<div class="col s1">
+				<div class="col s2">
 					<button type="submit" class="waves-effect btn-small waves-light">@Localizer["Filter"]</button>
 				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s5">
+					<input asp-for="YearFromFilter" type="number" class="validate"/>
+					<label asp-for="YearFromFilter">@Localizer["Year from"]</label>
+				</div>
+				<div class="input-field col s5">
+					<input asp-for="YearToFilter" type="number" class="validate"/>
+					<label asp-for="YearToFilter">@Localizer["Year to"]</label>
+				</div>
+
 			</div>
 		</form>
 	</div>
@@ -73,7 +78,8 @@
 	</tr>
 	</thead>
 	<tbody>
-	@foreach (var item in Model.Publications) {
+	@foreach (var item in Model.Publications)
+	{
 		<tr>
 			<td>
 				@{
@@ -129,13 +135,13 @@
 				}
 				@if ((PageHelpers.IsAdmin(User) || isHeadOfDepartment || item.UserProfilesPublications.Any(p => p.UserProfile.UserName == User.Identity.Name)))
 				{
-					<a asp-action="Edit" asp-route-id="@item.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>	
+					<a asp-action="Edit" asp-route-id="@item.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
 				}
 				@if (PageHelpers.IsAdmin(User))
 				{
 					<form asp-action="Delete" asp-route-id="@item.Id" method="get" style="display: inline;">
 						<button type="submit" class="waves-effect btn-small deep-orange darken-3">@Localizer["Delete"]</button>
-					</form>	
+					</form>
 				}
 			</td>
 		</tr>
@@ -156,7 +162,7 @@
 			<li class="page-item @(i == Model.CurrentPage ? "active" : "")">
 				<a asp-action="Index" asp-route-currentpage="@i" class="page-link">@i</a>
 			</li>
-		}	
+		}
 	}
 	@if (Model.ShowNext)
 	{
