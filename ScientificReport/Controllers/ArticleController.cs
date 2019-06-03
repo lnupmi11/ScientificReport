@@ -257,7 +257,7 @@ namespace ScientificReport.Controllers
 
 		private bool AllowToDeleteArticle(Article article)
 		{
-			return !PageHelpers.IsAdmin(User) || article.PublishingYear != DateTime.Now.Year;
+			return PageHelpers.IsAdmin(User);
 		}
 	}
 }
