@@ -49,8 +49,19 @@ namespace ScientificReport.DAL.DbContext
 
 		public virtual DbSet<TeacherReport> TeacherReports { get; set; }
 		public virtual DbSet<TeacherReportsScientificWorks> TeacherReportsScientificWorks { get; set; }
-
-
+		public virtual DbSet<TeacherReportsArticles> TeacherReportsArticles { get; set; }
+		public virtual DbSet<TeacherReportsGrants> TeacherReportsGrants { get; set; }
+		public virtual DbSet<TeacherReportsMemberships> TeacherReportsMemberships { get; set; }
+		public virtual DbSet<TeacherReportsOppositions> TeacherReportsOppositions { get; set; }
+		public virtual DbSet<TeacherReportsPatents> TeacherReportsPatents { get; set; }
+		public virtual DbSet<TeacherReportsPostgraduateDissertationGuidances> TeacherReportsPostgraduateDissertationGuidances { get; set; }
+		public virtual DbSet<TeacherReportsPostgraduateGuidances> TeacherReportsPostgraduateGuidances { get; set; }
+		public virtual DbSet<TeacherReportsPublications> TeacherReportsPublications { get; set; }
+		public virtual DbSet<TeacherReportsReportThesis> TeacherReportsReportThesis { get; set; }
+		public virtual DbSet<TeacherReportsReviews> TeacherReportsReviews { get; set; }
+		public virtual DbSet<TeacherReportsScientificConsultations> TeacherReportsScientificConsultations { get; set; }
+		public virtual DbSet<TeacherReportsScientificInternships> TeacherReportsScientificInternships { get; set; }
+		
 		public virtual DbSet<DepartmentReport> DepartmentReports { get; set; }
 		public virtual DbSet<FacultyReport> FacultyReports { get; set; }
 

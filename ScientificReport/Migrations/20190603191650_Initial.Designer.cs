@@ -9,7 +9,7 @@ using ScientificReport.DAL.DbContext;
 namespace ScientificReport.Migrations
 {
     [DbContext(typeof(ScientificReportDbContext))]
-    [Migration("20190530171551_Initial")]
+    [Migration("20190603191650_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -65,8 +65,4 @@
 	  <_ContentIncludedByDefault Remove="wwwroot\Rotativa\wkhtmltopdf\include\wkhtmltox\pdf.h" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Migrations" />
-	</ItemGroup>
-
 </Project>
