@@ -9,22 +9,11 @@
 	ViewData["Title"] = Localizer["Edit user"];
 	Layout = "_Layout";
 }
-
-<style type="text/css">
-	.roles-list {
-		overflow-y: scroll;
-		height: 100px;
-	}
-
-	.text-green { color: rgb(0, 179, 0); }
-
-	.text-red { color: rgb(177, 0, 0); }
-
-	.cursor-pointer { cursor: pointer; }
-
-	.hidden { display: none; }
+<style>
+	.span-label {
+    	color: black;
+    }
 </style>
-
 <div class="bg-primary m-1 p-1 text-white">
 	<h5>@ViewData["Title"]</h5>
 </div>
@@ -137,14 +126,19 @@
 										<p>
 											@if (role.Name != UserProfileRole.Teacher && role.Name != UserProfileRole.HeadOfDepartment && Model.UserName != User.Identity.Name && !Model.IsHeadOfDepartment)
 											{
-												<i class="add-role fas fa-plus-circle fa-lg cursor-pointer text-green @(contains ? "hidden" : "")" onclick="addUserToAdministration(this, '@role.Name', '@Model.UserId')"></i>
-												<i class="remove-role fas fa-minus-circle fa-lg cursor-pointer text-red @(contains ? "" : "hidden")" onclick="removeUserFromAdministration(this, '@role.Name', '@Model.UserId')"></i>
+												<label>
+													<input class="filled-in" type="checkbox" onclick="clickManageUser(this, '@Model.UserId', '@role.Name')" @(contains ? "checked=\"checked\"" : "")/>
+													<span class="span-label">@role.Name</span>
+												</label>
 											}
 											else
 											{
-												<i class="fas fa-@(contains ? "minus" : "plus")-circle fa-lg" title="Unable to @(contains ? "remove" : "add") role"></i>
+												<label>
+													<input class="filled-in" type="checkbox" @(contains ? "checked=\"checked\"" : "") title="Unable to @(contains ? "remove" : "add") role" disabled="disabled"/>
+													<span class="span-label">@role.Name</span>
+												</label>
 											}
-											@role.Name
+											
 										</p>
 									}
 								}
@@ -170,27 +164,10 @@
 
 @section Scripts {
 	<script>
-		const toggle = (endpoint, tagName) => (tag, roleName, userId) => {
-			const config = {
-				method: 'POST',
-				body: JSON.stringify({
-					RoleName: roleName
-				}),
-				headers: {
-					'Content-Type': 'application/json'
-				}
-			};
-			fetch(`/UserProfile/${endpoint}/${userId}`, config).then(response => {
-				if (response.status !== 200) throw { msg: "Failed to toggle user roles", response };
-				tag.classList.add('hidden');
-				tag.parentElement.getElementsByClassName(tagName)[0].classList.remove('hidden');
-			}).catch(e => {
-				console.error(e);
-			});
-		}
-
-		const addUserToAdministration = toggle('AddUserToAdministration', 'remove-role');
-		const removeUserFromAdministration = toggle('RemoveUserFromAdministration', 'add-role');
+		let body = (value) => {
+        	return {RoleName: value}
+        };
+		const clickManageUser = toggleCheckboxEntity('UserProfile', 'AddUserToAdministration', 'RemoveUserFromAdministration', body);
 	</script>
 	@{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
 }
