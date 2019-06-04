@@ -38,15 +38,18 @@
 <div class="row">
 	<div class="col s12">
 		<div class="col s12" style="margin-bottom: 30px">
-		<ul class="tabs">
-			<li class="tab col s3"><a class="active" href="#article">@Localizer["Article"]</a></li>
-			@if (PageHelpers.IsHeadOfDepartment(User))
-			{
-				<li class="tab col s3"><a href="#scientific-work">@Localizer["Scientific Work"]</a></li>
-			}
-			<li class="tab col s3"><a href="#report-thesis">@Localizer["Report Thesis"]</a></li>
-			<li class="tab col s3"><a href="#other">@Localizer["Other"]</a></li>
-		</ul>
+			<ul class="tabs">
+				@{
+					var isHead = PageHelpers.IsHeadOfDepartment(User);
+				}
+				<li class="tab col @(isHead ? "s3" : "s4")"><a class="active" href="#article">@Localizer["Article"]</a></li>
+				@if (isHead)
+				{
+					<li class="tab col s3"><a href="#scientific-work">@Localizer["Scientific Work"]</a></li>
+				}
+				<li class="tab col @(isHead ? "s3" : "s4")"><a href="#report-thesis">@Localizer["Report Thesis"]</a></li>
+				<li class="tab col @(isHead ? "s3" : "s4")"><a href="#other">@Localizer["Other"]</a></li>
+			</ul>
 	</div>
 		<div id="article" class="col s12">
 				<form asp-action="Create" class="col s12">
