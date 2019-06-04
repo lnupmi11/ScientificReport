@@ -1,5 +1,6 @@
 @model ScientificReport.DTO.Models.Publication.PublicationCreateModel
 @using Microsoft.AspNetCore.Mvc.Localization
+@using ScientificReport.Controllers.Utils
 @using ScientificReport.DTO.Models.Department
 @inject IViewLocalizer Localizer
 
@@ -21,7 +22,7 @@
 		<div class="col s12" style="margin-bottom: 30px">
 		<ul class="tabs">
 			<li class="tab col s3"><a class="active" href="#article">@Localizer["Article"]</a></li>
-			<li class="tab col s3"><a href="#scientific-work">@Localizer["Scientific Work"]</a></li>
+			@if(PageHelpers.IsHeadOfDepartment(User)){<li class="tab col s3"><a href="#scientific-work">@Localizer["Scientific Work"]</a></li>}
 			<li class="tab col s3"><a href="#report-thesis">@Localizer["Report Thesis"]</a></li>
 			<li class="tab col s3"><a href="#other">@Localizer["Other"]</a></li>
 		</ul>
