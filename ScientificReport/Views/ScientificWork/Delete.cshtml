@@ -1,4 +1,4 @@
-@model ScientificReport.DAL.Entities.ScientificWork
+@model ScientificReport.DAL.Entities.Publications.ScientificWork
 
 @{
     ViewData["Title"] = "Delete";
@@ -38,6 +38,6 @@
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <a asp-action="Index" asp-controller="Publication">Back to List</a>
     </form>
 </div>

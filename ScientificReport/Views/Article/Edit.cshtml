@@ -16,10 +16,9 @@
 		left: 0 !important;
 		font-size: 12.5px !important;
 	}
-	.text-green { color: rgb(0, 179, 0); }
-	.text-red { color: rgb(177, 0, 0); }
-	.cursor-pointer { cursor: pointer; }
-	.hidden { display: none; }
+	.span-label {
+    	color: black;
+    }
 </style>
 <h4>@ViewData["Title"]</h4>
 <hr/>
@@ -130,9 +129,10 @@
 								{
 									var contains = Model.Authors.Any(s => s.Id.ToString().Equals(user.Value));
 									<p>
-										<i class="add-user fas fa-plus-circle fa-lg cursor-pointer text-green @(contains ? "hidden" : "")" onclick="addUserToAuthors(this, '@user.Value', '@Model.Id')"></i>
-										<i class="remove-user fas fa-minus-circle fa-lg cursor-pointer text-red @(contains ? "" : "hidden")" onclick="removeUserFromAuthors(this, '@user.Value', '@Model.Id')"></i>
-										@user.Text
+										<label>
+                                        	<input class="filled-in" type="checkbox" onclick="clickAuthor(this, '@Model.Id', '@user.Value')" @(contains ? "checked=\"checked\"" : "")/>
+                                        	<span class="span-label">@user.Text</span>
+                                        </label>
 									</p>
 								}
 							}
@@ -142,40 +142,21 @@
 			}
 			<div class="row myButtons">
 				<button type="submit" class="waves-effect btn-small accent-2">@Localizer["Save"]</button>
+				<a asp-action="Index" asp-controller="Publication" class="waves-effect btn-small blue darken-3">@Localizer["Cancel"]</a>
 			</div>
 		</form>
 	</div>
 </div>
 
 @section Scripts {
-	<script>
-		const toggle = (tagName, actionName, bodyFn) => (tag, firstParam, secondParam) => {
-			const config = {
-				method: 'POST',
-				body: JSON.stringify(bodyFn(firstParam)),
-				headers: {
-					'Content-Type': 'application/json'
-				}
-			};
-			fetch('/Article/' + actionName + `/${secondParam}`, config).then(response => {
-				if (response.status !== 200) throw { msg: `Failed to toggle ${tagName}`, response };
-				tag.classList.add('hidden');
-				tag.parentElement.getElementsByClassName(tagName)[0].classList.remove('hidden');
-			}).catch(e => {
-				console.error(e);
-			});
-		};
-
-		let reqAuthorBody = (userId) => {
-			return { UserId: userId };
-		};
-		const addUserToAuthors = toggle('remove-user', 'AddUserToAuthors', reqAuthorBody);
-		const removeUserFromAuthors = toggle('add-user', 'RemoveUserFromAuthors', reqAuthorBody);
-	</script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('select').formSelect();
 		});
+		let reqAuthorBody = (userId) => {
+        	return { UserId: userId };
+        };
+        const clickAuthor = toggleCheckboxEntity('Article', 'AddUserToAuthors', 'RemoveUserFromAuthors', reqAuthorBody);
 	</script>
 	@{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
 }

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using ScientificReport.BLL.Interfaces;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Entities.Publications;
 using ScientificReport.DAL.Entities.UserProfile;
 using ScientificReport.DAL.Repositories;
 using ScientificReport.DAL.Roles;

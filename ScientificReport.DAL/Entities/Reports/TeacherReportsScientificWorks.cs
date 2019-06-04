@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using ScientificReport.DAL.Entities.Publications;
 
 namespace ScientificReport.DAL.Entities.Reports
 {

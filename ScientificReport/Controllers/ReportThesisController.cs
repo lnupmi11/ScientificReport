@@ -32,14 +32,6 @@ namespace ScientificReport.Controllers
 			_conferenceService = conferenceService;
 		}
 
-		// GET: ReportThesis
-		public IActionResult Index(ReportThesisIndexModel model)
-		{
-			model.ReportTheses = _reportThesisService.GetPageByRole(model.CurrentPage, model.PageSize, User);
-			model.Count = _reportThesisService.GetCountByRole(User);
-			return View(model);
-		}
-
 		// GET: ReportThesis/Details/{id}
 		public IActionResult Details(Guid? id)
 		{
@@ -121,7 +113,7 @@ namespace ScientificReport.Controllers
 			model.Conference = _conferenceService.GetById(model.ConferenceId);
 			_reportThesisService.UpdateItem(model);
 
-			return RedirectToAction(nameof(Index));
+			return RedirectToAction("Index", "Publication");
 		}
 
 		// GET: ReportThesis/Delete/{id}
@@ -162,7 +154,7 @@ namespace ScientificReport.Controllers
 			}
 			
 			_reportThesisService.DeleteById(id);
-			return RedirectToAction(nameof(Index));
+			return RedirectToAction("Index", "Publication");
 		}
 
 		// POST: ReportThesis/AddAuthor/{id}

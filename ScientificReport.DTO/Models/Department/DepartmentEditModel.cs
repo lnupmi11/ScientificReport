@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Entities.Publications;
 
 namespace ScientificReport.DTO.Models.Department
 {

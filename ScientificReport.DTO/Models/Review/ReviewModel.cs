@@ -9,9 +9,9 @@ namespace ScientificReport.DTO.Models.Review
 		[Required]
 		public Guid WorkId { get; set; }
 		
-		public DAL.Entities.Publication Work { get; set; }
+		public DAL.Entities.Publications.Publication Work { get; set; }
 		
-		public IEnumerable<DAL.Entities.Publication> Publications { get; set; }
+		public IEnumerable<DAL.Entities.Publications.Publication> Publications { get; set; }
 		
 		public DAL.Entities.UserProfile.UserProfile Reviewer { get; set; }
         

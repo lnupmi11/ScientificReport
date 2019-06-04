@@ -1,4 +1,4 @@
-using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Entities.Publications;
 using ScientificReport.DTO.Models.Article;
 using ScientificReport.DTO.Models.ReportThesis;
 
@@ -26,7 +26,7 @@ namespace ScientificReport.DTO.Models.Publication
 			Init();
 		}
 
-		public PublicationCreateModel(DAL.Entities.Publication publication)
+		public PublicationCreateModel(DAL.Entities.Publications.Publication publication)
 		{
 			Init();
 			Publication.Type = publication.PublicationType;
@@ -43,7 +43,7 @@ namespace ScientificReport.DTO.Models.Publication
 		{
 			Publication = new Models.Publication
 			{
-				PrintStatus = DAL.Entities.Publication.PrintStatuses.Any,
+				PrintStatus = DAL.Entities.Publications.Publication.PrintStatuses.Any,
 				PrintStatusOptions = new[] {"Any", "IsRecommendedToPrint", "IsPrintCanceled"}
 			};
 			Article = new ArticleModel();
@@ -51,9 +51,9 @@ namespace ScientificReport.DTO.Models.Publication
 			ScientificWork = new ScientificWork();
 		}
 
-		public DAL.Entities.Publication ToPublication()
+		public DAL.Entities.Publications.Publication ToPublication()
 		{
-			return new DAL.Entities.Publication
+			return new DAL.Entities.Publications.Publication
 			{
 				PublicationType = Publication.Type,
 				Title = Publication.Title,
@@ -66,9 +66,9 @@ namespace ScientificReport.DTO.Models.Publication
 			};
 		}
 		
-		public DAL.Entities.Article ToArticle()
+		public DAL.Entities.Publications.Article ToArticle()
 		{
-			return new DAL.Entities.Article
+			return new DAL.Entities.Publications.Article
 			{
 				ArticleType = Article.Type,
 				Title = Article.Title,

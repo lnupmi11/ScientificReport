@@ -1,11 +1,9 @@
-using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using ScientificReport.DAL.Entities.UserProfile;
 
-namespace ScientificReport.DAL.Entities
+namespace ScientificReport.DAL.Entities.Publications
 {
-	public class Publication
+	public class Publication : PublicationBase
 	{
 		public enum PublicationTypes
 		{
@@ -24,24 +22,17 @@ namespace ScientificReport.DAL.Entities
 		
 		public enum SortByOptions
 		{
-			Type, Title, PublishingHouse, PublishingYear
+			Title
 		}
 
-		[Key]
-		public Guid Id { get; set; }
-		
 		public PublicationTypes PublicationType { get; set; }
-		
-		public string Title { get; set; }
-		
+
 		public string Specification { get; set; }
 		
 		public string PublishingPlace { get; set; }
-		
+
 		public string PublishingHouseName { get; set; }
-		
-		public int PublishingYear { get; set; }
-		
+
 		public int PagesAmount { get; set; }
 		
 		public PrintStatuses PrintStatus { get; set; }

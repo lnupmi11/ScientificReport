@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ScientificReport.BLL.Interfaces;
 using ScientificReport.Controllers.Utils;
-using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Entities.Publications;
 using ScientificReport.DAL.Roles;
 using ScientificReport.DTO.Models;
 using ScientificReport.DTO.Models.ScientificWorks;
@@ -28,14 +28,6 @@ namespace ScientificReport.Controllers
 			_scientificWorkService = scientificWorkService;
 			_userProfileService = userProfileService;
 			_departmentService = departmentService;
-		}
-
-		// GET: ScientificWork
-		public IActionResult Index(ScientificWorkIndexModel model)
-		{
-			model.ScientificWorks = _scientificWorkService.GetPageByRole(model.CurrentPage, model.PageSize, User);
-			model.Count = _scientificWorkService.GetCountByRole(User);
-			return View(model);
 		}
 
 		// GET: ScientificWork/Details/{id}
@@ -130,7 +122,7 @@ namespace ScientificReport.Controllers
 				throw;
 			}
 
-			return RedirectToAction(nameof(Index));
+			return RedirectToAction("Index", "Publication");
 		}
 
 		// GET: ScientificWork/Delete/{id}
@@ -171,12 +163,11 @@ namespace ScientificReport.Controllers
 			}
 			
 			_scientificWorkService.DeleteById(id);
-			return RedirectToAction(nameof(Index));
+			return RedirectToAction("Index", "Publication");
 		}
 		
 		// POST: ScientificWork/AddAuthor/{id}
 		[HttpPost]
-		[ValidateAntiForgeryToken]
 		public IActionResult AddAuthor(Guid id, [FromBody] UpdateUserRequest request)
 		{
 			if (!_scientificWorkService.Exists(id))
@@ -195,7 +186,6 @@ namespace ScientificReport.Controllers
 		
 		// POST: ScientificWork/DeleteAuthor/{id}
 		[HttpPost]
-		[ValidateAntiForgeryToken]
 		public IActionResult DeleteAuthor(Guid id, [FromBody] UpdateUserRequest request)
 		{
 			if (!_scientificWorkService.Exists(id))

@@ -6,6 +6,7 @@ using ScientificReport.BLL.Interfaces;
 using ScientificReport.BLL.Utils;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Entities.Publications;
 using ScientificReport.DAL.Entities.UserProfile;
 using ScientificReport.DAL.Repositories;
 

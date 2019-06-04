@@ -10,7 +10,7 @@ namespace ScientificReport.DTO.Models.Publication
 		public Guid Id { get; set; }
 		
 		[Required]
-		public DAL.Entities.Publication.PublicationTypes Type { get; set; }
+		public DAL.Entities.Publications.Publication.PublicationTypes Type { get; set; }
 		
 		[Required]
 		public string Title { get; set; }
@@ -31,7 +31,7 @@ namespace ScientificReport.DTO.Models.Publication
 		public int PagesAmount { get; set; }
 		
 		[Required]
-		public DAL.Entities.Publication.PrintStatuses PrintStatus { get; set; }
+		public DAL.Entities.Publications.Publication.PrintStatuses PrintStatus { get; set; }
 
 		public IEnumerable<string> PrintStatusOptions { get; set; }
 		
@@ -44,7 +44,7 @@ namespace ScientificReport.DTO.Models.Publication
 			Init();
 		}
 
-		public PublicationEditModel(DAL.Entities.Publication publication)
+		public PublicationEditModel(DAL.Entities.Publications.Publication publication)
 		{
 			Init();
 			Id = publication.Id;
@@ -60,7 +60,7 @@ namespace ScientificReport.DTO.Models.Publication
 
 		private void Init()
 		{
-			PrintStatus = DAL.Entities.Publication.PrintStatuses.Any;
+			PrintStatus = DAL.Entities.Publications.Publication.PrintStatuses.Any;
 			PrintStatusOptions = new[]
 			{
 				"Any",

@@ -85,21 +85,9 @@
 		<value>PostgraduateGuidance</value>
 		<comment>PostgraduateGuidance</comment>
 	</data>
-	<data name="PostgraduateGuidance" xml:space="preserve">
-		<value>PostgraduateGuidance</value>
-		<comment>PostgraduateGuidance</comment>
-	</data>
-	<data name="PostgraduateGuidance" xml:space="preserve">
-		<value>PostgraduateGuidance</value>
-		<comment>PostgraduateGuidance</comment>
-	</data>
 	<data name="Add New PostgraduateDissertationGuidance" xml:space="preserve">
 		<value>Add New PostgraduateDissertationGuidance</value>
 		<comment>Add New PostgraduateDissertationGuidance</comment>
-	</data>
-	<data name="Review" xml:space="preserve">
-		<value>Review</value>
-		<comment>Review</comment>
 	</data>
 	<data name="Review" xml:space="preserve">
 		<value>Review</value>
@@ -125,18 +113,6 @@
 		<value>Add New Review</value>
 		<comment>Add New Review</comment>
 	</data>
-	<data name="Add New Review" xml:space="preserve">
-		<value>Add New Review</value>
-		<comment>Add New Review</comment>
-	</data>
-	<data name="Add New Review" xml:space="preserve">
-		<value>Add New Review</value>
-		<comment>Add New Review</comment>
-	</data>
-	<data name="Add New Review" xml:space="preserve">
-		<value>Add New Review</value>
-		<comment>Add New Review</comment>
-	</data>
 	<data name="Patent" xml:space="preserve">
 		<value>Patent</value>
 		<comment>Patent</comment>
@@ -144,10 +120,6 @@
 	<data name="Add New Patent" xml:space="preserve">
 		<value>Add New Patent</value>
 		<comment>Add New Patent</comment>
-	</data>
-	<data name="Add New Opposition" xml:space="preserve">
-		<value>Add New Opposition</value>
-		<comment>Add New Opposition</comment>
 	</data>
 	<data name="Add New Opposition" xml:space="preserve">
 		<value>Add New Opposition</value>

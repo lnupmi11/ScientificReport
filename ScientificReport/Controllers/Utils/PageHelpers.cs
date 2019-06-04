@@ -1,4 +1,5 @@
 using System.Security.Claims;
+using ScientificReport.DAL.Entities.Publications;
 using ScientificReport.DAL.Roles;
 
 namespace ScientificReport.Controllers.Utils
@@ -23,6 +24,26 @@ namespace ScientificReport.Controllers.Utils
 		public static bool IsTeacher(ClaimsPrincipal user)
 		{
 			return user.IsInRole(UserProfileRole.Teacher);
+		}
+
+		public static string GetPublicationController(PublicationBase publication)
+		{
+			var result = "";
+			var publicationType = publication.GetType();
+			if (publicationType == typeof(Publication))
+			{
+				result = "Publication";
+			}
+			else if (publicationType == typeof(Article))
+			{
+				result = "Article";
+			}
+			else if (publicationType == typeof(ScientificWork))
+			{
+				result = "ScientificWork";
+			}
+
+			return result;
 		}
 	}
 }

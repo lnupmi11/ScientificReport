@@ -1,10 +1,11 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ScientificReport.BLL.Interfaces;
 using ScientificReport.Controllers.Utils;
-using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Entities.Publications;
 using ScientificReport.DAL.Roles;
 using ScientificReport.DTO.Models;
 using ScientificReport.DTO.Models.Publication;
@@ -44,11 +45,8 @@ namespace ScientificReport.Controllers
 		// GET: /Publication
 		public IActionResult Index(PublicationIndexModel model)
 		{
-			model.Publications = _publicationService.Filter(
-				model, User, PageHelpers.IsAdmin(User), PageHelpers.IsHeadOfDepartment(User)
-			);
-			model.Articles = _articleService.GetPage(model.CurrentPage, model.PageSize);	
-			model.Count = _publicationService.GetAll().Count() + _articleService.GetCount();
+			model.Publications = FilterPublications(model, PageHelpers.IsAdmin(User), PageHelpers.IsHeadOfDepartment(User));
+			model.ReportTheses = _reportThesisService.GetAll();
 			return View(model);
 		}
 
@@ -92,7 +90,6 @@ namespace ScientificReport.Controllers
 		// POST: /Publication/Create
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		// TODO: add search for publication which match the string that user entered in 'Title' field
 		public IActionResult Create(PublicationCreateModel model)
 		{
 			if (!ModelState.IsValid)
@@ -204,7 +201,7 @@ namespace ScientificReport.Controllers
 			return View(editModel);
 		}
 
-		// POST: Publication/AddSelfToAuthors/{id}
+		// POST: /Publication/AddSelfToAuthors/{id}
 		[HttpPost]
 		public IActionResult AddSelfToAuthors(Guid? id)
 		{
@@ -228,7 +225,7 @@ namespace ScientificReport.Controllers
 			return RedirectToAction("Details", new { id = id.Value });
 		}
 
-		// POST: Publication/AddUserToAuthors/{publicationId}
+		// POST: /Publication/AddUserToAuthors/{publicationId}
 		[HttpPost]
 		[Authorize(Roles = UserProfileRole.HeadOfDepartmentOrAdmin)]
 		public IActionResult AddUserToAuthors(Guid? id, [FromBody] UpdateUserRequest request)
@@ -263,7 +260,7 @@ namespace ScientificReport.Controllers
 			return Json(ApiResponse.Ok);
 		}
 
-		// POST: Publication/RemoveUserFromAuthors/{publicationId}
+		// POST: /Publication/RemoveUserFromAuthors/{publicationId}
 		[HttpPost]
 		[Authorize(Roles = UserProfileRole.HeadOfDepartmentOrAdmin)]
 		public IActionResult RemoveUserFromAuthors(Guid? id, [FromBody] UpdateUserRequest request)
@@ -298,7 +295,7 @@ namespace ScientificReport.Controllers
 			return Json(ApiResponse.Ok);
 		}
 		
-		// GET: Publication/Delete/{id}
+		// GET: /Publication/Delete/{id}
 		public IActionResult Delete(Guid? id)
 		{
 			if (id == null)
@@ -320,7 +317,7 @@ namespace ScientificReport.Controllers
 			return View(publication);
 		}
 
-		// POST: Publication/Delete/{id}
+		// POST: /Publication/Delete/{id}
 		[HttpPost, ActionName("Delete")]
 		[ValidateAntiForgeryToken]
 		public IActionResult DeleteConfirmed(Guid id)
@@ -358,7 +355,6 @@ namespace ScientificReport.Controllers
 				Success = true
 			});
 		}
-
 		
 		private bool AllowUserToEditPublication(Publication publication)
 		{
@@ -367,6 +363,104 @@ namespace ScientificReport.Controllers
 			var isHeadOfDepartment = PageHelpers.IsHeadOfDepartment(User) && publication.UserProfilesPublications.Any(p => department.Staff.Contains(p.UserProfile));
 			return PageHelpers.IsAdmin(User) || isHeadOfDepartment ||
 			       publication.UserProfilesPublications.Any(p => p.UserProfile.UserName == User.Identity.Name);
+		}
+
+		private List<PublicationBase> GetAllPublications()
+		{
+			var publications = new List<PublicationBase>();
+			publications.AddRange(_publicationService.GetAll());
+			publications.AddRange(_articleService.GetAll());
+			publications.AddRange(_scientificWorkService.GetAll());
+			return publications;
+		}
+		
+		private IEnumerable<PublicationBase> FilterPublications(PublicationIndexModel model, bool userIsAdmin, bool userIsHead)
+		{
+			var allPublications = GetAllPublications();
+			model.Count = allPublications.Count;
+			var publications = allPublications.ToList().Skip((model.CurrentPage - 1) * model.PageSize).Take(model.PageSize);
+			if (model.SortBy != null)
+			{
+				model.PublicationSetType = Publication.PublicationSetType.Faculty;
+				publications = SortPublicationsBy(model.SortBy.Value, model.CurrentPage, model.PageSize);
+			}
+			else
+			{
+				var yearFrom = -1;
+				if (model.YearFromFilter != null)
+				{
+					yearFrom = model.YearFromFilter.Value;
+				}
+			
+				var yearTo = -1;
+				if (model.YearToFilter != null)
+				{
+					yearTo = model.YearToFilter.Value;
+				}
+
+				var user = _userProfileService.Get(u => u.UserName == User.Identity.Name);
+			
+				if (model.PublicationSetType == null)
+				{
+					if (userIsAdmin)
+					{
+						model.PublicationSetType = Publication.PublicationSetType.Faculty;	
+					}
+					else if (userIsHead)
+					{
+						model.PublicationSetType = Publication.PublicationSetType.Department;	
+					}
+					else
+					{
+						model.PublicationSetType = Publication.PublicationSetType.Personal;	
+					}
+				}
+				
+				switch (model.PublicationSetType.Value)
+				{
+					case Publication.PublicationSetType.Department:
+						var department = _departmentService.Get(u => u.Staff.Contains(user));
+						publications = department != null
+							? publications.Where(p => Helpers.CheckForDepartmentPublication(p, department))
+							: publications.Where(p => Helpers.CheckForPersonalPublication(p, user));
+						break;
+					case Publication.PublicationSetType.Faculty:
+						break;
+					case Publication.PublicationSetType.Personal:
+						publications = publications.Where(p => Helpers.CheckForPersonalPublication(p, user));
+						break;
+					default:
+						publications = publications.Where(p => Helpers.CheckForPersonalPublication(p, user));
+						break;
+				}
+
+				if (yearFrom != -1)
+				{	
+					publications = publications.Where(p => p.PublishingYear >= yearFrom);
+				}
+			
+				if (yearTo != -1)
+				{
+					publications = publications.Where(p => p.PublishingYear <= yearTo);
+				}
+			}
+
+			return publications;
+		}
+		
+		private IEnumerable<PublicationBase> SortPublicationsBy(Publication.SortByOptions option, int page, int count)
+		{
+			var publications = GetAllPublications().Skip((page - 1) * count).Take(count);
+			switch (option)
+			{
+				case Publication.SortByOptions.Title:
+					publications = publications.OrderBy(p => p.Title);
+					break;
+				default:
+					return publications;
+			}
+
+			return publications;
 		}
 	}
 }

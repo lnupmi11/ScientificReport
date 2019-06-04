@@ -124,6 +124,7 @@ namespace ScientificReport.Controllers
 		{
 			var viewModel = new TeacherReportCreateViewModel
 			{
+				UserId = _userProfileService.Get(u => u.UserName == HttpContext.User.Identity.Name).Id,
 				Users = _userProfileService.GetAll()
 			};
 
@@ -155,6 +156,7 @@ namespace ScientificReport.Controllers
 			_teacherReportService.CreateItem(report);
 			return RedirectToAction(nameof(Index));
 		}
+
 
 		// GET: Report/Edit/{id}
 		public IActionResult Edit(Guid? id)

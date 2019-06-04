@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using ScientificReport.DAL.Entities.Publications;
 
 namespace ScientificReport.DAL.Entities.Reports
 {
@@ -12,6 +13,7 @@ namespace ScientificReport.DAL.Entities.Reports
 
 		public override DateTime Created { get; set; }
 		public override DateTime Edited { get; set; }
+		
 
 		public UserProfile.UserProfile Teacher { get; set; }
 

@@ -1,5 +1,5 @@
 @using ScientificReport.BLL.Interfaces
-@using ScientificReport.DAL.Entities
+@using ScientificReport.DAL.Entities.Publications
 @inject IPublicationService PublicationService
 @model ScientificReport.Views.TeacherReport.PrintPublication
 @{
@@ -32,12 +32,12 @@ var authors = PublicationService.GetPublicationAuthors(Model.Publication.Id);
 		break;
 	case Publication.PublicationTypes.Monograph:
 		//check if amount of coauthors < 4
-		if(authors.Count<4){
+		if(authors?.Count<4){
 			<li class="publications-item">@Model.User.LastName @Model.User.FirstName.ToCharArray()[0]. @Model.User.MiddleName.ToCharArray()[0]. @Model.Publication.Title / @authorString @Model.Publication.Specification – @Model.Publication.PublishingPlace :  @Model.Publication.PublishingHouseName, @Model.Publication.PublishingYear – @Model.Publication.PagesAmount</li>
 		}
 		else
 		{
-			authorString = authors.Select(u => u.FullName).Take(3).Aggregate((current, item) => current +", "+ item);
+			authorString = authors?.Select(u => u.FullName).Take(3).Aggregate((current, item) => current +", "+ item);
 			<li class="publications-item">@Model.Publication.Title / @authorString @Model.Publication.Specification – @Model.Publication.PublishingPlace :  @Model.Publication.PublishingHouseName, @Model.Publication.PublishingYear – @Model.Publication.PagesAmount</li>
 		}
 		break;

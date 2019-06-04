@@ -3,110 +3,98 @@
 @inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = Localizer["Edit scientific work"];
+	ViewData["Title"] = Localizer["Edit scientific work"];
 }
 
 <style type="text/css">
-    .authors-list {
-        overflow-y: scroll;
-        height: 200px;
-    }
-    .authors-label {
-        /* margin-bottom: 10px; */
-        position: relative !important;
-        left: 0 !important;
-        font-size: 12.5px !important;
-    }
+	.authors-list {
+		overflow-y: scroll;
+		height: 200px;
+	}
+	.authors-label {
+		/* margin-bottom: 10px; */
+		position: relative !important;
+		left: 0 !important;
+		font-size: 12.5px !important;
+	}
+	.span-label {
+		color: black;
+	}
 </style>
-
 <h5>@ViewData["Title"]</h5>
 <hr/>
 <div class="row">
-    <div class="col s12">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="validate"></div>
-            <input type="hidden" asp-for="ScientificWork.Id"/>
-            <div class="row">
-                <div class="input-field col s6">
-                    <input asp-for="ScientificWork.Cypher" type="text" class="validate">
-                    <label asp-for="ScientificWork.Cypher">@Localizer["Cypher"]</label>
-                    <span class="helper-text" asp-validation-for="ScientificWork.Cypher" data-error="" data-success=""></span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s6">
-                    <input asp-for="ScientificWork.Category" type="date" class="validate">
-                    <label asp-for="ScientificWork.Category">@Localizer["Category"]</label>
-                    <span class="helper-text" asp-validation-for="ScientificWork.Category" data-error="" data-success=""></span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s6">
-                    <input asp-for="ScientificWork.Title" type="date" class="validate">
-                    <label asp-for="ScientificWork.Title">@Localizer["Title"]</label>
-                    <span class="helper-text" asp-validation-for="ScientificWork.Title" data-error="" data-success=""></span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s6">
-                    <textarea asp-for="ScientificWork.Contents" class="materialize-textarea"></textarea>
-                    <label asp-for="ScientificWork.Contents">@Localizer["Contents"]</label>
-                    <span class="helper-text" asp-validation-for="ScientificWork.Contents" 
-                          data-length="400" data-error="" data-success=""></span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s6">
-                    <label class="authors-label">@Localizer["Authors"]:</label>
-                    <div class="authors-list">
-                        @if (Model.Users != null)
-                        {
-                            foreach (var user in Model.Users)
-                            {
-                                if (user != null)
-                                {
-                                    var exists = Model.Authors.Any(u => u.Id == user.Id);
-                                    <p>
-                                        @user.FirstName @user.LastName
-                                        <i class="add-user fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addAuthor(this, '@Model.ScientificWork.Id', '@user.Id')"></i>
-                                        <i class="remove-user fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteAuthor(this, '@Model.ScientificWork.Id', '@user.Id')"></i>
-                                    </p>
-                                }
-                            }
-                        }
-                    </div>
-                </div>
-            </div>
-            <div class="row myButtons">
-                <button type="submit" class="waves-effect btn-small accent-2">@Localizer["Save"]</button>
-                <a asp-action="Index" class="waves-effect btn-small blue darken-3">@Localizer["Cancel"]</a>
-            </div>
-        </form>
-    </div>
-    
+	<div class="col s12">
+		<form asp-action="Edit">
+			<div asp-validation-summary="ModelOnly" class="validate"></div>
+			<input type="hidden" asp-for="ScientificWork.Id"/>
+			<div class="row">
+				<div class="input-field col s6">
+					<input asp-for="ScientificWork.Cypher" type="text" class="validate">
+					<label asp-for="ScientificWork.Cypher">@Localizer["Cypher"]</label>
+					<span class="helper-text" asp-validation-for="ScientificWork.Cypher" data-error="" data-success=""></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s6">
+					<input asp-for="ScientificWork.Category" class="validate">
+					<label asp-for="ScientificWork.Category">@Localizer["Category"]</label>
+					<span class="helper-text" asp-validation-for="ScientificWork.Category" data-error="" data-success=""></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s6">
+					<input asp-for="ScientificWork.Title" class="validate">
+					<label asp-for="ScientificWork.Title">@Localizer["Title"]</label>
+					<span class="helper-text" asp-validation-for="ScientificWork.Title" data-error="" data-success=""></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s6">
+					<textarea asp-for="ScientificWork.Contents" class="materialize-textarea"></textarea>
+					<label asp-for="ScientificWork.Contents">@Localizer["Contents"]</label>
+					<span class="helper-text" asp-validation-for="ScientificWork.Contents" 
+						  data-length="400" data-error="" data-success=""></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s6">
+					<label class="authors-label">@Localizer["Authors"]:</label>
+					<div class="authors-list">
+						@if (Model.Users != null)
+						{
+							foreach (var user in Model.Users)
+							{
+								if (user != null)
+								{
+									var exists = Model.Authors.Any(u => u.Id == user.Id);
+									<p>
+										<label>
+											<input class="filled-in" type="checkbox" onclick="clickAuthor(this, '@Model.ScientificWork.Id', '@user.Id')" @(exists ? "checked=\"checked\"" : "")/>
+											<span class="span-label">@user.FirstName @user.LastName</span>
+										</label>
+									</p>
+								}
+							}
+						}
+					</div>
+				</div>
+			</div>
+			<div class="row myButtons">
+				<button type="submit" class="waves-effect btn-small accent-2">@Localizer["Save"]</button>
+				<a asp-action="Index" asp-controller="Publication" class="waves-effect btn-small blue darken-3">@Localizer["Cancel"]</a>
+			</div>
+		</form>
+	</div>
+	
 </div>
 
-<script>    
-    const toggleAuthor = (endpoint, tagName) => (tag, id, authorId) => {
-        const config = {
-            method: 'POST',
-            body: JSON.stringify({
-                UserId: authorId
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        };
-        fetch(`/ScientificWork/${endpoint}/${id}`, config).then(response => {
-//            console.log(response);
-            if (response.status !== 200) throw {msg: "Failed to toggle the author", response};
-            tag.classList.add('hidden');
-            tag.parentElement.getElementsByClassName(tagName)[0].classList.remove('hidden');
-        }).catch(e => {
-            console.error(e);
-        });
-    }
-
-    const addAuthor = toggleAuthor('AddAuthor', 'remove-user');
-    const deleteAuthor = toggleAuthor('DeleteAuthor', 'add-user');
-</script>
+@section Scripts
+{
+	<script>    
+		let reqAuthorBody = (userId) => {
+			return { UserId: userId };
+		};
+		const clickAuthor = toggleCheckboxEntity('ScientificWork', 'AddAuthor', 'DeleteAuthor', reqAuthorBody);
+	</script>
+}
