@@ -2,7 +2,7 @@ var searchData=
 [
   ['apiresponse',['ApiResponse',['../a00002.html',1,'ScientificReport::Controllers::Utils']]],
   ['applicantspatentlicenseactivities',['ApplicantsPatentLicenseActivities',['../a00003.html',1,'ScientificReport::DAL::Entities']]],
-  ['article',['Article',['../a00004.html',1,'ScientificReport::DAL::Entities']]],
+  ['article',['Article',['../a00004.html',1,'ScientificReport::DAL::Entities::Publications']]],
   ['articlecontroller',['ArticleController',['../a00005.html',1,'ScientificReport::Controllers']]],
   ['articledetailsmodel',['ArticleDetailsModel',['../a00006.html',1,'ScientificReport::DTO::Models::Article']]],
   ['articleeditmodel',['ArticleEditModel',['../a00007.html',1,'ScientificReport::DTO::Models::Article']]],

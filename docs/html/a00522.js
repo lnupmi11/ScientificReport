@@ -1,6 +1,7 @@
 var a00522 =
 [
     [ "ApiResponse", "a00002.html", "a00002" ],
-    [ "PublicationApiResponse", "a00140.html", "a00140" ],
-    [ "PublicationSearchApiResponse", "a00148.html", "a00148" ]
+    [ "Helpers", "a00053.html", null ],
+    [ "PublicationApiResponse", "a00141.html", "a00141" ],
+    [ "PublicationSearchApiResponse", "a00150.html", "a00150" ]
 ];

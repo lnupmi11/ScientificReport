@@ -1,3 +1,3 @@
-<map id="ScientificReport.DAL.Entities.Reports.Report" name="ScientificReport.DAL.Entities.Reports.Report">
-<area shape="rect" id="node2" href="$a00072.html" title="{ITrackable\n|+ Created\l+ Edited\l|}" alt="" coords="64,5,152,97"/>
+<map id="ScientificReport.DAL.Entities.Publications.ScientificWork" name="ScientificReport.DAL.Entities.Publications.ScientificWork">
+<area shape="rect" id="node2" href="$a00142.html" title="{PublicationBase\n|+ Id\l+ Title\l+ PublishingYear\l|}" alt="" coords="45,5,172,112"/>
 </map>

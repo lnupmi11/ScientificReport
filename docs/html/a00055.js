@@ -1,16 +1,16 @@
 var a00055 =
 [
-    [ "CreateItem", "a00055.html#aecba215513edad78d1305d4cc9df33d8", null ],
-    [ "DeleteById", "a00055.html#a4a7aafd68f100377d4ff2db3f7187ab5", null ],
-    [ "Exists", "a00055.html#ad1c7d1e8afdae0375538beae3f98d672", null ],
-    [ "Get", "a00055.html#a3d3e96906ca3d3b3595c9e0e17dab8d5", null ],
-    [ "GetAll", "a00055.html#ab0cf2b7825cf8d067aea04e5e1cf561b", null ],
-    [ "GetAllWhere", "a00055.html#ab9d07b1dc452e06bbcf173a1f6011c04", null ],
-    [ "GetById", "a00055.html#ace8527a3125798955d12b15e70db5d19", null ],
-    [ "GetCountByRole", "a00055.html#a2d44ab2ba3a5a59ae0b28e038ea4a275", null ],
-    [ "GetItemsByRole", "a00055.html#ad9f6559df05e8433d1b6d3afc4e29833", null ],
-    [ "GetPageByRole", "a00055.html#a80d197329589a366eb491edf4b833399", null ],
-    [ "GetParticipators", "a00055.html#a719b7fffbed673455843b1c3db6cbc75", null ],
-    [ "GetReportTheses", "a00055.html#a7b7848d90a19de35108a4669fa3b413f", null ],
-    [ "UpdateItem", "a00055.html#a6a00f1d90a7a4299883dea968dd31ce2", null ]
+    [ "AddAuthor", "a00055.html#a9da96789ac5bc697c90c8c526493fd42", null ],
+    [ "CreateItem", "a00055.html#ade6f680a14a577cd6b6d5b489c44a9a5", null ],
+    [ "DeleteById", "a00055.html#a8b61db0d56fc74d2b4fab3321905e43e", null ],
+    [ "Exists", "a00055.html#a42b9c3ae1ca9f9fa986b6c5c86229a3c", null ],
+    [ "Get", "a00055.html#a48a53dabfdce9d2d589d00a22274e1c8", null ],
+    [ "GetAll", "a00055.html#ae913cdea747ef0074669701ee9ef1fd0", null ],
+    [ "GetAllWhere", "a00055.html#a21c97c85c651b4d36ccb0b06cf9eae73", null ],
+    [ "GetAuthors", "a00055.html#a92d1cf8b71f457714755173cb48b4f0c", null ],
+    [ "GetById", "a00055.html#a9e90220796055165946d1185616f2f8a", null ],
+    [ "GetCount", "a00055.html#a4b3a2cc44b2589f7b38c477dab7f882f", null ],
+    [ "GetPage", "a00055.html#ad2f5f6a07085a2198e6f2f02cbbcd329", null ],
+    [ "RemoveAuthor", "a00055.html#a82e8977d5bcf608397b27366b3085c19", null ],
+    [ "UpdateItem", "a00055.html#a1fe440b03deb5edb3185011b6f7d40a4", null ]
 ];

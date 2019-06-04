@@ -1,3 +1,0 @@
-<map id="ScientificReport.BLL.Services.PublicationService" name="ScientificReport.BLL.Services.PublicationService">
-<area shape="rect" id="node2" href="$a00064.html" title="{IPublicationService\n||+ GetAll()\l+ GetAllWhere()\l+ Filter()\l+ GetById()\l+ Get()\l+ CreateItem()\l+ UpdateItem()\l+ DeleteById()\l+ PublicationExists()\l+ GetPublicationAuthors()\l+ AddAuthor()\l+ RemoveAuthor()\l+ GetUserPublications()\l+ SortPublicationsBy()\l}" alt="" coords="15,5,205,273"/>
-</map>

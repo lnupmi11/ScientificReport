@@ -1,16 +1,7 @@
 var a00054 =
 [
-    [ "AddAuthor", "a00054.html#a9da96789ac5bc697c90c8c526493fd42", null ],
-    [ "CreateItem", "a00054.html#ade6f680a14a577cd6b6d5b489c44a9a5", null ],
-    [ "DeleteById", "a00054.html#a8b61db0d56fc74d2b4fab3321905e43e", null ],
-    [ "Exists", "a00054.html#a42b9c3ae1ca9f9fa986b6c5c86229a3c", null ],
-    [ "Get", "a00054.html#a48a53dabfdce9d2d589d00a22274e1c8", null ],
-    [ "GetAll", "a00054.html#ae913cdea747ef0074669701ee9ef1fd0", null ],
-    [ "GetAllWhere", "a00054.html#a21c97c85c651b4d36ccb0b06cf9eae73", null ],
-    [ "GetAuthors", "a00054.html#a92d1cf8b71f457714755173cb48b4f0c", null ],
-    [ "GetById", "a00054.html#a9e90220796055165946d1185616f2f8a", null ],
-    [ "GetCount", "a00054.html#a4b3a2cc44b2589f7b38c477dab7f882f", null ],
-    [ "GetPage", "a00054.html#ad2f5f6a07085a2198e6f2f02cbbcd329", null ],
-    [ "RemoveAuthor", "a00054.html#a82e8977d5bcf608397b27366b3085c19", null ],
-    [ "UpdateItem", "a00054.html#a1fe440b03deb5edb3185011b6f7d40a4", null ]
+    [ "AccessDenied", "a00054.html#aa84c4c6ad9ae9885f6dbdbe6b5f2fa42", null ],
+    [ "Error", "a00054.html#ab23c5c5bb2a8f95c1c6ca4de3e32318d", null ],
+    [ "Index", "a00054.html#acc629acfd1137f0a258c5f691a71a3ce", null ],
+    [ "SetLanguage", "a00054.html#aa75b5dd975e7272c5630a996aebe09f8", null ]
 ];

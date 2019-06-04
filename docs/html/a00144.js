@@ -1,17 +1,18 @@
 var a00144 =
 [
-    [ "PublicationEditModel", "a00144.html#add6beda443f5024a44194f5c6b104f0a", null ],
-    [ "PublicationEditModel", "a00144.html#a80816b3521f1942fafe5660a2efa35ea", null ],
-    [ "Authors", "a00144.html#a0b730809618640584a80d06a7e2df2e6", null ],
-    [ "Id", "a00144.html#a71dedc55809874f98e6769545ff16b99", null ],
-    [ "PagesAmount", "a00144.html#aea869a3dff5384653c5fa7467b24bf0f", null ],
-    [ "PrintStatus", "a00144.html#ab3b76e462737b8120d54a2c2627984fa", null ],
-    [ "PrintStatusOptions", "a00144.html#a610bb4e9f7883e1cf9a5b9aa6548c7fc", null ],
-    [ "PublishingHouseName", "a00144.html#ae393786ee40e793d42408abd27fd90ba", null ],
-    [ "PublishingPlace", "a00144.html#a3029fac8dee1b83cd233c83ffcf60933", null ],
-    [ "PublishingYear", "a00144.html#a0de318c9f49d1d7b54acfc61fc16b00f", null ],
-    [ "Specification", "a00144.html#a74f67378f59300280a3aa494340120fe", null ],
-    [ "Title", "a00144.html#ac0ad0710f0f9e42d66a7037d7ed0edff", null ],
-    [ "Type", "a00144.html#a9115feaa18cdb88a50cb98da55279219", null ],
-    [ "Users", "a00144.html#a02867fdeb2fd930077b19994892b01a2", null ]
+    [ "PublicationTypes", "a00144.html#aa22eba044f1da73fa88e304549735dd1", [
+      [ "Article", "a00144.html#aa22eba044f1da73fa88e304549735dd1a5e2f8ee473fdebc99fef4dc9e7ee3146", null ],
+      [ "ScientificWork", "a00144.html#aa22eba044f1da73fa88e304549735dd1a18a6a0a37b8b34baf219a830ed94ff84", null ],
+      [ "ReportThesis", "a00144.html#aa22eba044f1da73fa88e304549735dd1a300d84c48288c4a3e62da81d19d2de69", null ],
+      [ "Other", "a00144.html#aa22eba044f1da73fa88e304549735dd1a6311ae17c1ee52b36e68aaf4ad066387", null ]
+    ] ],
+    [ "PublicationCreateModel", "a00144.html#a4b0d7dbb87e7181d2121cc70a0f0a724", null ],
+    [ "PublicationCreateModel", "a00144.html#aaa9b53a5a30bf8b97a7f2871db94cef7", null ],
+    [ "ToArticle", "a00144.html#a06804cdb9c52521bc2ab5d4e74a65954", null ],
+    [ "ToPublication", "a00144.html#a58ebaddf5fa1a372aa4a6e338726d838", null ],
+    [ "Article", "a00144.html#ab109c977b2c59f70a11e302b59455a52", null ],
+    [ "Publication", "a00144.html#aedd46c0f1067e687e0e9c1b7835c6c3f", null ],
+    [ "PublicationType", "a00144.html#a7d9e24354e3e6ccc56f3cefb88143f62", null ],
+    [ "ReportThesis", "a00144.html#a533ac9299c9069bb366ec91e71f3e99d", null ],
+    [ "ScientificWork", "a00144.html#ac05fa025681cade02346eece446a4f85", null ]
 ];

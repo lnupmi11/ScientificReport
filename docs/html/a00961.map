@@ -1,3 +1,3 @@
-<map id="ScientificReport.DTO.Models.PatentLicenseActivity.PatentLicenseActivityEditModel" name="ScientificReport.DTO.Models.PatentLicenseActivity.PatentLicenseActivityEditModel">
-<area shape="rect" id="node2" href="$a00099.html" title="{PatentLicenseActivityModel\n|+ Name\l+ Number\l+ DateTime\l+ Type\l|+ PatentLicenseActivityModel()\l+ PatentLicenseActivityModel()\l}" alt="" coords="19,5,239,141"/>
+<map id="ScientificReport.DTO.Models.Opposition.OppositionEditModel" name="ScientificReport.DTO.Models.Opposition.OppositionEditModel">
+<area shape="rect" id="node2" href="$a00090.html" title="{OppositionModel\n|+ About\l+ DateOfOpposition\l+ Opponent\l|+ OppositionModel()\l+ OppositionModel()\l}" alt="" coords="41,5,194,127"/>
 </map>

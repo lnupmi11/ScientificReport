@@ -1,12 +1,7 @@
 var a00086 =
 [
-    [ "OppositionController", "a00086.html#a51badfe472d67f1ce99dccd6aea397f0", null ],
-    [ "Create", "a00086.html#ad0dab5a26a26f835f50757af8a90479e", null ],
-    [ "Create", "a00086.html#a6a27e25426914b01c8e3094e2b3d0f69", null ],
-    [ "Delete", "a00086.html#a8602c231eed57ca276c5de86d0b4d8d7", null ],
-    [ "DeleteConfirmed", "a00086.html#a9889f21ce0811e571d46e225a2ff47b1", null ],
-    [ "Details", "a00086.html#a8bb48ab8e871e0baacaef6578c51bcd3", null ],
-    [ "Edit", "a00086.html#a3bb187ea649fd282337525e17dda3348", null ],
-    [ "Edit", "a00086.html#ad299e2d004605415562b9b3a34276568", null ],
-    [ "Index", "a00086.html#a2b8cc653affd4b2fea45029f6d2f04d0", null ]
+    [ "About", "a00086.html#a4d483fd011d2fd74594a7191250c1cfa", null ],
+    [ "DateOfOpposition", "a00086.html#a863543f11d31a8fdb0233faee41842df", null ],
+    [ "Id", "a00086.html#a907d44d6cf4bcdad7d6982349a22e88f", null ],
+    [ "Opponent", "a00086.html#addcfea9d24bd88ccb4287afd096ee4ee", null ]
 ];

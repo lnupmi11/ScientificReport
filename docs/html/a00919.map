@@ -1,3 +1,3 @@
-<map id="ScientificReport.DTO.Models.Conference.ConferenceIndexModel" name="ScientificReport.DTO.Models.Conference.ConferenceIndexModel">
-<area shape="rect" id="node2" href="$a00094.html" title="{PageModel\n|+ TotalPages\l+ ShowPrevious\l+ ShowNext\l+ CurrentPage\l+ Count\l+ PageSize\l|}" alt="" coords="65,5,190,156"/>
+<map id="ScientificReport.DTO.Models.Article.ArticleModel" name="ScientificReport.DTO.Models.Article.ArticleModel">
+<area shape="rect" id="node2" href="$a00007.html" title="{ScientificReport.DTO.Models.\lArticle.ArticleEditModel\n|+ Users\l+ Authors\l+ Id\l|+ ArticleEditModel()\l+ ArticleEditModel()\l+ Modify()\l}" alt="" coords="5,307,208,457"/>
 </map>

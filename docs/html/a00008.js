@@ -11,5 +11,5 @@ var a00008 =
     [ "PublishingPlace", "a00008.html#a5a8a6942fb46835f75a42c2e0883778a", null ],
     [ "PublishingYear", "a00008.html#a9c9deefcb17d56a79a52b10524bf72a5", null ],
     [ "Title", "a00008.html#ac099a58e72855b81b005ca4b7ee11c23", null ],
-    [ "Type", "a00008.html#abe94e54aafc261d6144ec98e9e5fbe9d", null ]
+    [ "Type", "a00008.html#ad4a90ce5c5c9eb7c25d00dde09441fa9", null ]
 ];

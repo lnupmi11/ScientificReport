@@ -1,3 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$a00138.html" title="ScientificReport.DAL.Entities.\lPublication" alt="" coords="5,5,211,47"/>
+<area shape="rect" id="node1" href="$a00142.html" title="ScientificReport.DAL.Entities.\lPublications.PublicationBase" alt="" coords="5,71,211,112"/>
+<area shape="rect" id="node2" href="$a00004.html" title="ScientificReport.DAL.Entities.\lPublications.Article" alt="" coords="259,5,464,47"/>
+<area shape="rect" id="node3" href="$a00139.html" title="ScientificReport.DAL.Entities.\lPublications.Publication" alt="" coords="259,71,464,112"/>
+<area shape="rect" id="node4" href="$a00193.html" title="ScientificReport.DAL.Entities.\lPublications.ScientificWork" alt="" coords="259,136,464,177"/>
 </map>

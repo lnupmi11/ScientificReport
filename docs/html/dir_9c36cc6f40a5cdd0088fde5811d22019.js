@@ -4,10 +4,10 @@ var dir_9c36cc6f40a5cdd0088fde5811d22019 =
       [ "ChangePasswordModel", "a00015.html", "a00015" ]
     ] ],
     [ "LoginModel.cs", "a00406.html", [
-      [ "LoginModel", "a00074.html", "a00074" ]
+      [ "LoginModel", "a00075.html", "a00075" ]
     ] ],
     [ "RegisterModel.cs", "a00407.html", [
-      [ "RegisterModel", "a00151.html", "a00151" ]
+      [ "RegisterModel", "a00153.html", "a00153" ]
     ] ],
     [ "UserDetailsModel.cs", "a00408.html", [
       [ "UserDetailsModel", "a00227.html", "a00227" ]

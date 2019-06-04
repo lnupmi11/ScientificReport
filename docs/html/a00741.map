@@ -1,2 +1,4 @@
-<map id="ScientificReport.DAL.DbContext.ScientificReportDbContext" name="ScientificReport.DAL.DbContext.ScientificReportDbContext">
+<map id="ScientificReport.Controllers.Utils.PublicationSearchApiResponse" name="ScientificReport.Controllers.Utils.PublicationSearchApiResponse">
+<area shape="rect" id="node2" href="$a00002.html" title="{ApiResponse\n|+ Success\l|}" alt="" coords="79,175,181,252"/>
+<area shape="rect" id="node3" href="$a00002.html" title="{ScientificReport.Controllers.\lUtils.ApiResponse\n|+ Success\l|}" alt="" coords="31,5,229,97"/>
 </map>

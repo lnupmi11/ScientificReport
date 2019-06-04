@@ -1,6 +1,2 @@
-<map id="ScientificReport.DAL.Interfaces.ITrackable" name="ScientificReport.DAL.Interfaces.ITrackable">
-<area shape="rect" id="node2" href="$a00152.html" title="{ScientificReport.DAL.Entities.\lReports.Report\n|+ Id\l+ Created\l+ Edited\l|}" alt="" coords="235,160,440,281"/>
-<area shape="rect" id="node3" href="$a00032.html" title="{ScientificReport.DAL.Entities.\lReports.DepartmentReport\n|+ HeadOfDepartment\l+ TeacherReports\l+ Conferences\l|}" alt="" coords="5,491,211,612"/>
-<area shape="rect" id="node4" href="$a00041.html" title="{ScientificReport.DAL.Entities.\lReports.FacultyReport\n|+ Administrator\l+ DepartmentReports\l|}" alt="" coords="235,498,440,605"/>
-<area shape="rect" id="node5" href="$a00204.html" title="{ScientificReport.DAL.Entities.\lReports.TeacherReport\n|+ Id\l+ Created\l+ Edited\l+ Teacher\l+ TeacherReportsPostgraduate\lDissertationGuidances\l+ TeacherReportsPostgraduate\lGuidances\l+ TeacherReportsPatents\l+ TeacherReportsReviews\l+ TeacherReportsOppositions\l+ TeacherReportsScientific\lConsultations\land 7 more...\l|+ GetScientificWorks()\l+ GetPublications()\l+ GetArticles()\l+ GetReportTheses()\l+ GetGrants()\l+ GetScientificInternships()\l+ GetPostgraduateGuidances()\l+ GetScientificConsultations()\l+ GetPostgraduateDissertation\lGuidances()\l+ GetReviews()\land 17 more...\l}" alt="" coords="465,329,687,773"/>
+<map id="ScientificReport.DAL.Entities.UserProfile.UserProfilesPublications" name="ScientificReport.DAL.Entities.UserProfile.UserProfilesPublications">
 </map>

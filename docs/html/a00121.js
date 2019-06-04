@@ -1,15 +1,12 @@
 var a00121 =
 [
-    [ "PostgraduateGuidanceService", "a00121.html#ada85cce2f75a409a2259a578c5400387", null ],
-    [ "CreateItem", "a00121.html#a3bc9a3c9a711f9ee9e725332243f2cbe", null ],
-    [ "DeleteById", "a00121.html#a75385ab5404cb23a391f0a316f3b23b6", null ],
-    [ "Exists", "a00121.html#ae72dcab49fbf0c3f54120451dba505a7", null ],
-    [ "Get", "a00121.html#acb2319f4aef2d5020c26ec970da6e2d5", null ],
-    [ "GetAll", "a00121.html#a18c3a847614a692e12bf7a108c8eaf1d", null ],
-    [ "GetAllWhere", "a00121.html#a9c55278d94f9e0781faac52319d09cff", null ],
-    [ "GetById", "a00121.html#aa7cbb03cbab971f45b11e8c64b51e39d", null ],
-    [ "GetCountByRole", "a00121.html#ae2e75af3788c48f6a03199e0823ae7a2", null ],
-    [ "GetItemsByRole", "a00121.html#a6644e5deb9274697e7c9934a209e0702", null ],
-    [ "GetPageByRole", "a00121.html#ad62e0833fdb3c1d9ab124390c30d188f", null ],
-    [ "UpdateItem", "a00121.html#a997e6ad26c9f1406461f8e40ffb64dec", null ]
+    [ "AllTest", "a00121.html#a8fa6ffb6e903086f3ac745bbff4a7299", null ],
+    [ "AllWhereTest", "a00121.html#a3f6569a2fde3c2ccf8aa72c3be941cbc", null ],
+    [ "CreateTest", "a00121.html#a5dfc5606557ca0cb0de922772d3de1fc", null ],
+    [ "DeleteTest", "a00121.html#a241bcb1d40470b408f1b40ab08612e94", null ],
+    [ "GetByIdTest", "a00121.html#adabec6755b7f982db7a771655e89b30d", null ],
+    [ "GetQueryTest", "a00121.html#a95954e74ea896a6bebec9225a07f878b", null ],
+    [ "GetTest", "a00121.html#aea70f235df4a9a988e4f220d3a54a2e2", null ],
+    [ "UpdateItemIsNullTest", "a00121.html#a286109a7f5f9a9ce4f7aec6d0b5050fb", null ],
+    [ "UpdateTest", "a00121.html#abda74db0367c536ccdffb632786c81e4", null ]
 ];

@@ -1,4 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$a00066.html" title="ScientificReport.DAL.Interfaces.\lIRepository\&lt; UserProfile \&gt;" alt="" coords="5,5,227,47"/>
-<area shape="rect" id="node2" href="$a00233.html" title="ScientificReport.DAL.Repositories.\lUserProfileRepository" alt="" coords="275,5,509,47"/>
+<area shape="rect" id="node1" href="$a00073.html" title="ScientificReport.DAL.Interfaces.\lITrackable" alt="" coords="5,71,227,112"/>
+<area shape="rect" id="node2" href="$a00154.html" title="ScientificReport.DAL.Entities.\lReports.Report" alt="" coords="275,71,480,112"/>
+<area shape="rect" id="node3" href="$a00032.html" title="ScientificReport.DAL.Entities.\lReports.DepartmentReport" alt="" coords="528,5,733,47"/>
+<area shape="rect" id="node4" href="$a00041.html" title="ScientificReport.DAL.Entities.\lReports.FacultyReport" alt="" coords="528,71,733,112"/>
+<area shape="rect" id="node5" href="$a00205.html" title="ScientificReport.DAL.Entities.\lReports.TeacherReport" alt="" coords="528,136,733,177"/>
 </map>

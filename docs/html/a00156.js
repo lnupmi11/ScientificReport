@@ -1,8 +1,11 @@
 var a00156 =
 [
-    [ "ReportThesisEdit", "a00156.html#aab90165d9f7920d3bf5c1813d7b6cdd1", null ],
-    [ "ReportThesisEdit", "a00156.html#a9195704eae421eb7b8087fbd78533e8f", null ],
-    [ "Authors", "a00156.html#a23eb6378a7be5bebd4dc728583cd0dd0", null ],
-    [ "Id", "a00156.html#aac801778c9f6f60057ba06ca42157fc2", null ],
-    [ "Users", "a00156.html#a59bc519e58aa92a9ab3b5555df1a17b0", null ]
+    [ "ReportThesisController", "a00156.html#a8532dd6735e6f049c7ae145bd588ccd7", null ],
+    [ "AddAuthor", "a00156.html#a549a581c13b083412eb28a3a96a1431c", null ],
+    [ "Delete", "a00156.html#aa73d7942221dc57e4020ac68e53e35bc", null ],
+    [ "DeleteAuthor", "a00156.html#a0761a96fe34fd6f3082ae417ccb71192", null ],
+    [ "DeleteConfirmed", "a00156.html#a26523b0763d239aa8a5d174ff6759281", null ],
+    [ "Details", "a00156.html#a9ffe15e717ad45968e7126b0ffcc3827", null ],
+    [ "Edit", "a00156.html#ae91fbc65b49b136aad332344c56fe8b3", null ],
+    [ "Edit", "a00156.html#a770b3b8e8e30b359548d36bd9720107f", null ]
 ];

@@ -1,6 +1,6 @@
 var a00130 =
 [
-    [ "Index", "a00130.html#a6bf68b1e60d3702c47d3109957b77621", null ],
-    [ "PostgraduateGuidance", "a00130.html#ad923b2f3030ce0194866c110f851c0aa", null ],
-    [ "User", "a00130.html#ad16b6128b4bc62e8444322ca5e7a8670", null ]
+    [ "Index", "a00130.html#a4b397e44382e8284c00bee5b0fae7333", null ],
+    [ "PostgraduateDissertationGuidance", "a00130.html#a43f69123d9b99dad9c188f2f7f5fd5ec", null ],
+    [ "User", "a00130.html#accbcc2866f930b145c0db9c96afd1931", null ]
 ];

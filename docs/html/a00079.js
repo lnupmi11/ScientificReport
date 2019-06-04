@@ -1,8 +1,4 @@
 var a00079 =
 [
-    [ "MembershipModel", "a00079.html#a6d837d48b945617dae135dc932ef7930", null ],
-    [ "MembershipModel", "a00079.html#a84e8b614f32126c59e19e3a63d3cbb0d", null ],
-    [ "MemberOf", "a00079.html#ab513127afc71b9dc66f0900f7cc434eb", null ],
-    [ "MembershipInfo", "a00079.html#a4b749b933815ab8a5e23fd27d211940a", null ],
-    [ "User", "a00079.html#aa4df3dd29acd4f60f6aeee99368deb14", null ]
+    [ "Memberships", "a00079.html#a52d51f44c6cf326ca0ca7d06f47dc453", null ]
 ];

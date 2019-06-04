@@ -1,12 +1,12 @@
 var a00076 =
 [
-    [ "MembershipController", "a00076.html#a98d262bec7c49432335b7f80c79a10bb", null ],
-    [ "Create", "a00076.html#a02fc0df2311db12137a8a0c92d1a090d", null ],
-    [ "Create", "a00076.html#ae3ff4b70f8e9d3bbb2970e4706fa23f4", null ],
-    [ "Delete", "a00076.html#ad1c4a70e5821478431d69512ab141dd3", null ],
-    [ "DeleteConfirmed", "a00076.html#ac18fdf04bec9e4d488de6aa4c079c83c", null ],
-    [ "Details", "a00076.html#aff0d6a630d864f73a73627d0131d2aa6", null ],
-    [ "Edit", "a00076.html#ab2f07709962468b166fc10e2c4ca5c8a", null ],
-    [ "Edit", "a00076.html#a8c5948b7bc3ddabd889ac28cdebefaf7", null ],
-    [ "Index", "a00076.html#a161e0d4227a189b6e8b85bd9a8b03d94", null ]
+    [ "Types", "a00076.html#a685be48a6498b6952fe67dc4326757b1", [
+      [ "EditorialBoard", "a00076.html#a685be48a6498b6952fe67dc4326757b1aa49e0a45e75c086f428289d64b469f96", null ],
+      [ "ScientificCouncil", "a00076.html#a685be48a6498b6952fe67dc4326757b1a0d1bf9d3831cac38a4a5f7856ea59396", null ],
+      [ "ExpertCouncil", "a00076.html#a685be48a6498b6952fe67dc4326757b1a709e626e10341618753f60e902891d9c", null ]
+    ] ],
+    [ "Id", "a00076.html#a31d546527be48bdf75bcb080d1b26264", null ],
+    [ "MembershipInfo", "a00076.html#ae19aabc2ca4bbfa44224e4baa2ee15cc", null ],
+    [ "Type", "a00076.html#a79f0359dbbb7ee6a5b1073f5cd88d95d", null ],
+    [ "User", "a00076.html#afa06ddf8e5e8a554b8b85ef448871ed3", null ]
 ];

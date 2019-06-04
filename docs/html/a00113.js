@@ -1,11 +1,15 @@
 var a00113 =
 [
-    [ "CreateItemTest", "a00113.html#a721f96f57e4f40c0eb477c11496ca4fc", null ],
-    [ "DeleteItemTest", "a00113.html#a8c627f9794d0337d083a9fc9bbbc2e33", null ],
-    [ "DoesNotExistTest", "a00113.html#a550facca5f055d7c09ba121965ed8552", null ],
-    [ "ExistsTest", "a00113.html#a4371ae926400d156a139db35aad3a67e", null ],
-    [ "GetAllTest", "a00113.html#a051a883310b518e83f204d88e325659a", null ],
-    [ "GetAllWhereTest", "a00113.html#a3ba89d8336d6010347c530e3338e1b27", null ],
-    [ "GetByIdTest", "a00113.html#a92d7222ecb77f99195dcb9b13037014a", null ],
-    [ "UpdateItemTest", "a00113.html#a78788923eb9e0a86db155c31ee9fad15", null ]
+    [ "PostgraduateDissertationGuidanceService", "a00113.html#a0704cab3354522bb03ef5d34598d5a58", null ],
+    [ "CreateItem", "a00113.html#a4d0b1a75bfadddd82fda5540cab6cfb5", null ],
+    [ "DeleteById", "a00113.html#a003e15733def65d16e513a4b67b27fd7", null ],
+    [ "Exists", "a00113.html#a0cd4a02174c9e500673695d8e6ea9309", null ],
+    [ "Get", "a00113.html#abba92bb22c6b06c5da0f665fa5603ba4", null ],
+    [ "GetAll", "a00113.html#a745a0be150394724a2ee68a17eee379d", null ],
+    [ "GetAllWhere", "a00113.html#a412c3a9c5ebd0ef24e8fa72d2b9b1416", null ],
+    [ "GetById", "a00113.html#a493c8060034278c57cc91c2b42fae42f", null ],
+    [ "GetCountByRole", "a00113.html#ad18fb6899efe5e06de52681c9a7a7363", null ],
+    [ "GetItemsByRole", "a00113.html#add8d94f8483ffc8e47dbadc3f09493e5", null ],
+    [ "GetPageByRole", "a00113.html#a7aa4a7ce77d23c7bc7766dda97075654", null ],
+    [ "UpdateItem", "a00113.html#acae69cd64ef189fd017ae2ed41afaff6", null ]
 ];

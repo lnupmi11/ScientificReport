@@ -17,11 +17,11 @@ var dir_99cdb1d7db8cb65298f12626c47cb84e =
     [ "ScientificWorks", "dir_e5e2cd2e225f71fa85792eda7c996d3f.html", "dir_e5e2cd2e225f71fa85792eda7c996d3f" ],
     [ "TeacherReport", "dir_fe2315f70b5ec5d6151e7fe7ac7dd377.html", "dir_fe2315f70b5ec5d6151e7fe7ac7dd377" ],
     [ "UserProfile", "dir_9c36cc6f40a5cdd0088fde5811d22019.html", "dir_9c36cc6f40a5cdd0088fde5811d22019" ],
-    [ "ErrorViewModel.cs", "a00360.html", [
+    [ "ErrorViewModel.cs", "a00361.html", [
       [ "ErrorViewModel", "a00040.html", "a00040" ]
     ] ],
-    [ "PageModel.cs", "a00370.html", [
-      [ "PageModel", "a00094.html", "a00094" ]
+    [ "PageModel.cs", "a00371.html", [
+      [ "PageModel", "a00095.html", "a00095" ]
     ] ],
     [ "UpdateUserRequest.cs", "a00404.html", [
       [ "UpdateUserRequest", "a00226.html", "a00226" ]

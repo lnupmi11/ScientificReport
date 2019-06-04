@@ -1,8 +1,14 @@
 var a00183 =
 [
-    [ "ScientificInternshipEditModel", "a00183.html#a6f35b5bf9072c6a64942b503a4988baa", null ],
-    [ "ScientificInternshipEditModel", "a00183.html#a482a633d20226d2d0bb703457407de48", null ],
-    [ "AllUsers", "a00183.html#ae00fbe3de38e63e946c8bd5b73746ad1", null ],
-    [ "Id", "a00183.html#a68644a2263eb00bef761261148036cac", null ],
-    [ "Users", "a00183.html#af9507261c8b47c78827a44cdf20eee6f", null ]
+    [ "ScientificInternshipController", "a00183.html#aa5feda265e4c557c806090c30764c22b", null ],
+    [ "AddUser", "a00183.html#a8e1f5f39577c28448c618d96326a8911", null ],
+    [ "Create", "a00183.html#afa569454aa9edc7452da3512effec672", null ],
+    [ "Create", "a00183.html#a97174ec069554b195980efa47dcf5f17", null ],
+    [ "Delete", "a00183.html#af9d9cbc343414e7c7b6ffc2c55927244", null ],
+    [ "DeleteConfirmed", "a00183.html#ab6bfcb1bf08b1f24bf26c424b95a74b7", null ],
+    [ "Details", "a00183.html#a1b15d1da7ef61c03eb62f9d7c05d45b7", null ],
+    [ "Edit", "a00183.html#ade6d6192e32ee5f3779ebfc4f19c6396", null ],
+    [ "Edit", "a00183.html#acb8924d5ce2dd661dca73b3af2183229", null ],
+    [ "Index", "a00183.html#ae1f33089c51cf6ea66ef82856f38aadf", null ],
+    [ "RemoveUser", "a00183.html#aae997df724d90f0f719bbc24160d46ad", null ]
 ];

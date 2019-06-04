@@ -1,12 +1,17 @@
 var a00146 =
 [
-    [ "PublicationRepository", "a00146.html#adb942460169fcd71c6dc75a65adf0718", null ],
-    [ "All", "a00146.html#a130bb2632565a43e8f05301675bc7e15", null ],
-    [ "AllWhere", "a00146.html#ae941ec8b19bc220c717029d81b5215af", null ],
-    [ "Create", "a00146.html#adcdd7d5da13733af6321128b2739274d", null ],
-    [ "Delete", "a00146.html#a3071242b6afa96b38a3b039060de3d8a", null ],
-    [ "Get", "a00146.html#aaae3f36c354fbb0fe1d0bbcd6d22521c", null ],
-    [ "Get", "a00146.html#a03b9fd356b4208b5cebb4a5f1c55924d", null ],
-    [ "GetQuery", "a00146.html#a49a828bde8626ce9032ee8c1fb65b653", null ],
-    [ "Update", "a00146.html#a7a2272697af326fb6f78881ab83cc9b6", null ]
+    [ "PublicationEditModel", "a00146.html#add6beda443f5024a44194f5c6b104f0a", null ],
+    [ "PublicationEditModel", "a00146.html#a08881db0ec919537b8a74bd88939f5a5", null ],
+    [ "Authors", "a00146.html#a0b730809618640584a80d06a7e2df2e6", null ],
+    [ "Id", "a00146.html#a71dedc55809874f98e6769545ff16b99", null ],
+    [ "PagesAmount", "a00146.html#aea869a3dff5384653c5fa7467b24bf0f", null ],
+    [ "PrintStatus", "a00146.html#ac4f06bab93b6b72ce831510bdf93763c", null ],
+    [ "PrintStatusOptions", "a00146.html#a610bb4e9f7883e1cf9a5b9aa6548c7fc", null ],
+    [ "PublishingHouseName", "a00146.html#ae393786ee40e793d42408abd27fd90ba", null ],
+    [ "PublishingPlace", "a00146.html#a3029fac8dee1b83cd233c83ffcf60933", null ],
+    [ "PublishingYear", "a00146.html#a0de318c9f49d1d7b54acfc61fc16b00f", null ],
+    [ "Specification", "a00146.html#a74f67378f59300280a3aa494340120fe", null ],
+    [ "Title", "a00146.html#ac0ad0710f0f9e42d66a7037d7ed0edff", null ],
+    [ "Type", "a00146.html#ab3077feeaaf5697d6573f542133cd866", null ],
+    [ "Users", "a00146.html#a02867fdeb2fd930077b19994892b01a2", null ]
 ];

@@ -1,12 +1,9 @@
 var a00186 =
 [
-    [ "ScientificInternshipRepository", "a00186.html#ab12a4c8cdafae6b5384f589e55138848", null ],
-    [ "All", "a00186.html#a831125ba9f8b91cefeab7fdd8ecb8550", null ],
-    [ "AllWhere", "a00186.html#a81878baec308259d671046913e6742f9", null ],
-    [ "Create", "a00186.html#a82692c5517f6d5fa5bd86f95578b7900", null ],
-    [ "Delete", "a00186.html#a04001dfc6ec10b0ff728d62645594448", null ],
-    [ "Get", "a00186.html#af6ae4809bbd830ae67fbbc061a97341c", null ],
-    [ "Get", "a00186.html#ae9c02f5ec537e892045db787c41fe592", null ],
-    [ "GetQuery", "a00186.html#a52ef362858c073f36813f425fa81398f", null ],
-    [ "Update", "a00186.html#abcc5aa0759cbfdc5370b065477721a26", null ]
+    [ "ScientificInternshipModel", "a00186.html#a88befbabca7d0ed13ac425fbcbedc2ce", null ],
+    [ "ScientificInternshipModel", "a00186.html#a8b3e46e7b898713b517b8f38cd577c02", null ],
+    [ "Contents", "a00186.html#a673d4ac316bafcfd4751ae67399efcc5", null ],
+    [ "Ended", "a00186.html#af1bda2c0d40779370b5025ee293e90bc", null ],
+    [ "PlaceOfInternship", "a00186.html#adf08d1a8661a561770b063fb495a3c54", null ],
+    [ "Started", "a00186.html#aad25647f50c6ce61346d6969e185c180", null ]
 ];

@@ -1,6 +1,6 @@
 var a00129 =
 [
-    [ "Index", "a00129.html#a4b397e44382e8284c00bee5b0fae7333", null ],
-    [ "PostgraduateDissertationGuidance", "a00129.html#a43f69123d9b99dad9c188f2f7f5fd5ec", null ],
-    [ "User", "a00129.html#accbcc2866f930b145c0db9c96afd1931", null ]
+    [ "Index", "a00129.html#a999324394254250ba62d2cea4b018c12", null ],
+    [ "Patent", "a00129.html#a08af068f25b483720621c6316aa5ada0", null ],
+    [ "User", "a00129.html#af4e498befbb4d6eaf31923f07dfa9fa1", null ]
 ];

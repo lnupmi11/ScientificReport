@@ -1,6 +1,8 @@
 var a00536 =
 [
-    [ "GrantEditModel", "a00046.html", "a00046" ],
-    [ "GrantIndexModel", "a00047.html", "a00047" ],
-    [ "GrantModel", "a00048.html", "a00048" ]
+    [ "DepartmentCreateModel", "a00029.html", "a00029" ],
+    [ "DepartmentEditModel", "a00030.html", "a00030" ],
+    [ "DepartmentIndexModel", "a00031.html", "a00031" ],
+    [ "DepartmentUpdateScientificWorksRequest", "a00039.html", "a00039" ],
+    [ "SelectItem", "a00203.html", "a00203" ]
 ];

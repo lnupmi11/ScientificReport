@@ -1,6 +1,16 @@
 var a00143 =
 [
-    [ "Authors", "a00143.html#ab2762c749d20ef6c618c713060df85e6", null ],
-    [ "Publication", "a00143.html#abd9e52f00e7f811106c5c815c18025a2", null ],
-    [ "UserIsAuthor", "a00143.html#a3cee698c6f5d6bf7b7657d338f424322", null ]
+    [ "PublicationController", "a00143.html#a41a381f422d644903dc1833a6c265956", null ],
+    [ "AddSelfToAuthors", "a00143.html#aa6df1d4619314055774982f8080ad79c", null ],
+    [ "AddUserToAuthors", "a00143.html#a9ce08898ff2c0417bb856d2eea9bac1b", null ],
+    [ "Create", "a00143.html#a3c552db007a71bf093b2fb54ff559855", null ],
+    [ "Create", "a00143.html#a305b888f1abcdf3bca7bf6a52a997af9", null ],
+    [ "Delete", "a00143.html#a0f15f6be5fcabe688fd1064eea363c7d", null ],
+    [ "DeleteConfirmed", "a00143.html#a353e6f8cceb98e5d60a4b47360dfd129", null ],
+    [ "Details", "a00143.html#a9ecb91efe3576852955a34041880d25d", null ],
+    [ "Edit", "a00143.html#a27c7ceebdf7a2e36efa487f0dd1406d4", null ],
+    [ "Edit", "a00143.html#ae17ca9b021aa622d861a4c268831cbef", null ],
+    [ "Index", "a00143.html#a6b7390fe81843ea60ad83874bca9c561", null ],
+    [ "RemoveUserFromAuthors", "a00143.html#a72c0d8e837c694692455bc5732709b53", null ],
+    [ "SearchPublications", "a00143.html#a443cab54a3ff3968b0437963479aec23", null ]
 ];

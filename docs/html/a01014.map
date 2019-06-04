@@ -1,3 +1,3 @@
-<map id="ScientificReport.DTO.Models.Review.ReviewIndexModel" name="ScientificReport.DTO.Models.Review.ReviewIndexModel">
-<area shape="rect" id="node2" href="$a00094.html" title="{PageModel\n|+ TotalPages\l+ ShowPrevious\l+ ShowNext\l+ CurrentPage\l+ Count\l+ PageSize\l|}" alt="" coords="44,5,169,156"/>
+<map id="ScientificReport.DTO.Models.ReportThesis.ReportThesisModel" name="ScientificReport.DTO.Models.ReportThesis.ReportThesisModel">
+<area shape="rect" id="node2" href="$a00158.html" title="{ScientificReport.DTO.Models.\lReportThesis.ReportThesisEdit\n|+ Id\l+ Authors\l+ Users\l|+ ReportThesisEdit()\l+ ReportThesisEdit()\l}" alt="" coords="13,204,225,340"/>
 </map>

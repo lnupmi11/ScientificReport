@@ -1,6 +1,6 @@
 var a00136 =
 [
-    [ "Index", "a00136.html#a729d2f88295de4a536f9b37928ca4d62", null ],
-    [ "ScientificWork", "a00136.html#a1173daf474cd5a0dc44511d0b84ea967", null ],
-    [ "User", "a00136.html#a78b02c510d941a23e855db4d09d0bd0a", null ]
+    [ "Index", "a00136.html#a0860a4d6488f8a416f840d45a49abb9e", null ],
+    [ "ScientificInternship", "a00136.html#a73fbe83a3440ea592414b7a7c9256faf", null ],
+    [ "User", "a00136.html#aad8bcd237ab5a2f9f7b59312be5269fe", null ]
 ];

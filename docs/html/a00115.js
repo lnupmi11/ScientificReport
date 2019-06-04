@@ -1,12 +1,7 @@
 var a00115 =
 [
-    [ "PostgraduateGuidanceController", "a00115.html#a75a92c4c74a2ba25e266c42ef681144a", null ],
-    [ "Create", "a00115.html#a6b160f1a1dbb78395689911afcd7921d", null ],
-    [ "Create", "a00115.html#aa16dbd128e7f931b9ca998b5d477cd53", null ],
-    [ "Delete", "a00115.html#a9e436054acc21d7e237b5ed2df0ce4f5", null ],
-    [ "DeleteConfirmed", "a00115.html#a3790a5d47387a1a8fdedbe404bd35d9c", null ],
-    [ "Details", "a00115.html#aaa3602801fef3722ab2df94edcf8ed51", null ],
-    [ "Edit", "a00115.html#a4de6d7605346ce16fe82de94b8ae851d", null ],
-    [ "Edit", "a00115.html#a8e3182502105e9f853215f27a1b5c8bd", null ],
-    [ "Index", "a00115.html#a3229ba9d18a296f1c91ef9b5882623ab", null ]
+    [ "Guide", "a00115.html#abb241e250cf3e5433e04501c9c61d0cc", null ],
+    [ "Id", "a00115.html#abfed3cbc77fade8702d3618ea54f98b7", null ],
+    [ "PostgraduateInfo", "a00115.html#a8afd77e507badec963a687803557f186", null ],
+    [ "PostgraduateName", "a00115.html#a53ac73ae2be507558f76eab7d06ded83", null ]
 ];

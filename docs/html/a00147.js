@@ -1,12 +1,12 @@
 var a00147 =
 [
-    [ "AllTest", "a00147.html#a6707df9b204c624bb20b82c494ef650c", null ],
-    [ "AllWhereTest", "a00147.html#aa61aaec2f63d55212257dc8ee5a13b09", null ],
-    [ "CreateTest", "a00147.html#aedab4ee67d2fc4e8317c49833b0ac93a", null ],
-    [ "DeleteTest", "a00147.html#a67805eecfcb913ccdc3b3462f5964a72", null ],
-    [ "GetByIdTest", "a00147.html#a60cfe6bcd140a1cb50bc5d69baf2e092", null ],
-    [ "GetQueryTest", "a00147.html#ab3eec5141d2c3cd2ae85ff2678cfee3a", null ],
-    [ "GetTest", "a00147.html#a427bb2972cef20058aa954d95d55be1a", null ],
-    [ "UpdateItemIsNullTest", "a00147.html#a2edc42696e48f5b94f60db9675165260", null ],
-    [ "UpdateTest", "a00147.html#ad9f97259b6d4a04709fe1bc9723e543a", null ]
+    [ "PublicationIndexModel", "a00147.html#a11e4e346fd152db863bc820956022b0b", null ],
+    [ "PublicationIndexModel", "a00147.html#ae114ed61c185e772610b848dbccbc9a0", null ],
+    [ "Publications", "a00147.html#a94ac68a071f8225b16db96790f0c3f2d", null ],
+    [ "PublicationSetType", "a00147.html#a5261665c0c7afa8944eb4c8654d61e1a", null ],
+    [ "PublicationSetTypeOptions", "a00147.html#a84c33691e41e8f1df2dfc93d7c5b81e9", null ],
+    [ "ReportTheses", "a00147.html#a41e57c887ca4f048063be4151bd4da95", null ],
+    [ "SortBy", "a00147.html#adf63bc1e8a173ad4ade3b20098499a3e", null ],
+    [ "YearFromFilter", "a00147.html#ac79d7765f26f208a047cdcb2764a1acb", null ],
+    [ "YearToFilter", "a00147.html#a1727e87e1ef159c046bf52d54130609a", null ]
 ];

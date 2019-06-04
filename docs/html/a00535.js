@@ -1,8 +1,6 @@
 var a00535 =
 [
-    [ "DepartmentCreateModel", "a00029.html", "a00029" ],
-    [ "DepartmentEditModel", "a00030.html", "a00030" ],
-    [ "DepartmentIndexModel", "a00031.html", "a00031" ],
-    [ "DepartmentUpdateScientificWorksRequest", "a00039.html", "a00039" ],
-    [ "SelectItem", "a00202.html", "a00202" ]
+    [ "ConferenceDetails", "a00020.html", "a00020" ],
+    [ "ConferenceEdit", "a00021.html", "a00021" ],
+    [ "ConferenceIndexModel", "a00022.html", "a00022" ]
 ];

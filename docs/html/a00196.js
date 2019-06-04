@@ -1,12 +1,12 @@
 var a00196 =
 [
-    [ "AllTest", "a00196.html#ae41e5bef9925f4f657673db5d57262c7", null ],
-    [ "AllWhereTest", "a00196.html#af33af68077ec102cd1c9dff3810ba681", null ],
-    [ "CreateTest", "a00196.html#adb112258a75a2a8f086a258af5795d5e", null ],
-    [ "DeleteTest", "a00196.html#a84a4c8ff50b94dfedb0cc9c85d8d2d04", null ],
-    [ "GetByIdTest", "a00196.html#a4552590ca60adee982fd666cb2f3e0bb", null ],
-    [ "GetQueryTest", "a00196.html#af602266fc94ebcd953e8797f3a22596e", null ],
-    [ "GetTest", "a00196.html#a6401635fd0d09a40aee48848618f733f", null ],
-    [ "UpdateItemIsNullTest", "a00196.html#a5806f4cd1309a5cdb1b41d9b48df0658", null ],
-    [ "UpdateTest", "a00196.html#a0d4d28cdecf0c34e3a94395cc0c48034", null ]
+    [ "ScientificWorkRepository", "a00196.html#a497a11912f102fcf683a012bb8ff0d60", null ],
+    [ "All", "a00196.html#a4db7373fbc129f3513e793138386fc7b", null ],
+    [ "AllWhere", "a00196.html#a878ef7ee7490ea3fd3bdcc86dc5a89e2", null ],
+    [ "Create", "a00196.html#aec89dcb6cab9a3c2eebc258bae6bb23e", null ],
+    [ "Delete", "a00196.html#a87d4ae75c1475190756ccaaf28349d34", null ],
+    [ "Get", "a00196.html#ae265f3e5f72714bee750a420adf64a52", null ],
+    [ "Get", "a00196.html#a96f5d2a02b1f88019914434b981f54f6", null ],
+    [ "GetQuery", "a00196.html#af80e9238cdaea2ccd1d50f8b7ddae92c", null ],
+    [ "Update", "a00196.html#a701d88396dd35c6547696e6af002dbc5", null ]
 ];

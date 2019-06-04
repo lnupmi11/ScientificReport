@@ -1,12 +1,9 @@
 var a00100 =
 [
-    [ "PatentLicenseActivityRepository", "a00100.html#a2354047fd4778c842355043a874a9a27", null ],
-    [ "All", "a00100.html#a3a21289ead0891399565bf7605214799", null ],
-    [ "AllWhere", "a00100.html#a1068921221d842fa773c7c57ebd4e667", null ],
-    [ "Create", "a00100.html#acbdd9ad66c481aa93363c5e87fb2bcd9", null ],
-    [ "Delete", "a00100.html#a3b7abbf084d8efc40d5f494636b3345a", null ],
-    [ "Get", "a00100.html#a5ca23a3a3a9fcd10f11e502cc49ff184", null ],
-    [ "Get", "a00100.html#aef3e0c3edd7b4d2afe9f908cc2fcbdf9", null ],
-    [ "GetQuery", "a00100.html#acf299c2c273cc7eef799b2afdcd7dac9", null ],
-    [ "Update", "a00100.html#a5c769cf9e4d04f8f5d7436c1026dd292", null ]
+    [ "PatentLicenseActivityModel", "a00100.html#ae1a7b41a50114eac527dc5a28962dbe8", null ],
+    [ "PatentLicenseActivityModel", "a00100.html#a594936c441459cac7d07a63a56b30c19", null ],
+    [ "DateTime", "a00100.html#aa7f64119fba959c8b2af37c4a133a27e", null ],
+    [ "Name", "a00100.html#a356c134cc2e1b3eac26cc2d670c03cee", null ],
+    [ "Number", "a00100.html#a1667064c631229fa8f1924fb6574bb65", null ],
+    [ "Type", "a00100.html#a9cae52f1dc63afe496762cade6166414", null ]
 ];

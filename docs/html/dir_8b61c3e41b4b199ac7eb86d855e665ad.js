@@ -19,40 +19,40 @@ var dir_8b61c3e41b4b199ac7eb86d855e665ad =
       [ "GrantRepositoryTests", "a00050.html", "a00050" ]
     ] ],
     [ "MembershipRepositoryTests.cs", "a00419.html", [
-      [ "MembershipRepositoryTests", "a00081.html", "a00081" ]
+      [ "MembershipRepositoryTests", "a00082.html", "a00082" ]
     ] ],
     [ "OppositionRepositoryTests.cs", "a00420.html", [
-      [ "OppositionRepositoryTests", "a00091.html", "a00091" ]
+      [ "OppositionRepositoryTests", "a00092.html", "a00092" ]
     ] ],
     [ "PatentLicenseActivityRepositoryTests.cs", "a00421.html", [
-      [ "PatentLicenseActivityRepositoryTests", "a00101.html", "a00101" ]
+      [ "PatentLicenseActivityRepositoryTests", "a00102.html", "a00102" ]
     ] ],
     [ "PostgraduateDissertationGuidanceRepositoryTests.cs", "a00422.html", [
-      [ "PostgraduateDissertationGuidanceRepositoryTests", "a00111.html", "a00111" ]
+      [ "PostgraduateDissertationGuidanceRepositoryTests", "a00112.html", "a00112" ]
     ] ],
     [ "PostgraduateGuidanceRepositoryTests.cs", "a00423.html", [
-      [ "PostgraduateGuidanceRepositoryTests", "a00120.html", "a00120" ]
+      [ "PostgraduateGuidanceRepositoryTests", "a00121.html", "a00121" ]
     ] ],
     [ "PublicationRepositoryTests.cs", "a00424.html", [
-      [ "PublicationRepositoryTests", "a00147.html", "a00147" ]
+      [ "PublicationRepositoryTests", "a00149.html", "a00149" ]
     ] ],
     [ "ReportThesisRepositoryTests.cs", "a00425.html", [
-      [ "ReportThesisRepositoryTests", "a00160.html", "a00160" ]
+      [ "ReportThesisRepositoryTests", "a00161.html", "a00161" ]
     ] ],
     [ "ReviewRepositoryTests.cs", "a00426.html", [
-      [ "ReviewRepositoryTests", "a00169.html", "a00169" ]
+      [ "ReviewRepositoryTests", "a00170.html", "a00170" ]
     ] ],
     [ "ScientificConsultationRepositoryTests.cs", "a00427.html", [
-      [ "ScientificConsultationRepositoryTests", "a00178.html", "a00178" ]
+      [ "ScientificConsultationRepositoryTests", "a00179.html", "a00179" ]
     ] ],
     [ "ScientificInternshipRepositoryTests.cs", "a00428.html", [
-      [ "ScientificInternshipRepositoryTests", "a00187.html", "a00187" ]
+      [ "ScientificInternshipRepositoryTests", "a00188.html", "a00188" ]
     ] ],
     [ "ScientificWorkRepositoryTests.cs", "a00429.html", [
-      [ "ScientificWorkRepositoryTests", "a00196.html", "a00196" ]
+      [ "ScientificWorkRepositoryTests", "a00197.html", "a00197" ]
     ] ],
     [ "TeacherReportRepositoryTests.cs", "a00430.html", [
-      [ "TeacherReportRepositoryTests", "a00209.html", "a00209" ]
+      [ "TeacherReportRepositoryTests", "a00210.html", "a00210" ]
     ] ],
     [ "UserProfileRepositoryTests.cs", "a00431.html", [
       [ "UserProfileRepositoryTests", "a00234.html", "a00234" ]

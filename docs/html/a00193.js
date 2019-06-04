@@ -1,12 +1,7 @@
 var a00193 =
 [
-    [ "ScientificWorkController", "a00193.html#ad7eda79df7906f8803f75df857a13d42", null ],
-    [ "AddAuthor", "a00193.html#ab09107dfde1baba6229e406436a4fce9", null ],
-    [ "Delete", "a00193.html#a6cb186af0c903b8efcb2f5f818d8a308", null ],
-    [ "DeleteAuthor", "a00193.html#a01de4374b9082d7359cd01644624b3b9", null ],
-    [ "DeleteConfirmed", "a00193.html#a46d0a64f1bc83d1ca1ed8c8c6cee393f", null ],
-    [ "Details", "a00193.html#abe09e781b55cebcd436991546295535a", null ],
-    [ "Edit", "a00193.html#ab053f61e772332e278284c8a7e4eb55b", null ],
-    [ "Edit", "a00193.html#a0a7fe6ecc4a4236b16a9737ee1571541", null ],
-    [ "Index", "a00193.html#a35374e4f56674b62ce9602b54f88157a", null ]
+    [ "Category", "a00193.html#a230f8825132e2c58d145c18d6f506b1d", null ],
+    [ "Contents", "a00193.html#aac51da69298afded0a8a889e710c9eb2", null ],
+    [ "Cypher", "a00193.html#a9a29402dcc46563bc575f1743ad3d5f0", null ],
+    [ "UserProfilesScientificWorks", "a00193.html#a6f6fc46d70c7ac79ad6c812738236bc9", null ]
 ];
