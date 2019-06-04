@@ -10,12 +10,10 @@
 		overflow-y: scroll;
 		height: 250px;
 	}
-	.text-green { color: rgb(0, 179, 0); }
-	.text-red { color: rgb(177, 0, 0); }
-	.hidden { display: none; }
-	.cursor-pointer { cursor: pointer; }
+	.span-label {
+		color: black;
+	}
 </style>
-
 <h5>@ViewData["Title"]</h5>
 <hr/>
 <div class="row">
@@ -40,9 +38,10 @@
 								{
 									var exists = Model.Authors.Any(u => u.Id == user.Id);
 									<p>
-										@user.FullName
-										<i class="add-user fas fa-plus-circle fa-lg cursor-pointer text-green @(exists ? "hidden" : "")" onclick="addAuthor(this, '@Model.Id', '@user.Id')"></i>
-										<i class="remove-user fas fa-minus-circle fa-lg cursor-pointer text-red @(exists ? "" : "hidden")" onclick="deleteAuthor(this, '@Model.Id', '@user.Id')"></i>
+										<label>
+											<input class="filled-in" type="checkbox" onclick="clickAuthor(this, '@Model.Id', '@user.Id')" @(exists ? "checked=\"checked\"" : "")/>
+											<span class="span-label">@user.FullName</span>
+										</label>
 									</p>
 								}
 							}
@@ -52,34 +51,15 @@
 			</div>
 			<div class="row myButtons">
 				<button type="submit" class="waves-effect btn-small accent-2">@Localizer["Save"]</button>
-				<a asp-action="Index" class="waves-effect btn-small blue darken-3">@Localizer["Cancel"]</a>
+				<a asp-action="Index" asp-controller="Publication" class="waves-effect btn-small blue darken-3">@Localizer["Cancel"]</a>
 			</div>
 		</form>
 	</div>
 </div>
 
-<script>
-	const toggleAuthor = (endpoint, tagName) => (tag, id, authorId) => {
-		const config = {
-			method: 'POST',
-			body: JSON.stringify({
-				UserId: authorId
-			}),
-			headers: {
-				'Content-Type': 'application/json'
-			}
-		};
-		fetch(`/ReportThesis/${endpoint}/${id}`, config).then(response => {
-//			console.log(response);
-			if (response.status !== 200) throw { msg: "Failed to toggle the author", response };
-			
-			tag.classList.add('hidden');
-			tag.parentElement.getElementsByClassName(tagName)[0].classList.remove('hidden');
-		}).catch(e => {
-			console.error(e);
-		});
-	}
-
-	const addAuthor = toggleAuthor('AddAuthor', 'remove-user');
-	const deleteAuthor = toggleAuthor('DeleteAuthor', 'add-user');
-</script>
+@section Scripts
+{
+	<script type="text/javascript">
+    	const clickAuthor = toggleCheckboxEntity('ReportThesis', 'AddAuthor', 'DeleteAuthor', (authorId) => {return {UserId: authorId}});
+    </script>
+}

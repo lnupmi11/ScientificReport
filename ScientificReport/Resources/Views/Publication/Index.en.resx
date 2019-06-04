@@ -143,4 +143,16 @@
 	<data name="Foreign report thesis with research results" xml:space="preserve">
 		<value>Foreign report thesis with research results</value>
 	</data>
+	<data name="Thesis" xml:space="preserve">
+		<value>Thesis</value>
+	</data>
+	<data name="Report Theses" xml:space="preserve">
+		<value>Report Theses</value>
+	</data>
+	<data name="Choose set" xml:space="preserve">
+		<value>Choose set</value>
+	</data>
+	<data name="Press 'Title' to sort publications" xml:space="preserve">
+		<value>Press 'Title' to sort publications</value>
+	</data>
 </root>

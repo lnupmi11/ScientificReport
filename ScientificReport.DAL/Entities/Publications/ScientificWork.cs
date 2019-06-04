@@ -1,21 +1,14 @@
-using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using ScientificReport.DAL.Entities.UserProfile;
 
-namespace ScientificReport.DAL.Entities
+namespace ScientificReport.DAL.Entities.Publications
 {
-	public class ScientificWork
+	public class ScientificWork : PublicationBase
 	{
-		[Key]
-		public Guid Id { get; set; }
-		
 		public string Cypher { get; set; }
 		
 		public string Category { get; set; }
-		
-		public string Title { get; set; }
-		
+
 		public string Contents { get; set; }
 		
 		public ICollection<UserProfilesScientificWorks> UserProfilesScientificWorks { get; set; }

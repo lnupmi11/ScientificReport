@@ -146,4 +146,16 @@
 	<data name="Foreign report thesis with research results" xml:space="preserve">
 		<value>Теза доповіді у закордонному виданні з результатами досліджень</value>
 	</data>
+	<data name="Thesis" xml:space="preserve">
+		<value>Теза</value>
+	</data>
+	<data name="Report Theses" xml:space="preserve">
+		<value>Тези доповідей</value>
+	</data>
+	<data name="Choose set" xml:space="preserve">
+		<value>Виберіть множину</value>
+	</data>
+	<data name="Press 'Title' to sort publications" xml:space="preserve">
+		<value>Натисніть 'Назва' для сортування публікацій</value>
+	</data>
 </root>

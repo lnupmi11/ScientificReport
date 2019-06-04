@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Moq;
 using ScientificReport.DAL.DbContext;
-using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Entities.Publications;
 using ScientificReport.DAL.Repositories;
 using Xunit;
 

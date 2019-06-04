@@ -2,7 +2,7 @@ namespace ScientificReport.DTO.Models.Article
 {
 	public class ArticleModel
 	{
-		public DAL.Entities.Article.ArticleTypes Type { get; set; }
+		public DAL.Entities.Publications.Article.ArticleTypes Type { get; set; }
 		
 		public string Title { get; set; }
 		

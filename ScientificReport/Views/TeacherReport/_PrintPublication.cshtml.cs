@@ -1,4 +1,4 @@
-using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Entities.Publications;
 using ScientificReport.DAL.Entities.UserProfile;
 
 namespace ScientificReport.Views.TeacherReport

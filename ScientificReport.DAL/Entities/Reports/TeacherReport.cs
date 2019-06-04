@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using ScientificReport.DAL.Entities.Publications;
 
 namespace ScientificReport.DAL.Entities.Reports
 {

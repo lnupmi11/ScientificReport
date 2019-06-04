@@ -17,7 +17,7 @@ namespace ScientificReport.DTO.Models.Article
 		{
 		}
 		
-		public ArticleEditModel(DAL.Entities.Article article)
+		public ArticleEditModel(DAL.Entities.Publications.Article article)
 		{
 			Id = article.Id;
 			Type = article.ArticleType;
@@ -33,7 +33,7 @@ namespace ScientificReport.DTO.Models.Article
 			IsRecommendedToPrint = article.IsRecommendedToPrint;
 		}
 
-		public DAL.Entities.Article Modify(DAL.Entities.Article article)
+		public DAL.Entities.Publications.Article Modify(DAL.Entities.Publications.Article article)
 		{
 			article.ArticleType = Type;
 			article.Title = Title;

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ScientificReport.BLL.Interfaces;
 using ScientificReport.Controllers.Utils;
-using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Entities.Publications;
 using ScientificReport.DAL.Roles;
 using ScientificReport.DTO.Models.Article;
 

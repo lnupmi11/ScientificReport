@@ -1,11 +1,10 @@
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace ScientificReport.DTO.Models.Publication.Models
 {
 	public class Publication
 	{
-		public DAL.Entities.Publication.PublicationTypes Type { get; set; }
+		public DAL.Entities.Publications.Publication.PublicationTypes Type { get; set; }
 		
 		public string Title { get; set; }
 		
@@ -19,7 +18,7 @@ namespace ScientificReport.DTO.Models.Publication.Models
 		
 		public int PagesAmount { get; set; }
 		
-		public DAL.Entities.Publication.PrintStatuses PrintStatus { get; set; }
+		public DAL.Entities.Publications.Publication.PrintStatuses PrintStatus { get; set; }
 
 		public IEnumerable<string> PrintStatusOptions { get; set; }
 	}

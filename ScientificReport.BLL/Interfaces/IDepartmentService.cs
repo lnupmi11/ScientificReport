@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Entities.Publications;
 using ScientificReport.DAL.Entities.UserProfile;
 using ScientificReport.DTO.Models.Department;
 

@@ -4,6 +4,7 @@ using System.Linq;
 using ScientificReport.BLL.Interfaces;
 using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
+using ScientificReport.DAL.Entities.Publications;
 using ScientificReport.DAL.Entities.UserProfile;
 using ScientificReport.DAL.Repositories;
 using ScientificReport.DTO.Models.Department;

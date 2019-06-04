@@ -19,13 +19,13 @@
 <div class="row">
 	<div class="col s12">
 		<div class="col s12" style="margin-bottom: 30px">
-		<ul class="tabs">
-			<li class="tab col s3"><a class="active" href="#article">@Localizer["Article"]</a></li>
-			<li class="tab col s3"><a href="#scientific-work">@Localizer["Scientific Work"]</a></li>
-			<li class="tab col s3"><a href="#report-thesis">@Localizer["Report Thesis"]</a></li>
-			<li class="tab col s3"><a href="#other">@Localizer["Other"]</a></li>
-		</ul>
-	</div>
+			<ul class="tabs">
+				<li class="tab col s3"><a class="active" href="#article">@Localizer["Article"]</a></li>
+				<li class="tab col s3"><a href="#scientific-work">@Localizer["Scientific Work"]</a></li>
+				<li class="tab col s3"><a href="#report-thesis">@Localizer["Report Thesis"]</a></li>
+				<li class="tab col s3"><a href="#other">@Localizer["Other"]</a></li>
+			</ul>
+		</div>
 		<div id="article" class="col s12">
 				<form asp-action="Create" class="col s12">
 					<input asp-for="PublicationType" value="Article" type="hidden" required>
@@ -166,6 +166,7 @@
 		</div>
 		<div id="report-thesis" class="col s12">
 			<form asp-action="Create">
+				<input asp-for="PublicationType" value="ReportThesis" type="hidden" required>
 				<div asp-validation-summary="ModelOnly" class="validate"></div>
 				<div class="row">
 					<div class="input-field col s7">

@@ -12,13 +12,13 @@ namespace ScientificReport.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    ArticleType = table.Column<int>(nullable: false),
                     Title = table.Column<string>(nullable: true),
+                    PublishingYear = table.Column<int>(nullable: false),
+                    ArticleType = table.Column<int>(nullable: false),
                     LiabilityInfo = table.Column<string>(nullable: true),
                     DocumentInfo = table.Column<string>(nullable: true),
                     PublishingPlace = table.Column<string>(nullable: true),
                     PublishingHouseName = table.Column<string>(nullable: true),
-                    PublishingYear = table.Column<int>(nullable: false),
                     IsPeriodical = table.Column<bool>(nullable: false),
                     Number = table.Column<int>(nullable: false),
                     PagesAmount = table.Column<int>(nullable: false),
@@ -76,12 +76,12 @@ namespace ScientificReport.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    PublicationType = table.Column<int>(nullable: false),
                     Title = table.Column<string>(nullable: true),
+                    PublishingYear = table.Column<int>(nullable: false),
+                    PublicationType = table.Column<int>(nullable: false),
                     Specification = table.Column<string>(nullable: true),
                     PublishingPlace = table.Column<string>(nullable: true),
                     PublishingHouseName = table.Column<string>(nullable: true),
-                    PublishingYear = table.Column<int>(nullable: false),
                     PagesAmount = table.Column<int>(nullable: false),
                     PrintStatus = table.Column<int>(nullable: false)
                 },
@@ -419,9 +419,10 @@ namespace ScientificReport.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
+                    Title = table.Column<string>(nullable: true),
+                    PublishingYear = table.Column<int>(nullable: false),
                     Cypher = table.Column<string>(nullable: true),
                     Category = table.Column<string>(nullable: true),
-                    Title = table.Column<string>(nullable: true),
                     Contents = table.Column<string>(nullable: true),
                     DepartmentId = table.Column<Guid>(nullable: true)
                 },

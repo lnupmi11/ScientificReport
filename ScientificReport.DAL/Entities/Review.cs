@@ -1,7 +1,6 @@
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using ScientificReport.DAL.Entities.UserProfile;
+using ScientificReport.DAL.Entities.Publications;
 
 namespace ScientificReport.DAL.Entities
 {

@@ -4,7 +4,7 @@ namespace ScientificReport.DTO.Models.Publication
 {
 	public class PublicationDetailsModel
 	{
-		public DAL.Entities.Publication Publication { get; set; }
+		public DAL.Entities.Publications.Publication Publication { get; set; }
 		
 		public bool UserIsAuthor { get; set; }
 

@@ -10,6 +10,7 @@ using ScientificReport.DAL.DbContext;
 using ScientificReport.DAL.Entities;
 using ScientificReport.DAL.Entities.Reports;
 using Microsoft.Extensions.Logging;
+using ScientificReport.DAL.Entities.Publications;
 using ScientificReport.DAL.Entities.UserProfile;
 using ScientificReport.DAL.Roles;
 using ScientificReport.DTO.Models.Membership;
