@@ -1,5 +1,4 @@
 var a00530 =
 [
-    [ "IRepository", "a00068.html", null ],
-    [ "ITrackable", "a00074.html", "a00074" ]
+    [ "UserProfileRole", "a00235.html", "a00235" ]
 ];

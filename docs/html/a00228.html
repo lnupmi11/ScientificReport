@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>ScientificReport: ScientificReport.DTO.Models.UserProfile.UserDetailsModel Class Reference</title>
+<title>ScientificReport: ScientificReport.BLL.Utils.UserHelpers Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -107,32 +107,36 @@ $(document).ready(function(){initNavTree('a00228.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#properties">Properties</a> &#124;
-<a href="a01061.html">List of all members</a>  </div>
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="a00675.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ScientificReport.DTO.Models.UserProfile.UserDetailsModel Class Reference</div>  </div>
+<div class="title">ScientificReport.BLL.Utils.UserHelpers Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Collaboration diagram for ScientificReport.DTO.Models.UserProfile.UserDetailsModel:</div>
+Collaboration diagram for ScientificReport.BLL.Utils.UserHelpers:</div>
 <div class="dyncontent">
-<div class="center"><img src="a01062.png" border="0" usemap="#_scientific_report_8_d_t_o_8_models_8_user_profile_8_user_details_model_coll__map" alt="Collaboration graph"/></div>
-<map name="_scientific_report_8_d_t_o_8_models_8_user_profile_8_user_details_model_coll__map" id="_scientific_report_8_d_t_o_8_models_8_user_profile_8_user_details_model_coll__map">
+<div class="center"><img src="a00676.png" border="0" usemap="#_scientific_report_8_b_l_l_8_utils_8_user_helpers_coll__map" alt="Collaboration graph"/></div>
+<map name="_scientific_report_8_b_l_l_8_utils_8_user_helpers_coll__map" id="_scientific_report_8_b_l_l_8_utils_8_user_helpers_coll__map">
 </map>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
-Properties</h2></td></tr>
-<tr class="memitem:af3a38310da28002ac44a6be61a8f630a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00230.html">DAL.Entities.UserProfile.UserProfile</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00228.html#af3a38310da28002ac44a6be61a8f630a">User</a><code> [get, set]</code></td></tr>
-<tr class="separator:af3a38310da28002ac44a6be61a8f630a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56123cdd1d34c7a8b81c0415516076d5"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00228.html#a56123cdd1d34c7a8b81c0415516076d5">FullPositionTitle</a><code> [get, set]</code></td></tr>
-<tr class="separator:a56123cdd1d34c7a8b81c0415516076d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:acea6561dc994e369de9603eb0eca43fc"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00228.html#acea6561dc994e369de9603eb0eca43fc">IsAdmin</a> (ClaimsPrincipal user)</td></tr>
+<tr class="separator:acea6561dc994e369de9603eb0eca43fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add1e07b14605b8c4422301fa93ade6b9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00228.html#add1e07b14605b8c4422301fa93ade6b9">IsHeadOfDepartment</a> (ClaimsPrincipal user)</td></tr>
+<tr class="separator:add1e07b14605b8c4422301fa93ade6b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1d4e15e2f9ae2eee959afeb57d47bf4"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00228.html#ad1d4e15e2f9ae2eee959afeb57d47bf4">IsAdminOrHead</a> (ClaimsPrincipal user)</td></tr>
+<tr class="separator:ad1d4e15e2f9ae2eee959afeb57d47bf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae35db4cd3a83b96d817a64046dc36bc6"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00228.html#ae35db4cd3a83b96d817a64046dc36bc6">IsTeacher</a> (ClaimsPrincipal user)</td></tr>
+<tr class="separator:ae35db4cd3a83b96d817a64046dc36bc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="a00410_source.html#l00003">3</a> of file <a class="el" href="a00410_source.html">UserDetailsModel.cs</a>.</p>
-</div><h2 class="groupheader">Property Documentation</h2>
-<a class="anchor" id="a56123cdd1d34c7a8b81c0415516076d5"></a>
+<p>Definition at line <a class="el" href="a00280_source.html#l00006">6</a> of file <a class="el" href="a00280_source.html">UserHelpers.cs</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="acea6561dc994e369de9603eb0eca43fc"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -140,21 +144,46 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string ScientificReport.DTO.Models.UserProfile.UserDetailsModel.FullPositionTitle</td>
+          <td class="memname">static bool ScientificReport.BLL.Utils.UserHelpers.IsAdmin </td>
+          <td>(</td>
+          <td class="paramtype">ClaimsPrincipal&#160;</td>
+          <td class="paramname"><em>user</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00410_source.html#l00007">7</a> of file <a class="el" href="a00410_source.html">UserDetailsModel.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00280_source.html#l00008">8</a> of file <a class="el" href="a00280_source.html">UserHelpers.cs</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00228_acea6561dc994e369de9603eb0eca43fc_icgraph.png" border="0" usemap="#a00228_acea6561dc994e369de9603eb0eca43fc_icgraph" alt=""/></div>
+<map name="a00228_acea6561dc994e369de9603eb0eca43fc_icgraph" id="a00228_acea6561dc994e369de9603eb0eca43fc_icgraph">
+<area shape="rect" id="node2" href="a00025.html#af67b85aaef265a9c6d2143c8c9727fc3" title="ScientificReport.BLL.Services.\lConferenceService.GetItemsByRole" alt="" coords="252,5,499,47"/>
+<area shape="rect" id="node3" href="a00051.html#a37ae724a0004cbc08bcccaa1d932c2c3" title="ScientificReport.BLL.Services.\lGrantService.GetItemsByRole" alt="" coords="270,71,481,112"/>
+<area shape="rect" id="node4" href="a00082.html#a8356b8522686ef1a160216d741083ecd" title="ScientificReport.BLL.Services.\lMembershipService.GetItemsByRole" alt="" coords="249,136,502,177"/>
+<area shape="rect" id="node5" href="a00092.html#a77bb63382a0bdc2566e4609047ee5d5a" title="ScientificReport.BLL.Services.\lOppositionService.GetItemsByRole" alt="" coords="254,201,497,243"/>
+<area shape="rect" id="node6" href="a00102.html#ab823823d4e4ea6b2a1650342ce8066eb" title="ScientificReport.BLL.Services.\lPatentLicenseActivityService.Get\lItemsByRole" alt="" coords="260,266,491,322"/>
+<area shape="rect" id="node7" href="a00112.html#add8d94f8483ffc8e47dbadc3f09493e5" title="ScientificReport.BLL.Services.\lPostgraduateDissertationGuidance\lService.GetItemsByRole" alt="" coords="253,346,498,402"/>
+<area shape="rect" id="node8" href="a00121.html#a6644e5deb9274697e7c9934a209e0702" title="ScientificReport.BLL.Services.\lPostgraduateGuidanceService.GetItems\lByRole" alt="" coords="236,426,515,482"/>
+<area shape="rect" id="node9" href="a00161.html#a19eba70728d71acdee75ca7c2ce415be" title="ScientificReport.BLL.Services.\lReportThesisService.GetItemsByRole" alt="" coords="248,505,503,547"/>
+<area shape="rect" id="node10" href="a00170.html#a829581adbd7eb22549db526bdfdf36af" title="ScientificReport.BLL.Services.\lReviewService.GetItemsByRole" alt="" coords="267,571,483,612"/>
+<area shape="rect" id="node11" href="a00179.html#a3a5f607be75e285021128ffb0b340a4e" title="ScientificReport.BLL.Services.\lScientificConsultationService.Get\lItemsByRole" alt="" coords="259,635,492,691"/>
+<area shape="rect" id="node12" href="a00188.html#a11bae4d4d8f773e19bcbd95d5f462a6e" title="ScientificReport.BLL.Services.\lScientificInternshipService.GetItems\lByRole" alt="" coords="249,715,501,771"/>
+<area shape="rect" id="node13" href="a00199.html#a7e5afb6c59f8412a160e28a5c8eca44b" title="ScientificReport.BLL.Services.\lScientificWorkService.GetItemsByRole" alt="" coords="245,795,506,836"/>
+</map>
+</div>
+</p>
 
 </div>
 </div>
-<a class="anchor" id="af3a38310da28002ac44a6be61a8f630a"></a>
+<a class="anchor" id="ad1d4e15e2f9ae2eee959afeb57d47bf4"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -162,29 +191,106 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00230.html">DAL.Entities.UserProfile.UserProfile</a> ScientificReport.DTO.Models.UserProfile.UserDetailsModel.User</td>
+          <td class="memname">static bool ScientificReport.BLL.Utils.UserHelpers.IsAdminOrHead </td>
+          <td>(</td>
+          <td class="paramtype">ClaimsPrincipal&#160;</td>
+          <td class="paramname"><em>user</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00410_source.html#l00005">5</a> of file <a class="el" href="a00410_source.html">UserDetailsModel.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00280_source.html#l00018">18</a> of file <a class="el" href="a00280_source.html">UserHelpers.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="add1e07b14605b8c4422301fa93ade6b9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ScientificReport.BLL.Utils.UserHelpers.IsHeadOfDepartment </td>
+          <td>(</td>
+          <td class="paramtype">ClaimsPrincipal&#160;</td>
+          <td class="paramname"><em>user</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00280_source.html#l00013">13</a> of file <a class="el" href="a00280_source.html">UserHelpers.cs</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00228_add1e07b14605b8c4422301fa93ade6b9_icgraph.png" border="0" usemap="#a00228_add1e07b14605b8c4422301fa93ade6b9_icgraph" alt=""/></div>
+<map name="a00228_add1e07b14605b8c4422301fa93ade6b9_icgraph" id="a00228_add1e07b14605b8c4422301fa93ade6b9_icgraph">
+<area shape="rect" id="node2" href="a00025.html#af67b85aaef265a9c6d2143c8c9727fc3" title="ScientificReport.BLL.Services.\lConferenceService.GetItemsByRole" alt="" coords="311,5,557,47"/>
+<area shape="rect" id="node3" href="a00051.html#a37ae724a0004cbc08bcccaa1d932c2c3" title="ScientificReport.BLL.Services.\lGrantService.GetItemsByRole" alt="" coords="329,71,539,112"/>
+<area shape="rect" id="node4" href="a00082.html#a8356b8522686ef1a160216d741083ecd" title="ScientificReport.BLL.Services.\lMembershipService.GetItemsByRole" alt="" coords="307,136,561,177"/>
+<area shape="rect" id="node5" href="a00092.html#a77bb63382a0bdc2566e4609047ee5d5a" title="ScientificReport.BLL.Services.\lOppositionService.GetItemsByRole" alt="" coords="313,201,555,243"/>
+<area shape="rect" id="node6" href="a00102.html#ab823823d4e4ea6b2a1650342ce8066eb" title="ScientificReport.BLL.Services.\lPatentLicenseActivityService.Get\lItemsByRole" alt="" coords="319,266,549,322"/>
+<area shape="rect" id="node7" href="a00112.html#add8d94f8483ffc8e47dbadc3f09493e5" title="ScientificReport.BLL.Services.\lPostgraduateDissertationGuidance\lService.GetItemsByRole" alt="" coords="311,346,557,402"/>
+<area shape="rect" id="node8" href="a00121.html#a6644e5deb9274697e7c9934a209e0702" title="ScientificReport.BLL.Services.\lPostgraduateGuidanceService.GetItems\lByRole" alt="" coords="295,426,573,482"/>
+<area shape="rect" id="node9" href="a00161.html#a19eba70728d71acdee75ca7c2ce415be" title="ScientificReport.BLL.Services.\lReportThesisService.GetItemsByRole" alt="" coords="307,505,561,547"/>
+<area shape="rect" id="node10" href="a00170.html#a829581adbd7eb22549db526bdfdf36af" title="ScientificReport.BLL.Services.\lReviewService.GetItemsByRole" alt="" coords="326,571,542,612"/>
+<area shape="rect" id="node11" href="a00179.html#a3a5f607be75e285021128ffb0b340a4e" title="ScientificReport.BLL.Services.\lScientificConsultationService.Get\lItemsByRole" alt="" coords="317,635,551,691"/>
+<area shape="rect" id="node12" href="a00188.html#a11bae4d4d8f773e19bcbd95d5f462a6e" title="ScientificReport.BLL.Services.\lScientificInternshipService.GetItems\lByRole" alt="" coords="308,715,560,771"/>
+<area shape="rect" id="node13" href="a00199.html#a7e5afb6c59f8412a160e28a5c8eca44b" title="ScientificReport.BLL.Services.\lScientificWorkService.GetItemsByRole" alt="" coords="303,795,565,836"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae35db4cd3a83b96d817a64046dc36bc6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ScientificReport.BLL.Utils.UserHelpers.IsTeacher </td>
+          <td>(</td>
+          <td class="paramtype">ClaimsPrincipal&#160;</td>
+          <td class="paramname"><em>user</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00280_source.html#l00023">23</a> of file <a class="el" href="a00280_source.html">UserHelpers.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/travis/build/lnupmi11/ScientificReport/ScientificReport.DTO/Models/UserProfile/<a class="el" href="a00410_source.html">UserDetailsModel.cs</a></li>
+<li>/home/travis/build/lnupmi11/ScientificReport/ScientificReport.BLL/Utils/<a class="el" href="a00280_source.html">UserHelpers.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00518.html">ScientificReport</a></li><li class="navelem"><a class="el" href="a00533.html">DTO</a></li><li class="navelem"><a class="el" href="a00534.html">Models</a></li><li class="navelem"><a class="el" href="a00551.html">UserProfile</a></li><li class="navelem"><a class="el" href="a00228.html">UserDetailsModel</a></li>
+    <li class="navelem"><a class="el" href="a00516.html">ScientificReport</a></li><li class="navelem"><a class="el" href="a00517.html">BLL</a></li><li class="navelem"><a class="el" href="a00520.html">Utils</a></li><li class="navelem"><a class="el" href="a00228.html">UserHelpers</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>

@@ -1,4 +1,5 @@
 var a00006 =
 [
-    [ "ToArticle", "a00006.html#a4a51f6d928494c85a60f2ee4de550021", null ]
+    [ "Article", "a00006.html#ac02b723debe0a52362f3827f9ed6835a", null ],
+    [ "Authors", "a00006.html#ac7b04b11246b8b9f2455d932857e7578", null ]
 ];

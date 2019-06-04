@@ -1,7 +1,12 @@
 var a00019 =
 [
-    [ "Coauthor", "a00019.html#adf5b5d09c497676dc9a1e22060fb5538", null ],
-    [ "Id", "a00019.html#adbf75cb6deab63ac61f22db8e6d06fc8", null ],
-    [ "PatentLicenseActivity", "a00019.html#a420234f08a231c0c121e33d993286360", null ],
-    [ "PatentLicenseActivityId", "a00019.html#a09b93191f9013e8310f24572b16247da", null ]
+    [ "ConferenceController", "a00019.html#a8accdb6a6f74697197981e619c22cf36", null ],
+    [ "Create", "a00019.html#a23e85523334a228e4b886a3cc51e7fa9", null ],
+    [ "Create", "a00019.html#a7e7f8032d63ce756e56700a285fbfe07", null ],
+    [ "Delete", "a00019.html#abd57c72f56b2412f5ca1050a49be90c6", null ],
+    [ "DeleteConfirmed", "a00019.html#a82cacc2c2593e365c30c521ee749c216", null ],
+    [ "Details", "a00019.html#a840836b59860a34072eb1288feb26cb1", null ],
+    [ "Edit", "a00019.html#a5830e2a6ce1eaa92016da70e04229ad8", null ],
+    [ "Edit", "a00019.html#a643929b4e8a5b07eb5d9d78804b1c203", null ],
+    [ "Index", "a00019.html#a2654dfb8f741b38d16b423140e739229", null ]
 ];

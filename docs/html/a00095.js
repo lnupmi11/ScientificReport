@@ -1,11 +1,16 @@
 var a00095 =
 [
-    [ "CreateItemTest", "a00095.html#a1fa7c1f714f99c52747d75d338b32712", null ],
-    [ "DeleteItemTest", "a00095.html#a7e8a6b02587ff12e10f3a4c55962761a", null ],
-    [ "DoesNotExistTest", "a00095.html#ab03dfa7740aeb610e70832f1c4d1eb62", null ],
-    [ "ExistsTest", "a00095.html#a3bbf163d9f48961891d42596cc556ae3", null ],
-    [ "GetAllTest", "a00095.html#ada3f9e4be1665299734e5139be744592", null ],
-    [ "GetAllWhereTest", "a00095.html#aa570bb0b66d0e824e13d3816de3c8cef", null ],
-    [ "GetByIdTest", "a00095.html#aea78311ffb509982747031c3688e061c", null ],
-    [ "UpdateItemTest", "a00095.html#a83e772f6129886fec4a01f1dae09b601", null ]
+    [ "Types", "a00095.html#a533a7e0d56e30a52cc3c4e5e538fbd37", [
+      [ "Patent", "a00095.html#a533a7e0d56e30a52cc3c4e5e538fbd37a092ade8847d7c0575bae2ecb87ffcbc4", null ],
+      [ "Application", "a00095.html#a533a7e0d56e30a52cc3c4e5e538fbd37ae498749f3c42246d50b15c81c101d988", null ]
+    ] ],
+    [ "ApplicantsPatentLicenseActivities", "a00095.html#a090b7e6a3045515da27e70f4ab38dcc1", null ],
+    [ "AuthorsPatentLicenseActivities", "a00095.html#aa455a9124c8949c7eac17f9781f28a2c", null ],
+    [ "CoApplicantsPatentLicenseActivities", "a00095.html#ab73c612fda452b1ab66f94b245610e5b", null ],
+    [ "CoauthorsPatentLicenseActivities", "a00095.html#af7501803eaddfd0efa7369ac6ae00b5d", null ],
+    [ "Date", "a00095.html#a7d3e5f66f01ea70241abfe24e9d5110e", null ],
+    [ "Id", "a00095.html#a31416bf48efadfa8013a1e1eb49e9398", null ],
+    [ "Name", "a00095.html#a20fbf489b35d3de4670d91b237ed7184", null ],
+    [ "Number", "a00095.html#a118149f7dd61797065c449cee33761ea", null ],
+    [ "Type", "a00095.html#ad9f779ab1efe640a3a0c09de90dd9736", null ]
 ];

@@ -1,6 +1,6 @@
 var a00217 =
 [
-    [ "Id", "a00217.html#abc919eb2c15659223b3aed2b0ec43b36", null ],
-    [ "Patent", "a00217.html#a941b33a7891de0457e28bb4b6c61a87a", null ],
-    [ "TeacherReport", "a00217.html#a28901df8a7931ea52404c329feaf1552", null ]
+    [ "Id", "a00217.html#a564acd3dad0c7f0bb3f845d7f6caf17a", null ],
+    [ "PostgraduateDissertationGuidance", "a00217.html#a881c0e9d75648a196e3eba9407fe5cfa", null ],
+    [ "TeacherReport", "a00217.html#a0b685348640495bb80df1dfbac338aca", null ]
 ];

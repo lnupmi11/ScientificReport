@@ -1,8 +1,12 @@
 var a00033 =
 [
-    [ "DepartmentIndexModel", "a00033.html#a9c6f0a001ad9d74a1c2980084bd31f9f", null ],
-    [ "DepartmentIndexModel", "a00033.html#a56861f173b2923eb412cd0e6bfadd2bd", null ],
-    [ "Departments", "a00033.html#ac48414d137a44d2f8816cf796e5b9850", null ],
-    [ "SortBy", "a00033.html#a2a2a9110de78f66b664b45d5a4dbb6b9", null ],
-    [ "TitleFilter", "a00033.html#a96fbb16911db8f477fe66bfa75419964", null ]
+    [ "DepartmentReportRepository", "a00033.html#aaf2525d63c7d4a3b02e8636cccaf14c8", null ],
+    [ "All", "a00033.html#aa0ef926dfee862f5341957520076d5b7", null ],
+    [ "AllWhere", "a00033.html#acf168b437ec6259205c9b22f3399a9a6", null ],
+    [ "Create", "a00033.html#a4b735ea36d98a92b300ce8dfdc17db1a", null ],
+    [ "Delete", "a00033.html#a1182222a5ab5ff1991ce8ba4d48593bd", null ],
+    [ "Get", "a00033.html#ae243264f93b0aa0cacad3b0c9fdb5fc4", null ],
+    [ "Get", "a00033.html#a638bfd2404debd11156297f782477869", null ],
+    [ "GetQuery", "a00033.html#aff88b90c7850934a6f0d8783a51265d9", null ],
+    [ "Update", "a00033.html#abc81d3ba0624303655ad778df6eec31f", null ]
 ];

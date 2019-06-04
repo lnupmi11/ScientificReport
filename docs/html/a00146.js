@@ -1,13 +1,12 @@
 var a00146 =
 [
-    [ "PublicationIndexModel", "a00146.html#a11e4e346fd152db863bc820956022b0b", null ],
-    [ "PublicationIndexModel", "a00146.html#a3f6de41a8853d7eaf752690508f2ebbb", null ],
-    [ "PrintStatus", "a00146.html#a1a073ce08865c1e18004e50a22574d97", null ],
-    [ "PrintStatusOptions", "a00146.html#acf052ee33d65f4f306409568749b4656", null ],
-    [ "Publications", "a00146.html#afbb20b568e9caa79d46724647e0e3543", null ],
-    [ "PublicationSetType", "a00146.html#aaeb969265e72d5d5073f71750bf91048", null ],
-    [ "PublicationSetTypeOptions", "a00146.html#a84c33691e41e8f1df2dfc93d7c5b81e9", null ],
-    [ "SortBy", "a00146.html#a5bace60e42094606033f6a370017aa39", null ],
-    [ "YearFromFilter", "a00146.html#ac79d7765f26f208a047cdcb2764a1acb", null ],
-    [ "YearToFilter", "a00146.html#a1727e87e1ef159c046bf52d54130609a", null ]
+    [ "PublicationRepository", "a00146.html#adb942460169fcd71c6dc75a65adf0718", null ],
+    [ "All", "a00146.html#a130bb2632565a43e8f05301675bc7e15", null ],
+    [ "AllWhere", "a00146.html#ae941ec8b19bc220c717029d81b5215af", null ],
+    [ "Create", "a00146.html#adcdd7d5da13733af6321128b2739274d", null ],
+    [ "Delete", "a00146.html#a3071242b6afa96b38a3b039060de3d8a", null ],
+    [ "Get", "a00146.html#aaae3f36c354fbb0fe1d0bbcd6d22521c", null ],
+    [ "Get", "a00146.html#a03b9fd356b4208b5cebb4a5f1c55924d", null ],
+    [ "GetQuery", "a00146.html#a49a828bde8626ce9032ee8c1fb65b653", null ],
+    [ "Update", "a00146.html#a7a2272697af326fb6f78881ab83cc9b6", null ]
 ];

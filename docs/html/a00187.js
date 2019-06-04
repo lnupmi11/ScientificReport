@@ -1,12 +1,12 @@
 var a00187 =
 [
-    [ "ScientificInternshipRepository", "a00187.html#ab12a4c8cdafae6b5384f589e55138848", null ],
-    [ "All", "a00187.html#a831125ba9f8b91cefeab7fdd8ecb8550", null ],
-    [ "AllWhere", "a00187.html#a81878baec308259d671046913e6742f9", null ],
-    [ "Create", "a00187.html#a82692c5517f6d5fa5bd86f95578b7900", null ],
-    [ "Delete", "a00187.html#a04001dfc6ec10b0ff728d62645594448", null ],
-    [ "Get", "a00187.html#af6ae4809bbd830ae67fbbc061a97341c", null ],
-    [ "Get", "a00187.html#ae9c02f5ec537e892045db787c41fe592", null ],
-    [ "GetQuery", "a00187.html#a52ef362858c073f36813f425fa81398f", null ],
-    [ "Update", "a00187.html#abcc5aa0759cbfdc5370b065477721a26", null ]
+    [ "AllTest", "a00187.html#a9cdd2a085467a84ac2567616f3c3bc76", null ],
+    [ "AllWhereTest", "a00187.html#abe15f1b056d40847d39d08583348ddf9", null ],
+    [ "CreateTest", "a00187.html#acf54d5e98783f853a58e9e1623ced225", null ],
+    [ "DeleteTest", "a00187.html#ada1190b4034230102104b5de3dc1c3e9", null ],
+    [ "GetByIdTest", "a00187.html#a00a44f0ce06c9467e47bea77a3b0f33d", null ],
+    [ "GetQueryTest", "a00187.html#a5cbc7c61a7c1bd340a8451bbe4971420", null ],
+    [ "GetTest", "a00187.html#a3d4b2bb34536498c5d890bc748e57e4f", null ],
+    [ "UpdateItemIsNullTest", "a00187.html#a10ea2852f680d6b9d44b42f3967c7a6f", null ],
+    [ "UpdateTest", "a00187.html#aa8c39b61f5366597b1ba285cd87e10a6", null ]
 ];

@@ -1,11 +1,6 @@
 var a00124 =
 [
-    [ "CreateItemTest", "a00124.html#abf54e23faeacbe5e9d7e85c398ac27f5", null ],
-    [ "DeleteItemTest", "a00124.html#a056b8fdb9b42455ccfbe1890df6fa7bb", null ],
-    [ "DoesNotExistTest", "a00124.html#a206264924539bd6c59cc4c7e037ab474", null ],
-    [ "ExistsTest", "a00124.html#a6153bb9187421009f0f9c7576851b76e", null ],
-    [ "GetAllTest", "a00124.html#acd23cf7aaf2c440effa35efb49fbb647", null ],
-    [ "GetAllWhereTest", "a00124.html#a91831f61baa395253c0c36fdb5f2e8c0", null ],
-    [ "GetByIdTest", "a00124.html#a5f55824d07751ba2e16e7cafb8d93477", null ],
-    [ "UpdateItemTest", "a00124.html#a2371fa04544314ee9c9cd43b26eb804d", null ]
+    [ "Conference", "a00124.html#a54da418ea9ee9e027a9c67d8bfb17b77", null ],
+    [ "Index", "a00124.html#aca138d7ca7d409c420e08066b359d6bb", null ],
+    [ "User", "a00124.html#afaef8e6c8c8c39fb6fb356c4bdb47a2b", null ]
 ];

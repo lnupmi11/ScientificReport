@@ -1,9 +1,12 @@
 var a00120 =
 [
-    [ "PostgraduateGuidanceModel", "a00120.html#ab9e26dfded5bba6764e29a2607f9f507", null ],
-    [ "PostgraduateGuidanceModel", "a00120.html#ae2f1fa3796e9e462e7e0744f25e4ae98", null ],
-    [ "Guide", "a00120.html#afdb070b4753d8cf49176a111f73eeccb", null ],
-    [ "GuideId", "a00120.html#ae7e053172a1233af1e673483aed1bf2c", null ],
-    [ "PostgraduateInfo", "a00120.html#a1b174096ce733ade179469551d66ad87", null ],
-    [ "PostgraduateName", "a00120.html#ad5b6b1f78418212cda88e83170667337", null ]
+    [ "AllTest", "a00120.html#a8fa6ffb6e903086f3ac745bbff4a7299", null ],
+    [ "AllWhereTest", "a00120.html#a3f6569a2fde3c2ccf8aa72c3be941cbc", null ],
+    [ "CreateTest", "a00120.html#a5dfc5606557ca0cb0de922772d3de1fc", null ],
+    [ "DeleteTest", "a00120.html#a241bcb1d40470b408f1b40ab08612e94", null ],
+    [ "GetByIdTest", "a00120.html#adabec6755b7f982db7a771655e89b30d", null ],
+    [ "GetQueryTest", "a00120.html#a95954e74ea896a6bebec9225a07f878b", null ],
+    [ "GetTest", "a00120.html#aea70f235df4a9a988e4f220d3a54a2e2", null ],
+    [ "UpdateItemIsNullTest", "a00120.html#a286109a7f5f9a9ce4f7aec6d0b5050fb", null ],
+    [ "UpdateTest", "a00120.html#abda74db0367c536ccdffb632786c81e4", null ]
 ];

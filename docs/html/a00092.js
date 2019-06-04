@@ -1,12 +1,15 @@
 var a00092 =
 [
-    [ "OppositionRepository", "a00092.html#a73be336a2c0d4f64f4ffbe3fed1ac04e", null ],
-    [ "All", "a00092.html#a22543ef65ac0b0f9293e21c716db47f4", null ],
-    [ "AllWhere", "a00092.html#ad6a167250d08b47b1ffc24a70bb6d0d1", null ],
-    [ "Create", "a00092.html#af2ed6842572f96324a4c294d48a6408f", null ],
-    [ "Delete", "a00092.html#a07aeee4f2b6203869052b1dfd24b5bf9", null ],
-    [ "Get", "a00092.html#a1a57611bfb9e36692076fd1e5cb0551d", null ],
-    [ "Get", "a00092.html#a7965dc25750e325118db1cfb635395dc", null ],
-    [ "GetQuery", "a00092.html#ab6734d5ed064b59cf56cd7017575e8a9", null ],
-    [ "Update", "a00092.html#ac10b898061c9057b51926cb3ced54483", null ]
+    [ "OppositionService", "a00092.html#a218b538cd4ff3c14fbef0066d67869a6", null ],
+    [ "CreateItem", "a00092.html#a553e1eb4bb4f7f3bd837d639e38d9453", null ],
+    [ "DeleteById", "a00092.html#a7603c08307e18860e6ee1c50baa7be68", null ],
+    [ "Exists", "a00092.html#a48a33aeffbf0d48e1ef0e4fdabe77f07", null ],
+    [ "Get", "a00092.html#adccae469b56eba5135a53ca10a2121c8", null ],
+    [ "GetAll", "a00092.html#a77b15e0bc3d82b84e0f470d09cadefd1", null ],
+    [ "GetAllWhere", "a00092.html#a7325ec9286cfbd12eb9865085a84519e", null ],
+    [ "GetById", "a00092.html#aca3a19049e917aa31727b5b398d9db7a", null ],
+    [ "GetCountByRole", "a00092.html#ac9697e20698164fbd1fdf9472c52575b", null ],
+    [ "GetItemsByRole", "a00092.html#a77bb63382a0bdc2566e4609047ee5d5a", null ],
+    [ "GetPageByRole", "a00092.html#a115ae73d59afae8c0395c70bbf140d44", null ],
+    [ "UpdateItem", "a00092.html#acd90ed393be121fe2184be90607d3859", null ]
 ];

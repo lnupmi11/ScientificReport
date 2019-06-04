@@ -1,6 +1,6 @@
 var a00215 =
 [
-    [ "Id", "a00215.html#a9177d399f3d823e541dceb46bbd5c8c5", null ],
-    [ "Membership", "a00215.html#a2d2a42461d328a7eecb28be588f2ae0b", null ],
-    [ "TeacherReport", "a00215.html#a53850c51b79030a84fe2c300b0e349b3", null ]
+    [ "Id", "a00215.html#abb1d8c07f803eacbb8a796a3c5ba3bdd", null ],
+    [ "Opposition", "a00215.html#acf1935b84ad6787d38a220204b6763dc", null ],
+    [ "TeacherReport", "a00215.html#ab1663bc8f355cc4e57a336e3f95114ce", null ]
 ];

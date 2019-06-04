@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>ScientificReport: ScientificReport.Controllers.PublicationController Class Reference</title>
+<title>ScientificReport: ScientificReport.DTO.Models.Publication.PublicationCreateModel Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -107,153 +107,98 @@ $(document).ready(function(){initNavTree('a00142.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a00708.html">List of all members</a>  </div>
+<a href="#properties">Properties</a> &#124;
+<a href="a00988.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ScientificReport.Controllers.PublicationController Class Reference</div>  </div>
+<div class="title">ScientificReport.DTO.Models.Publication.PublicationCreateModel Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Inheritance diagram for ScientificReport.Controllers.PublicationController:</div>
+Collaboration diagram for ScientificReport.DTO.Models.Publication.PublicationCreateModel:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00709.png" border="0" usemap="#_scientific_report_8_controllers_8_publication_controller_inherit__map" alt="Inheritance graph"/></div>
-<map name="_scientific_report_8_controllers_8_publication_controller_inherit__map" id="_scientific_report_8_controllers_8_publication_controller_inherit__map">
-</map>
-</div>
-<div class="dynheader">
-Collaboration diagram for ScientificReport.Controllers.PublicationController:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00710.png" border="0" usemap="#_scientific_report_8_controllers_8_publication_controller_coll__map" alt="Collaboration graph"/></div>
-<map name="_scientific_report_8_controllers_8_publication_controller_coll__map" id="_scientific_report_8_controllers_8_publication_controller_coll__map">
+<div class="center"><img src="a00989.png" border="0" usemap="#_scientific_report_8_d_t_o_8_models_8_publication_8_publication_create_model_coll__map" alt="Collaboration graph"/></div>
+<map name="_scientific_report_8_d_t_o_8_models_8_publication_8_publication_create_model_coll__map" id="_scientific_report_8_d_t_o_8_models_8_publication_8_publication_create_model_coll__map">
 </map>
 </div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:aa22eba044f1da73fa88e304549735dd1"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00142.html#aa22eba044f1da73fa88e304549735dd1">PublicationTypes</a> { <a class="el" href="a00142.html#aa22eba044f1da73fa88e304549735dd1a5e2f8ee473fdebc99fef4dc9e7ee3146">PublicationTypes.Article</a>, 
+<a class="el" href="a00142.html#aa22eba044f1da73fa88e304549735dd1a18a6a0a37b8b34baf219a830ed94ff84">PublicationTypes.ScientificWork</a>, 
+<a class="el" href="a00142.html#aa22eba044f1da73fa88e304549735dd1a300d84c48288c4a3e62da81d19d2de69">PublicationTypes.ReportThesis</a>, 
+<a class="el" href="a00142.html#aa22eba044f1da73fa88e304549735dd1a6311ae17c1ee52b36e68aaf4ad066387">PublicationTypes.Other</a>
+ }</td></tr>
+<tr class="separator:aa22eba044f1da73fa88e304549735dd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:adfe19409dea2b8a0f6099db24ebd0b4e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00142.html#adfe19409dea2b8a0f6099db24ebd0b4e">PublicationController</a> (<a class="el" href="a00066.html">IPublicationService</a> publicationService, <a class="el" href="a00075.html">IUserProfileService</a> userProfileService, <a class="el" href="a00058.html">IDepartmentService</a> departmentService, IStringLocalizer&lt; <a class="el" href="a00142.html">PublicationController</a> &gt; localizer)</td></tr>
-<tr class="separator:adfe19409dea2b8a0f6099db24ebd0b4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b7390fe81843ea60ad83874bca9c561"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00142.html#a6b7390fe81843ea60ad83874bca9c561">Index</a> (<a class="el" href="a00146.html">PublicationIndexModel</a> model)</td></tr>
-<tr class="separator:a6b7390fe81843ea60ad83874bca9c561"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ecb91efe3576852955a34041880d25d"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00142.html#a9ecb91efe3576852955a34041880d25d">Details</a> (Guid?id)</td></tr>
-<tr class="separator:a9ecb91efe3576852955a34041880d25d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c552db007a71bf093b2fb54ff559855"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00142.html#a3c552db007a71bf093b2fb54ff559855">Create</a> ()</td></tr>
-<tr class="separator:a3c552db007a71bf093b2fb54ff559855"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a305b888f1abcdf3bca7bf6a52a997af9"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00142.html#a305b888f1abcdf3bca7bf6a52a997af9">Create</a> (<a class="el" href="a00143.html">PublicationCreateModel</a> model)</td></tr>
-<tr class="separator:a305b888f1abcdf3bca7bf6a52a997af9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27c7ceebdf7a2e36efa487f0dd1406d4"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00142.html#a27c7ceebdf7a2e36efa487f0dd1406d4">Edit</a> (Guid?id)</td></tr>
-<tr class="separator:a27c7ceebdf7a2e36efa487f0dd1406d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae17ca9b021aa622d861a4c268831cbef"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00142.html#ae17ca9b021aa622d861a4c268831cbef">Edit</a> (Guid id, <a class="el" href="a00145.html">PublicationEditModel</a> model)</td></tr>
-<tr class="separator:ae17ca9b021aa622d861a4c268831cbef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6df1d4619314055774982f8080ad79c"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00142.html#aa6df1d4619314055774982f8080ad79c">AddSelfToAuthors</a> (Guid?id)</td></tr>
-<tr class="separator:aa6df1d4619314055774982f8080ad79c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ce08898ff2c0417bb856d2eea9bac1b"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00142.html#a9ce08898ff2c0417bb856d2eea9bac1b">AddUserToAuthors</a> (Guid?id, [FromBody] <a class="el" href="a00227.html">UpdateUserRequest</a> request)</td></tr>
-<tr class="separator:a9ce08898ff2c0417bb856d2eea9bac1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72c0d8e837c694692455bc5732709b53"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00142.html#a72c0d8e837c694692455bc5732709b53">RemoveUserFromAuthors</a> (Guid?id, [FromBody] <a class="el" href="a00227.html">UpdateUserRequest</a> request)</td></tr>
-<tr class="separator:a72c0d8e837c694692455bc5732709b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f15f6be5fcabe688fd1064eea363c7d"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00142.html#a0f15f6be5fcabe688fd1064eea363c7d">Delete</a> (Guid?id)</td></tr>
-<tr class="separator:a0f15f6be5fcabe688fd1064eea363c7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a353e6f8cceb98e5d60a4b47360dfd129"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00142.html#a353e6f8cceb98e5d60a4b47360dfd129">DeleteConfirmed</a> (Guid id)</td></tr>
-<tr class="separator:a353e6f8cceb98e5d60a4b47360dfd129"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26cc0c944602e9e164b4cd93243c744d"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00142.html#a26cc0c944602e9e164b4cd93243c744d">SearchPublications</a> (string substring, <a class="el" href="a00140.html#a65e148316b30800fc153d00a8cd9a2ef">Publication.Types</a>?type)</td></tr>
-<tr class="separator:a26cc0c944602e9e164b4cd93243c744d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b0d7dbb87e7181d2121cc70a0f0a724"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00142.html#a4b0d7dbb87e7181d2121cc70a0f0a724">PublicationCreateModel</a> ()</td></tr>
+<tr class="separator:a4b0d7dbb87e7181d2121cc70a0f0a724"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a0fe4be376a1162aadc8422b03c3937"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00142.html#a2a0fe4be376a1162aadc8422b03c3937">PublicationCreateModel</a> (<a class="el" href="a00138.html">DAL.Entities.Publication</a> publication)</td></tr>
+<tr class="separator:a2a0fe4be376a1162aadc8422b03c3937"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cf008b3b890cfde1d85cac55bc24413"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00138.html">DAL.Entities.Publication</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00142.html#a9cf008b3b890cfde1d85cac55bc24413">ToPublication</a> ()</td></tr>
+<tr class="separator:a9cf008b3b890cfde1d85cac55bc24413"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1c5d27da4e5697d0c5cf0d1df2194c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00004.html">DAL.Entities.Article</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00142.html#ab1c5d27da4e5697d0c5cf0d1df2194c0">ToArticle</a> ()</td></tr>
+<tr class="separator:ab1c5d27da4e5697d0c5cf0d1df2194c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:aedd46c0f1067e687e0e9c1b7835c6c3f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00139.html">Models.Publication</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00142.html#aedd46c0f1067e687e0e9c1b7835c6c3f">Publication</a><code> [get, set]</code></td></tr>
+<tr class="separator:aedd46c0f1067e687e0e9c1b7835c6c3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab109c977b2c59f70a11e302b59455a52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00008.html">ArticleModel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00142.html#ab109c977b2c59f70a11e302b59455a52">Article</a><code> [get, set]</code></td></tr>
+<tr class="separator:ab109c977b2c59f70a11e302b59455a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac05fa025681cade02346eece446a4f85"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00192.html">ScientificWork</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00142.html#ac05fa025681cade02346eece446a4f85">ScientificWork</a><code> [get, set]</code></td></tr>
+<tr class="separator:ac05fa025681cade02346eece446a4f85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a533ac9299c9069bb366ec91e71f3e99d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00158.html">ReportThesisModel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00142.html#a533ac9299c9069bb366ec91e71f3e99d">ReportThesis</a><code> [get, set]</code></td></tr>
+<tr class="separator:a533ac9299c9069bb366ec91e71f3e99d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d9e24354e3e6ccc56f3cefb88143f62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00142.html#aa22eba044f1da73fa88e304549735dd1">PublicationTypes</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00142.html#a7d9e24354e3e6ccc56f3cefb88143f62">PublicationType</a><code> [get, set]</code></td></tr>
+<tr class="separator:a7d9e24354e3e6ccc56f3cefb88143f62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="a00462_source.html#l00016">16</a> of file <a class="el" href="a00462_source.html">PublicationController.cs</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="adfe19409dea2b8a0f6099db24ebd0b4e"></a>
+<p>Definition at line <a class="el" href="a00381_source.html#l00007">7</a> of file <a class="el" href="a00381_source.html">PublicationCreateModel.cs</a>.</p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a class="anchor" id="aa22eba044f1da73fa88e304549735dd1"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">ScientificReport.Controllers.PublicationController.PublicationController </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00066.html">IPublicationService</a>&#160;</td>
-          <td class="paramname"><em>publicationService</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00075.html">IUserProfileService</a>&#160;</td>
-          <td class="paramname"><em>userProfileService</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00058.html">IDepartmentService</a>&#160;</td>
-          <td class="paramname"><em>departmentService</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">IStringLocalizer&lt; <a class="el" href="a00142.html">PublicationController</a> &gt;&#160;</td>
-          <td class="paramname"><em>localizer</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname">enum <a class="el" href="a00142.html#aa22eba044f1da73fa88e304549735dd1">ScientificReport.DTO.Models.Publication.PublicationCreateModel.PublicationTypes</a></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="aa22eba044f1da73fa88e304549735dd1a5e2f8ee473fdebc99fef4dc9e7ee3146"></a>Article&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa22eba044f1da73fa88e304549735dd1a18a6a0a37b8b34baf219a830ed94ff84"></a>ScientificWork&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa22eba044f1da73fa88e304549735dd1a300d84c48288c4a3e62da81d19d2de69"></a>ReportThesis&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa22eba044f1da73fa88e304549735dd1a6311ae17c1ee52b36e68aaf4ad066387"></a>Other&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
 
-<p>Definition at line <a class="el" href="a00462_source.html#l00023">23</a> of file <a class="el" href="a00462_source.html">PublicationController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00381_source.html#l00019">19</a> of file <a class="el" href="a00381_source.html">PublicationCreateModel.cs</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aa6df1d4619314055774982f8080ad79c"></a>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a4b0d7dbb87e7181d2121cc70a0f0a724"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">IActionResult ScientificReport.Controllers.PublicationController.AddSelfToAuthors </td>
-          <td>(</td>
-          <td class="paramtype">Guid?&#160;</td>
-          <td class="paramname"><em>id</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00462_source.html#l00178">178</a> of file <a class="el" href="a00462_source.html">PublicationController.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a9ce08898ff2c0417bb856d2eea9bac1b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">IActionResult ScientificReport.Controllers.PublicationController.AddUserToAuthors </td>
-          <td>(</td>
-          <td class="paramtype">Guid?&#160;</td>
-          <td class="paramname"><em>id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">[FromBody] <a class="el" href="a00227.html">UpdateUserRequest</a>&#160;</td>
-          <td class="paramname"><em>request</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00462_source.html#l00203">203</a> of file <a class="el" href="a00462_source.html">PublicationController.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a3c552db007a71bf093b2fb54ff559855"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">IActionResult ScientificReport.Controllers.PublicationController.Create </td>
+          <td class="memname">ScientificReport.DTO.Models.Publication.PublicationCreateModel.PublicationCreateModel </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -261,221 +206,203 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00462_source.html#l00072">72</a> of file <a class="el" href="a00462_source.html">PublicationController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00381_source.html#l00024">24</a> of file <a class="el" href="a00381_source.html">PublicationCreateModel.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a305b888f1abcdf3bca7bf6a52a997af9"></a>
+<a class="anchor" id="a2a0fe4be376a1162aadc8422b03c3937"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">IActionResult ScientificReport.Controllers.PublicationController.Create </td>
+          <td class="memname">ScientificReport.DTO.Models.Publication.PublicationCreateModel.PublicationCreateModel </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00143.html">PublicationCreateModel</a>&#160;</td>
-          <td class="paramname"><em>model</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="a00138.html">DAL.Entities.Publication</a>&#160;</td>
+          <td class="paramname"><em>publication</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00462_source.html#l00081">81</a> of file <a class="el" href="a00462_source.html">PublicationController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00381_source.html#l00029">29</a> of file <a class="el" href="a00381_source.html">PublicationCreateModel.cs</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ab1c5d27da4e5697d0c5cf0d1df2194c0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00004.html">DAL.Entities.Article</a> ScientificReport.DTO.Models.Publication.PublicationCreateModel.ToArticle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00381_source.html#l00069">69</a> of file <a class="el" href="a00381_source.html">PublicationCreateModel.cs</a>.</p>
 
 <p><div class="dynheader">
-Here is the call graph for this function:</div>
+Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00142_a305b888f1abcdf3bca7bf6a52a997af9_cgraph.png" border="0" usemap="#a00142_a305b888f1abcdf3bca7bf6a52a997af9_cgraph" alt=""/></div>
-<map name="a00142_a305b888f1abcdf3bca7bf6a52a997af9_cgraph" id="a00142_a305b888f1abcdf3bca7bf6a52a997af9_cgraph">
-<area shape="rect" id="node2" href="a00143.html#a9cf008b3b890cfde1d85cac55bc24413" title="ScientificReport.DTO.Models.\lPublication.PublicationCreateModel.\lToPublication" alt="" coords="252,5,501,61"/>
+<div class="center"><img src="a00142_ab1c5d27da4e5697d0c5cf0d1df2194c0_icgraph.png" border="0" usemap="#a00142_ab1c5d27da4e5697d0c5cf0d1df2194c0_icgraph" alt=""/></div>
+<map name="a00142_ab1c5d27da4e5697d0c5cf0d1df2194c0_icgraph" id="a00142_ab1c5d27da4e5697d0c5cf0d1df2194c0_icgraph">
+<area shape="rect" id="node2" href="a00141.html#a305b888f1abcdf3bca7bf6a52a997af9" title="ScientificReport.Controllers.\lPublicationController.Create" alt="" coords="303,13,501,54"/>
 </map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a0f15f6be5fcabe688fd1064eea363c7d"></a>
+<a class="anchor" id="a9cf008b3b890cfde1d85cac55bc24413"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">IActionResult ScientificReport.Controllers.PublicationController.Delete </td>
+          <td class="memname"><a class="el" href="a00138.html">DAL.Entities.Publication</a> ScientificReport.DTO.Models.Publication.PublicationCreateModel.ToPublication </td>
           <td>(</td>
-          <td class="paramtype">Guid?&#160;</td>
-          <td class="paramname"><em>id</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00462_source.html#l00271">271</a> of file <a class="el" href="a00462_source.html">PublicationController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00381_source.html#l00054">54</a> of file <a class="el" href="a00381_source.html">PublicationCreateModel.cs</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00142_a9cf008b3b890cfde1d85cac55bc24413_icgraph.png" border="0" usemap="#a00142_a9cf008b3b890cfde1d85cac55bc24413_icgraph" alt=""/></div>
+<map name="a00142_a9cf008b3b890cfde1d85cac55bc24413_icgraph" id="a00142_a9cf008b3b890cfde1d85cac55bc24413_icgraph">
+<area shape="rect" id="node2" href="a00141.html#a305b888f1abcdf3bca7bf6a52a997af9" title="ScientificReport.Controllers.\lPublicationController.Create" alt="" coords="303,13,501,54"/>
+</map>
+</div>
+</p>
 
 </div>
 </div>
-<a class="anchor" id="a353e6f8cceb98e5d60a4b47360dfd129"></a>
+<h2 class="groupheader">Property Documentation</h2>
+<a class="anchor" id="ab109c977b2c59f70a11e302b59455a52"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">IActionResult ScientificReport.Controllers.PublicationController.DeleteConfirmed </td>
-          <td>(</td>
-          <td class="paramtype">Guid&#160;</td>
-          <td class="paramname"><em>id</em></td><td>)</td>
-          <td></td>
+          <td class="memname"><a class="el" href="a00008.html">ArticleModel</a> ScientificReport.DTO.Models.Publication.PublicationCreateModel.Article</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00462_source.html#l00295">295</a> of file <a class="el" href="a00462_source.html">PublicationController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00381_source.html#l00011">11</a> of file <a class="el" href="a00381_source.html">PublicationCreateModel.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a9ecb91efe3576852955a34041880d25d"></a>
+<a class="anchor" id="aedd46c0f1067e687e0e9c1b7835c6c3f"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">IActionResult ScientificReport.Controllers.PublicationController.Details </td>
-          <td>(</td>
-          <td class="paramtype">Guid?&#160;</td>
-          <td class="paramname"><em>id</em></td><td>)</td>
-          <td></td>
+          <td class="memname"><a class="el" href="a00139.html">Models.Publication</a> ScientificReport.DTO.Models.Publication.PublicationCreateModel.Publication</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00462_source.html#l00047">47</a> of file <a class="el" href="a00462_source.html">PublicationController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00381_source.html#l00009">9</a> of file <a class="el" href="a00381_source.html">PublicationCreateModel.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a27c7ceebdf7a2e36efa487f0dd1406d4"></a>
+<a class="anchor" id="a7d9e24354e3e6ccc56f3cefb88143f62"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">IActionResult ScientificReport.Controllers.PublicationController.Edit </td>
-          <td>(</td>
-          <td class="paramtype">Guid?&#160;</td>
-          <td class="paramname"><em>id</em></td><td>)</td>
-          <td></td>
+          <td class="memname"><a class="el" href="a00142.html#aa22eba044f1da73fa88e304549735dd1">PublicationTypes</a> ScientificReport.DTO.Models.Publication.PublicationCreateModel.PublicationType</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00462_source.html#l00111">111</a> of file <a class="el" href="a00462_source.html">PublicationController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00381_source.html#l00017">17</a> of file <a class="el" href="a00381_source.html">PublicationCreateModel.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ae17ca9b021aa622d861a4c268831cbef"></a>
+<a class="anchor" id="a533ac9299c9069bb366ec91e71f3e99d"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">IActionResult ScientificReport.Controllers.PublicationController.Edit </td>
-          <td>(</td>
-          <td class="paramtype">Guid&#160;</td>
-          <td class="paramname"><em>id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00145.html">PublicationEditModel</a>&#160;</td>
-          <td class="paramname"><em>model</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname"><a class="el" href="a00158.html">ReportThesisModel</a> ScientificReport.DTO.Models.Publication.PublicationCreateModel.ReportThesis</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00462_source.html#l00141">141</a> of file <a class="el" href="a00462_source.html">PublicationController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00381_source.html#l00015">15</a> of file <a class="el" href="a00381_source.html">PublicationCreateModel.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a6b7390fe81843ea60ad83874bca9c561"></a>
+<a class="anchor" id="ac05fa025681cade02346eece446a4f85"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">IActionResult ScientificReport.Controllers.PublicationController.Index </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00146.html">PublicationIndexModel</a>&#160;</td>
-          <td class="paramname"><em>model</em></td><td>)</td>
-          <td></td>
+          <td class="memname"><a class="el" href="a00192.html">ScientificWork</a> ScientificReport.DTO.Models.Publication.PublicationCreateModel.ScientificWork</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00462_source.html#l00037">37</a> of file <a class="el" href="a00462_source.html">PublicationController.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a72c0d8e837c694692455bc5732709b53"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">IActionResult ScientificReport.Controllers.PublicationController.RemoveUserFromAuthors </td>
-          <td>(</td>
-          <td class="paramtype">Guid?&#160;</td>
-          <td class="paramname"><em>id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">[FromBody] <a class="el" href="a00227.html">UpdateUserRequest</a>&#160;</td>
-          <td class="paramname"><em>request</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00462_source.html#l00238">238</a> of file <a class="el" href="a00462_source.html">PublicationController.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a26cc0c944602e9e164b4cd93243c744d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">IActionResult ScientificReport.Controllers.PublicationController.SearchPublications </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>substring</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00140.html#a65e148316b30800fc153d00a8cd9a2ef">Publication.Types</a>?&#160;</td>
-          <td class="paramname"><em>type</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00462_source.html#l00312">312</a> of file <a class="el" href="a00462_source.html">PublicationController.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00381_source.html#l00013">13</a> of file <a class="el" href="a00381_source.html">PublicationCreateModel.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/travis/build/lnupmi11/ScientificReport/ScientificReport/Controllers/<a class="el" href="a00462_source.html">PublicationController.cs</a></li>
+<li>/home/travis/build/lnupmi11/ScientificReport/ScientificReport.DTO/Models/Publication/<a class="el" href="a00381_source.html">PublicationCreateModel.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00518.html">ScientificReport</a></li><li class="navelem"><a class="el" href="a00523.html">Controllers</a></li><li class="navelem"><a class="el" href="a00142.html">PublicationController</a></li>
+    <li class="navelem"><a class="el" href="a00516.html">ScientificReport</a></li><li class="navelem"><a class="el" href="a00531.html">DTO</a></li><li class="navelem"><a class="el" href="a00532.html">Models</a></li><li class="navelem"><a class="el" href="a00542.html">Publication</a></li><li class="navelem"><a class="el" href="a00142.html">PublicationCreateModel</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>

@@ -1,10 +1,12 @@
 var a00168 =
 [
-    [ "ReviewModel", "a00168.html#a5417ad0c0f86c12bbdb8190168003a89", null ],
-    [ "ReviewModel", "a00168.html#a8f43968592b460e76ca18f367684e6e7", null ],
-    [ "DateOfReview", "a00168.html#a598818eb672b3417d5c5734eea9b0d92", null ],
-    [ "Publications", "a00168.html#a92f390ac44ef6e0565d30bb233553dd1", null ],
-    [ "Reviewer", "a00168.html#a3f1a66f7f85d9c7fc32d15d8a2523df9", null ],
-    [ "Work", "a00168.html#ae255527fbf590b67ce656716d424fb58", null ],
-    [ "WorkId", "a00168.html#ad4284503aadee1478202ddecb73adef6", null ]
+    [ "ReviewRepository", "a00168.html#add9026b0c333df3b7d77efbc81881eda", null ],
+    [ "All", "a00168.html#a06eb3bcb9751848570c62ab1319d993e", null ],
+    [ "AllWhere", "a00168.html#aeba88443b6bfefeea6cf9e32bf60b033", null ],
+    [ "Create", "a00168.html#a7753464f983301771e7d90ad46acfc45", null ],
+    [ "Delete", "a00168.html#a215a01f807c5111848951f66073b4ff7", null ],
+    [ "Get", "a00168.html#a36a3908f2e671ed5500684c3a150e653", null ],
+    [ "Get", "a00168.html#a1d2aa0afff6db43c93f42ee4425b5173", null ],
+    [ "GetQuery", "a00168.html#ad864a579e12844afb875c825468068b5", null ],
+    [ "Update", "a00168.html#aa8b3997b177c4ce3a4b357d911e97901", null ]
 ];

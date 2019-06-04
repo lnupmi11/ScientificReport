@@ -1,12 +1,12 @@
 var a00178 =
 [
-    [ "ScientificConsultationRepository", "a00178.html#a90be535c13ab99d88f70c1ec10234f91", null ],
-    [ "All", "a00178.html#ac368e00e9d2c8aff8120b5dad6f53092", null ],
-    [ "AllWhere", "a00178.html#aae5374e3e99c522384c0792bfd062803", null ],
-    [ "Create", "a00178.html#a876ca6f5402647e60087d97c44e0c066", null ],
-    [ "Delete", "a00178.html#acd310b3d803b13548c90d9aa7159ef16", null ],
-    [ "Get", "a00178.html#af1b4a52a302a6b34346075b908e4bdcd", null ],
-    [ "Get", "a00178.html#acf02c93ac82e8adbe3474cb2020df750", null ],
-    [ "GetQuery", "a00178.html#a029675b9ec157e1c4a4524d264cac29f", null ],
-    [ "Update", "a00178.html#aa5455d4ead1e31f2abc2fe48b341f1bd", null ]
+    [ "AllTest", "a00178.html#a77260d4ac1edd1a78ba01ff1874bc27a", null ],
+    [ "AllWhereTest", "a00178.html#a9f7712f05229ea47b858319da6ff5d55", null ],
+    [ "CreateTest", "a00178.html#a03ecb8bd9ba8937cdde9d30c97b59073", null ],
+    [ "DeleteTest", "a00178.html#a3701229b6163f3dde263dfcf53bc012c", null ],
+    [ "GetByIdTest", "a00178.html#a4cfad382664b449a53ad1a3543bc7da2", null ],
+    [ "GetQueryTest", "a00178.html#a38ef9d6a320678144baff9a8f328b2dc", null ],
+    [ "GetTest", "a00178.html#ab66bf18c6b8f8bb1369c4af721354612", null ],
+    [ "UpdateItemIsNullTest", "a00178.html#ad688bc3e39b5b537691570f24026ece7", null ],
+    [ "UpdateTest", "a00178.html#a6569a40a7a2f1a8ee26f35082169ba14", null ]
 ];

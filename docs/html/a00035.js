@@ -1,12 +1,12 @@
 var a00035 =
 [
-    [ "DepartmentReportRepository", "a00035.html#aaf2525d63c7d4a3b02e8636cccaf14c8", null ],
-    [ "All", "a00035.html#aa0ef926dfee862f5341957520076d5b7", null ],
-    [ "AllWhere", "a00035.html#acf168b437ec6259205c9b22f3399a9a6", null ],
-    [ "Create", "a00035.html#a4b735ea36d98a92b300ce8dfdc17db1a", null ],
-    [ "Delete", "a00035.html#a1182222a5ab5ff1991ce8ba4d48593bd", null ],
-    [ "Get", "a00035.html#ae243264f93b0aa0cacad3b0c9fdb5fc4", null ],
-    [ "Get", "a00035.html#a638bfd2404debd11156297f782477869", null ],
-    [ "GetQuery", "a00035.html#aff88b90c7850934a6f0d8783a51265d9", null ],
-    [ "Update", "a00035.html#abc81d3ba0624303655ad778df6eec31f", null ]
+    [ "DepartmentRepository", "a00035.html#acecd6b2687d4c93b239233aac02e659b", null ],
+    [ "All", "a00035.html#a71ae0dc8e6a5995e89eed1382eb48b51", null ],
+    [ "AllWhere", "a00035.html#af1849bf905541018921f84e012a275f4", null ],
+    [ "Create", "a00035.html#a72c54f707c3c19155d1f14736cd2c83e", null ],
+    [ "Delete", "a00035.html#abe2c3109edd48e4131b51a66d49a1649", null ],
+    [ "Get", "a00035.html#a30371e911a2c51331a80ffd963ba1a65", null ],
+    [ "Get", "a00035.html#af1e7e5dcb7db6cd66e195662a45f0018", null ],
+    [ "GetQuery", "a00035.html#a9d4eea45f5d05298e50948fa5a3b791a", null ],
+    [ "Update", "a00035.html#ae09783a3a797b58f504a84463677c815", null ]
 ];

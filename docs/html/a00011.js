@@ -1,12 +1,17 @@
 var a00011 =
 [
-    [ "ArticleRepository", "a00011.html#a872d0f4ade710c8d17ca3dcfc99eaafc", null ],
-    [ "All", "a00011.html#a543f33a59982aa0246b5b103baad4824", null ],
-    [ "AllWhere", "a00011.html#a1a91bbc7b2738c21aed689eacf6d4a0e", null ],
-    [ "Create", "a00011.html#a9a01cf3a1a2d0deec8eab9e0a8fa6a27", null ],
-    [ "Delete", "a00011.html#a722e2f133d7011e51b01d20ec47c1098", null ],
-    [ "Get", "a00011.html#acf653728b8f218b7a1e410ffb85016ac", null ],
-    [ "Get", "a00011.html#ac11cf874bcc5f3a4e1b809ba2fba2e92", null ],
-    [ "GetQuery", "a00011.html#ab8a4668c9e9f53f7e8245c6812e11082", null ],
-    [ "Update", "a00011.html#ae194dacb48ffaa69486c35b2ac12e98f", null ]
+    [ "ArticleService", "a00011.html#aa4ab948fe91a5dc431cb8ea9f6d50c46", null ],
+    [ "AddAuthor", "a00011.html#a5f4bd0820cdc0aa542261b23f8ea5928", null ],
+    [ "CreateItem", "a00011.html#a9aa3585ab0f8cc5b5b93c84ddcd576e2", null ],
+    [ "DeleteById", "a00011.html#ab25090dc6c3f85b65a996dee04d87a19", null ],
+    [ "Exists", "a00011.html#af4c58a23fe7caf5e6873ba0b067ac554", null ],
+    [ "Get", "a00011.html#a3056f74cf7afb2cde38f5f4ac1d9f2d6", null ],
+    [ "GetAll", "a00011.html#aee79526e2308f8f24ce7469690343756", null ],
+    [ "GetAllWhere", "a00011.html#a5f513c080b1448a066b9bfe10b07b7b2", null ],
+    [ "GetAuthors", "a00011.html#a3073d61fc69a7cc040ca4ad881e7d140", null ],
+    [ "GetById", "a00011.html#a691ef0be771b7818b9e055da71ad5986", null ],
+    [ "GetCount", "a00011.html#a8be61299fdcbb0c18f3c6ebe3caea125", null ],
+    [ "GetPage", "a00011.html#a19588db18457235023166db5790f0731", null ],
+    [ "RemoveAuthor", "a00011.html#a02ded6d735d24427fee3d3570d3b7fa1", null ],
+    [ "UpdateItem", "a00011.html#a9a16ef702dbbc57ba54d2b167ee1a27e", null ]
 ];

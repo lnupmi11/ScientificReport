@@ -1,11 +1,14 @@
 var a00068 =
 [
-    [ "All", "a00068.html#aee3b3f8ee0fcaebcaede76228c6d4922", null ],
-    [ "AllWhere", "a00068.html#a30604bbce446175c06b8164bce1fd27d", null ],
-    [ "Create", "a00068.html#a68531e3455d29e4f4045743eba98264c", null ],
-    [ "Delete", "a00068.html#a0764f85f85a793c920719e8991930d22", null ],
-    [ "Get", "a00068.html#a3946f0455fc1028e3800d812dcd06353", null ],
-    [ "Get", "a00068.html#a9fd532190b749ca64e74a34741eee71f", null ],
-    [ "GetQuery", "a00068.html#a577853a0f32296d005fbd10bac1df62c", null ],
-    [ "Update", "a00068.html#a91cb7c4a8723907d9ea2f5d7f498f411", null ]
+    [ "CreateItem", "a00068.html#a18abcd98415292f9b64141a9a5539d56", null ],
+    [ "DeleteById", "a00068.html#aa5c9696d6a42affebaa4b7662edcefbf", null ],
+    [ "Exists", "a00068.html#a5d3cbb54151c926a313d8f785844ba3a", null ],
+    [ "Get", "a00068.html#a2b4a0722ec676da38522026caec5d491", null ],
+    [ "GetAll", "a00068.html#ac041fe3efb4992591c6f12a49093c5de", null ],
+    [ "GetAllWhere", "a00068.html#aa48bf92b8e1808681f9842c0246525ec", null ],
+    [ "GetById", "a00068.html#ab7bc4821a0a5a4bcf12616b493ae6fcc", null ],
+    [ "GetCountByRole", "a00068.html#a23e68694dd30ba18d366fea496dba8ff", null ],
+    [ "GetItemsByRole", "a00068.html#af0f0e9258e16ce530bf68fba2eca7f4e", null ],
+    [ "GetPageByRole", "a00068.html#a9c78505a09457c0b8d609970cce096c2", null ],
+    [ "UpdateItem", "a00068.html#a5ef1eb020aed635cdccec36add04fd0a", null ]
 ];

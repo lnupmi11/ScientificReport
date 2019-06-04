@@ -1,11 +1,12 @@
 var a00111 =
 [
-    [ "PostgraduateDissertationGuidanceModel", "a00111.html#aa25563db35a0721ed560741283403e7b", null ],
-    [ "PostgraduateDissertationGuidanceModel", "a00111.html#a4b14eacd120c7b5ba5c9e20c16c13f2d", null ],
-    [ "DateDegreeGained", "a00111.html#ad2b0e0e9b61966cfd24814c20ce6cea1", null ],
-    [ "Dissertation", "a00111.html#ad656978d4642679b671eabe958607513", null ],
-    [ "GraduationYear", "a00111.html#a6c5996dbe39b761583498bbabdd4ddbd", null ],
-    [ "Guide", "a00111.html#a95d77e48e53981736f5de78c5e1dc897", null ],
-    [ "PostgraduateName", "a00111.html#aadbad92cc78f382777cf62637e37437a", null ],
-    [ "Speciality", "a00111.html#a1c9982f19509e1c8f53e4c1009da950c", null ]
+    [ "AllTest", "a00111.html#aad76281ce768dddbdfbe100de27122ab", null ],
+    [ "AllWhereTest", "a00111.html#aebac1eca10ab3e22cc4ae0b02916e127", null ],
+    [ "CreateTest", "a00111.html#a104de91eaa42994a7743a00608c53f86", null ],
+    [ "DeleteTest", "a00111.html#ae1e6d5db3eeb06800dad0f91cac316cf", null ],
+    [ "GetByIdTest", "a00111.html#a97367c3edaa24dc81b212dea70e2fbb4", null ],
+    [ "GetQueryTest", "a00111.html#a7f54aaebeccdc6aa50fcc552345f17f5", null ],
+    [ "GetTest", "a00111.html#aaa7e40f15c06dcbd1a94f85ed8ef3cbd", null ],
+    [ "UpdateItemIsNullTest", "a00111.html#a4b3523fc606ab14656a0bb1bf6576b0c", null ],
+    [ "UpdateTest", "a00111.html#a9d6eab32b2987dab3544b5d08e75f401", null ]
 ];

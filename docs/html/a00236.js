@@ -1,9 +1,8 @@
 var a00236 =
 [
-    [ "UserProfileRole", "a00236.html#a9699311710d43a5af5de6623914a1b3c", null ],
-    [ "Administrator", "a00236.html#ad30d0fc50493dfa9453fa7651e1bf88c", null ],
-    [ "Any", "a00236.html#ae99407f17e76c3009eb2f1c3772cfb43", null ],
-    [ "HeadOfDepartment", "a00236.html#ad6a18be97146be4cdcb150df239e35ae", null ],
-    [ "HeadOfDepartmentOrAdmin", "a00236.html#a4f3e774d1843ff13195312057b15a34a", null ],
-    [ "Teacher", "a00236.html#ab5dbd2035d47221619c9d9836fffcac4", null ]
+    [ "Article", "a00236.html#a4188b8dd3fba4a546c2b69b9db337ab2", null ],
+    [ "ArticleId", "a00236.html#a01a5476999e501c9d05967b0a6bb8bd0", null ],
+    [ "Author", "a00236.html#a44e6b9b9e652c702cfd481177d6ba95c", null ],
+    [ "AuthorId", "a00236.html#a0a0eba8e1642d2e4b0d6ae7fc4a856a4", null ],
+    [ "Id", "a00236.html#a92f811f435b60cdd2dea1d1296a3fa8b", null ]
 ];

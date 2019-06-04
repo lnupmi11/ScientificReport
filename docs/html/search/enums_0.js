@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['isapprovedoption',['IsApprovedOption',['../a00233.html#a4083cb58d85f00c2cdb1fe186f1f6673',1,'ScientificReport::DTO::Models::UserProfile::UserProfileIndexModel']]]
+  ['articletypes',['ArticleTypes',['../a00004.html#a89e83ddd9a7ee49e78bf0bc729782838',1,'ScientificReport::DAL::Entities::Article']]]
 ];

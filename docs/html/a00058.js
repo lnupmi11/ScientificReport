@@ -1,21 +1,14 @@
 var a00058 =
 [
-    [ "AddScientificWork", "a00058.html#a4d89ddb94370d21ea76b56570bbe465f", null ],
-    [ "AddUser", "a00058.html#a3386ba2fa225deebfd5c904d935b9eeb", null ],
-    [ "CreateItem", "a00058.html#aa245507ede892dee742fbfea4b7747b8", null ],
-    [ "DeleteById", "a00058.html#a07a61f31577774434ef1c9932afe92dd", null ],
-    [ "Exists", "a00058.html#a56cc165384f033de5a599039a2367ad6", null ],
-    [ "Filter", "a00058.html#af332e2cadb60d9c0e9539a09bbb66a13", null ],
-    [ "Get", "a00058.html#a8a33f541531bb57fe680552e76a4c08f", null ],
-    [ "GetAll", "a00058.html#a3120202f6ff52f5e975062577607e6e5", null ],
-    [ "GetAllWhere", "a00058.html#ab79df98d8b294241c931d5c256d90599", null ],
-    [ "GetById", "a00058.html#abf0398ddfc7a4a43bcc076ba9d4b544d", null ],
-    [ "GetCount", "a00058.html#a14baea394f79d2d15dcabaa87af34ff9", null ],
-    [ "GetPage", "a00058.html#a60c037c1e918a2739aa013eb277642ed", null ],
-    [ "RemoveScientificWork", "a00058.html#a63d02ce4f4f86e1b08dcf3dccf452548", null ],
-    [ "RemoveUser", "a00058.html#a5189807885b6aa2c3d9a770b17f23a4e", null ],
-    [ "SortDepartmentsBy", "a00058.html#a6b947b95e4cdd52f8d1df4790f6eaff3", null ],
-    [ "UpdateItem", "a00058.html#ad9b93d87f5d5fde0e15d5df1e4e6ad1f", null ],
-    [ "UserIsHired", "a00058.html#a61e608924ff7187e22137f6de5934a2c", null ],
-    [ "UserWorksInDepartment", "a00058.html#a154d0eb3e0024e4588868089e1d33771", null ]
+    [ "CreateItem", "a00058.html#accce305dec76b9e5e3ab9a014cf2283e", null ],
+    [ "DeleteById", "a00058.html#a8ab8fa623757c306452b566d8a25926e", null ],
+    [ "Exists", "a00058.html#a720a8be0ca72b1f3b0af66846b45dc31", null ],
+    [ "Get", "a00058.html#a277330083f1f76a494e5d53b5fa51a0a", null ],
+    [ "GetAll", "a00058.html#af9ea822fe18ff08aaf65639f82d0dad2", null ],
+    [ "GetAllWhere", "a00058.html#aacf1686dca6b957baad0b19d2bd82a1c", null ],
+    [ "GetById", "a00058.html#ab4120c7cca6d4a9773832c5050c22640", null ],
+    [ "GetCountByRole", "a00058.html#a4ad003e95e77a813da57391097d6323d", null ],
+    [ "GetItemsByRole", "a00058.html#aba63e6e48b06cc1e6b452f7fdbd262b7", null ],
+    [ "GetPageByRole", "a00058.html#a2ba4cf8dd5b61759deef793686518856", null ],
+    [ "UpdateItem", "a00058.html#a0a7703274716143c534c895a64a41b71", null ]
 ];

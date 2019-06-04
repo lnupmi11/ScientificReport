@@ -1,12 +1,7 @@
 var a00163 =
 [
-    [ "CreateItemTest", "a00163.html#a9584d08ffc18c842795d9a023480439e", null ],
-    [ "DeleteItemTest", "a00163.html#a5e4ade9b7ae6b6c09cd975d3820dc3c7", null ],
-    [ "DoesNotExistTest", "a00163.html#a3fe1c87e832760a5741acc3719050e22", null ],
-    [ "ExistsTest", "a00163.html#af98f111894a94020d9756a8eab270047", null ],
-    [ "GetAllTest", "a00163.html#a515d19b832c637d49495f5b99c8fbdd9", null ],
-    [ "GetAllWhereTest", "a00163.html#a864924d15139650f5ba3d55b2d4fe30e", null ],
-    [ "GetAuthorsTest", "a00163.html#a96363cbf41861463d6a3690e0bb759a4", null ],
-    [ "GetByIdTest", "a00163.html#a0f5d6f4ea912a2abea704cbd0eb18c63", null ],
-    [ "UpdateItemTest", "a00163.html#aef0971a5d88cbf5e7b4329eb37611b53", null ]
+    [ "DateOfReview", "a00163.html#ad80fb8005af97c2958766cc83896c745", null ],
+    [ "Id", "a00163.html#ae6d0d656501b0a3e9707281730e32763", null ],
+    [ "Reviewer", "a00163.html#a4e34c446e3f43cb94e1b0701ce1ed71f", null ],
+    [ "Work", "a00163.html#af10582fe559f808bb4a60360acd6c6f9", null ]
 ];

@@ -1,8 +1,6 @@
 var a00048 =
 [
-    [ "GrantEditModel", "a00048.html#a374d9ec8c09677f9e62f5d4006f9b63d", null ],
-    [ "GrantEditModel", "a00048.html#a339a3cdef50d1b195d1c1309a286e4dd", null ],
-    [ "Authors", "a00048.html#a05854841a3884ab53be89a1c441fad8e", null ],
-    [ "Id", "a00048.html#a33afe53f670b72ecb17fc861ba537207", null ],
-    [ "Users", "a00048.html#a0bdea7947bc23bc77c55b82925d3a747", null ]
+    [ "GrantModel", "a00048.html#a5c917c42f6d15deed2ec7e964c69a4f9", null ],
+    [ "GrantModel", "a00048.html#aaef0033858faef16c3f29c4f7c474db3", null ],
+    [ "Info", "a00048.html#acee6d5e88b0c6571705ebbe8296ec75d", null ]
 ];

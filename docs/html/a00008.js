@@ -1,9 +1,15 @@
 var a00008 =
 [
-    [ "ArticleEditModel", "a00008.html#a7b46b17fbc836b62238a97315347307f", null ],
-    [ "ArticleEditModel", "a00008.html#ac8b001b6f511db2a9091e762d8744937", null ],
-    [ "Modify", "a00008.html#abf6f3d7bd3a77b13631e8dc680c41232", null ],
-    [ "Authors", "a00008.html#aa5b40a0bdb871edd7921308aa61289c4", null ],
-    [ "Users", "a00008.html#a1c05a5231fc57f6916a12bec6051a15d", null ],
-    [ "Id", "a00008.html#a547b0c7e0f868394dc6e60039c9fac95", null ]
+    [ "DocumentInfo", "a00008.html#a0f78d43f2c79fa5c720a2699c135ab70", null ],
+    [ "IsPeriodical", "a00008.html#a1d4f78dc5c5c0722bc4a0429e3039182", null ],
+    [ "IsPrintCanceled", "a00008.html#a9babb986e3efd88fe0816634d2194c52", null ],
+    [ "IsRecommendedToPrint", "a00008.html#a52bce016ad64f77300e2cb880ed9ff91", null ],
+    [ "LiabilityInfo", "a00008.html#ad7a8ca0dcfdff3b63e1e90e982c48396", null ],
+    [ "Number", "a00008.html#ad57cc5b467b6d599980d069984090854", null ],
+    [ "PagesAmount", "a00008.html#a18c2d0da4ce26068aa96415cf76a1494", null ],
+    [ "PublishingHouseName", "a00008.html#aef2f6c92a540d98bc09e86358f9e88a8", null ],
+    [ "PublishingPlace", "a00008.html#a5a8a6942fb46835f75a42c2e0883778a", null ],
+    [ "PublishingYear", "a00008.html#a9c9deefcb17d56a79a52b10524bf72a5", null ],
+    [ "Title", "a00008.html#ac099a58e72855b81b005ca4b7ee11c23", null ],
+    [ "Type", "a00008.html#abe94e54aafc261d6144ec98e9e5fbe9d", null ]
 ];

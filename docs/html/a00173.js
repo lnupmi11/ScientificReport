@@ -1,7 +1,12 @@
 var a00173 =
 [
-    [ "CandidateName", "a00173.html#aa38c1f52c83c87393ea0107659668f3e", null ],
-    [ "DissertationTitle", "a00173.html#a70de78164714b4281c56a07fef00c48d", null ],
-    [ "Guide", "a00173.html#a6ccdd6cb8d9c2ff26eaa3378aa2bba14", null ],
-    [ "Id", "a00173.html#a888b1ee75a41642751927a221543e21e", null ]
+    [ "ScientificConsultationController", "a00173.html#a53d405b230d8922ea429d0580e5710b2", null ],
+    [ "Create", "a00173.html#a6153fd2ec4217ce19347cb930c7a3fa4", null ],
+    [ "Create", "a00173.html#a247e940fb1dab0d596365e88d61b3871", null ],
+    [ "Delete", "a00173.html#a089b1ea5e733e73a21a8b6b209e037fb", null ],
+    [ "DeleteConfirmed", "a00173.html#add0fc8fdb7a64abd32dab754650f0b1d", null ],
+    [ "Details", "a00173.html#aafd2d3d888660fbe61c1cd213a31a4b1", null ],
+    [ "Edit", "a00173.html#a5f9420d56069184d806c0261ea42b6e0", null ],
+    [ "Edit", "a00173.html#a60a26a9487f931db834dac3115ecc31e", null ],
+    [ "Index", "a00173.html#a66fa2dfbf1ec6f48c5bb7092f0c705b6", null ]
 ];

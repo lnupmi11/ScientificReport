@@ -1,8 +1,9 @@
 var a00099 =
 [
-    [ "PatentLicenseActivityEditModel", "a00099.html#a398d24656b6290852539f09426b8ab6e", null ],
-    [ "PatentLicenseActivityEditModel", "a00099.html#a7f8d3438d82d6bbce3a4268bb79d2f61", null ],
-    [ "AuthorsOrApplicants", "a00099.html#ac64e8eb1c1b437328c1d35cfa7992e5b", null ],
-    [ "Id", "a00099.html#a5eb058419dce3fb135e3fec5e44752f8", null ],
-    [ "Users", "a00099.html#a81a3f8998de62b506538cf33639b7c8c", null ]
+    [ "PatentLicenseActivityModel", "a00099.html#ae1a7b41a50114eac527dc5a28962dbe8", null ],
+    [ "PatentLicenseActivityModel", "a00099.html#a594936c441459cac7d07a63a56b30c19", null ],
+    [ "DateTime", "a00099.html#aa7f64119fba959c8b2af37c4a133a27e", null ],
+    [ "Name", "a00099.html#a356c134cc2e1b3eac26cc2d670c03cee", null ],
+    [ "Number", "a00099.html#a1667064c631229fa8f1924fb6574bb65", null ],
+    [ "Type", "a00099.html#a9cae52f1dc63afe496762cade6166414", null ]
 ];

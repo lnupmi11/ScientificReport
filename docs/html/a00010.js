@@ -1,15 +1,12 @@
 var a00010 =
 [
-    [ "DocumentInfo", "a00010.html#a0f78d43f2c79fa5c720a2699c135ab70", null ],
-    [ "IsPeriodical", "a00010.html#a1d4f78dc5c5c0722bc4a0429e3039182", null ],
-    [ "IsPrintCanceled", "a00010.html#a9babb986e3efd88fe0816634d2194c52", null ],
-    [ "IsRecommendedToPrint", "a00010.html#a52bce016ad64f77300e2cb880ed9ff91", null ],
-    [ "LiabilityInfo", "a00010.html#ad7a8ca0dcfdff3b63e1e90e982c48396", null ],
-    [ "Number", "a00010.html#ad57cc5b467b6d599980d069984090854", null ],
-    [ "PagesAmount", "a00010.html#a18c2d0da4ce26068aa96415cf76a1494", null ],
-    [ "PublishingHouseName", "a00010.html#aef2f6c92a540d98bc09e86358f9e88a8", null ],
-    [ "PublishingPlace", "a00010.html#a5a8a6942fb46835f75a42c2e0883778a", null ],
-    [ "PublishingYear", "a00010.html#a9c9deefcb17d56a79a52b10524bf72a5", null ],
-    [ "Title", "a00010.html#ac099a58e72855b81b005ca4b7ee11c23", null ],
-    [ "Type", "a00010.html#a531a4b6df740e3c7e52cbac6369fabde", null ]
+    [ "AllTest", "a00010.html#a2fb6a581c5026e8a2cb6b15545b007bd", null ],
+    [ "AllWhereTest", "a00010.html#a6e03b4a78c4770713c814f85475d32dd", null ],
+    [ "CreateTest", "a00010.html#a116ade79a601b4c7945c91c812ad0ae1", null ],
+    [ "DeleteTest", "a00010.html#afe2c5e645daf447c200143ee28af3cec", null ],
+    [ "GetByIdTest", "a00010.html#a1fc013346f2815d2f57592622bb5ac63", null ],
+    [ "GetQueryTest", "a00010.html#a9ae36131feeb7ec7664ff44369e8e2c4", null ],
+    [ "GetTest", "a00010.html#a683e1709a54cf77d88992e2e89a5c274", null ],
+    [ "UpdateItemIsNullTest", "a00010.html#a4cdc110da1413ad093ee2e8d2b7b0f39", null ],
+    [ "UpdateTest", "a00010.html#a34ddeed316b66bb745376090836cf01e", null ]
 ];

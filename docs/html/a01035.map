@@ -1,3 +1,3 @@
-<map id="ScientificReport.DTO.Models.ScientificInternship.ScientificInternshipEditModel" name="ScientificReport.DTO.Models.ScientificInternship.ScientificInternshipEditModel">
-<area shape="rect" id="node2" href="$a00186.html" title="{ScientificInternshipModel\n|+ PlaceOfInternship\l+ Started\l+ Ended\l+ Contents\l|+ ScientificInternshipModel()\l+ ScientificInternshipModel()\l}" alt="" coords="5,5,211,141"/>
+<map id="ScientificReport.DTO.Models.ScientificInternship.ScientificInternshipModel" name="ScientificReport.DTO.Models.ScientificInternship.ScientificInternshipModel">
+<area shape="rect" id="node2" href="$a00183.html" title="{ScientificReport.DTO.Models.\lScientificInternship.Scientific\lInternshipEditModel\n|+ Id\l+ AllUsers\l+ Users\l|+ ScientificInternshipEdit\lModel()\l+ ScientificInternshipEdit\lModel()\l}" alt="" coords="7,219,209,399"/>
 </map>

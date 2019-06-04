@@ -1,12 +1,14 @@
 var a00045 =
 [
-    [ "AllTest", "a00045.html#af4342dba668b5d650507687f5cffb61c", null ],
-    [ "AllWhereTest", "a00045.html#a40907207ef40fd038124563d5230b5c5", null ],
-    [ "CreateTest", "a00045.html#aae4dc9bd7580718e5d4d27c9bd176679", null ],
-    [ "DeleteTest", "a00045.html#aac47570f0bf9b09f86eeda352f0a2dde", null ],
-    [ "GetByIdTest", "a00045.html#a43f61d12e2274203fbb72f0182ef879d", null ],
-    [ "GetQueryTest", "a00045.html#a9371c2edcd9384bc28a228e8da0d7f68", null ],
-    [ "GetTest", "a00045.html#a907e72930a29b309538d38c5e3b5a9cf", null ],
-    [ "UpdateItemIsNullTest", "a00045.html#a241d54d4bbc7d25cb0dfde2363784ae5", null ],
-    [ "UpdateTest", "a00045.html#afe5c56e92044d8f7bb28e10bab485af5", null ]
+    [ "GrantController", "a00045.html#a40e3c82bc62b229e4a4e9f2ea5f95ba2", null ],
+    [ "AddAuthor", "a00045.html#a995d44eb295fb287a8a811b10f685c92", null ],
+    [ "Create", "a00045.html#a20007cf1c8b9220db1b893441e9ecd10", null ],
+    [ "Create", "a00045.html#a0b61dbfa98f871d31a3b09331c197eba", null ],
+    [ "Delete", "a00045.html#a586b9e3747a2f9a9b9d91fbe4de70d39", null ],
+    [ "DeleteAuthor", "a00045.html#ac3473e2f42a005060fd4226970714cb7", null ],
+    [ "DeleteConfirmed", "a00045.html#aa15da48fe3a5685c87271edfb2b3d0fd", null ],
+    [ "Details", "a00045.html#a87c64356888c4b6c38687555277483f4", null ],
+    [ "Edit", "a00045.html#a855208b965fe5b323f5edc88533aa9e2", null ],
+    [ "Edit", "a00045.html#ac7bf1c48ba62248df81d2bf7a66b74cd", null ],
+    [ "Index", "a00045.html#aee6893d8b6c4720de0183f4792ad9bec", null ]
 ];

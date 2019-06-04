@@ -1,12 +1,18 @@
 var a00051 =
 [
-    [ "GrantRepository", "a00051.html#aa651795759d65a89cb46de0c88aa7a78", null ],
-    [ "All", "a00051.html#a8ad6fd8449847705b285bdeda8a3a4f6", null ],
-    [ "AllWhere", "a00051.html#aaccfbdf5c601fbb7e2c87e490772e094", null ],
-    [ "Create", "a00051.html#af3cf42cfafe8387dce56aac3d018cdb0", null ],
-    [ "Delete", "a00051.html#aa296a0816b1978bf53ea8e8aa5416507", null ],
-    [ "Get", "a00051.html#a313e6b78cf340762a86f2f252100505e", null ],
-    [ "Get", "a00051.html#aefc488c647294c9977aa6575297bb5a5", null ],
-    [ "GetQuery", "a00051.html#acd2a1bf7a880e73e9809606f07376b8b", null ],
-    [ "Update", "a00051.html#ac7fe66ab2fa0e3f5cdadf78bd4348fe0", null ]
+    [ "GrantService", "a00051.html#a3b0aa97c0e648e2e3449f4701c83f5bb", null ],
+    [ "AddUser", "a00051.html#adaad7ecbcf984cc5d45b43bdc409e975", null ],
+    [ "CreateItem", "a00051.html#a3e3d4da44991cc49cec7883857374059", null ],
+    [ "DeleteById", "a00051.html#a5085dc18b5a4bd0ee36a4a2674f16843", null ],
+    [ "Exists", "a00051.html#aa36f7e3988b50ad5d876af000d90a8cc", null ],
+    [ "Get", "a00051.html#ac5067ac05d696a40a53c06b3cd05bcc9", null ],
+    [ "GetAll", "a00051.html#a27fe0e57924a4d6b9332fdaae64dcd46", null ],
+    [ "GetAllWhere", "a00051.html#ad64ea7a6b0db940ca16d30cde9aede76", null ],
+    [ "GetById", "a00051.html#a2ae7772ae69f8273c4fb0349762102c0", null ],
+    [ "GetCountByRole", "a00051.html#ac74011b4d3ee181b133f813ad6604505", null ],
+    [ "GetItemsByRole", "a00051.html#a37ae724a0004cbc08bcccaa1d932c2c3", null ],
+    [ "GetPageByRole", "a00051.html#ab70534dd0bc4153d11b66eabf0e68e43", null ],
+    [ "GetUsers", "a00051.html#af4cae412543b0af37a0240ecda43c0fc", null ],
+    [ "RemoveUser", "a00051.html#a3d16a4f1c2c81fb0e6f182004688fe89", null ],
+    [ "UpdateItem", "a00051.html#a6394cf602a921bd33aeb196abcb6e012", null ]
 ];

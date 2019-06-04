@@ -1,33 +1,12 @@
 var a00075 =
 [
-    [ "AddToRoleAsync", "a00075.html#a5ce540b1389f4f0cff8db372efbb76f2", null ],
-    [ "ChangePassword", "a00075.html#af1a86466a68a305294b31d0cac9995ca", null ],
-    [ "CreateItem", "a00075.html#aeaf6379158a81215b8c3eee7aa6ee7cd", null ],
-    [ "DeleteById", "a00075.html#a1f34a1b4502e3c4dc873b5446f9b0910", null ],
-    [ "Filter", "a00075.html#adac6cebe8becb0c29be04e4903fe1926", null ],
-    [ "Get", "a00075.html#adc89b2a8a577d3e5a2b66f22fd3a0fdf", null ],
-    [ "Get", "a00075.html#a6722fb55fe283081294ae27e7bdaa2aa", null ],
-    [ "GetAll", "a00075.html#a6b076a2b111466e58c56d1e79e1d5881", null ],
-    [ "GetAllWhere", "a00075.html#a959fc0f3fc9f459d9c64c2f9976d905e", null ],
-    [ "GetById", "a00075.html#a6f95ae4e12621bc3fca944089ed8bb0d", null ],
-    [ "GetCount", "a00075.html#aa44c62917804954dea191c460ac72823", null ],
-    [ "GetPage", "a00075.html#a87f8fdf9fc13f45d4b0c47617d83e7f3", null ],
-    [ "GetPage", "a00075.html#a76cb343f7e2c087a5f364068ea756275", null ],
-    [ "GetUserArticles", "a00075.html#addbf9b6c5b64b058e6dfaacdaa4e50a4", null ],
-    [ "GetUserGrants", "a00075.html#ae19974b4ad86990e5c06232497216669", null ],
-    [ "GetUserPatentLicenseActivitiesAsApplicant", "a00075.html#a699b83e3cf3144cc7f770d6a4ad61774", null ],
-    [ "GetUserPatentLicenseActivitiesAsAuthor", "a00075.html#ada6abc9047935a62b734d08c9c3bb9e3", null ],
-    [ "GetUserPublications", "a00075.html#a512515857add6bf8b8f749aff3860010", null ],
-    [ "GetUserReportTheses", "a00075.html#a2d1953c55cf525e4dde8869174a92422", null ],
-    [ "GetUserReviews", "a00075.html#ad45622e9cdbd0410ee300002c8ef103c", null ],
-    [ "GetUserScientificConsultations", "a00075.html#aa95bfd03d17a3c96dfac7847ac34ebab", null ],
-    [ "GetUserScientificInternships", "a00075.html#a8664f21bb7903b7c8883507af53300a9", null ],
-    [ "GetUserScientificWorks", "a00075.html#a3df0eeed84fd52e1ae559e941639ead9", null ],
-    [ "IsInRoleAsync", "a00075.html#ad8c5670a60fbdcbb715fed00c82f3f89", null ],
-    [ "IsTeacherOnlyAsync", "a00075.html#a9c7936ebafa87eba4dec53f9d4a4255e", null ],
-    [ "RemoveFromRoleAsync", "a00075.html#a6aed503329eedc47ebdb1ad714206212", null ],
-    [ "SetActiveById", "a00075.html#a39133b67d3bf5e10b6b45845d629365e", null ],
-    [ "SetApproved", "a00075.html#a6532e515c9443f5b0f5d263262757fa6", null ],
-    [ "UpdateItem", "a00075.html#a69b78d3a2b226fd81cecdaa3a3fc11a3", null ],
-    [ "UserExists", "a00075.html#a7bce9c593e027b4de98c073e91c854e6", null ]
+    [ "Types", "a00075.html#a685be48a6498b6952fe67dc4326757b1", [
+      [ "EditorialBoard", "a00075.html#a685be48a6498b6952fe67dc4326757b1aa49e0a45e75c086f428289d64b469f96", null ],
+      [ "ScientificCouncil", "a00075.html#a685be48a6498b6952fe67dc4326757b1a0d1bf9d3831cac38a4a5f7856ea59396", null ],
+      [ "ExpertCouncil", "a00075.html#a685be48a6498b6952fe67dc4326757b1a709e626e10341618753f60e902891d9c", null ]
+    ] ],
+    [ "Id", "a00075.html#a31d546527be48bdf75bcb080d1b26264", null ],
+    [ "MembershipInfo", "a00075.html#ae19aabc2ca4bbfa44224e4baa2ee15cc", null ],
+    [ "Type", "a00075.html#a79f0359dbbb7ee6a5b1073f5cd88d95d", null ],
+    [ "User", "a00075.html#afa06ddf8e5e8a554b8b85ef448871ed3", null ]
 ];

@@ -1,13 +1,6 @@
 var a00032 =
 [
-    [ "AvailableScientificWork", "a00032.html#a973794120234d1c9d867c6e3c670d19a", null ],
-    [ "Department", "a00032.html#aeb0ac0f79419caef36116b3b1f58e64d", null ],
-    [ "DepartmentId", "a00032.html#a244d9f9698eadf2b92ecfa107e930a77", null ],
-    [ "Head", "a00032.html#aae2c551b86221debf24a1cd9cb52e113", null ],
-    [ "IsEditingByHead", "a00032.html#a997c4c234cc5ae1d7b2f45b24cf101f7", null ],
-    [ "ScientificWorks", "a00032.html#a0282172172dc1cbe8b9cde31718a9cc8", null ],
-    [ "SelectedHeadId", "a00032.html#acffb50a53cec065d9b0812e664dee2cb", null ],
-    [ "Staff", "a00032.html#acc6ac35183ee1bcc45320245d8294b9d", null ],
-    [ "Title", "a00032.html#a8243eda31031a3d1993555a319a90d00", null ],
-    [ "UserSelection", "a00032.html#a9234dca692f149da7303930b064c6383", null ]
+    [ "Conferences", "a00032.html#af2eb0a19d50b9c2ef30732e9fa965024", null ],
+    [ "HeadOfDepartment", "a00032.html#aa4300fbb90050e5705495f6d7607a585", null ],
+    [ "TeacherReports", "a00032.html#a4665f82dbc37367348227495ac117c88", null ]
 ];

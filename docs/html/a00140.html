@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>ScientificReport: ScientificReport.DAL.Entities.Publication Class Reference</title>
+<title>ScientificReport: ScientificReport.Controllers.Utils.PublicationApiResponse Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -107,81 +107,32 @@ $(document).ready(function(){initNavTree('a00140.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#properties">Properties</a> &#124;
-<a href="a00769.html">List of all members</a>  </div>
+<a href="a00734.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ScientificReport.DAL.Entities.Publication Class Reference</div>  </div>
+<div class="title">ScientificReport.Controllers.Utils.PublicationApiResponse Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Collaboration diagram for ScientificReport.DAL.Entities.Publication:</div>
+Collaboration diagram for ScientificReport.Controllers.Utils.PublicationApiResponse:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00770.png" border="0" usemap="#_scientific_report_8_d_a_l_8_entities_8_publication_coll__map" alt="Collaboration graph"/></div>
-<map name="_scientific_report_8_d_a_l_8_entities_8_publication_coll__map" id="_scientific_report_8_d_a_l_8_entities_8_publication_coll__map">
+<div class="center"><img src="a00735.png" border="0" usemap="#_scientific_report_8_controllers_8_utils_8_publication_api_response_coll__map" alt="Collaboration graph"/></div>
+<map name="_scientific_report_8_controllers_8_utils_8_publication_api_response_coll__map" id="_scientific_report_8_controllers_8_utils_8_publication_api_response_coll__map">
 </map>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a65e148316b30800fc153d00a8cd9a2ef"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00140.html#a65e148316b30800fc153d00a8cd9a2ef">Types</a> { <br />
-&#160;&#160;<a class="el" href="a00140.html#a65e148316b30800fc153d00a8cd9a2efaeaa58a782f902418cec1a96233bea1f1">Types.Monograph</a>, 
-<a class="el" href="a00140.html#a65e148316b30800fc153d00a8cd9a2efaf2a8c55c2916802cf57c892b33b6ec6e">Types.TextBook</a>, 
-<a class="el" href="a00140.html#a65e148316b30800fc153d00a8cd9a2efa0edf11193efccd933b79daf9fb975d79">Types.HandBook</a>, 
-<a class="el" href="a00140.html#a65e148316b30800fc153d00a8cd9a2efa3beb75d1563ebc22253341be4ce57f44">Types.Dictionary</a>, 
-<br />
-&#160;&#160;<a class="el" href="a00140.html#a65e148316b30800fc153d00a8cd9a2efa6dd08874f83507e9c7b23f1a46b7fa7c">Types.Translation</a>, 
-<a class="el" href="a00140.html#a65e148316b30800fc153d00a8cd9a2efa0be8406951cdfda82f00f79328cf4efc">Types.Comment</a>, 
-<a class="el" href="a00140.html#a65e148316b30800fc153d00a8cd9a2efa17533766d9e1f285e06e2bbc4a431f5e">Types.BibliographicIndex</a>, 
-<a class="el" href="a00140.html#a65e148316b30800fc153d00a8cd9a2efa6311ae17c1ee52b36e68aaf4ad066387">Types.Other</a>
-<br />
- }</td></tr>
-<tr class="separator:a65e148316b30800fc153d00a8cd9a2ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72e1faff147e9a84f8b0b5cf75b2d590"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00140.html#a72e1faff147e9a84f8b0b5cf75b2d590">PrintStatuses</a> { <a class="el" href="a00140.html#a72e1faff147e9a84f8b0b5cf75b2d590a9ea05b6b743b93f883d77ed79f95eb96">PrintStatuses.IsPrintCanceled</a>, 
-<a class="el" href="a00140.html#a72e1faff147e9a84f8b0b5cf75b2d590aa8c56ed42e5e186871f14d9559bcc287">PrintStatuses.IsRecommendedToPrint</a>, 
-<a class="el" href="a00140.html#a72e1faff147e9a84f8b0b5cf75b2d590aed36a1ef76a59ee3f15180e0441188ad">PrintStatuses.Any</a>
- }</td></tr>
-<tr class="separator:a72e1faff147e9a84f8b0b5cf75b2d590"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31cb6ebcd66df86b1847201408031bcc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00140.html#a31cb6ebcd66df86b1847201408031bcc">PublicationSetType</a> { <a class="el" href="a00140.html#a31cb6ebcd66df86b1847201408031bcca184daff620aca4ad23fd2bf70d0b76af">PublicationSetType.Personal</a>, 
-<a class="el" href="a00140.html#a31cb6ebcd66df86b1847201408031bcca1d17cb9923b99f823da9f5a16dc460e5">PublicationSetType.Department</a>, 
-<a class="el" href="a00140.html#a31cb6ebcd66df86b1847201408031bcca837b36145d05be90d8a07f8cd9120d69">PublicationSetType.Faculty</a>
- }</td></tr>
-<tr class="separator:a31cb6ebcd66df86b1847201408031bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0f73a03397205de945403fe08a6d4bc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00140.html#ad0f73a03397205de945403fe08a6d4bc">SortByOptions</a> { <a class="el" href="a00140.html#ad0f73a03397205de945403fe08a6d4bcaa1fa27779242b4902f7ae3bdd5c6d508">SortByOptions.Type</a>, 
-<a class="el" href="a00140.html#ad0f73a03397205de945403fe08a6d4bcab78a3223503896721cca1303f776159b">SortByOptions.Title</a>, 
-<a class="el" href="a00140.html#ad0f73a03397205de945403fe08a6d4bcaf87d3c68ae3997f8a3c50de47d12db84">SortByOptions.PublishingHouse</a>, 
-<a class="el" href="a00140.html#ad0f73a03397205de945403fe08a6d4bca7ec919d450e996f38a4ba792ca1a7582">SortByOptions.PublishingYear</a>
- }</td></tr>
-<tr class="separator:ad0f73a03397205de945403fe08a6d4bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:ab59ab0a0dba275d4f0392b9317bedc5d"><td class="memItemLeft" align="right" valign="top">Guid&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00140.html#ab59ab0a0dba275d4f0392b9317bedc5d">Id</a><code> [get, set]</code></td></tr>
-<tr class="separator:ab59ab0a0dba275d4f0392b9317bedc5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5b20a89e2a14034d29c9d226349f2cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00140.html#a65e148316b30800fc153d00a8cd9a2ef">Types</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00140.html#ab5b20a89e2a14034d29c9d226349f2cf">Type</a><code> [get, set]</code></td></tr>
-<tr class="separator:ab5b20a89e2a14034d29c9d226349f2cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72bfb8fc8e0267740cb3593b69385a40"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00140.html#a72bfb8fc8e0267740cb3593b69385a40">Title</a><code> [get, set]</code></td></tr>
-<tr class="separator:a72bfb8fc8e0267740cb3593b69385a40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadb4ffd07e018b169214736f07b25a41"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00140.html#aadb4ffd07e018b169214736f07b25a41">Specification</a><code> [get, set]</code></td></tr>
-<tr class="separator:aadb4ffd07e018b169214736f07b25a41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d398c3ac05615adac1200872e15ee07"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00140.html#a3d398c3ac05615adac1200872e15ee07">PublishingPlace</a><code> [get, set]</code></td></tr>
-<tr class="separator:a3d398c3ac05615adac1200872e15ee07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e96816f56804c4c9b71b7790bcc7f95"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00140.html#a8e96816f56804c4c9b71b7790bcc7f95">PublishingHouseName</a><code> [get, set]</code></td></tr>
-<tr class="separator:a8e96816f56804c4c9b71b7790bcc7f95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0991e20a4743d83468aef9aecd15f62"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00140.html#aa0991e20a4743d83468aef9aecd15f62">PublishingYear</a><code> [get, set]</code></td></tr>
-<tr class="separator:aa0991e20a4743d83468aef9aecd15f62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af62ce5d440a551efdd15bdb8da1753ae"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00140.html#af62ce5d440a551efdd15bdb8da1753ae">PagesAmount</a><code> [get, set]</code></td></tr>
-<tr class="separator:af62ce5d440a551efdd15bdb8da1753ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5bd60b4c7acdf35304cc4841cc64538b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00140.html#a72e1faff147e9a84f8b0b5cf75b2d590">PrintStatuses</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00140.html#a5bd60b4c7acdf35304cc4841cc64538b">PrintStatus</a><code> [get, set]</code></td></tr>
-<tr class="separator:a5bd60b4c7acdf35304cc4841cc64538b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ee411ed8d65a36ac8c322089108501a"><td class="memItemLeft" align="right" valign="top">virtual ICollection&lt; <a class="el" href="a00241.html">UserProfilesPublications</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00140.html#a0ee411ed8d65a36ac8c322089108501a">UserProfilesPublications</a><code> [get, set]</code></td></tr>
-<tr class="separator:a0ee411ed8d65a36ac8c322089108501a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2080789374131dd1682b687ff699ee2e"><td class="memItemLeft" align="right" valign="top">Guid&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00140.html#a2080789374131dd1682b687ff699ee2e">Id</a><code> [get, set]</code></td></tr>
+<tr class="separator:a2080789374131dd1682b687ff699ee2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e328f9efb9220db78aa5d6c2ef8d289"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00140.html#a1e328f9efb9220db78aa5d6c2ef8d289">Title</a><code> [get, set]</code></td></tr>
+<tr class="separator:a1e328f9efb9220db78aa5d6c2ef8d289"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="a00296_source.html#l00008">8</a> of file <a class="el" href="a00296_source.html">Publication.cs</a>.</p>
-</div><h2 class="groupheader">Member Enumeration Documentation</h2>
-<a class="anchor" id="a72e1faff147e9a84f8b0b5cf75b2d590"></a>
+<p>Definition at line <a class="el" href="a00470_source.html#l00005">5</a> of file <a class="el" href="a00470_source.html">PublicationApiResponse.cs</a>.</p>
+</div><h2 class="groupheader">Property Documentation</h2>
+<a class="anchor" id="a2080789374131dd1682b687ff699ee2e"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -189,140 +140,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="a00140.html#a72e1faff147e9a84f8b0b5cf75b2d590">ScientificReport.DAL.Entities.Publication.PrintStatuses</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a72e1faff147e9a84f8b0b5cf75b2d590a9ea05b6b743b93f883d77ed79f95eb96"></a>IsPrintCanceled&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a72e1faff147e9a84f8b0b5cf75b2d590aa8c56ed42e5e186871f14d9559bcc287"></a>IsRecommendedToPrint&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a72e1faff147e9a84f8b0b5cf75b2d590aed36a1ef76a59ee3f15180e0441188ad"></a>Any&#160;</td><td class="fielddoc">
-</td></tr>
-</table>
-
-<p>Definition at line <a class="el" href="a00296_source.html#l00015">15</a> of file <a class="el" href="a00296_source.html">Publication.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a31cb6ebcd66df86b1847201408031bcc"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="a00140.html#a31cb6ebcd66df86b1847201408031bcc">ScientificReport.DAL.Entities.Publication.PublicationSetType</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a31cb6ebcd66df86b1847201408031bcca184daff620aca4ad23fd2bf70d0b76af"></a>Personal&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a31cb6ebcd66df86b1847201408031bcca1d17cb9923b99f823da9f5a16dc460e5"></a>Department&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a31cb6ebcd66df86b1847201408031bcca837b36145d05be90d8a07f8cd9120d69"></a>Faculty&#160;</td><td class="fielddoc">
-</td></tr>
-</table>
-
-<p>Definition at line <a class="el" href="a00296_source.html#l00020">20</a> of file <a class="el" href="a00296_source.html">Publication.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ad0f73a03397205de945403fe08a6d4bc"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="a00140.html#ad0f73a03397205de945403fe08a6d4bc">ScientificReport.DAL.Entities.Publication.SortByOptions</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="ad0f73a03397205de945403fe08a6d4bcaa1fa27779242b4902f7ae3bdd5c6d508"></a>Type&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ad0f73a03397205de945403fe08a6d4bcab78a3223503896721cca1303f776159b"></a>Title&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ad0f73a03397205de945403fe08a6d4bcaf87d3c68ae3997f8a3c50de47d12db84"></a>PublishingHouse&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ad0f73a03397205de945403fe08a6d4bca7ec919d450e996f38a4ba792ca1a7582"></a>PublishingYear&#160;</td><td class="fielddoc">
-</td></tr>
-</table>
-
-<p>Definition at line <a class="el" href="a00296_source.html#l00025">25</a> of file <a class="el" href="a00296_source.html">Publication.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a65e148316b30800fc153d00a8cd9a2ef"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="a00140.html#a65e148316b30800fc153d00a8cd9a2ef">ScientificReport.DAL.Entities.Publication.Types</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a65e148316b30800fc153d00a8cd9a2efaeaa58a782f902418cec1a96233bea1f1"></a>Monograph&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a65e148316b30800fc153d00a8cd9a2efaf2a8c55c2916802cf57c892b33b6ec6e"></a>TextBook&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a65e148316b30800fc153d00a8cd9a2efa0edf11193efccd933b79daf9fb975d79"></a>HandBook&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a65e148316b30800fc153d00a8cd9a2efa3beb75d1563ebc22253341be4ce57f44"></a>Dictionary&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a65e148316b30800fc153d00a8cd9a2efa6dd08874f83507e9c7b23f1a46b7fa7c"></a>Translation&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a65e148316b30800fc153d00a8cd9a2efa0be8406951cdfda82f00f79328cf4efc"></a>Comment&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a65e148316b30800fc153d00a8cd9a2efa17533766d9e1f285e06e2bbc4a431f5e"></a>BibliographicIndex&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a65e148316b30800fc153d00a8cd9a2efa6311ae17c1ee52b36e68aaf4ad066387"></a>Other&#160;</td><td class="fielddoc">
-</td></tr>
-</table>
-
-<p>Definition at line <a class="el" href="a00296_source.html#l00010">10</a> of file <a class="el" href="a00296_source.html">Publication.cs</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Property Documentation</h2>
-<a class="anchor" id="ab59ab0a0dba275d4f0392b9317bedc5d"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Guid ScientificReport.DAL.Entities.Publication.Id</td>
+          <td class="memname">Guid ScientificReport.Controllers.Utils.PublicationApiResponse.Id</td>
         </tr>
       </table>
   </td>
@@ -332,11 +150,11 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00296_source.html#l00031">31</a> of file <a class="el" href="a00296_source.html">Publication.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00470_source.html#l00007">7</a> of file <a class="el" href="a00470_source.html">PublicationApiResponse.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="af62ce5d440a551efdd15bdb8da1753ae"></a>
+<a class="anchor" id="a1e328f9efb9220db78aa5d6c2ef8d289"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -344,7 +162,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int ScientificReport.DAL.Entities.Publication.PagesAmount</td>
+          <td class="memname">string ScientificReport.Controllers.Utils.PublicationApiResponse.Title</td>
         </tr>
       </table>
   </td>
@@ -354,195 +172,19 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00296_source.html#l00045">45</a> of file <a class="el" href="a00296_source.html">Publication.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a5bd60b4c7acdf35304cc4841cc64538b"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00140.html#a72e1faff147e9a84f8b0b5cf75b2d590">PrintStatuses</a> ScientificReport.DAL.Entities.Publication.PrintStatus</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00296_source.html#l00047">47</a> of file <a class="el" href="a00296_source.html">Publication.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a8e96816f56804c4c9b71b7790bcc7f95"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string ScientificReport.DAL.Entities.Publication.PublishingHouseName</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00296_source.html#l00041">41</a> of file <a class="el" href="a00296_source.html">Publication.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a3d398c3ac05615adac1200872e15ee07"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string ScientificReport.DAL.Entities.Publication.PublishingPlace</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00296_source.html#l00039">39</a> of file <a class="el" href="a00296_source.html">Publication.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aa0991e20a4743d83468aef9aecd15f62"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int ScientificReport.DAL.Entities.Publication.PublishingYear</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00296_source.html#l00043">43</a> of file <a class="el" href="a00296_source.html">Publication.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aadb4ffd07e018b169214736f07b25a41"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string ScientificReport.DAL.Entities.Publication.Specification</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00296_source.html#l00037">37</a> of file <a class="el" href="a00296_source.html">Publication.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a72bfb8fc8e0267740cb3593b69385a40"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string ScientificReport.DAL.Entities.Publication.Title</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00296_source.html#l00035">35</a> of file <a class="el" href="a00296_source.html">Publication.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ab5b20a89e2a14034d29c9d226349f2cf"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00140.html#a65e148316b30800fc153d00a8cd9a2ef">Types</a> ScientificReport.DAL.Entities.Publication.Type</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00296_source.html#l00033">33</a> of file <a class="el" href="a00296_source.html">Publication.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a0ee411ed8d65a36ac8c322089108501a"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual ICollection&lt;<a class="el" href="a00241.html">UserProfilesPublications</a>&gt; ScientificReport.DAL.Entities.Publication.UserProfilesPublications</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00296_source.html#l00049">49</a> of file <a class="el" href="a00296_source.html">Publication.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00470_source.html#l00009">9</a> of file <a class="el" href="a00470_source.html">PublicationApiResponse.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/travis/build/lnupmi11/ScientificReport/ScientificReport.DAL/Entities/<a class="el" href="a00296_source.html">Publication.cs</a></li>
+<li>/home/travis/build/lnupmi11/ScientificReport/ScientificReport/Controllers/Utils/<a class="el" href="a00470_source.html">PublicationApiResponse.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00518.html">ScientificReport</a></li><li class="navelem"><a class="el" href="a00525.html">DAL</a></li><li class="navelem"><a class="el" href="a00527.html">Entities</a></li><li class="navelem"><a class="el" href="a00140.html">Publication</a></li>
+    <li class="navelem"><a class="el" href="a00516.html">ScientificReport</a></li><li class="navelem"><a class="el" href="a00521.html">Controllers</a></li><li class="navelem"><a class="el" href="a00522.html">Utils</a></li><li class="navelem"><a class="el" href="a00140.html">PublicationApiResponse</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>

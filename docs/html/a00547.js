@@ -1,6 +1,6 @@
 var a00547 =
 [
-    [ "ScientificConsultationEditModel", "a00175.html", "a00175" ],
-    [ "ScientificConsultationIndexModel", "a00176.html", "a00176" ],
-    [ "ScientificConsultationModel", "a00177.html", "a00177" ]
+    [ "ScientificInternshipEditModel", "a00183.html", "a00183" ],
+    [ "ScientificInternshipIndexModel", "a00184.html", "a00184" ],
+    [ "ScientificInternshipModel", "a00185.html", "a00185" ]
 ];

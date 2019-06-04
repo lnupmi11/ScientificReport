@@ -1,7 +1,11 @@
 var a00018 =
 [
-    [ "CoApplicant", "a00018.html#a7d807e465139158f5020863e693febbf", null ],
-    [ "Id", "a00018.html#aa2a3d0c78fcc7c261a78aaa9a8dad2eb", null ],
-    [ "PatentLicenseActivity", "a00018.html#aeb621d1b2d9226d29329f219dd0b51b7", null ],
-    [ "PatentLicenseActivityId", "a00018.html#aa1ed61664d12ee813c973615431440b7", null ]
+    [ "Types", "a00018.html#a32bc31f128353ecb4b6c3b1eeddfa22b", [
+      [ "Local", "a00018.html#a32bc31f128353ecb4b6c3b1eeddfa22ba509820290d57f333403f490dde7316f4", null ],
+      [ "Foreign", "a00018.html#a32bc31f128353ecb4b6c3b1eeddfa22bafec70ebbc6f88c7be94808968447168f", null ]
+    ] ],
+    [ "Date", "a00018.html#ac83aa320f6274706398c61111f7acdc7", null ],
+    [ "Id", "a00018.html#a4e3703a221288d3f850b076dcc96a739", null ],
+    [ "Topic", "a00018.html#a291a03d07ae01efedb08a8b4b9c06fa2", null ],
+    [ "Type", "a00018.html#a46724ced472a7814239d27dfacee7c97", null ]
 ];

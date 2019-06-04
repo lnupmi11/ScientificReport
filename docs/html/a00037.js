@@ -1,12 +1,22 @@
 var a00037 =
 [
-    [ "DepartmentRepository", "a00037.html#acecd6b2687d4c93b239233aac02e659b", null ],
-    [ "All", "a00037.html#a71ae0dc8e6a5995e89eed1382eb48b51", null ],
-    [ "AllWhere", "a00037.html#af1849bf905541018921f84e012a275f4", null ],
-    [ "Create", "a00037.html#a72c54f707c3c19155d1f14736cd2c83e", null ],
-    [ "Delete", "a00037.html#abe2c3109edd48e4131b51a66d49a1649", null ],
-    [ "Get", "a00037.html#a30371e911a2c51331a80ffd963ba1a65", null ],
-    [ "Get", "a00037.html#af1e7e5dcb7db6cd66e195662a45f0018", null ],
-    [ "GetQuery", "a00037.html#a9d4eea45f5d05298e50948fa5a3b791a", null ],
-    [ "Update", "a00037.html#ae09783a3a797b58f504a84463677c815", null ]
+    [ "DepartmentService", "a00037.html#a95f2c639151680d079fb1363df39e3ee", null ],
+    [ "AddScientificWork", "a00037.html#a201d16a5d70aa1d13e6459126a311516", null ],
+    [ "AddUser", "a00037.html#ab3d7a3374f6ddbb38c955472838cf083", null ],
+    [ "CreateItem", "a00037.html#a05bbfeaaafe08c01582b90e0fda017d6", null ],
+    [ "DeleteById", "a00037.html#a3431ff6c61e4545b55945940d70f8cff", null ],
+    [ "Exists", "a00037.html#a46126effc1df8917ab97f72bebd53d28", null ],
+    [ "Filter", "a00037.html#ad0722b18a7b72102d7bcc38e8e4be500", null ],
+    [ "Get", "a00037.html#a34745566ebf8ef7781f375108d5017ec", null ],
+    [ "GetAll", "a00037.html#a0500ae13e1d8bd88629beac3acd90684", null ],
+    [ "GetAllWhere", "a00037.html#a6d9d3d494e7b9285e62a8958f9b4b3f5", null ],
+    [ "GetById", "a00037.html#a6387c01ffe0a7f4656d4df08001daea5", null ],
+    [ "GetCount", "a00037.html#aa76a7d236c7239998a847c42c27b97f6", null ],
+    [ "GetPage", "a00037.html#ad6ced163a52ece5008a047269af00553", null ],
+    [ "RemoveScientificWork", "a00037.html#a4788a523484071d62400e5b87063151e", null ],
+    [ "RemoveUser", "a00037.html#aaa6dd80a361c8f13f0dc57c972c38202", null ],
+    [ "SortDepartmentsBy", "a00037.html#a9caf3d44345f6c20d00c5f892e2c66a1", null ],
+    [ "UpdateItem", "a00037.html#abe357a8ec581c60e10e54f26bb1ba268", null ],
+    [ "UserIsHired", "a00037.html#ae9e7309a313751a3bc91f34bce3abb87", null ],
+    [ "UserWorksInDepartment", "a00037.html#a31eba63d09949df83575c46eef9137da", null ]
 ];

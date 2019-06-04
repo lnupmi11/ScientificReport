@@ -1,12 +1,13 @@
 var a00151 =
 [
-    [ "CreateItemTest", "a00151.html#ab20b3aa498c50c153bed5ed0b5832648", null ],
-    [ "DeleteItemTest", "a00151.html#ac6b6f350abe4f6fa95058a790d6760f9", null ],
-    [ "GetAllTest", "a00151.html#ac2950f97433e13fbcc7c8bdd6f6cabad", null ],
-    [ "GetAllWhereTest", "a00151.html#a00d4588139d54dc0ead9635d6531c1fe", null ],
-    [ "GetByIdTest", "a00151.html#a0145db77d3ddde54d249dd4b64b5bb3b", null ],
-    [ "GetPublicationAuthorsTest", "a00151.html#a1eb3b3eca618eea06613a0cb9111d6aa", null ],
-    [ "PublicationDoesNotExistTest", "a00151.html#ab6b0034fbba97f553d6dd74a1a0e3fbd", null ],
-    [ "PublicationExistsTest", "a00151.html#abd4df33ffc74f91c329007fef9e1ee0c", null ],
-    [ "UpdateItemTest", "a00151.html#a5272c380128393f523adc7fa2834c04b", null ]
+    [ "Departments", "a00151.html#ab3ffc809dfe240517c849c3199338425", null ],
+    [ "Email", "a00151.html#aec8957225ff7103b72ac292644ba23df", null ],
+    [ "FirstName", "a00151.html#a13d9fcf3d07669f2d5ffddf26291e388", null ],
+    [ "LastName", "a00151.html#a88cc5681703525c6049397e1b65ca1c6", null ],
+    [ "MiddleName", "a00151.html#af6e9a428d5e388268df53f10836de3f0", null ],
+    [ "Password", "a00151.html#a4bfdc25675140b7b8330b6a1354cdd6a", null ],
+    [ "PasswordRepeat", "a00151.html#a886cf08d40fd5b72f34daf10a699548f", null ],
+    [ "PhoneNumber", "a00151.html#a677ab8babccb0b8516d713a71ca1ea04", null ],
+    [ "SelectedDepartmentId", "a00151.html#a379d5f37326b00246dfe78e20191d542", null ],
+    [ "UserName", "a00151.html#af15339676489d284654acd60bab80af5", null ]
 ];

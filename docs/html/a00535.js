@@ -1,9 +1,8 @@
 var a00535 =
 [
-    [ "ArticleCreateModel", "a00006.html", "a00006" ],
-    [ "ArticleDetailsModel", "a00007.html", "a00007" ],
-    [ "ArticleEditModel", "a00008.html", "a00008" ],
-    [ "ArticleIndexModel", "a00009.html", "a00009" ],
-    [ "ArticleModel", "a00010.html", "a00010" ],
-    [ "ArticleUpdateAuthorsRequest", "a00015.html", "a00015" ]
+    [ "DepartmentCreateModel", "a00029.html", "a00029" ],
+    [ "DepartmentEditModel", "a00030.html", "a00030" ],
+    [ "DepartmentIndexModel", "a00031.html", "a00031" ],
+    [ "DepartmentUpdateScientificWorksRequest", "a00039.html", "a00039" ],
+    [ "SelectItem", "a00202.html", "a00202" ]
 ];

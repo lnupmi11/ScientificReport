@@ -1,13 +1,13 @@
 var a00028 =
 [
-    [ "CreateItemTest", "a00028.html#a4d83b882f5a5c5a2b9b04758d10b8339", null ],
-    [ "DeleteItemTest", "a00028.html#a3d4111cc0086b6f8d6ff3c49fbc2b450", null ],
-    [ "DoesNotExistTest", "a00028.html#ab13774bf28b7adf02e5c54f89756091e", null ],
-    [ "ExistsTest", "a00028.html#aa3b2fd3e32bd8e1641f983a839fe7602", null ],
-    [ "GetAllTest", "a00028.html#a74c45133080ee62c2ea811aa42254f0b", null ],
-    [ "GetAllWhereTest", "a00028.html#a5f8cad17115048636f4d5bedeb4bea0c", null ],
-    [ "GetByIdTest", "a00028.html#a08943da1ced4708fcb317059183218fc", null ],
-    [ "GetParticipatorsTest", "a00028.html#ae5ed6ba5267139540f2622786f281cf0", null ],
-    [ "GetReportThesesTest", "a00028.html#a2e5256a0f732ca0272b2f2725115b288", null ],
-    [ "UpdateItemTest", "a00028.html#a2ae5094b4f5a63a8900ab02f5ef0291c", null ]
+    [ "DepartmentController", "a00028.html#adf89c568e429697e334b0008a4814dee", null ],
+    [ "AddUserToStaff", "a00028.html#a65df20446bc906a7d8045e772949e63a", null ],
+    [ "Create", "a00028.html#a84be50f80673a23d158a278e6ba61040", null ],
+    [ "Create", "a00028.html#a27b217668c48837334cca432df3cc8c5", null ],
+    [ "Delete", "a00028.html#ac26411eccdbbe3023e7d7176466fcfba", null ],
+    [ "Details", "a00028.html#a3ddee6856fdd93bb6895f005763075f4", null ],
+    [ "Edit", "a00028.html#a8a5cfc571346661e1bd3308c0b0ec4e3", null ],
+    [ "Edit", "a00028.html#a0b145e9565ffd32c529a5e63d1596c3e", null ],
+    [ "Index", "a00028.html#aabf8fe05855b0ba81a843634f81858f5", null ],
+    [ "RemoveUserFromStaff", "a00028.html#a1cff261641ed631dc0ee4b334e4efdfd", null ]
 ];

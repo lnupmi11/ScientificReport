@@ -1,6 +1,8 @@
 var a00089 =
 [
-    [ "OppositionEditModel", "a00089.html#ad898267c3da1bfa0068c6d5a0ce5ec5c", null ],
-    [ "OppositionEditModel", "a00089.html#a40f2571796271b35c7407441ea043e12", null ],
-    [ "Id", "a00089.html#a9af73ed2df65c8f1f21b9c1c59387e06", null ]
+    [ "OppositionModel", "a00089.html#a9f4e54b9b40450139138206d12523794", null ],
+    [ "OppositionModel", "a00089.html#a117862efb63f5f7be443167838ae49cb", null ],
+    [ "About", "a00089.html#a25b0c34870938531fb85ebd9594f7923", null ],
+    [ "DateOfOpposition", "a00089.html#a69975b663f7aedf3db3ff2a1011b1079", null ],
+    [ "Opponent", "a00089.html#ae3cdec8f0d0e708eefdf9bc25784bb8e", null ]
 ];

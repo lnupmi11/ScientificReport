@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['printstatuses',['PrintStatuses',['../a00140.html#a72e1faff147e9a84f8b0b5cf75b2d590',1,'ScientificReport::DAL::Entities::Publication']]],
-  ['publicationsettype',['PublicationSetType',['../a00140.html#a31cb6ebcd66df86b1847201408031bcc',1,'ScientificReport::DAL::Entities::Publication']]]
+  ['isapprovedoption',['IsApprovedOption',['../a00232.html#a4083cb58d85f00c2cdb1fe186f1f6673',1,'ScientificReport::DTO::Models::UserProfile::UserProfileIndexModel']]]
 ];

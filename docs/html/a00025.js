@@ -1,12 +1,17 @@
 var a00025 =
 [
-    [ "ConferenceRepository", "a00025.html#a0f5f00c6c2a3ff6ef6be7b4a6d526d82", null ],
-    [ "All", "a00025.html#a61a2c5fa29b3c156655651c99181b736", null ],
-    [ "AllWhere", "a00025.html#a3aa6bff5d57726e88e36828edd87a302", null ],
-    [ "Create", "a00025.html#a02a613a59f7f9ddc104e1b11063feedc", null ],
-    [ "Delete", "a00025.html#aabca552dca34e644511c7d6352a377ed", null ],
-    [ "Get", "a00025.html#a19e96a25bf195bd38088bc4b26036ade", null ],
-    [ "Get", "a00025.html#af02ac133357b1ba389b3fec0f20cf773", null ],
-    [ "GetQuery", "a00025.html#a19c1fd7ca66584d69c3e0a26cbc03aba", null ],
-    [ "Update", "a00025.html#aa7dffe35da005194479326c69e058f7b", null ]
+    [ "ConferenceService", "a00025.html#adfd9440fd7634ab13c77b149811468d1", null ],
+    [ "CreateItem", "a00025.html#a7d552f87a511e6864dd499f283a15640", null ],
+    [ "DeleteById", "a00025.html#af0fe6ede8736c4b2503b3fd888848f4a", null ],
+    [ "Exists", "a00025.html#af3496d56120cad0dc8424e5210642314", null ],
+    [ "Get", "a00025.html#ace85dba616700aacf6b2ab3193b91935", null ],
+    [ "GetAll", "a00025.html#ae12ad94391b318ff9e7e6bed3dea32ad", null ],
+    [ "GetAllWhere", "a00025.html#aaf1912058f13eaac4758321ab9feff60", null ],
+    [ "GetById", "a00025.html#a5b6ade041a9e31c60b8122162abf8061", null ],
+    [ "GetCountByRole", "a00025.html#a38e939b8bfa07c1cfd5790c5dc34952f", null ],
+    [ "GetItemsByRole", "a00025.html#af67b85aaef265a9c6d2143c8c9727fc3", null ],
+    [ "GetPageByRole", "a00025.html#a3de5db0fb18a665c937ad4b165097142", null ],
+    [ "GetParticipators", "a00025.html#a9d65ac6e1f21da0ce863ffb0fff5b459", null ],
+    [ "GetReportTheses", "a00025.html#a3319756de6812bff6c7addc0590baae7", null ],
+    [ "UpdateItem", "a00025.html#a58c0fff6837254d5035bd10d21038cc9", null ]
 ];

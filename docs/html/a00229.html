@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>ScientificReport: ScientificReport.BLL.Utils.UserHelpers Class Reference</title>
+<title>ScientificReport: ScientificReport.DAL.Entities.UserProfile.UserProfile Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -107,36 +107,98 @@ $(document).ready(function(){initNavTree('a00229.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="a00676.html">List of all members</a>  </div>
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#properties">Properties</a> &#124;
+<a href="a00818.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ScientificReport.BLL.Utils.UserHelpers Class Reference</div>  </div>
+<div class="title">ScientificReport.DAL.Entities.UserProfile.UserProfile Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Collaboration diagram for ScientificReport.BLL.Utils.UserHelpers:</div>
+Inheritance diagram for ScientificReport.DAL.Entities.UserProfile.UserProfile:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00677.png" border="0" usemap="#_scientific_report_8_b_l_l_8_utils_8_user_helpers_coll__map" alt="Collaboration graph"/></div>
-<map name="_scientific_report_8_b_l_l_8_utils_8_user_helpers_coll__map" id="_scientific_report_8_b_l_l_8_utils_8_user_helpers_coll__map">
+<div class="center"><img src="a00819.png" border="0" usemap="#_scientific_report_8_d_a_l_8_entities_8_user_profile_8_user_profile_inherit__map" alt="Inheritance graph"/></div>
+<map name="_scientific_report_8_d_a_l_8_entities_8_user_profile_8_user_profile_inherit__map" id="_scientific_report_8_d_a_l_8_entities_8_user_profile_8_user_profile_inherit__map">
+</map>
+</div>
+<div class="dynheader">
+Collaboration diagram for ScientificReport.DAL.Entities.UserProfile.UserProfile:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00820.png" border="0" usemap="#_scientific_report_8_d_a_l_8_entities_8_user_profile_8_user_profile_coll__map" alt="Collaboration graph"/></div>
+<map name="_scientific_report_8_d_a_l_8_entities_8_user_profile_8_user_profile_coll__map" id="_scientific_report_8_d_a_l_8_entities_8_user_profile_8_user_profile_coll__map">
 </map>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:acea6561dc994e369de9603eb0eca43fc"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00229.html#acea6561dc994e369de9603eb0eca43fc">IsAdmin</a> (ClaimsPrincipal user)</td></tr>
-<tr class="separator:acea6561dc994e369de9603eb0eca43fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add1e07b14605b8c4422301fa93ade6b9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00229.html#add1e07b14605b8c4422301fa93ade6b9">IsHeadOfDepartment</a> (ClaimsPrincipal user)</td></tr>
-<tr class="separator:add1e07b14605b8c4422301fa93ade6b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1d4e15e2f9ae2eee959afeb57d47bf4"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00229.html#ad1d4e15e2f9ae2eee959afeb57d47bf4">IsAdminOrHead</a> (ClaimsPrincipal user)</td></tr>
-<tr class="separator:ad1d4e15e2f9ae2eee959afeb57d47bf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae35db4cd3a83b96d817a64046dc36bc6"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00229.html#ae35db4cd3a83b96d817a64046dc36bc6">IsTeacher</a> (ClaimsPrincipal user)</td></tr>
-<tr class="separator:ae35db4cd3a83b96d817a64046dc36bc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a0ad191829e7d852e09b3e96f327db719"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00229.html#a0ad191829e7d852e09b3e96f327db719">SexValue</a> { <a class="el" href="a00229.html#a0ad191829e7d852e09b3e96f327db719a63889cfb9d3cbe05d1bd2be5cc9953fd">SexValue.Male</a>, 
+<a class="el" href="a00229.html#a0ad191829e7d852e09b3e96f327db719ab719ce180ec7bd9641fece2f920f4817">SexValue.Female</a>, 
+<a class="el" href="a00229.html#a0ad191829e7d852e09b3e96f327db719a6adf97f83acf6453d4a6a4b1070f3754">SexValue.None</a>
+ }</td></tr>
+<tr class="separator:a0ad191829e7d852e09b3e96f327db719"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a6349033780354db5a28947c339ac375a"><td class="memItemLeft" align="right" valign="top">override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00229.html#a6349033780354db5a28947c339ac375a">ToString</a> ()</td></tr>
+<tr class="separator:a6349033780354db5a28947c339ac375a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:ac998087addff577dc5e8db36175598c7"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00229.html#ac998087addff577dc5e8db36175598c7">FullName</a> =&gt; $&quot;{LastName} {<a class="el" href="a00229.html#a53b7699c09c9727ab340e03c5c6bfc11">FirstName</a>} {<a class="el" href="a00229.html#a5db8c28a0893682b9b52e0b870f34514">MiddleName</a>}&quot;</td></tr>
+<tr class="separator:ac998087addff577dc5e8db36175598c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a53b7699c09c9727ab340e03c5c6bfc11"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00229.html#a53b7699c09c9727ab340e03c5c6bfc11">FirstName</a><code> [get, set]</code></td></tr>
+<tr class="separator:a53b7699c09c9727ab340e03c5c6bfc11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5db8c28a0893682b9b52e0b870f34514"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00229.html#a5db8c28a0893682b9b52e0b870f34514">MiddleName</a><code> [get, set]</code></td></tr>
+<tr class="separator:a5db8c28a0893682b9b52e0b870f34514"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2f1c56009ae48cec8bc427e24c0400b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00229.html#ab2f1c56009ae48cec8bc427e24c0400b">LastName</a><code> [get, set]</code></td></tr>
+<tr class="separator:ab2f1c56009ae48cec8bc427e24c0400b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95c2278a4c6dd316f200d7296e3ef98f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00229.html#a95c2278a4c6dd316f200d7296e3ef98f">BirthYear</a><code> [get, set]</code></td></tr>
+<tr class="separator:a95c2278a4c6dd316f200d7296e3ef98f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab723e77ab131b030c07e7bb3bef3e854"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00229.html#ab723e77ab131b030c07e7bb3bef3e854">GraduationYear</a><code> [get, set]</code></td></tr>
+<tr class="separator:ab723e77ab131b030c07e7bb3bef3e854"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57e326035c085b9c9f7f60b91f39b6e0"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00229.html#a57e326035c085b9c9f7f60b91f39b6e0">ScientificDegree</a><code> [get, set]</code></td></tr>
+<tr class="separator:a57e326035c085b9c9f7f60b91f39b6e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6cfa701a32788c635abe9b88a43c2db"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00229.html#ad6cfa701a32788c635abe9b88a43c2db">YearDegreeGained</a><code> [get, set]</code></td></tr>
+<tr class="separator:ad6cfa701a32788c635abe9b88a43c2db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46135a488a910171dc00126e1d1efdcc"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00229.html#a46135a488a910171dc00126e1d1efdcc">AcademicStatus</a><code> [get, set]</code></td></tr>
+<tr class="separator:a46135a488a910171dc00126e1d1efdcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25e0e3f06b0d5a23178fd19265d54640"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00229.html#a25e0e3f06b0d5a23178fd19265d54640">YearDegreeAssigned</a><code> [get, set]</code></td></tr>
+<tr class="separator:a25e0e3f06b0d5a23178fd19265d54640"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a475c85dab3f8cb18e5cf1fb913ec3705"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00229.html#a475c85dab3f8cb18e5cf1fb913ec3705">Position</a><code> [get, set]</code></td></tr>
+<tr class="separator:a475c85dab3f8cb18e5cf1fb913ec3705"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1924934dbcc6ca99c316a669e31cd436"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00229.html#a1924934dbcc6ca99c316a669e31cd436">IsApproved</a><code> [get, set]</code></td></tr>
+<tr class="separator:a1924934dbcc6ca99c316a669e31cd436"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88e7533373c5a57485e1c80a29dd46c1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00229.html#a88e7533373c5a57485e1c80a29dd46c1">IsActive</a><code> [get, set]</code></td></tr>
+<tr class="separator:a88e7533373c5a57485e1c80a29dd46c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22d903a81e4f59278e1a45952092d117"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00229.html#a0ad191829e7d852e09b3e96f327db719">SexValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00229.html#a22d903a81e4f59278e1a45952092d117">Sex</a><code> [get, set]</code></td></tr>
+<tr class="separator:a22d903a81e4f59278e1a45952092d117"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2ba7e87b70cb8550a5581c6b52ccc35"><td class="memItemLeft" align="right" valign="top">virtual ICollection&lt; <a class="el" href="a00240.html">UserProfilesPublications</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00229.html#af2ba7e87b70cb8550a5581c6b52ccc35">UserProfilesPublications</a><code> [get, set]</code></td></tr>
+<tr class="separator:af2ba7e87b70cb8550a5581c6b52ccc35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78862515c68f654afff5a2111d3acbc0"><td class="memItemLeft" align="right" valign="top">virtual ICollection&lt; <a class="el" href="a00239.html">UserProfilesGrants</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00229.html#a78862515c68f654afff5a2111d3acbc0">UserProfilesGrants</a><code> [get, set]</code></td></tr>
+<tr class="separator:a78862515c68f654afff5a2111d3acbc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96023761621f3c3ddce18c4ca06312f5"><td class="memItemLeft" align="right" valign="top">virtual ICollection&lt; <a class="el" href="a00243.html">UserProfilesScientificWorks</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00229.html#a96023761621f3c3ddce18c4ca06312f5">UserProfilesScientificWorks</a><code> [get, set]</code></td></tr>
+<tr class="separator:a96023761621f3c3ddce18c4ca06312f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80da8d86937bba3455b991df0f965cb3"><td class="memItemLeft" align="right" valign="top">virtual ICollection&lt; <a class="el" href="a00236.html">UserProfilesArticles</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00229.html#a80da8d86937bba3455b991df0f965cb3">UserProfilesArticles</a><code> [get, set]</code></td></tr>
+<tr class="separator:a80da8d86937bba3455b991df0f965cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f16cfe6f360493e05b6b40672d145ef"><td class="memItemLeft" align="right" valign="top">virtual ICollection&lt; <a class="el" href="a00241.html">UserProfilesReportThesis</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00229.html#a6f16cfe6f360493e05b6b40672d145ef">UserProfilesReportTheses</a><code> [get, set]</code></td></tr>
+<tr class="separator:a6f16cfe6f360493e05b6b40672d145ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ee840634482df15751f6970e4fa2f94"><td class="memItemLeft" align="right" valign="top">virtual ICollection&lt; <a class="el" href="a00242.html">UserProfilesScientificInternships</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00229.html#a6ee840634482df15751f6970e4fa2f94">UserProfilesScientificInternships</a><code> [get, set]</code></td></tr>
+<tr class="separator:a6ee840634482df15751f6970e4fa2f94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a210f77ea212e1c212f1adeb5a7a2f402"><td class="memItemLeft" align="right" valign="top">virtual ICollection&lt; <a class="el" href="a00014.html">AuthorsPatentLicenseActivities</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00229.html#a210f77ea212e1c212f1adeb5a7a2f402">AuthorsPatentLicenseActivities</a><code> [get, set]</code></td></tr>
+<tr class="separator:a210f77ea212e1c212f1adeb5a7a2f402"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8649f9bf67f81d0c9b3a8432d2eafb02"><td class="memItemLeft" align="right" valign="top">virtual ICollection&lt; <a class="el" href="a00003.html">ApplicantsPatentLicenseActivities</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00229.html#a8649f9bf67f81d0c9b3a8432d2eafb02">ApplicantsPatentLicenseActivities</a><code> [get, set]</code></td></tr>
+<tr class="separator:a8649f9bf67f81d0c9b3a8432d2eafb02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="a00281_source.html#l00006">6</a> of file <a class="el" href="a00281_source.html">UserHelpers.cs</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="acea6561dc994e369de9603eb0eca43fc"></a>
+<p>Definition at line <a class="el" href="a00319_source.html#l00007">7</a> of file <a class="el" href="a00319_source.html">UserProfile.cs</a>.</p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a class="anchor" id="a0ad191829e7d852e09b3e96f327db719"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -144,46 +206,63 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool ScientificReport.BLL.Utils.UserHelpers.IsAdmin </td>
-          <td>(</td>
-          <td class="paramtype">ClaimsPrincipal&#160;</td>
-          <td class="paramname"><em>user</em></td><td>)</td>
-          <td></td>
+          <td class="memname">enum <a class="el" href="a00229.html#a0ad191829e7d852e09b3e96f327db719">ScientificReport.DAL.Entities.UserProfile.UserProfile.SexValue</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a0ad191829e7d852e09b3e96f327db719a63889cfb9d3cbe05d1bd2be5cc9953fd"></a>Male&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a0ad191829e7d852e09b3e96f327db719ab719ce180ec7bd9641fece2f920f4817"></a>Female&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a0ad191829e7d852e09b3e96f327db719a6adf97f83acf6453d4a6a4b1070f3754"></a>None&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
 
-<p>Definition at line <a class="el" href="a00281_source.html#l00008">8</a> of file <a class="el" href="a00281_source.html">UserHelpers.cs</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00229_acea6561dc994e369de9603eb0eca43fc_icgraph.png" border="0" usemap="#a00229_acea6561dc994e369de9603eb0eca43fc_icgraph" alt=""/></div>
-<map name="a00229_acea6561dc994e369de9603eb0eca43fc_icgraph" id="a00229_acea6561dc994e369de9603eb0eca43fc_icgraph">
-<area shape="rect" id="node2" href="a00027.html#af67b85aaef265a9c6d2143c8c9727fc3" title="ScientificReport.BLL.Services.\lConferenceService.GetItemsByRole" alt="" coords="252,5,499,47"/>
-<area shape="rect" id="node3" href="a00053.html#a37ae724a0004cbc08bcccaa1d932c2c3" title="ScientificReport.BLL.Services.\lGrantService.GetItemsByRole" alt="" coords="270,71,481,112"/>
-<area shape="rect" id="node4" href="a00084.html#a8356b8522686ef1a160216d741083ecd" title="ScientificReport.BLL.Services.\lMembershipService.GetItemsByRole" alt="" coords="249,136,502,177"/>
-<area shape="rect" id="node5" href="a00094.html#a77bb63382a0bdc2566e4609047ee5d5a" title="ScientificReport.BLL.Services.\lOppositionService.GetItemsByRole" alt="" coords="254,201,497,243"/>
-<area shape="rect" id="node6" href="a00104.html#ab823823d4e4ea6b2a1650342ce8066eb" title="ScientificReport.BLL.Services.\lPatentLicenseActivityService.Get\lItemsByRole" alt="" coords="260,266,491,322"/>
-<area shape="rect" id="node7" href="a00114.html#add8d94f8483ffc8e47dbadc3f09493e5" title="ScientificReport.BLL.Services.\lPostgraduateDissertationGuidance\lService.GetItemsByRole" alt="" coords="253,346,498,402"/>
-<area shape="rect" id="node8" href="a00123.html#a6644e5deb9274697e7c9934a209e0702" title="ScientificReport.BLL.Services.\lPostgraduateGuidanceService.GetItems\lByRole" alt="" coords="236,426,515,482"/>
-<area shape="rect" id="node9" href="a00162.html#a19eba70728d71acdee75ca7c2ce415be" title="ScientificReport.BLL.Services.\lReportThesisService.GetItemsByRole" alt="" coords="248,505,503,547"/>
-<area shape="rect" id="node10" href="a00171.html#a829581adbd7eb22549db526bdfdf36af" title="ScientificReport.BLL.Services.\lReviewService.GetItemsByRole" alt="" coords="267,571,483,612"/>
-<area shape="rect" id="node11" href="a00180.html#a3a5f607be75e285021128ffb0b340a4e" title="ScientificReport.BLL.Services.\lScientificConsultationService.Get\lItemsByRole" alt="" coords="259,635,492,691"/>
-<area shape="rect" id="node12" href="a00189.html#a11bae4d4d8f773e19bcbd95d5f462a6e" title="ScientificReport.BLL.Services.\lScientificInternshipService.GetItems\lByRole" alt="" coords="249,715,501,771"/>
-<area shape="rect" id="node13" href="a00200.html#a7e5afb6c59f8412a160e28a5c8eca44b" title="ScientificReport.BLL.Services.\lScientificWorkService.GetItemsByRole" alt="" coords="245,795,506,836"/>
-</map>
-</div>
-</p>
+<p>Definition at line <a class="el" href="a00319_source.html#l00009">9</a> of file <a class="el" href="a00319_source.html">UserProfile.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ad1d4e15e2f9ae2eee959afeb57d47bf4"></a>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a6349033780354db5a28947c339ac375a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override string ScientificReport.DAL.Entities.UserProfile.UserProfile.ToString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00319_source.html#l00057">57</a> of file <a class="el" href="a00319_source.html">UserProfile.cs</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="ac998087addff577dc5e8db36175598c7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string ScientificReport.DAL.Entities.UserProfile.UserProfile.FullName =&gt; $&quot;{LastName} {<a class="el" href="a00229.html#a53b7699c09c9727ab340e03c5c6bfc11">FirstName</a>} {<a class="el" href="a00229.html#a5db8c28a0893682b9b52e0b870f34514">MiddleName</a>}&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00319_source.html#l00056">56</a> of file <a class="el" href="a00319_source.html">UserProfile.cs</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a class="anchor" id="a46135a488a910171dc00126e1d1efdcc"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -191,25 +270,21 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool ScientificReport.BLL.Utils.UserHelpers.IsAdminOrHead </td>
-          <td>(</td>
-          <td class="paramtype">ClaimsPrincipal&#160;</td>
-          <td class="paramname"><em>user</em></td><td>)</td>
-          <td></td>
+          <td class="memname">string ScientificReport.DAL.Entities.UserProfile.UserProfile.AcademicStatus</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00281_source.html#l00018">18</a> of file <a class="el" href="a00281_source.html">UserHelpers.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00319_source.html#l00028">28</a> of file <a class="el" href="a00319_source.html">UserProfile.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="add1e07b14605b8c4422301fa93ade6b9"></a>
+<a class="anchor" id="a8649f9bf67f81d0c9b3a8432d2eafb02"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -217,46 +292,21 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool ScientificReport.BLL.Utils.UserHelpers.IsHeadOfDepartment </td>
-          <td>(</td>
-          <td class="paramtype">ClaimsPrincipal&#160;</td>
-          <td class="paramname"><em>user</em></td><td>)</td>
-          <td></td>
+          <td class="memname">virtual ICollection&lt;<a class="el" href="a00003.html">ApplicantsPatentLicenseActivities</a>&gt; ScientificReport.DAL.Entities.UserProfile.UserProfile.ApplicantsPatentLicenseActivities</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00281_source.html#l00013">13</a> of file <a class="el" href="a00281_source.html">UserHelpers.cs</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00229_add1e07b14605b8c4422301fa93ade6b9_icgraph.png" border="0" usemap="#a00229_add1e07b14605b8c4422301fa93ade6b9_icgraph" alt=""/></div>
-<map name="a00229_add1e07b14605b8c4422301fa93ade6b9_icgraph" id="a00229_add1e07b14605b8c4422301fa93ade6b9_icgraph">
-<area shape="rect" id="node2" href="a00027.html#af67b85aaef265a9c6d2143c8c9727fc3" title="ScientificReport.BLL.Services.\lConferenceService.GetItemsByRole" alt="" coords="311,5,557,47"/>
-<area shape="rect" id="node3" href="a00053.html#a37ae724a0004cbc08bcccaa1d932c2c3" title="ScientificReport.BLL.Services.\lGrantService.GetItemsByRole" alt="" coords="329,71,539,112"/>
-<area shape="rect" id="node4" href="a00084.html#a8356b8522686ef1a160216d741083ecd" title="ScientificReport.BLL.Services.\lMembershipService.GetItemsByRole" alt="" coords="307,136,561,177"/>
-<area shape="rect" id="node5" href="a00094.html#a77bb63382a0bdc2566e4609047ee5d5a" title="ScientificReport.BLL.Services.\lOppositionService.GetItemsByRole" alt="" coords="313,201,555,243"/>
-<area shape="rect" id="node6" href="a00104.html#ab823823d4e4ea6b2a1650342ce8066eb" title="ScientificReport.BLL.Services.\lPatentLicenseActivityService.Get\lItemsByRole" alt="" coords="319,266,549,322"/>
-<area shape="rect" id="node7" href="a00114.html#add8d94f8483ffc8e47dbadc3f09493e5" title="ScientificReport.BLL.Services.\lPostgraduateDissertationGuidance\lService.GetItemsByRole" alt="" coords="311,346,557,402"/>
-<area shape="rect" id="node8" href="a00123.html#a6644e5deb9274697e7c9934a209e0702" title="ScientificReport.BLL.Services.\lPostgraduateGuidanceService.GetItems\lByRole" alt="" coords="295,426,573,482"/>
-<area shape="rect" id="node9" href="a00162.html#a19eba70728d71acdee75ca7c2ce415be" title="ScientificReport.BLL.Services.\lReportThesisService.GetItemsByRole" alt="" coords="307,505,561,547"/>
-<area shape="rect" id="node10" href="a00171.html#a829581adbd7eb22549db526bdfdf36af" title="ScientificReport.BLL.Services.\lReviewService.GetItemsByRole" alt="" coords="326,571,542,612"/>
-<area shape="rect" id="node11" href="a00180.html#a3a5f607be75e285021128ffb0b340a4e" title="ScientificReport.BLL.Services.\lScientificConsultationService.Get\lItemsByRole" alt="" coords="317,635,551,691"/>
-<area shape="rect" id="node12" href="a00189.html#a11bae4d4d8f773e19bcbd95d5f462a6e" title="ScientificReport.BLL.Services.\lScientificInternshipService.GetItems\lByRole" alt="" coords="308,715,560,771"/>
-<area shape="rect" id="node13" href="a00200.html#a7e5afb6c59f8412a160e28a5c8eca44b" title="ScientificReport.BLL.Services.\lScientificWorkService.GetItemsByRole" alt="" coords="303,795,565,836"/>
-</map>
-</div>
-</p>
+<p>Definition at line <a class="el" href="a00319_source.html#l00054">54</a> of file <a class="el" href="a00319_source.html">UserProfile.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ae35db4cd3a83b96d817a64046dc36bc6"></a>
+<a class="anchor" id="a210f77ea212e1c212f1adeb5a7a2f402"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -264,33 +314,425 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool ScientificReport.BLL.Utils.UserHelpers.IsTeacher </td>
-          <td>(</td>
-          <td class="paramtype">ClaimsPrincipal&#160;</td>
-          <td class="paramname"><em>user</em></td><td>)</td>
-          <td></td>
+          <td class="memname">virtual ICollection&lt;<a class="el" href="a00014.html">AuthorsPatentLicenseActivities</a>&gt; ScientificReport.DAL.Entities.UserProfile.UserProfile.AuthorsPatentLicenseActivities</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00281_source.html#l00023">23</a> of file <a class="el" href="a00281_source.html">UserHelpers.cs</a>.</p>
+<p>Definition at line <a class="el" href="a00319_source.html#l00052">52</a> of file <a class="el" href="a00319_source.html">UserProfile.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a95c2278a4c6dd316f200d7296e3ef98f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ScientificReport.DAL.Entities.UserProfile.UserProfile.BirthYear</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00319_source.html#l00020">20</a> of file <a class="el" href="a00319_source.html">UserProfile.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a53b7699c09c9727ab340e03c5c6bfc11"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string ScientificReport.DAL.Entities.UserProfile.UserProfile.FirstName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00319_source.html#l00014">14</a> of file <a class="el" href="a00319_source.html">UserProfile.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab723e77ab131b030c07e7bb3bef3e854"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ScientificReport.DAL.Entities.UserProfile.UserProfile.GraduationYear</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00319_source.html#l00022">22</a> of file <a class="el" href="a00319_source.html">UserProfile.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a88e7533373c5a57485e1c80a29dd46c1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ScientificReport.DAL.Entities.UserProfile.UserProfile.IsActive</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00319_source.html#l00036">36</a> of file <a class="el" href="a00319_source.html">UserProfile.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1924934dbcc6ca99c316a669e31cd436"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ScientificReport.DAL.Entities.UserProfile.UserProfile.IsApproved</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00319_source.html#l00034">34</a> of file <a class="el" href="a00319_source.html">UserProfile.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab2f1c56009ae48cec8bc427e24c0400b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string ScientificReport.DAL.Entities.UserProfile.UserProfile.LastName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00319_source.html#l00018">18</a> of file <a class="el" href="a00319_source.html">UserProfile.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5db8c28a0893682b9b52e0b870f34514"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string ScientificReport.DAL.Entities.UserProfile.UserProfile.MiddleName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00319_source.html#l00016">16</a> of file <a class="el" href="a00319_source.html">UserProfile.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a475c85dab3f8cb18e5cf1fb913ec3705"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string ScientificReport.DAL.Entities.UserProfile.UserProfile.Position</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00319_source.html#l00032">32</a> of file <a class="el" href="a00319_source.html">UserProfile.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a57e326035c085b9c9f7f60b91f39b6e0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string ScientificReport.DAL.Entities.UserProfile.UserProfile.ScientificDegree</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00319_source.html#l00024">24</a> of file <a class="el" href="a00319_source.html">UserProfile.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a22d903a81e4f59278e1a45952092d117"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00229.html#a0ad191829e7d852e09b3e96f327db719">SexValue</a> ScientificReport.DAL.Entities.UserProfile.UserProfile.Sex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00319_source.html#l00038">38</a> of file <a class="el" href="a00319_source.html">UserProfile.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a80da8d86937bba3455b991df0f965cb3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ICollection&lt;<a class="el" href="a00236.html">UserProfilesArticles</a>&gt; ScientificReport.DAL.Entities.UserProfile.UserProfile.UserProfilesArticles</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00319_source.html#l00046">46</a> of file <a class="el" href="a00319_source.html">UserProfile.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a78862515c68f654afff5a2111d3acbc0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ICollection&lt;<a class="el" href="a00239.html">UserProfilesGrants</a>&gt; ScientificReport.DAL.Entities.UserProfile.UserProfile.UserProfilesGrants</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00319_source.html#l00042">42</a> of file <a class="el" href="a00319_source.html">UserProfile.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af2ba7e87b70cb8550a5581c6b52ccc35"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ICollection&lt;<a class="el" href="a00240.html">UserProfilesPublications</a>&gt; ScientificReport.DAL.Entities.UserProfile.UserProfile.UserProfilesPublications</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00319_source.html#l00040">40</a> of file <a class="el" href="a00319_source.html">UserProfile.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6f16cfe6f360493e05b6b40672d145ef"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ICollection&lt;<a class="el" href="a00241.html">UserProfilesReportThesis</a>&gt; ScientificReport.DAL.Entities.UserProfile.UserProfile.UserProfilesReportTheses</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00319_source.html#l00048">48</a> of file <a class="el" href="a00319_source.html">UserProfile.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6ee840634482df15751f6970e4fa2f94"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ICollection&lt;<a class="el" href="a00242.html">UserProfilesScientificInternships</a>&gt; ScientificReport.DAL.Entities.UserProfile.UserProfile.UserProfilesScientificInternships</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00319_source.html#l00050">50</a> of file <a class="el" href="a00319_source.html">UserProfile.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a96023761621f3c3ddce18c4ca06312f5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ICollection&lt;<a class="el" href="a00243.html">UserProfilesScientificWorks</a>&gt; ScientificReport.DAL.Entities.UserProfile.UserProfile.UserProfilesScientificWorks</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00319_source.html#l00044">44</a> of file <a class="el" href="a00319_source.html">UserProfile.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a25e0e3f06b0d5a23178fd19265d54640"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ScientificReport.DAL.Entities.UserProfile.UserProfile.YearDegreeAssigned</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00319_source.html#l00030">30</a> of file <a class="el" href="a00319_source.html">UserProfile.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad6cfa701a32788c635abe9b88a43c2db"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ScientificReport.DAL.Entities.UserProfile.UserProfile.YearDegreeGained</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00319_source.html#l00026">26</a> of file <a class="el" href="a00319_source.html">UserProfile.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/travis/build/lnupmi11/ScientificReport/ScientificReport.BLL/Utils/<a class="el" href="a00281_source.html">UserHelpers.cs</a></li>
+<li>/home/travis/build/lnupmi11/ScientificReport/ScientificReport.DAL/Entities/UserProfile/<a class="el" href="a00319_source.html">UserProfile.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00518.html">ScientificReport</a></li><li class="navelem"><a class="el" href="a00519.html">BLL</a></li><li class="navelem"><a class="el" href="a00522.html">Utils</a></li><li class="navelem"><a class="el" href="a00229.html">UserHelpers</a></li>
+    <li class="navelem"><a class="el" href="a00516.html">ScientificReport</a></li><li class="navelem"><a class="el" href="a00523.html">DAL</a></li><li class="navelem"><a class="el" href="a00525.html">Entities</a></li><li class="navelem"><a class="el" href="a00527.html">UserProfile</a></li><li class="navelem"><a class="el" href="a00229.html">UserProfile</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>

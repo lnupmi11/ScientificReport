@@ -1,16 +1,8 @@
 var a00097 =
 [
-    [ "Types", "a00097.html#a533a7e0d56e30a52cc3c4e5e538fbd37", [
-      [ "Patent", "a00097.html#a533a7e0d56e30a52cc3c4e5e538fbd37a092ade8847d7c0575bae2ecb87ffcbc4", null ],
-      [ "Application", "a00097.html#a533a7e0d56e30a52cc3c4e5e538fbd37ae498749f3c42246d50b15c81c101d988", null ]
-    ] ],
-    [ "ApplicantsPatentLicenseActivities", "a00097.html#a090b7e6a3045515da27e70f4ab38dcc1", null ],
-    [ "AuthorsPatentLicenseActivities", "a00097.html#aa455a9124c8949c7eac17f9781f28a2c", null ],
-    [ "CoApplicantsPatentLicenseActivities", "a00097.html#ab73c612fda452b1ab66f94b245610e5b", null ],
-    [ "CoauthorsPatentLicenseActivities", "a00097.html#af7501803eaddfd0efa7369ac6ae00b5d", null ],
-    [ "Date", "a00097.html#a7d3e5f66f01ea70241abfe24e9d5110e", null ],
-    [ "Id", "a00097.html#a31416bf48efadfa8013a1e1eb49e9398", null ],
-    [ "Name", "a00097.html#a20fbf489b35d3de4670d91b237ed7184", null ],
-    [ "Number", "a00097.html#a118149f7dd61797065c449cee33761ea", null ],
-    [ "Type", "a00097.html#ad9f779ab1efe640a3a0c09de90dd9736", null ]
+    [ "PatentLicenseActivityEditModel", "a00097.html#a398d24656b6290852539f09426b8ab6e", null ],
+    [ "PatentLicenseActivityEditModel", "a00097.html#a7f8d3438d82d6bbce3a4268bb79d2f61", null ],
+    [ "AuthorsOrApplicants", "a00097.html#ac64e8eb1c1b437328c1d35cfa7992e5b", null ],
+    [ "Id", "a00097.html#a5eb058419dce3fb135e3fec5e44752f8", null ],
+    [ "Users", "a00097.html#a81a3f8998de62b506538cf33639b7c8c", null ]
 ];

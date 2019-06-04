@@ -1,15 +1,6 @@
 var a00123 =
 [
-    [ "PostgraduateGuidanceService", "a00123.html#ada85cce2f75a409a2259a578c5400387", null ],
-    [ "CreateItem", "a00123.html#a3bc9a3c9a711f9ee9e725332243f2cbe", null ],
-    [ "DeleteById", "a00123.html#a75385ab5404cb23a391f0a316f3b23b6", null ],
-    [ "Exists", "a00123.html#ae72dcab49fbf0c3f54120451dba505a7", null ],
-    [ "Get", "a00123.html#acb2319f4aef2d5020c26ec970da6e2d5", null ],
-    [ "GetAll", "a00123.html#a18c3a847614a692e12bf7a108c8eaf1d", null ],
-    [ "GetAllWhere", "a00123.html#a9c55278d94f9e0781faac52319d09cff", null ],
-    [ "GetById", "a00123.html#aa7cbb03cbab971f45b11e8c64b51e39d", null ],
-    [ "GetCountByRole", "a00123.html#ae2e75af3788c48f6a03199e0823ae7a2", null ],
-    [ "GetItemsByRole", "a00123.html#a6644e5deb9274697e7c9934a209e0702", null ],
-    [ "GetPageByRole", "a00123.html#ad62e0833fdb3c1d9ab124390c30d188f", null ],
-    [ "UpdateItem", "a00123.html#a997e6ad26c9f1406461f8e40ffb64dec", null ]
+    [ "Article", "a00123.html#aa0cef3f28fefcbac9df21caf706f1f91", null ],
+    [ "Index", "a00123.html#a59ea598525e76a143bce34a7f9515441", null ],
+    [ "User", "a00123.html#a3fbf319fc023f088a5c6f4852c5ce16b", null ]
 ];
