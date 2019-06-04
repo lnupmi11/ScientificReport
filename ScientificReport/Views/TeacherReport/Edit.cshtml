@@ -44,9 +44,14 @@
 					{
 						var exists = Model.TeacherReport.TeacherReportsPublications.Any(p => p.Publication.Id == publication.Id);
 						<p>
-							@publication.Title
-							<i class="add-publication fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addPublication(this, '@Model.TeacherReport.Id', '@publication.Id')"></i>
-							<i class="remove-publication fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deletePublication(this, '@Model.TeacherReport.Id', '@publication.Id')"></i>
+							<a target="_blank" asp-controller="Publication" asp-action="Details"
+							   asp-route-id="@publication.Id">
+
+
+								@publication.Title
+								<i class="add-publication fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addPublication(this, '@Model.TeacherReport.Id', '@publication.Id')"></i>
+								<i class="remove-publication fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deletePublication(this, '@Model.TeacherReport.Id', '@publication.Id')"></i>
+							</a>
 						</p>
 					}
 				}
@@ -67,9 +72,12 @@
 					{
 						var exists = Model.TeacherReport.TeacherReportsArticles.Any(p => p.Article.Id == article.Id);
 						<p>
+							<a asp-controller="Article" asp-action="Details"
+                            							   asp-route-id="@article.Id">
 							@article.Title
 							<i class="add-article fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addArticle(this, '@Model.TeacherReport.Id', '@article.Id')"></i>
 							<i class="remove-article fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteArticle(this, '@Model.TeacherReport.Id', '@article.Id')"></i>
+							</a>
 						</p>
 					}
 				}
@@ -90,9 +98,12 @@
 					{
 						var exists = Model.TeacherReport.TeacherReportsScientificWorks.Any(p => p.ScientificWork.Id == scientificWork.Id);
 						<p>
-							@scientificWork.Title
-							<i class="add-scientificWork fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addScientificWork(this, '@Model.TeacherReport.Id', '@scientificWork.Id')"></i>
-							<i class="remove-scientificWork fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteScientificWork(this, '@Model.TeacherReport.Id', '@scientificWork.Id')"></i>
+							<a target="_blank" asp-controller="ScientificWork" asp-action="Details"
+							   asp-route-id="@scientificWork.Id">
+								@scientificWork.Title
+								<i class="add-scientificWork fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addScientificWork(this, '@Model.TeacherReport.Id', '@scientificWork.Id')"></i>
+								<i class="remove-scientificWork fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteScientificWork(this, '@Model.TeacherReport.Id', '@scientificWork.Id')"></i>
+							</a>
 						</p>
 					}
 				}
@@ -113,9 +124,12 @@
 					{
 						var exists = Model.TeacherReport.TeacherReportsReportThesis.Any(p => p.ReportThesis.Id == reportThesis.Id);
 						<p>
+							<a target="_blank" asp-controller="ReportThesis" asp-action="Details"
+                            							   asp-route-id="@reportThesis.Id">
 							@reportThesis.Thesis
 							<i class="add-reportThesis fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addReportThesis(this, '@Model.TeacherReport.Id', '@reportThesis.Id')"></i>
 							<i class="remove-reportThesis fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteReportThesis(this, '@Model.TeacherReport.Id', '@reportThesis.Id')"></i>
+							</a>
 						</p>
 					}
 				}
@@ -136,9 +150,12 @@
 					{
 						var exists = Model.TeacherReport.TeacherReportsGrants.Any(p => p.Grant.Id == grant.Id);
 						<p>
+							<a target="_blank" asp-controller="Grant" asp-action="Details"
+                            							   asp-route-id="@grant.Id">
 							@grant.Id
 							<i class="add-grant fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addGrant(this, '@Model.TeacherReport.Id', '@grant.Id')"></i>
 							<i class="remove-grant fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteGrant(this, '@Model.TeacherReport.Id', '@grant.Id')"></i>
+							</a>
 						</p>
 					}
 				}
@@ -160,9 +177,12 @@
 					{
 						var exists = Model.TeacherReport.TeacherReportsScientificInternships.Any(p => p.ScientificInternship.Id == scientificInternship.Id);
 						<p>
+							<a target="_blank" asp-controller="ScientificInternship" asp-action="Details"
+                            							   asp-route-id="@scientificInternship.Id">
 							@scientificInternship.Contents
 							<i class="add-scientificInternship fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addScientificInternship(this, '@Model.TeacherReport.Id', '@scientificInternship.Id')"></i>
 							<i class="remove-scientificInternship fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteScientificInternship(this, '@Model.TeacherReport.Id', '@scientificInternship.Id')"></i>
+							</a>
 						</p>
 					}
 				}
@@ -184,9 +204,12 @@
 					{
 						var exists = Model.TeacherReport.TeacherReportsPostgraduateGuidances.Any(p => p.PostgraduateGuidance.Id == postgraduateGuidance.Id);
 						<p>
+							<a target="_blank" asp-controller="PostgraduateGuidance" asp-action="Details"
+                            							   asp-route-id="@postgraduateGuidance.Id">
 							@postgraduateGuidance.Guide
 							<i class="add-postgraduateGuidance fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addPostgraduateGuidance(this, '@Model.TeacherReport.Id', '@postgraduateGuidance.Id')"></i>
 							<i class="remove-postgraduateGuidance fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deletePostgraduateGuidance(this, '@Model.TeacherReport.Id', '@postgraduateGuidance.Id')"></i>
+							</a>
 						</p>
 					}
 				}
@@ -207,9 +230,12 @@
 					{
 						var exists = Model.TeacherReport.TeacherReportsScientificConsultations.Any(p => p.ScientificConsultation.Id == scientificConsultation.Id);
 						<p>
+							<a target="_blank" asp-controller="ScientificConsultation" asp-action="Details"
+                                                        							   asp-route-id="@scientificConsultation.Id">
 							@scientificConsultation.DissertationTitle (@scientificConsultation.Guide)
 							<i class="add-scientificConsultation fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addScientificConsultation(this, '@Model.TeacherReport.Id', '@scientificConsultation.Id')"></i>
 							<i class="remove-scientificConsultation fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteScientificConsultation(this, '@Model.TeacherReport.Id', '@scientificConsultation.Id')"></i>
+							</a>
 						</p>
 					}
 				}
@@ -230,9 +256,12 @@
 					{
 						var exists = Model.TeacherReport.TeacherReportsPostgraduateDissertationGuidances.Any(p => p.PostgraduateDissertationGuidance.Id == postgraduateDissertationGuidance.Id);
 						<p>
+							<a target="_blank" asp-controller="PostgraduateDissertationGuidance" asp-action="Details"
+							   asp-route-id="@postgraduateDissertationGuidance.Id">
 							@postgraduateDissertationGuidance.Dissertation (@postgraduateDissertationGuidance.Guide)
 							<i class="add-postgraduateDissertationGuidance fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addPostgraduateDissertationGuidance(this, '@Model.TeacherReport.Id', '@postgraduateDissertationGuidance.Id')"></i>
 							<i class="remove-postgraduateDissertationGuidance fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deletePostgraduateDissertationGuidance(this, '@Model.TeacherReport.Id', '@postgraduateDissertationGuidance.Id')"></i>
+							</a>
 						</p>
 					}
 				}
@@ -253,10 +282,13 @@
 					{
 						var exists = Model.TeacherReport.TeacherReportsReviews.Any(p => p.Review.Id == review.Id);
 						<p>
+							<a target="_blank" asp-controller="Review" asp-action="Details"
+                            							   asp-route-id="@review.Id">
 							@review.Reviewer (@review.DateOfReview)
 							<i class="add-review fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addReview(this, '@Model.TeacherReport.Id', '@review.Id')"></i>
 							<i class="remove-review fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteReview(this, '@Model.TeacherReport.Id', '@review.Id')"></i>
-						</p>
+						</a>
+							</p>
 					}
 				}
 			}
@@ -276,10 +308,13 @@
 					{
 						var exists = Model.TeacherReport.TeacherReportsOppositions.Any(p => p.Opposition.Id == opposition.Id);
 						<p>
+							<a target="_blank" asp-controller="Opposition" asp-action="Details"
+                            							   asp-route-id="@opposition.Id">
 							@opposition.About (@opposition.Opponent - @opposition.DateOfOpposition)
 							<i class="add-opposition fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addOpposition(this, '@Model.TeacherReport.Id', '@opposition.Id')"></i>
 							<i class="remove-opposition fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteOpposition(this, '@Model.TeacherReport.Id', '@opposition.Id')"></i>
-						</p>
+						</a>
+							</p>
 					}
 				}
 			}
@@ -302,7 +337,8 @@
 							@patent.Number @patent.Name
 							<i class="add-patent fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addPatent(this, '@Model.TeacherReport.Id', '@patent.Id')"></i>
 							<i class="remove-patent fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deletePatent(this, '@Model.TeacherReport.Id', '@patent.Id')"></i>
-						</p>
+					
+							</p>
 					}
 				}
 			}
@@ -322,10 +358,13 @@
 					{
 						var exists = Model.TeacherReport.TeacherReportsMemberships.Any(p => p.Membership.Id == membership.Id);
 						<p>
+							<a target="_blank" asp-controller="Membership" asp-action="Details"
+                            							   asp-route-id="@membership.Id">
 							@membership.MembershipInfo
 							<i class="add-membership fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addMembership(this, '@Model.TeacherReport.Id', '@membership.Id')"></i>
 							<i class="remove-membership fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteMembership(this, '@Model.TeacherReport.Id', '@membership.Id')"></i>
-						</p>
+						</a>
+							</p>
 					}
 				}
 			}
