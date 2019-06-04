@@ -121,23 +121,22 @@ namespace ScientificReport.DAL.Entities.Reports
 		{
 			return GetPublications().Where(predicate);
 		}
-		public IEnumerable<Publication> GetPublicationsByType(Publication.Types type)
+		public IEnumerable<Publication> GetPublicationsByType(Publication.PublicationTypes type)
 		{
-			return GetPublicationsWithFilter((p, i) => p.Type == type);
+			return GetPublicationsWithFilter((p, i) => p.PublicationType == type);
 		}
 		public IEnumerable<Publication> GetPublicationsOther()
 		{
-			return GetPublicationsWithFilter((p, i) => p.Type == Publication.Types.Other || p.Type == Publication.Types.Comment || p.Type == Publication.Types.BibliographicIndex );
+			return GetPublicationsWithFilter((p, i) => p.PublicationType == Publication.PublicationTypes.Other || p.PublicationType == Publication.PublicationTypes.Comment || p.PublicationType == Publication.PublicationTypes.BibliographicIndex );
 		}
-
-
+		
 		public IEnumerable<Article> GetArticlesWithFilter(Func<Article, int, bool> predicate)
 		{
 			return GetArticles().Where(predicate);
 		}
-		public IEnumerable<Article> GetArticlesByType(Article.Types type)
+		public IEnumerable<Article> GetArticlesByType(Article.ArticleTypes type)
 		{
-			return GetArticlesWithFilter((p, i) => p.Type == type);
+			return GetArticlesWithFilter((p, i) => p.ArticleType == type);
 		}
 		
 

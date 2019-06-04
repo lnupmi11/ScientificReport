@@ -107,4 +107,43 @@
 	<data name="Next" xml:space="preserve">
 		<value>Наступна</value>
 	</data>
+	<data name="Articles" xml:space="preserve">
+		<value>Статті</value>
+	</data>
+	<data name="Back to list" xml:space="preserve">
+		<value>Повернутися до списку</value>
+	</data>
+	<data name="Save" xml:space="preserve">
+		<value>Зберегти</value>
+	</data>
+	<data name="Cancel" xml:space="preserve">
+		<value>Скасувати</value>
+	</data>
+	<data name="Impact factor" xml:space="preserve">
+		<value>Імпакт фактор</value>
+	</data>
+	<data name="Included in Web of Science Scopus and others" xml:space="preserve">
+		<value>Включене у видання Web Of Science Scopus та інші</value>
+	</data>
+	<data name="Foreign publishing" xml:space="preserve">
+		<value>Іноземне видання</value>
+	</data>
+	<data name="Professional publishing of Ukraine" xml:space="preserve">
+		<value>Професійне видання в Україні</value>
+	</data>
+	<data name="Other publishing of Ukraine" xml:space="preserve">
+		<value>Інше видання в Україні</value>
+	</data>
+	<data name="Report thesis" xml:space="preserve">
+		<value>Теза доповіді</value>
+	</data>
+	<data name="International report thesis" xml:space="preserve">
+		<value>Теза доповіді у міжнародному виданні</value>
+	</data>
+	<data name="Domestic report thesis" xml:space="preserve">
+		<value>Теза доповіді у відчизняному виданні</value>
+	</data>
+	<data name="Foreign report thesis with research results" xml:space="preserve">
+		<value>Теза доповіді у закордонному виданні з результатами досліджень</value>
+	</data>
 </root>

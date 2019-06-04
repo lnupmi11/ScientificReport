@@ -15,130 +15,82 @@
 		left: 0 !important;
 		font-size: 12.5px !important;
 	}
-	.roles-list {
-		overflow-y: scroll;
-		height: 400px;
-	}
-	.text-green { color: rgb(0, 179, 0); }
-	.text-red { color: rgb(177, 0, 0); }
-	.cursor-pointer { cursor: pointer; }
-	.hidden { display: none; }
+	.span-label {
+    	color: black;
+    }
 </style>
 
 <h4>@ViewData["Title"]</h4>
 <div class="row">
-<div class="col s12">
-	<div asp-validation-summary="All" class="validate"></div>
-	<form asp-action="Edit" method="post">
-		<div class="row">
-			<div class="input-field col s6">
-				<input asp-for="Title" type="text" class="validate">
-				<label asp-for="Title">@Localizer["Title"]</label>
-				<span class="helper-text" asp-validation-for="Title" data-error="some data is in bad format" data-success=""></span>
-			</div>
-		</div>
-		<div class="row">
-			<div class="input-field col s4">
-				<label asp-for="SelectedHeadId" class="myLabel">@Localizer["Head"]</label>
-				@{
-					var userSelection = Model.UserSelection.Select(user => new SelectItem(user.FullName, user.Id.ToString(), user.Id.Equals(Model.Department.Head.Id)));
-				}
-				@Html.DropDownListFor(x => Model.SelectedHeadId, new SelectList(userSelection, "Value", "Text"), new {@class = "col s12"})
-				@Html.ValidationMessageFor(x => x.SelectedHeadId, "", new {@class = "validate", @required = "required"})
-				<br/>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col s6">
-				<label class="myLabel">@Localizer["Staff"]:</label>
-				<div class="authors-list">
-					@if (Model.UserSelection != null && Model.Staff != null)
-					{
-						var selection = Model.UserSelection.Select(user => new SelectItem(user.FullName, user.Id.ToString(), user.Id.Equals(Model.Department.Head.Id)));
-						foreach (var user in selection)
-						{
-							var contains = Model.Staff.Any(s => s.Id.ToString().Equals(user.Value));
-							<p>
-								@if (!Model.Head.Id.ToString().Equals(user.Value))
-								{
-									<i class="add-user fas fa-plus-circle fa-lg cursor-pointer text-green @(contains ? "hidden" : "")" onclick="addUserToStaff(this, '@user.Value', '@Model.DepartmentId')"></i>
-									<i class="remove-user fas fa-minus-circle fa-lg cursor-pointer text-red @(contains ? "" : "hidden")" onclick="removeUserFromStaff(this, '@user.Value', '@Model.DepartmentId')"></i>
-								}
-								else
-								{
-									<i class="remove-user fas fa-minus-circle fa-lg" title="Can not remove head of department"></i>
-								}
-								@user.Text
-							</p>
-						}
-					}
+	<div class="col s12">
+		<div asp-validation-summary="All" class="validate"></div>
+		<form asp-action="Edit" method="post">
+			<div class="row">
+				<div class="input-field col s6">
+					<input asp-for="Title" type="text" class="validate">
+					<label asp-for="Title">@Localizer["Title"]</label>
+					<span class="helper-text" asp-validation-for="Title" data-error="some data is in bad format" data-success=""></span>
 				</div>
 			</div>
-			<div class="col s6">
-				<label class="myLabel">@Localizer["Scientific works"]:</label>
-				<div class="authors-list">
-					@if (Model.AvailableScientificWork != null)
-					{
-						var scientificWorkItems = Model.AvailableScientificWork.Select(scientificWork => new SelectItem(scientificWork.Title, scientificWork.Id.ToString()));
-						if (Model.ScientificWorks != null)
+			<div class="row">
+				<div class="input-field col s4">
+					<label asp-for="SelectedHeadId" class="myLabel">@Localizer["Head"]</label>
+					@{
+						var userSelection = Model.UserSelection.Select(user => new SelectItem(user.FullName, user.Id.ToString(), user.Id.Equals(Model.Department.Head.Id)));
+					}
+					@Html.DropDownListFor(x => Model.SelectedHeadId, new SelectList(userSelection, "Value", "Text"), new {@class = "col s12"})
+					@Html.ValidationMessageFor(x => x.SelectedHeadId, "", new {@class = "validate", @required = "required"})
+					<br/>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s6">
+					<label class="myLabel">@Localizer["Staff"]:</label>
+					<div class="authors-list">
+						@if (Model.UserSelection != null && Model.Staff != null)
 						{
-							foreach (var scientificWork in scientificWorkItems)
+							var selection = Model.UserSelection.Select(user => new SelectItem(user.FullName, user.Id.ToString(), user.Id.Equals(Model.Department.Head.Id)));
+							foreach (var user in selection)
 							{
-								var contains = Model.ScientificWorks.Any(sw => sw.Id.ToString().Equals(scientificWork.Value));
+								var contains = Model.Staff.Any(s => s.Id.ToString().Equals(user.Value));
 								<p>
-									<i class="add-scientific-work fas fa-plus-circle fa-lg cursor-pointer text-green @(contains ? "hidden" : "")" onclick="addScientificWork(this, '@scientificWork.Value', '@Model.DepartmentId')"></i>
-									<i class="remove-scientific-work fas fa-minus-circle fa-lg cursor-pointer text-red @(contains ? "" : "hidden")" onclick="removeScientificWork(this, '@scientificWork.Value', '@Model.DepartmentId')"></i>
-									@scientificWork.Text
+									@if (!Model.Head.Id.ToString().Equals(user.Value))
+									{
+										<label>
+											<input class="filled-in" type="checkbox" onclick="clickStaff(this, '@Model.DepartmentId', '@user.Value')" @(contains ? "checked=\"checked\"" : "")/>
+											<span class="span-label">@user.Text</span>
+										</label>
+									}
+									else
+									{
+										<label>
+											<input class="filled-in" type="checkbox" title="Can not remove head of department" @(contains ? "checked=\"checked\"" : "") disabled="disabled"/>
+											<span class="span-label">@user.Text</span>
+										</label>
+									}
 								</p>
 							}
 						}
-					}
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="row myButtons">
-			<button type="submit" class="waves-effect btn-small accent-2">@Localizer["Save"]</button>
-			<a asp-action="Index" class="waves-effect btn-small blue darken-3">@Localizer["Cancel"]</a>
-		</div>
-	</form>
-</div>
+			<div class="row myButtons">
+				<button type="submit" class="waves-effect btn-small accent-2">@Localizer["Save"]</button>
+				<a asp-action="Index" class="waves-effect btn-small blue darken-3">@Localizer["Cancel"]</a>
+			</div>
+		</form>
+	</div>
 </div>
 
 @section Scripts {
-	<script>
-		const toggle = (tagName, actionName, bodyFn) => (tag, firstParam, secondParam) => {
-			const config = {
-				method: 'POST',
-				body: JSON.stringify(bodyFn(firstParam)),
-				headers: {
-					'Content-Type': 'application/json'
-				}
-			};
-			fetch('/Department/' + actionName + `/${secondParam}`, config).then(response => {
-				if (response.status !== 200) throw { msg: `Failed to toggle ${tagName}`, response };
-				tag.classList.add('hidden');
-				tag.parentElement.getElementsByClassName(tagName)[0].classList.remove('hidden');
-			}).catch(e => {
-				console.error(e);
-			});
-		}
-
-		let staffBody = (userId) => {
-			return { UserId: userId };
-		};
-		const addUserToStaff = toggle('remove-user', 'AddUserToStaff', staffBody);
-		const removeUserFromStaff = toggle('add-user', 'RemoveUserFromStaff', staffBody);
-		
-		let scientificWorkBody = (scientificWorkId) => {
-			return { ScientificWorkId: scientificWorkId };
-		};
-		const addScientificWork = toggle('remove-scientific-work', 'AddScientificWork', scientificWorkBody);
-		const removeScientificWork = toggle('add-scientific-work', 'RemoveScientificWork', scientificWorkBody);
-	</script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('select').formSelect();
 		});
+		let staffBody = (userId) => {
+			return { UserId: userId };
+		};
+		const clickStaff = toggleCheckboxEntity('Department', 'AddUserToStaff', 'RemoveUserFromStaff', staffBody);
 	</script>
 	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

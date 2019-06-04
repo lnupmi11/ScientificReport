@@ -2,7 +2,6 @@ using System;
 using System.Linq;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Localization;
 using ScientificReport.BLL.Interfaces;
 using ScientificReport.Controllers.Utils;
 using ScientificReport.DAL.Entities;
@@ -18,19 +17,28 @@ namespace ScientificReport.Controllers
 		private readonly IPublicationService _publicationService;
 		private readonly IUserProfileService _userProfileService;
 		private readonly IDepartmentService _departmentService;
-		private readonly IStringLocalizer<PublicationController> _localizer; 
+		private readonly IArticleService _articleService;
+		private readonly IScientificWorkService _scientificWorkService;
+		private readonly IConferenceService _conferenceService;
+		private readonly IReportThesisService _reportThesisService;
 		
 		public PublicationController(
 			IPublicationService publicationService,
 			IUserProfileService userProfileService,
 			IDepartmentService departmentService,
-			IStringLocalizer<PublicationController> localizer
+			IArticleService articleService,
+			IScientificWorkService scientificWorkService,
+			IConferenceService conferenceService,
+			IReportThesisService reportThesisService
 		)
 		{
 			_publicationService = publicationService;
 			_userProfileService = userProfileService;
 			_departmentService = departmentService;
-			_localizer = localizer;
+			_articleService = articleService;
+			_scientificWorkService = scientificWorkService;
+			_conferenceService = conferenceService;
+			_reportThesisService = reportThesisService;
 		}
 
 		// GET: /Publication
@@ -39,7 +47,8 @@ namespace ScientificReport.Controllers
 			model.Publications = _publicationService.Filter(
 				model, User, PageHelpers.IsAdmin(User), PageHelpers.IsHeadOfDepartment(User)
 			);
-			model.Count = _publicationService.GetCount();
+			model.Articles = _articleService.GetPage(model.CurrentPage, model.PageSize);	
+			model.Count = _publicationService.GetAll().Count() + _articleService.GetCount();
 			return View(model);
 		}
 
@@ -71,7 +80,13 @@ namespace ScientificReport.Controllers
 		// GET: /Publication/Create
 		public IActionResult Create()
 		{
-			return View(new PublicationCreateModel());
+			return View(new PublicationCreateModel
+			{
+				ReportThesis =
+				{
+					Conferences = _conferenceService.GetAll()
+				}
+			});
 		}
 
 		// POST: /Publication/Create
@@ -85,25 +100,41 @@ namespace ScientificReport.Controllers
 				return View(model);
 			}
 
-			if (model.PublishingYear < 1900)
+			switch (model.PublicationType)
 			{
-				ModelState.AddModelError("", _localizer["Publishing year is incorrect"]);
-				return View(model);
+				case PublicationCreateModel.PublicationTypes.Article:
+					_articleService.CreateItem(model.ToArticle());
+					_articleService.AddAuthor(
+						_articleService.Get(a => a.Title == model.Article.Title),
+						_userProfileService.Get(u => u.UserName == User.Identity.Name)
+					);
+					break;
+				case PublicationCreateModel.PublicationTypes.ScientificWork:
+					if (PageHelpers.IsHeadOfDepartment(User))
+					{
+						_scientificWorkService.CreateItem(model.ScientificWork);
+					}
+
+					break;
+				case PublicationCreateModel.PublicationTypes.ReportThesis:
+					model.ReportThesis.Conference = _conferenceService.GetById(model.ReportThesis.ConferenceId);
+					_reportThesisService.CreateItem(model.ReportThesis);
+					_reportThesisService.AddAuthor(
+						_reportThesisService.Get(r => r.Thesis == model.ReportThesis.Thesis).Id,
+						_userProfileService.Get(User).Id);
+					break;
+				case PublicationCreateModel.PublicationTypes.Other:
+					var newPublication = model.ToPublication();
+					_publicationService.CreateItem(newPublication);
+					_publicationService.AddAuthor(
+						_publicationService.Get(p => p.Title == newPublication.Title && p.PublishingYear == newPublication.PublishingYear && p.Specification == newPublication.Specification),
+						_userProfileService.Get(User)
+					);
+					break;
+				default:
+					return BadRequest();
 			}
 
-			if (model.PagesAmount <= 0)
-			{
-				ModelState.AddModelError("", _localizer["Pages amount must be greater than 0"]);
-				return View(model); 
-			}
-
-			var newPublication = model.ToPublication();
-			_publicationService.CreateItem(newPublication);
-			_publicationService.AddAuthor(
-				_publicationService.Get(p => p.Title == newPublication.Title && p.PublishingYear == newPublication.PublishingYear && p.Specification == newPublication.Specification),
-				_userProfileService.Get(User)
-			);
-			
 			return RedirectToAction(nameof(Index));
 		}
 
@@ -153,7 +184,7 @@ namespace ScientificReport.Controllers
 			var publication = _publicationService.GetById(id);
 			if (ModelState.IsValid)
 			{
-				publication.Type = model.Type;
+				publication.PublicationType = model.Type;
 				publication.Title = model.Title;
 				publication.Specification = model.Specification;
 				publication.PublishingPlace = model.PublishingPlace;
@@ -309,14 +340,14 @@ namespace ScientificReport.Controllers
 			return RedirectToAction(nameof(Index));
 		}
 
-		public IActionResult SearchPublications(string substring, Publication.Types? type)
+		public IActionResult SearchPublications(string substring, Publication.PublicationTypes? type)
 		{
 			if (substring == null || type == null)
 			{
 				return Json(ApiResponse.Fail);
 			}
 
-			var publications = _publicationService.GetAllWhere(p => p.Type == type.Value && p.Title.ToLower().Contains(substring.ToLower()));
+			var publications = _publicationService.GetAllWhere(p => p.PublicationType == type.Value && p.Title.ToLower().Contains(substring.ToLower()));
 			return Json(new PublicationSearchApiResponse
 			{
 				Publications = publications.Select(p => new PublicationApiResponse

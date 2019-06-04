@@ -10,7 +10,7 @@ namespace ScientificReport.DTO.Models.Publication
 		public Guid Id { get; set; }
 		
 		[Required]
-		public DAL.Entities.Publication.Types Type { get; set; }
+		public DAL.Entities.Publication.PublicationTypes Type { get; set; }
 		
 		[Required]
 		public string Title { get; set; }
@@ -48,7 +48,7 @@ namespace ScientificReport.DTO.Models.Publication
 		{
 			Init();
 			Id = publication.Id;
-			Type = publication.Type;
+			Type = publication.PublicationType;
 			Title = publication.Title;
 			Specification = publication.Specification;
 			PublishingPlace = publication.PublishingPlace;

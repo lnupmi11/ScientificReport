@@ -18,10 +18,9 @@
 		left: 0 !important;
 		font-size: 12.5px !important;
 	}
-	.text-green { color: rgb(0, 179, 0); }
-	.text-red { color: rgb(177, 0, 0); }
-	.cursor-pointer { cursor: pointer; }
-	.hidden { display: none; }
+	.span-label {
+        color: black;
+	}
 </style>
 <h5>@ViewData["Title"]</h5>
 <hr />
@@ -70,9 +69,10 @@
 							{
 								var contains = Model.Users.Any(s => s.Id.ToString().Equals(user.Value));
 								<p>
-									<i class="add-user fas fa-plus-circle fa-lg cursor-pointer text-green @(contains ? "hidden" : "")" onclick="addUser(this, '@user.Value', '@Model.Id')"></i>
-									<i class="remove-user fas fa-minus-circle fa-lg cursor-pointer text-red @(contains ? "" : "hidden")" onclick="removeUser(this, '@user.Value', '@Model.Id')"></i>
-									@user.Text
+									<label>
+                                    	<input class="filled-in" type="checkbox" onclick="clickUser(this, '@Model.Id', '@user.Value')" @(contains ? "checked=\"checked\"" : "")/>
+                                    	<span class="span-label">@user.Text</span>
+                                    </label>
 								</p>
 							}
 						}
@@ -89,28 +89,7 @@
 
 @section Scripts {
 	<script>
-		const toggle = (tagName, actionName, bodyFn) => (tag, firstParam, secondParam) => {
-			const config = {
-				method: 'POST',
-				body: JSON.stringify(bodyFn(firstParam)),
-				headers: {
-					'Content-Type': 'application/json'
-				}
-			};
-			fetch('/ScientificInternship/' + actionName + `/${secondParam}`, config).then(response => {
-				if (response.status !== 200) throw { msg: `Failed to toggle ${tagName}`, response };
-				tag.classList.add('hidden');
-				tag.parentElement.getElementsByClassName(tagName)[0].classList.remove('hidden');
-			}).catch(e => {
-				console.error(e);
-			});
-		}
-
-		let reqAuthorBody = (userId) => {
-			return { UserId: userId };
-		};
-		const addUser = toggle('remove-user', 'AddUser', reqAuthorBody);
-		const removeUser = toggle('add-user', 'RemoveUser', reqAuthorBody);
+		const clickUser = toggleCheckboxEntity('ScientificInternship', 'AddUser', 'RemoveUser', (userId) => {return { UserId: userId };});
 	</script>
 	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

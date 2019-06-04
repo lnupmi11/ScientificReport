@@ -12,6 +12,7 @@ namespace ScientificReport.DTO.Models.Publication
 		public IEnumerable<ScientificReport.DAL.Entities.Publication> Publications { get; set; }
 		public IEnumerable<string> PrintStatusOptions { get; set; }
 		public IEnumerable<string> PublicationSetTypeOptions { get; set; }
+		public IEnumerable<DAL.Entities.Article> Articles { get; set; }
 		
 		public PublicationIndexModel()
 		{

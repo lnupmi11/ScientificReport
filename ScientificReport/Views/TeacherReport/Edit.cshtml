@@ -6,6 +6,11 @@
 	ViewData["Title"] = Localizer["Edit"];
 }
 
+<style>
+	.span-label {
+		color: black;
+	}
+</style>
 <!--suppress HtmlFormInputWithoutLabel -->
 <h3>@Localizer["Edit"]</h3>
 
@@ -44,9 +49,10 @@
 					{
 						var exists = Model.TeacherReport.TeacherReportsPublications.Any(p => p.Publication.Id == publication.Id);
 						<p>
-							@publication.Title
-							<i class="add-publication fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addPublication(this, '@Model.TeacherReport.Id', '@publication.Id')"></i>
-							<i class="remove-publication fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deletePublication(this, '@Model.TeacherReport.Id', '@publication.Id')"></i>
+							<label>
+                            	<input class="filled-in" type="checkbox" onclick="clickPublication(this, '@Model.TeacherReport.Id', '@publication.Id')" @(exists ? "checked=\"checked\"" : "")/>
+                            	<span class="span-label">@publication.Title</span>
+                            </label>
 						</p>
 					}
 				}
@@ -67,15 +73,16 @@
 					{
 						var exists = Model.TeacherReport.TeacherReportsArticles.Any(p => p.Article.Id == article.Id);
 						<p>
-							@article.Title
-							<i class="add-article fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addArticle(this, '@Model.TeacherReport.Id', '@article.Id')"></i>
-							<i class="remove-article fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteArticle(this, '@Model.TeacherReport.Id', '@article.Id')"></i>
+							<label>
+                            	<input class="filled-in" type="checkbox" onclick="clickArticle(this, '@Model.TeacherReport.Id', '@article.Id')" @(exists ? "checked=\"checked\"" : "")/>
+                            	<span class="span-label">@article.Title</span>
+                            </label>
 						</p>
 					}
 				}
 			}
 		</div>
-		<a asp-controller="Article" asp-action="Create" asp-route-next="@Url.Action("Edit", Model.TeacherReport.Id)" class="btn-small blue darken-3">@Localizer["Add New Article"]</a>
+		<a asp-controller="Publication" asp-action="Create" asp-route-next="@Url.Action("Edit", Model.TeacherReport.Id)" class="btn-small blue darken-3">@Localizer["Add New Article"]</a>
 	</div>
 </div>
 <div class="row">
@@ -90,15 +97,16 @@
 					{
 						var exists = Model.TeacherReport.TeacherReportsScientificWorks.Any(p => p.ScientificWork.Id == scientificWork.Id);
 						<p>
-							@scientificWork.Title
-							<i class="add-scientificWork fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addScientificWork(this, '@Model.TeacherReport.Id', '@scientificWork.Id')"></i>
-							<i class="remove-scientificWork fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteScientificWork(this, '@Model.TeacherReport.Id', '@scientificWork.Id')"></i>
+							<label>
+                            	<input class="filled-in" type="checkbox" onclick="clickScientificWork(this, '@Model.TeacherReport.Id', '@scientificWork.Id')" @(exists ? "checked=\"checked\"" : "")/>
+                            	<span class="span-label">@scientificWork.Title</span>
+                            </label>
 						</p>
 					}
 				}
 			}
 		</div>
-		<a asp-controller="ScientificWork" asp-action="Create" asp-route-next="@Url.Action("Edit", Model.TeacherReport.Id)" class="btn-small blue darken-3">@Localizer["Add New Scientific Work"]</a>
+		<a asp-controller="Publication" asp-action="Create" asp-route-next="@Url.Action("Edit", Model.TeacherReport.Id)" class="btn-small blue darken-3">@Localizer["Add New Scientific Work"]</a>
 	</div>
 </div>
 <div class="row">
@@ -113,15 +121,16 @@
 					{
 						var exists = Model.TeacherReport.TeacherReportsReportThesis.Any(p => p.ReportThesis.Id == reportThesis.Id);
 						<p>
-							@reportThesis.Thesis
-							<i class="add-reportThesis fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addReportThesis(this, '@Model.TeacherReport.Id', '@reportThesis.Id')"></i>
-							<i class="remove-reportThesis fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteReportThesis(this, '@Model.TeacherReport.Id', '@reportThesis.Id')"></i>
+							<label>
+                            	<input class="filled-in" type="checkbox" onclick="clickReportThesis(this, '@Model.TeacherReport.Id', '@reportThesis.Id')" @(exists ? "checked=\"checked\"" : "")/>
+                            	<span class="span-label">@reportThesis.Thesis</span>
+                            </label>
 						</p>
 					}
 				}
 			}
 		</div>
-		<a asp-controller="ReportThesis" asp-action="Create" asp-route-next="@Url.Action("Edit", Model.TeacherReport.Id)" class="btn-small blue darken-3">@Localizer["Add New Report Thesis"]</a>
+		<a asp-controller="Publication" asp-action="Create" asp-route-next="@Url.Action("Edit", Model.TeacherReport.Id)" class="btn-small blue darken-3">@Localizer["Add New Report Thesis"]</a>
 	</div>
 </div>
 <div class="row">
@@ -136,9 +145,10 @@
 					{
 						var exists = Model.TeacherReport.TeacherReportsGrants.Any(p => p.Grant.Id == grant.Id);
 						<p>
-							@grant.Id
-							<i class="add-grant fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addGrant(this, '@Model.TeacherReport.Id', '@grant.Id')"></i>
-							<i class="remove-grant fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteGrant(this, '@Model.TeacherReport.Id', '@grant.Id')"></i>
+							<label>
+                            	<input class="filled-in" type="checkbox" onclick="clickGrant(this, '@Model.TeacherReport.Id', '@grant.Id')" @(exists ? "checked=\"checked\"" : "")/>
+                            	<span class="span-label">@grant.Id</span>
+                            </label>
 						</p>
 					}
 				}
@@ -160,9 +170,10 @@
 					{
 						var exists = Model.TeacherReport.TeacherReportsScientificInternships.Any(p => p.ScientificInternship.Id == scientificInternship.Id);
 						<p>
-							@scientificInternship.Contents
-							<i class="add-scientificInternship fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addScientificInternship(this, '@Model.TeacherReport.Id', '@scientificInternship.Id')"></i>
-							<i class="remove-scientificInternship fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteScientificInternship(this, '@Model.TeacherReport.Id', '@scientificInternship.Id')"></i>
+							<label>
+                            	<input class="filled-in" type="checkbox" onclick="clickScientificInternship(this, '@Model.TeacherReport.Id', '@scientificInternship.Id')" @(exists ? "checked=\"checked\"" : "")/>
+                            	<span class="span-label">@scientificInternship.Contents</span>
+                            </label>
 						</p>
 					}
 				}
@@ -184,9 +195,10 @@
 					{
 						var exists = Model.TeacherReport.TeacherReportsPostgraduateGuidances.Any(p => p.PostgraduateGuidance.Id == postgraduateGuidance.Id);
 						<p>
-							@postgraduateGuidance.Guide
-							<i class="add-postgraduateGuidance fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addPostgraduateGuidance(this, '@Model.TeacherReport.Id', '@postgraduateGuidance.Id')"></i>
-							<i class="remove-postgraduateGuidance fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deletePostgraduateGuidance(this, '@Model.TeacherReport.Id', '@postgraduateGuidance.Id')"></i>
+							<label>
+                            	<input class="filled-in" type="checkbox" onclick="clickPostgraduateGuidance(this, '@Model.TeacherReport.Id', '@postgraduateGuidance.Id')" @(exists ? "checked=\"checked\"" : "")/>
+                            	<span class="span-label">@postgraduateGuidance.Guide</span>
+                            </label>
 						</p>
 					}
 				}
@@ -207,9 +219,10 @@
 					{
 						var exists = Model.TeacherReport.TeacherReportsScientificConsultations.Any(p => p.ScientificConsultation.Id == scientificConsultation.Id);
 						<p>
-							@scientificConsultation.DissertationTitle (@scientificConsultation.Guide)
-							<i class="add-scientificConsultation fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addScientificConsultation(this, '@Model.TeacherReport.Id', '@scientificConsultation.Id')"></i>
-							<i class="remove-scientificConsultation fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteScientificConsultation(this, '@Model.TeacherReport.Id', '@scientificConsultation.Id')"></i>
+							<label>
+                            	<input class="filled-in" type="checkbox" onclick="clickScientificConsultation(this, '@Model.TeacherReport.Id', '@scientificConsultation.Id')" @(exists ? "checked=\"checked\"" : "")/>
+                            	<span class="span-label">@scientificConsultation.DissertationTitle (@scientificConsultation.Guide)</span>
+                            </label>
 						</p>
 					}
 				}
@@ -230,9 +243,10 @@
 					{
 						var exists = Model.TeacherReport.TeacherReportsPostgraduateDissertationGuidances.Any(p => p.PostgraduateDissertationGuidance.Id == postgraduateDissertationGuidance.Id);
 						<p>
-							@postgraduateDissertationGuidance.Dissertation (@postgraduateDissertationGuidance.Guide)
-							<i class="add-postgraduateDissertationGuidance fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addPostgraduateDissertationGuidance(this, '@Model.TeacherReport.Id', '@postgraduateDissertationGuidance.Id')"></i>
-							<i class="remove-postgraduateDissertationGuidance fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deletePostgraduateDissertationGuidance(this, '@Model.TeacherReport.Id', '@postgraduateDissertationGuidance.Id')"></i>
+							<label>
+								<input class="filled-in" type="checkbox" onclick="clickPostgraduateDissertationGuidance(this, '@Model.TeacherReport.Id', '@postgraduateDissertationGuidance.Id')" @(exists ? "checked=\"checked\"" : "")/>
+								<span class="span-label">@postgraduateDissertationGuidance.Dissertation (@postgraduateDissertationGuidance.Guide)</span>
+							</label>
 						</p>
 					}
 				}
@@ -253,9 +267,10 @@
 					{
 						var exists = Model.TeacherReport.TeacherReportsReviews.Any(p => p.Review.Id == review.Id);
 						<p>
-							@review.Reviewer (@review.DateOfReview)
-							<i class="add-review fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addReview(this, '@Model.TeacherReport.Id', '@review.Id')"></i>
-							<i class="remove-review fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteReview(this, '@Model.TeacherReport.Id', '@review.Id')"></i>
+							<label>
+                            	<input class="filled-in" type="checkbox" onclick="clickReview(this, '@Model.TeacherReport.Id', '@review.Id')" @(exists ? "checked=\"checked\"" : "")/>
+                            	<span class="span-label">@review.Reviewer (@review.DateOfReview)</span>
+                            </label>
 						</p>
 					}
 				}
@@ -276,9 +291,10 @@
 					{
 						var exists = Model.TeacherReport.TeacherReportsOppositions.Any(p => p.Opposition.Id == opposition.Id);
 						<p>
-							@opposition.About (@opposition.Opponent - @opposition.DateOfOpposition)
-							<i class="add-opposition fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addOpposition(this, '@Model.TeacherReport.Id', '@opposition.Id')"></i>
-							<i class="remove-opposition fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteOpposition(this, '@Model.TeacherReport.Id', '@opposition.Id')"></i>
+							<label>
+                            	<input class="filled-in" type="checkbox" onclick="clickOpposition(this, '@Model.TeacherReport.Id', '@opposition.Id')" @(exists ? "checked=\"checked\"" : "")/>
+                            	<span class="span-label">@opposition.About (@opposition.Opponent - @opposition.DateOfOpposition)</span>
+                            </label>
 						</p>
 					}
 				}
@@ -299,9 +315,10 @@
 					{
 						var exists = Model.TeacherReport.TeacherReportsPatents.Any(p => p.Patent.Id == patent.Id);
 						<p>
-							@patent.Number @patent.Name
-							<i class="add-patent fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addPatent(this, '@Model.TeacherReport.Id', '@patent.Id')"></i>
-							<i class="remove-patent fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deletePatent(this, '@Model.TeacherReport.Id', '@patent.Id')"></i>
+							<label>
+                            	<input class="filled-in" type="checkbox" onclick="clickPatent(this, '@Model.TeacherReport.Id', '@patent.Id')" @(exists ? "checked=\"checked\"" : "")/>
+                            	<span class="span-label">@patent.Number @patent.Name</span>
+                            </label>
 						</p>
 					}
 				}
@@ -322,9 +339,10 @@
 					{
 						var exists = Model.TeacherReport.TeacherReportsMemberships.Any(p => p.Membership.Id == membership.Id);
 						<p>
-							@membership.MembershipInfo
-							<i class="add-membership fas fa-plus-circle fa-lg text-green @(exists ? "hidden" : "")" onclick="addMembership(this, '@Model.TeacherReport.Id', '@membership.Id')"></i>
-							<i class="remove-membership fas fa-minus-circle fa-lg text-red @(exists ? "" : "hidden")" onclick="deleteMembership(this, '@Model.TeacherReport.Id', '@membership.Id')"></i>
+							<label>
+                            	<input class="filled-in" type="checkbox" onclick="clickMembership(this, '@Model.TeacherReport.Id', '@membership.Id')" @(exists ? "checked=\"checked\"" : "")/>
+                            	<span class="span-label">@membership.MembershipInfo</span>
+                            </label>
 						</p>
 					}
 				}
@@ -344,41 +362,35 @@
 
 @section Scripts {
 	@{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
-	<script>    
-        const addPublication = toggleEntity('TeacherReport', 'AddPublication', 'remove-publication');
-        const deletePublication = toggleEntity('TeacherReport', 'DeletePublication', 'add-publication');
-        const addArticle = toggleEntity('TeacherReport', 'AddArticle', 'remove-article');
-        const deleteArticle = toggleEntity('TeacherReport', 'DeleteArticle', 'add-article');
-        const addScientificWork = toggleEntity('TeacherReport', 'AddScientificWork', 'remove-scientificWork');
-        const deleteScientificWork = toggleEntity('TeacherReport', 'DeleteScientificWork', 'add-scientificWork');
-        const addReportThesis = toggleEntity('TeacherReport', 'AddReportThesis', 'remove-reportThesis');
-        const deleteReportThesis = toggleEntity('TeacherReport', 'DeleteReportThesis', 'add-reportThesis');
-        
-        const addGrant = toggleEntity('TeacherReport', 'AddGrant', 'remove-grant');
-        const deleteGrant = toggleEntity('TeacherReport', 'DeleteGrant', 'add-grant');
-        
-        const addScientificInternship = toggleEntity('TeacherReport', 'AddScientificInternship', 'remove-scientificInternship');
-        const deleteScientificInternship = toggleEntity('TeacherReport', 'DeleteScientificInternship', 'add-scientificInternship');
-        
-        const addPostgraduateGuidance = toggleEntity('TeacherReport', 'AddPostgraduateGuidance', 'remove-postgraduateGuidance');
-        const deletePostgraduateGuidance = toggleEntity('TeacherReport', 'DeletePostgraduateGuidance', 'add-postgraduateGuidance');
-        
-        const addScientificConsultation = toggleEntity('TeacherReport', 'AddScientificConsultation', 'remove-scientificConsultation');
-        const deleteScientificConsultation = toggleEntity('TeacherReport', 'DeleteScientificConsultation', 'add-scientificConsultation');
-        
-        const addPostgraduateDissertationGuidance = toggleEntity('TeacherReport', 'AddPostgraduateDissertationGuidance', 'remove-postgraduateDissertationGuidance');
-        const deletePostgraduateDissertationGuidance = toggleEntity('TeacherReport', 'DeletePostgraduateDissertationGuidance', 'add-postgraduateDissertationGuidance');
-        
-        const addReview = toggleEntity('TeacherReport', 'AddReview', 'remove-review');
-        const deleteReview = toggleEntity('TeacherReport', 'DeleteReview', 'add-review');
-        
-        const addOpposition = toggleEntity('TeacherReport', 'AddOpposition', 'remove-opposition');
-        const deleteOpposition = toggleEntity('TeacherReport', 'DeleteOpposition', 'add-opposition');
-        
-        const addPatent = toggleEntity('TeacherReport', 'AddPatent', 'remove-patent');
-        const deletePatent = toggleEntity('TeacherReport', 'DeletePatent', 'add-patent');
-       
-        const addMembership = toggleEntity('TeacherReport', 'AddMembership', 'remove-membership');
-        const deleteMembership = toggleEntity('TeacherReport', 'DeleteMembership', 'add-membership');
+	<script>
+		let bodyFunc = (pk) => {
+			return {EntityId: pk}
+		};
+	
+		const clickPublication = toggleCheckboxEntity('TeacherReport', 'AddPublication', 'DeletePublication', bodyFunc);
+		
+		const clickArticle = toggleCheckboxEntity('TeacherReport', 'AddArticle', 'DeleteArticle', bodyFunc);
+		
+		const clickScientificWork = toggleCheckboxEntity('TeacherReport', 'AddScientificWork', 'DeleteScientificWork', bodyFunc);
+		
+		const clickReportThesis = toggleCheckboxEntity('TeacherReport', 'AddReportThesis', 'DeleteReportThesis', bodyFunc);
+		
+		const clickGrant = toggleCheckboxEntity('TeacherReport', 'AddGrant', 'DeleteGrant', bodyFunc);
+		
+		const clickScientificInternship = toggleCheckboxEntity('TeacherReport', 'AddScientificInternship', 'DeleteScientificInternship', bodyFunc);
+		
+		const clickPostgraduateGuidance = toggleCheckboxEntity('TeacherReport', 'AddPostgraduateGuidance', 'DeletePostgraduateGuidance', bodyFunc);
+		
+		const clickScientificConsultation = toggleCheckboxEntity('TeacherReport', 'AddScientificConsultation', 'DeleteScientificConsultation', bodyFunc);
+		
+		const clickPostgraduateDissertationGuidance = toggleCheckboxEntity('TeacherReport', 'AddPostgraduateDissertationGuidance', 'DeletePostgraduateDissertationGuidance', bodyFunc);
+		
+		const clickReview = toggleCheckboxEntity('TeacherReport', 'AddReview', 'DeleteReview', bodyFunc);
+		
+		const clickOpposition = toggleCheckboxEntity('TeacherReport', 'AddOpposition', 'DeleteOpposition', bodyFunc);
+		
+		const clickPatent = toggleCheckboxEntity('TeacherReport', 'AddPatent', 'DeletePatent', bodyFunc);
+	   
+		const clickMembership = toggleCheckboxEntity('TeacherReport', 'AddMembership', 'DeleteMembership', bodyFunc);
  </script>
 }
