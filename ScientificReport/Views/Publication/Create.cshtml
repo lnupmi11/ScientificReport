@@ -22,7 +22,10 @@
 		<div class="col s12" style="margin-bottom: 30px">
 		<ul class="tabs">
 			<li class="tab col s3"><a class="active" href="#article">@Localizer["Article"]</a></li>
-			@if(PageHelpers.IsHeadOfDepartment(User)){<li class="tab col s3"><a href="#scientific-work">@Localizer["Scientific Work"]</a></li>}
+			@if (PageHelpers.IsHeadOfDepartment(User))
+			{
+				<li class="tab col s3"><a href="#scientific-work">@Localizer["Scientific Work"]</a></li>
+			}
 			<li class="tab col s3"><a href="#report-thesis">@Localizer["Report Thesis"]</a></li>
 			<li class="tab col s3"><a href="#other">@Localizer["Other"]</a></li>
 		</ul>
@@ -126,45 +129,48 @@
 					</div>
 				</form>
 			</div>
-		<div id="scientific-work" class="col s12">
-			<form asp-action="Create">
-				<div asp-validation-summary="ModelOnly" class="validate"></div>
-				<input asp-for="PublicationType" value="ScientificWork" type="hidden" required>
-				<div class="row">
-					<div class="input-field col s6">
-						<input asp-for="ScientificWork.Cypher" type="text" class="validate">
-						<label asp-for="ScientificWork.Cypher">@Localizer["Cypher"]</label>
-						<span class="helper-text" asp-validation-for="ScientificWork.Cypher" data-error="" data-success=""></span>
+		@if (PageHelpers.IsHeadOfDepartment(User))
+		{
+			<div id="scientific-work" class="col s12">
+				<form asp-action="Create">
+					<div asp-validation-summary="ModelOnly" class="validate"></div>
+					<input asp-for="PublicationType" value="ScientificWork" type="hidden" required>
+					<div class="row">
+						<div class="input-field col s6">
+							<input asp-for="ScientificWork.Cypher" type="text" class="validate">
+							<label asp-for="ScientificWork.Cypher">@Localizer["Cypher"]</label>
+							<span class="helper-text" asp-validation-for="ScientificWork.Cypher" data-error="" data-success=""></span>
+						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s6">
-						<input asp-for="ScientificWork.Category" class="validate">
-						<label asp-for="ScientificWork.Category">@Localizer["Category"]</label>
-						<span class="helper-text" asp-validation-for="ScientificWork.Category" data-error="" data-success=""></span>
+					<div class="row">
+						<div class="input-field col s6">
+							<input asp-for="ScientificWork.Category" class="validate">
+							<label asp-for="ScientificWork.Category">@Localizer["Category"]</label>
+							<span class="helper-text" asp-validation-for="ScientificWork.Category" data-error="" data-success=""></span>
+						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s6">
-						<input asp-for="ScientificWork.Title" class="validate">
-						<label asp-for="ScientificWork.Title">@Localizer["Title"]</label>
-						<span class="helper-text" asp-validation-for="ScientificWork.Title" data-error="" data-success=""></span>
+					<div class="row">
+						<div class="input-field col s6">
+							<input asp-for="ScientificWork.Title" class="validate">
+							<label asp-for="ScientificWork.Title">@Localizer["Title"]</label>
+							<span class="helper-text" asp-validation-for="ScientificWork.Title" data-error="" data-success=""></span>
+						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s6">
-						<textarea asp-for="ScientificWork.Contents" class="materialize-textarea"></textarea>
-						<label asp-for="ScientificWork.Contents">@Localizer["Contents"]</label>
-						<span class="helper-text" asp-validation-for="ScientificWork.Contents" 
-							  data-length="400" data-error="" data-success=""></span>
+					<div class="row">
+						<div class="input-field col s6">
+							<textarea asp-for="ScientificWork.Contents" class="materialize-textarea"></textarea>
+							<label asp-for="ScientificWork.Contents">@Localizer["Contents"]</label>
+							<span class="helper-text" asp-validation-for="ScientificWork.Contents"
+								data-length="400" data-error="" data-success=""></span>
+						</div>
 					</div>
-				</div>
-				<div class="row myButtons">
-					<button type="submit" class="waves-effect btn-small accent-2">@Localizer["Create"]</button>
-					<a asp-action="Index" class="waves-effect btn-small blue darken-3">@Localizer["Cancel"]</a>
-				</div>
-			</form>
-		</div>
+					<div class="row myButtons">
+						<button type="submit" class="waves-effect btn-small accent-2">@Localizer["Create"]</button>
+						<a asp-action="Index" class="waves-effect btn-small blue darken-3">@Localizer["Cancel"]</a>
+					</div>
+				</form>
+			</div>
+		}
 		<div id="report-thesis" class="col s12">
 			<form asp-action="Create">
 				<div asp-validation-summary="ModelOnly" class="validate"></div>
