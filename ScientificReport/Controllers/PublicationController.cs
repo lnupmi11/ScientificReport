@@ -107,7 +107,11 @@ namespace ScientificReport.Controllers
 					);
 					break;
 				case PublicationCreateModel.PublicationTypes.ScientificWork:
-					_scientificWorkService.CreateItem(model.ScientificWork);
+					if (PageHelpers.IsHeadOfDepartment(User))
+					{
+						_scientificWorkService.CreateItem(model.ScientificWork);
+					}
+
 					break;
 				case PublicationCreateModel.PublicationTypes.ReportThesis:
 					model.ReportThesis.Conference = _conferenceService.GetById(model.ReportThesis.ConferenceId);
