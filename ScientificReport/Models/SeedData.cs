@@ -228,7 +228,7 @@ namespace ScientificReport.Models
 				new Article
 				{
 					Title = "my first Article",
-					Type = Article.Types.ImpactFactor,
+					ArticleType = Article.ArticleTypes.ImpactFactor,
 					PublishingPlace = "LNU",
 					PublishingHouseName = "Lnu oreo",
 					PublishingYear = 2019,
@@ -262,7 +262,7 @@ namespace ScientificReport.Models
 
 			publicationsService.CreateItem(new Publication
 				{
-					Type = Publication.Types.Monograph,
+					PublicationType = Publication.PublicationTypes.Monograph,
 					Title = "my first publication",
 					PublishingPlace = "my first publishing place",
 					Specification = "some first specification",
@@ -283,7 +283,7 @@ namespace ScientificReport.Models
 			
 			publicationsService.CreateItem(new Publication
 				{
-					Type = Publication.Types.TextBook,
+					PublicationType = Publication.PublicationTypes.TextBook,
 					Title = "my second publication",
 					PublishingPlace = "my second publishing place",
 					Specification = "some second specification",
@@ -309,7 +309,7 @@ namespace ScientificReport.Models
 			);
 			publicationsService.CreateItem(new Publication
 				{
-					Type = Publication.Types.Comment,
+					PublicationType = Publication.PublicationTypes.Comment,
 					Title = "My comment",
 					PublishingPlace = "Dnipro",
 					Specification = "scientific",
@@ -321,7 +321,7 @@ namespace ScientificReport.Models
 			);
 			publicationsService.CreateItem(new Publication
 				{
-					Type = Publication.Types.HandBook,
+					PublicationType = Publication.PublicationTypes.HandBook,
 					Title = "My HandBook",
 					PublishingPlace = "Lviv",
 					Specification = "scientific",
@@ -333,7 +333,7 @@ namespace ScientificReport.Models
 			);
 			publicationsService.CreateItem(new Publication
 				{
-					Type = Publication.Types.BibliographicIndex,
+					PublicationType = Publication.PublicationTypes.BibliographicIndex,
 					Title = "My BibliographicIndex",
 					PublishingPlace = "Ukraine",
 					Specification = "bibliya",

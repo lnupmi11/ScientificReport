@@ -16,10 +16,10 @@
 	<hr />
 	<div class="row">
 		<div class = "col s4">
-			@Localizer[Html.DisplayNameFor(model => model.Article.Type)]
+			@Localizer[Html.DisplayNameFor(model => model.Article.ArticleType)]
 		</div>
 		<div class = "col s8">
-			@Html.DisplayFor(model => model.Article.Type)
+			@Html.DisplayFor(model => model.Article.ArticleType)
 		</div>
 		<div class = "col s4">
 			@Localizer["Liability info"]
@@ -115,5 +115,4 @@
 	{
 		<a asp-action="Edit" asp-route-id="@Model.Article.Id" class="waves-effect btn-small waves-light">@Localizer["Edit"]</a>
 	}
-	<a asp-action="Index" class="btn-small blue darken-3">@Localizer["Back to list"]</a>
 </div>

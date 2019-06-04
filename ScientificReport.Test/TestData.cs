@@ -76,7 +76,7 @@ namespace ScientificReport.Test
 		public static readonly Publication Publication1 = new Publication
 		{
 			Id = Guid.NewGuid(),
-			Type = Publication.Types.Comment,
+			PublicationType = Publication.PublicationTypes.Comment,
 			Title = "Publication 1",
 			Specification = "Specification 1",
 			PagesAmount = 10,
@@ -88,7 +88,7 @@ namespace ScientificReport.Test
 		public static readonly Publication Publication2 = new Publication
 		{
 			Id = Guid.NewGuid(),
-			Type = Publication.Types.Monograph,
+			PublicationType = Publication.PublicationTypes.Monograph,
 			Title = "Publication 2",
 			Specification = "Specification 2",
 			PagesAmount = 20,
@@ -100,7 +100,7 @@ namespace ScientificReport.Test
 		public static readonly Publication Publication3 = new Publication
 		{
 			Id = Guid.NewGuid(),
-			Type = Publication.Types.Dictionary,
+			PublicationType = Publication.PublicationTypes.Dictionary,
 			Title = "Publication 3",
 			Specification = "Specification 3",
 			PagesAmount = 30,
@@ -202,7 +202,7 @@ namespace ScientificReport.Test
 			Title = "Some title 1",
 			IsPrintCanceled = true,
 			UserProfilesArticles = null,
-			Type = Article.Types.ReportThesis,
+			ArticleType = Article.ArticleTypes.ReportThesis,
 			Number = 1,
 			PagesAmount = 20,
 			DocumentInfo = "Some document info 1",
@@ -219,7 +219,7 @@ namespace ScientificReport.Test
 			Title = "Some title 2",
 			IsPrintCanceled = true,
 			UserProfilesArticles = null,
-			Type = Article.Types.ForeignPublishing,
+			ArticleType = Article.ArticleTypes.ForeignPublishing,
 			Number = 0,
 			PagesAmount = 30,
 			DocumentInfo = "Some document info 2",
@@ -236,7 +236,7 @@ namespace ScientificReport.Test
 			Title = "Some title 3",
 			IsPrintCanceled = false,
 			UserProfilesArticles = null,
-			Type = Article.Types.OtherPublishingOfUkraine,
+			ArticleType = Article.ArticleTypes.OtherPublishingOfUkraine,
 			Number = 2,
 			PagesAmount = 10,
 			DocumentInfo = "Some document info 3",
@@ -552,9 +552,9 @@ namespace ScientificReport.Test
 			}
 		};
 
-		private static readonly Random Rand = new Random();
+		private static readonly Random TestRand = new Random();
 
-		private static readonly string[] Words =
+		private static readonly string[] TestWords =
 		{
 			"Lorem", "Ipsum", "Dolor", "Sit", "Amet", "Consectetuer",
 			"Adipiscing", "Elit", "Sed", "Diam", "Nonummy", "Nibh", "Euismod",
@@ -563,7 +563,7 @@ namespace ScientificReport.Test
 
 		private static string RandWord()
 		{
-			return Words[Rand.Next(Words.Length)];
+			return TestWords[TestRand.Next(TestWords.Length)];
 		}
 		
 		private static string RandText(int wordsNumber)
@@ -579,7 +579,7 @@ namespace ScientificReport.Test
 
 		private static bool RandBool()
 		{
-			return Rand.Next(2) == 1;
+			return TestRand.Next(2) == 1;
 		}
 
 		public static UserProfile RandUser(bool setApproved = false)
@@ -594,11 +594,11 @@ namespace ScientificReport.Test
 				Position = RandWord(),
 				LastName = lName,
 				UserName = uName,
-				BirthYear = Rand.Next(1920, 1996),
+				BirthYear = TestRand.Next(1920, 1996),
 				FirstName = fName,
 				IsApproved = setApproved || RandBool(),
 				MiddleName = "MiddleName",
-				PhoneNumber = $"+380{Rand.Next(100000000, 999999999)}",
+				PhoneNumber = $"+380{TestRand.Next(100000000, 999999999)}",
 			};
 		}
 
@@ -608,7 +608,7 @@ namespace ScientificReport.Test
 			{
 				Id = Guid.NewGuid(),
 				Title = RandText(3),
-				Cypher = Rand.Next(100000, 99999).ToString(),
+				Cypher = TestRand.Next(100000, 99999).ToString(),
 				Category = RandWord(),
 				Contents = RandText(7)
 			};
@@ -617,7 +617,7 @@ namespace ScientificReport.Test
 		public static Publication RandPublication()
 		{
 			Publication.PrintStatuses printStatus;
-			switch (Rand.Next(2))
+			switch (TestRand.Next(2))
 			{
 				case 1:
 					printStatus = Publication.PrintStatuses.IsPrintCanceled;
@@ -632,11 +632,11 @@ namespace ScientificReport.Test
 			return new Publication
 			{
 				Id = Guid.NewGuid(),
-				Type = Publication.Types.Comment,
+				PublicationType = Publication.PublicationTypes.Comment,
 				Title = RandText(3),
 				Specification = RandWord(),
-				PagesAmount = Rand.Next(3, 100),
-				PublishingYear = Rand.Next(1990, 2018),
+				PagesAmount = TestRand.Next(3, 100),
+				PublishingYear = TestRand.Next(1990, 2018),
 				PublishingPlace = RandText(4),
 				PublishingHouseName = RandText(4),
 				PrintStatus = printStatus

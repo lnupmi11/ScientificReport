@@ -36,7 +36,7 @@ namespace ScientificReport.BLL.Services
 		
 		public virtual IEnumerable<Publication> Filter(PublicationIndexModel model, ClaimsPrincipal userPrincipal, bool userIsAdmin, bool userIsHead)
 		{
-			var publications = GetPage(model.CurrentPage, model.PageSize);
+			var publications = _publicationRepository.All().Skip((model.CurrentPage - 1) * model.PageSize).Take(model.PageSize);
 			if (model.SortBy != null)
 			{
 				model.PublicationSetType = Publication.PublicationSetType.Faculty;
@@ -115,16 +115,6 @@ namespace ScientificReport.BLL.Services
 
 			return publications;
 		}
-		
-		public virtual IEnumerable<Publication> GetPage(int page, int count)
-		{
-			return _publicationRepository.All().Skip((page - 1) * count).Take(count).ToList();
-		}
-		
-		public virtual int GetCount()
-		{
-			return _publicationRepository.All().Count();
-		}
 
 		public virtual Publication GetById(Guid id)
 		{
@@ -195,11 +185,11 @@ namespace ScientificReport.BLL.Services
 
 		public virtual IEnumerable<Publication> SortPublicationsBy(Publication.SortByOptions option, int page, int count)
 		{
-			var publications = GetPage(page, count);
+			var publications = _publicationRepository.All().Skip((page - 1) * count).Take(count);
 			switch (option)
 			{
 				case Publication.SortByOptions.Type:
-					publications = publications.OrderBy(p => p.Type);
+					publications = publications.OrderBy(p => p.PublicationType);
 					break;
 				case Publication.SortByOptions.Title:
 					publications = publications.OrderBy(p => p.Title);

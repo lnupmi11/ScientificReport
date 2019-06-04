@@ -1,39 +1,25 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+using ScientificReport.DAL.Entities;
+using ScientificReport.DTO.Models.Article;
+using ScientificReport.DTO.Models.ReportThesis;
 
 namespace ScientificReport.DTO.Models.Publication
 {
 	public class PublicationCreateModel
 	{
-		[Required]
-		public Guid Id { get; set; }
+		public Models.Publication Publication { get; set; }
 		
-		[Required]
-		public DAL.Entities.Publication.Types Type { get; set; }
+		public ArticleModel Article { get; set; }
 		
-		[Required]
-		public string Title { get; set; }
+		public ScientificWork ScientificWork { get; set; }
 		
-		[Required]
-		public string Specification { get; set; }
-		
-		[Required]
-		public string PublishingPlace { get; set; }
-		
-		[Required]
-		public string PublishingHouseName { get; set; }
-		
-		[Required]
-		public int PublishingYear { get; set; }
-		
-		[Required]
-		public int PagesAmount { get; set; }
-		
-		[Required]
-		public DAL.Entities.Publication.PrintStatuses PrintStatus { get; set; }
+		public ReportThesisModel ReportThesis { get; set; }
 
-		public IEnumerable<string> PrintStatusOptions { get; set; }
+		public PublicationTypes PublicationType { get; set; }
+		
+		public enum PublicationTypes
+		{
+			Article, ScientificWork, ReportThesis, Other
+		}
 
 		public PublicationCreateModel()
 		{
@@ -43,39 +29,59 @@ namespace ScientificReport.DTO.Models.Publication
 		public PublicationCreateModel(DAL.Entities.Publication publication)
 		{
 			Init();
-			Type = publication.Type;
-			Title = publication.Title;
-			Specification = publication.Specification;
-			PublishingPlace = publication.PublishingPlace;
-			PublishingHouseName = publication.PublishingHouseName;
-			PublishingYear = publication.PublishingYear;
-			PagesAmount = publication.PagesAmount;
-			PrintStatus = publication.PrintStatus;
+			Publication.Type = publication.PublicationType;
+			Publication.Title = publication.Title;
+			Publication.Specification = publication.Specification;
+			Publication.PublishingPlace = publication.PublishingPlace;
+			Publication.PublishingHouseName = publication.PublishingHouseName;
+			Publication.PublishingYear = publication.PublishingYear;
+			Publication.PagesAmount = publication.PagesAmount;
+			Publication.PrintStatus = publication.PrintStatus;
 		}
 
 		private void Init()
 		{
-			PrintStatus = DAL.Entities.Publication.PrintStatuses.Any;
-			PrintStatusOptions = new[]
+			Publication = new Models.Publication
 			{
-				"Any",
-				"IsRecommendedToPrint",
-				"IsPrintCanceled"
+				PrintStatus = DAL.Entities.Publication.PrintStatuses.Any,
+				PrintStatusOptions = new[] {"Any", "IsRecommendedToPrint", "IsPrintCanceled"}
 			};
+			Article = new ArticleModel();
+			ReportThesis = new ReportThesisModel();
+			ScientificWork = new ScientificWork();
 		}
 
 		public DAL.Entities.Publication ToPublication()
 		{
 			return new DAL.Entities.Publication
 			{
-				Type = Type,
-				Title = Title,
-				Specification = Specification,
-				PublishingPlace = PublishingPlace,
-				PublishingHouseName = PublishingHouseName,
-				PublishingYear = PublishingYear,
-				PagesAmount = PagesAmount,
-				PrintStatus = PrintStatus
+				PublicationType = Publication.Type,
+				Title = Publication.Title,
+				Specification = Publication.Specification,
+				PublishingPlace = Publication.PublishingPlace,
+				PublishingHouseName = Publication.PublishingHouseName,
+				PublishingYear = Publication.PublishingYear,
+				PagesAmount = Publication.PagesAmount,
+				PrintStatus = Publication.PrintStatus
+			};
+		}
+		
+		public DAL.Entities.Article ToArticle()
+		{
+			return new DAL.Entities.Article
+			{
+				ArticleType = Article.Type,
+				Title = Article.Title,
+				Number = Article.Number,
+				PagesAmount = Article.PagesAmount,
+				DocumentInfo = Article.DocumentInfo,
+				IsPeriodical = Article.IsPeriodical,
+				LiabilityInfo = Article.LiabilityInfo,
+				PublishingYear = Article.PublishingYear,
+				PublishingPlace = Article.PublishingPlace,
+				IsPrintCanceled = Article.IsPrintCanceled,
+				PublishingHouseName = Article.PublishingHouseName,
+				IsRecommendedToPrint = Article.IsRecommendedToPrint
 			};
 		}
 	}

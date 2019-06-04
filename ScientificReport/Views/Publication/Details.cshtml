@@ -34,32 +34,32 @@
 	<hr/>
 	<dl class="row">
 		<dt class="col s2">
-			@Localizer[Html.DisplayNameFor(model => model.Publication.Type)]
+			@Localizer[Html.DisplayNameFor(model => model.Publication.PublicationType)]
 		</dt>
 		<dd class="col s10">
 			@{
 				string type;
-				switch (Model.Publication.Type)
+				switch (Model.Publication.PublicationType)
 				{
-					case Publication.Types.Monograph:
+					case Publication.PublicationTypes.Monograph:
 						type = "Monograph";
 						break;
-					case Publication.Types.TextBook:
+					case Publication.PublicationTypes.TextBook:
 						type = "Textbook";
 						break;
-					case Publication.Types.HandBook:
+					case Publication.PublicationTypes.HandBook:
 						type = "Handbook";
 						break;
-					case Publication.Types.Dictionary:
+					case Publication.PublicationTypes.Dictionary:
 						type = "Dictionary";
 						break;
-					case Publication.Types.Translation:
+					case Publication.PublicationTypes.Translation:
 						type = "Translation";
 						break;
-					case Publication.Types.Comment:
+					case Publication.PublicationTypes.Comment:
 						type = "Comment";
 						break;
-					case Publication.Types.BibliographicIndex:
+					case Publication.PublicationTypes.BibliographicIndex:
 						type = "Bibliographic index";
 						break;
 					default:

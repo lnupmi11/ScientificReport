@@ -124,18 +124,18 @@
 	<tbody>
 	<tr>
 		<td>Монографії</td>
-		<td>@Model.GetPublicationsByType(Publication.Types.Monograph).Count()</td>
-		<td>@Model.GetPublicationsByType(Publication.Types.Monograph).Count(p => p.PublishingYear == Model.Created.Year)</td>
+		<td>@Model.GetPublicationsByType(Publication.PublicationTypes.Monograph).Count()</td>
+		<td>@Model.GetPublicationsByType(Publication.PublicationTypes.Monograph).Count(p => p.PublishingYear == Model.Created.Year)</td>
 	</tr>
 	<tr>
 		<td>Підручники</td>
-		<td>@Model.GetPublicationsByType(Publication.Types.TextBook).Count()</td>
-		<td>@Model.GetPublicationsByType(Publication.Types.TextBook).Count(p => p.PublishingYear == Model.Created.Year)</td>
+		<td>@Model.GetPublicationsByType(Publication.PublicationTypes.TextBook).Count()</td>
+		<td>@Model.GetPublicationsByType(Publication.PublicationTypes.TextBook).Count(p => p.PublishingYear == Model.Created.Year)</td>
 	</tr>
 	<tr>
 		<td>Навчальні посібники</td>
-		<td>@Model.GetPublicationsByType(Publication.Types.HandBook).Count()</td>
-		<td>@Model.GetPublicationsByType(Publication.Types.HandBook).Count(p => p.PublishingYear == Model.Created.Year)</td>
+		<td>@Model.GetPublicationsByType(Publication.PublicationTypes.HandBook).Count()</td>
+		<td>@Model.GetPublicationsByType(Publication.PublicationTypes.HandBook).Count(p => p.PublishingYear == Model.Created.Year)</td>
 	</tr>
 	<tr>
 		<td>Статті</td>
@@ -158,10 +158,10 @@
 	<li class="@(!(Model.GetPublications().Any() || Model.GetArticles().Any()) ? "hidden" : "")">
 		<b>6.1</b> Праці, що вийшли з друку (бібліографічний опис згідно з державним стандартом):
 		<ol>
-			<li class="@(!Model.GetPublicationsByType(Publication.Types.Monograph).Any() ? "hidden" : "")">
+			<li class="@(!Model.GetPublicationsByType(Publication.PublicationTypes.Monograph).Any() ? "hidden" : "")">
 				<b>6.1.1.</b> Монографії:
 				<ol class="publications-list">
-					@foreach (var data in Model.GetPublicationsByType(Publication.Types.Monograph).Select((p, i) => new PrintPublication
+					@foreach (var data in Model.GetPublicationsByType(Publication.PublicationTypes.Monograph).Select((p, i) => new PrintPublication
 					{
 						Index = i,
 						User = Model.Teacher,
@@ -172,10 +172,10 @@
 					}
 				</ol>
 			</li>
-			<li class="@(!Model.GetPublicationsByType(Publication.Types.TextBook).Any() ? "hidden" : "")">
+			<li class="@(!Model.GetPublicationsByType(Publication.PublicationTypes.TextBook).Any() ? "hidden" : "")">
 				<b>6.1.2.</b> Підручники:
 				<ol class="publications-list">
-					@foreach (var data in Model.GetPublicationsByType(Publication.Types.TextBook).Select((p, i) => new PrintPublication
+					@foreach (var data in Model.GetPublicationsByType(Publication.PublicationTypes.TextBook).Select((p, i) => new PrintPublication
 					{
 						Index = i,
 						User = Model.Teacher,
@@ -187,10 +187,10 @@
 				</ol>
 
 			</li>
-			<li class="@(!Model.GetPublicationsByType(Publication.Types.HandBook).Any() ? "hidden" : "")">
+			<li class="@(!Model.GetPublicationsByType(Publication.PublicationTypes.HandBook).Any() ? "hidden" : "")">
 				<b>6.1.3.</b> Навчальні посібники:
 				<ol class="publications-list">
-					@foreach (var data in Model.GetPublicationsByType(Publication.Types.HandBook).Select((p, i) => new PrintPublication
+					@foreach (var data in Model.GetPublicationsByType(Publication.PublicationTypes.HandBook).Select((p, i) => new PrintPublication
 					{
 						Index = i,
 						User = Model.Teacher,
@@ -218,10 +218,10 @@
 			<li class="@(!Model.GetArticles().Any() ? "hidden" : "")">
 				<b>6.1.5.</b> Статті:
 				<ol>
-					<li class="@(!Model.GetArticlesByType(Article.Types.ImpactFactor).Any() ? "hidden" : "")">
+					<li class="@(!Model.GetArticlesByType(Article.ArticleTypes.ImpactFactor).Any() ? "hidden" : "")">
 						<b>6.1.5.1.</b> Статті у виданнях, які мають імпакт-фактор;
 						<ol class="article-list">
-							@foreach (var data in Model.GetArticlesByType(Article.Types.ImpactFactor).Select((p, i) => new PrintArticle
+							@foreach (var data in Model.GetArticlesByType(Article.ArticleTypes.ImpactFactor).Select((p, i) => new PrintArticle
 							{
 								Index = i,
 								User = Model.Teacher,
@@ -232,10 +232,10 @@
 							}
 						</ol>
 					</li>
-					<li class="@(!Model.GetArticlesByType(Article.Types.ForeignReportThesisWithResearchResults).Any() ? "hidden" : "")">
+					<li class="@(!Model.GetArticlesByType(Article.ArticleTypes.ForeignReportThesisWithResearchResults).Any() ? "hidden" : "")">
 						<b>6.1.5.2.</b> Статті в інших виданнях, які включені до міжнародних наукометричних баз даних Web of Science, Scopus та інших;
 						<ol class="article-list">
-							@foreach (var data in Model.GetArticlesByType(Article.Types.ForeignReportThesisWithResearchResults).Select((p, i) => new PrintArticle
+							@foreach (var data in Model.GetArticlesByType(Article.ArticleTypes.ForeignReportThesisWithResearchResults).Select((p, i) => new PrintArticle
 							{
 								Index = i,
 								User = Model.Teacher,
@@ -246,10 +246,10 @@
 							}
 						</ol>
 					</li>
-					<li class="@(!Model.GetArticlesByType(Article.Types.ForeignPublishing).Any() ? "hidden" : "")">
+					<li class="@(!Model.GetArticlesByType(Article.ArticleTypes.ForeignPublishing).Any() ? "hidden" : "")">
 						<b>6.1.5.3.</b> Статті в інших закордонних виданнях;
 						<ol class="article-list">
-							@foreach (var data in Model.GetArticlesByType(Article.Types.ForeignPublishing).Select((p, i) => new PrintArticle
+							@foreach (var data in Model.GetArticlesByType(Article.ArticleTypes.ForeignPublishing).Select((p, i) => new PrintArticle
 							{
 								Index = i,
 								User = Model.Teacher,
@@ -260,10 +260,10 @@
 							}
 						</ol>
 					</li>
-					<li class="@(!Model.GetArticlesByType(Article.Types.DomesticReportThesis).Any() ? "hidden" : "")">
+					<li class="@(!Model.GetArticlesByType(Article.ArticleTypes.DomesticReportThesis).Any() ? "hidden" : "")">
 						<b>6.1.5.4.</b> Статті у фахових виданнях України;
 						<ol class="article-list">
-							@foreach (var data in Model.GetArticlesByType(Article.Types.DomesticReportThesis).Select((p, i) => new PrintArticle
+							@foreach (var data in Model.GetArticlesByType(Article.ArticleTypes.DomesticReportThesis).Select((p, i) => new PrintArticle
 							{
 								Index = i,
 								User = Model.Teacher,
@@ -274,10 +274,10 @@
 							}
 						</ol>
 					</li>
-					<li class="@(!Model.GetArticlesByType(Article.Types.OtherPublishingOfUkraine).Any() ? "hidden" : "")">
+					<li class="@(!Model.GetArticlesByType(Article.ArticleTypes.OtherPublishingOfUkraine).Any() ? "hidden" : "")">
 						<b>6.1.5.5.</b> Статті в інших виданнях України.
 						<ol class="article-list">
-							@foreach (var data in Model.GetArticlesByType(Article.Types.OtherPublishingOfUkraine).Select((p, i) => new PrintArticle
+							@foreach (var data in Model.GetArticlesByType(Article.ArticleTypes.OtherPublishingOfUkraine).Select((p, i) => new PrintArticle
 							{
 								Index = i,
 								User = Model.Teacher,

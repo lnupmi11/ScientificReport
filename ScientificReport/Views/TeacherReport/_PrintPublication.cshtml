@@ -12,25 +12,25 @@ var authors = PublicationService.GetPublicationAuthors(Model.Publication.Id);
 	if(authors!= null&&authors.Count>0){authorString = authors.Select(u => u.LastName +" " + u.FirstName.ToCharArray()[0] +". "+ u.MiddleName.ToCharArray()[0]+ ".").Aggregate((current, item) => current +", "+ item);}
 }
 
-@switch (Model.Publication.Type)
+@switch (Model.Publication.PublicationType)
 {
 	
-	case Publication.Types.BibliographicIndex:
+	case Publication.PublicationTypes.BibliographicIndex:
 		<li class="publications-item">@Model.Publication.Title: бібліогр. покажч. / уклад. @Model.User.LastName @Model.User.FirstName.ToCharArray()[0]. @Model.User.MiddleName.ToCharArray()[0]. @Model.Publication.Specification – @Model.Publication.PublishingPlace :  @Model.Publication.PublishingHouseName, @Model.Publication.PublishingYear – @Model.Publication.PagesAmount</li>
 		break;
-	case Publication.Types.TextBook:
+	case Publication.PublicationTypes.TextBook:
 		<li class="publications-item">@Model.User.LastName @Model.User.FirstName.ToCharArray()[0]. @Model.User.MiddleName.ToCharArray()[0]. @Model.Publication.Title : підручник / @authorString @Model.Publication.Specification – @Model.Publication.PublishingPlace :  @Model.Publication.PublishingHouseName, @Model.Publication.PublishingYear – @Model.Publication.PagesAmount</li>
 		break;
-	case Publication.Types.HandBook:
+	case Publication.PublicationTypes.HandBook:
 		<li class="publications-item">@Model.User.LastName @Model.User.FirstName.ToCharArray()[0]. @Model.User.MiddleName.ToCharArray()[0]. @Model.Publication.Title : навч. посіб./ @authorString @Model.Publication.Specification – @Model.Publication.PublishingPlace :  @Model.Publication.PublishingHouseName, @Model.Publication.PublishingYear – @Model.Publication.PagesAmount</li>
 		break;
-	case Publication.Types.Dictionary:
+	case Publication.PublicationTypes.Dictionary:
 		<li class="publications-item">@Model.User.LastName @Model.User.FirstName.ToCharArray()[0]. @Model.User.MiddleName.ToCharArray()[0]. : словник/ @authorString @Model.Publication.Specification – @Model.Publication.PublishingPlace : @Model.Publication.PublishingHouseName, @Model.Publication.PublishingYear – @Model.Publication.PagesAmount</li>
 		break;
-	case Publication.Types.Comment:
+	case Publication.PublicationTypes.Comment:
 		<li class="publications-item"> Науково-практичний коментар @Model.Publication.Title : станом на дата (день місяць словом рік) / @authorString @Model.Publication.Specification. @Model.Publication.PublishingPlace :  @Model.Publication.PublishingHouseName, @Model.Publication.PublishingYear @Model.Publication.PagesAmount</li>
 		break;
-	case Publication.Types.Monograph:
+	case Publication.PublicationTypes.Monograph:
 		//check if amount of coauthors < 4
 		if(authors.Count<4){
 			<li class="publications-item">@Model.User.LastName @Model.User.FirstName.ToCharArray()[0]. @Model.User.MiddleName.ToCharArray()[0]. @Model.Publication.Title / @authorString @Model.Publication.Specification – @Model.Publication.PublishingPlace :  @Model.Publication.PublishingHouseName, @Model.Publication.PublishingYear – @Model.Publication.PagesAmount</li>

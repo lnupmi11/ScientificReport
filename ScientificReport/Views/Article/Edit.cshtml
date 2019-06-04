@@ -142,7 +142,6 @@
 			}
 			<div class="row myButtons">
 				<button type="submit" class="waves-effect btn-small accent-2">@Localizer["Save"]</button>
-				<a asp-action="Index" class="waves-effect btn-small blue darken-3">@Localizer["Cancel"]</a>
 			</div>
 		</form>
 	</div>
@@ -165,7 +164,7 @@
 			}).catch(e => {
 				console.error(e);
 			});
-		}
+		};
 
 		let reqAuthorBody = (userId) => {
 			return { UserId: userId };

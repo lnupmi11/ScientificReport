@@ -11,10 +11,9 @@
 		overflow-y: scroll;
 		height: 200px;
 	}
-	.text-green { color: rgb(0, 179, 0); }
-	.text-red { color: rgb(177, 0, 0); }
-	.hidden { display: none; }
-	.cursor-pointer { cursor: pointer; }
+	.span-label {
+		color: black;
+	}
 </style>
 <h5>@ViewData["Title"]</h5>
 <hr />
@@ -57,37 +56,45 @@
 					<label asp-for="Type">@Localizer["Type"]</label>
 				</div>
 			</div>
-			<div class="col s6">
-				<h5>@Localizer[Model.Type.ToString() == "Patent" ? "Authors" : "Applicants"]:</h5>
-				<div class="authors-list">
-					@if (Model.Users != null)
-					{
-						foreach (var user in Model.Users)
+			<div class="row">
+				<div class="col s6">
+                	<h5>@Localizer[Model.Type.ToString() == "Patent" ? "Authors" : "Applicants"]:</h5>
+					<div class="authors-list">
+						@if (Model.Users != null)
 						{
-							if (user != null)
+							foreach (var user in Model.Users)
 							{
-								var exists = Model.AuthorsOrApplicants.Any(u => u.Id == user.Id);
-								<p>
-									@user.FullName
-									<i class="add-user fas fa-plus-circle fa-lg cursor-pointer text-green @(exists ? "hidden" : "")" onclick="addUser(this, '@Model.Id', '@user.Id', '@Model.Type.ToString()')"></i>
-									<i class="remove-user fas fa-minus-circle fa-lg cursor-pointer text-red @(exists ? "" : "hidden")" onclick="removeUser(this, '@Model.Id', '@user.Id', '@Model.Type.ToString()')"></i>
-								</p>
+								if (user != null)
+								{
+									var exists = Model.AuthorsOrApplicants.Any(u => u.Id == user.Id);
+									<p>
+										<label>
+											<input class="filled-in" type="checkbox" onclick="clickUser(this, '@Model.Id', '@user.Id', '@Model.Type.ToString()')" @(exists ? "checked=\"checked\"" : "")/>
+											<span class="span-label">@user.FullName</span>
+										</label>
+									</p>
+								}
 							}
 						}
-					}
+					</div>
 				</div>
 			</div>
 			<div class="row myButtons">
-				<button type="submit" class="waves-effect btn-small accent-2">@Localizer["Save"]</button>
-				<a asp-action="Index" class="waves-effect btn-small blue darken-3">@Localizer["Cancel"]</a>
+				<div class="col s6">
+					<button type="submit" class="waves-effect btn-small accent-2">@Localizer["Save"]</button>
+                    <a asp-action="Index" class="waves-effect btn-small blue darken-3">@Localizer["Cancel"]</a>
+				</div>
 			</div>
 		</form>
 	</div>
 </div>
 
 @section Scripts {
-	<script>
-		const toggleUser = (endpoint, tagName) => (tag, id, authorId, activityType) => {
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('select').formSelect();
+		});
+		const toggleUser = (controller, endpointAdd, endpointRemove) => (tag, id, authorId, activityType) => {
 			const config = {
 				method: 'POST',
 				body: JSON.stringify({
@@ -98,24 +105,15 @@
 					'Content-Type': 'application/json'
 				}
 			};
-			fetch(`/PatentLicenseActivity/${endpoint}/${id}`, config).then(response => {
-//			console.log(response);
-				if (response.status !== 200) throw { msg: "Failed to toggle the author", response };
-			
-				tag.classList.add('hidden');
-				tag.parentElement.getElementsByClassName(tagName)[0].classList.remove('hidden');
+			let endpoint = tag.checked === false ? endpointRemove : endpointAdd;
+			fetch(`/${controller}/${endpoint}/${id}`, config).then(response => {
+				console.log(response);
+				if (response.status !== 200) throw {msg: "Failed to toggle the entity", response};
 			}).catch(e => {
 				console.error(e);
 			});
-		}
-
-		const addUser = toggleUser('AddUser', 'remove-user');
-		const removeUser = toggleUser('RemoveUser', 'add-user');
-	</script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$('select').formSelect();
-		});
+		};
+		const clickUser = toggleUser('PatentLicenseActivity', 'AddUser', 'RemoveUser');
 	</script>
 	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

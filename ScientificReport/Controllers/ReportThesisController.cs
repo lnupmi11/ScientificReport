@@ -69,33 +69,6 @@ namespace ScientificReport.Controllers
 			return View(reportThesisDetails);
 		}
 
-		// GET: ReportThesis/Create
-		public IActionResult Create()
-		{
-			return View(new ReportThesisModel
-			{
-				Conferences = _conferenceService.GetAll()
-			});
-		}
-
-		// POST: ReportThesis/Create
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public IActionResult Create(ReportThesisModel model)
-		{
-			if (!ModelState.IsValid)
-			{
-				model.Conferences = _conferenceService.GetAll();
-				return View(model);
-			}
-
-			model.Conference = _conferenceService.GetById(model.ConferenceId);
-			_reportThesisService.CreateItem(model);
-			_reportThesisService.AddAuthor(_reportThesisService.Get(r => r.Thesis == model.Thesis).Id,
-				_userProfileService.Get(User).Id);
-			return RedirectToAction(nameof(Index));
-		}
-
 		// GET: ReportThesis/Edit/{id}
 		public IActionResult Edit(Guid? id)
 		{
