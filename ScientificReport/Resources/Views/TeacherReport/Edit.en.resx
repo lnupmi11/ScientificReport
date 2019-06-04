@@ -41,4 +41,128 @@
 	<data name="Cancel" xml:space="preserve">
 		<value>Cancel</value>
 	</data>
+	<data name="Articles" xml:space="preserve">
+		<value>Articles</value>
+		<comment>Articles</comment>
+	</data>
+	<data name="ScientificWorks" xml:space="preserve">
+		<value>ScientificWorks</value>
+		<comment>ScientificWorks</comment>
+	</data>
+	<data name="Add New Article" xml:space="preserve">
+		<value>Add New Article</value>
+		<comment>Add New Article</comment>
+	</data>
+	<data name="Add New Scientific Work" xml:space="preserve">
+		<value>Add New Scientific Work</value>
+		<comment>Add New Scientific Work</comment>
+	</data>
+	<data name="ReportTheses" xml:space="preserve">
+		<value>ReportTheses</value>
+		<comment>ReportTheses</comment>
+	</data>
+	<data name="Add New Report Thesis" xml:space="preserve">
+		<value>Add New Report Thesis</value>
+		<comment>Add New Report Thesis</comment>
+	</data>
+	<data name="Grant" xml:space="preserve">
+		<value>Grant</value>
+		<comment>Grant</comment>
+	</data>
+	<data name="Add New Grant" xml:space="preserve">
+		<value>Add New Grant</value>
+		<comment>Add New Grant</comment>
+	</data>
+	<data name="ScientificInternship" xml:space="preserve">
+		<value>ScientificInternship</value>
+		<comment>ScientificInternship</comment>
+	</data>
+	<data name="Add New ScientificInternship" xml:space="preserve">
+		<value>Add New ScientificInternship</value>
+		<comment>Add New ScientificInternship</comment>
+	</data>
+	<data name="PostgraduateGuidance" xml:space="preserve">
+		<value>PostgraduateGuidance</value>
+		<comment>PostgraduateGuidance</comment>
+	</data>
+	<data name="PostgraduateGuidance" xml:space="preserve">
+		<value>PostgraduateGuidance</value>
+		<comment>PostgraduateGuidance</comment>
+	</data>
+	<data name="PostgraduateGuidance" xml:space="preserve">
+		<value>PostgraduateGuidance</value>
+		<comment>PostgraduateGuidance</comment>
+	</data>
+	<data name="Add New PostgraduateDissertationGuidance" xml:space="preserve">
+		<value>Add New PostgraduateDissertationGuidance</value>
+		<comment>Add New PostgraduateDissertationGuidance</comment>
+	</data>
+	<data name="Review" xml:space="preserve">
+		<value>Review</value>
+		<comment>Review</comment>
+	</data>
+	<data name="Review" xml:space="preserve">
+		<value>Review</value>
+		<comment>Review</comment>
+	</data>
+	<data name="Add New PostgraduateGuidance" xml:space="preserve">
+		<value>Add New PostgraduateGuidance</value>
+		<comment>Add New PostgraduateGuidance</comment>
+	</data>
+	<data name="ScientificConsultation" xml:space="preserve">
+		<value>ScientificConsultation</value>
+		<comment>ScientificConsultation</comment>
+	</data>
+	<data name="Add New ScientificConsultation" xml:space="preserve">
+		<value>Add New ScientificConsultation</value>
+		<comment>Add New ScientificConsultation</comment>
+	</data>
+	<data name="PostgraduateDissertationGuidance" xml:space="preserve">
+		<value>PostgraduateDissertationGuidance</value>
+		<comment>PostgraduateDissertationGuidance</comment>
+	</data>
+	<data name="Add New Review" xml:space="preserve">
+		<value>Add New Review</value>
+		<comment>Add New Review</comment>
+	</data>
+	<data name="Add New Review" xml:space="preserve">
+		<value>Add New Review</value>
+		<comment>Add New Review</comment>
+	</data>
+	<data name="Add New Review" xml:space="preserve">
+		<value>Add New Review</value>
+		<comment>Add New Review</comment>
+	</data>
+	<data name="Add New Review" xml:space="preserve">
+		<value>Add New Review</value>
+		<comment>Add New Review</comment>
+	</data>
+	<data name="Patent" xml:space="preserve">
+		<value>Patent</value>
+		<comment>Patent</comment>
+	</data>
+	<data name="Add New Patent" xml:space="preserve">
+		<value>Add New Patent</value>
+		<comment>Add New Patent</comment>
+	</data>
+	<data name="Add New Opposition" xml:space="preserve">
+		<value>Add New Opposition</value>
+		<comment>Add New Opposition</comment>
+	</data>
+	<data name="Add New Opposition" xml:space="preserve">
+		<value>Add New Opposition</value>
+		<comment>Add New Opposition</comment>
+	</data>
+	<data name="Membership" xml:space="preserve">
+		<value>Membership</value>
+		<comment>Membership</comment>
+	</data>
+	<data name="Add New Membership" xml:space="preserve">
+		<value>Add New Membership</value>
+		<comment>Add New Membership</comment>
+	</data>
+	<data name="Opposition" xml:space="preserve">
+		<value>Opposition</value>
+		<comment>Opposition</comment>
+	</data>
 </root>
