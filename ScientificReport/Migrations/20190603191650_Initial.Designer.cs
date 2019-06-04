@@ -9,7 +9,7 @@ using ScientificReport.DAL.DbContext;
 namespace ScientificReport.Migrations
 {
     [DbContext(typeof(ScientificReportDbContext))]
-    [Migration("20190604124036_Initial")]
+    [Migration("20190603191650_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -122,8 +122,6 @@ namespace ScientificReport.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("ArticleType");
-
                     b.Property<string>("DocumentInfo");
 
                     b.Property<bool>("IsPeriodical");
@@ -145,6 +143,8 @@ namespace ScientificReport.Migrations
                     b.Property<int>("PublishingYear");
 
                     b.Property<string>("Title");
+
+                    b.Property<int>("Type");
 
                     b.HasKey("Id");
 
@@ -354,8 +354,6 @@ namespace ScientificReport.Migrations
 
                     b.Property<int>("PrintStatus");
 
-                    b.Property<int>("PublicationType");
-
                     b.Property<string>("PublishingHouseName");
 
                     b.Property<string>("PublishingPlace");
@@ -365,6 +363,8 @@ namespace ScientificReport.Migrations
                     b.Property<string>("Specification");
 
                     b.Property<string>("Title");
+
+                    b.Property<int>("Type");
 
                     b.HasKey("Id");
 

@@ -9,6 +9,8 @@ namespace ScientificReport.DTO.Models.TeacherReport
 		[Required]
 		public Guid UserId;
 		
-		public IEnumerable<DAL.Entities.UserProfile.UserProfile> Users;
+		public IEnumerable<DAL.Entities.UserProfile.UserProfile> Users { get; set; }
+
+		
 	}
 }

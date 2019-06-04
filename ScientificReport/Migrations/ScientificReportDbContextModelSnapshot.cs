@@ -14,7 +14,7 @@ namespace ScientificReport.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062");
+                .HasAnnotation("ProductVersion", "2.2.3-servicing-35854");
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
@@ -120,8 +120,6 @@ namespace ScientificReport.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("ArticleType");
-
                     b.Property<string>("DocumentInfo");
 
                     b.Property<bool>("IsPeriodical");
@@ -143,6 +141,8 @@ namespace ScientificReport.Migrations
                     b.Property<int>("PublishingYear");
 
                     b.Property<string>("Title");
+
+                    b.Property<int>("Type");
 
                     b.HasKey("Id");
 
@@ -352,8 +352,6 @@ namespace ScientificReport.Migrations
 
                     b.Property<int>("PrintStatus");
 
-                    b.Property<int>("PublicationType");
-
                     b.Property<string>("PublishingHouseName");
 
                     b.Property<string>("PublishingPlace");
@@ -363,6 +361,8 @@ namespace ScientificReport.Migrations
                     b.Property<string>("Specification");
 
                     b.Property<string>("Title");
+
+                    b.Property<int>("Type");
 
                     b.HasKey("Id");
 
@@ -437,6 +437,10 @@ namespace ScientificReport.Migrations
                     b.Property<DateTime>("Edited");
 
                     b.Property<Guid?>("TeacherId");
+
+                    b.Property<DateTime>("TimeWhenUserCanAddReportBegin");
+
+                    b.Property<DateTime>("TimeWhenUserCanAddReportEnd");
 
                     b.HasKey("Id");
 

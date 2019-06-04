@@ -12,7 +12,7 @@ namespace ScientificReport.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    ArticleType = table.Column<int>(nullable: false),
+                    Type = table.Column<int>(nullable: false),
                     Title = table.Column<string>(nullable: true),
                     LiabilityInfo = table.Column<string>(nullable: true),
                     DocumentInfo = table.Column<string>(nullable: true),
@@ -76,7 +76,7 @@ namespace ScientificReport.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    PublicationType = table.Column<int>(nullable: false),
+                    Type = table.Column<int>(nullable: false),
                     Title = table.Column<string>(nullable: true),
                     Specification = table.Column<string>(nullable: true),
                     PublishingPlace = table.Column<string>(nullable: true),

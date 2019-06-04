@@ -12,6 +12,7 @@ namespace ScientificReport.DAL.Entities.Reports
 
 		public override DateTime Created { get; set; }
 		public override DateTime Edited { get; set; }
+		
 
 		public UserProfile.UserProfile Teacher { get; set; }
 
