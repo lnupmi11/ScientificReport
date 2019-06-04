@@ -11,7 +11,6 @@ namespace ScientificReport.BLL.Interfaces
 	{
 		IEnumerable<Publication> GetAll();
 		IEnumerable<Publication> GetAllWhere(Func<Publication, bool> predicate);
-
 		IEnumerable<Publication> Filter(PublicationIndexModel model, ClaimsPrincipal userPrincipal, bool userIsAdmin,
 			bool userIsHead);
 		Publication GetById(Guid id);
