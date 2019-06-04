@@ -28,14 +28,6 @@ namespace ScientificReport.Controllers
 			_departmentService = departmentService;
 		}
 
-		// GET: Article
-		public IActionResult Index(ArticleIndexModel model)
-		{
-			model.Articles = _articleService.GetPage(model.CurrentPage, model.PageSize);	
-			model.Count = _articleService.GetCount();
-			return View(model);
-		}
-
 		// GET: Article/Details/{id}
 		public IActionResult Details(Guid? id)
 		{
@@ -55,28 +47,6 @@ namespace ScientificReport.Controllers
 				Article = article,
 				Authors = _articleService.GetAuthors(article.Id)
 			});
-		}
-
-		// GET: Article/Create
-		public IActionResult Create() => View();
-
-		// POST: Article/Create
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public IActionResult Create(ArticleCreateModel model)
-		{
-			if (!ModelState.IsValid)
-			{
-				return View(model);
-			}
-			
-			_articleService.CreateItem(model.ToArticle());
-			_articleService.AddAuthor(
-				_articleService.Get(a => a.Title == model.Title),
-				_userProfileService.Get(u => u.UserName == User.Identity.Name)
-			);
-			
-			return RedirectToAction(nameof(Index));
 		}
 
 		// GET: Article/Edit/{id}
@@ -130,7 +100,7 @@ namespace ScientificReport.Controllers
 			}
 			
 			_articleService.UpdateItem(model.Modify(article));
-			return RedirectToAction(nameof(Index));
+			return RedirectToAction("Index", "Publication");
 		}
 		
 		// POST: Article/AddUserToAuthors/{articleId}
@@ -217,7 +187,7 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
-			if (!AllowToDeleteArticle(article))
+			if (!AllowToDeleteArticle())
 			{
 				return Forbid();
 			}
@@ -236,13 +206,14 @@ namespace ScientificReport.Controllers
 				return NotFound();
 			}
 
-			if (!AllowToDeleteArticle(article))
+			if (!AllowToDeleteArticle())
 			{
 				return Forbid();
 			}
 			
 			_articleService.DeleteById(id);
-			return RedirectToAction(nameof(Index));
+			
+			return RedirectToAction("Index", "Publication");
 		}
 
 		private bool AllowUserToEditArticle(Article article)
@@ -255,7 +226,7 @@ namespace ScientificReport.Controllers
 			       article.PublishingYear == DateTime.Now.Year;
 		}
 
-		private bool AllowToDeleteArticle(Article article)
+		private bool AllowToDeleteArticle()
 		{
 			return PageHelpers.IsAdmin(User);
 		}

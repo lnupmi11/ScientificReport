@@ -7,7 +7,7 @@ namespace ScientificReport.DAL.Entities
 {
 	public class Publication
 	{
-		public enum Types
+		public enum PublicationTypes
 		{
 			Monograph, TextBook, HandBook, Dictionary, Translation, Comment, BibliographicIndex, Other
 		}
@@ -30,7 +30,7 @@ namespace ScientificReport.DAL.Entities
 		[Key]
 		public Guid Id { get; set; }
 		
-		public Types Type { get; set; }
+		public PublicationTypes PublicationType { get; set; }
 		
 		public string Title { get; set; }
 		

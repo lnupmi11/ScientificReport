@@ -20,7 +20,7 @@ namespace ScientificReport.DTO.Models.Article
 		public ArticleEditModel(DAL.Entities.Article article)
 		{
 			Id = article.Id;
-			Type = article.Type;
+			Type = article.ArticleType;
 			Title = article.Title;
 			PagesAmount = article.PagesAmount;
 			DocumentInfo = article.DocumentInfo;
@@ -35,7 +35,7 @@ namespace ScientificReport.DTO.Models.Article
 
 		public DAL.Entities.Article Modify(DAL.Entities.Article article)
 		{
-			article.Type = Type;
+			article.ArticleType = Type;
 			article.Title = Title;
 			article.PagesAmount = PagesAmount;
 			article.DocumentInfo = DocumentInfo;

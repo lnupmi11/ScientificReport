@@ -66,24 +66,6 @@ namespace ScientificReport.Controllers
 			return View(scientificWorksDetails);
 		}
 
-		// GET: ScientificWork/Create
-		public IActionResult Create() => View();
-
-		// POST: ScientificWork/Create
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public IActionResult Create([Bind("Id,Cypher,Category,Title,Contents")]
-			ScientificWork scientificWork)
-		{
-			if (!ModelState.IsValid)
-			{
-				return View(scientificWork);
-			}
-
-			_scientificWorkService.CreateItem(scientificWork);
-			return RedirectToAction(nameof(Index));
-		}
-
 		// GET: ScientificWork/Edit/{id}
 		public IActionResult Edit(Guid? id)
 		{

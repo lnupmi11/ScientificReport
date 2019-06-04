@@ -7,7 +7,7 @@ namespace ScientificReport.DAL.Entities
 {
 	public class Article
 	{
-		public enum Types
+		public enum ArticleTypes
 		{
 			ImpactFactor,
 			IncludedInWebOfScienceScopusOthers,
@@ -23,7 +23,7 @@ namespace ScientificReport.DAL.Entities
 		[Key]
 		public Guid Id { get; set; }
 		
-		public Types Type { get; set; }
+		public ArticleTypes ArticleType { get; set; }
 		
 		public string Title { get; set; }
 		
